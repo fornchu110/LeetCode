@@ -12,41 +12,41 @@
 #         self.next = next
 
 # By head insert, time: O(n), space: O(1)
-# head insertªk¬O«ü¥ý´¡¤J³Ì§ÀºÝªºnode, ¦A©óÀYºÝ¤@­Ó­Ó´¡¤J§ÀºÝ«eªºnode, ±`¥Î¦b¤ÏÂà
+# head insertæ³•æ˜¯æŒ‡å…ˆæ’å…¥æœ€å°¾ç«¯çš„node, å†æ–¼é ­ç«¯ä¸€å€‹å€‹æ’å…¥å°¾ç«¯å‰çš„node, å¸¸ç”¨åœ¨åè½‰
 # Ex: NULL->3, NULL->2->3, NULL->1->2->3
-# ¤@¯ë«Ø¥ßlink list¬Otail insert, ¤]´N¬O±qÀY¶}©l¤@ª½©ó§ÀºÝ´¡¤J±µ¤U¨Óªºnode
-# ÃD¥Ø­n¨Dªº¬O±Nleft©Mright¤§¶¡ªºnode¥þ³¡Â½Âà, left©Mright¤§¶¡¥i¯à¤£¥u¤@­Ónode
-# ¤@¦¸¨«³X¨Ï¥Îhead insert·Qªk¦³ÂI¹³queue¹ê§@stack
-# ¨ì»Ýleft¶}©l°µhead insert(left¹ê»Ú¤W·|¬O¤ÏÂà«áªº§ÀºÝ), ª½¨ì¾ã¬q¤ÏÂàµ²§ô
-# ³oÃþÃD¥Ø³£­n·Ç³Ædummy node
+# ä¸€èˆ¬å»ºç«‹link listæ˜¯tail insert, ä¹Ÿå°±æ˜¯å¾žé ­é–‹å§‹ä¸€ç›´æ–¼å°¾ç«¯æ’å…¥æŽ¥ä¸‹ä¾†çš„node
+# é¡Œç›®è¦æ±‚çš„æ˜¯å°‡leftå’Œrightä¹‹é–“çš„nodeå…¨éƒ¨ç¿»è½‰, leftå’Œrightä¹‹é–“å¯èƒ½ä¸åªä¸€å€‹node
+# ä¸€æ¬¡èµ°è¨ªä½¿ç”¨head insertæƒ³æ³•æœ‰é»žåƒqueueå¯¦ä½œstack
+# åˆ°éœ€lefté–‹å§‹åšhead insert(leftå¯¦éš›ä¸Šæœƒæ˜¯åè½‰å¾Œçš„å°¾ç«¯), ç›´åˆ°æ•´æ®µåè½‰çµæŸ
+# é€™é¡žé¡Œç›®éƒ½è¦æº–å‚™dummy node
 class Solution:
     def reverseBetween(self, head: ListNode, left: int, right: int) -> ListNode:
         dummy = ListNode(next = head)
         pre = dummy
-        # °µrange(left-1)·|±qdummy¨«¨ìleft«e¤@­ÓÂI
+        # åšrange(left-1)æœƒå¾ždummyèµ°åˆ°leftå‰ä¸€å€‹é»ž
         for i in range(left-1):
             pre = pre.next
-        # cur±qleft¶}©l°µ¤ÏÂà
-        # ª`·Npre = 1, cur = left = 2¦b¤ÏÂà¹Lµ{³£¤£·|ÅÜ
-        # ¥u¬Ocurªº¬Û¹ï¦ì¸m·|¤@ª½¤@ª½©¹«á, ¦]«e­±¤£Â_¦³node´¡¤J
+        # curå¾žlefté–‹å§‹åšåè½‰
+        # æ³¨æ„pre = 1, cur = left = 2åœ¨åè½‰éŽç¨‹éƒ½ä¸æœƒè®Š
+        # åªæ˜¯curçš„ç›¸å°ä½ç½®æœƒä¸€ç›´ä¸€ç›´å¾€å¾Œ, å› å‰é¢ä¸æ–·æœ‰nodeæ’å…¥
         cur = pre.next
-        # right-left¥Nªí­n¤ÏÂànodeªº¦¸¼Æ
-        # ¥HÃD¥Ø1->2->3->4->5, ¤ÏÂà2~4¬°¨Ò, 
+        # right-leftä»£è¡¨è¦åè½‰nodeçš„æ¬¡æ•¸
+        # ä»¥é¡Œç›®1->2->3->4->5, åè½‰2~4ç‚ºä¾‹, 
         for i in range(right-left):
-            # ¬ö¿ý3, ¬ö¿ýnext
+            # ç´€éŒ„3, ç´€éŒ„next
             next = cur.next
-            # 2­n«ü¦V4
-            # ¤]´N¬O¸õ¹L·í¤U³Ì§Àªºnode, ¦]¨ä­n³Q´¡¤J¨ìÀYºÝ
+            # 2è¦æŒ‡å‘4
+            # ä¹Ÿå°±æ˜¯è·³éŽç•¶ä¸‹æœ€å°¾çš„node, å› å…¶è¦è¢«æ’å…¥åˆ°é ­ç«¯
             cur.next = next.next
-            # ·Ç³Æ¦n±Nnext(·í¤U³Ì§Ànode)«ü¦V­ì¥»³ÌÀYªºnode
-            # 3­n«ü¦V2
+            # æº–å‚™å¥½å°‡next(ç•¶ä¸‹æœ€å°¾node)æŒ‡å‘åŽŸæœ¬æœ€é ­çš„node
+            # 3è¦æŒ‡å‘2
             next.next = pre.next
-            # 1­n«ü¦V3
-            # ±Nnext´¡¨ìpreªº«á­±, ¤]´N¬O±N·í¤U³Ì§Àªºnode´¡¨ìÀYºÝ
+            # 1è¦æŒ‡å‘3
+            # å°‡nextæ’åˆ°preçš„å¾Œé¢, ä¹Ÿå°±æ˜¯å°‡ç•¶ä¸‹æœ€å°¾çš„nodeæ’åˆ°é ­ç«¯
             pre.next = next
-            # °µ§¹²Ä¤@½üÅÜ1->3->2->4, 
-            # °µ§¹²Ä¤G½üÅÜ1->4->3->2
-        # ¤]´N¬O­ì¥»ªºhead
+            # åšå®Œç¬¬ä¸€è¼ªè®Š1->3->2->4, 
+            # åšå®Œç¬¬äºŒè¼ªè®Š1->4->3->2
+        # ä¹Ÿå°±æ˜¯åŽŸæœ¬çš„head
         return dummy.next
 
 # @lc code=end
