@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=515 lang=python3
 #
@@ -13,89 +12,38 @@
 #         self.left = left
 #         self.right = right
 
-# µ¹¤@Treeªºroot, retun¤@­Ólist¤º®e¬Otree¤º¦U­Ólevel¤¤node.val³Ì¤j­È
+# çµ¦ä¸€Treeçš„root, retunä¸€å€‹listå…§å®¹æ˜¯treeå…§å„å€‹levelä¸­node.valæœ€å¤§å€¼
 
 # By BFS, time: O(n), space:o(n)
-# ´N¬O¥ÎBFSªº¤è¦¡¨«³X, ª`·N¨Clevel­n°O¿ı¥Ø«e³Ì¤jnode.val§Y¥i
+# å°±æ˜¯ç”¨BFSçš„æ–¹å¼èµ°è¨ª, æ³¨æ„æ¯levelè¦è¨˜éŒ„ç›®å‰æœ€å¤§node.valå³å¯
 class Solution:
     def largestValues(self, root: Optional[TreeNode]) -> List[int]:
         if root is None:
             return []
         res = []
-        # «Ø¥ßdeque¤ñlist¹B§@¬Ù®É
+        # å»ºç«‹dequeæ¯”listé‹ä½œçœæ™‚
         queue = collections.deque()
         queue.append(root)
-        # ·íqueueÁÙ¦³¤¸¯À´N¥NªítreeÁÙ¨S¨«³X§¹
+        # ç•¶queueé‚„æœ‰å…ƒç´ å°±ä»£è¡¨treeé‚„æ²’èµ°è¨ªå®Œ
         while(len(queue)):
-            # ­n¤ñ¸û³Ì¤j­È, ©Ò¥H¥ıªì©l¤Æ¤@­Ó­tµL­­¤p
+            # è¦æ¯”è¼ƒæœ€å¤§å€¼, æ‰€ä»¥å…ˆåˆå§‹åŒ–ä¸€å€‹è² ç„¡é™å°
             maxtmp = float("-inf")
-            # ¨C¦¸¨«¨ì³oÃäºâªºªø«×´N¬O¦¹level¤¤node¼Æ
+            # æ¯æ¬¡èµ°åˆ°é€™é‚Šç®—çš„é•·åº¦å°±æ˜¯æ­¤levelä¸­nodeæ•¸
             n = len(queue)
-            # ¹ï«á­±n­Ónode, ¤]´N¬O¦¹levelªºnode
+            # å°å¾Œé¢nå€‹node, ä¹Ÿå°±æ˜¯æ­¤levelçš„node
             for i in range(n):
-                # ¤@¤@pop¥X¨Ó¬İ­È¬O§_³Ì¤j¥H¤Î¦³child´N¥[¤Jqueue
+                # ä¸€ä¸€popå‡ºä¾†çœ‹å€¼æ˜¯å¦æœ€å¤§ä»¥åŠæœ‰childå°±åŠ å…¥queue
                 tmpnode = queue.popleft()
                 maxtmp = max(maxtmp, tmpnode.val)
                 if tmpnode.left is not None:
                     queue.append(tmpnode.left)
                 if tmpnode.right is not None:
                     queue.append(tmpnode.right)
-            # ¦¹level¤¤©Ò¦³node³£¬İ¹L­È¥B¥L­Ìªºchild³£³Q¥[¤Jqueue
-            # res¤º¥[¤J¦¹level³Ì¤j­È
+            # æ­¤levelä¸­æ‰€æœ‰nodeéƒ½çœ‹éå€¼ä¸”ä»–å€‘çš„childéƒ½è¢«åŠ å…¥queue
+            # reså…§åŠ å…¥æ­¤levelæœ€å¤§å€¼
             res.append(maxtmp)
         return res
 
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=515 lang=python3
-#
-# [515] Find Largest Value in Each Tree Row
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# µ¹¤@Treeªºroot, retun¤@­Ólist¤º®e¬Otree¤º¦U­Ólevel¤¤node.val³Ì¤j­È
-
-# By BFS, time: O(n), space:o(n)
-# ´N¬O¥ÎBFSªº¤è¦¡¨«³X, ª`·N¨Clevel­n°O¿ı¥Ø«e³Ì¤jnode.val§Y¥i
-class Solution:
-    def largestValues(self, root: Optional[TreeNode]) -> List[int]:
-        if root is None:
-            return []
-        res = []
-        # «Ø¥ßdeque¤ñlist¹B§@¬Ù®É
-        queue = collections.deque()
-        queue.append(root)
-        # ·íqueueÁÙ¦³¤¸¯À´N¥NªítreeÁÙ¨S¨«³X§¹
-        while(len(queue)):
-            # ­n¤ñ¸û³Ì¤j­È, ©Ò¥H¥ıªì©l¤Æ¤@­Ó­tµL­­¤p
-            maxtmp = float("-inf")
-            # ¨C¦¸¨«¨ì³oÃäºâªºªø«×´N¬O¦¹level¤¤node¼Æ
-            n = len(queue)
-            # ¹ï«á­±n­Ónode, ¤]´N¬O¦¹levelªºnode
-            for i in range(n):
-                # ¤@¤@pop¥X¨Ó¬İ­È¬O§_³Ì¤j¥H¤Î¦³child´N¥[¤Jqueue
-                tmpnode = queue.popleft()
-                maxtmp = max(maxtmp, tmpnode.val)
-                if tmpnode.left is not None:
-                    queue.append(tmpnode.left)
-                if tmpnode.right is not None:
-                    queue.append(tmpnode.right)
-            # ¦¹level¤¤©Ò¦³node³£¬İ¹L­È¥B¥L­Ìªºchild³£³Q¥[¤Jqueue
-            # res¤º¥[¤J¦¹level³Ì¤j­È
-            res.append(maxtmp)
-        return res
-
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

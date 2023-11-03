@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=501 lang=python3
 #
@@ -13,15 +12,15 @@
 #         self.left = left
 #         self.right = right
 
-# §ä¥XBST¤¤¥X²{¦¸¼Æ³Ì¦hªºnode.val
+# æ‰¾å‡ºBSTä¸­å‡ºç¾æ¬¡æ•¸æœ€å¤šçš„node.val
 
-# By DFS, time: O(n), space: O(logn), logn¬O¥Ñ©órecursive©Òªá¶OªºstackªÅ¶¡
-# ¥ÎDFS¨«³X¹Lµ{ª`·N¥Ñ¤p¨«¨ì¤j(inorder ¥ª¤l->root->¥k¤l), ³o¼Ë¥u»İ­n¨«³X¤@¦¸
-# °O¿ı¤W¦¸¬İ¨ìªºnode.val¥H¤Î·í¤Unode.val¥X²{ªº¦¸¼Æ, ÁÙ¦³³Ì±`¥X²{ªºnode.val
-# ·í¨«³X¹Lµ{¬İ¨ì¸ò¤W­Ónode¤@¼Ëªº¥Nªí­«½Æ´Ncnt+1, ¦pªG¥X²{¦¸¼Æ¶W¹L¥Ø«e¥X²{³Ì¦h¦¸ªº¬ö¿ımost, «h§ó·smost©Mres
+# By DFS, time: O(n), space: O(logn), lognæ˜¯ç”±æ–¼recursiveæ‰€èŠ±è²»çš„stackç©ºé–“
+# ç”¨DFSèµ°è¨ªéç¨‹æ³¨æ„ç”±å°èµ°åˆ°å¤§(inorder å·¦å­->root->å³å­), é€™æ¨£åªéœ€è¦èµ°è¨ªä¸€æ¬¡
+# è¨˜éŒ„ä¸Šæ¬¡çœ‹åˆ°çš„node.valä»¥åŠç•¶ä¸‹node.valå‡ºç¾çš„æ¬¡æ•¸, é‚„æœ‰æœ€å¸¸å‡ºç¾çš„node.val
+# ç•¶èµ°è¨ªéç¨‹çœ‹åˆ°è·Ÿä¸Šå€‹nodeä¸€æ¨£çš„ä»£è¡¨é‡è¤‡å°±cnt+1, å¦‚æœå‡ºç¾æ¬¡æ•¸è¶…éç›®å‰å‡ºç¾æœ€å¤šæ¬¡çš„ç´€éŒ„most, å‰‡æ›´æ–°mostå’Œres
 class Solution:
     def __init__(self):
-        # ¬ö¿ırecursive¹Lµ{©Ò»İ­n§ó·sªº¸ê°T
+        # ç´€éŒ„recursiveéç¨‹æ‰€éœ€è¦æ›´æ–°çš„è³‡è¨Š
         self.res = []
         self.most = 0
         self.last = None
@@ -30,97 +29,35 @@ class Solution:
     def inorder(self, node):
         if node is None:
             return 
-        # ¥ªsubtree­n¥ırecursive§¹
+        # å·¦subtreeè¦å…ˆrecursiveå®Œ
         if node.left:
             self.inorder(node.left)
         
-        # ³B²zroot
+        # è™•ç†root
         if node.val==self.last:
             self.cnt += 1
-        # ¤£­«½Æ¨º³o­Ó·sªºnode¥u¥X²{¤@¦¸
+        # ä¸é‡è¤‡é‚£é€™å€‹æ–°çš„nodeåªå‡ºç¾ä¸€æ¬¡
         else:
             self.cnt =  1
-        # ¦pªG¥X²{¦¸¼Æ¶W¹L¥Ø«e³Ì¦h¦¸
+        # å¦‚æœå‡ºç¾æ¬¡æ•¸è¶…éç›®å‰æœ€å¤šæ¬¡
         if self.cnt==self.most:
             self.res.append(node.val)
-        # ¦pªG¥Ø«e³o­Ónode¥X²{¦¸¼Æ¤ñ¤§«e³Ì¦hªºÁÙ¦h
+        # å¦‚æœç›®å‰é€™å€‹nodeå‡ºç¾æ¬¡æ•¸æ¯”ä¹‹å‰æœ€å¤šçš„é‚„å¤š
         elif self.cnt>self.most:
-            # §ó·smost
+            # æ›´æ–°most
             self.most = self.cnt
-            # ±N·sªºnode.value¥[¶i
+            # å°‡æ–°çš„node.valueåŠ é€²
             self.res.append(node.val)
         self.last = node.val
         
-        # recursive¥ksubtree
+        # recursiveå³subtree
         if node.right:
             self.inorder(node.right)
 
     def findMode(self, root: TreeNode) -> List[int]:
-        # ±qroot¤U¥hrecursive
+        # å¾rootä¸‹å»recursive
         self.inorder(root)
         return self.res
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=501 lang=python3
-#
-# [501] Find Mode in Binary Search Tree
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# §ä¥XBST¤¤¥X²{¦¸¼Æ³Ì¦hªºnode.val
-
-# By DFS, time: O(n), space: O(logn), logn¬O¥Ñ©órecursive©Òªá¶OªºstackªÅ¶¡
-# ¥ÎDFS¨«³X¹Lµ{ª`·N¥Ñ¤p¨«¨ì¤j(inorder ¥ª¤l->root->¥k¤l), °O¿ı¤W¦¸¬İ¨ìªºnode.val¥H¤Î·í¤Unode.val¥X²{ªº¦¸¼Æ, ÁÙ¦³³Ì±`¥X²{ªºnode.val
-# ·í¨«³X¹Lµ{¬İ¨ì¸ò¤W­Ónode¤@¼Ëªº¥Nªí­«½Æ´Ncnt+1, ¦pªG¥X²{¦¸¼Æ¶W¹L¥Ø«e¥X²{³Ì¦h¦¸ªº¬ö¿ımost, «h§ó·smost©Mres
-class Solution:
-    def __init__(self):
-        # ¬ö¿ırecursive¹Lµ{©Ò»İ­n§ó·sªº¸ê°T
-        self.res = []
-        self.most = 0
-        self.last = None
-        self.cnt = 0
-
-    def inorder(self, node):
-        if node is None:
-            return 
-        # ¥ªsubtree­n¥ırecursive§¹
-        if node.left:
-            self.inorder(node.left)
-        # ³B²zroot
-        if node.val==self.last:
-            self.cnt += 1
-        # ¤£­«½Æ¨º³o­Ó·sªºnode¥u¥X²{¤@¦¸
-        else:
-            self.cnt =  1
-        # ¦pªG¥X²{¦¸¼Æ¶W¹L¥Ø«e³Ì¦h¦¸
-        if self.cnt==self.most:
-            self.res.append(node.val)
-        # ¦pªG¥Ø«e³o­Ónode¥X²{¦¸¼Æ¤ñ¤§«e³Ì¦hªºÁÙ¦h
-        elif self.cnt>self.most:
-            # §ó·smost
-            self.most = self.cnt
-            # ±N·sªºnode.value¥[¶i
-            self.res.append(node.val)
-        self.last = node.val
-        # recursive¥ksubtree
-        if node.right:
-            self.inorder(node.right)
-
-    def findMode(self, root: TreeNode) -> List[int]:
-        # ±qroot¤U¥hrecursive
-        self.inorder(root)
-        return self.res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

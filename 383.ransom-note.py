@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=383 lang=python3
 #
@@ -7,12 +6,12 @@
 
 # @lc code=start
 
-# By hash, time: O(max(m, n)), space: O(k), k = 26¤]´N¬O¤p¼g­^¤å¦r¥À¼Æ¶q, m = len(ransomNote), n = len(magazine)
-# ¥Îhash¥ý¨«³Xmagazine±N¾Ö¦³ªº¦r¥À¼Æ¶qÀx¦s°_¨Ó, ¦A¨«³XransomNote¬Ý¯à§_¥Îmagazine¤ºªº¦r¥À°µ¥X¨Ó
-# ª`·N­^¤å¦r¥ÀÃþhash¥i¥H¥Îbitwise°µ, ¤£¶W¹L32
+# By hash, time: O(max(m, n)), space: O(k), k = 26ä¹Ÿå°±æ˜¯å°å¯«è‹±æ–‡å­—æ¯æ•¸é‡, m = len(ransomNote), n = len(magazine)
+# ç”¨hashå…ˆèµ°è¨ªmagazineå°‡æ“æœ‰çš„å­—æ¯æ•¸é‡å„²å­˜èµ·ä¾†, å†èµ°è¨ªransomNoteçœ‹èƒ½å¦ç”¨magazineå…§çš„å­—æ¯åšå‡ºä¾†
+# æ³¨æ„è‹±æ–‡å­—æ¯é¡žhashå¯ä»¥ç”¨bitwiseåš, ä¸è¶…éŽ32
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        # ·íransomNote¤ñmagazineªø¥²©w¤£¥i¯à¥Îmagazine²Õ¦X¥X¨Ó
+        # ç•¶ransomNoteæ¯”magazineé•·å¿…å®šä¸å¯èƒ½ç”¨magazineçµ„åˆå‡ºä¾†
         if len(ransomNote)>len(magazine):
             return False
         hash = {}
@@ -29,47 +28,9 @@ class Solution:
             else:
                 return False
         return True
-        # hash¶}©l³o¾ã¬q¥i¥H¥þ¥Îcollections.Counter()§¹¦¨
+        # hashé–‹å§‹é€™æ•´æ®µå¯ä»¥å…¨ç”¨collections.Counter()å®Œæˆ
         # return not collections.Counter(ransomNote) - collections.Counter(magazine)
 
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=383 lang=python3
-#
-# [383] Ransom Note
-#
-
-# @lc code=start
-
-# By hash, time: O(max(m, n)), space: O(k), k = 26¤]´N¬O¤p¼g­^¤å¦r¥À¼Æ¶q, m = len(ransomNote), n = len(magazine)
-# ¥Îhash¥ý¨«³Xmagazine±N¾Ö¦³ªº¦r¥À¼Æ¶qÀx¦s°_¨Ó, ¦A¨«³XransomNote¬Ý¯à§_¥Îmagazine¤ºªº¦r¥À°µ¥X¨Ó
-# ª`·N­^¤å¦r¥ÀÃþhash¥i¥H¥Îbitwise°µ, ¤£¶W¹L32
-class Solution:
-    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        # ·íransomNote¤ñmagazineªø¥²©w¤£¥i¯à¥Îmagazine²Õ¦X¥X¨Ó
-        if len(ransomNote)>len(magazine):
-            return False
-        hash = {}
-        for i in magazine:
-            if i not in hash:
-                hash[i] = 1
-            else:
-                hash[i] += 1
-        for i in ransomNote:
-            if i in hash:
-                hash[i] -= 1
-                if hash[i]<0:
-                    return False
-            else:
-                return False
-        return True
-        # hash¶}©l³o¾ã¬q¥i¥H¥þ¥Îcollections.Counter()§¹¦¨
-        # return not collections.Counter(ransomNote) - collections.Counter(magazine)
-
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

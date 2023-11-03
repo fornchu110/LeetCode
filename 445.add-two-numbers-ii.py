@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=445 lang=python3
 #
@@ -12,12 +11,12 @@
 #         self.val = val
 #         self.next = next
 
-# By reverse linklist, time: O(max(m,n)), space: O(1), m¡Bn¥Nªí¨âlinklist¤§ªø«×
-# ³q±`spaceªºªÅ¶¡½ÆÂø«×Á¿ªº¬O±o¨ìµ²ªG¹Lµ{¤¤ªá¶OªºÃB¥~ªÅ¶¡
-# ÁöµMres«Üªø¦ý¤¤¶¡³£¨S³Ð«ØÃB¥~ªÅ¶¡©Ò¥HO(1), ¤£¤ÏÂà¥Îstack°µ´N¬Ospace: O(m+n)
-# ±N¨â­Ólinklist¦U§@¬°¤@­Ó¼Æ¬Ý«Ý, §â¨â¼Æ¦V¥k¹ï»ô¬Û¥[«áªºµ²ªG¤@¼Ë¥Îlinklistªí²{¥X¨Ó
-# ­ì¥»·Q»¡­È§ó·s¦b¸ûªøªºlinklist¤¤´N¦n, ¦ý­n¦Ò¼{©Î³\·|¦³¨â­Ó¤G¦ì¼Æ¬Û¥[=¤T¦ì¼Æ³oºØª¬ªp
-# ©Ò¥HÁÙ¬O­n«Ø¤@­Ó·sªºlinklist±Mªù±µ¦¬¤ñ¸û¦n
+# By reverse linklist, time: O(max(m,n)), space: O(1), mã€nä»£è¡¨å…©linklistä¹‹é•·åº¦
+# é€šå¸¸spaceçš„ç©ºé–“è¤‡é›œåº¦è¬›çš„æ˜¯å¾—åˆ°çµæžœéŽç¨‹ä¸­èŠ±è²»çš„é¡å¤–ç©ºé–“
+# é›–ç„¶reså¾ˆé•·ä½†ä¸­é–“éƒ½æ²’å‰µå»ºé¡å¤–ç©ºé–“æ‰€ä»¥O(1), ä¸åè½‰ç”¨stackåšå°±æ˜¯space: O(m+n)
+# å°‡å…©å€‹linklistå„ä½œç‚ºä¸€å€‹æ•¸çœ‹å¾…, æŠŠå…©æ•¸å‘å³å°é½Šç›¸åŠ å¾Œçš„çµæžœä¸€æ¨£ç”¨linklistè¡¨ç¾å‡ºä¾†
+# åŽŸæœ¬æƒ³èªªå€¼æ›´æ–°åœ¨è¼ƒé•·çš„linklistä¸­å°±å¥½, ä½†è¦è€ƒæ…®æˆ–è¨±æœƒæœ‰å…©å€‹äºŒä½æ•¸ç›¸åŠ =ä¸‰ä½æ•¸é€™ç¨®ç‹€æ³
+# æ‰€ä»¥é‚„æ˜¯è¦å»ºä¸€å€‹æ–°çš„linklistå°ˆé–€æŽ¥æ”¶æ¯”è¼ƒå¥½
 class Solution:
     def reverse(self, head):
         cur = head
@@ -30,20 +29,20 @@ class Solution:
         newHead = prev
         return newHead
 
-    # ·|±q§C¦ì¼Æ©¹°ª¦ì¼Æ°µ¨âlinklistªº¥[ªkª½¨ìµ²§ô
-    # ¦]¬°¤£¬Oin-place©Ò¥H¤£»Ýª¾¹Dl1¡Bl2ªºªø«×, ³£¥á¨ìres§Y¥i
+    # æœƒå¾žä½Žä½æ•¸å¾€é«˜ä½æ•¸åšå…©linklistçš„åŠ æ³•ç›´åˆ°çµæŸ
+    # å› ç‚ºä¸æ˜¯in-placeæ‰€ä»¥ä¸éœ€çŸ¥é“l1ã€l2çš„é•·åº¦, éƒ½ä¸Ÿåˆ°reså³å¯
     def plus(self, l1, l2):
         curL1 = l1
         curL2 = l2
-        # res³Ì«á·|°µ¬°¥[§¹µ²ªG¤§linklistªºhead
-        # ¤@¶}©l¬°NoneÅý³Ð«Ønode®É¦³¦a¤è¥i¥H«ü¦V
+        # resæœ€å¾Œæœƒåšç‚ºåŠ å®Œçµæžœä¹‹linklistçš„head
+        # ä¸€é–‹å§‹ç‚ºNoneè®“å‰µå»ºnodeæ™‚æœ‰åœ°æ–¹å¯ä»¥æŒ‡å‘
         res = None
-        # carry¥Nªí­n¶i¦ìªº¼Æ­È
+        # carryä»£è¡¨è¦é€²ä½çš„æ•¸å€¼
         carry = 0
-        # ¥u­n¦³­Ó­ÓlinklistÁÙ¨S¨ìNone´N­nÄ~Äò
-        # ª`·N·íÁÙ¦³»Ý­n¶i¦ìªº¼Æ®É¤]­nÄ~Äò
+        # åªè¦æœ‰å€‹å€‹linklisté‚„æ²’åˆ°Noneå°±è¦ç¹¼çºŒ
+        # æ³¨æ„ç•¶é‚„æœ‰éœ€è¦é€²ä½çš„æ•¸æ™‚ä¹Ÿè¦ç¹¼çºŒ
         while curL1 is not None or curL2 is not None or carry!=0:
-            # ¦]None¨S¦³.valµLªk¬Û¥[, ©Ò¥H·íNone®Éµ¹0
+            # å› Noneæ²’æœ‰.valç„¡æ³•ç›¸åŠ , æ‰€ä»¥ç•¶Noneæ™‚çµ¦0
             if curL1 is None:
                 curL1Val = 0
             else:
@@ -52,35 +51,35 @@ class Solution:
                 curL2Val = 0
             else:
                 curL2Val = curL2.val
-            # ±N¸Ó¦ì¼ÆªºÁ`©M¥[°_¨Ó
+            # å°‡è©²ä½æ•¸çš„ç¸½å’ŒåŠ èµ·ä¾†
             tmp = curL1Val+curL2Val+carry
-            # ­n¶i¦ìªº¼Æ­È
+            # è¦é€²ä½çš„æ•¸å€¼
             carry = tmp//10
-            # ¹ê»Ú¤W¦b³o¦ì¼Æªº¼Æ­È
+            # å¯¦éš›ä¸Šåœ¨é€™ä½æ•¸çš„æ•¸å€¼
             tmp %= 10
-            # ³Ð«Ø¤@­ÓresNode¥Î¨Ó©ñ¸mtmp, ¤]´N¬OresNode.val = tmp
+            # å‰µå»ºä¸€å€‹resNodeç”¨ä¾†æ”¾ç½®tmp, ä¹Ÿå°±æ˜¯resNode.val = tmp
             resNode = ListNode(tmp)
-            # ³Ð«Ø§¹³o¦ì¼Æ«á, «ü¦V«e­±¤@­Ó¦ì¼Æ
+            # å‰µå»ºå®Œé€™ä½æ•¸å¾Œ, æŒ‡å‘å‰é¢ä¸€å€‹ä½æ•¸
             resNode.next = res
-            # ¥Ø«e³o­Ó¦ì¼ÆÅÜ¦¨¤U¤@­Ó§ó°ª¦ì¼Æ©Ò«ü¦Vªº¥Ø¼Ð
+            # ç›®å‰é€™å€‹ä½æ•¸è®Šæˆä¸‹ä¸€å€‹æ›´é«˜ä½æ•¸æ‰€æŒ‡å‘çš„ç›®æ¨™
             res = resNode
-            # ¦]None¨S¦³.next, ©Ò¥H§PÂ_·í«DNoneªºnode¤~­nÄ~Äò
+            # å› Noneæ²’æœ‰.next, æ‰€ä»¥åˆ¤æ–·ç•¶éžNoneçš„nodeæ‰è¦ç¹¼çºŒ
             if curL1 is not None:
                 curL1 = curL1.next
             if curL2 is not None:
                 curL2 = curL2.next
-        # µ²ªG·|¬O¤@­Ó¥Ñ°ª¦ì¼Æ©¹§C¦ì¼Æ«ü¦Vªºlinklist, ­è¦nµ¥¦PÃD¥Ø­n¨D
+        # çµæžœæœƒæ˜¯ä¸€å€‹ç”±é«˜ä½æ•¸å¾€ä½Žä½æ•¸æŒ‡å‘çš„linklist, å‰›å¥½ç­‰åŒé¡Œç›®è¦æ±‚
         return res
 
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        # ¬°¤F±q§C¦ì¼Æ¶}©l¹ï»ô°µ®aªk, ©Ò¥H¥ý±Nlinklist¤ÏÂà¨Ã±q§C¦ì->°ª¦ì
+        # ç‚ºäº†å¾žä½Žä½æ•¸é–‹å§‹å°é½Šåšå®¶æ³•, æ‰€ä»¥å…ˆå°‡linkliståè½‰ä¸¦å¾žä½Žä½->é«˜ä½
         newL1 = self.reverse(l1)
         newL2 = self.reverse(l2)
-        # ¦]res­è¦n¬O°ª¦ì->§C¦ì, ¤£¥Î¦A¤ÏÂà
+        # å› reså‰›å¥½æ˜¯é«˜ä½->ä½Žä½, ä¸ç”¨å†åè½‰
         return self.plus(newL2, newL1)
 
 # By stack, time: O(max(m, n)), space: O(m+n)
-# ¦n³B¬O°ò¥»¤W¤£·|°Ê¨ì­ì¥»ªºlinklistµ²ºc, ¦ýªá¶OÃB¥~ªÅ¶¡
+# å¥½è™•æ˜¯åŸºæœ¬ä¸Šä¸æœƒå‹•åˆ°åŽŸæœ¬çš„linklistçµæ§‹, ä½†èŠ±è²»é¡å¤–ç©ºé–“
 # class Solution:
 #     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
 #         s1, s2 = [], []
@@ -103,110 +102,4 @@ class Solution:
 #             ans = curnode
 #         return ans
 
-=======
-#
-# @lc app=leetcode id=445 lang=python3
-#
-# [445] Add Two Numbers II
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-# By reverse linklist, time: O(max(m,n)), space: O(1), m¡Bn¥Nªí¨âlinklist¤§ªø«×
-# ³q±`spaceªºªÅ¶¡½ÆÂø«×Á¿ªº¬O±o¨ìµ²ªG¹Lµ{¤¤ªá¶OªºÃB¥~ªÅ¶¡
-# ÁöµMres«Üªø¦ý¤¤¶¡³£¨S³Ð«ØÃB¥~ªÅ¶¡©Ò¥HO(1), ¤£¤ÏÂà¥Îstack°µ´N¬Ospace: O(m+n)
-# ±N¨â­Ólinklist¦U§@¬°¤@­Ó¼Æ¬Ý«Ý, §â¨â¼Æ¦V¥k¹ï»ô¬Û¥[«áªºµ²ªG¤@¼Ë¥Îlinklistªí²{¥X¨Ó
-# ­ì¥»·Q»¡­È§ó·s¦b¸ûªøªºlinklist¤¤´N¦n, ¦ý­n¦Ò¼{©Î³\·|¦³¨â­Ó¤G¦ì¼Æ¬Û¥[=¤T¦ì¼Æ³oºØª¬ªp
-# ©Ò¥HÁÙ¬O­n«Ø¤@­Ó·sªºlinklist±Mªù±µ¦¬¤ñ¸û¦n
-class Solution:
-    def reverse(self, head):
-        cur = head
-        prev = None
-        while cur:
-            next = cur.next
-            cur.next = prev
-            prev = cur
-            cur = next
-        newHead = prev
-        return newHead
-
-    # ·|±q§C¦ì¼Æ©¹°ª¦ì¼Æ°µ¨âlinklistªº¥[ªkª½¨ìµ²§ô
-    # ¦]¬°¤£¬Oin-place©Ò¥H¤£»Ýª¾¹Dl1¡Bl2ªºªø«×, ³£¥á¨ìres§Y¥i
-    def plus(self, l1, l2):
-        curL1 = l1
-        curL2 = l2
-        # res³Ì«á·|°µ¬°¥[§¹µ²ªG¤§linklistªºhead
-        # ¤@¶}©l¬°NoneÅý³Ð«Ønode®É¦³¦a¤è¥i¥H«ü¦V
-        res = None
-        # carry¥Nªí­n¶i¦ìªº¼Æ­È
-        carry = 0
-        # ¥u­n¦³­Ó­ÓlinklistÁÙ¨S¨ìNone´N­nÄ~Äò
-        # ª`·N·íÁÙ¦³»Ý­n¶i¦ìªº¼Æ®É¤]­nÄ~Äò
-        while curL1 is not None or curL2 is not None or carry!=0:
-            # ¦]None¨S¦³.valµLªk¬Û¥[, ©Ò¥H·íNone®Éµ¹0
-            if curL1 is None:
-                curL1Val = 0
-            else:
-                curL1Val = curL1.val
-            if curL2 is None:
-                curL2Val = 0
-            else:
-                curL2Val = curL2.val
-            # ±N¸Ó¦ì¼ÆªºÁ`©M¥[°_¨Ó
-            tmp = curL1Val+curL2Val+carry
-            # ­n¶i¦ìªº¼Æ­È
-            carry = tmp//10
-            # ¹ê»Ú¤W¦b³o¦ì¼Æªº¼Æ­È
-            tmp %= 10
-            # ³Ð«Ø¤@­ÓresNode¥Î¨Ó©ñ¸mtmp, ¤]´N¬OresNode.val = tmp
-            resNode = ListNode(tmp)
-            # ³Ð«Ø§¹³o¦ì¼Æ«á, «ü¦V«e­±¤@­Ó¦ì¼Æ
-            resNode.next = res
-            # ¥Ø«e³o­Ó¦ì¼ÆÅÜ¦¨¤U¤@­Ó§ó°ª¦ì¼Æ©Ò«ü¦Vªº¥Ø¼Ð
-            res = resNode
-            # ¦]None¨S¦³.next, ©Ò¥H§PÂ_·í«DNoneªºnode¤~­nÄ~Äò
-            if curL1 is not None:
-                curL1 = curL1.next
-            if curL2 is not None:
-                curL2 = curL2.next
-        # µ²ªG·|¬O¤@­Ó¥Ñ°ª¦ì¼Æ©¹§C¦ì¼Æ«ü¦Vªºlinklist, ­è¦nµ¥¦PÃD¥Ø­n¨D
-        return res
-
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        # ¬°¤F±q§C¦ì¼Æ¶}©l¹ï»ô°µ®aªk, ©Ò¥H¥ý±Nlinklist¤ÏÂà¨Ã±q§C¦ì->°ª¦ì
-        newL1 = self.reverse(l1)
-        newL2 = self.reverse(l2)
-        # ¦]res­è¦n¬O°ª¦ì->§C¦ì, ¤£¥Î¦A¤ÏÂà
-        return self.plus(newL2, newL1)
-
-# By stack, time: O(max(m, n)), space: O(m+n)
-# ¦n³B¬O°ò¥»¤W¤£·|°Ê¨ì­ì¥»ªºlinklistµ²ºc, ¦ýªá¶OÃB¥~ªÅ¶¡
-# class Solution:
-#     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
-#         s1, s2 = [], []
-#         while l1:
-#             s1.append(l1.val)
-#             l1 = l1.next
-#         while l2:
-#             s2.append(l2.val)
-#             l2 = l2.next
-#         ans = None
-#         carry = 0
-#         while s1 or s2 or carry != 0:
-#             a = 0 if not s1 else s1.pop()
-#             b = 0 if not s2 else s2.pop()
-#             cur = a + b + carry
-#             carry = cur // 10
-#             cur %= 10
-#             curnode = ListNode(cur)
-#             curnode.next = ans
-#             ans = curnode
-#         return ans
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
 # @lc code=end

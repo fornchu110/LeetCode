@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=409 lang=python3
 #
@@ -6,92 +5,43 @@
 #
 
 # @lc code=start
-# µ¹¦r¦ês, return¦r¦êsªº³o¨Ç¤¸¯À¯à²Õ¦¨ªº³Ìªø°j¤å¦r¦êªø«×
-# ¤]´N¬O¤£¥Î¦b¥G¥ý«á¶¶§Ç, ¥u¬Ý±Æ¦C²Õ¦X«á¯à²Õ¦¨ªº°j¤å
-# Ex: abccccdd³Ìªø¯à²Õ¦¨dccaccd³o¤@ªø«×¬°7ªº°j¤å
+# çµ¦å­—ä¸²s, returnå­—ä¸²sçš„é€™äº›å…ƒç´ èƒ½çµ„æˆçš„æœ€é•·è¿´æ–‡å­—ä¸²é•·åº¦
+# ä¹Ÿå°±æ˜¯ä¸ç”¨åœ¨ä¹Žå…ˆå¾Œé †åº, åªçœ‹æŽ’åˆ—çµ„åˆå¾Œèƒ½çµ„æˆçš„è¿´æ–‡
+# Ex: abccccddæœ€é•·èƒ½çµ„æˆdccaccdé€™ä¸€é•·åº¦ç‚º7çš„è¿´æ–‡
 
-# By hash and greedy, time: O(n), space: O(S), S¬°s¤¤¤£­«½Æªº¦r¤¸ºØÃþ
-# ª`·N¥i¯à¦³¦r¦ê¥þ³¡³£¥Ñ¦P¤@­Ó¤¸¯Àºc¦¨
+# By hash and greedy, time: O(n), space: O(S), Sç‚ºsä¸­ä¸é‡è¤‡çš„å­—å…ƒç¨®é¡ž
+# æ³¨æ„å¯èƒ½æœ‰å­—ä¸²å…¨éƒ¨éƒ½ç”±åŒä¸€å€‹å…ƒç´ æ§‹æˆ
 class Solution:
     def longestPalindrome(self, s: str) -> int:
-        # res¬O³Ì«áµª®×ªº³Ìªøªø«×, hash¥Î¨Ó°O¿ý¤£¦P¤¸¯À¥X²{¦¸¼Æ
+        # resæ˜¯æœ€å¾Œç­”æ¡ˆçš„æœ€é•·é•·åº¦, hashç”¨ä¾†è¨˜éŒ„ä¸åŒå…ƒç´ å‡ºç¾æ¬¡æ•¸
         res = 0
         hash = dict()
-        # ¨«³Xs¬ö¿ý¨C­Ó¤¸¯À¥X²{ªº¦¸¼Æ
+        # èµ°è¨ªsç´€éŒ„æ¯å€‹å…ƒç´ å‡ºç¾çš„æ¬¡æ•¸
         for i in s:
             if i not in hash:
                 hash[i] = 1
             else:
                 hash[i] += 1
-        # °O¦íhash¥Îhash.items()¦P®É¨«³Xkey©Mvalue
+        # è¨˜ä½hashç”¨hash.items()åŒæ™‚èµ°è¨ªkeyå’Œvalue
         for key, value in hash.items():
-            # ¤£»Ý­n³o­Ó, ¦]¬°«á­±°µ//2¥»¨Ó´N·|§â0©M1ÅÜ¦¨0, ¦A*2¤]¬O0
+            # ä¸éœ€è¦é€™å€‹, å› ç‚ºå¾Œé¢åš//2æœ¬ä¾†å°±æœƒæŠŠ0å’Œ1è®Šæˆ0, å†*2ä¹Ÿæ˜¯0
             # if value>=2:
-            # value//2<<1¨Ó¥h±¼value¤¤¦h¾lªº1, Ex: c¦³3­Ó¦ý°j¤å¥u»Ý­n2­Ó
+            # value//2<<1ä¾†åŽ»æŽ‰valueä¸­å¤šé¤˜çš„1, Ex: cæœ‰3å€‹ä½†è¿´æ–‡åªéœ€è¦2å€‹
             res += value//2<<1
-            # ¥Î³o¬q´N¤£¥Îreturn«á¨º¨Ç, ¦]¬°¦b§ä¬O§_¦³1­Ó¤¸¯À·í°j¤å¤¤¥¡¤]¥u·|§ä¤@¦¸
-            # ¦Ó¨º¤@¦¸´N¬O¦b¤¸¯À¥X²{©_¼Æ­Ó·í¤U¯à§ä, ¥B¥u¦bres¬°°¸¼Æ­Ó®É»Ý­n§ä
-            # ¬Ù¤U¤@¦¸for°j°éªº®É¶¡
+            # ç”¨é€™æ®µå°±ä¸ç”¨returnå¾Œé‚£äº›, å› ç‚ºåœ¨æ‰¾æ˜¯å¦æœ‰1å€‹å…ƒç´ ç•¶è¿´æ–‡ä¸­å¤®ä¹Ÿåªæœƒæ‰¾ä¸€æ¬¡
+            # è€Œé‚£ä¸€æ¬¡å°±æ˜¯åœ¨å…ƒç´ å‡ºç¾å¥‡æ•¸å€‹ç•¶ä¸‹èƒ½æ‰¾, ä¸”åªåœ¨resç‚ºå¶æ•¸å€‹æ™‚éœ€è¦æ‰¾
+            # çœä¸‹ä¸€æ¬¡forè¿´åœˆçš„æ™‚é–“
             if res&1==0 and value&1==1:
                 res += 1
         return res
-            # ¦P®É±N¸Óvalue´î±¼
+            # åŒæ™‚å°‡è©²valueæ¸›æŽ‰
             # hash[key] -= value//2<<1
-        # ¥Îhash.values()¥u¨«³Xvalue, ¤]¥i¥H¥Îhash.keys()¥u¨«³Xkey
-        # ¸Ì­±©Ò¦³keyªºvalue¤£¬O0´N¬O1
+        # ç”¨hash.values()åªèµ°è¨ªvalue, ä¹Ÿå¯ä»¥ç”¨hash.keys()åªèµ°è¨ªkey
+        # è£¡é¢æ‰€æœ‰keyçš„valueä¸æ˜¯0å°±æ˜¯1
         # for value in hash.values():
-            # ¥u­n¦³¤¸¯À³Ñ¤U¤@­Ó, ´N¥i¥H®³¨Ó·í°j¤å¥¿¤¤¥¡ªº¤¸¯À
+            # åªè¦æœ‰å…ƒç´ å‰©ä¸‹ä¸€å€‹, å°±å¯ä»¥æ‹¿ä¾†ç•¶è¿´æ–‡æ­£ä¸­å¤®çš„å…ƒç´ 
             # if value==1:
             #     return res+1
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=409 lang=python3
-#
-# [409] Longest Palindrome
-#
-
-# @lc code=start
-# µ¹¦r¦ês, return¦r¦êsªº³o¨Ç¤¸¯À¯à²Õ¦¨ªº³Ìªø°j¤å¦r¦êªø«×
-# ¤]´N¬O¤£¥Î¦b¥G¥ý«á¶¶§Ç, ¥u¬Ý±Æ¦C²Õ¦X«á¯à²Õ¦¨ªº°j¤å
-# Ex: abccccdd³Ìªø¯à²Õ¦¨dccaccd³o¤@ªø«×¬°7ªº°j¤å
-
-# By hash and greedy, time: O(n), space: O(S), S¬°s¤¤¤£­«½Æªº¦r¤¸ºØÃþ
-# ª`·N¥i¯à¦³¦r¦ê¥þ³¡³£¥Ñ¦P¤@­Ó¤¸¯Àºc¦¨
-class Solution:
-    def longestPalindrome(self, s: str) -> int:
-        # res¬O³Ì«áµª®×ªº³Ìªøªø«×, hash¥Î¨Ó°O¿ý¤£¦P¤¸¯À¥X²{¦¸¼Æ
-        res = 0
-        hash = dict()
-        # ¨«³Xs¬ö¿ý¨C­Ó¤¸¯À¥X²{ªº¦¸¼Æ
-        for i in s:
-            if i not in hash:
-                hash[i] = 1
-            else:
-                hash[i] += 1
-        # °O¦íhash¥Îhash.items()¦P®É¨«³Xkey©Mvalue
-        for key, value in hash.items():
-            # ¤£»Ý­n³o­Ó, ¦]¬°«á­±°µ//2¥»¨Ó´N·|§â0©M1ÅÜ¦¨0, ¦A*2¤]¬O0
-            # if value>=2:
-            # value//2<<1¨Ó¥h±¼value¤¤¦h¾lªº1, Ex: c¦³3­Ó¦ý°j¤å¥u»Ý­n2­Ó
-            res += value//2<<1
-            # ¥Î³o¬q´N¤£¥Îreturn«á¨º¨Ç, ¦]¬°¦b§ä¬O§_¦³1­Ó¤¸¯À·í°j¤å¤¤¥¡¤]¥u·|§ä¤@¦¸
-            # ¦Ó¨º¤@¦¸´N¬O¦b¤¸¯À¥X²{©_¼Æ­Ó·í¤U¯à§ä, ¥B¥u¦bres¬°°¸¼Æ­Ó®É»Ý­n§ä
-            # ¬Ù¤U¤@¦¸for°j°éªº®É¶¡
-            if res&1==0 and value&1==1:
-                res += 1
-        return res
-            # ¦P®É±N¸Óvalue´î±¼
-            # hash[key] -= value//2<<1
-        # ¥Îhash.values()¥u¨«³Xvalue, ¤]¥i¥H¥Îhash.keys()¥u¨«³Xkey
-        # ¸Ì­±©Ò¦³keyªºvalue¤£¬O0´N¬O1
-        # for value in hash.values():
-            # ¥u­n¦³¤¸¯À³Ñ¤U¤@­Ó, ´N¥i¥H®³¨Ó·í°j¤å¥¿¤¤¥¡ªº¤¸¯À
-            # if value==1:
-            #     return res+1
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
