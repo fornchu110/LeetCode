@@ -6,7 +6,7 @@
 
 # @lc code=start
 
-# By backtracking recursive, time: O(MN*3^L), space: O(MN), ??M?BN??board??row?Bcol, L??len(word)
+# By backtracking recursive, time: O(MN*3^L), space: O(MN)
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
@@ -36,7 +36,5 @@ class Solution:
                     return True    
         return False
     
-# @lc code=end
-
 # @lc code=end
 

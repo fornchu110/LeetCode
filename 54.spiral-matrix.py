@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=54 lang=python3
 #
@@ -6,18 +5,18 @@
 #
 
 # @lc code=start
-# µ¹¤@m*nªº¤Gºû°}¦C, ­n¨D·ÓµÛ¥ª¤W->¥k¤W->¥k¤U->¥ª¤U->¥ª¤W³o¼ËÁ³±Ûªº¶¶§Ç¨«³X, return¨«³X®Éªº¤¸¯À­È
+# çµ¦ä¸€m*nçš„äºŒç¶­é™£åˆ—, è¦æ±‚ç…§è‘—å·¦ä¸Š->å³ä¸Š->å³ä¸‹->å·¦ä¸‹->å·¦ä¸Šé€™æ¨£èºæ—‹çš„é †åºèµ°è¨ª, returnèµ°è¨ªæ™‚çš„å…ƒç´ å€¼
 
-# By simulation recursive, time: O(m*n), space: O(1), res¤£ºâªÅ¶¡
-# ¤@¼Ë¬O±N¾ã­Ómatrix¨«³X¤@¦¸
-# ·Q¿ìªk¨«³X³Ì¥~°é, ¤U¤@¦¸´N§â³Ì¥~°é®³±¼¦A·Q¿ìªk¨«³X³Ì¥~°é...
-# ³Â·ĞÂI¦A©ó³Ì«á¤@½ü®É, ¤w¸g¤£¬O¤@­Ó¥i¥HÂ¶°éªº¯x°}, ¤£¤@¦æ´N¬O¤@¦C
-# ¹ê»Ú¤W·|¤ñ¤@¯ë¼ÒÀÀ§Ö, ³oÃD¤]¥i¥H¼g¦¨¤l¨ç¦¡°µrecursive, ¦ı³oºØ·Qªk³oÃä¥Îfor loop¤]°µ±o¨ì
+# By simulation recursive, time: O(m*n), space: O(1), resä¸ç®—ç©ºé–“
+# ä¸€æ¨£æ˜¯å°‡æ•´å€‹matrixèµ°è¨ªä¸€æ¬¡
+# æƒ³è¾¦æ³•èµ°è¨ªæœ€å¤–åœˆ, ä¸‹ä¸€æ¬¡å°±æŠŠæœ€å¤–åœˆæ‹¿æ‰å†æƒ³è¾¦æ³•èµ°è¨ªæœ€å¤–åœˆ...
+# éº»ç…©é»å†æ–¼æœ€å¾Œä¸€è¼ªæ™‚, å·²ç¶“ä¸æ˜¯ä¸€å€‹å¯ä»¥ç¹åœˆçš„çŸ©é™£, ä¸ä¸€è¡Œå°±æ˜¯ä¸€åˆ—
+# å¯¦éš›ä¸Šæœƒæ¯”ä¸€èˆ¬æ¨¡æ“¬å¿«, é€™é¡Œä¹Ÿå¯ä»¥å¯«æˆå­å‡½å¼åšrecursive, ä½†é€™ç¨®æƒ³æ³•é€™é‚Šç”¨for loopä¹Ÿåšå¾—åˆ°
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         m, n = len(matrix), len(matrix[0])
         res = []
-        # ¦A³Ñ¤U³Ì«á¤@¼h«e, ·|´`Àômin(m, n)//2¦¸­«½Æ¨«³X¥~°é
+        # å†å‰©ä¸‹æœ€å¾Œä¸€å±¤å‰, æœƒå¾ªç’°min(m, n)//2æ¬¡é‡è¤‡èµ°è¨ªå¤–åœˆ
         for turn in range(min(m, n)//2):
             for i in range(turn, n-turn):
                 res.append(matrix[turn][i])
@@ -29,22 +28,22 @@ class Solution:
                 res.append(matrix[i][turn])
 
         if min(m, n)%2 == 1:
-            # ¥ı·|´`Àômin(m, n)//2¦¸
+            # å…ˆæœƒå¾ªç’°min(m, n)//2æ¬¡
             turn = min(m, n)//2
-            # ¦A¨Ó®Ú¾Úm©Mn­ş­Ó¤j¨M©w³Ì«á¤@¦¸¬O¨«¤@­ÓrowÁÙ¬O¤@­Ócol
-            # ­Ym<n¥Nªícol¤ñ¸û¦h, ·|³Ñ¤U¤@­Órow, ¦Óm=n´N¬O³Ñ¤U¤@­Ó¤¸¯À
+            # å†ä¾†æ ¹æ“šmå’Œnå“ªå€‹å¤§æ±ºå®šæœ€å¾Œä¸€æ¬¡æ˜¯èµ°ä¸€å€‹rowé‚„æ˜¯ä¸€å€‹col
+            # è‹¥m<nä»£è¡¨colæ¯”è¼ƒå¤š, æœƒå‰©ä¸‹ä¸€å€‹row, è€Œm=nå°±æ˜¯å‰©ä¸‹ä¸€å€‹å…ƒç´ 
             if m<=n:
-                # ¨«³Xrow®Érow­È©T©wcolÅÜ¤Æ
+                # èµ°è¨ªrowæ™‚rowå€¼å›ºå®šcolè®ŠåŒ–
                 for i in range(turn, n-turn):
                     res.append(matrix[turn][i])
-            # m>n¦P²z, ³Ñ¤U¤@­Ócol
+            # m>nåŒç†, å‰©ä¸‹ä¸€å€‹col
             else:
-                # ¨«³Xcol, col­È©T©wrowÅÜ¤Æ
+                # èµ°è¨ªcol, colå€¼å›ºå®šrowè®ŠåŒ–
                 for i in range(turn, m-turn):
                     res.append(matrix[i][n-turn-1])
         return res
     
-# ©x¤è¥t¥~¹ï³o­Ó¤èªkªº¼gªk
+# å®˜æ–¹å¦å¤–å°é€™å€‹æ–¹æ³•çš„å¯«æ³•
 # class Solution:
 #     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
 #         if not matrix or not matrix[0]:
@@ -67,19 +66,19 @@ class Solution:
 #         return order
 
 # By simulation, time: O(m*n), space: O(m*n)
-# Àu¤ÆªÅ¶¡½ÆÂø«×ªº¤è¦¡¬O¥Î§ó§ï¨«³X¹Lªº¤¸¯À®É, ³oÃD¤¸¯À¦b-100~100¶¡, ©Ò¥H¥u­n¨«³X«á¥[¤W201, ¦A§PÂ_¬O§_>200§Y¥iª¾¹D¬O§_¨«³X¹L
-# ³o¼Ë°µªº¸Üspace´N¬OO(1)
-# ¨«³X¶¶§Ç¬O¥k->¤U->¥ª->¤W->¥k, ¹J¨ì©³®É·|§ó§ï¨«³X¶¶§Ç
+# å„ªåŒ–ç©ºé–“è¤‡é›œåº¦çš„æ–¹å¼æ˜¯ç”¨æ›´æ”¹èµ°è¨ªéçš„å…ƒç´ æ™‚, é€™é¡Œå…ƒç´ åœ¨-100~100é–“, æ‰€ä»¥åªè¦èµ°è¨ªå¾ŒåŠ ä¸Š201, å†åˆ¤æ–·æ˜¯å¦>200å³å¯çŸ¥é“æ˜¯å¦èµ°è¨ªé
+# é€™æ¨£åšçš„è©±spaceå°±æ˜¯O(1)
+# èµ°è¨ªé †åºæ˜¯å³->ä¸‹->å·¦->ä¸Š->å³, é‡åˆ°åº•æ™‚æœƒæ›´æ”¹èµ°è¨ªé †åº
 # class Solution:
 #     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
 #         if not matrix or not matrix[0]:
 #             return list() 
 #         rows, columns = len(matrix), len(matrix[0])
-#         # ¥Îvisited¨ÓÀx¦s¨º¨Ç¤¸¯À³Q¨«³X¹L
+#         # ç”¨visitedä¾†å„²å­˜é‚£äº›å…ƒç´ è¢«èµ°è¨ªé
 #         visited = [[False]*columns for i in range(rows)]
 #         total = rows*columns
 #         order = [0]*total
-#         # ¥Nªí¥k ¤U ¥ª ¤W¥|ºØ¨«³X¼Ò¦¡
+#         # ä»£è¡¨å³ ä¸‹ å·¦ ä¸Šå››ç¨®èµ°è¨ªæ¨¡å¼
 #         directions = [[0, 1], [1, 0], [0, -1], [-1, 0]]
 #         row, column = 0, 0
 #         directionIndex = 0
@@ -93,99 +92,3 @@ class Solution:
 #             column += directions[directionIndex][1]
 #         return order
 
-=======
-#
-# @lc app=leetcode id=54 lang=python3
-#
-# [54] Spiral Matrix
-#
-
-# @lc code=start
-# µ¹¤@m*nªº¤Gºû°}¦C, ­n¨D·ÓµÛ¥ª¤W->¥k¤W->¥k¤U->¥ª¤U->¥ª¤W³o¼ËÁ³±Ûªº¶¶§Ç¨«³X, return¨«³X®Éªº¤¸¯À­È
-
-# By simulation recursive, time: O(m*n), space: O(1), res¤£ºâªÅ¶¡
-# ¤@¼Ë¬O±N¾ã­Ómatrix¨«³X¤@¦¸
-# ·Q¿ìªk¨«³X³Ì¥~°é, ¤U¤@¦¸´N§â³Ì¥~°é®³±¼¦A·Q¿ìªk¨«³X³Ì¥~°é...
-# ³Â·ĞÂI¦A©ó³Ì«á¤@½ü®É, ¤w¸g¤£¬O¤@­Ó¥i¥HÂ¶°éªº¯x°}, ¤£¤@¦æ´N¬O¤@¦C
-# ¹ê»Ú¤W·|¤ñ¤@¯ë¼ÒÀÀ§Ö, ³oÃD¤]¥i¥H¼g¦¨¤l¨ç¦¡°µrecursive, ¦ı³oºØ·Qªk³oÃä¥Îfor loop¤]°µ±o¨ì
-class Solution:
-    def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
-        m, n = len(matrix), len(matrix[0])
-        res = []
-        # ¦A³Ñ¤U³Ì«á¤@¼h«e, ·|´`Àômin(m, n)//2¦¸­«½Æ¨«³X¥~°é
-        for turn in range(min(m, n)//2):
-            for i in range(turn, n-turn):
-                res.append(matrix[turn][i])
-            for i in range(turn+1, m-turn):
-                res.append(matrix[i][n-turn-1])
-            for i in range(n-turn-2, turn-1, -1):
-                res.append(matrix[m-turn-1][i])
-            for i in range(m-turn-2, turn, -1):
-                res.append(matrix[i][turn])
-
-        if min(m, n)%2 == 1:
-            # ¥ı·|´`Àômin(m, n)//2¦¸
-            turn = min(m, n)//2
-            # ¦A¨Ó®Ú¾Úm©Mn­ş­Ó¤j¨M©w³Ì«á¤@¦¸¬O¨«¤@­ÓrowÁÙ¬O¤@­Ócol
-            # ­Ym<n¥Nªícol¤ñ¸û¦h, ·|³Ñ¤U¤@­Órow, ¦Óm=n´N¬O³Ñ¤U¤@­Ó¤¸¯À
-            if m<=n:
-                # ¨«³Xrow®Érow­È©T©wcolÅÜ¤Æ
-                for i in range(turn, n-turn):
-                    res.append(matrix[turn][i])
-            # m>n¦P²z, ³Ñ¤U¤@­Ócol
-            else:
-                # ¨«³Xcol, col­È©T©wrowÅÜ¤Æ
-                for i in range(turn, m-turn):
-                    res.append(matrix[i][n-turn-1])
-        return res
-    
-# ©x¤è¥t¥~¹ï³o­Ó¤èªkªº¼gªk
-# class Solution:
-#     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
-#         if not matrix or not matrix[0]:
-#             return list()
-        
-#         rows, columns = len(matrix), len(matrix[0])
-#         order = list()
-#         left, right, top, bottom = 0, columns - 1, 0, rows - 1
-#         while left <= right and top <= bottom:
-#             for column in range(left, right + 1):
-#                 order.append(matrix[top][column])
-#             for row in range(top + 1, bottom + 1):
-#                 order.append(matrix[row][right])
-#             if left < right and top < bottom:
-#                 for column in range(right - 1, left, -1):
-#                     order.append(matrix[bottom][column])
-#                 for row in range(bottom, top, -1):
-#                     order.append(matrix[row][left])
-#             left, right, top, bottom = left + 1, right - 1, top + 1, bottom - 1
-#         return order
-
-# By simulation, time: O(m*n), space: O(m*n)
-# Àu¤ÆªÅ¶¡½ÆÂø«×ªº¤è¦¡¬O¥Î§ó§ï¨«³X¹Lªº¤¸¯À®É, ³oÃD¤¸¯À¦b-100~100¶¡, ©Ò¥H¥u­n¨«³X«á¥[¤W201, ¦A§PÂ_¬O§_>200§Y¥iª¾¹D¬O§_¨«³X¹L
-# ³o¼Ë°µªº¸Üspace´N¬OO(1)
-# ¨«³X¶¶§Ç¬O¥k->¤U->¥ª->¤W->¥k, ¹J¨ì©³®É·|§ó§ï¨«³X¶¶§Ç
-# class Solution:
-#     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
-#         if not matrix or not matrix[0]:
-#             return list() 
-#         rows, columns = len(matrix), len(matrix[0])
-#         # ¥Îvisited¨ÓÀx¦s¨º¨Ç¤¸¯À³Q¨«³X¹L
-#         visited = [[False]*columns for i in range(rows)]
-#         total = rows*columns
-#         order = [0]*total
-#         # ¥Nªí¥k ¤U ¥ª ¤W¥|ºØ¨«³X¼Ò¦¡
-#         directions = [[0, 1], [1, 0], [0, -1], [-1, 0]]
-#         row, column = 0, 0
-#         directionIndex = 0
-#         for i in range(total):
-#             order[i] = matrix[row][column]
-#             visited[row][column] = True
-#             nextRow, nextColumn = row+directions[directionIndex][0], column+directions[directionIndex][1]
-#             if not (0 <= nextRow<rows and 0<=nextColumn<columns and not visited[nextRow][nextColumn]):
-#                 directionIndex = (directionIndex + 1)%4
-#             row += directions[directionIndex][0]
-#             column += directions[directionIndex][1]
-#         return order
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

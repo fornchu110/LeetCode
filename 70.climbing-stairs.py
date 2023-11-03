@@ -1,16 +1,12 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=70 lang=python3
 #
 # [70] Climbing Stairs
 #
-
-# @lc code=start
-
 #By DP
-#°ò¥»·Qªkn¶¥¥u¦³¨âºØ¥i¯à:®t¤@¶¥®É¸ó1¨B©M®t¨â¶¥®É¸ó2¨B
-#©Ò¥Hµ¥¦Pf(n) = f(n-1)+f(n-2)
-#°²³]n = 5, µª®×µ¥¦P¨ì3¶¥ªº¤èªk¼Æ+¨ì4¶¥ªº¤èªk¼Æ
+#åŸºæœ¬æƒ³æ³•néšåªæœ‰å…©ç¨®å¯èƒ½:å·®ä¸€éšæ™‚è·¨1æ­¥å’Œå·®å…©éšæ™‚è·¨2æ­¥
+#æ‰€ä»¥ç­‰åŒf(n) = f(n-1)+f(n-2)
+#å‡è¨­n = 5, ç­”æ¡ˆç­‰åŒåˆ°3éšçš„æ–¹æ³•æ•¸+åˆ°4éšçš„æ–¹æ³•æ•¸
 class Solution:
     def climbStairs(self, n: int) -> int:
         p = 0
@@ -24,30 +20,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=70 lang=python3
-#
-# [70] Climbing Stairs
-#
-
-# @lc code=start
-
-#By DP
-#°ò¥»·Qªkn¶¥¥u¦³¨âºØ¥i¯à:®t¤@¶¥®É¸ó1¨B©M®t¨â¶¥®É¸ó2¨B
-#©Ò¥Hµ¥¦Pf(n) = f(n-1)+f(n-2)
-#°²³]n = 5, µª®×µ¥¦P¨ì3¶¥ªº¤èªk¼Æ+¨ì4¶¥ªº¤èªk¼Æ
-class Solution:
-    def climbStairs(self, n: int) -> int:
-        p = 0
-        q = 0
-        r = 1
-        for i in range(n):
-            p = q
-            q = r
-            r = p+q
-        return r
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

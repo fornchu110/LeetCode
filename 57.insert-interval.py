@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=57 lang=python3
 #
@@ -6,104 +5,49 @@
 #
 
 # @lc code=start
-# µ¹¤@°ï³¬°Ï¶¡ªºintervals©M¤@­Ó·s°Ï¶¡newInterval
-# ¥u­nintervals¤º©MnewInterval­«Å|ªº°Ï¶¡´N±N¥L­Ì¦X¨Ö, ¦X¨Ö«áªº¤U¬É´N¬O³o¨Ç°Ï¶¡³Ì¤p¤U©¡, ¤W©¡´N¬O³o¨Ç°Ï¶¡³Ì¤j¤W©¡
-# return¤£­«Å|ªº°Ï¶¡©M¦X¨Ö°Ï¶¡, ³o¨Ç°Ï¶¡­n¥Ñ¤p¨ì¤j±Æ§Ç
+# çµ¦ä¸€å †é–‰å€é–“çš„intervalså’Œä¸€å€‹æ–°å€é–“newInterval
+# åªè¦intervalså…§å’ŒnewIntervalé‡ç–Šçš„å€é–“å°±å°‡ä»–å€‘åˆä½µ, åˆä½µå¾Œçš„ä¸‹ç•Œå°±æ˜¯é€™äº›å€é–“æœ€å°ä¸‹å±†, ä¸Šå±†å°±æ˜¯é€™äº›å€é–“æœ€å¤§ä¸Šå±†
+# returnä¸é‡ç–Šçš„å€é–“å’Œåˆä½µå€é–“, é€™äº›å€é–“è¦ç”±å°åˆ°å¤§æ’åº
 
 # By simulation, time: O(n), space: O(1)
-# ­«ÂI¦b©ó¦p¦ó§PÂ_¦U­Ó°Ï¶¡¬O§_¦³©MnewInterval­«Å|
+# é‡é»åœ¨æ–¼å¦‚ä½•åˆ¤æ–·å„å€‹å€é–“æ˜¯å¦æœ‰å’ŒnewIntervalé‡ç–Š
 class Solution:
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
         res = []
-        # mer¥Nªí¦X¨Ö°Ï¶¡
+        # merä»£è¡¨åˆä½µå€é–“
         mer = newInterval
-        # ¥Îflag¨Ó§PÂ_¤°»ò®É­Ô­n±Ntmp¥[¤Jres
+        # ç”¨flagä¾†åˆ¤æ–·ä»€éº¼æ™‚å€™è¦å°‡tmpåŠ å…¥res
         flag = 1
         for i in intervals:
-            # i[0]¥Nªí°Ï¶¡¤U¬É, i[1]¥Nªí°Ï¶¡¤W¬É, ¤U¬É¥²©w<=¤W¬É
-            # ·í¨«³X¨ìªºi¤§¤U¬É¤ñnewIntervalªº¤W¬ÉÁÙ°ª, ¥Nªí¤£¥i¯à»PnewInterval­«Å|
-            # ¥B³o­Ói¤§«áªº¤U¬ÉªÖ©w¤]§ó°ª¤£¥i¯à­«Å|, ¦]¦¹¥i¥H±Nmer¥[¤Jres
-            # Á×§KnerInterval¤W¬É¥»¨Ó´N¤ñ¦h­Óiªº¤U¬ÉÁÙ§C³y¦¨­«½Æ¥[¤J, ©Ò¥H»İ­nflag
+            # i[0]ä»£è¡¨å€é–“ä¸‹ç•Œ, i[1]ä»£è¡¨å€é–“ä¸Šç•Œ, ä¸‹ç•Œå¿…å®š<=ä¸Šç•Œ
+            # ç•¶èµ°è¨ªåˆ°çš„iä¹‹ä¸‹ç•Œæ¯”newIntervalçš„ä¸Šç•Œé‚„é«˜, ä»£è¡¨ä¸å¯èƒ½èˆ‡newIntervalé‡ç–Š
+            # ä¸”é€™å€‹iä¹‹å¾Œçš„ä¸‹ç•Œè‚¯å®šä¹Ÿæ›´é«˜ä¸å¯èƒ½é‡ç–Š, å› æ­¤å¯ä»¥å°‡meråŠ å…¥res
+            # é¿å…nerIntervalä¸Šç•Œæœ¬ä¾†å°±æ¯”å¤šå€‹içš„ä¸‹ç•Œé‚„ä½é€ æˆé‡è¤‡åŠ å…¥, æ‰€ä»¥éœ€è¦flag
             if flag and i[0]>newInterval[1]:
                 res.append(mer)
-                # ±Nmer¥[¤Jres¤F, ¤£·|¦A»İ­n¥[¤J¨ä¥L¦¸
+                # å°‡meråŠ å…¥resäº†, ä¸æœƒå†éœ€è¦åŠ å…¥å…¶ä»–æ¬¡
                 flag = 0
-            # ­«ÂI¦b¦¹, ¥u¦³¨âºØ±¡ªp°Ï¶¡¤£©MnewInterval­«Å|
-            # 1. °Ï¶¡ªº¤W¬É¤ñnewIterval¤U¬ÉÁÙ¤p
-            # 2.°Ï¶¡ªº¤U¬É¤ñnewInterval¤W¬ÉÁÙ¤j
+            # é‡é»åœ¨æ­¤, åªæœ‰å…©ç¨®æƒ…æ³å€é–“ä¸å’ŒnewIntervalé‡ç–Š
+            # 1. å€é–“çš„ä¸Šç•Œæ¯”newItervalä¸‹ç•Œé‚„å°
+            # 2.å€é–“çš„ä¸‹ç•Œæ¯”newIntervalä¸Šç•Œé‚„å¤§
             if i[1]<min(newInterval) or i[0]>max(newInterval):
                 res.append(i)
-            # ¨ä¥L±¡ªp³£¥Nªí°Ï¶¡©MnewInterval¦³­«Å|
-            # ¨º´N¨Ó¬İ¬O§_­n§ó·smerªº¤W¤U¬É
-            # ­«Å|ªº¸Ü·s¤U¬É´N¬O­«Å|°Ï¶¡¤¤¤U¬É³Ì¤pªº¤U¬É, ·s¤W¬É´N¬O­«Å|°Ï¶¡¤¤¤W¬É³Ì¤jªº¤W¬É
-            # ³oÃä¤£¥Î¬İ, ¦ı¦pªG¬O­n¬İ­«Å|ªº¥æ¶°, ¨º¥æ¶°¤U¬É´N¬O­«Å|°Ï¶¡¤¤³Ì¤jªº¤U¬É, ¤W¬É´N¬O­«Å|°Ï¶¡¤¤³Ì¤pªº¤W¬É
+            # å…¶ä»–æƒ…æ³éƒ½ä»£è¡¨å€é–“å’ŒnewIntervalæœ‰é‡ç–Š
+            # é‚£å°±ä¾†çœ‹æ˜¯å¦è¦æ›´æ–°merçš„ä¸Šä¸‹ç•Œ
+            # é‡ç–Šçš„è©±æ–°ä¸‹ç•Œå°±æ˜¯é‡ç–Šå€é–“ä¸­ä¸‹ç•Œæœ€å°çš„ä¸‹ç•Œ, æ–°ä¸Šç•Œå°±æ˜¯é‡ç–Šå€é–“ä¸­ä¸Šç•Œæœ€å¤§çš„ä¸Šç•Œ
+            # é€™é‚Šä¸ç”¨çœ‹, ä½†å¦‚æœæ˜¯è¦çœ‹é‡ç–Šçš„äº¤é›†, é‚£äº¤é›†ä¸‹ç•Œå°±æ˜¯é‡ç–Šå€é–“ä¸­æœ€å¤§çš„ä¸‹ç•Œ, ä¸Šç•Œå°±æ˜¯é‡ç–Šå€é–“ä¸­æœ€å°çš„ä¸Šç•Œ
             else:
                 if i[0]<mer[0]:
                     mer[0] = i[0]
                 if i[1]>mer[1]:
                     mer[1] = i[1]
-        # flag¬°1¥Nªí¨«³X§¹interval¤´¨S±Nmer¥[¤Jres, ©Ò¥H¸É¤W
+        # flagç‚º1ä»£è¡¨èµ°è¨ªå®Œintervalä»æ²’å°‡meråŠ å…¥res, æ‰€ä»¥è£œä¸Š
         if flag:
             res.append(mer)
-        # res­n·Ó°Ï¶¡¤j¤p±Æ§Ç, ¦ı¤U­±³o¼Ë°µ­nªáÃB¥~®É¶¡±Æ§Ç¤£¦n
+        # resè¦ç…§å€é–“å¤§å°æ’åº, ä½†ä¸‹é¢é€™æ¨£åšè¦èŠ±é¡å¤–æ™‚é–“æ’åºä¸å¥½
         # res.append(tmp)
         # res.sort()
         return res
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=57 lang=python3
-#
-# [57] Insert Interval
-#
-
-# @lc code=start
-# µ¹¤@°ï³¬°Ï¶¡ªºintervals©M¤@­Ó·s°Ï¶¡newInterval
-# ¥u­nintervals¤º©MnewInterval­«Å|ªº°Ï¶¡´N±N¥L­Ì¦X¨Ö, ¦X¨Ö«áªº¤U¬É´N¬O³o¨Ç°Ï¶¡³Ì¤p¤U©¡, ¤W©¡´N¬O³o¨Ç°Ï¶¡³Ì¤j¤W©¡
-# return¤£­«Å|ªº°Ï¶¡©M¦X¨Ö°Ï¶¡, ³o¨Ç°Ï¶¡­n¥Ñ¤p¨ì¤j±Æ§Ç
-
-# By simulation, time: O(n), space: O(1)
-# ­«ÂI¦b©ó¦p¦ó§PÂ_¦U­Ó°Ï¶¡¬O§_¦³©MnewInterval­«Å|
-class Solution:
-    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
-        res = []
-        # mer¥Nªí¦X¨Ö°Ï¶¡
-        mer = newInterval
-        # ¥Îflag¨Ó§PÂ_¤°»ò®É­Ô­n±Ntmp¥[¤Jres
-        flag = 1
-        for i in intervals:
-            # i[0]¥Nªí°Ï¶¡¤U¬É, i[1]¥Nªí°Ï¶¡¤W¬É, ¤U¬É¥²©w<=¤W¬É
-            # ·í¨«³X¨ìªºi¤§¤U¬É¤ñnewIntervalªº¤W¬ÉÁÙ°ª, ¥Nªí¤£¥i¯à»PnewInterval­«Å|
-            # ¥B³o­Ói¤§«áªº¤U¬ÉªÖ©w¤]§ó°ª¤£¥i¯à­«Å|, ¦]¦¹¥i¥H±Nmer¥[¤Jres
-            # Á×§KnerInterval¤W¬É¥»¨Ó´N¤ñ¦h­Óiªº¤U¬ÉÁÙ§C³y¦¨­«½Æ¥[¤J, ©Ò¥H»İ­nflag
-            if flag and i[0]>newInterval[1]:
-                res.append(mer)
-                # ±Nmer¥[¤Jres¤F, ¤£·|¦A»İ­n¥[¤J¨ä¥L¦¸
-                flag = 0
-            # ­«ÂI¦b¦¹, ¥u¦³¨âºØ±¡ªp°Ï¶¡¤£©MnewInterval­«Å|
-            # 1. °Ï¶¡ªº¤W¬É¤ñnewIterval¤U¬ÉÁÙ¤p
-            # 2.°Ï¶¡ªº¤U¬É¤ñnewInterval¤W¬ÉÁÙ¤j
-            if i[1]<min(newInterval) or i[0]>max(newInterval):
-                res.append(i)
-            # ¨ä¥L±¡ªp³£¥Nªí°Ï¶¡©MnewInterval¦³­«Å|
-            # ¨º´N¨Ó¬İ¬O§_­n§ó·smerªº¤W¤U¬É
-            # ­«Å|ªº¸Ü·s¤U¬É´N¬O­«Å|°Ï¶¡¤¤¤U¬É³Ì¤pªº¤U¬É, ·s¤W¬É´N¬O­«Å|°Ï¶¡¤¤¤W¬É³Ì¤jªº¤W¬É
-            # ³oÃä¤£¥Î¬İ, ¦ı¦pªG¬O­n¬İ­«Å|ªº¥æ¶°, ¨º¥æ¶°¤U¬É´N¬O­«Å|°Ï¶¡¤¤³Ì¤jªº¤U¬É, ¤W¬É´N¬O­«Å|°Ï¶¡¤¤³Ì¤pªº¤W¬É
-            else:
-                if i[0]<mer[0]:
-                    mer[0] = i[0]
-                if i[1]>mer[1]:
-                    mer[1] = i[1]
-        # flag¬°1¥Nªí¨«³X§¹interval¤´¨S±Nmer¥[¤Jres, ©Ò¥H¸É¤W
-        if flag:
-            res.append(mer)
-        # res­n·Ó°Ï¶¡¤j¤p±Æ§Ç, ¦ı¤U­±³o¼Ë°µ­nªáÃB¥~®É¶¡±Æ§Ç¤£¦n
-        # res.append(tmp)
-        # res.sort()
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

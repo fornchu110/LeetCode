@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=56 lang=python3
 #
@@ -6,126 +5,61 @@
 #
 
 # @lc code=start
-# µ¹°}¦Cintervals¤º©ñ¦h­Ó¥¼±Æ§Ç¹Lªº°Ï¶¡, ¦pªG¸Ì­±¦³­«Å|ªº°Ï¶¡´N±N¨ä¦X¨Ö, return³B²z§¹ªºµ²ªG
+# çµ¦é™£åˆ—intervalså…§æ”¾å¤šå€‹æœªæ’åºéçš„å€é–“, å¦‚æœè£¡é¢æœ‰é‡ç–Šçš„å€é–“å°±å°‡å…¶åˆä½µ, returnè™•ç†å®Œçš„çµæœ
 
 # By one by one compare, time: O(nlogn), space: O(logn)
-# space = O(logn)­ì¦]¬O±Æ§Ç©Òªá¶OªºªÅ¶¡½ÆÂø«×
-# ·Q¨«³X¤@¦¸´Nµ²§ô¥²©w­n¥ı±Æ§Ç¹L, ªá¶OO(nlogn)
+# space = O(logn)åŸå› æ˜¯æ’åºæ‰€èŠ±è²»çš„ç©ºé–“è¤‡é›œåº¦
+# æƒ³èµ°è¨ªä¸€æ¬¡å°±çµæŸå¿…å®šè¦å…ˆæ’åºé, èŠ±è²»O(nlogn)
 
-# §ó¦nªº°µªkÀ³¸Ó¬O¹ïresªº¤¸¯À°µ­×§ï©M¤ñ¸û, ¤Ö§PÂ_²Ä¤G­ÓÃä¬É±ø¥ó
-# ¦]·|¥ı¥H¤U¬Ésort¹L©Ò¥H¹ê»Ú¤W¥u­n¬İ¥H¤Î§ó§ï¤W¬É
+# æ›´å¥½çš„åšæ³•æ‡‰è©²æ˜¯å°resçš„å…ƒç´ åšä¿®æ”¹å’Œæ¯”è¼ƒ, å°‘åˆ¤æ–·ç¬¬äºŒå€‹é‚Šç•Œæ¢ä»¶
+# å› æœƒå…ˆä»¥ä¸‹ç•Œsortéæ‰€ä»¥å¯¦éš›ä¸Šåªè¦çœ‹ä»¥åŠæ›´æ”¹ä¸Šç•Œ
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        # key = lamada³o­Ó°Ñ¼Æ¬Osort()¤¤¬Ù¤U±Æ§Ç¹ê»Ú®É¶¡­«­nªº§Ş¥©
-        # ¥H³oÃä¬°¨Ò, §Ú¥u·QÅı°Ï¶¡®Ú¾Ú¤U¬É°µ±Æ§Ç
-        # ¦]¦¹key = lambda x¥Nªí¸Ì­±³o¨Ç°Ï¶¡³£¬Ox
-        # ¦Óx[0]´N¬O¤U¬É, ³o¼Ë´N¦¨¥\«ü©w¥H¤U¬É±Æ§Ç, ¦Ó¤£¹ï®³¥X³B²z¤W¬Éªº¤¸¯À
-        # ¦pªG¬O¹ïlist¤ºªº¦h­Ódict°µ±Æ§Ç, key´N¥i¥H«ü©w¥u§PÂ_¨º¶µkey¤§value°µ±Æ§Ç, ¦Ó¤£¥Î¬İ¨ä¥Lªº
-        # ¦Ó¥BÁÙ¥i¥H¿ï¾Ü¥H¦h­Ókey°µ§PÂ_¥u¬O¤£¦PÀu¥ı«×, ³oÃä¦pªG¥[¤J¤W¬É§@¬°±ø¥ó
-        # ´N­n¼g¦¨: key = lambda x: x[0], x[1]
-        # ¦P®É¥i¥H°µ¨ì°ÊºA­pºâ±ø¥ó, ¹³§Ú¦pªG·Q¥H¤W¬É-¤U¬Éªº­È¨Ó±Æ§Ç°Ï¶¡
-        # ¨º´N¼g¦¨: key = lamda x: x[1]-x[0]
+        # key = lamadaé€™å€‹åƒæ•¸æ˜¯sort()ä¸­çœä¸‹æ’åºå¯¦éš›æ™‚é–“é‡è¦çš„æŠ€å·§
+        # ä»¥é€™é‚Šç‚ºä¾‹, æˆ‘åªæƒ³è®“å€é–“æ ¹æ“šä¸‹ç•Œåšæ’åº
+        # å› æ­¤key = lambda xä»£è¡¨è£¡é¢é€™äº›å€é–“éƒ½æ˜¯x
+        # è€Œx[0]å°±æ˜¯ä¸‹ç•Œ, é€™æ¨£å°±æˆåŠŸæŒ‡å®šä»¥ä¸‹ç•Œæ’åº, è€Œä¸å°æ‹¿å‡ºè™•ç†ä¸Šç•Œçš„å…ƒç´ 
+        # å¦‚æœæ˜¯å°listå…§çš„å¤šå€‹dictåšæ’åº, keyå°±å¯ä»¥æŒ‡å®šåªåˆ¤æ–·é‚£é …keyä¹‹valueåšæ’åº, è€Œä¸ç”¨çœ‹å…¶ä»–çš„
+        # è€Œä¸”é‚„å¯ä»¥é¸æ“‡ä»¥å¤šå€‹keyåšåˆ¤æ–·åªæ˜¯ä¸åŒå„ªå…ˆåº¦, é€™é‚Šå¦‚æœåŠ å…¥ä¸Šç•Œä½œç‚ºæ¢ä»¶
+        # å°±è¦å¯«æˆ: key = lambda x: x[0], x[1]
+        # åŒæ™‚å¯ä»¥åšåˆ°å‹•æ…‹è¨ˆç®—æ¢ä»¶, åƒæˆ‘å¦‚æœæƒ³ä»¥ä¸Šç•Œ-ä¸‹ç•Œçš„å€¼ä¾†æ’åºå€é–“
+        # é‚£å°±å¯«æˆ: key = lamda x: x[1]-x[0]
         intervals.sort(key=lambda x: x[0])
         res = []
         for interval in intervals:
-            # res¬OªÅ©Î¥Ø«e°Ï¶¡ªº¤U¬É¤ñres³Ì«á¤@­Ó°Ï¶¡ªº¤W¬É¤j, ª½±µ±N°Ï¶¡¥[¤Jres
-            # res[-1]¬O¦s¨ú³Ì«á¤@­Ó¤¸¯Àªº§Ş¥©
+            # resæ˜¯ç©ºæˆ–ç›®å‰å€é–“çš„ä¸‹ç•Œæ¯”resæœ€å¾Œä¸€å€‹å€é–“çš„ä¸Šç•Œå¤§, ç›´æ¥å°‡å€é–“åŠ å…¥res
+            # res[-1]æ˜¯å­˜å–æœ€å¾Œä¸€å€‹å…ƒç´ çš„æŠ€å·§
             if not res or res[-1][1]<interval[0]:
                 res.append(interval)
             else:
                 res[-1][1] = max(res[-1][1], interval[1])
         return res
 
-# ³oÃä§Ú°µªº
-# ·Qªk±q²Ä¤@­Ó¤¸¯À¬O¨«³Xintervals¤@¤@¤ñ¸û¨Ã­×§ïintervals°µ¬Û¹ïÀ³ªº°Ê§@
+# é€™é‚Šæˆ‘åšçš„
+# æƒ³æ³•å¾ç¬¬ä¸€å€‹å…ƒç´ æ˜¯èµ°è¨ªintervalsä¸€ä¸€æ¯”è¼ƒä¸¦ä¿®æ”¹intervalsåšç›¸å°æ‡‰çš„å‹•ä½œ
 # class Solution:
 #     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
 #         res = []
 #         intervals.sort(key = lambda x: x[0])
-#         # Ãä¬É±ø¥ó, ·í¥u¦³¤@­Ó°Ï¶¡´N¥i¥Hª½±µreturn
+#         # é‚Šç•Œæ¢ä»¶, ç•¶åªæœ‰ä¸€å€‹å€é–“å°±å¯ä»¥ç›´æ¥return
 #         if len(intervals)==1:
 #             return intervals
 #         for i in range(1, len(intervals)):
-#             # ¦pªG¸ò¤W­Ó°Ï¶¡¨S¦³­«Å|, «h§â¤W­Ó°Ï¶¡¥[¤Jres
-#             # ª`·N¨S°Ï¶¡¨S­«Å|ªº§P©w¤èªk:¤U¬É>¥Lªº¤W¬É©Î¤W¬É<¥Lªº¤U¬É, °£¦¹¥~³£¦³­«Å|
+#             # å¦‚æœè·Ÿä¸Šå€‹å€é–“æ²’æœ‰é‡ç–Š, å‰‡æŠŠä¸Šå€‹å€é–“åŠ å…¥res
+#             # æ³¨æ„æ²’å€é–“æ²’é‡ç–Šçš„åˆ¤å®šæ–¹æ³•:ä¸‹ç•Œ>ä»–çš„ä¸Šç•Œæˆ–ä¸Šç•Œ<ä»–çš„ä¸‹ç•Œ, é™¤æ­¤å¤–éƒ½æœ‰é‡ç–Š
 #             if intervals[i][0]>intervals[i-1][1] or intervals[i][1]<intervals[i-1][0]:
 #                 res.append(intervals[i-1])
-#             # ¦pªG¸ò¤W­Ó°Ï¶¡¦³­«Å|, «h§âintervals¤º²{¦bªº°Ï¶¡ªº¤W¤U¬É§ï¦¨­«Å|«áªº°Ï¶¡
+#             # å¦‚æœè·Ÿä¸Šå€‹å€é–“æœ‰é‡ç–Š, å‰‡æŠŠintervalså…§ç¾åœ¨çš„å€é–“çš„ä¸Šä¸‹ç•Œæ”¹æˆé‡ç–Šå¾Œçš„å€é–“
 #             else:
 #                 intervals[i][0] = min(intervals[i][0], intervals[i-1][0])
 #                 intervals[i][1] = max(intervals[i][1], intervals[i-1][1])
-#             # Ãä¬É±ø¥ó, ·í¨«³X¨ì³Ì«á¤@­Ó°Ï¶¡®É
-#             # ¦pªG¬O¨S­«Å|±¡ªp, °£¤F§â¤W­Ó°Ï¶¡¥[¤Jres¥~¤]­n±N¦Û¨­¥[¤Jres
-#             # ¦pªG¬O­«Å|±¡ªp, ¦b§ó§ï§¹¦Û¨­°Ï¶¡¤W¤U¬É«á¤]­n±N¦Û¨­¥[¤Jres
+#             # é‚Šç•Œæ¢ä»¶, ç•¶èµ°è¨ªåˆ°æœ€å¾Œä¸€å€‹å€é–“æ™‚
+#             # å¦‚æœæ˜¯æ²’é‡ç–Šæƒ…æ³, é™¤äº†æŠŠä¸Šå€‹å€é–“åŠ å…¥reså¤–ä¹Ÿè¦å°‡è‡ªèº«åŠ å…¥res
+#             # å¦‚æœæ˜¯é‡ç–Šæƒ…æ³, åœ¨æ›´æ”¹å®Œè‡ªèº«å€é–“ä¸Šä¸‹ç•Œå¾Œä¹Ÿè¦å°‡è‡ªèº«åŠ å…¥res
 #             if i==len(intervals)-1:
 #                 res.append(intervals[i])
 #         return res
 
-# @lc code=end
-
-=======
-#
-# @lc app=leetcode id=56 lang=python3
-#
-# [56] Merge Intervals
-#
-
-# @lc code=start
-# µ¹°}¦Cintervals¤º©ñ¦h­Ó¥¼±Æ§Ç¹Lªº°Ï¶¡, ¦pªG¸Ì­±¦³­«Å|ªº°Ï¶¡´N±N¨ä¦X¨Ö, return³B²z§¹ªºµ²ªG
-
-# By one by one compare, time: O(nlogn), space: O(logn)
-# space = O(logn)­ì¦]¬O±Æ§Ç©Òªá¶OªºªÅ¶¡½ÆÂø«×
-# ·Q¨«³X¤@¦¸´Nµ²§ô¥²©w­n¥ı±Æ§Ç¹L, ªá¶OO(nlogn)
-
-# §ó¦nªº°µªkÀ³¸Ó¬O¹ïresªº¤¸¯À°µ­×§ï©M¤ñ¸û, ¤Ö§PÂ_²Ä¤G­ÓÃä¬É±ø¥ó
-# ¦]·|¥ı¥H¤U¬Ésort¹L©Ò¥H¹ê»Ú¤W¥u­n¬İ¥H¤Î§ó§ï¤W¬É
-class Solution:
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        # key = lamada³o­Ó°Ñ¼Æ¬Osort()¤¤¬Ù¤U±Æ§Ç¹ê»Ú®É¶¡­«­nªº§Ş¥©
-        # ¥H³oÃä¬°¨Ò, §Ú¥u·QÅı°Ï¶¡®Ú¾Ú¤U¬É°µ±Æ§Ç
-        # ¦]¦¹key = lambda x¥Nªí¸Ì­±³o¨Ç°Ï¶¡³£¬Ox
-        # ¦Óx[0]´N¬O¤U¬É, ³o¼Ë´N¦¨¥\«ü©w¥H¤U¬É±Æ§Ç, ¦Ó¤£¹ï®³¥X³B²z¤W¬Éªº¤¸¯À
-        # ¦pªG¬O¹ïlist¤ºªº¦h­Ódict°µ±Æ§Ç, key´N¥i¥H«ü©w¥u§PÂ_¨º¶µkey¤§value°µ±Æ§Ç, ¦Ó¤£¥Î¬İ¨ä¥Lªº
-        # ¦Ó¥BÁÙ¥i¥H¿ï¾Ü¥H¦h­Ókey°µ§PÂ_¥u¬O¤£¦PÀu¥ı«×, ³oÃä¦pªG¥[¤J¤W¬É§@¬°±ø¥ó
-        # ´N­n¼g¦¨: key = lambda x: x[0], x[1]
-        # ¦P®É¥i¥H°µ¨ì°ÊºA­pºâ±ø¥ó, ¹³§Ú¦pªG·Q¥H¤W¬É-¤U¬Éªº­È¨Ó±Æ§Ç°Ï¶¡
-        # ¨º´N¼g¦¨: key = lamda x: x[1]-x[0]
-        intervals.sort(key=lambda x: x[0])
-        res = []
-        for interval in intervals:
-            # res¬OªÅ©Î¥Ø«e°Ï¶¡ªº¤U¬É¤ñres³Ì«á¤@­Ó°Ï¶¡ªº¤W¬É¤j, ª½±µ±N°Ï¶¡¥[¤Jres
-            # res[-1]¬O¦s¨ú³Ì«á¤@­Ó¤¸¯Àªº§Ş¥©
-            if not res or res[-1][1]<interval[0]:
-                res.append(interval)
-            else:
-                res[-1][1] = max(res[-1][1], interval[1])
-        return res
-
-# ³oÃä§Ú°µªº
-# ·Qªk±q²Ä¤@­Ó¤¸¯À¬O¨«³Xintervals¤@¤@¤ñ¸û¨Ã­×§ïintervals°µ¬Û¹ïÀ³ªº°Ê§@
-# class Solution:
-#     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-#         res = []
-#         intervals.sort(key = lambda x: x[0])
-#         # Ãä¬É±ø¥ó, ·í¥u¦³¤@­Ó°Ï¶¡´N¥i¥Hª½±µreturn
-#         if len(intervals)==1:
-#             return intervals
-#         for i in range(1, len(intervals)):
-#             # ¦pªG¸ò¤W­Ó°Ï¶¡¨S¦³­«Å|, «h§â¤W­Ó°Ï¶¡¥[¤Jres
-#             # ª`·N¨S°Ï¶¡¨S­«Å|ªº§P©w¤èªk:¤U¬É>¥Lªº¤W¬É©Î¤W¬É<¥Lªº¤U¬É, °£¦¹¥~³£¦³­«Å|
-#             if intervals[i][0]>intervals[i-1][1] or intervals[i][1]<intervals[i-1][0]:
-#                 res.append(intervals[i-1])
-#             # ¦pªG¸ò¤W­Ó°Ï¶¡¦³­«Å|, «h§âintervals¤º²{¦bªº°Ï¶¡ªº¤W¤U¬É§ï¦¨­«Å|«áªº°Ï¶¡
-#             else:
-#                 intervals[i][0] = min(intervals[i][0], intervals[i-1][0])
-#                 intervals[i][1] = max(intervals[i][1], intervals[i-1][1])
-#             # Ãä¬É±ø¥ó, ·í¨«³X¨ì³Ì«á¤@­Ó°Ï¶¡®É
-#             # ¦pªG¬O¨S­«Å|±¡ªp, °£¤F§â¤W­Ó°Ï¶¡¥[¤Jres¥~¤]­n±N¦Û¨­¥[¤Jres
-#             # ¦pªG¬O­«Å|±¡ªp, ¦b§ó§ï§¹¦Û¨­°Ï¶¡¤W¤U¬É«á¤]­n±N¦Û¨­¥[¤Jres
-#             if i==len(intervals)-1:
-#                 res.append(intervals[i])
-#         return res
 
 # @lc code=end
 
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

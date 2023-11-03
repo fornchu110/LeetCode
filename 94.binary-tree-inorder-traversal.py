@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=94 lang=python3
 #
@@ -16,35 +15,35 @@
 # By recursive
 class Solution:
     def inOrder(self, root:TreeNode, res):
-        #»¼°jªº²×¤î±ø¥ó, ·í«Dnode®É¤£¥Î»¼°j
+        #éè¿´çš„çµ‚æ­¢æ¢ä»¶, ç•¶énodeæ™‚ä¸ç”¨éè¿´
         if root == None:
             return
-        #inorder¬O¥ª->¤¤->¥k, ©Ò¥H¹ï¨C­Ónode³£¬O±q¥ªÃä¶}©l»¼°j
-        #¥ı¹ï¥ª¤l¾ğ°µ»¼°j
+        #inorderæ˜¯å·¦->ä¸­->å³, æ‰€ä»¥å°æ¯å€‹nodeéƒ½æ˜¯å¾å·¦é‚Šé–‹å§‹éè¿´
+        #å…ˆå°å·¦å­æ¨¹åšéè¿´
         self.inOrder(root.left, res)
-        #¥ª¤l¾ğ»¼°j§¹¦¨«á¤~·|½ü¨ìroot
-        #±Nroot©ñ¤Jres
+        #å·¦å­æ¨¹éè¿´å®Œæˆå¾Œæ‰æœƒè¼ªåˆ°root
+        #å°‡rootæ”¾å…¥res
         res.append(root.val)
-        #¥ª¤l¾ğªº³¡¤À©Mroot³£§¹¦¨, ¦A¹ï¥k¤l¾ğ°µ»¼°j
+        #å·¦å­æ¨¹çš„éƒ¨åˆ†å’Œrootéƒ½å®Œæˆ, å†å°å³å­æ¨¹åšéè¿´
         self.inOrder(root.right, res)
 
     def inorderTraversal(self, root: TreeNode) -> List[int]:
-        #¦]¦^¶Çªº¬O°}¦C, ¥B·í¥u¦³¤@­Ónode®É­n¦^¶ÇªÅ, ©Ò¥Hªì©l¤Æ¤@­Ó°}¦C
-        #±qroot¶}©l¹ïtreeªº¨C­Ónode¤U¥h»¼°j, ¨C¦¸¥H·í®Éªºnode¬°root°µinorder
+        #å› å›å‚³çš„æ˜¯é™£åˆ—, ä¸”ç•¶åªæœ‰ä¸€å€‹nodeæ™‚è¦å›å‚³ç©º, æ‰€ä»¥åˆå§‹åŒ–ä¸€å€‹é™£åˆ—
+        #å¾rooté–‹å§‹å°treeçš„æ¯å€‹nodeä¸‹å»éè¿´, æ¯æ¬¡ä»¥ç•¶æ™‚çš„nodeç‚ºrootåšinorder
         res = []
-        #¶}©l°µinorder°lÂÜ
+        #é–‹å§‹åšinorderè¿½è¹¤
         self.inOrder(root, res)
         return res
 
 # By stack
-# #¯à¥Îrecursive´N¯à¥Îstack°µ
+# #èƒ½ç”¨recursiveå°±èƒ½ç”¨stackåš
 # class Solution:
 #     def inorderTraversal(self, root: TreeNode) -> List[int]:
 #         if not root:
 #             return []
-#         #ºûÅ@¤@­Ó¥s°µstackªºlist
-#         # ¦]¬°append¬O±q³Ì§Àºİ¥[¤J«á¶i¸ê®Æ, ¦Ópop¬O±N³Ì§Àºİ¸ê®Æ¨ú¥X
-#         # ¨â­Ó°t¦X§Y¥i¹F¦¨«á¶i¥ı¥Xªºstack
+#         #ç¶­è­·ä¸€å€‹å«åšstackçš„list
+#         # å› ç‚ºappendæ˜¯å¾æœ€å°¾ç«¯åŠ å…¥å¾Œé€²è³‡æ–™, è€Œpopæ˜¯å°‡æœ€å°¾ç«¯è³‡æ–™å–å‡º
+#         # å…©å€‹é…åˆå³å¯é”æˆå¾Œé€²å…ˆå‡ºçš„stack
 #         stack = []
 #         res = []
 #         while root or stack:
@@ -59,65 +58,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=94 lang=python3
-#
-# [94] Binary Tree Inorder Traversal
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By recursive
-class Solution:
-    def inOrder(self, root:TreeNode, res):
-        #»¼°jªº²×¤î±ø¥ó, ·í«Dnode®É¤£¥Î»¼°j
-        if root == None:
-            return
-        #inorder¬O¥ª->¤¤->¥k, ©Ò¥H¹ï¨C­Ónode³£¬O±q¥ªÃä¶}©l»¼°j
-        #¥ı¹ï¥ª¤l¾ğ°µ»¼°j
-        self.inOrder(root.left, res)
-        #¥ª¤l¾ğ»¼°j§¹¦¨«á¤~·|½ü¨ìroot
-        #±Nroot©ñ¤Jres
-        res.append(root.val)
-        #¥ª¤l¾ğªº³¡¤À©Mroot³£§¹¦¨, ¦A¹ï¥k¤l¾ğ°µ»¼°j
-        self.inOrder(root.right, res)
-
-    def inorderTraversal(self, root: TreeNode) -> List[int]:
-        #¦]¦^¶Çªº¬O°}¦C, ¥B·í¥u¦³¤@­Ónode®É­n¦^¶ÇªÅ, ©Ò¥Hªì©l¤Æ¤@­Ó°}¦C
-        #±qroot¶}©l¹ïtreeªº¨C­Ónode¤U¥h»¼°j, ¨C¦¸¥H·í®Éªºnode¬°root°µinorder
-        res = []
-        #¶}©l°µinorder°lÂÜ
-        self.inOrder(root, res)
-        return res
-
-# By stack
-# #¯à¥Îrecursive´N¯à¥Îstack°µ
-# class Solution:
-#     def inorderTraversal(self, root: TreeNode) -> List[int]:
-#         if not root:
-#             return []
-#         #ºûÅ@¤@­Ó¥s°µstackªºlist
-#         # ¦]¬°append¬O±q³Ì§Àºİ¥[¤J«á¶i¸ê®Æ, ¦Ópop¬O±N³Ì§Àºİ¸ê®Æ¨ú¥X
-#         # ¨â­Ó°t¦X§Y¥i¹F¦¨«á¶i¥ı¥Xªºstack
-#         stack = []
-#         res = []
-#         while root or stack:
-#             if root:
-#                 stack.append(root)
-#                 root = root.left
-#             else:
-#                 cur = stack.pop()
-#                 res.append(cur.val)
-#                 root = cur.right
-#         return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

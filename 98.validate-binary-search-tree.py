@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=98 lang=python3
 #
@@ -6,7 +5,7 @@
 #
 
 # @lc code=start
-# µ¹tree§PÂ_¬O§_¬°BST
+# çµ¦treeåˆ¤æ–·æ˜¯å¦ç‚ºBST
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -16,33 +15,33 @@
 #         self.right = right
 
 # By recursive, time: O(n), space: O(n)
-# ª`·NBST©Ê½è, ¥ªsub tree¤@©w¤ñroot¤p, ¥ksubtree¤@©w¤ñroot¤j
-# float("-inf")¥Nªí­tµL½a¤j, float("inf")¥Nªí¥¿µL½a¤j
-# ³]­p¨ç¼Æhelper®É´N­n¥ı©w¸q¦n³Ì¤j½d³ò
+# æ³¨æ„BSTæ€§è³ª, å·¦sub treeä¸€å®šæ¯”rootå°, å³subtreeä¸€å®šæ¯”rootå¤§
+# float("-inf")ä»£è¡¨è² ç„¡çª®å¤§, float("inf")ä»£è¡¨æ­£ç„¡çª®å¤§
+# è¨­è¨ˆå‡½æ•¸helperæ™‚å°±è¦å…ˆå®šç¾©å¥½æœ€å¤§ç¯„åœ
 class Solution:
     def helper(self, node, lower = float('-inf'), upper = float('inf')) -> bool:
         if not node:
             return True
         val = node.val
-        # ¥Nªíroot¤£¦b(lower, upper)¤º
+        # ä»£è¡¨rootä¸åœ¨(lower, upper)å…§
         if val<=lower or val>=upper:
             return False
-        # ¥ªsub tree©Ò¦³node.val¥u¯à¦b(lower, val)¤º¤~¬OBST
+        # å·¦sub treeæ‰€æœ‰node.valåªèƒ½åœ¨(lower, val)å…§æ‰æ˜¯BST
         if not self.helper(node.left, lower, val):
             return False
-        # ¥ksub tree©Ò¦³node.val¥u¯à¦b(val, upper)¤º¤~¬OBST
+        # å³sub treeæ‰€æœ‰node.valåªèƒ½åœ¨(val, upper)å…§æ‰æ˜¯BST
         if not self.helper(node.right, val, upper):
             return False
-        # ¥Nªí¥ªsub tree©M¥ksub tree©Ò¦³node.val½T¹ê³£¦b½d³ò¤º
+        # ä»£è¡¨å·¦sub treeå’Œå³sub treeæ‰€æœ‰node.valç¢ºå¯¦éƒ½åœ¨ç¯„åœå…§
         return True
 
     def isValidBST(self, root: TreeNode) -> bool:
-        # ©I¥shelper¨Ã¦^¶Çµ²ªG, ¥uµ¹°Ñ¼Æroot¥Nªí¤£¥Î§ó·slower©Mupper
+        # å‘¼å«helperä¸¦å›å‚³çµæœ, åªçµ¦åƒæ•¸rootä»£è¡¨ä¸ç”¨æ›´æ–°lowerå’Œupper
         return self.helper(root)
     
 # By inorder traversal, time: O(n), space: O(n)
-# Æ[¹îinorder traversal BST
-# µo²{¨«³X¨ìªºnode.val¤£Â_¤W¤É¨ì¨«³Xµ²§ô´N¥Nªí¬OBST, ¤Ï¤§«DBST
+# è§€å¯Ÿinorder traversal BST
+# ç™¼ç¾èµ°è¨ªåˆ°çš„node.valä¸æ–·ä¸Šå‡åˆ°èµ°è¨ªçµæŸå°±ä»£è¡¨æ˜¯BST, åä¹‹éBST
 # class Solution:
 #     def isValidBST(self, root: TreeNode) -> bool:
 #         stack, inorder = [], float('-inf')
@@ -51,75 +50,13 @@ class Solution:
 #                 stack.append(root)
 #                 root = root.left
 #             root = stack.pop()
-#             # ¦pªG¨«³X¨ìªº·snode.val¤p©ó¤W¤@­Ónode.val, ¥Nªí¤£¬OBST
+#             # å¦‚æœèµ°è¨ªåˆ°çš„æ–°node.valå°æ–¼ä¸Šä¸€å€‹node.val, ä»£è¡¨ä¸æ˜¯BST
 #             if root.val <= inorder:
 #                 return False
 #             inorder = root.val
 #             root = root.right
 #         return True
 
-# @lc code=end
-
-=======
-#
-# @lc app=leetcode id=98 lang=python3
-#
-# [98] Validate Binary Search Tree
-#
-
-# @lc code=start
-# µ¹tree§PÂ_¬O§_¬°BST
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By recursive, time: O(n), space: O(n)
-# ª`·NBST©Ê½è, ¥ªsub tree¤@©w¤ñroot¤p, ¥ksubtree¤@©w¤ñroot¤j
-# float("-inf")¥Nªí­tµL½a¤j, float("inf")¥Nªí¥¿µL½a¤j
-# ³]­p¨ç¼Æhelper®É´N­n¥ı©w¸q¦n³Ì¤j½d³ò
-class Solution:
-    def helper(self, node, lower = float('-inf'), upper = float('inf')) -> bool:
-        if not node:
-            return True
-        val = node.val
-        # ¥Nªíroot¤£¦b(lower, upper)¤º
-        if val<=lower or val>=upper:
-            return False
-        # ¥ªsub tree©Ò¦³node.val¥u¯à¦b(lower, val)¤º¤~¬OBST
-        if not self.helper(node.left, lower, val):
-            return False
-        # ¥ksub tree©Ò¦³node.val¥u¯à¦b(val, upper)¤º¤~¬OBST
-        if not self.helper(node.right, val, upper):
-            return False
-        # ¥Nªí¥ªsub tree©M¥ksub tree©Ò¦³node.val½T¹ê³£¦b½d³ò¤º
-        return True
-
-    def isValidBST(self, root: TreeNode) -> bool:
-        # ©I¥shelper¨Ã¦^¶Çµ²ªG, ¥uµ¹°Ñ¼Æroot¥Nªí¤£¥Î§ó·slower©Mupper
-        return self.helper(root)
-    
-# By inorder traversal, time: O(n), space: O(n)
-# Æ[¹îinorder traversal BST
-# µo²{¨«³X¨ìªºnode.val¤£Â_¤W¤É¨ì¨«³Xµ²§ô´N¥Nªí¬OBST, ¤Ï¤§«DBST
-# class Solution:
-#     def isValidBST(self, root: TreeNode) -> bool:
-#         stack, inorder = [], float('-inf')
-#         while stack or root:
-#             while root:
-#                 stack.append(root)
-#                 root = root.left
-#             root = stack.pop()
-#             # ¦pªG¨«³X¨ìªº·snode.val¤p©ó¤W¤@­Ónode.val, ¥Nªí¤£¬OBST
-#             if root.val <= inorder:
-#                 return False
-#             inorder = root.val
-#             root = root.right
-#         return True
 
 # @lc code=end
 
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

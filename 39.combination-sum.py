@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=39 lang=python3
 #
@@ -6,55 +5,55 @@
 #
 
 # @lc code=start
-# µ¹¤@°}¦Ccandidates©M¤@¼Ætarget, return¨Ï¥ÎµL­­¶qcandidates¤º¤¸¯À´ê¦¨targetªº©Ò¦³¶°¦X
-# Ãş¦üµw¹ô´ê¥Ø¼Ğ­È°İÃD, µw¹ô¨D¶°¦X¼Æ¶q, ¦¹ÃD¨D¶°¦X¥»¨­
+# çµ¦ä¸€é™£åˆ—candidateså’Œä¸€æ•¸target, returnä½¿ç”¨ç„¡é™é‡candidateså…§å…ƒç´ æ¹Šæˆtargetçš„æ‰€æœ‰é›†åˆ
+# é¡ä¼¼ç¡¬å¹£æ¹Šç›®æ¨™å€¼å•é¡Œ, ç¡¬å¹£æ±‚é›†åˆæ•¸é‡, æ­¤é¡Œæ±‚é›†åˆæœ¬èº«
 
 # By DP, time: O(target*nlogn), n = len(candidates)
-# ¥ÎÃş¦ü322ÃDµw¹ô´ê­Èªº·Qªk°µ
+# ç”¨é¡ä¼¼322é¡Œç¡¬å¹£æ¹Šå€¼çš„æƒ³æ³•åš
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        # ¬°¤°»ò³oÃD­n¥Îdict¦Ó¤£¯à¥Îlist?¦]¬°extend¾Ş§@¥i¯à·|¼vÅT«D¥Ø¼Ğindex¤§¤¸¯À
-        # list¬OÄİ©ó¥iÅÜ¸ê®ÆÃş«¬, ¤]´N¬O¥i¯à«ü¦V¬Û¦P¦ì§}, §ïÅÜ¤@Ãä¨ä¥Lªº¤]·|³Q§ïÅÜ
-        # ¥iÅÜ¸ê®ÆÃş«¬·|µo¥Í¸ê®Æ¨ä¹ê¨Ó¦Û¦P­Ó¦ì§}, ¥u¬OÅÜ¼Æ¦WºÙ¤£¦P¦Ó¤w
-        # ·Q¨ìcopy.copy()²L½Æ»s´N¬O¹ï¥iÅÜ¸ê®ÆÃş«¬¤´µM¤£¥Î¿W¥ßªº·s°O¾ĞÅé¦ì§}, ­n¥Îcopy.deepcopy()¤~¦³¥ş·s¿W¥ß¦ì§}
-        # ¦^¨ì³oÃD, ¦pªG¥Îdp = [[]]*(target+1)¨Ó«Å§i¤@­Ó¤º¦³target+1­Ó[]ªºlist, ¸Ì­±³o¨Ç[]¨ä¹ê³£¬O¨Ó¦Û¦P­Ó¦ì§}
-        # ·íª½±µµ¹²Äi­Ó[]½á­È®É, µ¥¦P«ü¦V·s¦ì§}, ¦ı­Y¹ï¨ä¥L¨S«ü¦V·s¦ì§}ªº[]append®É, ·|Åı©Ò¦³¦P¦ì§}ªº[]¶i¦æappend
-        # ¥Îdict¦]¤w¸gµ¹¸Ì­±¤¸¯À¤£¦Pªºkey¤F, ¬Û¹ïÀ³ªºvalue³£¬O¸òµÛkey¥Í¦¨ªº, ¨S¦³¬Û¦P¦ì§}ªº°İÃD       
+        # ç‚ºä»€éº¼é€™é¡Œè¦ç”¨dictè€Œä¸èƒ½ç”¨list?å› ç‚ºextendæ“ä½œå¯èƒ½æœƒå½±éŸ¿éç›®æ¨™indexä¹‹å…ƒç´ 
+        # listæ˜¯å±¬æ–¼å¯è®Šè³‡æ–™é¡å‹, ä¹Ÿå°±æ˜¯å¯èƒ½æŒ‡å‘ç›¸åŒä½å€, æ”¹è®Šä¸€é‚Šå…¶ä»–çš„ä¹Ÿæœƒè¢«æ”¹è®Š
+        # å¯è®Šè³‡æ–™é¡å‹æœƒç™¼ç”Ÿè³‡æ–™å…¶å¯¦ä¾†è‡ªåŒå€‹ä½å€, åªæ˜¯è®Šæ•¸åç¨±ä¸åŒè€Œå·²
+        # æƒ³åˆ°copy.copy()æ·ºè¤‡è£½å°±æ˜¯å°å¯è®Šè³‡æ–™é¡å‹ä»ç„¶ä¸ç”¨ç¨ç«‹çš„æ–°è¨˜æ†¶é«”ä½å€, è¦ç”¨copy.deepcopy()æ‰æœ‰å…¨æ–°ç¨ç«‹ä½å€
+        # å›åˆ°é€™é¡Œ, å¦‚æœç”¨dp = [[]]*(target+1)ä¾†å®£å‘Šä¸€å€‹å…§æœ‰target+1å€‹[]çš„list, è£¡é¢é€™äº›[]å…¶å¯¦éƒ½æ˜¯ä¾†è‡ªåŒå€‹ä½å€
+        # ç•¶ç›´æ¥çµ¦ç¬¬iå€‹[]è³¦å€¼æ™‚, ç­‰åŒæŒ‡å‘æ–°ä½å€, ä½†è‹¥å°å…¶ä»–æ²’æŒ‡å‘æ–°ä½å€çš„[]appendæ™‚, æœƒè®“æ‰€æœ‰åŒä½å€çš„[]é€²è¡Œappend
+        # ç”¨dictå› å·²ç¶“çµ¦è£¡é¢å…ƒç´ ä¸åŒçš„keyäº†, ç›¸å°æ‡‰çš„valueéƒ½æ˜¯è·Ÿè‘—keyç”Ÿæˆçš„, æ²’æœ‰ç›¸åŒä½å€çš„å•é¡Œ       
 
         # dp = {i:[] for i in range(target+1)}
-        # ·N«ä¬O¹ï{}¤ºtarget+1­Ó¤¸¯À, ¨C­Ó¤¸¯Àµ¥©ói:[], ¤]´N¬Odp[i] = []
-        # ¦Cªí¥Í¦¨¦¡«e­±¬O¤¸¯À·|ªøªº¼Ë¤l, «á­±¬O§@¥Îªº½d³ò, ¥~­±¬O§@¥Îªº¸ê®Æ«¬ºA
-        # ¤U­±µ¥¦P¤W­±³o¥y
-        # dp[i]¥Nªí·ítarget = i®É, condidates©Ò¯à´ê¥Xªº¸Ñ¶°¦X
+        # æ„æ€æ˜¯å°{}å…§target+1å€‹å…ƒç´ , æ¯å€‹å…ƒç´ ç­‰æ–¼i:[], ä¹Ÿå°±æ˜¯dp[i] = []
+        # åˆ—è¡¨ç”Ÿæˆå¼å‰é¢æ˜¯å…ƒç´ æœƒé•·çš„æ¨£å­, å¾Œé¢æ˜¯ä½œç”¨çš„ç¯„åœ, å¤–é¢æ˜¯ä½œç”¨çš„è³‡æ–™å‹æ…‹
+        # ä¸‹é¢ç­‰åŒä¸Šé¢é€™å¥
+        # dp[i]ä»£è¡¨ç•¶target = iæ™‚, condidatesæ‰€èƒ½æ¹Šå‡ºçš„è§£é›†åˆ
         dp = {}
         for i in range(target+1):
             dp[i] = []
-        # ±qcandidate¤j¦Ü¤p°µ
-        # ¬°¤°»ò¤£¯à¹³µw¹ô°İÃD±q¤p¦Ü¤j°µ?¦]¬°·|¦³­«½Æ¸Ñ¶°¦Xªº°İÃD
+        # å¾candidateå¤§è‡³å°åš
+        # ç‚ºä»€éº¼ä¸èƒ½åƒç¡¬å¹£å•é¡Œå¾å°è‡³å¤§åš?å› ç‚ºæœƒæœ‰é‡è¤‡è§£é›†åˆçš„å•é¡Œ
         for i in sorted(candidates,reverse=True):
-            # ±qi°µ¨ìtarget
+            # å¾iåšåˆ°target
             for j in range(i,target+1):
-                # ·í­è¦ni==j¥Nªí¤@©w¥i¥H¥Î1­Ói¨Ó´ê¥Xj, ¦Ó¥B¬O±q¤j¦Ó¤p°µ
-                # ©Ò¥Hª½±µ¦³¤@²Õªì©l¸Ñdp[j] = [[i]]
+                # ç•¶å‰›å¥½i==jä»£è¡¨ä¸€å®šå¯ä»¥ç”¨1å€‹iä¾†æ¹Šå‡ºj, è€Œä¸”æ˜¯å¾å¤§è€Œå°åš
+                # æ‰€ä»¥ç›´æ¥æœ‰ä¸€çµ„åˆå§‹è§£dp[j] = [[i]]
                 if j==i:
                     dp[j] = [[i]]
-                # ±qdp[j-i]§ä·s¸Ñ
+                # å¾dp[j-i]æ‰¾æ–°è§£
                 else:
                     dp[j].extend([x+[i] for x in dp[j-i]])
         print(dp)
         return dp[target]
 
-# By backtracking, time: O(S), space: O(target), S = len(©Ò¦³¥i¦æ¸Ñ)
-# ¦^®Ò+°ÅªKºâªk, §Q¥ÎDFS, °ÅªK·N«ä¬O¬Ù¥h·|³y¦¨­«½Æ¸Ñªº·j¯Á, ¹³³oÃD[2, 2, 3]©M[2, 3, 2]¹ê»Ú¤W¬O¦P¤@ºØ
-# §ä©Ò¦³±Æ¦C²Õ¦X³£¥i¥H¥Î¦^®Ò¤èªk§ä, DFS¨ä¹ê´N¬O¦^®Òªº¤@­ÓÅé²{
-# ©Ò¥H¦^®Ò­n§â¸Ñµe¦¨tree, ¥Htarget°µroot, ¨C¦¸§ä·schild³£¹ïcandidates¤ºªº·s¤¸¯À°µ´îªk
-# ¤]´N¬O»¡·snode³£¬OÁÙ¨S¥Îcandidate¤À°t©Ò³Ñ¤Uªºtarget, leaf.val<=0
-# ¨CºØ¨ì¹Fleafªºpath©Ò¨Ï¥Îªºcandidate´N¬O¤£¦P¸Ñ
+# By backtracking, time: O(S), space: O(target), S = len(æ‰€æœ‰å¯è¡Œè§£)
+# å›æœ”+å‰ªæç®—æ³•, åˆ©ç”¨DFS, å‰ªææ„æ€æ˜¯çœå»æœƒé€ æˆé‡è¤‡è§£çš„æœç´¢, åƒé€™é¡Œ[2, 2, 3]å’Œ[2, 3, 2]å¯¦éš›ä¸Šæ˜¯åŒä¸€ç¨®
+# æ‰¾æ‰€æœ‰æ’åˆ—çµ„åˆéƒ½å¯ä»¥ç”¨å›æœ”æ–¹æ³•æ‰¾, DFSå…¶å¯¦å°±æ˜¯å›æœ”çš„ä¸€å€‹é«”ç¾
+# æ‰€ä»¥å›æœ”è¦æŠŠè§£ç•«æˆtree, ä»¥targetåšroot, æ¯æ¬¡æ‰¾æ–°childéƒ½å°candidateså…§çš„æ–°å…ƒç´ åšæ¸›æ³•
+# ä¹Ÿå°±æ˜¯èªªæ–°nodeéƒ½æ˜¯é‚„æ²’ç”¨candidateåˆ†é…æ‰€å‰©ä¸‹çš„target, leaf.val<=0
+# æ¯ç¨®åˆ°é”leafçš„pathæ‰€ä½¿ç”¨çš„candidateå°±æ˜¯ä¸åŒè§£
 # class Solution:
 #     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-#         # °O¿ı¤@­Ópathsum°µ°ÅªK¥[³t­pºâ, ¤£¥Î¨C¦¸­«·s°µsum, ªÅ¶¡´«®É¶¡
+#         # è¨˜éŒ„ä¸€å€‹pathsumåšå‰ªæåŠ é€Ÿè¨ˆç®—, ä¸ç”¨æ¯æ¬¡é‡æ–°åšsum, ç©ºé–“æ›æ™‚é–“
 #         def dfs(startIdx, path, pathsum):
-#             # ±Nres¥ş³¡§ï¦¨self.res¥i¥H¤£¥Înonlocal
+#             # å°‡reså…¨éƒ¨æ”¹æˆself.reså¯ä»¥ä¸ç”¨nonlocal
 #             nonlocal res
 #             if pathsum==target:
 #                 res.append(path[:])
@@ -62,106 +61,23 @@ class Solution:
 
 #             for i in range(startIdx, n):
 #                 if pathsum+candidates[i]<=target:
-#                     dfs(i, path + [candidates[i]], pathsum + candidates[i]) # ª`·N?¨½ªºi¡A¤U?´`?¥i¥H¥]§t¥»¨­¡A¦ı¤£¯à¥]§t¤§«eªº¡AÁ×§K­«Î`
-#                 # °ÅªK
-#                 # ¦pªG·í«epath©M¤j©ótarget¡A´N¤£¥ÎÄ~Äò©¹«á¨«³X¤F, °µ°ÅªK
+#                     dfs(i, path + [candidates[i]], pathsum + candidates[i]) # æ³¨æ„?é‡Œçš„iï¼Œä¸‹?å¾ª?å¯ä»¥åŒ…å«æœ¬èº«ï¼Œä½†ä¸èƒ½åŒ…å«ä¹‹å‰çš„ï¼Œé¿å…é‡å¤
+#                 # å‰ªæ
+#                 # å¦‚æœç•¶å‰pathå’Œå¤§æ–¼targetï¼Œå°±ä¸ç”¨ç¹¼çºŒå¾€å¾Œèµ°è¨ªäº†, åšå‰ªæ
 #                 else:
 #                     break 
-#         # sort«á¤è«K¨«³X°ÅªK
+#         # sortå¾Œæ–¹ä¾¿èµ°è¨ªå‰ªæ
 #         candidates.sort() 
 #         n = len(candidates)
 #         path = []
-#         # ¦pªG°µself.res = [], µ¥¦P©ó©w¸q¦¹class¦³¤@­Óres
-#         # ¨º³oclass¤U­±¥ô¦ó¨ç¦¡³£¥i¥H¹ïself.res°µ¾Ş§@, ´N¤£»İ­nnonlocal
+#         # å¦‚æœåšself.res = [], ç­‰åŒæ–¼å®šç¾©æ­¤classæœ‰ä¸€å€‹res
+#         # é‚£é€™classä¸‹é¢ä»»ä½•å‡½å¼éƒ½å¯ä»¥å°self.resåšæ“ä½œ, å°±ä¸éœ€è¦nonlocal
 #         res = []
-#         # ­è¶}©lstartindex¬°0
-#         # ¤£§Æ±æ¦³­«½Æ¸Ñªº°µªk´N¬O¨C¼h¥H·sªºcandidate¶}ÀY©¹¤U¨«®É, ±µ¤U¨Ó¤£¯à¨Ï¥Î«e­±¥Î¹Lªºcandidate
+#         # å‰›é–‹å§‹startindexç‚º0
+#         # ä¸å¸Œæœ›æœ‰é‡è¤‡è§£çš„åšæ³•å°±æ˜¯æ¯å±¤ä»¥æ–°çš„candidateé–‹é ­å¾€ä¸‹èµ°æ™‚, æ¥ä¸‹ä¾†ä¸èƒ½ä½¿ç”¨å‰é¢ç”¨éçš„candidate
 #         dfs(0, path, 0) 
 #         return res
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=39 lang=python3
-#
-# [39] Combination Sum
-#
-
-# @lc code=start
-# µ¹¤@°}¦Ccandidates©M¤@¼Ætarget, return¨Ï¥ÎµL­­¶qcandidates¤º¤¸¯À´ê¦¨targetªº©Ò¦³¶°¦X
-# Ãş¦üµw¹ô´ê¥Ø¼Ğ­È°İÃD, µw¹ô¨D¶°¦X¼Æ¶q, ¦¹ÃD¨D¶°¦X¥»¨­
-
-# By DP, time: O(target*nlogn), n = len(candidates)
-# ¥ÎÃş¦ü322ÃDµw¹ô´ê­Èªº·Qªk°µ
-class Solution:
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        # ¬°¤°»ò³oÃD­n¥Îdict¦Ó¤£¯à¥Îlist?¦]¬°extend¾Ş§@¥i¯à·|¼vÅT«D¥Ø¼Ğindex¤§¤¸¯À
-        # list¬OÄİ©ó¥iÅÜ¸ê®ÆÃş«¬, ¤]´N¬O¥i¯à«ü¦V¬Û¦P¦ì§}, §ïÅÜ¤@Ãä¨ä¥Lªº¤]·|³Q§ïÅÜ
-        # ¥iÅÜ¸ê®ÆÃş«¬·|µo¥Í¸ê®Æ¨ä¹ê¨Ó¦Û¦P­Ó¦ì§}, ¥u¬OÅÜ¼Æ¦WºÙ¤£¦P¦Ó¤w
-        # ·Q¨ìcopy.copy()²L½Æ»s´N¬O¹ï¥iÅÜ¸ê®ÆÃş«¬¤´µM¤£¥Î¿W¥ßªº·s°O¾ĞÅé¦ì§}, ­n¥Îcopy.deepcopy()¤~¦³¥ş·s¿W¥ß¦ì§}
-        # ¦^¨ì³oÃD, ¦pªG¥Îdp = [[]]*(target+1)¨Ó«Å§i¤@­Ó¤º¦³target+1­Ó[]ªºlist, ¸Ì­±³o¨Ç[]¨ä¹ê³£¬O¨Ó¦Û¦P­Ó¦ì§}
-        # ·íª½±µµ¹²Äi­Ó[]½á­È®É, µ¥¦P«ü¦V·s¦ì§}, ¦ı­Y¹ï¨ä¥L¨S«ü¦V·s¦ì§}ªº[]append®É, ·|Åı©Ò¦³¦P¦ì§}ªº[]¶i¦æappend
-        # ¥Îdict¦]¤w¸gµ¹¸Ì­±¤¸¯À¤£¦Pªºkey¤F, ¬Û¹ïÀ³ªºvalue³£¬O¸òµÛkey¥Í¦¨ªº, ¨S¦³¬Û¦P¦ì§}ªº°İÃD       
-
-        # dp = {i:[] for i in range(target+1)}
-        # ·N«ä¬O¹ï{}¤ºtarget+1­Ó¤¸¯À, ¨C­Ó¤¸¯Àµ¥©ói:[], ¤]´N¬Odp[i] = []
-        # ¦Cªí¥Í¦¨¦¡«e­±¬O¤¸¯À·|ªøªº¼Ë¤l, «á­±¬O§@¥Îªº½d³ò, ¥~­±¬O§@¥Îªº¸ê®Æ«¬ºA
-        # ¤U­±µ¥¦P¤W­±³o¥y
-        # dp[i]¥Nªí·ítarget = i®É, condidates©Ò¯à´ê¥Xªº¸Ñ¶°¦X
-        dp = {}
-        for i in range(target+1):
-            dp[i] = []
-        # ±qcandidate¤j¦Ü¤p°µ
-        # ¬°¤°»ò¤£¯à¹³µw¹ô°İÃD±q¤p¦Ü¤j°µ?¦]¬°·|¦³­«½Æ¸Ñ¶°¦Xªº°İÃD
-        for i in sorted(candidates,reverse=True):
-            # ±qi°µ¨ìtarget
-            for j in range(i,target+1):
-                # ·í­è¦ni==j¥Nªí¤@©w¥i¥H¥Î1­Ói¨Ó´ê¥Xj, ¦Ó¥B¬O±q¤j¦Ó¤p°µ
-                # ©Ò¥Hª½±µ¦³¤@²Õªì©l¸Ñdp[j] = [[i]]
-                if j==i:
-                    dp[j] = [[i]]
-                # ±qdp[j-i]§ä·s¸Ñ
-                else:
-                    dp[j].extend([x+[i] for x in dp[j-i]])
-        print(dp)
-        return dp[target]
-
-# By backtracking, time: O(S), space: O(target), S = len(©Ò¦³¥i¦æ¸Ñ)
-# ¦^®Ò+°ÅªKºâªk, §Q¥ÎDFS, °ÅªK·N«ä¬O¬Ù¥h·|³y¦¨­«½Æ¸Ñªº·j¯Á, ¹³³oÃD[2, 2, 3]©M[2, 3, 2]¹ê»Ú¤W¬O¦P¤@ºØ
-# §ä©Ò¦³±Æ¦C²Õ¦X³£¥i¥H¥Î¦^®Ò¤èªk§ä, DFS¨ä¹ê´N¬O¦^®Òªº¤@­ÓÅé²{
-# ©Ò¥H¦^®Ò­n§â¸Ñµe¦¨tree, ¥Htarget°µroot, ¨C¦¸§ä·schild³£¹ïcandidates¤ºªº·s¤¸¯À°µ´îªk
-# ¤]´N¬O»¡·snode³£¬OÁÙ¨S¥Îcandidate¤À°t©Ò³Ñ¤Uªºtarget, leaf.val<=0
-# ¨CºØ¨ì¹Fleafªºpath©Ò¨Ï¥Îªºcandidate´N¬O¤£¦P¸Ñ
-# class Solution:
-#     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-#         # °O¿ı¤@­Ópathsum°µ°ÅªK¥[³t­pºâ, ¤£¥Î¨C¦¸­«·s°µsum, ªÅ¶¡´«®É¶¡
-#         def dfs(startIdx, path, pathsum):
-#             # ±Nres¥ş³¡§ï¦¨self.res¥i¥H¤£¥Înonlocal
-#             nonlocal res
-#             if pathsum==target:
-#                 res.append(path[:])
-#                 return
-
-#             for i in range(startIdx, n):
-#                 if pathsum+candidates[i]<=target:
-#                     dfs(i, path + [candidates[i]], pathsum + candidates[i]) # ª`·N?¨½ªºi¡A¤U?´`?¥i¥H¥]§t¥»¨­¡A¦ı¤£¯à¥]§t¤§«eªº¡AÁ×§K­«Î`
-#                 # °ÅªK
-#                 # ¦pªG·í«epath©M¤j©ótarget¡A´N¤£¥ÎÄ~Äò©¹«á¨«³X¤F, °µ°ÅªK
-#                 else:
-#                     break 
-#         # sort«á¤è«K¨«³X°ÅªK
-#         candidates.sort() 
-#         n = len(candidates)
-#         path = []
-#         # ¦pªG°µself.res = [], µ¥¦P©ó©w¸q¦¹class¦³¤@­Óres
-#         # ¨º³oclass¤U­±¥ô¦ó¨ç¦¡³£¥i¥H¹ïself.res°µ¾Ş§@, ´N¤£»İ­nnonlocal
-#         res = []
-#         # ­è¶}©lstartindex¬°0
-#         # ¤£§Æ±æ¦³­«½Æ¸Ñªº°µªk´N¬O¨C¼h¥H·sªºcandidate¶}ÀY©¹¤U¨«®É, ±µ¤U¨Ó¤£¯à¨Ï¥Î«e­±¥Î¹Lªºcandidate
-#         dfs(0, path, 0) 
-#         return res
-
 # @lc code=end
 
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

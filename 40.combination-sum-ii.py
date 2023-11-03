@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=40 lang=python3
 #
@@ -9,67 +8,30 @@
 # By sort and recursive, time: 
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
-        # ³oºØÃD¥Ø­n·Q¨ì¥ısort
+        # é€™ç¨®é¡Œç›®è¦æƒ³åˆ°å…ˆsort
         candidates.sort()
-        # ³Ğ«ØªÅ°}¦C, []®Ä¯à¤ñlist()¦n
+        # å‰µå»ºç©ºé™£åˆ—, []æ•ˆèƒ½æ¯”list()å¥½
         res = []
-        # usedªí¥Ü¤w¸g¨ú¨ì¼Æ­Èªº¦Cªí, remainªí¥Ü¶ZÂ÷targetÁÙ®tªº­È
+        # usedè¡¨ç¤ºå·²ç¶“å–åˆ°æ•¸å€¼çš„åˆ—è¡¨, remainè¡¨ç¤ºè·é›¢targeté‚„å·®çš„å€¼
         def find(idx, used, remain):
             for i in range(idx, len(candidates)):
                 num = candidates[i]
-                # Åırecursive¦P¤@¯Å¤º¤£·|¥X²{¬Û¦P¤¸¯À, ¦ı¤£¦P¯Å¤§¶¡¥i¥H
+                # è®“recursiveåŒä¸€ç´šå…§ä¸æœƒå‡ºç¾ç›¸åŒå…ƒç´ , ä½†ä¸åŒç´šä¹‹é–“å¯ä»¥
                 if i>idx and candidates[i-1]==candidates[i]:
                     continue
-                # §ä¨ì²Å¦X®t­Èªºnum, ±N¨ä©M·í¤Uused´ê¦¨¤@²Õ
+                # æ‰¾åˆ°ç¬¦åˆå·®å€¼çš„num, å°‡å…¶å’Œç•¶ä¸‹usedæ¹Šæˆä¸€çµ„
                 if num == remain:
                     res.append(used+[num])
                     return
-                # ¦]¬°¤w±Æ§Ç¹L, ©Ò¥H­Y¤p©ó®t­È, ª½±µ©¹¤UÄ~Äò§ä
+                # å› ç‚ºå·²æ’åºé, æ‰€ä»¥è‹¥å°æ–¼å·®å€¼, ç›´æ¥å¾€ä¸‹ç¹¼çºŒæ‰¾
                 if num<remain:
                     find(i+1, used+[num], remain-num)
-                # ¤£¥Î¦A©¹¤U§ä¤F, ²{¦b¤j©ó®t­È«á­±¤@©w³£§ó¤j
+                # ä¸ç”¨å†å¾€ä¸‹æ‰¾äº†, ç¾åœ¨å¤§æ–¼å·®å€¼å¾Œé¢ä¸€å®šéƒ½æ›´å¤§
                 if num>remain:
                     return
         find(0,[], target)
         return res
         
-# @lc code=end
-
-=======
-#
-# @lc app=leetcode id=40 lang=python3
-#
-# [40] Combination Sum II
-#
-
-# @lc code=start
-# By sort and recursive, time: 
-class Solution:
-    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
-        # ³oºØÃD¥Ø­n·Q¨ì¥ısort
-        candidates.sort()
-        # ³Ğ«ØªÅ°}¦C, []®Ä¯à¤ñlist()¦n
-        res = []
-        # usedªí¥Ü¤w¸g¨ú¨ì¼Æ­Èªº¦Cªí, remainªí¥Ü¶ZÂ÷targetÁÙ®tªº­È
-        def find(idx, used, remain):
-            for i in range(idx, len(candidates)):
-                num = candidates[i]
-                # Åırecursive¦P¤@¯Å¤º¤£·|¥X²{¬Û¦P¤¸¯À, ¦ı¤£¦P¯Å¤§¶¡¥i¥H
-                if i>idx and candidates[i-1]==candidates[i]:
-                    continue
-                # §ä¨ì²Å¦X®t­Èªºnum, ±N¨ä©M·í¤Uused´ê¦¨¤@²Õ
-                if num == remain:
-                    res.append(used+[num])
-                    return
-                # ¦]¬°¤w±Æ§Ç¹L, ©Ò¥H­Y¤p©ó®t­È, ª½±µ©¹¤UÄ~Äò§ä
-                if num<remain:
-                    find(i+1, used+[num], remain-num)
-                # ¤£¥Î¦A©¹¤U§ä¤F, ²{¦b¤j©ó®t­È«á­±¤@©w³£§ó¤j
-                if num>remain:
-                    return
-        find(0,[], target)
-        return res
         
 # @lc code=end
 
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

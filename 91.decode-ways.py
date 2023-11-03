@@ -8,7 +8,6 @@
 # @lc code=start
 # 給一字串s, return s內的數字可以組合成多少種字母排列, 1~26分別代表a~z, 注意01並不等於1
 
-
 # By DP, time: O(n), space: O(n)
 # 因dp[n]只會用到dp[n-1]和dp[n-2], 可以優化為三變數空間, 也就是space = O(1)
 class Solution:

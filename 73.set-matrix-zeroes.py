@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=73 lang=python3
 #
@@ -6,48 +5,48 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ómxnªºmatrix, ¦pªGmatrix¤º¦³0, «h§â¸Ó0¦Prow¦Pcolªº©Ò¦³¤¸¯À³£Âà´«¦¨0
+# çµ¦ä¸€å€‹mxnçš„matrix, å¦‚æœmatrixå…§æœ‰0, å‰‡æŠŠè©²0åŒrowåŒcolçš„æ‰€æœ‰å…ƒç´ éƒ½è½‰æ›æˆ0
 
 # By inplace flag array, time: O(m*n), space: O(1)
-# Á×§K¤F¥ÎÃB¥~O(m+n)ªºªÅ¶¡Àx¦sflag, ¦Ó¬O¥Ñ²Ä0­Órow©M²Ä0­Ócol¨ÓÀx¦s
-# ¦ı³o¼Ë·|§ó§ï²Ä0­Órow©M²Ä0­Ócol¤§¤¸¯À(¦ı¦b³oÃä»ª¦ü¤£¼vÅT, §ó­«­nªº¬O¥i¯à·|º|¤F±N²Ä0row¡Bcolªº¤¸¯ÀÂà´«¦¨0)
-# ©Ò¥H­n¥ı§PÂ_¸Ì­±¬O§_¦s¦b0¨Ã¥Îflag¬ö¿ı, ¥u­n¦s¦b0¥Nªí¾ãrow¡Bcol³£­n¬O0, ³Ì«á¦A±N¥ş³¡­«»s¬°0§Y¥i
-# ·Q¹³¥~°é(²Ä0row¡Bcol)©M¤º°éªº0¥»¨Ó´N¬O¤¬¬Û¼vÅT, ²¦³º¥u­n¦b¦Prow¡Bcol¦³0, ¾ã­Ó³£­nÅÜ0
+# é¿å…äº†ç”¨é¡å¤–O(m+n)çš„ç©ºé–“å„²å­˜flag, è€Œæ˜¯ç”±ç¬¬0å€‹rowå’Œç¬¬0å€‹colä¾†å„²å­˜
+# ä½†é€™æ¨£æœƒæ›´æ”¹ç¬¬0å€‹rowå’Œç¬¬0å€‹colä¹‹å…ƒç´ (ä½†åœ¨é€™é‚Šè²Œä¼¼ä¸å½±éŸ¿, æ›´é‡è¦çš„æ˜¯å¯èƒ½æœƒæ¼äº†å°‡ç¬¬0rowã€colçš„å…ƒç´ è½‰æ›æˆ0)
+# æ‰€ä»¥è¦å…ˆåˆ¤æ–·è£¡é¢æ˜¯å¦å­˜åœ¨0ä¸¦ç”¨flagç´€éŒ„, åªè¦å­˜åœ¨0ä»£è¡¨æ•´rowã€coléƒ½è¦æ˜¯0, æœ€å¾Œå†å°‡å…¨éƒ¨é‡è£½ç‚º0å³å¯
+# æƒ³åƒå¤–åœˆ(ç¬¬0rowã€col)å’Œå…§åœˆçš„0æœ¬ä¾†å°±æ˜¯äº’ç›¸å½±éŸ¿, ç•¢ç«Ÿåªè¦åœ¨åŒrowã€colæœ‰0, æ•´å€‹éƒ½è¦è®Š0
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
         m, n = len(matrix), len(matrix[0])
-        # any()¬O§PÂ_±ø¥ó¤º¬O§_¦s¦b1©ÎTrue, ¥u­n¦s¦b´Nreturn1, ¤£¦s¦b´NFalse
-        # §PÂ_²Ä0­Ócol¤U¦³¨S¦³¬°0ªº¤¸¯À
+        # any()æ˜¯åˆ¤æ–·æ¢ä»¶å…§æ˜¯å¦å­˜åœ¨1æˆ–True, åªè¦å­˜åœ¨å°±return1, ä¸å­˜åœ¨å°±False
+        # åˆ¤æ–·ç¬¬0å€‹colä¸‹æœ‰æ²’æœ‰ç‚º0çš„å…ƒç´ 
         col0flag = any(matrix[i][0]==0 for i in range(m))
-        # §PÂ_²Ä0­Órow¤U¦³¨S¦³¬°0ªº¤¸¯À
+        # åˆ¤æ–·ç¬¬0å€‹rowä¸‹æœ‰æ²’æœ‰ç‚º0çš„å…ƒç´ 
         row0flag = any(matrix[0][j]==0 for j in range(n))
         
-        # ¥Hmatrix[i][0]©Mmatrix[0][j]¨Ó°O¿ı²Äi­Órow¥H¤Î²Äj­Ócol¦³¨S¦³0¦s¦b
+        # ä»¥matrix[i][0]å’Œmatrix[0][j]ä¾†è¨˜éŒ„ç¬¬iå€‹rowä»¥åŠç¬¬jå€‹colæœ‰æ²’æœ‰0å­˜åœ¨
         for i in range(1, m):
             for j in range(1, n):
                 if matrix[i][j]==0:
-                    #³o®É°£¤F¥Î²Ä0row¡Bcol¬ö¿ı¥~, ¤]µ¥¦P©ó¥ı±N²Ä0row¡BcolÂà´«¦¨0¤F
+                    #é€™æ™‚é™¤äº†ç”¨ç¬¬0rowã€colç´€éŒ„å¤–, ä¹Ÿç­‰åŒæ–¼å…ˆå°‡ç¬¬0rowã€colè½‰æ›æˆ0äº†
                     matrix[i][0] = matrix[0][j] = 0
         
-        # ­«·s¨«³X²Ä0­Órow¡Bcol¥~ªºmatrix, ±N¦³0ªºrow©Mcol©Ò¦³¤¸¯ÀÂà´«¦¨0
+        # é‡æ–°èµ°è¨ªç¬¬0å€‹rowã€colå¤–çš„matrix, å°‡æœ‰0çš„rowå’Œcolæ‰€æœ‰å…ƒç´ è½‰æ›æˆ0
         for i in range(1, m):
             for j in range(1, n):
                 if matrix[i][0]==0 or matrix[0][j]==0:
                     matrix[i][j] = 0
-        # ¦pªGcol0flag¤£¬°0, ¥Nªí²Ä0­Ócol¤W¤£¦Prowªº©Ò¦³¤¸¯À³£¸ÓÅÜ¬°0
+        # å¦‚æœcol0flagä¸ç‚º0, ä»£è¡¨ç¬¬0å€‹colä¸Šä¸åŒrowçš„æ‰€æœ‰å…ƒç´ éƒ½è©²è®Šç‚º0
         if col0flag:
             for i in range(m):
                 matrix[i][0] = 0
-        # ¦pªGrow0flag¤£¬°0, ¥Nªí²Ä0­Órow¤W¤£¦Pcolªº©Ò¦³¤¸¯À³£¸ÓÅÜ¬°0
+        # å¦‚æœrow0flagä¸ç‚º0, ä»£è¡¨ç¬¬0å€‹rowä¸Šä¸åŒcolçš„æ‰€æœ‰å…ƒç´ éƒ½è©²è®Šç‚º0
         if row0flag:
             for j in range(n):
                 matrix[0][j] = 0
 
 # By flag array, time: O(m*n), space: O(m+n)
-# ³oÃD­nª`·Nªº¬O«á¨Ó³Q§ïÅÜ¦¨0ªº¤¸¯À¤£¸Ó®³¨Ó³Q§PÂ_¬°¦Prow¦PcolÅÜ0, ¦pªG¥Î¤@Ãä¨«³X¤@Ãä¬d¬İ0ªº¤è¦¡´N·|¦³°İÃD
-# Ex: ¨«¨ìmatrix[3][2]µo²{¬O0, §â¨ä¤W¤U¥ª¥k³£§ó§ï¬°0, ¦ı¨«¨ìmatrix[3][3]®É, ³oÃäÁöµM­ì¥»¬O1³Q§ó§ï¬°0, ¤´·|Ä²µo§PÂ_Åımatrix[3][3]¤W¤U¥ª¥k§ï¬°0
-# ©Ò¥Hª½Æ[¥ı¨«³X¤@¦¸matrix, ±N0¤¸¯À©Ò¦bªºrow©Mcol°O¿ı¤U¨Ó
-# ¦A¨«³X¤@¦¸matrix, ±N»P°O¿ı¤Uªºrow©Mcol¦Prow¡Bcolªº¤¸¯À§ó§ï¬°0
+# é€™é¡Œè¦æ³¨æ„çš„æ˜¯å¾Œä¾†è¢«æ”¹è®Šæˆ0çš„å…ƒç´ ä¸è©²æ‹¿ä¾†è¢«åˆ¤æ–·ç‚ºåŒrowåŒcolè®Š0, å¦‚æœç”¨ä¸€é‚Šèµ°è¨ªä¸€é‚ŠæŸ¥çœ‹0çš„æ–¹å¼å°±æœƒæœ‰å•é¡Œ
+# Ex: èµ°åˆ°matrix[3][2]ç™¼ç¾æ˜¯0, æŠŠå…¶ä¸Šä¸‹å·¦å³éƒ½æ›´æ”¹ç‚º0, ä½†èµ°åˆ°matrix[3][3]æ™‚, é€™é‚Šé›–ç„¶åŸæœ¬æ˜¯1è¢«æ›´æ”¹ç‚º0, ä»æœƒè§¸ç™¼åˆ¤æ–·è®“matrix[3][3]ä¸Šä¸‹å·¦å³æ”¹ç‚º0
+# æ‰€ä»¥ç›´è§€å…ˆèµ°è¨ªä¸€æ¬¡matrix, å°‡0å…ƒç´ æ‰€åœ¨çš„rowå’Œcolè¨˜éŒ„ä¸‹ä¾†
+# å†èµ°è¨ªä¸€æ¬¡matrix, å°‡èˆ‡è¨˜éŒ„ä¸‹çš„rowå’ŒcolåŒrowã€colçš„å…ƒç´ æ›´æ”¹ç‚º0
 # class Solution:
 #     def setZeroes(self, matrix: List[List[int]]) -> None:
 #         """
@@ -55,13 +54,13 @@ class Solution:
 #         """
 #         m = len(matrix)
 #         n = len(matrix[0])
-#         # 0¤]¥i¥H¥ÎFalse¥N´À
+#         # 0ä¹Ÿå¯ä»¥ç”¨Falseä»£æ›¿
 #         rowflag = [0]*m
 #         colflag = [0]*n
 #         for i in range(m):
 #             for j in range(n):
 #                 if matrix[i][j]==0:
-#                     # 0¥ÎFalseªº¸Ü³oÃä1´N¥i¥H§ï¥ÎTrue
+#                     # 0ç”¨Falseçš„è©±é€™é‚Š1å°±å¯ä»¥æ”¹ç”¨True
 #                     rowflag[i] = 1
 #                     colflag[j] = 1
 #         for i in range(m):
@@ -69,79 +68,6 @@ class Solution:
 #                 if rowflag[i] or colflag[j]:
 #                     matrix[i][j] = 0
 
-# @lc code=end
-
-=======
-#
-# @lc app=leetcode id=73 lang=python3
-#
-# [73] Set Matrix Zeroes
-#
-
-# @lc code=start
-# µ¹¤@­Ómxnªºmatrix, ¦pªGmatrix¤º¦³0, «h§â¸Ó0¦Prow¦Pcolªº©Ò¦³¤¸¯À³£Âà´«¦¨0
-
-# By inplace flag array, time: O(m*n), space: O(1)
-# Á×§K¤F¥ÎÃB¥~O(m+n)ªºªÅ¶¡Àx¦sflag, ¦Ó¬O¥Ñ²Ä0­Órow©M²Ä0­Ócol¨ÓÀx¦s
-# ¦ı³o¼Ë·|§ó§ï²Ä0­Órow©M²Ä0­Ócol¤§¤¸¯À(¦ı¦b³oÃä»ª¦ü¤£¼vÅT, §ó­«­nªº¬O¥i¯à·|º|¤F±N²Ä0row¡Bcolªº¤¸¯ÀÂà´«¦¨0)
-# ©Ò¥H­n¥ı§PÂ_¸Ì­±¬O§_¦s¦b0¨Ã¥Îflag¬ö¿ı, ¥u­n¦s¦b0¥Nªí¾ãrow¡Bcol³£­n¬O0, ³Ì«á¦A±N¥ş³¡­«»s¬°0§Y¥i
-# ·Q¹³¥~°é(²Ä0row¡Bcol)©M¤º°éªº0¥»¨Ó´N¬O¤¬¬Û¼vÅT, ²¦³º¥u­n¦b¦Prow¡Bcol¦³0, ¾ã­Ó³£­nÅÜ0
-class Solution:
-    def setZeroes(self, matrix: List[List[int]]) -> None:
-        m, n = len(matrix), len(matrix[0])
-        # any()¬O§PÂ_±ø¥ó¤º¬O§_¦s¦b1©ÎTrue, ¥u­n¦s¦b´Nreturn1, ¤£¦s¦b´NFalse
-        # §PÂ_²Ä0­Ócol¤U¦³¨S¦³¬°0ªº¤¸¯À
-        col0flag = any(matrix[i][0]==0 for i in range(m))
-        # §PÂ_²Ä0­Órow¤U¦³¨S¦³¬°0ªº¤¸¯À
-        row0flag = any(matrix[0][j]==0 for j in range(n))
-        
-        # ¥Hmatrix[i][0]©Mmatrix[0][j]¨Ó°O¿ı²Äi­Órow¥H¤Î²Äj­Ócol¦³¨S¦³0¦s¦b
-        for i in range(1, m):
-            for j in range(1, n):
-                if matrix[i][j]==0:
-                    #³o®É°£¤F¥Î²Ä0row¡Bcol¬ö¿ı¥~, ¤]µ¥¦P©ó¥ı±N²Ä0row¡BcolÂà´«¦¨0¤F
-                    matrix[i][0] = matrix[0][j] = 0
-        
-        # ­«·s¨«³X²Ä0­Órow¡Bcol¥~ªºmatrix, ±N¦³0ªºrow©Mcol©Ò¦³¤¸¯ÀÂà´«¦¨0
-        for i in range(1, m):
-            for j in range(1, n):
-                if matrix[i][0]==0 or matrix[0][j]==0:
-                    matrix[i][j] = 0
-        # ¦pªGcol0flag¤£¬°0, ¥Nªí²Ä0­Ócol¤W¤£¦Prowªº©Ò¦³¤¸¯À³£¸ÓÅÜ¬°0
-        if col0flag:
-            for i in range(m):
-                matrix[i][0] = 0
-        # ¦pªGrow0flag¤£¬°0, ¥Nªí²Ä0­Órow¤W¤£¦Pcolªº©Ò¦³¤¸¯À³£¸ÓÅÜ¬°0
-        if row0flag:
-            for j in range(n):
-                matrix[0][j] = 0
-
-# By flag array, time: O(m*n), space: O(m+n)
-# ³oÃD­nª`·Nªº¬O«á¨Ó³Q§ïÅÜ¦¨0ªº¤¸¯À¤£¸Ó®³¨Ó³Q§PÂ_¬°¦Prow¦PcolÅÜ0, ¦pªG¥Î¤@Ãä¨«³X¤@Ãä¬d¬İ0ªº¤è¦¡´N·|¦³°İÃD
-# Ex: ¨«¨ìmatrix[3][2]µo²{¬O0, §â¨ä¤W¤U¥ª¥k³£§ó§ï¬°0, ¦ı¨«¨ìmatrix[3][3]®É, ³oÃäÁöµM­ì¥»¬O1³Q§ó§ï¬°0, ¤´·|Ä²µo§PÂ_Åımatrix[3][3]¤W¤U¥ª¥k§ï¬°0
-# ©Ò¥Hª½Æ[¥ı¨«³X¤@¦¸matrix, ±N0¤¸¯À©Ò¦bªºrow©Mcol°O¿ı¤U¨Ó
-# ¦A¨«³X¤@¦¸matrix, ±N»P°O¿ı¤Uªºrow©Mcol¦Prow¡Bcolªº¤¸¯À§ó§ï¬°0
-# class Solution:
-#     def setZeroes(self, matrix: List[List[int]]) -> None:
-#         """
-#         Do not return anything, modify matrix in-place instead.
-#         """
-#         m = len(matrix)
-#         n = len(matrix[0])
-#         # 0¤]¥i¥H¥ÎFalse¥N´À
-#         rowflag = [0]*m
-#         colflag = [0]*n
-#         for i in range(m):
-#             for j in range(n):
-#                 if matrix[i][j]==0:
-#                     # 0¥ÎFalseªº¸Ü³oÃä1´N¥i¥H§ï¥ÎTrue
-#                     rowflag[i] = 1
-#                     colflag[j] = 1
-#         for i in range(m):
-#             for j in range(n):
-#                 if rowflag[i] or colflag[j]:
-#                     matrix[i][j] = 0
 
 # @lc code=end
 
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

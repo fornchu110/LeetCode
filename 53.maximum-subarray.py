@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=53 lang=python3
 #
@@ -7,15 +6,15 @@
 
 # @lc code=start
 # By dynamic programming, time: O(n), space: O(1)
-# §ä¥X³Ì¤j¤l°}¦C©M
+# æ‰¾å‡ºæœ€å¤§å­é™£åˆ—å’Œ
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         tmp = 0
-        # ª`·N¤@¶}©l­n¦³­Ó³Ì¤j©M, Á×§K¥u¦³¤@­Ó¤¸¯À®Éªºª¬ªp
+        # æ³¨æ„ä¸€é–‹å§‹è¦æœ‰å€‹æœ€å¤§å’Œ, é¿å…åªæœ‰ä¸€å€‹å…ƒç´ æ™‚çš„ç‹€æ³
         res = nums[0]
-        # ¤ñ¸û¥¿½Tªº·Qªk
-        # ¬İ¹L¥h©M»P·í¤U¤¸¯Ài­ş­Ó¤j, ¤jªÌ·í·s©M
-        # ±o¨ì·s©M«á, ¤ñ¸û·s©M»P³Ì¤j©M­ş­Ó¤j, ¤jªÌ·í³Ì¤j©M
+        # æ¯”è¼ƒæ­£ç¢ºçš„æƒ³æ³•
+        # çœ‹éå»å’Œèˆ‡ç•¶ä¸‹å…ƒç´ iå“ªå€‹å¤§, å¤§è€…ç•¶æ–°å’Œ
+        # å¾—åˆ°æ–°å’Œå¾Œ, æ¯”è¼ƒæ–°å’Œèˆ‡æœ€å¤§å’Œå“ªå€‹å¤§, å¤§è€…ç•¶æœ€å¤§å’Œ
         for i in nums:
             if tmp+i<i:
                 tmp = i
@@ -23,65 +22,22 @@ class Solution:
                 tmp = tmp+i
             if tmp>res:
                 res = tmp
-        # §Ú¦Û¤vªº°µªk
-        # ¬İ¹L¥h©M+·í¤U¤¸¯À¬O§_>0, ­Y<0¥Nªí­n¥Î¤U­Ó>0¤¸¯À·í·s©M
+        # æˆ‘è‡ªå·±çš„åšæ³•
+        # çœ‹éå»å’Œ+ç•¶ä¸‹å…ƒç´ æ˜¯å¦>0, è‹¥<0ä»£è¡¨è¦ç”¨ä¸‹å€‹>0å…ƒç´ ç•¶æ–°å’Œ
         # for i in nums:
         #     if tmp+i<0:
         #         tmp = 0
-        #         # ­«ÂI, ´Nºâ¹L¥h©M+·í¤U¤¸¯À<0, ·í¤U¤¸¯À¤]¥i¯à¤ñ³Ì¤j©MÁÙ¤j
+        #         # é‡é», å°±ç®—éå»å’Œ+ç•¶ä¸‹å…ƒç´ <0, ç•¶ä¸‹å…ƒç´ ä¹Ÿå¯èƒ½æ¯”æœ€å¤§å’Œé‚„å¤§
         #         if i>res:
         #             res = i
         #         continue
         #     else:
         #         tmp += i
-        #         # ¹L¥h©M+·í¤U¤¸¯À>0´NÄ~Äò+, ­Y>³Ì¤j©M«h¦¨¬°³Ì¤j©M
+        #         # éå»å’Œ+ç•¶ä¸‹å…ƒç´ >0å°±ç¹¼çºŒ+, è‹¥>æœ€å¤§å’Œå‰‡æˆç‚ºæœ€å¤§å’Œ
         #         if tmp>res:
         #             res = tmp
         return res
         
-# @lc code=end
-
-=======
-#
-# @lc app=leetcode id=53 lang=python3
-#
-# [53] Maximum Subarray
-#
-
-# @lc code=start
-# By dynamic programming, time: O(n), space: O(1)
-# §ä¥X³Ì¤j¤l°}¦C©M
-class Solution:
-    def maxSubArray(self, nums: List[int]) -> int:
-        tmp = 0
-        # ª`·N¤@¶}©l­n¦³­Ó³Ì¤j©M, Á×§K¥u¦³¤@­Ó¤¸¯À®Éªºª¬ªp
-        res = nums[0]
-        # ¤ñ¸û¥¿½Tªº·Qªk
-        # ¬İ¹L¥h©M»P·í¤U¤¸¯Ài­ş­Ó¤j, ¤jªÌ·í·s©M
-        # ±o¨ì·s©M«á, ¤ñ¸û·s©M»P³Ì¤j©M­ş­Ó¤j, ¤jªÌ·í³Ì¤j©M
-        for i in nums:
-            if tmp+i<i:
-                tmp = i
-            else:
-                tmp = tmp+i
-            if tmp>res:
-                res = tmp
-        # §Ú¦Û¤vªº°µªk
-        # ¬İ¹L¥h©M+·í¤U¤¸¯À¬O§_>0, ­Y<0¥Nªí­n¥Î¤U­Ó>0¤¸¯À·í·s©M
-        # for i in nums:
-        #     if tmp+i<0:
-        #         tmp = 0
-        #         # ­«ÂI, ´Nºâ¹L¥h©M+·í¤U¤¸¯À<0, ·í¤U¤¸¯À¤]¥i¯à¤ñ³Ì¤j©MÁÙ¤j
-        #         if i>res:
-        #             res = i
-        #         continue
-        #     else:
-        #         tmp += i
-        #         # ¹L¥h©M+·í¤U¤¸¯À>0´NÄ~Äò+, ­Y>³Ì¤j©M«h¦¨¬°³Ì¤j©M
-        #         if tmp>res:
-        #             res = tmp
-        return res
         
 # @lc code=end
 
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
