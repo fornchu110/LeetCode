@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=144 lang=python3
 #
 # [144] Binary Tree Preorder Traversal
 #
-
 # @lc code=start
 # Definition for a binary tree node.
 # class TreeNode:
@@ -16,64 +14,23 @@
 #By recursive
 class Solution:
     def preorder(self, root:TreeNode, res):
-        # «Dnode´N¤£¥Î°µ»¼°j¤F
+        # énodeå°±ä¸ç”¨åšéè¿´äº†
         if not root:
             return 
-        #«e§Ç:¤¤->¥ª->¥k
+        #å‰åº:ä¸­->å·¦->å³
         res.append(root.val)
         self.preorder(root.left, res)
         self.preorder(root.right, res)
         return
 
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        #¦^¶Çªº¬O°}¦C, ©Ò¥H¤@¶}©l¥ı°µªì©l¤Æ
+        #å›å‚³çš„æ˜¯é™£åˆ—, æ‰€ä»¥ä¸€é–‹å§‹å…ˆåšåˆå§‹åŒ–
         res = []
-        #¥Ñroot¶}©l»¼°j¾ã´Ê¾ğªºnode
+        #ç”±rooté–‹å§‹éè¿´æ•´æ£µæ¨¹çš„node
         self.preorder(root, res)
-        #»¼°j¥ş³¡§¹²¦, ¦^¶Ç«e§Ç°lÂÜµ²ªGres
+        #éè¿´å…¨éƒ¨å®Œç•¢, å›å‚³å‰åºè¿½è¹¤çµæœres
         return res
 
     
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=144 lang=python3
-#
-# [144] Binary Tree Preorder Traversal
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-#By recursive
-class Solution:
-    def preorder(self, root:TreeNode, res):
-        # «Dnode´N¤£¥Î°µ»¼°j¤F
-        if not root:
-            return 
-        #«e§Ç:¤¤->¥ª->¥k
-        res.append(root.val)
-        self.preorder(root.left, res)
-        self.preorder(root.right, res)
-        return
-
-    def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        #¦^¶Çªº¬O°}¦C, ©Ò¥H¤@¶}©l¥ı°µªì©l¤Æ
-        res = []
-        #¥Ñroot¶}©l»¼°j¾ã´Ê¾ğªºnode
-        self.preorder(root, res)
-        #»¼°j¥ş³¡§¹²¦, ¦^¶Ç«e§Ç°lÂÜµ²ªGres
-        return res
-
-    
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

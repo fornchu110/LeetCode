@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * @lc app=leetcode id=144 lang=c
  *
@@ -20,13 +19,13 @@
 
 // By recursive
 void preorder(struct TreeNode* root, int* res, int* resSize) {
-    //²×¤î±ø¥ó, ·íroot«Dnode®É
+    //çµ‚æ­¢æ¢ä»¶, ç•¶rooténodeæ™‚
     if(root==NULL) {
         return;
     }
-    //resSize¬O«ü¼Ğ, ¨ú­È­n¥Î*
-    //­n¹ï*resSize¬A¸¹,¤£µM++·|¥[¨ìresSize¤]´NÅÜ¦¨°O¾ĞÅé¦ì¸m+1
-    //preorder:¤¤->¥ª->¥k
+    //resSizeæ˜¯æŒ‡æ¨™, å–å€¼è¦ç”¨*
+    //è¦å°*resSizeæ‹¬è™Ÿ,ä¸ç„¶++æœƒåŠ åˆ°resSizeä¹Ÿå°±è®Šæˆè¨˜æ†¶é«”ä½ç½®+1
+    //preorder:ä¸­->å·¦->å³
     res[(*resSize)++] = root->val;
     preorder(root->left, res, resSize);
     preorder(root->right, res, resSize);    
@@ -34,64 +33,14 @@ void preorder(struct TreeNode* root, int* res, int* resSize) {
 }
 
 int* preorderTraversal(struct TreeNode* root, int* returnSize){
-    //°ÊºA¤À°t¦^¶Ç¥Îªºres°}¦C
+    //å‹•æ…‹åˆ†é…å›å‚³ç”¨çš„resé™£åˆ—
     int* res = (int*)malloc(100*sizeof(int));
-    //returnSize¬O«ü¼Ğ, ¥Î*ªì©l¤Æ*returnSizeªº­È·í§@©ñ¤Jresªºindex
+    //returnSizeæ˜¯æŒ‡æ¨™, ç”¨*åˆå§‹åŒ–*returnSizeçš„å€¼ç•¶ä½œæ”¾å…¥resçš„index
     *returnSize = 0;
-    //±qroot¶}©l¹ï©Ò¦³node°µ»¼°jªºpreorder
+    //å¾rooté–‹å§‹å°æ‰€æœ‰nodeåšéè¿´çš„preorder
     preorder(root, res, returnSize);
-    //¥ş³¡»¼°j§¹¦¨±o¨ì«e§Ç°lÂÜ§¹ªºµ²ªG, return res
+    //å…¨éƒ¨éè¿´å®Œæˆå¾—åˆ°å‰åºè¿½è¹¤å®Œçš„çµæœ, return res
     return res;
 }
 
 // @lc code=end
-
-=======
-/*
- * @lc app=leetcode id=144 lang=c
- *
- * [144] Binary Tree Preorder Traversal
- */
-
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     struct TreeNode *left;
- *     struct TreeNode *right;
- * };
- */
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-
-// By recursive
-void preorder(struct TreeNode* root, int* res, int* resSize) {
-    //²×¤î±ø¥ó, ·íroot«Dnode®É
-    if(root==NULL) {
-        return;
-    }
-    //resSize¬O«ü¼Ğ, ¨ú­È­n¥Î*
-    //­n¹ï*resSize¬A¸¹,¤£µM++·|¥[¨ìresSize¤]´NÅÜ¦¨°O¾ĞÅé¦ì¸m+1
-    //preorder:¤¤->¥ª->¥k
-    res[(*resSize)++] = root->val;
-    preorder(root->left, res, resSize);
-    preorder(root->right, res, resSize);    
-
-}
-
-int* preorderTraversal(struct TreeNode* root, int* returnSize){
-    //°ÊºA¤À°t¦^¶Ç¥Îªºres°}¦C
-    int* res = (int*)malloc(100*sizeof(int));
-    //returnSize¬O«ü¼Ğ, ¥Î*ªì©l¤Æ*returnSizeªº­È·í§@©ñ¤Jresªºindex
-    *returnSize = 0;
-    //±qroot¶}©l¹ï©Ò¦³node°µ»¼°jªºpreorder
-    preorder(root, res, returnSize);
-    //¥ş³¡»¼°j§¹¦¨±o¨ì«e§Ç°lÂÜ§¹ªºµ²ªG, return res
-    return res;
-}
-
-// @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

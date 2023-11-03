@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=142 lang=python3
 #
@@ -13,27 +12,27 @@
 #         self.next = None
 
 # By fast-slow pointer, time: O(n), space: O(1)
-# ³oÃşÃD¥Ø¬O¥Înode.next«ü¦Vªº¦ì¸m§PÂ_¬O§_¦³cycle, ¤]´N¬O»¡pythonªºnode¨ä¹ê³£¬O«ü¦V¦Unode¦ì¸mªºpointer
-# ¤£¬O¦^¶Ç¾ã­ÓlinklistªºÃş«¬À³¸Ó¤£»İ­ndummy node?
-# ³oºØlinklist¬Û¹JÃş«¬ªºÃD¥Ø·PÄ±³£­n¥ÎÁ`¦@a+b­Ónode¥h·Q, cycle¦³b­Ónode
-# fast©Mslow¬Û¹J®É¦³¨â¯S©Ê: ¤@¬Ofast¥²©w¨«slow¨â­¿¨B¼Æ, ¤G¬Ofast¤ñslow"¦h¨«"¤Fn­Ócycleªºªø«×b(­Ë°l¥²¦h¶]n°é)
-# ¬°¦ó¬On¦Ó¤£¬O1¬O¦]¦Ò¼{a¤ñb¤jªºª¬ªp, Ex: a = 5, b = 3ªº¸Ü®Ú¥»ÁÙ¨S¨«§¹a, ¤£¥i¯à¨ìcycle¤J¤f
-# Á`µ²¤U¨Ó´N¬Of = 2s¥Bf = s+nb, ±o¥X¦bfast slow¬Û¹J®É, s = nb
-# ¨C¦¸slow¨«¨ìcycle¤J¤f¥²¨«a+nb¨B, ©Ò¥H¥u­nfast slow¬Û¹J®É¦A¨«a¨B´N·|¨ìcycle¤J¤fnode
+# é€™é¡é¡Œç›®æ˜¯ç”¨node.nextæŒ‡å‘çš„ä½ç½®åˆ¤æ–·æ˜¯å¦æœ‰cycle, ä¹Ÿå°±æ˜¯èªªpythonçš„nodeå…¶å¯¦éƒ½æ˜¯æŒ‡å‘å„nodeä½ç½®çš„pointer
+# ä¸æ˜¯å›å‚³æ•´å€‹linklistçš„é¡å‹æ‡‰è©²ä¸éœ€è¦dummy node?
+# é€™ç¨®linklistç›¸é‡é¡å‹çš„é¡Œç›®æ„Ÿè¦ºéƒ½è¦ç”¨ç¸½å…±a+bå€‹nodeå»æƒ³, cycleæœ‰bå€‹node
+# fastå’Œslowç›¸é‡æ™‚æœ‰å…©ç‰¹æ€§: ä¸€æ˜¯fastå¿…å®šèµ°slowå…©å€æ­¥æ•¸, äºŒæ˜¯fastæ¯”slow"å¤šèµ°"äº†nå€‹cycleçš„é•·åº¦b(å€’è¿½å¿…å¤šè·‘nåœˆ)
+# ç‚ºä½•æ˜¯nè€Œä¸æ˜¯1æ˜¯å› è€ƒæ…®aæ¯”bå¤§çš„ç‹€æ³, Ex: a = 5, b = 3çš„è©±æ ¹æœ¬é‚„æ²’èµ°å®Œa, ä¸å¯èƒ½åˆ°cycleå…¥å£
+# ç¸½çµä¸‹ä¾†å°±æ˜¯f = 2sä¸”f = s+nb, å¾—å‡ºåœ¨fast slowç›¸é‡æ™‚, s = nb
+# æ¯æ¬¡slowèµ°åˆ°cycleå…¥å£å¿…èµ°a+nbæ­¥, æ‰€ä»¥åªè¦fast slowç›¸é‡æ™‚å†èµ°aæ­¥å°±æœƒåˆ°cycleå…¥å£node
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
         fast = head
         slow = head
         while fast!=None and fast.next!=None:
-            # ¦pªGfast¨«¨ìlinklistµ²§ô¥Nªí¨Scycle
-            # ¹³³oºØ¨Ò¥~©Î²×¤î±ø¥ó³£­n¼g¦b³Ì«e­±
+            # å¦‚æœfastèµ°åˆ°linklistçµæŸä»£è¡¨æ²’cycle
+            # åƒé€™ç¨®ä¾‹å¤–æˆ–çµ‚æ­¢æ¢ä»¶éƒ½è¦å¯«åœ¨æœ€å‰é¢
             fast = fast.next.next
             slow = slow.next
-            # ²Ä¤GºØ±¡ªp, fast©Mslow²Ä¤@¦¸¬Û¹J, ³o®É§Æ±æ§ä¥Xindex
+            # ç¬¬äºŒç¨®æƒ…æ³, fastå’Œslowç¬¬ä¸€æ¬¡ç›¸é‡, é€™æ™‚å¸Œæœ›æ‰¾å‡ºindex
             if fast==slow:
-                # ¥Î¨Ó§ä¥Xcycle¤J¤fnode¤§index
-                # ±Nfast±qhead¶}©l¸òµÛslow¤@°_¨«¤@¨B, ·í³o¦¸fast = slow¥Nªí¨«¤Fa
-                # ¤]´N¬O¨ì¤Fcycle¤J¤fªºnode
+                # ç”¨ä¾†æ‰¾å‡ºcycleå…¥å£nodeä¹‹index
+                # å°‡fastå¾headé–‹å§‹è·Ÿè‘—slowä¸€èµ·èµ°ä¸€æ­¥, ç•¶é€™æ¬¡fast = slowä»£è¡¨èµ°äº†a
+                # ä¹Ÿå°±æ˜¯åˆ°äº†cycleå…¥å£çš„node
                 fast = head
                 while fast!=slow:
                     fast = fast.next
@@ -42,50 +41,3 @@ class Solution:
         return None
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=142 lang=python3
-#
-# [142] Linked List Cycle II
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
-# By fast-slow pointer, time: O(n), space: O(1)
-# ³oÃşÃD¥Ø¬O¥Înode.next«ü¦Vªº¦ì¸m§PÂ_¬O§_¦³cycle, ¤]´N¬O»¡pythonªºnode¨ä¹ê³£¬O«ü¦V¦Unode¦ì¸mªºpointer
-# ¤£¬O¦^¶Ç¾ã­ÓlinklistªºÃş«¬À³¸Ó¤£»İ­ndummy node?
-# ³oºØlinklist¬Û¹JÃş«¬ªºÃD¥Ø·PÄ±³£­n¥ÎÁ`¦@a+b­Ónode¥h·Q, cycle¦³b­Ónode
-# fast©Mslow¬Û¹J®É¦³¨â¯S©Ê: ¤@¬Ofast¥²©w¨«slow¨â­¿¨B¼Æ, ¤G¬Ofast¤ñslow"¦h¨«"¤Fn­Ócycleªºªø«×b(­Ë°l¥²¦h¶]n°é)
-# ¬°¦ó¬On¦Ó¤£¬O1¬O¦]¦Ò¼{a¤ñb¤jªºª¬ªp, Ex: a = 5, b = 3ªº¸Ü®Ú¥»ÁÙ¨S¨«§¹a, ¤£¥i¯à¨ìcycle¤J¤f
-# Á`µ²¤U¨Ó´N¬Of = 2s¥Bf = s+nb, ±o¥X¦bfast slow¬Û¹J®É, s = nb
-# ¨C¦¸slow¨«¨ìcycle¤J¤f¥²¨«a+nb¨B, ©Ò¥H¥u­nfast slow¬Û¹J®É¦A¨«a¨B´N·|¨ìcycle¤J¤fnode
-class Solution:
-    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        fast = head
-        slow = head
-        while fast!=None and fast.next!=None:
-            # ¦pªGfast¨«¨ìlinklistµ²§ô¥Nªí¨Scycle
-            # ¹³³oºØ¨Ò¥~©Î²×¤î±ø¥ó³£­n¼g¦b³Ì«e­±
-            fast = fast.next.next
-            slow = slow.next
-            # ²Ä¤GºØ±¡ªp, fast©Mslow²Ä¤@¦¸¬Û¹J, ³o®É§Æ±æ§ä¥Xindex
-            if fast==slow:
-                # ¥Î¨Ó§ä¥Xcycle¤J¤fnode¤§index
-                # ±Nfast±qhead¶}©l¸òµÛslow¤@°_¨«¤@¨B, ·í³o¦¸fast = slow¥Nªí¨«¤Fa
-                # ¤]´N¬O¨ì¤Fcycle¤J¤fªºnode
-                fast = head
-                while fast!=slow:
-                    fast = fast.next
-                    slow = slow.next
-                return fast
-        return None
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

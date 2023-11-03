@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=143 lang=python3
 #
@@ -13,12 +12,12 @@
 #         self.next = next
 
 # By reverse and fast-slow pointer, time: O(n), space: O(1)
-# ­n±Nlink list¨Ì§ÇÀY§À­«·s±Æ§Ç 
-# ­ì¥»·Q»¡ª½±µ¨«¨ìtail¦A§Q¥Îtail.next©¹«e
-# ¦ı³o¼Ë°µ¤£¦æ¦]¨S¤ÏÂà, tail.next¹ê»Ú¤W´N¬ONone
-# ­n¥ı§ä¥Xlistªº¤¤ÂI, ±N¤¤¶¡¥H«áªºlist¤ÏÂà
-# §Q¥Îfast-slow pointerªº¤è¦¡§ämid
-# ¦³list­ì¥»ªºhead©M¤ÏÂà«á¨º¬qlistªºhead«á, ±N¥L­Ì¥æ¿ù¦X¨Ö§Y¥i
+# è¦å°‡link listä¾åºé ­å°¾é‡æ–°æ’åº 
+# åŸæœ¬æƒ³èªªç›´æ¥èµ°åˆ°tailå†åˆ©ç”¨tail.nextå¾€å‰
+# ä½†é€™æ¨£åšä¸è¡Œå› æ²’åè½‰, tail.nextå¯¦éš›ä¸Šå°±æ˜¯None
+# è¦å…ˆæ‰¾å‡ºlistçš„ä¸­é», å°‡ä¸­é–“ä»¥å¾Œçš„liståè½‰
+# åˆ©ç”¨fast-slow pointerçš„æ–¹å¼æ‰¾mid
+# æœ‰liståŸæœ¬çš„headå’Œåè½‰å¾Œé‚£æ®µlistçš„headå¾Œ, å°‡ä»–å€‘äº¤éŒ¯åˆä½µå³å¯
 class Solution:
     def reorderList(self, head: ListNode) -> None:
         if head is None:
@@ -29,16 +28,16 @@ class Solution:
         mid.next = None
         l2 = self.reverseList(l2)
         self.mergeList(l1, l2)
-    # §Q¥Îfast slow pointer§ämid
+    # åˆ©ç”¨fast slow pointeræ‰¾mid
     def middleNode(self, head: ListNode) -> ListNode:
         slow = fast = head
-        # ª`·N¤£¯à¥u§PÂ_fast.next.next¬O¦]­Yfast.next¬°None, µLªk§PÂ_fast.next.next¬°¦ó
+        # æ³¨æ„ä¸èƒ½åªåˆ¤æ–·fast.next.nextæ˜¯å› è‹¥fast.nextç‚ºNone, ç„¡æ³•åˆ¤æ–·fast.next.nextç‚ºä½•
         while fast.next is not None and fast.next.next is not None:
             slow = slow.next
             fast = fast.next.next
-        # fast¨«¨â¨Bslow¨«¤@¨B, fast¤£¯à¨«®Éslow­è¦n¦bmid
+        # fastèµ°å…©æ­¥slowèµ°ä¸€æ­¥, fastä¸èƒ½èµ°æ™‚slowå‰›å¥½åœ¨mid
         return slow
-    # ¤ÏÂà«á¥b³¡¤Àlink list
+    # åè½‰å¾ŒåŠéƒ¨åˆ†link list
     def reverseList(self, head: ListNode) -> ListNode:
         prev = None
         cur = head
@@ -60,68 +59,3 @@ class Solution:
         
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=143 lang=python3
-#
-# [143] Reorder List
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-# By reverse and fast-slow pointer, time: O(n), space: O(1)
-# ­n±Nlink list¨Ì§ÇÀY§À­«·s±Æ§Ç 
-# ­ì¥»·Q»¡ª½±µ¨«¨ìtail¦A§Q¥Îtail.next©¹«e
-# ¦ı³o¼Ë°µ¤£¦æ¦]¨S¤ÏÂà, tail.next¹ê»Ú¤W´N¬ONone
-# ­n¥ı§ä¥Xlistªº¤¤ÂI, ±N¤¤¶¡¥H«áªºlist¤ÏÂà
-# §Q¥Îfast-slow pointerªº¤è¦¡§ämid
-# ¦³list­ì¥»ªºhead©M¤ÏÂà«á¨º¬qlistªºhead«á, ±N¥L­Ì¥æ¿ù¦X¨Ö§Y¥i
-class Solution:
-    def reorderList(self, head: ListNode) -> None:
-        if head is None:
-            return
-        mid = self.middleNode(head)
-        l1 = head
-        l2 = mid.next
-        mid.next = None
-        l2 = self.reverseList(l2)
-        self.mergeList(l1, l2)
-    # §Q¥Îfast slow pointer§ämid
-    def middleNode(self, head: ListNode) -> ListNode:
-        slow = fast = head
-        # ª`·N¤£¯à¥u§PÂ_fast.next.next¬O¦]­Yfast.next¬°None, µLªk§PÂ_fast.next.next¬°¦ó
-        while fast.next is not None and fast.next.next is not None:
-            slow = slow.next
-            fast = fast.next.next
-        # fast¨«¨â¨Bslow¨«¤@¨B, fast¤£¯à¨«®Éslow­è¦n¦bmid
-        return slow
-    # ¤ÏÂà«á¥b³¡¤Àlink list
-    def reverseList(self, head: ListNode) -> ListNode:
-        prev = None
-        cur = head
-        while cur is not None:
-            nextTemp = cur.next
-            cur.next = prev
-            prev = cur
-            cur = nextTemp
-        return prev
-
-    def mergeList(self, l1: ListNode, l2: ListNode):
-        while l1 and l2:
-            cur1 = l1.next
-            cur2 = l2.next
-            l1.next = l2
-            l1 = cur1
-            l2.next = l1
-            l2 = cur2
-        
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

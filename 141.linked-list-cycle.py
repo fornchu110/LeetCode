@@ -1,9 +1,9 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=141 lang=python3
 #
 # [141] Linked List Cycle
 #
+
 
 # @lc code=start
 # Definition for singly-linked list.
@@ -14,33 +14,33 @@
 
 
 # By fast-slow pointer, time: O(n), space: O(1)
-# ³o­Ó¤èªk¥Î©ó§PÂ_cycle®É, fast¤@¦¸¨«¨â¨B, slow¤@¦¸¨«¤@¨B
-# ­Y¦³cycle¨ºfastÁ`¦³¤@¤Ñ·|­Ë°l¨ìslow, ©Ò¥H·ífast==slow«K¥Nªícycle
-# ­Y¨Scycle, fast¥Ã»·¤ñslow§Öª½¨ì¨«³Xlinklist§¹²¦
+# é€™å€‹æ–¹æ³•ç”¨æ–¼åˆ¤æ–·cycleæ™‚, fastä¸€æ¬¡èµ°å…©æ­¥, slowä¸€æ¬¡èµ°ä¸€æ­¥
+# è‹¥æœ‰cycleé‚£fastç¸½æœ‰ä¸€å¤©æœƒå€’è¿½åˆ°slow, æ‰€ä»¥ç•¶fast==slowä¾¿ä»£è¡¨cycle
+# è‹¥æ²’cycle, fastæ°¸é æ¯”slowå¿«ç›´åˆ°èµ°è¨ªlinklistå®Œç•¢
 class Solution:
     def hasCycle(self, head: ListNode) -> bool:
         if not head or not head.next:
             return False
         fast = slow = head
-        # ·ífastÁÙ¨S¨«³X§¹link list
-        # ¤£¯à¥uwhile fast¦]fast¤@¦¸¨«¨â¨B, ­Yfast.next¬°ªÅ
-        # ¨ºfast.nextµLªk«ü¦Vfast.next.next 
+        # ç•¶fasté‚„æ²’èµ°è¨ªå®Œlink list
+        # ä¸èƒ½åªwhile fastå› fastä¸€æ¬¡èµ°å…©æ­¥, è‹¥fast.nextç‚ºç©º
+        # é‚£fast.nextç„¡æ³•æŒ‡å‘fast.next.next 
         while fast and fast.next:
-            # fast¤@¦¸¨«¨â¨B, slow¤@¦¸¨«¤@¨B
+            # fastä¸€æ¬¡èµ°å…©æ­¥, slowä¸€æ¬¡èµ°ä¸€æ­¥
             fast = fast.next.next
             slow = slow.next
-            # ¬Ûµ¥¥Nªí¦³cycle
+            # ç›¸ç­‰ä»£è¡¨æœ‰cycle
             if fast==slow:
                 return True
         return False
 
-# By hashtable, time: O(n), space: O(n)¦]n­ÓÂI­n©ñn­Ó¶iªí¤~¯à¬d¸ß
-# ¨C¦¸¨«³X¨ì·snode¥h¬d¬O§_³sµ²¨ìªí¤ºªºnode
-# ¦³³sµ²¨ìªí¤º¥Nªícycle, return True 
-# ¨«³X§¹¤F³£¨Scycle return false
+# By hashtable, time: O(n), space: O(n)å› nå€‹é»è¦æ”¾nå€‹é€²è¡¨æ‰èƒ½æŸ¥è©¢
+# æ¯æ¬¡èµ°è¨ªåˆ°æ–°nodeå»æŸ¥æ˜¯å¦é€£çµåˆ°è¡¨å…§çš„node
+# æœ‰é€£çµåˆ°è¡¨å…§ä»£è¡¨cycle, return True 
+# èµ°è¨ªå®Œäº†éƒ½æ²’cycle return false
 # class Solution:
 #     def hasCycle(self, head: Optional[ListNode]) -> bool:
-#         # linklist¤º®e¤£·|­«½Æ¥Îset, ·|­«½Æ¥Îlist
+#         # linklistå…§å®¹ä¸æœƒé‡è¤‡ç”¨set, æœƒé‡è¤‡ç”¨list
 #         res = set()
 #         curr = head
 #         while(curr!=None):
@@ -53,59 +53,6 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=141 lang=python3
-#
-# [141] Linked List Cycle
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
-
-# By fast-slow pointer, time: O(n), space: O(1)
-# ³o­Ó¤èªk¥Î©ó§PÂ_cycle®É, fast¤@¦¸¨«¨â¨B, slow¤@¦¸¨«¤@¨B
-# ­Y¦³cycle¨ºfastÁ`¦³¤@¤Ñ·|­Ë°l¨ìslow, ©Ò¥H·ífast==slow«K¥Nªícycle
-# ­Y¨Scycle, fast¥Ã»·¤ñslow§Öª½¨ì¨«³Xlinklist§¹²¦
-class Solution:
-    def hasCycle(self, head: ListNode) -> bool:
-        if not head or not head.next:
-            return False
-        fast = slow = head
-        # ·ífastÁÙ¨S¨«³X§¹link list
-        # ¤£¯à¥uwhile fast¦]fast¤@¦¸¨«¨â¨B, ­Yfast.next¬°ªÅ
-        # ¨ºfast.nextµLªk«ü¦Vfast.next.next 
-        while fast and fast.next:
-            # fast¤@¦¸¨«¨â¨B, slow¤@¦¸¨«¤@¨B
-            fast = fast.next.next
-            slow = slow.next
-            # ¬Ûµ¥¥Nªí¦³cycle
-            if fast == slow:
-                return True
-        return False
-
-# By hashtable, time: O(n), space: O(n)¦]n­ÓÂI­n©ñn­Ó¶iªí¤~¯à¬d¸ß
-# ¨C¦¸¨«³X¨ì·snode¥h¬d¬O§_³sµ²¨ìªí¤ºªºnode
-# ¦³³sµ²¨ìªí¤º¥Nªícycle, return True 
-# ¨«³X§¹¤F³£¨Scycle return false
-# class Solution:
-#     def hasCycle(self, head: Optional[ListNode]) -> bool:
-#         # linklist¤º®e¤£·|­«½Æ¥Îset, ·|­«½Æ¥Îlist
-#         res = set()
-#         curr = head
-#         while(curr!=None):
-#             if curr.next in res:
-#                 return True
-#             res.add(curr)
-#             curr = curr.next
-#         return False
-
         
 # @lc code=end
 
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
