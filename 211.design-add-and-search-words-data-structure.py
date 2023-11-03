@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #
 # @lc app=leetcode id=211 lang=python3
 #
@@ -22,4 +23,30 @@ class WordDictionary:
 # obj.addWord(word)
 # param_2 = obj.search(word)
 # @lc code=end
+=======
+#
+# @lc app=leetcode id=211 lang=python3
+#
+# [211] Design Add and Search Words Data Structure
+#
+
+# @lc code=start
+class WordDictionary:
+
+    def __init__(self):
+        
+
+    def addWord(self, word: str) -> None:
+        
+
+    def search(self, word: str) -> bool:
+        
+
+
+# Your WordDictionary object will be instantiated and called as such:
+# obj = WordDictionary()
+# obj.addWord(word)
+# param_2 = obj.search(word)
+# @lc code=end
+>>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
 

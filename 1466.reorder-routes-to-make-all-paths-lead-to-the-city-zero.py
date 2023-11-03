@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #
 # @lc app=leetcode id=1466 lang=python3
 #
@@ -29,3 +30,36 @@ class Solution:
         
 # @lc code=end
 
+=======
+#
+# @lc app=leetcode id=1466 lang=python3
+#
+# [1466] Reorder Routes to Make All Paths Lead to the City Zero
+#
+
+# @lc code=start
+# 利用BFS、DFS解圖論問題, 以後再看
+
+# By BFS
+class Solution:
+    def minReorder(self, n: int, connections: List[List[int]]) -> int:
+        edge = [[] for _ in range(n)]
+        for p, c in connections:
+            edge[p].append((c, 1))
+            edge[c].append((p, 0))
+        quee = [0]
+        vist = [False] * n
+        vist[0] = True
+        ans = 0
+        while quee:
+            i = quee.pop(0)
+            for n, c in edge[i]:
+                if not vist[n]:
+                    vist[n] = True
+                    ans += c
+                    quee.append(n)
+        return ans
+        
+# @lc code=end
+
+>>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
