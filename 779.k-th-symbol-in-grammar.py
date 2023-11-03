@@ -6,8 +6,8 @@
 
 # @lc code=start
 
-# ªì©l¤Æµ¹¤@¦æ¼Æ¦r01, ¥u­n³o¦æªº²Äi­Ó¤¸¯À¬O0, ¤U¤@¦æ´N¹ïÀ³ªº¥X²{01, ¦pªG¬O1¤U¤@¦æ´N¹ïÀ³ªº¥X²{10
-# µ¹n©Mk, §ä¥X²Än¦æ²Äk­Óintªº­È(index±q1¶}©l)
+# åˆå§‹åŒ–çµ¦ä¸€è¡Œæ•¸å­—01, åªè¦é€™è¡Œçš„ç¬¬iå€‹å…ƒç´ æ˜¯0, ä¸‹ä¸€è¡Œå°±å°æ‡‰çš„å‡ºç¾01, å¦‚æžœæ˜¯1ä¸‹ä¸€è¡Œå°±å°æ‡‰çš„å‡ºç¾10
+# çµ¦nå’Œk, æ‰¾å‡ºç¬¬nè¡Œç¬¬kå€‹intçš„å€¼(indexå¾ž1é–‹å§‹)
 class Solution:
     def kthGrammar(self, n, k):
         res = True

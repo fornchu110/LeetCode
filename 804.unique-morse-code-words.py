@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=804 lang=python3
 #
@@ -6,38 +5,11 @@
 #
 
 # @lc code=start
-# By string proccessing, time: O(n), space: O(n), n¬°len(words)
-# ±Nwords¤º¨C­Ó¦r¦êÂà´«¦¨±K½X«á, §ä¥X³o¨Ç¦r¦ê¤£­«½Æªº¼Æ¶q
-# §ä¤£­«½Æ´N­n·Q¨ìset(), ¥Îlen(set)§Y¬O¤£­«½Æ¼Æ¶q
-class Solution:
-    def uniqueMorseRepresentations(self, words: List[str]) -> int:
-        code = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
-        res = set()
-        for i in words:
-            tmp = ""
-            for j in i:
-                # §Q¥Î"a"+"b" = "ab", ¦bstring°µ+=Åý¦P¤@¦r¦ê¤º¤£¦P±K½X³sµ²¦A¤@°_
-                # c»y¨¥¬O¨Ï¥Îsprinf()°µ³sµ², ³z¹L­n³B²zªº¦r²Å©Ò¦b¦ì§}¨Ó°µ
-                tmp += code[ord(j)-ord("a")]
-            # ¨C¦¸±N³B²z§¹ªº¦r¦ê¥[¶ires, ª`·Nset¬O¥Î.add()¤£¬Oappend
-            res.add(tmp)
-        return len(res)
-        # ¤W­±¨º¬qªº¤@¦æª©, ¦ý¬Ý¤£À´¦p¦ó§âÂà´«¹Lªº¦r¤¸joinªº
-        # return len(set("".join(code[ord(ch) - ord('a')] for ch in word) for word in words))
-
-# @lc code=end
-
-=======
-#
-# @lc app=leetcode id=804 lang=python3
-#
-# [804] Unique Morse Code Words
-#
-
+# By string proccessing, time: O(n), space: O(n), n = len(words)
 # @lc code=start
-# By string proccessing, time: O(n), space: O(n), n¬°len(words)
-# ±Nwords¤º¨C­Ó¦r¦êÂà´«¦¨±K½X«á, §ä¥X³o¨Ç¦r¦ê¤£­«½Æªº¼Æ¶q
-# §ä¤£­«½Æ´N­n·Q¨ìset(), ¥Îlen(set)§Y¬O¤£­«½Æ¼Æ¶q
+# By string proccessing, time: O(n), space: O(n), nç‚ºlen(words)
+# å°‡wordså…§æ¯å€‹å­—ä¸²è½‰æ›æˆå¯†ç¢¼å¾Œ, æ‰¾å‡ºé€™äº›å­—ä¸²ä¸é‡è¤‡çš„æ•¸é‡
+# æ‰¾ä¸é‡è¤‡å°±è¦æƒ³åˆ°set(), ç”¨len(set)å³æ˜¯ä¸é‡è¤‡æ•¸é‡
 class Solution:
     def uniqueMorseRepresentations(self, words: List[str]) -> int:
         code = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
@@ -45,15 +17,16 @@ class Solution:
         for i in words:
             tmp = ""
             for j in i:
-                # §Q¥Î"a"+"b" = "ab", ¦bstring°µ+=Åý¦P¤@¦r¦ê¤º¤£¦P±K½X³sµ²¦A¤@°_
-                # c»y¨¥¬O¨Ï¥Îsprinf()°µ³sµ², ³z¹L­n³B²zªº¦r²Å©Ò¦b¦ì§}¨Ó°µ
+                # åˆ©ç”¨"a"+"b" = "ab", åœ¨stringåš+=è®“åŒä¸€å­—ä¸²å…§ä¸åŒå¯†ç¢¼é€£çµå†ä¸€èµ·
+                # cèªžè¨€æ˜¯ä½¿ç”¨sprinf()åšé€£çµ, é€éŽè¦è™•ç†çš„å­—ç¬¦æ‰€åœ¨ä½å€ä¾†åš
                 tmp += code[ord(j)-ord("a")]
-            # ¨C¦¸±N³B²z§¹ªº¦r¦ê¥[¶ires, ª`·Nset¬O¥Î.add()¤£¬Oappend
+            # æ¯æ¬¡å°‡è™•ç†å®Œçš„å­—ä¸²åŠ é€²res, æ³¨æ„setæ˜¯ç”¨.add()ä¸æ˜¯append
             res.add(tmp)
         return len(res)
-        # ¤W­±¨º¬qªº¤@¦æª©, ¦ý¬Ý¤£À´¦p¦ó§âÂà´«¹Lªº¦r¤¸joinªº
+        # ä¸Šé¢é‚£æ®µçš„ä¸€è¡Œç‰ˆ, ä½†çœ‹ä¸æ‡‚å¦‚ä½•æŠŠè½‰æ›éŽçš„å­—å…ƒjoinçš„
         # return len(set("".join(code[ord(ch) - ord('a')] for ch in word) for word in words))
 
 # @lc code=end
 
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
+# @lc code=end
+
