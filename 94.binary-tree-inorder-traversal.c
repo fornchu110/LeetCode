@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * @lc app=leetcode id=94 lang=c
  *
@@ -19,79 +18,31 @@
  */
 
 //By recursive
-// resSize¬O¬°¤Fª¾¹D·í¤U©ñ¤J¤§node¸Ó©ñ¦bresªº­ş­Óindex
+// resSizeæ˜¯ç‚ºäº†çŸ¥é“ç•¶ä¸‹æ”¾å…¥ä¹‹nodeè©²æ”¾åœ¨resçš„å“ªå€‹index
 void inorder(struct TreeNode* root, int* res, int* resSize) {
-    //²×¤î±ø¥ó, «Dnode®É¨S¿ìªk»¼°j, ª½±µreturn
+    //çµ‚æ­¢æ¢ä»¶, énodeæ™‚æ²’è¾¦æ³•éè¿´, ç›´æ¥return
     if (!root) {
         return;
     }
-    //inoder¶¶§Ç¬O:¥ª->¤¤->¥k, ¤¤¤£·|¦³¤l¾ğ
-    //¥ª¤l¾ğ°µ»¼°j
+    //inoderé †åºæ˜¯:å·¦->ä¸­->å³, ä¸­ä¸æœƒæœ‰å­æ¨¹
+    //å·¦å­æ¨¹åšéè¿´
     inorder(root->left, res, resSize);
-    //¥ª¤l¾ğ»¼°j°µ§¹, ±Nroot©ñ¤J¨Ã§âreSize+1(µ¥¦P¤U­Óroot­n©ñ¤Jªº¦ì¸m)
+    //å·¦å­æ¨¹éè¿´åšå®Œ, å°‡rootæ”¾å…¥ä¸¦æŠŠreSize+1(ç­‰åŒä¸‹å€‹rootè¦æ”¾å…¥çš„ä½ç½®)
     res[(*resSize)++] = root->val;
-    //¥ª¤l¾ğ©Mroot³£°µ§¹¤~°µ¥k¤l¾ğ
+    //å·¦å­æ¨¹å’Œrootéƒ½åšå®Œæ‰åšå³å­æ¨¹
     inorder(root->right, res, resSize);
 }
 
 int* inorderTraversal(struct TreeNode* root, int* returnSize) {
-    //¹ïtree©Ò¦³node°µ»¼°j, ¨C¦¸³£¥H·í¤Uªºnode¬°root
+    //å°treeæ‰€æœ‰nodeåšéè¿´, æ¯æ¬¡éƒ½ä»¥ç•¶ä¸‹çš„nodeç‚ºroot
     int* res = malloc(sizeof(int)*100);
-    //¤@¶}©l¤@©w¬O±qres[0]¶}©l©ñ¤Jnode, ©Ò¥HreturnSize = 0
+    //ä¸€é–‹å§‹ä¸€å®šæ˜¯å¾res[0]é–‹å§‹æ”¾å…¥node, æ‰€ä»¥returnSize = 0
     *returnSize = 0;
     inorder(root, res, returnSize);
-    //µ¥§¹¦¨¹ï©Ò¦³nodeªºinorder°lÂÜ«á, resSize«K¬OreturnSize=nodeÁ`¼Æ
+    //ç­‰å®Œæˆå°æ‰€æœ‰nodeçš„inorderè¿½è¹¤å¾Œ, resSizeä¾¿æ˜¯returnSize=nodeç¸½æ•¸
     return res;
 }
 
-// @lc code=end
-
-=======
-/*
- * @lc app=leetcode id=94 lang=c
- *
- * [94] Binary Tree Inorder Traversal
- */
-
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     struct TreeNode *left;
- *     struct TreeNode *right;
- * };
- */
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-
-//By recursive
-// resSize¬O¬°¤Fª¾¹D·í¤U©ñ¤J¤§node¸Ó©ñ¦bresªº­ş­Óindex
-void inorder(struct TreeNode* root, int* res, int* resSize) {
-    //²×¤î±ø¥ó, «Dnode®É¨S¿ìªk»¼°j, ª½±µreturn
-    if (!root) {
-        return;
-    }
-    //inoder¶¶§Ç¬O:¥ª->¤¤->¥k, ¤¤¤£·|¦³¤l¾ğ
-    //¥ª¤l¾ğ°µ»¼°j
-    inorder(root->left, res, resSize);
-    //¥ª¤l¾ğ»¼°j°µ§¹, ±Nroot©ñ¤J¨Ã§âreSize+1(µ¥¦P¤U­Óroot­n©ñ¤Jªº¦ì¸m)
-    res[(*resSize)++] = root->val;
-    //¥ª¤l¾ğ©Mroot³£°µ§¹¤~°µ¥k¤l¾ğ
-    inorder(root->right, res, resSize);
-}
-
-int* inorderTraversal(struct TreeNode* root, int* returnSize) {
-    //¹ïtree©Ò¦³node°µ»¼°j, ¨C¦¸³£¥H·í¤Uªºnode¬°root
-    int* res = malloc(sizeof(int)*100);
-    //¤@¶}©l¤@©w¬O±qres[0]¶}©l©ñ¤Jnode, ©Ò¥HreturnSize = 0
-    *returnSize = 0;
-    inorder(root, res, returnSize);
-    //µ¥§¹¦¨¹ï©Ò¦³nodeªºinorder°lÂÜ«á, resSize«K¬OreturnSize=nodeÁ`¼Æ
-    return res;
-}
 
 // @lc code=end
 
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
