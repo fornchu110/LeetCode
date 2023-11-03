@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=24 lang=python3
 #
 # [24] Swap Nodes in Pairs
 #
 
-# µ¹¤@­Ólink list, ±N¤º®e¨C¨â­Ónode­Ç­Ç¥æ´«(¤£¥uvalue)¨Ãreturn head
+# çµ¦ä¸€å€‹link list, å°‡å…§å®¹æ¯å…©å€‹nodeå€†å€†äº¤æ›(ä¸åªvalue)ä¸¦return head
 
 # @lc code=start
 # Definition for singly-linked list.
@@ -15,109 +14,48 @@
 #         self.next = next
 
 # By iterative, time: O(n), space: O(1)
-# ¹ïlinklist¤º¨â¨ânode°µ¥æ´«, §ä¤£¨ì¬Û¾Fªºnode¯à¥æ´«´Nºû«ù­ì¼Ë
-# ¤]·|¦³ªÅlinklist©Ò¥H¥²¶·¨Ï¥Îdummy
+# å°linklistå…§å…©å…©nodeåšäº¤æ›, æ‰¾ä¸åˆ°ç›¸é„°çš„nodeèƒ½äº¤æ›å°±ç¶­æŒåŸæ¨£
+# ä¹Ÿæœƒæœ‰ç©ºlinklistæ‰€ä»¥å¿…é ˆä½¿ç”¨dummy
 class Solution:
     def swapPairs(self, head: ListNode) -> ListNode:
         dummy = ListNode(next = head)
         cur = dummy
-        # ¨C¦¸¦³¨â­Ó¥i¥æ´«ªºnode¤~¦¨¥ß
+        # æ¯æ¬¡æœ‰å…©å€‹å¯äº¤æ›çš„nodeæ‰æˆç«‹
         while cur.next and cur.next.next:
-            # ¹ï¨ânode°µ¥æ´«, node1©Mnode2
+            # å°å…©nodeåšäº¤æ›, node1å’Œnode2
             node1 = cur.next
             node2 = cur.next.next
-            # ­«ÂI¦b³o¥y, ¤@¶}©lcur = dummy³o½ü
-            # cur.next = noede2µ¥¦P§âdummy.next = node2, Åı³Ì«ádummy.next¨S¥X°İÃD
+            # é‡é»åœ¨é€™å¥, ä¸€é–‹å§‹cur = dummyé€™è¼ª
+            # cur.next = noede2ç­‰åŒæŠŠdummy.next = node2, è®“æœ€å¾Œdummy.nextæ²’å‡ºå•é¡Œ
             cur.next = node2
-            # ²Ä¤@­Ónode±µ¤W­ì¥»²Ä¤G­Ónodeªºnext
+            # ç¬¬ä¸€å€‹nodeæ¥ä¸ŠåŸæœ¬ç¬¬äºŒå€‹nodeçš„next
             node1.next = node2.next
-            # ²Ä¤G­Ónode±µ¤W²Ä¤@­Ónode
+            # ç¬¬äºŒå€‹nodeæ¥ä¸Šç¬¬ä¸€å€‹node
             node2.next = node1
-            # curÅÜ¦¨¥Ø«e¦ì©ó«á¤èªºnode1
-            # ³oÃDcur¥»¨Ó¬Odummy³oºØ¨ânode«e¤@­Óprevªº¸}¦â
+            # curè®Šæˆç›®å‰ä½æ–¼å¾Œæ–¹çš„node1
+            # é€™é¡Œcuræœ¬ä¾†æ˜¯dummyé€™ç¨®å…©nodeå‰ä¸€å€‹prevçš„è…³è‰²
             cur = node1
         return dummy.next
 
-# By recursive, time: O(n), space: O(n), »ª¦ü¤ñ¸û§Ö
-# ¥Îrecursiveªº¸Ü¨S¦³dummy·§©À
-# recursiveª`·N±q§À¬İ²×¤î±ø¥ó©M±qÀY¬İ¨C¤@½ü»İ­nªº¦^¶Ç­È
+# By recursive, time: O(n), space: O(n), è²Œä¼¼æ¯”è¼ƒå¿«
+# ç”¨recursiveçš„è©±æ²’æœ‰dummyæ¦‚å¿µ
+# recursiveæ³¨æ„å¾å°¾çœ‹çµ‚æ­¢æ¢ä»¶å’Œå¾é ­çœ‹æ¯ä¸€è¼ªéœ€è¦çš„å›å‚³å€¼
 # class Solution:
 #     def swapPairs(self, head: ListNode) -> ListNode:
-#         # ²×¤î±ø¥ó·í¤£¨ì¨â­Ónode®Éµ²§ô
+#         # çµ‚æ­¢æ¢ä»¶ç•¶ä¸åˆ°å…©å€‹nodeæ™‚çµæŸ
 #         if head is None or head.next is None:
-#             # return head¦Ó¤£¬Oreturn NoneÁ×§K¥u¦³¤@­Ónode®É¦^¶ÇªÅ°}¦C
+#             # return headè€Œä¸æ˜¯return Noneé¿å…åªæœ‰ä¸€å€‹nodeæ™‚å›å‚³ç©ºé™£åˆ—
 #             return head
-#         # ³oÃä¬OÆ[¹î¥æ´««á²Ä¤G­Ó¸`ÂI·|°µ¬°·sªº²Ä¤@­Ó¸`ÂI
+#         # é€™é‚Šæ˜¯è§€å¯Ÿäº¤æ›å¾Œç¬¬äºŒå€‹ç¯€é»æœƒåšç‚ºæ–°çš„ç¬¬ä¸€å€‹ç¯€é»
 #         newHead = head.next
-#         # ­ì¥»²Ä¤@­Ó¸`ÂI­n±µ¤W­ì¥»²Ä¤G­Ó¸`ÂIªºnext»¼°j¤U¥hªº¦^¶Ç­È
-#         # ¨ä¹ê´N¬O¤U¤@½ü©ÒreturnªºnewHead, ¤]´N¬O¤U¤@½ü¤§­ì¥»²Ä¤G­Ónode
-#         # ±µ¤W¦Û¤v¯à¦blinklistªºnodeÁ`¼Æ¥u¦³1®É«O¯d¨º¤@­Ónode¦Ó¤£¹³return None
+#         # åŸæœ¬ç¬¬ä¸€å€‹ç¯€é»è¦æ¥ä¸ŠåŸæœ¬ç¬¬äºŒå€‹ç¯€é»çš„nextéè¿´ä¸‹å»çš„å›å‚³å€¼
+#         # å…¶å¯¦å°±æ˜¯ä¸‹ä¸€è¼ªæ‰€returnçš„newHead, ä¹Ÿå°±æ˜¯ä¸‹ä¸€è¼ªä¹‹åŸæœ¬ç¬¬äºŒå€‹node
+#         # æ¥ä¸Šè‡ªå·±èƒ½åœ¨linklistçš„nodeç¸½æ•¸åªæœ‰1æ™‚ä¿ç•™é‚£ä¸€å€‹nodeè€Œä¸åƒreturn None
 #         head.next = self.swapPairs(newHead.next)
-#         # ·sªº²Ä¤@­Ó¸`ÂI­n±µ¤W­ì¥»²Ä¤@­Ó¸`ÂI
+#         # æ–°çš„ç¬¬ä¸€å€‹ç¯€é»è¦æ¥ä¸ŠåŸæœ¬ç¬¬ä¸€å€‹ç¯€é»
 #         newHead.next = head
 #         return newHead
 
-# @lc code=end
-
-=======
-#
-# @lc app=leetcode id=24 lang=python3
-#
-# [24] Swap Nodes in Pairs
-#
-
-# µ¹¤@­Ólink list, ±N¤º®e¨C¨â­Ónode­Ç­Ç¥æ´«(¤£¥uvalue)¨Ãreturn head
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-# By iterative, time: O(n), space: O(1)
-# ¹ïlinklist¤º¨â¨ânode°µ¥æ´«, §ä¤£¨ì¬Û¾Fªºnode¯à¥æ´«´Nºû«ù­ì¼Ë
-# ¤]·|¦³ªÅlinklist©Ò¥H¥²¶·¨Ï¥Îdummy
-class Solution:
-    def swapPairs(self, head: ListNode) -> ListNode:
-        dummy = ListNode(next = head)
-        cur = dummy
-        # ¨C¦¸¦³¨â­Ó¥i¥æ´«ªºnode¤~¦¨¥ß
-        while cur.next and cur.next.next:
-            # ¹ï¨ânode°µ¥æ´«, node1©Mnode2
-            node1 = cur.next
-            node2 = cur.next.next
-            # ­«ÂI¦b³o¥y, ¤@¶}©lcur = dummy³o½ü
-            # cur.next = noede2µ¥¦P§âdummy.next = node2, Åı³Ì«ádummy.next¨S¥X°İÃD
-            cur.next = node2
-            # ²Ä¤@­Ónode±µ¤W­ì¥»²Ä¤G­Ónodeªºnext
-            node1.next = node2.next
-            # ²Ä¤G­Ónode±µ¤W²Ä¤@­Ónode
-            node2.next = node1
-            # curÅÜ¦¨¥Ø«e¦ì©ó«á¤èªºnode1
-            # ³oÃDcur¥»¨Ó¬Odummy³oºØ¨ânode«e¤@­Óprevªº¸}¦â
-            cur = node1
-        return dummy.next
-
-# By recursive, time: O(n), space: O(n), »ª¦ü¤ñ¸û§Ö
-# ¥Îrecursiveªº¸Ü¨S¦³dummy·§©À
-# recursiveª`·N±q§À¬İ²×¤î±ø¥ó©M±qÀY¬İ¨C¤@½ü»İ­nªº¦^¶Ç­È
-# class Solution:
-#     def swapPairs(self, head: ListNode) -> ListNode:
-#         # ²×¤î±ø¥ó·í¤£¨ì¨â­Ónode®Éµ²§ô
-#         if head is None or head.next is None:
-#             # return head¦Ó¤£¬Oreturn NoneÁ×§K¥u¦³¤@­Ónode®É¦^¶ÇªÅ°}¦C
-#             return head
-#         # ³oÃä¬OÆ[¹î¥æ´««á²Ä¤G­Ó¸`ÂI·|°µ¬°·sªº²Ä¤@­Ó¸`ÂI
-#         newHead = head.next
-#         # ­ì¥»²Ä¤@­Ó¸`ÂI­n±µ¤W­ì¥»²Ä¤G­Ó¸`ÂIªºnext»¼°j¤U¥hªº¦^¶Ç­È
-#         # ¨ä¹ê´N¬O¤U¤@½ü©ÒreturnªºnewHead, ¤]´N¬O¤U¤@½ü¤§­ì¥»²Ä¤G­Ónode
-#         # ±µ¤W¦Û¤v¯à¦blinklistªºnodeÁ`¼Æ¥u¦³1®É«O¯d¨º¤@­Ónode¦Ó¤£¹³return None
-#         head.next = self.swapPairs(newHead.next)
-#         # ·sªº²Ä¤@­Ó¸`ÂI­n±µ¤W­ì¥»²Ä¤@­Ó¸`ÂI
-#         newHead.next = head
-#         return newHead
 
 # @lc code=end
 
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

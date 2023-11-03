@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=33 lang=python3
 #
@@ -6,104 +5,49 @@
 #
 
 # @lc code=start
-# µ¹¤@­Órotated¹Lªº¦³§Ç¼Æ¦C, ­n¨D§ä¥Xtarget¬O§_¦b¼Æ¦C¤¤, ¦bªº¸Üreturn index§_«h-1
-# ³W©w­n¦btime: O(log(n))¸Ñ¨M, ·Q¨ì¤G¤À·j´M
+# çµ¦ä¸€å€‹rotatedéçš„æœ‰åºæ•¸åˆ—, è¦æ±‚æ‰¾å‡ºtargetæ˜¯å¦åœ¨æ•¸åˆ—ä¸­, åœ¨çš„è©±return indexå¦å‰‡-1
+# è¦å®šè¦åœ¨time: O(log(n))è§£æ±º, æƒ³åˆ°äºŒåˆ†æœå°‹
 
 # By binary search, time: O(log(n)), space: O(1)
-# ¤G¤À·j´Mªk, ³oÃD¤@¼Ë¥i¥H¥Î[l, r)¥ª³¬¥k¶}ªº°Ï¶¡°µ
-# ³oÃDªº·Qªk¬O, ¥ı¬İmid¥ªÃä©M¥kÃä­şÃä¬O³æ½Õ¦³§Ç, ¦A¬İtarget¬O§_¦ì©ó³æ½Õ¨ºÃä¨Ó¨M©w°Ï¶¡
+# äºŒåˆ†æœå°‹æ³•, é€™é¡Œä¸€æ¨£å¯ä»¥ç”¨[l, r)å·¦é–‰å³é–‹çš„å€é–“åš
+# é€™é¡Œçš„æƒ³æ³•æ˜¯, å…ˆçœ‹midå·¦é‚Šå’Œå³é‚Šå“ªé‚Šæ˜¯å–®èª¿æœ‰åº, å†çœ‹targetæ˜¯å¦ä½æ–¼å–®èª¿é‚£é‚Šä¾†æ±ºå®šå€é–“
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        # not nums¥Î¨Ó§PÂ_nums¬O§_¬°ªÅ, ¤]´N¬O[], ¦ıÃD¥Ø»¡¦Ü¤Ö¦³¤@­Ó¤¸¯À©Ò¥H¤£»İ­n
+        # not numsç”¨ä¾†åˆ¤æ–·numsæ˜¯å¦ç‚ºç©º, ä¹Ÿå°±æ˜¯[], ä½†é¡Œç›®èªªè‡³å°‘æœ‰ä¸€å€‹å…ƒç´ æ‰€ä»¥ä¸éœ€è¦
         # if not nums:
         #     return -1
         l, r = 0, len(nums)-1
-        # while±ø¥ó´N¬O¨Ï¥Îªº·j´M°Ï¶¡, §Ú¿ï¾Ü[l, r)¥ª³¬¥k¶}°Ï¶¡
+        # whileæ¢ä»¶å°±æ˜¯ä½¿ç”¨çš„æœå°‹å€é–“, æˆ‘é¸æ“‡[l, r)å·¦é–‰å³é–‹å€é–“
         while l<r:
             mid = l+(r-l)//2
-            # ·ímid==targetª½±µªğ¦^
+            # ç•¶mid==targetç›´æ¥è¿”å›
             if nums[mid]==target:
                 return mid
-            # ­Ymid¤ñnums[len(nums)-1]ÁÙ¤p, ¥Nªí¥kÃä¬O³æ½Õ¦³§Ç
+            # è‹¥midæ¯”nums[len(nums)-1]é‚„å°, ä»£è¡¨å³é‚Šæ˜¯å–®èª¿æœ‰åº
             if nums[mid]<nums[len(nums)-1]:
-                # ¥kÃä¬O³æ½Õ¦³§Ç©Ò¥H¯àª½±µ§PÂ_target¬O§_¦b¥kÃä
-                # ª`·Ntarget¤£¥i¯à==nums[mid], §_«h«e­±¤w¸greturn
+                # å³é‚Šæ˜¯å–®èª¿æœ‰åºæ‰€ä»¥èƒ½ç›´æ¥åˆ¤æ–·targetæ˜¯å¦åœ¨å³é‚Š
+                # æ³¨æ„targetä¸å¯èƒ½==nums[mid], å¦å‰‡å‰é¢å·²ç¶“return
                 if nums[mid]<target<=nums[len(nums)-1]:
-                    # target¦b¥kÃä¨ºÁY¤p½d³ò§âl³]©w¬°mid+1
+                    # targetåœ¨å³é‚Šé‚£ç¸®å°ç¯„åœæŠŠlè¨­å®šç‚ºmid+1
                     l = mid+1
-                # target¦b¥ªÃä, ¦Ó¬İªº¬O[l, r)©Ò¥Hr = mid
+                # targetåœ¨å·¦é‚Š, è€Œçœ‹çš„æ˜¯[l, r)æ‰€ä»¥r = mid
                 else:
                     r = mid
-            # ­Ymid>=nums[len(nums)-1], ¥Nªí¥ªÃä¬O³æ½Õ¦³§Ç
+            # è‹¥mid>=nums[len(nums)-1], ä»£è¡¨å·¦é‚Šæ˜¯å–®èª¿æœ‰åº
             else:
-                # ª½±µ§PÂ_target¬O§_¦ì©ó¥ªÃä
-                # ¤@¼Ëª`·Ntarget¤£¥i¯à==nums[mid]
+                # ç›´æ¥åˆ¤æ–·targetæ˜¯å¦ä½æ–¼å·¦é‚Š
+                # ä¸€æ¨£æ³¨æ„targetä¸å¯èƒ½==nums[mid]
                 if nums[0]<=target<nums[mid]:
-                    # ¦ì©ó¥ªÃä, ÁY¤p½d³ò§âr³]©w¦¨mid
+                    # ä½æ–¼å·¦é‚Š, ç¸®å°ç¯„åœæŠŠrè¨­å®šæˆmid
                     r = mid
-                # ¦ì©ó¥kÃä, ÁY¤plªº½d³ò
+                # ä½æ–¼å³é‚Š, ç¸®å°lçš„ç¯„åœ
                 else:
                     l = mid+1
-        # ¦]§Ú¬O¥Îwhile l<r, ©Ò¥H·íl==r¤]´N¬O½d³ò¤º³Ñ¤U¤@­Ó¤¸¯À®É·|¸õ¥X
-        # ­n§PÂ_³Ñ¤Uªº³o­Ó¤¸¯À¬O§_==target, ¥Înums[l]©Mnums[r]³£¤@¼Ë
+        # å› æˆ‘æ˜¯ç”¨while l<r, æ‰€ä»¥ç•¶l==rä¹Ÿå°±æ˜¯ç¯„åœå…§å‰©ä¸‹ä¸€å€‹å…ƒç´ æ™‚æœƒè·³å‡º
+        # è¦åˆ¤æ–·å‰©ä¸‹çš„é€™å€‹å…ƒç´ æ˜¯å¦==target, ç”¨nums[l]å’Œnums[r]éƒ½ä¸€æ¨£
         if nums[l]==target:
             return l
         return -1
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=33 lang=python3
-#
-# [33] Search in Rotated Sorted Array
-#
-
-# @lc code=start
-# µ¹¤@­Órotated¹Lªº¦³§Ç¼Æ¦C, ­n¨D§ä¥Xtarget¬O§_¦b¼Æ¦C¤¤, ¦bªº¸Üreturn index§_«h-1
-# ³W©w­n¦btime: O(log(n))¸Ñ¨M, ·Q¨ì¤G¤À·j´M
-
-# By binary search, time: O(log(n)), space: O(1)
-# ¤G¤À·j´Mªk, ³oÃD¤@¼Ë¥i¥H¥Î[l, r)¥ª³¬¥k¶}ªº°Ï¶¡°µ
-# ³oÃDªº·Qªk¬O, ¥ı¬İmid¥ªÃä©M¥kÃä­şÃä¬O³æ½Õ¦³§Ç, ¦A¬İtarget¬O§_¦ì©ó³æ½Õ¨ºÃä¨Ó¨M©w°Ï¶¡
-class Solution:
-    def search(self, nums: List[int], target: int) -> int:
-        # not nums¥Î¨Ó§PÂ_nums¬O§_¬°ªÅ, ¤]´N¬O[], ¦ıÃD¥Ø»¡¦Ü¤Ö¦³¤@­Ó¤¸¯À©Ò¥H¤£»İ­n
-        # if not nums:
-        #     return -1
-        l, r = 0, len(nums)-1
-        # while±ø¥ó´N¬O¨Ï¥Îªº·j´M°Ï¶¡, §Ú¿ï¾Ü[l, r)¥ª³¬¥k¶}°Ï¶¡
-        while l<r:
-            mid = l+(r-l)//2
-            # ·ímid==targetª½±µªğ¦^
-            if nums[mid]==target:
-                return mid
-            # ­Ymid¤ñnums[len(nums)-1]ÁÙ¤p, ¥Nªí¥kÃä¬O³æ½Õ¦³§Ç
-            if nums[mid]<nums[len(nums)-1]:
-                # ¥kÃä¬O³æ½Õ¦³§Ç©Ò¥H¯àª½±µ§PÂ_target¬O§_¦b¥kÃä
-                # ª`·Ntarget¤£¥i¯à==nums[mid], §_«h«e­±¤w¸greturn
-                if nums[mid]<target<=nums[len(nums)-1]:
-                    # target¦b¥kÃä¨ºÁY¤p½d³ò§âl³]©w¬°mid+1
-                    l = mid+1
-                # target¦b¥ªÃä, ¦Ó¬İªº¬O[l, r)©Ò¥Hr = mid
-                else:
-                    r = mid
-            # ­Ymid>=nums[len(nums)-1], ¥Nªí¥ªÃä¬O³æ½Õ¦³§Ç
-            else:
-                # ª½±µ§PÂ_target¬O§_¦ì©ó¥ªÃä
-                # ¤@¼Ëª`·Ntarget¤£¥i¯à==nums[mid]
-                if nums[0]<=target<nums[mid]:
-                    # ¦ì©ó¥ªÃä, ÁY¤p½d³ò§âr³]©w¦¨mid
-                    r = mid
-                # ¦ì©ó¥kÃä, ÁY¤plªº½d³ò
-                else:
-                    l = mid+1
-        # ¦]§Ú¬O¥Îwhile l<r, ©Ò¥H·íl==r¤]´N¬O½d³ò¤º³Ñ¤U¤@­Ó¤¸¯À®É·|¸õ¥X
-        # ­n§PÂ_³Ñ¤Uªº³o­Ó¤¸¯À¬O§_==target, ¥Înums[l]©Mnums[r]³£¤@¼Ë
-        if nums[l]==target:
-            return l
-        return -1
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

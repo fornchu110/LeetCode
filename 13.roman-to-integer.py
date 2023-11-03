@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=13 lang=python3
 #
@@ -6,64 +5,30 @@
 #
 
 # @lc code=start
-# µ¹Ã¹°¨¼Æ¦r¦ê, Âà´«¦¨¢Ì¶i¦ì¼Æ¦r
+# çµ¦ç¾…é¦¬æ•¸å­—ä¸², è½‰æ›æˆåé€²ä½æ•¸å­—
 
-# By hash table ,time: O(n), space: O(k), k = 7, ´N¬OÃ¹°¨¼Æ¦r°ò¥»¤¸¯À¼Æ¶q
-# «Ø¥ß¥Xhash«á·ÓµÛ³W«h¼ÒÀÀ§Y¥i
-# ³oÃD¨ä¹ê±q¥k¨ì¥ª¨«³X§ó¦n, ³o¼Ë¤£¥Î¨«³X²Ä¤G¦¸
+# By hash table ,time: O(n), space: O(k), k = 7, å°±æ˜¯ç¾…é¦¬æ•¸å­—åŸºæœ¬å…ƒç´ æ•¸é‡
+# å»ºç«‹å‡ºhashå¾Œç…§è‘—è¦å‰‡æ¨¡æ“¬å³å¯
+# é€™é¡Œå…¶å¯¦å¾å³åˆ°å·¦èµ°è¨ªæ›´å¥½, é€™æ¨£ä¸ç”¨èµ°è¨ªç¬¬äºŒæ¬¡
 class Solution:
     def romanToInt(self, s: str) -> int:
         hash = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
         res = 0
-        # ¥ı¨«³X¤@¦¸°µ¥[Á`
+        # å…ˆèµ°è¨ªä¸€æ¬¡åšåŠ ç¸½
         for i in s:
             res += hash[i]
-        # §â¥[¹LÀYªº¦©¦^¥h
+        # æŠŠåŠ éé ­çš„æ‰£å›å»
         for i in range(1, len(s)):
-            # I¬O1¦ı«á­±¦pªG±µV©ÎX, «h¥Nªí±NV©ÎX-1, Ex: I = 1, V = 5, IV = 4
+            # Iæ˜¯1ä½†å¾Œé¢å¦‚æœæ¥Væˆ–X, å‰‡ä»£è¡¨å°‡Væˆ–X-1, Ex: I = 1, V = 5, IV = 4
             if (s[i]=="V" or s[i]=="X") and s[i-1]=="I":
                 res -= 2*hash["I"]
-            # »P¤W­±¦P²z
+            # èˆ‡ä¸Šé¢åŒç†
             elif(s[i]=="L" or s[i]== "C") and s[i-1]=="X":
                 res -= 2*hash["X"]
             elif(s[i]=="D" or s[i]== "M") and s[i-1]=="C":
                 res -= 2*hash["C"]
         return res
 
-# @lc code=end
-
-=======
-#
-# @lc app=leetcode id=13 lang=python3
-#
-# [13] Roman to Integer
-#
-
-# @lc code=start
-# µ¹Ã¹°¨¼Æ¦r¦ê, Âà´«¦¨¢Ì¶i¦ì¼Æ¦r
-
-# By hash table ,time: O(n), space: O(k), k = 7, ´N¬OÃ¹°¨¼Æ¦r°ò¥»¤¸¯À¼Æ¶q
-# «Ø¥ß¥Xhash«á·ÓµÛ³W«h¼ÒÀÀ§Y¥i
-# ³oÃD¨ä¹ê±q¥k¨ì¥ª¨«³X§ó¦n, ³o¼Ë¤£¥Î¨«³X²Ä¤G¦¸
-class Solution:
-    def romanToInt(self, s: str) -> int:
-        hash = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
-        res = 0
-        # ¥ı¨«³X¤@¦¸°µ¥[Á`
-        for i in s:
-            res += hash[i]
-        # §â¥[¹LÀYªº¦©¦^¥h
-        for i in range(1, len(s)):
-            # I¬O1¦ı«á­±¦pªG±µV©ÎX, «h¥Nªí±NV©ÎX-1, Ex: I = 1, V = 5, IV = 4
-            if (s[i]=="V" or s[i]=="X") and s[i-1]=="I":
-                res -= 2*hash["I"]
-            # »P¤W­±¦P²z
-            elif(s[i]=="L" or s[i]== "C") and s[i-1]=="X":
-                res -= 2*hash["X"]
-            elif(s[i]=="D" or s[i]== "M") and s[i-1]=="C":
-                res -= 2*hash["C"]
-        return res
 
 # @lc code=end
 
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

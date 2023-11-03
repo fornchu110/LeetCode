@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=23 lang=python3
 #
@@ -12,39 +11,39 @@
 #         self.val = val
 #         self.next = next
 
-# µ¹k­Ó¤w±Æ§Ç¹Lªºlinklist, ­n¨D±N³ok­Ólinklist merge¦b¤@°_¥Blinklist¤@¼Ë®Ú¾Úval¥Ñ¤p¨ì¤j±Æ§Ç
+# çµ¦kå€‹å·²æŽ’åºéŽçš„linklist, è¦æ±‚å°‡é€™kå€‹linklist mergeåœ¨ä¸€èµ·ä¸”linklistä¸€æ¨£æ ¹æ“švalç”±å°åˆ°å¤§æŽ’åº
 
 # By traversal all linklist, time: O(kn*logkn), space: O(kn)
-# ¹ê»Ú¤W¦n¹³ÁÙ¬O³o­Ó¤ñdac§Ö?! ÁÙ§ó¬ÙªÅ¶¡
-# ¨ä¤¤k¥Nªík­Ólinklist, n¥Nªík­Ólinklist¤¤³Ìªøªºªø«×, kn§Y¬O¨âªÌ¬Û­¼
-# ©Ò¥Htime = O(kn*logkn)¬O¦]¬°¨«³X©Ò¦³linklistªáO(kn), ¦Ó±Æ§Ç³okn­Ó¸ê®ÆªáO(kn*logkn)
-# ³o­Ó¤èªk¥i¥H¥Îheapq©Mheapq.heapify()³Ì¨Î¤Æ
+# å¯¦éš›ä¸Šå¥½åƒé‚„æ˜¯é€™å€‹æ¯”dacå¿«?! é‚„æ›´çœç©ºé–“
+# å…¶ä¸­kä»£è¡¨kå€‹linklist, nä»£è¡¨kå€‹linklistä¸­æœ€é•·çš„é•·åº¦, knå³æ˜¯å…©è€…ç›¸ä¹˜
+# æ‰€ä»¥time = O(kn*logkn)æ˜¯å› ç‚ºèµ°è¨ªæ‰€æœ‰linklistèŠ±O(kn), è€ŒæŽ’åºé€™knå€‹è³‡æ–™èŠ±O(kn*logkn)
+# é€™å€‹æ–¹æ³•å¯ä»¥ç”¨heapqå’Œheapq.heapify()æœ€ä½³åŒ–
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         tmp = []
-        # °O±o¹ï¤@­Ó¦¬¨ì¤@­Ólinklist®É¹ê»Ú¤W¬O¦¬¨ì¥L­Ìªºhead node¦ì¸m
+        # è¨˜å¾—å°ä¸€å€‹æ”¶åˆ°ä¸€å€‹linklistæ™‚å¯¦éš›ä¸Šæ˜¯æ”¶åˆ°ä»–å€‘çš„head nodeä½ç½®
         for curi in lists:
-            # ¹ï¨C­Ólinklist°µ¨«³X
+            # å°æ¯å€‹linkliståšèµ°è¨ª
             while curi:
-                # ¥Îtmp±N©Ò¦³linklistªºval¦s°_¨Ó
+                # ç”¨tmpå°‡æ‰€æœ‰linklistçš„valå­˜èµ·ä¾†
                 tmp.append(curi.val)
                 curi = curi.next
-        # sort«á­n¶}©l·s«Ø¤@­Ólinklist±Ntmp¤º©Ò¦³¤º®e©ñ¶i¥h
+        # sortå¾Œè¦é–‹å§‹æ–°å»ºä¸€å€‹linklistå°‡tmpå…§æ‰€æœ‰å…§å®¹æ”¾é€²åŽ»
         tmp.sort()
         head = ListNode()
         curr = head
-        # ·sªºlinklist¼Æ¶q´N¬Otmp¤¸¯À¼Æ¶q
+        # æ–°çš„linklistæ•¸é‡å°±æ˜¯tmpå…ƒç´ æ•¸é‡
         for i in range(len(tmp)):
-            # ±Ntmp¤º©Ò¦³¤¸¯À¤@­Ó­Ó±µ¨ì·sªºlinklist«áÀY
+            # å°‡tmpå…§æ‰€æœ‰å…ƒç´ ä¸€å€‹å€‹æŽ¥åˆ°æ–°çš„linklistå¾Œé ­
             curr.next = ListNode(val = tmp[i])
             curr = curr.next
-        # head¥»¨­¨S±µ, ¬O±qhead«á¶}©l±µtmp¤º¤¸¯À, ©Ò¥Hreturn head.next
+        # headæœ¬èº«æ²’æŽ¥, æ˜¯å¾žheadå¾Œé–‹å§‹æŽ¥tmpå…§å…ƒç´ , æ‰€ä»¥return head.next
         return head.next
         
 # By divide and conquer, time: O(kn*logk), space: O(logk)
-# ¥Îdivide and conquer°µ¨ì¨C¨â¨â¦X¨Ö, ´î¤Ö»Ý­n§PÂ_ªºnode¼Æ¶q, ¬Ù¤U½ÆÂø«×
+# ç”¨divide and conqueråšåˆ°æ¯å…©å…©åˆä½µ, æ¸›å°‘éœ€è¦åˆ¤æ–·çš„nodeæ•¸é‡, çœä¸‹è¤‡é›œåº¦
 # class Solution:
-#     # ¤@¼Ë¬O¦X¨Ö¨âlinklist¤§code§@¬°¨ç¦¡
+#     # ä¸€æ¨£æ˜¯åˆä½µå…©linklistä¹‹codeä½œç‚ºå‡½å¼
 #     def merge2Lists(self,list1,list2):
 #         head=ListNode(0)
 #         curr_list=head
@@ -62,18 +61,18 @@ class Solution:
 #             curr_list.next=list2
 #         return head.next
     
-#     # ¤£Â_»¼°jdac, ª½¨ì³Ñ¤@­Ólinklist©Î¶W¥X½d³ò¤~¦X¨Ö
+#     # ä¸æ–·éžè¿´dac, ç›´åˆ°å‰©ä¸€å€‹linklistæˆ–è¶…å‡ºç¯„åœæ‰åˆä½µ
 #     def dac(self,lists,l,r):
-#         # ²×¤î±ø¥ó, ³Ñ¤@­Ólinklist®É¦^¶Ç
+#         # çµ‚æ­¢æ¢ä»¶, å‰©ä¸€å€‹linklistæ™‚å›žå‚³
 #         if l==r:
 #             return lists[l]
-#         # ·íl>r¥Nªí¶W¥X·Q§PÂ_ªº½d³ò
-#         # Ex: ­ì¥»´Á±æ²Ä0­Ó©M²Ä1­Ó¦X¨Ö, l>r¥Nªí²Ä1­Ó©M²Ä0­Ó¦X¨Ö, ¦ý(0, 1)¤w¸g°µ¹L¤F¤£»Ý­n(1, 0)
+#         # ç•¶l>rä»£è¡¨è¶…å‡ºæƒ³åˆ¤æ–·çš„ç¯„åœ
+#         # Ex: åŽŸæœ¬æœŸæœ›ç¬¬0å€‹å’Œç¬¬1å€‹åˆä½µ, l>rä»£è¡¨ç¬¬1å€‹å’Œç¬¬0å€‹åˆä½µ, ä½†(0, 1)å·²ç¶“åšéŽäº†ä¸éœ€è¦(1, 0)
 #         if l>r:
 #             return None
-#         # m§@¬°¤U¦¸­n»¼°jªºÃä¬É
+#         # mä½œç‚ºä¸‹æ¬¡è¦éžè¿´çš„é‚Šç•Œ
 #         m = (l+r)//2
-#         # µ¥¦P©ó¦b»¼°j¤U¥h¤§«áª½¨ì¨â¨â¬Û¾Fªºlinklist¤~·|¶}©lreturn(¹ê»Ú°µmerge2Lists)
+#         # ç­‰åŒæ–¼åœ¨éžè¿´ä¸‹åŽ»ä¹‹å¾Œç›´åˆ°å…©å…©ç›¸é„°çš„linklistæ‰æœƒé–‹å§‹return(å¯¦éš›åšmerge2Lists)
 #         return self.merge2Lists(self.dac(lists, l, m), self.dac(lists, m+1, r))
 
 #     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
@@ -84,16 +83,16 @@ class Solution:
 #             return lists[0]
 #         return self.dac(lists, 0, len(lists)-1)
 
-# By compare all linklist node, time: O(k^2*n), space: O(1), n¥Nªílinklistªø«×
-# time = O(k^2*n)¬O¦]¬°res­ì¥»ªø«×n, ²Ä¤@¦¸¦X¨Ö«áÅÜ2n, ²Äi¦¸¦X¨ÖÅÜi*n
-# ¦Ó¦X¨Ö·|°µk-1¦¸©Ò¥H2+..+k-1, ¬°O(k^2)
-# ¤wª¾·í¥u¦³¨â­Ólinklist®É, ¥i¥H¥ý³Ð«Ø¤@­Óhead
-# ±µµÛ±qÀY¨â¨â¤ñ¹ï¨âlinklist·í®Énodeªºval, ¿ï¾Ü±Nval¸û¤pªÌ¤@¤@±µ¨ì«á­±, ¦A¤ñ¸û¤U¤@¦¸
-# ¦ýk­ÓµLªk¤@¦¸¤ñ¸ûk­Ó, ¨º´N±Nk­Ólinklist¨Ì§Ç¨â¨â¤ñ¸û§Y¥i
-# ³o­Ó°µªk¦³¨â¨â©Ê½è, ¦]¦¹¥i¥H¥Îdivide and conquer°µ, timeÅÜ¦¨O(kn*logk), spaceÅÜ¦¨O(logk)¬°recursive¨Ï¥ÎªºstackªÅ¶¡
-# ¤§«á¦³¾÷·|°µdivide and conquerª©, ¤£µM²{¦b³oºØ½ÆÂø«×¹L°ª
+# By compare all linklist node, time: O(k^2*n), space: O(1), nä»£è¡¨linklisté•·åº¦
+# time = O(k^2*n)æ˜¯å› ç‚ºresåŽŸæœ¬é•·åº¦n, ç¬¬ä¸€æ¬¡åˆä½µå¾Œè®Š2n, ç¬¬iæ¬¡åˆä½µè®Ši*n
+# è€Œåˆä½µæœƒåšk-1æ¬¡æ‰€ä»¥2+..+k-1, ç‚ºO(k^2)
+# å·²çŸ¥ç•¶åªæœ‰å…©å€‹linklistæ™‚, å¯ä»¥å…ˆå‰µå»ºä¸€å€‹head
+# æŽ¥è‘—å¾žé ­å…©å…©æ¯”å°å…©linklistç•¶æ™‚nodeçš„val, é¸æ“‡å°‡valè¼ƒå°è€…ä¸€ä¸€æŽ¥åˆ°å¾Œé¢, å†æ¯”è¼ƒä¸‹ä¸€æ¬¡
+# ä½†kå€‹ç„¡æ³•ä¸€æ¬¡æ¯”è¼ƒkå€‹, é‚£å°±å°‡kå€‹linklistä¾åºå…©å…©æ¯”è¼ƒå³å¯
+# é€™å€‹åšæ³•æœ‰å…©å…©æ€§è³ª, å› æ­¤å¯ä»¥ç”¨divide and conqueråš, timeè®ŠæˆO(kn*logk), spaceè®ŠæˆO(logk)ç‚ºrecursiveä½¿ç”¨çš„stackç©ºé–“
+# ä¹‹å¾Œæœ‰æ©Ÿæœƒåšdivide and conquerç‰ˆ, ä¸ç„¶ç¾åœ¨é€™ç¨®è¤‡é›œåº¦éŽé«˜
 # class Solution:
-#     # ±N¨â¨â¦X¨Ölinklist§@¬°¨ç¦¡
+#     # å°‡å…©å…©åˆä½µlinklistä½œç‚ºå‡½å¼
 #     def merge2Lists(self,list1,list2):
 #         head = ListNode(0)
 #         curr_list=head
@@ -117,129 +116,5 @@ class Solution:
 #         for i in range(n):
 #             res=self.merge2Lists(res,lists[i])
 #         return res
-
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=23 lang=python3
-#
-# [23] Merge k Sorted Lists
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-# µ¹k­Ó¤w±Æ§Ç¹Lªºlinklist, ­n¨D±N³ok­Ólinklist merge¦b¤@°_¥Blinklist¤@¼Ë®Ú¾Úval¥Ñ¤p¨ì¤j±Æ§Ç
-
-# By traversal all linklist, time: O(kn*logkn), space: O(kn)
-# ¹ê»Ú¤W¦n¹³ÁÙ¬O³o­Ó¤ñdac§Ö?! ÁÙ§ó¬ÙªÅ¶¡
-# ¨ä¤¤k¥Nªík­Ólinklist, n¥Nªík­Ólinklist¤¤³Ìªøªºªø«×, kn§Y¬O¨âªÌ¬Û­¼
-# ©Ò¥Htime = O(kn*logkn)¬O¦]¬°¨«³X©Ò¦³linklistªáO(kn), ¦Ó±Æ§Ç³okn­Ó¸ê®ÆªáO(kn*logkn)
-# ³o­Ó¤èªk¥i¥H¥Îheapq©Mheapq.heapify()³Ì¨Î¤Æ
-class Solution:
-    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
-        tmp = []
-        # °O±o¹ï¤@­Ó¦¬¨ì¤@­Ólinklist®É¹ê»Ú¤W¬O¦¬¨ì¥L­Ìªºhead node¦ì¸m
-        for curi in lists:
-            # ¹ï¨C­Ólinklist°µ¨«³X
-            while curi:
-                # ¥Îtmp±N©Ò¦³linklistªºval¦s°_¨Ó
-                tmp.append(curi.val)
-                curi = curi.next
-        # sort«á­n¶}©l·s«Ø¤@­Ólinklist±Ntmp¤º©Ò¦³¤º®e©ñ¶i¥h
-        tmp.sort()
-        head = ListNode()
-        curr = head
-        # ·sªºlinklist¼Æ¶q´N¬Otmp¤¸¯À¼Æ¶q
-        for i in range(len(tmp)):
-            # ±Ntmp¤º©Ò¦³¤¸¯À¤@­Ó­Ó±µ¨ì·sªºlinklist«áÀY
-            curr.next = ListNode(val = tmp[i])
-            curr = curr.next
-        # head¥»¨­¨S±µ, ¬O±qhead«á¶}©l±µtmp¤º¤¸¯À, ©Ò¥Hreturn head.next
-        return head.next
-        
-# By divide and conquer, time: O(kn*logk), space: O(logk)
-# ¥Îdivide and conquer°µ¨ì¨C¨â¨â¦X¨Ö, ´î¤Ö»Ý­n§PÂ_ªºnode¼Æ¶q, ¬Ù¤U½ÆÂø«×
-# class Solution:
-#     # ¤@¼Ë¬O¦X¨Ö¨âlinklist¤§code§@¬°¨ç¦¡
-#     def merge2Lists(self,list1,list2):
-#         head=ListNode(0)
-#         curr_list=head
-#         while list1 and list2:
-#             if list1.val<list2.val:
-#                 curr_list.next=list1
-#                 list1=list1.next
-#             else:
-#                 curr_list.next=list2
-#                 list2=list2.next
-#             curr_list=curr_list.next
-#         if list1:
-#             curr_list.next=list1
-#         if list2:
-#             curr_list.next=list2
-#         return head.next
-    
-#     # ¤£Â_»¼°jdac, ª½¨ì³Ñ¤@­Ólinklist©Î¶W¥X½d³ò¤~¦X¨Ö
-#     def dac(self,lists,l,r):
-#         # ²×¤î±ø¥ó, ³Ñ¤@­Ólinklist®É¦^¶Ç
-#         if l==r:
-#             return lists[l]
-#         # ·íl>r¥Nªí¶W¥X·Q§PÂ_ªº½d³ò
-#         # Ex: ­ì¥»´Á±æ²Ä0­Ó©M²Ä1­Ó¦X¨Ö, l>r¥Nªí²Ä1­Ó©M²Ä0­Ó¦X¨Ö, ¦ý(0, 1)¤w¸g°µ¹L¤F¤£»Ý­n(1, 0)
-#         if l>r:
-#             return None
-#         # m§@¬°¤U¦¸­n»¼°jªºÃä¬É
-#         m = (l+r)//2
-#         # µ¥¦P©ó¦b»¼°j¤U¥h¤§«áª½¨ì¨â¨â¬Û¾Fªºlinklist¤~·|¶}©lreturn(¹ê»Ú°µmerge2Lists)
-#         return self.merge2Lists(self.dac(lists, l, m), self.dac(lists, m+1, r))
-
-#     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
-#         n = len(lists)
-#         if n==0:
-#             return None
-#         if n==1:
-#             return lists[0]
-#         return self.dac(lists, 0, len(lists)-1)
-
-# By compare all linklist node, time: O(k^2*n), space: O(1), n¥Nªílinklistªø«×
-# time = O(k^2*n)¬O¦]¬°res­ì¥»ªø«×n, ²Ä¤@¦¸¦X¨Ö«áÅÜ2n, ²Äi¦¸¦X¨ÖÅÜi*n
-# ¦Ó¦X¨Ö·|°µk-1¦¸©Ò¥H2+..+k-1, ¬°O(k^2)
-# ¤wª¾·í¥u¦³¨â­Ólinklist®É, ¥i¥H¥ý³Ð«Ø¤@­Óhead
-# ±µµÛ±qÀY¨â¨â¤ñ¹ï¨âlinklist·í®Énodeªºval, ¿ï¾Ü±Nval¸û¤pªÌ¤@¤@±µ¨ì«á­±, ¦A¤ñ¸û¤U¤@¦¸
-# ¦ýk­ÓµLªk¤@¦¸¤ñ¸ûk­Ó, ¨º´N±Nk­Ólinklist¨Ì§Ç¨â¨â¤ñ¸û§Y¥i
-# ³o­Ó°µªk¦³¨â¨â©Ê½è, ¦]¦¹¥i¥H¥Îdivide and conquer°µ, timeÅÜ¦¨O(kn*logk), spaceÅÜ¦¨O(logk)¬°recursive¨Ï¥ÎªºstackªÅ¶¡
-# ¤§«á¦³¾÷·|°µdivide and conquerª©, ¤£µM²{¦b³oºØ½ÆÂø«×¹L°ª
-# class Solution:
-#     # ±N¨â¨â¦X¨Ölinklist§@¬°¨ç¦¡
-#     def merge2Lists(self,list1,list2):
-#         head = ListNode(0)
-#         curr_list=head
-#         while list1 and list2:
-#             if list1.val<list2.val:
-#                 curr_list.next = list1
-#                 list1 = list1.next
-#             else:
-#                 curr_list.next = list2
-#                 list2 = list2.next
-#             curr_list = curr_list.next
-#         if list1:
-#             curr_list.next = list1
-#         if list2:
-#             curr_list.next = list2
-#         return head.next
-
-#     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
-#         n = len(lists)
-#         res=None
-#         for i in range(n):
-#             res=self.merge2Lists(res,lists[i])
-#         return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

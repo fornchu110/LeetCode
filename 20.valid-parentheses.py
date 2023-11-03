@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=20 lang=python3
 #
@@ -6,17 +5,17 @@
 #
 
 # @lc code=start
-# §PÂ_s¤ºªº¬A¸¹¬O§_valid
+# åˆ¤æ–·så…§çš„æ‹¬è™Ÿæ˜¯å¦valid
 
-# By stack, time: O(n), space: O(n+6), n = len(s), 6 = pairs©Ò°µhashªáªºªÅ¶¡
-# ¥Îlist¹ê§@stack, append¨Ópush, pop±N§Àºİ¨ú¥X
+# By stack, time: O(n), space: O(n+6), n = len(s), 6 = pairsæ‰€åšhashèŠ±çš„ç©ºé–“
+# ç”¨listå¯¦ä½œstack, appendä¾†push, popå°‡å°¾ç«¯å–å‡º
 class Solution:
     def isValid(self, s: str) -> bool:
-        # ªø«×«D°¸¼Æ¤@©w·|«Dªk
+        # é•·åº¦éå¶æ•¸ä¸€å®šæœƒéæ³•
         if len(s)&1:
             return False    
-        # ¹ê»Ú¤W¬O¤@­Óhash, {}©Ò¥H¬Odict¸ê®Æµ²ºc
-        # ¥Îhashªº§@ªkÁ×§K¤F¤@°ïif else
+        # å¯¦éš›ä¸Šæ˜¯ä¸€å€‹hash, {}æ‰€ä»¥æ˜¯dictè³‡æ–™çµæ§‹
+        # ç”¨hashçš„ä½œæ³•é¿å…äº†ä¸€å †if else
         pairs = {
             ")": "(",
             "]": "[",
@@ -24,62 +23,20 @@ class Solution:
         }
         stack = []
         for ch in s:
-            # ¹J¨ì)¡B]¡B}®É±N¤º®e¨ú¥X, ÀË´ú¨ì¤£¦Xªk°t¹ïª½±µreturn False
-            # ¥u¦b¹J¨ì³o¤W­±¤TºØ®É·|§PÂ_False, ©Ò¥H¹ïinvalid§PÂ_¤£§¹¾ã, µLªk¨«³X§¹ª½±µreturn True
+            # é‡åˆ°)ã€]ã€}æ™‚å°‡å…§å®¹å–å‡º, æª¢æ¸¬åˆ°ä¸åˆæ³•é…å°ç›´æ¥return False
+            # åªåœ¨é‡åˆ°é€™ä¸Šé¢ä¸‰ç¨®æ™‚æœƒåˆ¤æ–·False, æ‰€ä»¥å°invalidåˆ¤æ–·ä¸å®Œæ•´, ç„¡æ³•èµ°è¨ªå®Œç›´æ¥return True
             if ch in pairs:
-                #°O±ostack[-1]¬OÀË´úlist¤¤³Ì«á¤@­Ó¤¸¯À
+                #è¨˜å¾—stack[-1]æ˜¯æª¢æ¸¬listä¸­æœ€å¾Œä¸€å€‹å…ƒç´ 
                 if not stack or stack[-1]!=pairs[ch]:
                     return False
                 stack.pop()
-            # ¹J¨ì(¡B[¡B{®É°µpush
+            # é‡åˆ°(ã€[ã€{æ™‚åšpush
             else:
                 stack.append(ch)
-        # ¨«³X§¹«ástack¬°ªÅ¥Nªí¥¿½T, ¤£¬°ªÅ¥Nªí¿ù»~, ©Ò¥H¥Înot
-        # ¤W­±¨«³X®ÉªºÀË´úµLªkÀË´ú¥X¸I¨ì­«½Æ(¡B[¡B{ªº±¡ªp, ©Ò¥H¤~­n³o¼Ë
+        # èµ°è¨ªå®Œå¾Œstackç‚ºç©ºä»£è¡¨æ­£ç¢º, ä¸ç‚ºç©ºä»£è¡¨éŒ¯èª¤, æ‰€ä»¥ç”¨not
+        # ä¸Šé¢èµ°è¨ªæ™‚çš„æª¢æ¸¬ç„¡æ³•æª¢æ¸¬å‡ºç¢°åˆ°é‡è¤‡(ã€[ã€{çš„æƒ…æ³, æ‰€ä»¥æ‰è¦é€™æ¨£
         return not stack
+     
      
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=20 lang=python3
-#
-# [20] Valid Parentheses
-#
-
-# @lc code=start
-# §PÂ_s¤ºªº¬A¸¹¬O§_valid
-
-# By stack, time: O(n), space: O(n+6), n = len(s), 6 = pairs©Ò°µhashªáªºªÅ¶¡
-# ¥Îlist¹ê§@stack, append¨Ópush, pop±N§Àºİ¨ú¥X
-class Solution:
-    def isValid(self, s: str) -> bool:
-        # ªø«×«D°¸¼Æ¤@©w·|«Dªk
-        if len(s)&1:
-            return False    
-        # ¹ê»Ú¤W¬O¤@­Óhash, {}©Ò¥H¬Odict¸ê®Æµ²ºc
-        # ¥Îhashªº§@ªkÁ×§K¤F¤@°ïif else
-        pairs = {
-            ")": "(",
-            "]": "[",
-            "}": "{",
-        }
-        stack = []
-        for ch in s:
-            # ¹J¨ì)¡B]¡B}®É±N¤º®e¨ú¥X, ÀË´ú¨ì¤£¦Xªk°t¹ïª½±µreturn False
-            # ¥u¦b¹J¨ì³o¤W­±¤TºØ®É·|§PÂ_False, ©Ò¥H¹ïinvalid§PÂ_¤£§¹¾ã, µLªk¨«³X§¹ª½±µreturn True
-            if ch in pairs:
-                #°O±ostack[-1]¬OÀË´úlist¤¤³Ì«á¤@­Ó¤¸¯À
-                if not stack or stack[-1]!=pairs[ch]:
-                    return False
-                stack.pop()
-            # ¹J¨ì(¡B[¡B{®É°µpush
-            else:
-                stack.append(ch)
-        # ¨«³X§¹«ástack¬°ªÅ¥Nªí¥¿½T, ¤£¬°ªÅ¥Nªí¿ù»~, ©Ò¥H¥Înot
-        # ¤W­±¨«³X®ÉªºÀË´úµLªkÀË´ú¥X¸I¨ì­«½Æ(¡B[¡B{ªº±¡ªp, ©Ò¥H¤~­n³o¼Ë
-        return not stack
-     
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=21 lang=python3
 #
@@ -11,8 +10,8 @@
 #     def __init__(self, val=0, next=None):
 #         self.val = val
 #         self.next = next
-# By iterative dummy and double pointer, time: O(n+m), space: O(1), n¬°list1ªø«×, m¬°list2ªø«×
-# ¨â­Ó¤w¥Ñ¤p¨ì¤j±Æ§Ç¹Lªºlinklist, ±N¨ä¥Ñ¤p¨ì¤j¦X¨Ö¦¨·sªºlinklist¦^¶Çhead
+# By iterative dummy and double pointer, time: O(n+m), space: O(1), nç‚ºlist1é•·åº¦, mç‚ºlist2é•·åº¦
+# å…©å€‹å·²ç”±å°åˆ°å¤§æ’åºéçš„linklist, å°‡å…¶ç”±å°åˆ°å¤§åˆä½µæˆæ–°çš„linklistå›å‚³head
 class Solution:
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         cur1 = list1
@@ -20,7 +19,7 @@ class Solution:
         dummy  = res = ListNode()
         if cur1 is None and cur2 is None:
             return None
-        # ¨âªÌ¸Ñ«DNone®É¤~°µ°j°é
+        # å…©è€…è§£éNoneæ™‚æ‰åšè¿´åœˆ
         while cur1 is not None and cur2 is not None:
             if cur1.val<cur2.val:
                 res.next = cur1
@@ -29,15 +28,15 @@ class Solution:
                 res.next = cur2
                 cur2 = cur2.next
             res = res.next
-        # ¨ä¤¤¤§¤@¬°None´Nµ²§ôwhile°j°é, ³o®É±µ¤W«DNone¨º­Ólist§Y¥i
+        # å…¶ä¸­ä¹‹ä¸€ç‚ºNoneå°±çµæŸwhileè¿´åœˆ, é€™æ™‚æ¥ä¸ŠéNoneé‚£å€‹listå³å¯
         if cur1 is None:
             res.next = cur2
         else:
             res.next = cur1
         return dummy.next
 
-        # ­ì¥»¼gªk, ¦ı¨ä¹ê¤£¥ÎºŞ¨ä¤@¬°None, ¦b¤@Ãä¨Snode®Éª½±µ±µ¤W¥t¤@Ãä´N¦n
-        # ¦Ó¥B¤£»İ­n«Ø·sªºtmp node, ª½±µ©¹list1©Îlist2ªºnode±µ¤W§Y¥i
+        # åŸæœ¬å¯«æ³•, ä½†å…¶å¯¦ä¸ç”¨ç®¡å…¶ä¸€ç‚ºNone, åœ¨ä¸€é‚Šæ²’nodeæ™‚ç›´æ¥æ¥ä¸Šå¦ä¸€é‚Šå°±å¥½
+        # è€Œä¸”ä¸éœ€è¦å»ºæ–°çš„tmp node, ç›´æ¥å¾€list1æˆ–list2çš„nodeæ¥ä¸Šå³å¯
         # while cur1 is not None or cur2 is not None:
         #     if cur1 is None:
         #         tmp = ListNode(val = cur2.val)
@@ -57,109 +56,26 @@ class Solution:
         # return dummy.next
 
 # By recursive, time: O(n+m), space: O(n+m)
-# ¥Îrecursive¼g
-# recursive³£¬O¥ı¨«¨ì§Àºİ, ©Ò¥H­n·Q¹³±q¨âlist§Àºİ¶}©lreturn¸ûµuªºlist
-# ¦Ó¤£Â_±N«e­±ªºnext§Q¥Î±q§Àºİreturnªº¸ûµulist(¤w±Æ§Ç¦nªºµ²ªG)±µ¤W, ³Ì«á±µ¦n¾ã­Ólinklist
-# return¨ì³Ì«á¤@¦¸¤~¬O³Ìªø§¹¾ãmerge§¹ªºlist
+# ç”¨recursiveå¯«
+# recursiveéƒ½æ˜¯å…ˆèµ°åˆ°å°¾ç«¯, æ‰€ä»¥è¦æƒ³åƒå¾å…©listå°¾ç«¯é–‹å§‹returnè¼ƒçŸ­çš„list
+# è€Œä¸æ–·å°‡å‰é¢çš„nextåˆ©ç”¨å¾å°¾ç«¯returnçš„è¼ƒçŸ­list(å·²æ’åºå¥½çš„çµæœ)æ¥ä¸Š, æœ€å¾Œæ¥å¥½æ•´å€‹linklist
+# returnåˆ°æœ€å¾Œä¸€æ¬¡æ‰æ˜¯æœ€é•·å®Œæ•´mergeå®Œçš„list
 # class Solution:
 #     def mergeTwoLists(self, cur1: ListNode, cur2: ListNode) -> ListNode:
-#         # ²×¤î±ø¥ó, ¨ä¤@¬°None´N¦^¶Ç¥t¥~¤@­Ólist³Ñ¤Uªº
+#         # çµ‚æ­¢æ¢ä»¶, å…¶ä¸€ç‚ºNoneå°±å›å‚³å¦å¤–ä¸€å€‹listå‰©ä¸‹çš„
 #         if cur1 is None:
 #             return cur2
 #         elif cur2 is None:
 #             return cur1
-#         # ·í¨âlist¬Ò«DNone, ¿ï¾Üval¸û¤pªº¨º­Ólist return
+#         # ç•¶å…©listçš†éNone, é¸æ“‡valè¼ƒå°çš„é‚£å€‹list return
 #         elif cur1.val < cur2.val:
-#             # ¦]¿ï¾Ücur1, ©¹cur1.nextÄ~Äò»¼°j
+#             # å› é¸æ“‡cur1, å¾€cur1.nextç¹¼çºŒéè¿´
 #             cur1.next = self.mergeTwoLists(cur1.next, cur2)
 #             return cur1
 #         else:
-#             # ¿ï¾Ücur2, ©¹cur2.nextÄ~Äò»¼°j
+#             # é¸æ“‡cur2, å¾€cur2.nextç¹¼çºŒéè¿´
 #             cur2.next = self.mergeTwoLists(cur1, cur2.next)
 #             return cur2
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=21 lang=python3
-#
-# [21] Merge Two Sorted Lists
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-# By iterative dummy and double pointer, time: O(n+m), space: O(1), n¬°list1ªø«×, m¬°list2ªø«×
-# ¨â­Ó¤w¥Ñ¤p¨ì¤j±Æ§Ç¹Lªºlinklist, ±N¨ä¥Ñ¤p¨ì¤j¦X¨Ö¦¨·sªºlinklist¦^¶Çhead
-class Solution:
-    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        cur1 = list1
-        cur2 = list2
-        dummy  = res = ListNode()
-        if cur1 is None and cur2 is None:
-            return None
-        # ¨âªÌ¸Ñ«DNone®É¤~°µ°j°é
-        while cur1 is not None and cur2 is not None:
-            if cur1.val<cur2.val:
-                res.next = cur1
-                cur1 = cur1.next
-            else:
-                res.next = cur2
-                cur2 = cur2.next
-            res = res.next
-        # ¨ä¤¤¤§¤@¬°None´Nµ²§ôwhile°j°é, ³o®É±µ¤W«DNone¨º­Ólist§Y¥i
-        if cur1 is None:
-            res.next = cur2
-        else:
-            res.next = cur1
-        return dummy.next
-
-        # ­ì¥»¼gªk, ¦ı¨ä¹ê¤£¥ÎºŞ¨ä¤@¬°None, ¦b¤@Ãä¨Snode®Éª½±µ±µ¤W¥t¤@Ãä´N¦n
-        # ¦Ó¥B¤£»İ­n«Ø·sªºtmp node, ª½±µ©¹list1©Îlist2ªºnode±µ¤W§Y¥i
-        # while cur1 is not None or cur2 is not None:
-        #     if cur1 is None:
-        #         tmp = ListNode(val = cur2.val)
-        #         cur2 = cur2.next
-        #     elif cur2 is None:
-        #         tmp = ListNode(val = cur1.val)
-        #         cur1 = cur1.next
-        #     else:
-        #         if cur1.val<cur2.val:
-        #             tmp = ListNode(val = cur1.val)
-        #             cur1 = cur1.next
-        #         else:
-        #             tmp = ListNode(val = cur2.val)
-        #             cur2 = cur2.next
-        #     res.next = tmp
-        #     res = res.next
-        # return dummy.next
-
-# By recursive, time: O(n+m), space: O(n+m)
-# ¥Îrecursive¼g
-# recursive³£¬O¥ı¨«¨ì§Àºİ, ©Ò¥H­n·Q¹³±q¨âlist§Àºİ¶}©lreturn¸ûµuªºlist
-# ¦Ó¤£Â_±N«e­±ªºnext§Q¥Î±q§Àºİreturnªº¸ûµulist(¤w±Æ§Ç¦nªºµ²ªG)±µ¤W, ³Ì«á±µ¦n¾ã­Ólinklist
-# return¨ì³Ì«á¤@¦¸¤~¬O³Ìªø§¹¾ãmerge§¹ªºlist
-# class Solution:
-#     def mergeTwoLists(self, cur1: ListNode, cur2: ListNode) -> ListNode:
-#         # ²×¤î±ø¥ó, ¨ä¤@¬°None´N¦^¶Ç¥t¥~¤@­Ólist³Ñ¤Uªº
-#         if cur1 is None:
-#             return cur2
-#         elif cur2 is None:
-#             return cur1
-#         # ·í¨âlist¬Ò«DNone, ¿ï¾Üval¸û¤pªº¨º­Ólist return
-#         elif cur1.val < cur2.val:
-#             # ¦]¿ï¾Ücur1, ©¹cur1.nextÄ~Äò»¼°j
-#             cur1.next = self.mergeTwoLists(cur1.next, cur2)
-#             return cur1
-#         else:
-#             # ¿ï¾Ücur2, ©¹cur2.nextÄ~Äò»¼°j
-#             cur2.next = self.mergeTwoLists(cur1, cur2.next)
-#             return cur2
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

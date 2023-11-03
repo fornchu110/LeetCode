@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=5 lang=python3
 #
@@ -6,15 +5,15 @@
 #
 
 # @lc code=start
-# µ¹¤@¦r¦ês, return¦r¦ês¤¤ªø«×³Ìªøªº¤l¦r¦ê(¤£¬O¤l§Ç¦C, ©Ò¥H¦r¤¸¥²¶·³sÄò)
+# çµ¦ä¸€å­—ä¸²s, returnå­—ä¸²sä¸­é•·åº¦æœ€é•·çš„å­å­—ä¸²(ä¸æ˜¯å­åºåˆ—, æ‰€ä»¥å­—å…ƒå¿…é ˆé€£çºŒ)
 
 # By simulation, time: O(n^2), space: O(1)
-# ·Qªk¬ODPÅÜ§Î
-# DP¥ıªì©l¤Æ¤Fªø«×³Ìµuªº, ¦Ó¦^¤å¦³¤À±qªø«×1ÂX®i©M±qªø«×2ÂX®i(©_¼Æ»P°¸¼Æ¦r¤¸¼Æ¶qªº¦^¤å¦ê)
-# ©Ò¥H¥u¦³¨«³Xs¥H¨C­Óindex§@¬°°_ÂI±qªø«×1©Mªø«×2¬İ¬O§_¦^¤å¦ÜÂX®i¨ì³Ì¤j§Y¥i
+# æƒ³æ³•æ˜¯DPè®Šå½¢
+# DPå…ˆåˆå§‹åŒ–äº†é•·åº¦æœ€çŸ­çš„, è€Œå›æ–‡æœ‰åˆ†å¾é•·åº¦1æ“´å±•å’Œå¾é•·åº¦2æ“´å±•(å¥‡æ•¸èˆ‡å¶æ•¸å­—å…ƒæ•¸é‡çš„å›æ–‡ä¸²)
+# æ‰€ä»¥åªæœ‰èµ°è¨ªsä»¥æ¯å€‹indexä½œç‚ºèµ·é»å¾é•·åº¦1å’Œé•·åº¦2çœ‹æ˜¯å¦å›æ–‡è‡³æ“´å±•åˆ°æœ€å¤§å³å¯
 class Solution:
     def expandAroundCenter(self, s, left, right):
-        # s[left]==s[right]¬O­«ÂI, ·íªø«×1®Éleft¥»¨Ó´N==right, ¥Øªº¦b©óÀË´úªø«×2®É¬O§_¦^¤å
+        # s[left]==s[right]æ˜¯é‡é», ç•¶é•·åº¦1æ™‚leftæœ¬ä¾†å°±==right, ç›®çš„åœ¨æ–¼æª¢æ¸¬é•·åº¦2æ™‚æ˜¯å¦å›æ–‡
         while left >= 0 and right < len(s) and s[left]==s[right]:
             left -= 1
             right += 1
@@ -35,7 +34,7 @@ class Solution:
         return s[start: end + 1]
 
 # By DP, time: O(n^2), space:O(n^2)
-# ªø«×¬°1¥²©w¬°¦^¤å, ¦A¤@¤@¼W¥[ªø«×¬İ¬O§_¤´¦^¤å
+# é•·åº¦ç‚º1å¿…å®šç‚ºå›æ–‡, å†ä¸€ä¸€å¢åŠ é•·åº¦çœ‹æ˜¯å¦ä»å›æ–‡
 
 # class Solution:
 #     def longestPalindrome(self, s: str) -> str:
@@ -43,36 +42,36 @@ class Solution:
 #         if n<2:
 #             return s
 #         max_len = 1
-#         # ªì©lªºres, ¤]´N¬O·í³Ì¨Îªø«×¥u¦³1®É·|return³o­Ó
+#         # åˆå§‹çš„res, ä¹Ÿå°±æ˜¯ç•¶æœ€ä½³é•·åº¦åªæœ‰1æ™‚æœƒreturné€™å€‹
 #         res = s[0]
-#         # dp[i][j] ªí¥Ü s[i..j] ¬O§_¬O¦^¤å¦ê
+#         # dp[i][j] è¡¨ç¤º s[i..j] æ˜¯å¦æ˜¯å›æ–‡ä¸²
 #         dp = [[False for j in range(n)] for i in range(n)]
 #         for i in range(n):
 #             dp[i][i] = True
         
-#         # ¦^¤å­n±qªø«×³Ìµuªº¶}©l°µ¤~¯àDP, «á­±§óªøªº¬İ§óµuªºµ²ªG
+#         # å›æ–‡è¦å¾é•·åº¦æœ€çŸ­çš„é–‹å§‹åšæ‰èƒ½DP, å¾Œé¢æ›´é•·çš„çœ‹æ›´çŸ­çš„çµæœ
 #         for L in range(2, n + 1):
-#             # ªT?¥ª?¬É¡A¥ª?¬Éªº¤W­­?¸m¥i¥H?ªQ¤@¨Ç
+#             # æš?å·¦?ç•Œï¼Œå·¦?ç•Œçš„ä¸Šé™?ç½®å¯ä»¥?æ¾ä¸€äº›
 #             for i in range(n):
-#                 # ¥Ñ L ©M i ¥i¥HÚÌ©w¥k?¬É¡A§Y j - i + 1 = L ±o
+#                 # ç”± L å’Œ i å¯ä»¥ç¡®å®šå³?ç•Œï¼Œå³ j - i + 1 = L å¾—
 #                 j = i+L-1
-#                 # ¦pªG¥k?¬É¶V¬É¡A´N¥i¥H°h¥X?«e´`?
+#                 # å¦‚æœå³?ç•Œè¶Šç•Œï¼Œå°±å¯ä»¥é€€å‡º?å‰å¾ª?
 #                 if j>=n:
 #                     break
-#                 # ³Ì¥ªªº¤¸¯À¤£µ¥¦P³Ì¥kªº¤¸¯À¨º¥²©w¤£¬O¦^¤å
+#                 # æœ€å·¦çš„å…ƒç´ ä¸ç­‰åŒæœ€å³çš„å…ƒç´ é‚£å¿…å®šä¸æ˜¯å›æ–‡
 #                 if s[i]!=s[j]:
 #                     dp[i][j] = False 
 #                 else:
-#                     # ·í¥ª¥k¬Û¦P, ¦r¦ê¤S¥u¦³1¡B2¡B3­Ó¤¸¯À¨º¥²©w¦^¤å
+#                     # ç•¶å·¦å³ç›¸åŒ, å­—ä¸²åˆåªæœ‰1ã€2ã€3å€‹å…ƒç´ é‚£å¿…å®šå›æ–‡
 #                     if L<4:
 #                         dp[i][j] = True
-#                     # ¥ª¥k¬Û¦P¦b¦r¦êªø«×>3®É, ´N¬İ¤l¦r¦ê¬Û¦P»P§_¤~ª¾¹D¬O§_¦^¤å
-#                     # ¨S¦^¤åªº¦r¦ê¥ª¥k¥[¨â¬Û¦P¤£·|¦^¤å, ¦³¦^¤åªº¦r¦ê¥[¤W¥h¤~·|Ä~Äò¦^¤å
+#                     # å·¦å³ç›¸åŒåœ¨å­—ä¸²é•·åº¦>3æ™‚, å°±çœ‹å­å­—ä¸²ç›¸åŒèˆ‡å¦æ‰çŸ¥é“æ˜¯å¦å›æ–‡
+#                     # æ²’å›æ–‡çš„å­—ä¸²å·¦å³åŠ å…©ç›¸åŒä¸æœƒå›æ–‡, æœ‰å›æ–‡çš„å­—ä¸²åŠ ä¸Šå»æ‰æœƒç¹¼çºŒå›æ–‡
 #                     else:
 #                         dp[i][j] = dp[i+1][j-1]
                 
-#                 # ¥u­n dp[i][L] == true ¦¨¥ß¡A´Nªí¥Ü¤l¦ê s[i..L] ¬O¦^¤å¡A¦¹???¦^¤å?«×©M°_©l¦ì¸m           
-#                 # ¬O¦^¤å¥Bªø«×§óªø, ³o¬q´N¬O·sµª®×
+#                 # åªè¦ dp[i][L] == true æˆç«‹ï¼Œå°±è¡¨ç¤ºå­ä¸² s[i..L] æ˜¯å›æ–‡ï¼Œæ­¤???å›æ–‡?åº¦å’Œèµ·å§‹ä½ç½®           
+#                 # æ˜¯å›æ–‡ä¸”é•·åº¦æ›´é•·, é€™æ®µå°±æ˜¯æ–°ç­”æ¡ˆ
 #                 if dp[i][j] and L>max_len:
 #                     res = s[i:i+L]
 #         return res
@@ -96,102 +95,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=5 lang=python3
-#
-# [5] Longest Palindromic Substring
-#
-
-# @lc code=start
-# µ¹¤@¦r¦ês, return¦r¦ês¤¤ªø«×³Ìªøªº¤l¦r¦ê(¤£¬O¤l§Ç¦C, ©Ò¥H¦r¤¸¥²¶·³sÄò)
-
-# By simulation, time: O(n^2), space: O(1)
-# ·Qªk¬ODPÅÜ§Î
-# DP¥ıªì©l¤Æ¤Fªø«×³Ìµuªº, ¦Ó¦^¤å¦³¤À±qªø«×1ÂX®i©M±qªø«×2ÂX®i(©_¼Æ»P°¸¼Æ¦r¤¸¼Æ¶qªº¦^¤å¦ê)
-# ©Ò¥H¥u¦³¨«³Xs¥H¨C­Óindex§@¬°°_ÂI±qªø«×1©Mªø«×2¬İ¬O§_¦^¤å¦ÜÂX®i¨ì³Ì¤j§Y¥i
-class Solution:
-    def expandAroundCenter(self, s, left, right):
-        # s[left]==s[right]¬O­«ÂI, ·íªø«×1®Éleft¥»¨Ó´N==right, ¥Øªº¦b©óÀË´úªø«×2®É¬O§_¦^¤å
-        while left >= 0 and right < len(s) and s[left]==s[right]:
-            left -= 1
-            right += 1
-        return left+1, right-1
-    def longestPalindrome(self, s: str) -> str:
-        start = 0
-        end = 0
-        n = len(s)
-        for i in range(n):
-            l1, r1 = self.expandAroundCenter(s, i, i)
-            l2, r2 = self.expandAroundCenter(s, i, i+1)
-            if r1-l1>end-start:
-                start = l1
-                end = r1
-            if r2-l2>end-start:
-                start = l2
-                end = r2
-        return s[start: end + 1]
-
-# By DP, time: O(n^2), space:O(n^2)
-# ªø«×¬°1¥²©w¬°¦^¤å, ¦A¤@¤@¼W¥[ªø«×¬İ¬O§_¤´¦^¤å
-
-# class Solution:
-#     def longestPalindrome(self, s: str) -> str:
-#         n = len(s)
-#         if n<2:
-#             return s
-#         max_len = 1
-#         # ªì©lªºres, ¤]´N¬O·í³Ì¨Îªø«×¥u¦³1®É·|return³o­Ó
-#         res = s[0]
-#         # dp[i][j] ªí¥Ü s[i..j] ¬O§_¬O¦^¤å¦ê
-#         dp = [[False for j in range(n)] for i in range(n)]
-#         for i in range(n):
-#             dp[i][i] = True
-        
-#         # ¦^¤å­n±qªø«×³Ìµuªº¶}©l°µ¤~¯àDP, «á­±§óªøªº¬İ§óµuªºµ²ªG
-#         for L in range(2, n + 1):
-#             # ªT?¥ª?¬É¡A¥ª?¬Éªº¤W­­?¸m¥i¥H?ªQ¤@¨Ç
-#             for i in range(n):
-#                 # ¥Ñ L ©M i ¥i¥HÚÌ©w¥k?¬É¡A§Y j - i + 1 = L ±o
-#                 j = i+L-1
-#                 # ¦pªG¥k?¬É¶V¬É¡A´N¥i¥H°h¥X?«e´`?
-#                 if j>=n:
-#                     break
-#                 # ³Ì¥ªªº¤¸¯À¤£µ¥¦P³Ì¥kªº¤¸¯À¨º¥²©w¤£¬O¦^¤å
-#                 if s[i]!=s[j]:
-#                     dp[i][j] = False 
-#                 else:
-#                     # ·í¥ª¥k¬Û¦P, ¦r¦ê¤S¥u¦³1¡B2¡B3­Ó¤¸¯À¨º¥²©w¦^¤å
-#                     if L<4:
-#                         dp[i][j] = True
-#                     # ¥ª¥k¬Û¦P¦b¦r¦êªø«×>3®É, ´N¬İ¤l¦r¦ê¬Û¦P»P§_¤~ª¾¹D¬O§_¦^¤å
-#                     # ¨S¦^¤åªº¦r¦ê¥ª¥k¥[¨â¬Û¦P¤£·|¦^¤å, ¦³¦^¤åªº¦r¦ê¥[¤W¥h¤~·|Ä~Äò¦^¤å
-#                     else:
-#                         dp[i][j] = dp[i+1][j-1]
-                
-#                 # ¥u­n dp[i][L] == true ¦¨¥ß¡A´Nªí¥Ü¤l¦ê s[i..L] ¬O¦^¤å¡A¦¹???¦^¤å?«×©M°_©l¦ì¸m           
-#                 # ¬O¦^¤å¥Bªø«×§óªø, ³o¬q´N¬O·sµª®×
-#                 if dp[i][j] and L>max_len:
-#                     res = s[i:i+L]
-#         return res
-
-# class Solution:
-#     def longestPalindrome(self, s: str) -> str:
-#         n = len(s)
-#         maxlen = 1
-#         for i in range(n-1):
-#             for j in range(i+1, n):
-#                 now = s[i:j+1]
-#                 par = now[::-1]
-#                 # print(now)
-#                 if len(now)>maxlen and now==par:
-#                     maxlen = len(now)
-#                     res = now
-#         if maxlen==1:
-#             return s[0]
-#         else:
-#             return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

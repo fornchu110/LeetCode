@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=19 lang=python3
 #
@@ -13,10 +12,10 @@
 #         self.next = next
 
 # By dummy node and reverse, time: O(n), space: O(1)
-# ­n§R°£­Ë¼Æ²Än­Ónode, ª½Ä±´N¬O¤ÏÂà«á¼Æn­Ó§R±¼, ¦A¤ÏÂà¦^¥h
+# è¦åˆªé™¤å€’æ•¸ç¬¬nå€‹node, ç›´è¦ºå°±æ˜¯åè½‰å¾Œæ•¸nå€‹åˆªæ‰, å†åè½‰å›å»
 class Solution:
     def reverse(self, head):
-        # ¤ÏÂàlinklist­n·Ç³Æprev¨Ïnode¤ÏÂà«á¦³¦a¤è¯à«ü¦V
+        # åè½‰linklistè¦æº–å‚™prevä½¿nodeåè½‰å¾Œæœ‰åœ°æ–¹èƒ½æŒ‡å‘
         prev = None
         cur = head
         while cur is not None:
@@ -27,133 +26,54 @@ class Solution:
         return prev
 
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        # ¦¬¨ìhead¤§«á±Nlinklist¤ÏÂà, newHead¬O¤ÏÂà«áªºhead
+        # æ”¶åˆ°headä¹‹å¾Œå°‡linkliståè½‰, newHeadæ˜¯åè½‰å¾Œçš„head
         newHead = self.reverse(head)
-        # ±Ndummy«ü¦VnewHead
-        # ³oÃş§R°£nodeªº³£­n·Ç³Ædummy, Á×§K­n§R°£headªº±¡ªp¥X¿ù©Î»İ­n¯S®í§PÂ_
+        # å°‡dummyæŒ‡å‘newHead
+        # é€™é¡åˆªé™¤nodeçš„éƒ½è¦æº–å‚™dummy, é¿å…è¦åˆªé™¤headçš„æƒ…æ³å‡ºéŒ¯æˆ–éœ€è¦ç‰¹æ®Šåˆ¤æ–·
         dummy = ListNode(next = newHead)
         i = 0
         cur = dummy
         while cur.next is not None:
             i += 1
             if i==n:
-                # ·í¹J¨ì²Än­Ónode±N¨ä§R°£, ¤]´N¬O¸õ¹Llink¥L
+                # ç•¶é‡åˆ°ç¬¬nå€‹nodeå°‡å…¶åˆªé™¤, ä¹Ÿå°±æ˜¯è·³élinkä»–
                 cur.next = cur.next.next
-                # §R°£¦¨¥\´N¤£»İ­nÄ~Äòwhile¤F
+                # åˆªé™¤æˆåŠŸå°±ä¸éœ€è¦ç¹¼çºŒwhileäº†
                 break
-            # ¨S¹J¨ì»İ­n§R°£ªº¥Ø¼Ğ´N¬İ¤U­Ónode
+            # æ²’é‡åˆ°éœ€è¦åˆªé™¤çš„ç›®æ¨™å°±çœ‹ä¸‹å€‹node
             cur = cur.next
-        # §R°£§¹²¦«á¦A±NlinklistÂ½Âà¦^¥h, return¥¿½Tªºhead
-        # ª`·N­nreturn¤ÏÂà«áªºdummy.next, cur©ÎnewHead³£¤£¦æ
-        # newHeadÁöµM¤@¶}©l¬Odummy.next, ¦ı¤£¦æ
-        # ­ì¦]¬O§R°£ªº°Ê§@¬O³z¹L§ó§ïlink¦Ó«Dnode¥»¨­, ¦pªG¥u¦³¤@­Ónode¨ºhead¤´µM¦s¦b
-        # ¦b[1], n = 1ªº±¡ªpnewHead = 1¥B§R¤£±¼, ¥u¯à³z¹L±Ncur.next(dummy.next) = None¨Ó§R°£
+        # åˆªé™¤å®Œç•¢å¾Œå†å°‡linklistç¿»è½‰å›å», returnæ­£ç¢ºçš„head
+        # æ³¨æ„è¦returnåè½‰å¾Œçš„dummy.next, curæˆ–newHeadéƒ½ä¸è¡Œ
+        # newHeadé›–ç„¶ä¸€é–‹å§‹æ˜¯dummy.next, ä½†ä¸è¡Œ
+        # åŸå› æ˜¯åˆªé™¤çš„å‹•ä½œæ˜¯é€éæ›´æ”¹linkè€Œénodeæœ¬èº«, å¦‚æœåªæœ‰ä¸€å€‹nodeé‚£headä»ç„¶å­˜åœ¨
+        # åœ¨[1], n = 1çš„æƒ…æ³newHead = 1ä¸”åˆªä¸æ‰, åªèƒ½é€éå°‡cur.next(dummy.next) = Noneä¾†åˆªé™¤
         return self.reverse(dummy.next)
         
 # By double pointer, time: O(n), space: O(1)
-# ³o­Ó°µªk¦n³B¬O¥u»İ­n¨«³Xlinklist¤@¦¸
+# é€™å€‹åšæ³•å¥½è™•æ˜¯åªéœ€è¦èµ°è¨ªlinklistä¸€æ¬¡
 # class Solution:
 #     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
-#         # dummy«ü¦Vhead
+#         # dummyæŒ‡å‘head
 #         dummy = ListNode(0, head)
-#         # first±qhead¶}©l
+#         # firstå¾headé–‹å§‹
 #         first = head
 #         second = dummy
-#         # first±qhead²¾°Ên¦¸, ¤]´N¬O¨ì¹F²Än+1­Ónode
-#         # ¦P®Ésecond¥¿¦bdummy¤]´N¬O²Ä0­Ónode, ³o¼Ë¬Û®tn+1­Ónode
-#         # ¹ïfirst¦Ó¨¥second¥¿¦¡­Ë¼Æn+1­Ó
+#         # firstå¾headç§»å‹•næ¬¡, ä¹Ÿå°±æ˜¯åˆ°é”ç¬¬n+1å€‹node
+#         # åŒæ™‚secondæ­£åœ¨dummyä¹Ÿå°±æ˜¯ç¬¬0å€‹node, é€™æ¨£ç›¸å·®n+1å€‹node
+#         # å°firstè€Œè¨€secondæ­£å¼å€’æ•¸n+1å€‹
 #         for i in range(n):
 #             first = first.next
         
-#         # ¦Afirst¨«¨ìNone«e, first©Msecond³£©¹«e
+#         # å†firstèµ°åˆ°Noneå‰, firstå’Œsecondéƒ½å¾€å‰
 #         while first is not None:
 #             first = first.next
 #             second = second.next
-#         # ·ífirst¨«¨ìNone, ¤]¥Nªísecond¨«¨ì­Ë¼Æ²Än+1­Ónode
-#         # secondªºnext´N¬O­Ë¼Æ²Än­Ónode, ±N¨ä¸õ¹L
+#         # ç•¶firstèµ°åˆ°None, ä¹Ÿä»£è¡¨secondèµ°åˆ°å€’æ•¸ç¬¬n+1å€‹node
+#         # secondçš„nextå°±æ˜¯å€’æ•¸ç¬¬nå€‹node, å°‡å…¶è·³é
 #         second.next = second.next.next
-#         # §R°£¦¨¥\returnµ²ªG
+#         # åˆªé™¤æˆåŠŸreturnçµæœ
 #         return dummy.next
+
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=19 lang=python3
-#
-# [19] Remove Nth Node From End of List
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-# By dummy node and reverse, time: O(n), space: O(1)
-# ­n§R°£­Ë¼Æ²Än­Ónode, ª½Ä±´N¬O¤ÏÂà«á¼Æn­Ó§R±¼, ¦A¤ÏÂà¦^¥h
-class Solution:
-    def reverse(self, head):
-        # ¤ÏÂàlinklist­n·Ç³Æprev¨Ïnode¤ÏÂà«á¦³¦a¤è¯à«ü¦V
-        prev = None
-        cur = head
-        while cur is not None:
-            next = cur.next
-            cur.next = prev
-            prev = cur
-            cur = next
-        return prev
-
-    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        # ¦¬¨ìhead¤§«á±Nlinklist¤ÏÂà, newHead¬O¤ÏÂà«áªºhead
-        newHead = self.reverse(head)
-        # ±Ndummy«ü¦VnewHead
-        # ³oÃş§R°£nodeªº³£­n·Ç³Ædummy, Á×§K­n§R°£headªº±¡ªp¥X¿ù©Î»İ­n¯S®í§PÂ_
-        dummy = ListNode(next = newHead)
-        i = 0
-        cur = dummy
-        while cur.next is not None:
-            i += 1
-            if i==n:
-                # ·í¹J¨ì²Än­Ónode±N¨ä§R°£, ¤]´N¬O¸õ¹Llink¥L
-                cur.next = cur.next.next
-                # §R°£¦¨¥\´N¤£»İ­nÄ~Äòwhile¤F
-                break
-            # ¨S¹J¨ì»İ­n§R°£ªº¥Ø¼Ğ´N¬İ¤U­Ónode
-            cur = cur.next
-        # §R°£§¹²¦«á¦A±NlinklistÂ½Âà¦^¥h, return¥¿½Tªºhead
-        # ª`·N­nreturn¤ÏÂà«áªºdummy.next, cur©ÎnewHead³£¤£¦æ
-        # newHeadÁöµM¤@¶}©l¬Odummy.next, ¦ı¤£¦æ
-        # ­ì¦]¬O§R°£ªº°Ê§@¬O³z¹L§ó§ïlink¦Ó«Dnode¥»¨­, ¦pªG¥u¦³¤@­Ónode¨ºhead¤´µM¦s¦b
-        # ¦b[1], n = 1ªº±¡ªpnewHead = 1¥B§R¤£±¼, ¥u¯à³z¹L±Ncur.next(dummy.next) = None¨Ó§R°£
-        return self.reverse(dummy.next)
-        
-# By double pointer, time: O(n), space: O(1)
-# ³o­Ó°µªk¦n³B¬O¥u»İ­n¨«³Xlinklist¤@¦¸
-# class Solution:
-#     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
-#         # dummy«ü¦Vhead
-#         dummy = ListNode(0, head)
-#         # first±qhead¶}©l
-#         first = head
-#         second = dummy
-#         # first±qhead²¾°Ên¦¸, ¤]´N¬O¨ì¹F²Än+1­Ónode
-#         # ¦P®Ésecond¥¿¦bdummy¤]´N¬O²Ä0­Ónode, ³o¼Ë¬Û®tn+1­Ónode
-#         # ¹ïfirst¦Ó¨¥second¥¿¦¡­Ë¼Æn+1­Ó
-#         for i in range(n):
-#             first = first.next
-        
-#         # ¦Afirst¨«¨ìNone«e, first©Msecond³£©¹«e
-#         while first is not None:
-#             first = first.next
-#             second = second.next
-#         # ·ífirst¨«¨ìNone, ¤]¥Nªísecond¨«¨ì­Ë¼Æ²Än+1­Ónode
-#         # secondªºnext´N¬O­Ë¼Æ²Än­Ónode, ±N¨ä¸õ¹L
-#         second.next = second.next.next
-#         # §R°£¦¨¥\returnµ²ªG
-#         return dummy.next
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
