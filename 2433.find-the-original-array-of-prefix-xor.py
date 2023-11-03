@@ -6,22 +6,33 @@
 
 # @lc code=start
 # By XOR, time: O(n), space: O(1)
-# output¤À§O¨C½ü¥ÎÀY1, 2, 3, 4, ...n­Ó¤¸¯À¬ÛXOR±o¨ìinput
-# ¦]XOR¤¤1^0=1¥B1^1=0³oºØ­¼¼Æ©M¿n¥æ´«ªº©Ê½è
-# ¬Û¾Finput°µxor§Y¬Oµª®×, ¥Î¥N´«ªº¨Ó¬İ
+# outputåˆ†åˆ¥æ¯è¼ªç”¨é ­1, 2, 3, 4, ...nå€‹å…ƒç´ ç›¸XORå¾—åˆ°input
+# å› XORä¸­1^0=1ä¸”1^1=0é€™ç¨®ä¹˜æ•¸å’Œç©äº¤æ›çš„æ€§è³ª
+# ç›¸é„°inputåšxorå³æ˜¯ç­”æ¡ˆ, ç”¨ä»£æ›çš„ä¾†çœ‹
 class Solution:
     def findArray(self, pref: List[int]) -> List[int]:
-        # ¥ıªì©l¤Æres
+        # å…ˆåˆå§‹åŒ–res
         res = list()
         tmp = 0
-        # ¨C½üÅıpref[i-1]^pref[i], §Y¬Oµª®×
-        # ¥Îtmpªº¤è¦¡Åıi¥i¥H¤£¥Îrange(1, len(pref)), ¹ê§@§ó§Ö
+        # æ¯è¼ªè®“pref[i-1]^pref[i], å³æ˜¯ç­”æ¡ˆ
+        # ç”¨tmpçš„æ–¹å¼è®“iå¯ä»¥ä¸ç”¨range(1, len(pref)), å¯¦ä½œæ›´å¿«
         for i in pref:
             tmp ^= i
             res.append(tmp)
-            # ­«ÂI¦b¦¹, tmp¨C½üµ²§ô«á­n§ó·s¬°³o½üªºi
+            # é‡é»åœ¨æ­¤, tmpæ¯è¼ªçµæŸå¾Œè¦æ›´æ–°ç‚ºé€™è¼ªçš„i
             tmp = i
         return res
+    
+#  ä¸€æ¨£æ„æ€ä¸åŒå¯«æ³•
+#  class Solution:
+#     def findArray(self, pref: List[int]) -> List[int]:
+#         res = []
+#         cur = 0
+#         n = len(pref)
+#         for i in range(n):
+#             res.append(cur^pref[i])
+#             cur ^= res[i]
+#         return res
         
 # @lc code=end
 
