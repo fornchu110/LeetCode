@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 /*
  * @lc app=leetcode id=237 lang=c
  *
  * [237] Delete Node in a Linked List
  */
-
 // @lc code=start
 /**
  * Definition for singly-linked list.
@@ -15,41 +13,12 @@
  */
 // By in-place modify, time: O(1), space: O(1)
 void deleteNode(struct ListNode* node) {
-    //ª`·N*node->nextµ¥¦P*(node->next), ¨ú­È¤ñ->Àu¥ı§C¦ı¤ñ¥[´î­¼°£°ª
-    //¤£¯à(*node).next¦]¬°next¬O¤@­Ópointer, *node¬O¤@­Ónodeµ²ºc¹êÅé¦Ó«D«ü¦Vnodeªºpointer, ¨âµ²ºc¤£¬Ûµ¥
-    //³o¥yµ¥¦P¤U¨â¥yªº·N«ä
+    //æ³¨æ„*node->nextç­‰åŒ*(node->next), å–å€¼æ¯”->å„ªå…ˆä½ä½†æ¯”åŠ æ¸›ä¹˜é™¤é«˜
+    //ä¸èƒ½(*node).nextå› ç‚ºnextæ˜¯ä¸€å€‹pointer, *nodeæ˜¯ä¸€å€‹nodeçµæ§‹å¯¦é«”è€ŒéæŒ‡å‘nodeçš„pointer, å…©çµæ§‹ä¸ç›¸ç­‰
+    //é€™å¥ç­‰åŒä¸‹å…©å¥çš„æ„æ€
     *node = *node->next; 
     //node->val = node->next->val;
     //node->next = node->next->next;
 }
 
 // @lc code=end
-
-=======
-/*
- * @lc app=leetcode id=237 lang=c
- *
- * [237] Delete Node in a Linked List
- */
-
-// @lc code=start
-/**
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     struct ListNode *next;
- * };
- */
-// By in-place modify, time: O(1), space: O(1)
-void deleteNode(struct ListNode* node) {
-    //ª`·N*node->nextµ¥¦P*(node->next), ¨ú­È¤ñ->Àu¥ı§C¦ı¤ñ¥[´î­¼°£°ª
-    //¤£¯à(*node).next¦]¬°next¬O¤@­Ópointer, *node¬O¤@­Ónodeµ²ºc¹êÅé¦Ó«D«ü¦Vnodeªºpointer, ¨âµ²ºc¤£¬Ûµ¥
-    //³o¥yµ¥¦P¤U¨â¥yªº·N«ä
-    *node = *node->next; 
-    //node->val = node->next->val;
-    //node->next = node->next->next;
-}
-
-// @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

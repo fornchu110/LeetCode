@@ -1,41 +1,40 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=268 lang=python3
 #
 # [268] Missing Number
 
 # @lc code=start
-# ¦³½d³ò0~n, µ¹¤@°}¦Cnums, numsªø«×·|¬On¥B¤¸¯À³£unique, §ä¥X0~n¤¤(n+1­Ó¤¸¯À)¯Ê¤Öªº¨º¤@¤¸¯À
+# æœ‰ç¯„åœ0~n, çµ¦ä¸€é™£åˆ—nums, numsé•·åº¦æœƒæ˜¯nä¸”å…ƒç´ éƒ½unique, æ‰¾å‡º0~nä¸­(n+1å€‹å…ƒç´ )ç¼ºå°‘çš„é‚£ä¸€å…ƒç´ 
 
 # By bitwise(XOR), time: O(n), space: O(1)
-# nums¦³n­Ó¤¸¯À, ­Y¦bnums«á²K¥[0~n³on+1­Ó¤¸¯À, ³o¼ËÁ`¦@´N¦³2n+1­Ó¤¸¯À
-# ³o2n+1­Ó¤¸¯À¤¤, ¥u¦³¯Ê¤Öªº¨º¤@¤¸¯À¥X²{¤@¦¸, ¨ä¥L¨S¯Ê¤Öªº¤¸¯À³£¥X²{¤F¨â¦¸
-# ©Ò¥H³o2n+1­Ó¤¸¯À¥ş³¡¤@°_°µXOR, ³Ì«á´N·|¬O¯Ê¥¢ªº¨º¤@¤¸¯À, ¦]¨S¯Ê¥¢ªºXOR«á=0, ¦Ó0©M¯Ê¥¢ªºXOR§Y¬O¯Ê¥¢ªº
+# numsæœ‰nå€‹å…ƒç´ , è‹¥åœ¨numså¾Œæ·»åŠ 0~né€™n+1å€‹å…ƒç´ , é€™æ¨£ç¸½å…±å°±æœ‰2n+1å€‹å…ƒç´ 
+# é€™2n+1å€‹å…ƒç´ ä¸­, åªæœ‰ç¼ºå°‘çš„é‚£ä¸€å…ƒç´ å‡ºç¾ä¸€æ¬¡, å…¶ä»–æ²’ç¼ºå°‘çš„å…ƒç´ éƒ½å‡ºç¾äº†å…©æ¬¡
+# æ‰€ä»¥é€™2n+1å€‹å…ƒç´ å…¨éƒ¨ä¸€èµ·åšXOR, æœ€å¾Œå°±æœƒæ˜¯ç¼ºå¤±çš„é‚£ä¸€å…ƒç´ , å› æ²’ç¼ºå¤±çš„XORå¾Œ=0, è€Œ0å’Œç¼ºå¤±çš„XORå³æ˜¯ç¼ºå¤±çš„
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
         xor = 0
-        # ¹ï2n­Ó¤¸¯À°µXOR, ¨ä¤¤i­n¥Nªíªº¬O«á¨Ó²K¥[ªº0~n³on+1­Ó
+        # å°2nå€‹å…ƒç´ åšXOR, å…¶ä¸­iè¦ä»£è¡¨çš„æ˜¯å¾Œä¾†æ·»åŠ çš„0~né€™n+1å€‹
         for i, num in enumerate(nums):
             xor ^= i^num
-        # ¦ı¦]nums¥u¦³n­Ó, ¤W­±i¥u¥Nªí0~n-1
-        # ÁÙ¯Ê¤Ö¤@­Ó«á¨Ó¼W¥[ªº¤¸¯À, §Y¬On, ¤]´N¬Olen(nums)
-        # ³o¼Ë´N±N2n+1­Ó¤¸¯À³£¤¬¬Û°µXOR±o¥Xµ²ªG
+        # ä½†å› numsåªæœ‰nå€‹, ä¸Šé¢iåªä»£è¡¨0~n-1
+        # é‚„ç¼ºå°‘ä¸€å€‹å¾Œä¾†å¢åŠ çš„å…ƒç´ , å³æ˜¯n, ä¹Ÿå°±æ˜¯len(nums)
+        # é€™æ¨£å°±å°‡2n+1å€‹å…ƒç´ éƒ½äº’ç›¸åšXORå¾—å‡ºçµæœ
         return xor^len(nums)
 
 # By hash, time: O(n), space: O(n)
 # class Solution:
 #     def missingNumber(self, nums: List[int]) -> int:
-#         # ¦]nums¤¸¯À¤£­«½Æ, ¥Bset()¥i¥H¥Îin·í§@hash¬d§ä, ©Ò¥H¥Îset(nums)«Ø¥ßhash
+#         # å› numså…ƒç´ ä¸é‡è¤‡, ä¸”set()å¯ä»¥ç”¨inç•¶ä½œhashæŸ¥æ‰¾, æ‰€ä»¥ç”¨set(nums)å»ºç«‹hash
 #         hash = set(nums)
-#         # ¦]nums¥²©w¤w¸g¯Ê¤Ö¤@­Ó, ©Ò¥H§älen(nums)+1­Óindex, ¤]´N¬O±q0§ä¨ìlen(nums)
+#         # å› numså¿…å®šå·²ç¶“ç¼ºå°‘ä¸€å€‹, æ‰€ä»¥æ‰¾len(nums)+1å€‹index, ä¹Ÿå°±æ˜¯å¾0æ‰¾åˆ°len(nums)
 #         for i in range(len(nums)+1):
-#             # ¤£¦bhash¤ºªºindex´N¥Nªí¯Ê¥¢¤F
+#             # ä¸åœ¨hashå…§çš„indexå°±ä»£è¡¨ç¼ºå¤±äº†
 #             if i not in hash:
 #                 return i
 
 # By sort and index, time: O(nlogn), space: O(logn)
-# space = O(logn)ªº­ì¦]¬O.sort()¦brecursive®É¥e¥ÎªºstackªÅ¶¡
-# ¥ı±Nnums±Æ§Ç¹L«á, ÀËÅç¬O§_©Mindex¬Û¦P, ¤£¦P´N¥Nªí¤Ö¤Findex, ª½¨ì³Ì«á³£¬Û¦P´N¥Nªí¤Ö¤Findex+1
+# space = O(logn)çš„åŸå› æ˜¯.sort()åœ¨recursiveæ™‚å ç”¨çš„stackç©ºé–“
+# å…ˆå°‡numsæ’åºéå¾Œ, æª¢é©—æ˜¯å¦å’Œindexç›¸åŒ, ä¸åŒå°±ä»£è¡¨å°‘äº†index, ç›´åˆ°æœ€å¾Œéƒ½ç›¸åŒå°±ä»£è¡¨å°‘äº†index+1
 # class Solution:
 #     def missingNumber(self, nums: List[int]) -> int:
 #         nums.sort()
@@ -44,62 +43,9 @@ class Solution:
 #             if i!= res:
 #                 return res
 #             res += 1
-#         # ·íµo²{±qÀY¨«³X¨ì§À³£©Mindex¬Û¦P, ¥Nªí¨ä¹ê¬Oindex+1³o­Ó¤¸¯À¯Ê¥¢¤F
-#         # Ex: nums = [0,1], ¦Óµª®×´N¬O2
+#         # ç•¶ç™¼ç¾å¾é ­èµ°è¨ªåˆ°å°¾éƒ½å’Œindexç›¸åŒ, ä»£è¡¨å…¶å¯¦æ˜¯index+1é€™å€‹å…ƒç´ ç¼ºå¤±äº†
+#         # Ex: nums = [0,1], è€Œç­”æ¡ˆå°±æ˜¯2
 #         return res
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=268 lang=python3
-#
-# [268] Missing Number
-
-# @lc code=start
-# ¦³½d³ò0~n, µ¹¤@°}¦Cnums, numsªø«×·|¬On¥B¤¸¯À³£unique, §ä¥X0~n¤¤(n+1­Ó¤¸¯À)¯Ê¤Öªº¨º¤@¤¸¯À
-
-# By bitwise(XOR), time: O(n), space: O(1)
-# nums¦³n­Ó¤¸¯À, ­Y¦bnums«á²K¥[0~n³on+1­Ó¤¸¯À, ³o¼ËÁ`¦@´N¦³2n+1­Ó¤¸¯À
-# ³o2n+1­Ó¤¸¯À¤¤, ¥u¦³¯Ê¤Öªº¨º¤@¤¸¯À¥X²{¤@¦¸, ¨ä¥L¨S¯Ê¤Öªº¤¸¯À³£¥X²{¤F¨â¦¸
-# ©Ò¥H³o2n+1­Ó¤¸¯À¥ş³¡¤@°_°µXOR, ³Ì«á´N·|¬O¯Ê¥¢ªº¨º¤@¤¸¯À, ¦]¨S¯Ê¥¢ªºXOR«á=0, ¦Ó0©M¯Ê¥¢ªºXOR§Y¬O¯Ê¥¢ªº
-class Solution:
-    def missingNumber(self, nums: List[int]) -> int:
-        xor = 0
-        # ¹ï2n­Ó¤¸¯À°µXOR, ¨ä¤¤i­n¥Nªíªº¬O«á¨Ó²K¥[ªº0~n³on+1­Ó
-        for i, num in enumerate(nums):
-            xor ^= i^num
-        # ¦ı¦]nums¥u¦³n­Ó, ¤W­±i¥u¥Nªí0~n-1
-        # ÁÙ¯Ê¤Ö¤@­Ó«á¨Ó¼W¥[ªº¤¸¯À, §Y¬On, ¤]´N¬Olen(nums)
-        # ³o¼Ë´N±N2n+1­Ó¤¸¯À³£¤¬¬Û°µXOR±o¥Xµ²ªG
-        return xor^len(nums)
-
-# By hash, time: O(n), space: O(n)
-# class Solution:
-#     def missingNumber(self, nums: List[int]) -> int:
-#         # ¦]nums¤¸¯À¤£­«½Æ, ¥Bset()¥i¥H¥Îin·í§@hash¬d§ä, ©Ò¥H¥Îset(nums)«Ø¥ßhash
-#         hash = set(nums)
-#         # ¦]nums¥²©w¤w¸g¯Ê¤Ö¤@­Ó, ©Ò¥H§älen(nums)+1­Óindex, ¤]´N¬O±q0§ä¨ìlen(nums)
-#         for i in range(len(nums)+1):
-#             # ¤£¦bhash¤ºªºindex´N¥Nªí¯Ê¥¢¤F
-#             if i not in hash:
-#                 return i
-
-# By sort and index, time: O(nlogn), space: O(logn)
-# space = O(logn)ªº­ì¦]¬O.sort()¦brecursive®É¥e¥ÎªºstackªÅ¶¡
-# ¥ı±Nnums±Æ§Ç¹L«á, ÀËÅç¬O§_©Mindex¬Û¦P, ¤£¦P´N¥Nªí¤Ö¤Findex, ª½¨ì³Ì«á³£¬Û¦P´N¥Nªí¤Ö¤Findex+1
-# class Solution:
-#     def missingNumber(self, nums: List[int]) -> int:
-#         nums.sort()
-#         res = 0
-#         for i in nums:
-#             if i!= res:
-#                 return res
-#             res += 1
-#         # ·íµo²{±qÀY¨«³X¨ì§À³£©Mindex¬Û¦P, ¥Nªí¨ä¹ê¬Oindex+1³o­Ó¤¸¯À¯Ê¥¢¤F
-#         # Ex: nums = [0,1], ¦Óµª®×´N¬O2
-#         return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=237 lang=python3
 #
@@ -13,53 +12,20 @@
 #         self.next = None
 
 # By in-place modify, time: O(1), space: O(1)
-# ¦]»İ­n§Rnode¤S¤£µ¹head, ¤]¤£­nreturn, ©Ò¥H¥uª¾¹D¤°»òvalªºnode»İ­n³Q§R±¼
-# ³o¼Ëªº¸Ü§R±¼¤èªk´N¬O§â­n³Q§R±¼ªºnode.val§ï¦¨¤U­Ónodeªºval
-# §ï§¹«áª½±µ¸õ¹L¤U­Ónode, ³o¼Ë´N¤£·|ª¾¹D¨ä¦s¦b¤F
+# å› éœ€è¦åˆªnodeåˆä¸çµ¦head, ä¹Ÿä¸è¦return, æ‰€ä»¥åªçŸ¥é“ä»€éº¼valçš„nodeéœ€è¦è¢«åˆªæ‰
+# é€™æ¨£çš„è©±åˆªæ‰æ–¹æ³•å°±æ˜¯æŠŠè¦è¢«åˆªæ‰çš„node.valæ”¹æˆä¸‹å€‹nodeçš„val
+# æ”¹å®Œå¾Œç›´æ¥è·³éä¸‹å€‹node, é€™æ¨£å°±ä¸æœƒçŸ¥é“å…¶å­˜åœ¨äº†
 class Solution:
     def deleteNode(self, node):
         """
         :type node: ListNode
         :rtype: void Do not return anything, modify node in-place instead.
         """
-        # ¬°¦ó¤£¯ànode = node.next? ¦]¬°¤W­Ónode¬O«üµÛ¥Ø«enodeªº¦ì¸m
-        # ´Nºânode = node.nextÅınode³o­Ópointer«ü¦V¤U­Ónode, ¦ı¤W­Ónode¤´µM«ü¦Vnode­ì¥»ªº¦ì¸m¨S§ïÅÜ
-        # ¨Ã¨S¦³¹F¨ì§R°£nodeªº§@¥Î, *node = *node->next¤~¦³·N¸q, ¦ıpython¨S¦³³o¼gªk
+        # ç‚ºä½•ä¸èƒ½node = node.next? å› ç‚ºä¸Šå€‹nodeæ˜¯æŒ‡è‘—ç›®å‰nodeçš„ä½ç½®
+        # å°±ç®—node = node.nextè®“nodeé€™å€‹pointeræŒ‡å‘ä¸‹å€‹node, ä½†ä¸Šå€‹nodeä»ç„¶æŒ‡å‘nodeåŸæœ¬çš„ä½ç½®æ²’æ”¹è®Š
+        # ä¸¦æ²’æœ‰é”åˆ°åˆªé™¤nodeçš„ä½œç”¨, *node = *node->nextæ‰æœ‰æ„ç¾©, ä½†pythonæ²’æœ‰é€™å¯«æ³•
         node.val = node.next.val
         node.next = node.next.next
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=237 lang=python3
-#
-# [237] Delete Node in a Linked List
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
-# By in-place modify, time: O(1), space: O(1)
-# ¦]»İ­n§Rnode¤S¤£µ¹head, ¤]¤£­nreturn, ©Ò¥H¥uª¾¹D¤°»òvalªºnode»İ­n³Q§R±¼
-# ³o¼Ëªº¸Ü§R±¼¤èªk´N¬O§â­n³Q§R±¼ªºnode.val§ï¦¨¤U­Ónodeªºval
-# §ï§¹«áª½±µ¸õ¹L¤U­Ónode, ³o¼Ë´N¤£·|ª¾¹D¨ä¦s¦b¤F
-class Solution:
-    def deleteNode(self, node):
-        """
-        :type node: ListNode
-        :rtype: void Do not return anything, modify node in-place instead.
-        """
-        # ¬°¦ó¤£¯ànode = node.next? ¦]¬°¤W­Ónode¬O«üµÛ¥Ø«enodeªº¦ì¸m
-        # ´Nºânode = node.nextÅınode³o­Ópointer«ü¦V¤U­Ónode, ¦ı¤W­Ónode¤´µM«ü¦Vnode­ì¥»ªº¦ì¸m¨S§ïÅÜ
-        # ¨Ã¨S¦³¹F¨ì§R°£nodeªº§@¥Î, *node = *node->next¤~¦³·N¸q, ¦ıpython¨S¦³³o¼gªk
-        node.val = node.next.val
-        node.next = node.next.next
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

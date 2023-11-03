@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=234 lang=python3
 #
@@ -13,8 +12,8 @@
 #         self.next = next
 
 # By double pointer, time: O(n), space: O(n)
-# ¨«³Xlinklist±N¸`ÂI³£°O¿ı¤U¨Ó«á, ¬İ¬ö¿ı¬O§_°j¤å
-# °j¤å­n°O±o¥Î¦P®ÉÀY§À©¹«e¬İ³Ì¾A¦X
+# èµ°è¨ªlinklistå°‡ç¯€é»éƒ½è¨˜éŒ„ä¸‹ä¾†å¾Œ, çœ‹ç´€éŒ„æ˜¯å¦è¿´æ–‡
+# è¿´æ–‡è¦è¨˜å¾—ç”¨åŒæ™‚é ­å°¾å¾€å‰çœ‹æœ€é©åˆ
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         dummy = ListNode(next = head)
@@ -23,12 +22,12 @@ class Solution:
         while cur.next is not None :
             palin.append(cur.next.val)
             cur.next = cur.next.next
-        # boolin¦bpythonµ½¥Îreturn ==
-        # §PÂ_¨«³Xªºµ²ªG¬O§_°j¤å, [::-1]¥Nªí¥Ñ¥k©¹¥ª¤@­Ó¤@­Ó¬İ
+        # boolinåœ¨pythonå–„ç”¨return ==
+        # åˆ¤æ–·èµ°è¨ªçš„çµæœæ˜¯å¦è¿´æ–‡, [::-1]ä»£è¡¨ç”±å³å¾€å·¦ä¸€å€‹ä¸€å€‹çœ‹
         return palin==palin[::-1]
 
 # By recursive, time: O(n), space: O(n)
-# recursive¦]¬°¬O¥Îstack®ö¶OªÅ¶¡ªºÃö«Y³q±`¤£±ÀÂË
+# recursiveå› ç‚ºæ˜¯ç”¨stackæµªè²»ç©ºé–“çš„é—œä¿‚é€šå¸¸ä¸æ¨è–¦
 # class Solution:
 #     def isPalindrome(self, head: ListNode) -> bool:
 
@@ -46,54 +45,3 @@ class Solution:
 #         return recursively_check()
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=234 lang=python3
-#
-# [234] Palindrome Linked List
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-# By double pointer, time: O(n), space: O(n)
-# ¨«³Xlinklist±N¸`ÂI³£°O¿ı¤U¨Ó«á, ¬İ¬ö¿ı¬O§_°j¤å
-# °j¤å­n°O±o¥Î¦P®ÉÀY§À©¹«e¬İ³Ì¾A¦X
-class Solution:
-    def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        dummy = ListNode(next = head)
-        cur = dummy
-        palin = list()
-        while cur.next is not None :
-            palin.append(cur.next.val)
-            cur.next = cur.next.next
-        # boolin¦bpythonµ½¥Îreturn ==
-        # §PÂ_¨«³Xªºµ²ªG¬O§_°j¤å, [::-1]¥Nªí¥Ñ¥k©¹¥ª¤@­Ó¤@­Ó¬İ
-        return palin==palin[::-1]
-
-# By recursive, time: O(n), space: O(n)
-# recursive¦]¬°¬O¥Îstack®ö¶OªÅ¶¡ªºÃö«Y³q±`¤£±ÀÂË
-# class Solution:
-#     def isPalindrome(self, head: ListNode) -> bool:
-
-#         self.front_pointer = head
-
-#         def recursively_check(current_node=head):
-#             if current_node is not None:
-#                 if not recursively_check(current_node.next):
-#                     return False
-#                 if self.front_pointer.val != current_node.val:
-#                     return False
-#                 self.front_pointer = self.front_pointer.next
-#             return True
-
-#         return recursively_check()
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=230 lang=python3
 #
@@ -6,7 +5,7 @@
 #
 
 # @lc code=start
-# µ¹¤@­ÓBST, ­n¨Dreturn BST¤¤²Äk¤pªº¼Æ
+# çµ¦ä¸€å€‹BST, è¦æ±‚return BSTä¸­ç¬¬kå°çš„æ•¸
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -16,32 +15,32 @@
 #         self.right = right
 
 # By DFS(recursive), time: O(n), space: O(n)
-# ¥ı¤£ºŞBSTªº¯S©Êª½±µ¨«³X¤@¹M®³¨ì¦U­Ónodeªºval, ±Æ§Ç«áreturn²Äk¤p
-# ÁöµM¼gªº¦³¦Ò¼{¯S©Ê¦Ó¤£¥Î±Æ§Ç, ¦ı¦³§ó¦h¤£¥Î¨«³Xn­Ónodeªº°µªk, ¥H«á¦A·Q
+# å…ˆä¸ç®¡BSTçš„ç‰¹æ€§ç›´æ¥èµ°è¨ªä¸€éæ‹¿åˆ°å„å€‹nodeçš„val, æ’åºå¾Œreturnç¬¬kå°
+# é›–ç„¶å¯«çš„æœ‰è€ƒæ…®ç‰¹æ€§è€Œä¸ç”¨æ’åº, ä½†æœ‰æ›´å¤šä¸ç”¨èµ°è¨ªnå€‹nodeçš„åšæ³•, ä»¥å¾Œå†æƒ³
 class Solution:
-    # ²Ä¤@­Ó¬Ononlocalªº§@ªk, ±NDFS¼g¦¨¤l¨ç¦¡
+    # ç¬¬ä¸€å€‹æ˜¯nonlocalçš„ä½œæ³•, å°‡DFSå¯«æˆå­å‡½å¼
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
-        # ¦b¥~­±«Å§ires
+        # åœ¨å¤–é¢å®£å‘Šres
         res = []
         def DFS(node):
-            # ¸Ì­±«Å§ires¬Ononlocal, ¨Ï¨«³X¹Lµ{¯à±N¨«³X¨ìªºnode.val¥[¤Jres
+            # è£¡é¢å®£å‘Šresæ˜¯nonlocal, ä½¿èµ°è¨ªéç¨‹èƒ½å°‡èµ°è¨ªåˆ°çš„node.valåŠ å…¥res
             nonlocal res
-            # ²×¤î±ø¥ó, «Dnode´Nreturn
+            # çµ‚æ­¢æ¢ä»¶, énodeå°±return
             if node is None:
                 return 
-            # ¦Ò¼{BST¯S©Êªº¸Ü, ¥i¥Hµo²{BST¥Îinorder¨«³Xµ²ªG´N­è¦n¬O¦³§Ç¼Æ¦C
-            # recursive¥ª¤l->°µnode­n°µªº¨Æ->recursive¥k¤l
+            # è€ƒæ…®BSTç‰¹æ€§çš„è©±, å¯ä»¥ç™¼ç¾BSTç”¨inorderèµ°è¨ªçµæœå°±å‰›å¥½æ˜¯æœ‰åºæ•¸åˆ—
+            # recursiveå·¦å­->åšnodeè¦åšçš„äº‹->recursiveå³å­
             DFS(node.left)
-            # ¬Onode´N±Nval¥[¤Jres, ¨Ã¥BÄ~Äò©¹¥ª¤l©M¥k¤l¨«³X
+            # æ˜¯nodeå°±å°‡valåŠ å…¥res, ä¸¦ä¸”ç¹¼çºŒå¾€å·¦å­å’Œå³å­èµ°è¨ª
             res.append(node.val)
             DFS(node.right)
-        # ±qroot¶}©lrecursive
+        # å¾rooté–‹å§‹recursive
         DFS(root)
-        # ±Nres²Ä1¤pªº´N¬O²Ä0­Ó, ©Ò¥Hreturn res[k-1]
+        # å°‡resç¬¬1å°çš„å°±æ˜¯ç¬¬0å€‹, æ‰€ä»¥return res[k-1]
         return res[k-1]
     
-    # ±NDFS¼g¦b¥~­±, ¤]´N¬O§@¬°class¤¤¥t¤@­Ó¨ç¦¡ªº¼gªk 
-    # ¦]¬°res¬O¦b§Oªº¨ç¦¡©w¸q, ©Ò¥H­n³z¹L°Ñ¼Æ¶Ç»¼
+    # å°‡DFSå¯«åœ¨å¤–é¢, ä¹Ÿå°±æ˜¯ä½œç‚ºclassä¸­å¦ä¸€å€‹å‡½å¼çš„å¯«æ³• 
+    # å› ç‚ºresæ˜¯åœ¨åˆ¥çš„å‡½å¼å®šç¾©, æ‰€ä»¥è¦é€éåƒæ•¸å‚³é
     # def DFS(self, node, res):
     #     if node is None:
     #         return 
@@ -55,63 +54,3 @@ class Solution:
     #     return res[k-1]
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=230 lang=python3
-#
-# [230] Kth Smallest Element in a BST
-#
-
-# @lc code=start
-# µ¹¤@­ÓBST, ­n¨Dreturn BST¤¤²Äk¤pªº¼Æ
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By DFS(recursive), time: O(n), space: O(n)
-# ¥ı¤£ºŞBSTªº¯S©Êª½±µ¨«³X¤@¹M®³¨ì¦U­Ónodeªºval, ±Æ§Ç«áreturn²Äk¤p
-# ÁöµM¼gªº¦³¦Ò¼{¯S©Ê¦Ó¤£¥Î±Æ§Ç, ¦ı¦³§ó¦h¤£¥Î¨«³Xn­Ónodeªº°µªk, ¥H«á¦A·Q
-class Solution:
-    # ²Ä¤@­Ó¬Ononlocalªº§@ªk, ±NDFS¼g¦¨¤l¨ç¦¡
-    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
-        # ¦b¥~­±«Å§ires
-        res = []
-        def DFS(node):
-            # ¸Ì­±«Å§ires¬Ononlocal, ¨Ï¨«³X¹Lµ{¯à±N¨«³X¨ìªºnode.val¥[¤Jres
-            nonlocal res
-            # ²×¤î±ø¥ó, «Dnode´Nreturn
-            if node is None:
-                return 
-            # ¦Ò¼{BST¯S©Êªº¸Ü, ¥i¥Hµo²{BST¥Îinorder¨«³Xµ²ªG´N­è¦n¬O¦³§Ç¼Æ¦C
-            # recursive¥ª¤l->°µnode­n°µªº¨Æ->recursive¥k¤l
-            DFS(node.left)
-            # ¬Onode´N±Nval¥[¤Jres, ¨Ã¥BÄ~Äò©¹¥ª¤l©M¥k¤l¨«³X
-            res.append(node.val)
-            DFS(node.right)
-        # ±qroot¶}©lrecursive
-        DFS(root)
-        # ±Nres²Ä1¤pªº´N¬O²Ä0­Ó, ©Ò¥Hreturn res[k-1]
-        return res[k-1]
-    
-    # ±NDFS¼g¦b¥~­±, ¤]´N¬O§@¬°class¤¤¥t¤@­Ó¨ç¦¡ªº¼gªk 
-    # ¦]¬°res¬O¦b§Oªº¨ç¦¡©w¸q, ©Ò¥H­n³z¹L°Ñ¼Æ¶Ç»¼
-    # def DFS(self, node, res):
-    #     if node is None:
-    #         return 
-    #     self.DFS(node.left, res)
-    #     res.append(node.val)
-    #     self.DFS(node.right, res)
-
-    # def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
-    #     res = []
-    #     self.DFS(root, res)
-    #     return res[k-1]
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

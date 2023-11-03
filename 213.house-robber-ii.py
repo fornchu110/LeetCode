@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=213 lang=python3
 #
@@ -6,18 +5,18 @@
 #
 
 # @lc code=start
-# µ¹¤@°}¦Cnums, ¨D¦b¤£¨ú¬Û¾F¤¸¯À¤U±o¨ì³Ì¤j©Mªº¨úªk, ¦P198ÃD¦ı®t§O¦b³o­Ónums¬O­Ócycle
-# ©Ò¥H°²³]nums = [2, 0, 0, 2], ³Ì¤jªº¨úªk¬O¨únums[0]©Înums[3] = 2, ¤£¯à¨únums[0]+nums[3] = 4
+# çµ¦ä¸€é™£åˆ—nums, æ±‚åœ¨ä¸å–ç›¸é„°å…ƒç´ ä¸‹å¾—åˆ°æœ€å¤§å’Œçš„å–æ³•, åŒ198é¡Œä½†å·®åˆ¥åœ¨é€™å€‹numsæ˜¯å€‹cycle
+# æ‰€ä»¥å‡è¨­nums = [2, 0, 0, 2], æœ€å¤§çš„å–æ³•æ˜¯å–nums[0]æˆ–nums[3] = 2, ä¸èƒ½å–nums[0]+nums[3] = 4
 
 # By DP, time: O(n), space: O(1)
-# ¨ä¹ê®Ö¤ß·Qªk©Mcycle¤@¼Ë, ®t§O¦b©ónums[0]©Mnums[len(nums)-1]¥u¯à¨ú¨ä¤¤¤@­Ó
-# ¤]´N¬O»¡, ­pºâdp[0:len(nums)-1]©Mdp[1:len(nums)]¨âºØ±¡ªp, §ä³Ì¤jªº¨º­Ó§Y¥i
-# ¨ä¹ê¤£¥ÎªÈµ²¦b¼Ğ°O²Ä¤@¶¡©Ğ¬O§_³Q°½, ³o­Ó°µªk§â¦P®É°½²Ä¤@¶¡©M³Ì«á¤@¶¡ªº¥i¯à©Ê±Æ°£¦Ó¤w, ³£¦³¦Ò¼{¥u°½²Ä¤@¶¡, ©Î¥u°½³Ì«á¤@¶¡, ©Î¨â¶¡³£¨S°½
-# §âcycle©î¦¨¨â­Ó§Ç¦Cªº§Ş¥©­n°O±o
+# å…¶å¯¦æ ¸å¿ƒæƒ³æ³•å’Œcycleä¸€æ¨£, å·®åˆ¥åœ¨æ–¼nums[0]å’Œnums[len(nums)-1]åªèƒ½å–å…¶ä¸­ä¸€å€‹
+# ä¹Ÿå°±æ˜¯èªª, è¨ˆç®—dp[0:len(nums)-1]å’Œdp[1:len(nums)]å…©ç¨®æƒ…æ³, æ‰¾æœ€å¤§çš„é‚£å€‹å³å¯
+# å…¶å¯¦ä¸ç”¨ç³¾çµåœ¨æ¨™è¨˜ç¬¬ä¸€é–“æˆ¿æ˜¯å¦è¢«å·, é€™å€‹åšæ³•æŠŠåŒæ™‚å·ç¬¬ä¸€é–“å’Œæœ€å¾Œä¸€é–“çš„å¯èƒ½æ€§æ’é™¤è€Œå·², éƒ½æœ‰è€ƒæ…®åªå·ç¬¬ä¸€é–“, æˆ–åªå·æœ€å¾Œä¸€é–“, æˆ–å…©é–“éƒ½æ²’å·
+# æŠŠcycleæ‹†æˆå…©å€‹åºåˆ—çš„æŠ€å·§è¦è¨˜å¾—
 class Solution:
-    # ©Ò¥H­n§ärange¦b[0:len(nums)-1]®É¥H¤Î[1:len(nums)]®Éªº³Ì¨Î¸Ñ°µ¤ñ¸û
+    # æ‰€ä»¥è¦æ‰¾rangeåœ¨[0:len(nums)-1]æ™‚ä»¥åŠ[1:len(nums)]æ™‚çš„æœ€ä½³è§£åšæ¯”è¼ƒ
     def rob(self, nums: List[int]) -> int:
-        # ¦P198, §ä³Ì¨Î¸Ñ, ¥u¬Oµ¹¤F½d³ò°µ­pºâ
+        # åŒ198, æ‰¾æœ€ä½³è§£, åªæ˜¯çµ¦äº†ç¯„åœåšè¨ˆç®—
         def robRange(start: int, end: int) -> int:
             first = nums[start]
             second = max(nums[start], nums[start + 1])
@@ -30,48 +29,8 @@ class Solution:
         elif length==2:
             return max(nums[0], nums[1])
         else:
-            # ¨âºØ½d³òªº³Ì¨Î¸Ñ§ó¤jªº¨º­Ó´N¬Oµª®×
+            # å…©ç¨®ç¯„åœçš„æœ€ä½³è§£æ›´å¤§çš„é‚£å€‹å°±æ˜¯ç­”æ¡ˆ
             return max(robRange(0, length-2), robRange(1, length-1))
 
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=213 lang=python3
-#
-# [213] House Robber II
-#
-
-# @lc code=start
-# µ¹¤@°}¦Cnums, ¨D¦b¤£¨ú¬Û¾F¤¸¯À¤U±o¨ì³Ì¤j©Mªº¨úªk, ¦P198ÃD¦ı®t§O¦b³o­Ónums¬O­Ócycle
-# ©Ò¥H°²³]nums = [2, 0, 0, 2], ³Ì¤jªº¨úªk¬O¨únums[0]©Înums[3] = 2, ¤£¯à¨únums[0]+nums[3] = 4
-
-# By DP, time: O(n), space: O(1)
-# ¨ä¹ê®Ö¤ß·Qªk©Mcycle¤@¼Ë, ®t§O¦b©ónums[0]©Mnums[len(nums)-1]¥u¯à¨ú¨ä¤¤¤@­Ó
-# ¤]´N¬O»¡, ­pºâdp[0:len(nums)-1]©Mdp[1:len(nums)]¨âºØ±¡ªp, §ä³Ì¤jªº¨º­Ó§Y¥i
-# ¨ä¹ê¤£¥ÎªÈµ²¦b¼Ğ°O²Ä¤@¶¡©Ğ¬O§_³Q°½, ³o­Ó°µªk§â¦P®É°½²Ä¤@¶¡©M³Ì«á¤@¶¡ªº¥i¯à©Ê±Æ°£¦Ó¤w, ³£¦³¦Ò¼{¥u°½²Ä¤@¶¡, ©Î¥u°½³Ì«á¤@¶¡, ©Î¨â¶¡³£¨S°½
-# §âcycle©î¦¨¨â­Ó§Ç¦Cªº§Ş¥©­n°O±o
-class Solution:
-    # ©Ò¥H­n§ärange¦b[0:len(nums)-1]®É¥H¤Î[1:len(nums)]®Éªº³Ì¨Î¸Ñ°µ¤ñ¸û
-    def rob(self, nums: List[int]) -> int:
-        # ¦P198, §ä³Ì¨Î¸Ñ, ¥u¬Oµ¹¤F½d³ò°µ­pºâ
-        def robRange(start: int, end: int) -> int:
-            first = nums[start]
-            second = max(nums[start], nums[start + 1])
-            for i in range(start+2, end+1):
-                first, second = second, max(first + nums[i], second)
-            return second
-        length = len(nums)
-        if length==1:
-            return nums[0]
-        elif length==2:
-            return max(nums[0], nums[1])
-        else:
-            # ¨âºØ½d³òªº³Ì¨Î¸Ñ§ó¤jªº¨º­Ó´N¬Oµª®×
-            return max(robRange(0, length-2), robRange(1, length-1))
-
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

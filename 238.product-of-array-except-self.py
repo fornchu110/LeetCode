@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=238 lang=python3
 #
@@ -8,25 +7,25 @@
 # @lc code=start
 
 # By divide array and dynamic programing, time: O(n), space: O(1)
-# ­n¨D¥Xnums¤¤¦Û¤v¥H¥~ªº¤¸¯À­¼¿n
-# ¥ı±o¥X¦Û¤v©Ò¦bindex¤§¥ª¤è©M¥k¤è©Ò¦³¤¸¯À­¼¿n, ³Ì«á¦A¬Û­¼±o¥Xµª®×
-# §Q¥Îª½±µ¥Ñres¦s©ñ¥ª¤è­¼¿n¨Ó¬Ù¤UªÅ¶¡½ÆÂø«×
+# è¦æ±‚å‡ºnumsä¸­è‡ªå·±ä»¥å¤–çš„å…ƒç´ ä¹˜ç©
+# å…ˆå¾—å‡ºè‡ªå·±æ‰€åœ¨indexä¹‹å·¦æ–¹å’Œå³æ–¹æ‰€æœ‰å…ƒç´ ä¹˜ç©, æœ€å¾Œå†ç›¸ä¹˜å¾—å‡ºç­”æ¡ˆ
+# åˆ©ç”¨ç›´æ¥ç”±reså­˜æ”¾å·¦æ–¹ä¹˜ç©ä¾†çœä¸‹ç©ºé–“è¤‡é›œåº¦
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         length = len(nums)
         res = [0]*length
-        # ²Ä0­Ó¤¸¯À¥ªÃä¨S¤¸¯À, ±N¨ä¥ª¤è­¼¿nªì©l¤Æ¬°1        
+        # ç¬¬0å€‹å…ƒç´ å·¦é‚Šæ²’å…ƒç´ , å°‡å…¶å·¦æ–¹ä¹˜ç©åˆå§‹åŒ–ç‚º1        
         res[0] = 1
-        # res[i]©ñªº¬Onums[i]¥ª¤è­¼¿n
-        # ¦Ónums[i]¥ª¤è­¼¿nµ¥¦P©ónums[i-1]­¼¤Wnums[i-1]ªº¥ª¤è­¼¿n
-        # ¦³ÂIDPªº·Qªk, ³o¤]¬O¬°¦ó¯à¬Ù¤U®É¶¡½ÆÂø«×¨ìO(n)ªºÃöÁä
-        # res[0]¤w¸gªì©l¤Æ©Ò¥H±qres[1]¶}©l
+        # res[i]æ”¾çš„æ˜¯nums[i]å·¦æ–¹ä¹˜ç©
+        # è€Œnums[i]å·¦æ–¹ä¹˜ç©ç­‰åŒæ–¼nums[i-1]ä¹˜ä¸Šnums[i-1]çš„å·¦æ–¹ä¹˜ç©
+        # æœ‰é»DPçš„æƒ³æ³•, é€™ä¹Ÿæ˜¯ç‚ºä½•èƒ½çœä¸‹æ™‚é–“è¤‡é›œåº¦åˆ°O(n)çš„é—œéµ
+        # res[0]å·²ç¶“åˆå§‹åŒ–æ‰€ä»¥å¾res[1]é–‹å§‹
         for i in range(1, length):
             res[i] = nums[i-1]*res[i-1]
-        # ªì©l¤Æ¥k¤è­¼¿n
+        # åˆå§‹åŒ–å³æ–¹ä¹˜ç©
         Rpro = 1
-        # reverse¬O±N°}¦C¤ÏÂà, range(length)¬O¤@­Ó±q0¨ìlengthªºlist
-        # ¤]´N¬O§Àºİ¶}©l¬İ
+        # reverseæ˜¯å°‡é™£åˆ—åè½‰, range(length)æ˜¯ä¸€å€‹å¾0åˆ°lengthçš„list
+        # ä¹Ÿå°±æ˜¯å°¾ç«¯é–‹å§‹çœ‹
         for i in reversed(range(length)):
             res[i] = res[i]*Rpro
             Rpro *= nums[i]
@@ -34,40 +33,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=238 lang=python3
-#
-# [238] Product of Array Except Self
-#
-
-# @lc code=start
-
-# By divide array and dynamic programing, time: O(n), space: O(1)
-# ­n¨D¥Xnums¤¤¦Û¤v¥H¥~ªº¤¸¯À­¼¿n
-# ¥ı±o¥X¦Û¤v©Ò¦bindex¤§¥ª¤è©M¥k¤è©Ò¦³¤¸¯À­¼¿n, ³Ì«á¦A¬Û­¼±o¥Xµª®×
-# §Q¥Îª½±µ¥Ñres¦s©ñ¥ª¤è­¼¿n¨Ó¬Ù¤UªÅ¶¡½ÆÂø«×
-class Solution:
-    def productExceptSelf(self, nums: List[int]) -> List[int]:
-        length = len(nums)
-        res = [0]*length
-        # ²Ä0­Ó¤¸¯À¥ªÃä¨S¤¸¯À, ±N¨ä¥ª¤è­¼¿nªì©l¤Æ¬°1        
-        res[0] = 1
-        # res[i]©ñªº¬Onums[i]¥ª¤è­¼¿n
-        # ¦Ónums[i]¥ª¤è­¼¿nµ¥¦P©ónums[i-1]­¼¤Wnums[i-1]ªº¥ª¤è­¼¿n
-        # ¦³ÂIDPªº·Qªk, ³o¤]¬O¬°¦ó¯à¬Ù¤U®É¶¡½ÆÂø«×¨ìO(n)ªºÃöÁä
-        # res[0]¤w¸gªì©l¤Æ©Ò¥H±qres[1]¶}©l
-        for i in range(1, length):
-            res[i] = nums[i-1]*res[i-1]
-        # ªì©l¤Æ¥k¤è­¼¿n
-        Rpro = 1
-        # reverse¬O±N°}¦C¤ÏÂà, range(length)¬O¤@­Ó±q0¨ìlengthªºlist
-        # ¤]´N¬O§Àºİ¶}©l¬İ
-        for i in reversed(range(length)):
-            res[i] = res[i]*Rpro
-            Rpro *= nums[i]
-        return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

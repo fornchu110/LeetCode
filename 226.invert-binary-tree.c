@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 /*
  * @lc app=leetcode id=226 lang=c
  *
  * [226] Invert Binary Tree
  */
-
 // @lc code=start
 /**
  * Definition for a binary tree node.
@@ -15,59 +13,21 @@
  * };
  */
 struct TreeNode* invertTree(struct TreeNode* root){
-    //root«ü¦V¤F¥Ø«e©Ò¦bªºnode, ¬O«ü¼Ğ
-    //²×¤î±ø¥ó,·í¨S¦³¨«¨ì«Dnode®É°±¤î
+    //rootæŒ‡å‘äº†ç›®å‰æ‰€åœ¨çš„node, æ˜¯æŒ‡æ¨™
+    //çµ‚æ­¢æ¢ä»¶,ç•¶æ²’æœ‰èµ°åˆ°énodeæ™‚åœæ­¢
     if(root==NULL) {
         return NULL;
     }
-    //ª`·N­n¥æ´«ªº¬O¾ã­Ónodeªºµ²ºc, ¤£¬O¥u¦³value
-    //«Ø¥ß«ü¦V¥ª¤lÂI©M¥k¤lÂIªº«ü¼Ğ
+    //æ³¨æ„è¦äº¤æ›çš„æ˜¯æ•´å€‹nodeçš„çµæ§‹, ä¸æ˜¯åªæœ‰value
+    //å»ºç«‹æŒ‡å‘å·¦å­é»å’Œå³å­é»çš„æŒ‡æ¨™
     struct TreeNode* left = invertTree(root->left);
     struct TreeNode* right = invertTree(root->right);
-    //¥ª¥k¤lÂI¥æ´«
+    //å·¦å³å­é»äº¤æ›
     root->left = right;
     root->right = left;
-    //¦^¶Ç¥æ´«§¹¥ª¥k¤lÂIªºnode
-    //¤]´N¬O»¡±q³Ì«á¤@¼h¤lÂI±N¥æ´«§¹ªºnode¦^¶Çµ¹¨äparentª½¨ì¯u¥¿ªºroot®Éµ²§ô
+    //å›å‚³äº¤æ›å®Œå·¦å³å­é»çš„node
+    //ä¹Ÿå°±æ˜¯èªªå¾æœ€å¾Œä¸€å±¤å­é»å°‡äº¤æ›å®Œçš„nodeå›å‚³çµ¦å…¶parentç›´åˆ°çœŸæ­£çš„rootæ™‚çµæŸ
     return root;
 }
 
 // @lc code=end
-
-=======
-/*
- * @lc app=leetcode id=226 lang=c
- *
- * [226] Invert Binary Tree
- */
-
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     struct TreeNode *left;
- *     struct TreeNode *right;
- * };
- */
-struct TreeNode* invertTree(struct TreeNode* root){
-    //root«ü¦V¤F¥Ø«e©Ò¦bªºnode, ¬O«ü¼Ğ
-    //²×¤î±ø¥ó,·í¨S¦³¨«¨ì«Dnode®É°±¤î
-    if(root==NULL) {
-        return NULL;
-    }
-    //ª`·N­n¥æ´«ªº¬O¾ã­Ónodeªºµ²ºc, ¤£¬O¥u¦³value
-    //«Ø¥ß«ü¦V¥ª¤lÂI©M¥k¤lÂIªº«ü¼Ğ
-    struct TreeNode* left = invertTree(root->left);
-    struct TreeNode* right = invertTree(root->right);
-    //¥ª¥k¤lÂI¥æ´«
-    root->left = right;
-    root->right = left;
-    //¦^¶Ç¥æ´«§¹¥ª¥k¤lÂIªºnode
-    //¤]´N¬O»¡±q³Ì«á¤@¼h¤lÂI±N¥æ´«§¹ªºnode¦^¶Çµ¹¨äparentª½¨ì¯u¥¿ªºroot®Éµ²§ô
-    return root;
-}
-
-// @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

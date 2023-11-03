@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * @lc app=leetcode id=225 lang=c
  *
@@ -6,10 +5,10 @@
  */
 
 // @lc code=start
-// By queue, time: push: O(n), ¨ä¥L: O(1), space: O(n)
-// ¥Î¤@­Óqueue¹ê²{stack
+// By queue, time: push: O(n), å…¶ä»–: O(1), space: O(n)
+// ç”¨ä¸€å€‹queueå¯¦ç¾stack
 
-//¬O¥Îlinklist¨Ó±Nµ²ÂI³sµ²¦b¤@°_
+//æ˜¯ç”¨linklistä¾†å°‡çµé»é€£çµåœ¨ä¸€èµ·
 typedef struct tagListNode {
     struct tagListNode* next;
     int val;
@@ -72,80 +71,3 @@ void myStackFree(MyStack* obj) {
  * myStackFree(obj);
 */
 // @lc code=end
-
-=======
-/*
- * @lc app=leetcode id=225 lang=c
- *
- * [225] Implement Stack using Queues
- */
-
-// @lc code=start
-// By queue, time: push: O(n), ¨ä¥L: O(1), space: O(n)
-// ¥Î¤@­Óqueue¹ê²{stack
-
-//¬O¥Îlinklist¨Ó±Nµ²ÂI³sµ²¦b¤@°_
-typedef struct tagListNode {
-    struct tagListNode* next;
-    int val;
-} ListNode;
-
-typedef struct {
-    ListNode* top;
-} MyStack;
-
-MyStack* myStackCreate() {
-    MyStack* stk = calloc(1, sizeof(MyStack));
-    return stk;
-}
-
-void myStackPush(MyStack* obj, int x) {
-    ListNode* node = malloc(sizeof(ListNode));
-    node->val = x;
-    node->next = obj->top;
-    obj->top = node;
-}
-
-int myStackPop(MyStack* obj) {
-    ListNode* node = obj->top;
-    int val = node->val;
-    obj->top = node->next;
-    free(node);
-
-    return val;
-}
-
-int myStackTop(MyStack* obj) {
-    return obj->top->val;
-}
-
-bool myStackEmpty(MyStack* obj) {
-    return (obj->top == NULL);
-}
-
-void myStackFree(MyStack* obj) {
-    while (obj->top != NULL) {
-        ListNode* node = obj->top;
-        obj->top = obj->top->next;
-        free(node);
-    }
-    free(obj);
-}
-
-
-/**
- * Your MyStack struct will be instantiated and called as such:
- * MyStack* obj = myStackCreate();
- * myStackPush(obj, x);
- 
- * int param_2 = myStackPop(obj);
- 
- * int param_3 = myStackTop(obj);
- 
- * bool param_4 = myStackEmpty(obj);
- 
- * myStackFree(obj);
-*/
-// @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

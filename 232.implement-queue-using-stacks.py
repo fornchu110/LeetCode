@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=232 lang=python3
 #
@@ -6,15 +5,15 @@
 #
 
 # @lc code=start
-# By double stack, ¥²¶·¨Ï¥Î¨â­Óstack¨Ó¹ê§@¤@­Óqueue 
-# ¤À¬°¿é¤Jstack©M¿é¥Xstack
+# By double stack, å¿…é ˆä½¿ç”¨å…©å€‹stackä¾†å¯¦ä½œä¸€å€‹queue 
+# åˆ†ç‚ºè¼¸å…¥stackå’Œè¼¸å‡ºstack
 class MyQueue:
 
     def __init__(self):
         """
         Initialize your data structure here.
         """
-        # ªì©l¤Æ¨â­Óstack, ¿é¤Jstack©M¿é¥Xstack
+        # åˆå§‹åŒ–å…©å€‹stack, è¼¸å…¥stackå’Œè¼¸å‡ºstack
         self.inStack = []
         self.outStack = []
 
@@ -22,21 +21,21 @@ class MyQueue:
         """
         Push element x to the back of queue.
         """
-        # ·s¤¸¯À¶i¤J¿é¥Xstack
+        # æ–°å…ƒç´ é€²å…¥è¼¸å‡ºstack
         self.inStack.append(x)
 
     def pop(self) -> int:
         """
         Removes the element from in front of queue and returns that element.
         """
-        # ¦pªG¨âstack³£¬OªÅªº
+        # å¦‚æžœå…©stackéƒ½æ˜¯ç©ºçš„
         if self.empty():
             return None
 
-        # ¦pªG¿é¥Xstack¤£¬°ªÅ, ¦^¶Ç¿é¥Xstackªº¤¸¯À
+        # å¦‚æžœè¼¸å‡ºstackä¸ç‚ºç©º, å›žå‚³è¼¸å‡ºstackçš„å…ƒç´ 
         if self.outStack:
             return self.outStack.pop()
-        # ¿é¥Xstack¬°ªÅ, ±N¿é¤Jstackªº¤¸¯À°e¨ì¿é¥Xstack
+        # è¼¸å‡ºstackç‚ºç©º, å°‡è¼¸å…¥stackçš„å…ƒç´ é€åˆ°è¼¸å‡ºstack
         else:
             while self.inStack:
                 val = self.inStack.pop()
@@ -47,9 +46,9 @@ class MyQueue:
         """
         Get the front element.
         """
-        # ¨Ï¥Îpop
+        # ä½¿ç”¨pop
         res = self.pop()
-        # pop¥X¤Fres©Ò¥H­n¦A²K¥[¦^¥h
+        # popå‡ºäº†resæ‰€ä»¥è¦å†æ·»åŠ å›žåŽ»
         self.outStack.append(res)
         return res
 
@@ -58,7 +57,7 @@ class MyQueue:
         """
         Returns whether the queue is empty.
         """
-        # ¨â­Óstack³£ªÅ, queue¤~ªÅ
+        # å…©å€‹stackéƒ½ç©º, queueæ‰ç©º
         if not(self.inStack or self.outStack):
             return True
         return False
@@ -69,76 +68,3 @@ class MyQueue:
 # param_2 = obj.pop()
 # param_3 = obj.peek()
 # param_4 = obj.empty()
-=======
-#
-# @lc app=leetcode id=232 lang=python3
-#
-# [232] Implement Queue using Stacks
-#
-
-# @lc code=start
-# By double stack, ¥²¶·¨Ï¥Î¨â­Óstack¨Ó¹ê§@¤@­Óqueue 
-# ¤À¬°¿é¤Jstack©M¿é¥Xstack
-class MyQueue:
-
-    def __init__(self):
-        """
-        Initialize your data structure here.
-        """
-        # ªì©l¤Æ¨â­Óstack, ¿é¤Jstack©M¿é¥Xstack
-        self.inStack = []
-        self.outStack = []
-
-    def push(self, x: int) -> None:
-        """
-        Push element x to the back of queue.
-        """
-        # ·s¤¸¯À¶i¤J¿é¥Xstack
-        self.inStack.append(x)
-
-    def pop(self) -> int:
-        """
-        Removes the element from in front of queue and returns that element.
-        """
-        # ¦pªG¨âstack³£¬OªÅªº
-        if self.empty():
-            return None
-
-        # ¦pªG¿é¥Xstack¤£¬°ªÅ, ¦^¶Ç¿é¥Xstackªº¤¸¯À
-        if self.outStack:
-            return self.outStack.pop()
-        # ¿é¥Xstack¬°ªÅ, ±N¿é¤Jstackªº¤¸¯À°e¨ì¿é¥Xstack
-        else:
-            while self.inStack:
-                val = self.inStack.pop()
-                self.outStack.append(val)
-            return self.outStack.pop()
-
-    def peek(self) -> int:
-        """
-        Get the front element.
-        """
-        # ¨Ï¥Îpop
-        res = self.pop()
-        # pop¥X¤Fres©Ò¥H­n¦A²K¥[¦^¥h
-        self.outStack.append(res)
-        return res
-
-
-    def empty(self) -> bool:
-        """
-        Returns whether the queue is empty.
-        """
-        # ¨â­Óstack³£ªÅ, queue¤~ªÅ
-        if not(self.inStack or self.outStack):
-            return True
-        return False
-
-# Your MyQueue object will be instantiated and called as such:
-# obj = MyQueue()
-# obj.push(x)
-# param_2 = obj.pop()
-# param_3 = obj.peek()
-# param_4 = obj.empty()
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
-# @lc code=end

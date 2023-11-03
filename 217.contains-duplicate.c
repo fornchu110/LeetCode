@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * @lc app=leetcode id=217 lang=c
  *
@@ -12,19 +11,19 @@ struct hashTable {
 };
 
 bool containsDuplicate(int* nums, int numsSize) {
-    // hashtable¥»¨­, ¨Ï¥ÎUT_hash»Ý­n¥Î­Ópointer«ü¦Vhashtableµ²ºc
+    // hashtableæœ¬èº«, ä½¿ç”¨UT_hashéœ€è¦ç”¨å€‹pointeræŒ‡å‘hashtableçµæ§‹
     struct hashTable* set = NULL;
     for(int i=0;i<numsSize;i++) {
-        // ¥Î¨Ó±µ¦¬hashtable¦^¶Çµ²ªG
+        // ç”¨ä¾†æŽ¥æ”¶hashtableå›žå‚³çµæžœ
         struct hashTable* tmp;
-        // HASH_FIND_INT(hashtable, key, FIND KEY¦ì¸m¨S§ä¨ì´NNULL)
+        // HASH_FIND_INT(hashtable, key, FIND KEYä½ç½®æ²’æ‰¾åˆ°å°±NULL)
         HASH_FIND_INT(set, nums+i, tmp);
-        // ·í¨S¦bhash¤º§ä¨ì³o­Ó¤¸¯À, ¥Nªí²Ä¤@¦¸¥X²{
+        // ç•¶æ²’åœ¨hashå…§æ‰¾åˆ°é€™å€‹å…ƒç´ , ä»£è¡¨ç¬¬ä¸€æ¬¡å‡ºç¾
         if(tmp==NULL) {
-            // ¤À°t¤@¶ôhashªÅ¶¡µ¹¥L
+            // åˆ†é…ä¸€å¡Šhashç©ºé–“çµ¦ä»–
             tmp = malloc(sizeof(struct hashTable));
             tmp->key = nums[i];
-            // HASH_ADD_INT(hashtable, key, hashªÅ¶¡)
+            // HASH_ADD_INT(hashtable, key, hashç©ºé–“)
             HASH_ADD_INT(set, key, tmp);
         } 
         else {
@@ -35,43 +34,3 @@ bool containsDuplicate(int* nums, int numsSize) {
 }
 
 // @lc code=end
-
-=======
-/*
- * @lc app=leetcode id=217 lang=c
- *
- * [217] Contains Duplicate
- */
-
-// @lc code=start
-struct hashTable {
-    int key;
-    UT_hash_handle hh;
-};
-
-bool containsDuplicate(int* nums, int numsSize) {
-    // hashtable¥»¨­, ¨Ï¥ÎUT_hash»Ý­n¥Î­Ópointer«ü¦Vhashtableµ²ºc
-    struct hashTable* set = NULL;
-    for(int i=0;i<numsSize;i++) {
-        // ¥Î¨Ó±µ¦¬hashtable¦^¶Çµ²ªG
-        struct hashTable* tmp;
-        // HASH_FIND_INT(hashtable, key, FIND KEY¦ì¸m¨S§ä¨ì´NNULL)
-        HASH_FIND_INT(set, nums+i, tmp);
-        // ·í¨S¦bhash¤º§ä¨ì³o­Ó¤¸¯À, ¥Nªí²Ä¤@¦¸¥X²{
-        if(tmp==NULL) {
-            // ¤À°t¤@¶ôhashªÅ¶¡µ¹¥L
-            tmp = malloc(sizeof(struct hashTable));
-            tmp->key = nums[i];
-            // HASH_ADD_INT(hashtable, key, hashªÅ¶¡)
-            HASH_ADD_INT(set, key, tmp);
-        } 
-        else {
-            return true;
-        }
-    }
-    return false;
-}
-
-// @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=217 lang=python3
 #
@@ -7,15 +6,15 @@
 
 # @lc code=start
 # By set, time: O(n), space: O(n)
-# time: O(n)­ì¦]¬O±Nnums¤º®e¤@¤@©ñ¤Jset¤]­nO(n), ¦pªG¤£ºâªº¸Ü´NO(1)
-# python¥Îset¥h°£­«½Æ¤¸¯À, §PÂ_setªø«×¬O§_¸ònums¤@¼Ë§Y¥iª¾¹D¬O§_¦³­«½Æ
+# time: O(n)åŸå› æ˜¯å°‡numså…§å®¹ä¸€ä¸€æ”¾å…¥setä¹Ÿè¦O(n), å¦‚æœä¸ç®—çš„è©±å°±O(1)
+# pythonç”¨setå»é™¤é‡è¤‡å…ƒç´ , åˆ¤æ–·seté•·åº¦æ˜¯å¦è·Ÿnumsä¸€æ¨£å³å¯çŸ¥é“æ˜¯å¦æœ‰é‡è¤‡
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        # ¦³­«½Æ­nTrue, ¤]´N¬O¨âªÌªø«×¤£¦P®É·|True, ©Ò¥H¥Î!=
+        # æœ‰é‡è¤‡è¦True, ä¹Ÿå°±æ˜¯å…©è€…é•·åº¦ä¸åŒæ™‚æœƒTrue, æ‰€ä»¥ç”¨!=
         return len(nums)!=len(set(nums))
 
 # By hash table, time: O(n), space: O(n)
-# ¦pªGµ¹ªºnums¤º¦³­«½Æ¤¸¯À´Nreturn True, §_«hFalse
+# å¦‚æœçµ¦çš„numså…§æœ‰é‡è¤‡å…ƒç´ å°±return True, å¦å‰‡False
 # class Solution:
 #     def containsDuplicate(self, nums: List[int]) -> bool:
 #         hash = dict()
@@ -27,9 +26,9 @@ class Solution:
 #         return False
 
 # By sort, time: O(n*log(n)), space: O(log(n))
-# ¦³n­Ó¤¸¯À­n±Æ§Ç©Ò¥Htime¬OO(n*log(n))
-# ¦Ósort()¹ê»Ú¤W¬O¥Î»¼°j, ©Ò¥Hspace: O(log(n))«K¬Osort()ªá¶OªºªÅ¶¡½ÆÂø«×
-# ±Nnums¥ı±Æ§Ç¦n, §PÂ_±Æ§Ç«áªºnums¨â¨â¤¸¯À¬O§_¬Ûµ¥
+# æœ‰nå€‹å…ƒç´ è¦æ’åºæ‰€ä»¥timeæ˜¯O(n*log(n))
+# è€Œsort()å¯¦éš›ä¸Šæ˜¯ç”¨éè¿´, æ‰€ä»¥space: O(log(n))ä¾¿æ˜¯sort()èŠ±è²»çš„ç©ºé–“è¤‡é›œåº¦
+# å°‡numså…ˆæ’åºå¥½, åˆ¤æ–·æ’åºå¾Œçš„numså…©å…©å…ƒç´ æ˜¯å¦ç›¸ç­‰
 # class Solution:
 #     def containsDuplicate(self, nums: List[int]) -> bool:
 #         nums.sort()
@@ -39,47 +38,3 @@ class Solution:
 #         return False
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=217 lang=python3
-#
-# [217] Contains Duplicate
-#
-
-# @lc code=start
-# By set, time: O(n), space: O(n)
-# time: O(n)­ì¦]¬O±Nnums¤º®e¤@¤@©ñ¤Jset¤]­nO(n), ¦pªG¤£ºâªº¸Ü´NO(1)
-# python¥Îset¥h°£­«½Æ¤¸¯À, §PÂ_setªø«×¬O§_¸ònums¤@¼Ë§Y¥iª¾¹D¬O§_¦³­«½Æ
-class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
-        # ¦³­«½Æ­nTrue, ¤]´N¬O¨âªÌªø«×¤£¦P®É·|True, ©Ò¥H¥Î!=
-        return len(nums)!=len(set(nums))
-
-# By hash table, time: O(n), space: O(n)
-# ¦pªGµ¹ªºnums¤º¦³­«½Æ¤¸¯À´Nreturn True, §_«hFalse
-# class Solution:
-#     def containsDuplicate(self, nums: List[int]) -> bool:
-#         hash = dict()
-#         for i in nums:
-#             if i not in hash:
-#                 hash[i] = 1
-#             else:
-#                 return True
-#         return False
-
-# By sort, time: O(n*log(n)), space: O(log(n))
-# ¦³n­Ó¤¸¯À­n±Æ§Ç©Ò¥Htime¬OO(n*log(n))
-# ¦Ósort()¹ê»Ú¤W¬O¥Î»¼°j, ©Ò¥Hspace: O(log(n))«K¬Osort()ªá¶OªºªÅ¶¡½ÆÂø«×
-# ±Nnums¥ı±Æ§Ç¦n, §PÂ_±Æ§Ç«áªºnums¨â¨â¤¸¯À¬O§_¬Ûµ¥
-# class Solution:
-#     def containsDuplicate(self, nums: List[int]) -> bool:
-#         nums.sort()
-#         for i in range(len(nums)-1):
-#             if nums[i]==nums[i+1]:
-#                 return True
-#         return False
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

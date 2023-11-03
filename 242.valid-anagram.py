@@ -6,14 +6,14 @@
 #
 
 # @lc code=start
-# µ¹¨â¦r¦ês©Mt, ¦pªGs©Mtªº¦r¤¸¤@¼Ò¤@¼Ë¥u¬O§ïÅÜ¶¶§Çreturn True, ¤£µMreturn False
-# s©Mt¤º®e¥ş¬O¤p¼g­^¤å¦r¥À
+# çµ¦å…©å­—ä¸²så’Œt, å¦‚æœså’Œtçš„å­—å…ƒä¸€æ¨¡ä¸€æ¨£åªæ˜¯æ”¹è®Šé †åºreturn True, ä¸ç„¶return False
+# så’Œtå…§å®¹å…¨æ˜¯å°å¯«è‹±æ–‡å­—æ¯
 
-# By hash, time: O(n), space: O(26), ¦]¦r¥À³Ì¦h´N26ºØ
-# ±N²Ä¤@­Ó¦r¦êsªº¤º®e«Ø¦¨hash, ¨«³Xt½T»{¬O§_¤@¼Ò¤@¼Ë
+# By hash, time: O(n), space: O(26), å› å­—æ¯æœ€å¤šå°±26ç¨®
+# å°‡ç¬¬ä¸€å€‹å­—ä¸²sçš„å…§å®¹å»ºæˆhash, èµ°è¨ªtç¢ºèªæ˜¯å¦ä¸€æ¨¡ä¸€æ¨£
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        # ª`·N¥u­nªø«×¤£¦P¥²©wFalse, ¤]Á×§Kt¤ñsªø³y¦¨Trueªº±¡ªp
+        # æ³¨æ„åªè¦é•·åº¦ä¸åŒå¿…å®šFalse, ä¹Ÿé¿å…tæ¯”sé•·é€ æˆTrueçš„æƒ…æ³
         if len(s)!=len(t):
             return False
         hash = {}
@@ -30,16 +30,16 @@ class Solution:
         return True
 
 # By sort, time: O(nlogn), space: O(logn)
-# space = O(logn)­ì¦]¬O±Æ§Ç©Òªá¶OªºªÅ¶¡ 
-# ³oÃD¤]¥i¥H±N¦r¦êsort«á½T»{¬O§_¬Û¦P
+# space = O(logn)åŸå› æ˜¯æ’åºæ‰€èŠ±è²»çš„ç©ºé–“ 
+# é€™é¡Œä¹Ÿå¯ä»¥å°‡å­—ä¸²sortå¾Œç¢ºèªæ˜¯å¦ç›¸åŒ
 # class Solution:
 #     def isAnagram(self, s: str, t: str) -> bool:
 #         if len(s)!=len(t):
 #             return False
-#         # ª`·Nstr¨S¦³str.sort(), ¦Ósorted()¥i¥Hµ¹str¥Î¦ı·|¦^¶Çlist, ¥B¥Îªk¬Osorted(str)¦Ó¤À.sorted()
-#         # ÅÜ¦¨list¤§«á¥Î"".join(list)Âà¦^str
-#         # split()¬O¥H«ü©w²Å¸¹¬°¤À¹j, Àq»{¬OªÅ¥Õ, ¤£¯à¥Î¦b³oºØ³sÄò¦r¤¸¤W
-#         # ³sÄò¦r¤¸ª½±µ¥Îlist(str)Âà´«§Y¥i
+#         # æ³¨æ„stræ²’æœ‰str.sort(), è€Œsorted()å¯ä»¥çµ¦strç”¨ä½†æœƒå›å‚³list, ä¸”ç”¨æ³•æ˜¯sorted(str)è€Œåˆ†.sorted()
+#         # è®Šæˆlistä¹‹å¾Œç”¨"".join(list)è½‰å›str
+#         # split()æ˜¯ä»¥æŒ‡å®šç¬¦è™Ÿç‚ºåˆ†éš”, é»˜èªæ˜¯ç©ºç™½, ä¸èƒ½ç”¨åœ¨é€™ç¨®é€£çºŒå­—å…ƒä¸Š
+#         # é€£çºŒå­—å…ƒç›´æ¥ç”¨list(str)è½‰æ›å³å¯
 #         s = "".join(sorted(s))
 #         t = "".join(sorted(t))
 #         idx = len(s)-1
@@ -59,14 +59,14 @@ class Solution:
 #
 
 # @lc code=start
-# µ¹¨â¦r¦ês©Mt, ¦pªGs©Mtªº¦r¤¸¤@¼Ò¤@¼Ë¥u¬O§ïÅÜ¶¶§Çreturn True, ¤£µMreturn False
-# s©Mt¤º®e¥ş¬O¤p¼g­^¤å¦r¥À
+# çµ¦å…©å­—ä¸²så’Œt, å¦‚æœså’Œtçš„å­—å…ƒä¸€æ¨¡ä¸€æ¨£åªæ˜¯æ”¹è®Šé †åºreturn True, ä¸ç„¶return False
+# så’Œtå…§å®¹å…¨æ˜¯å°å¯«è‹±æ–‡å­—æ¯
 
-# By hash, time: O(n), space: O(26), ¦]¦r¥À³Ì¦h´N26ºØ
-# ±N²Ä¤@­Ó¦r¦êsªº¤º®e«Ø¦¨hash, ¨«³Xt½T»{¬O§_¤@¼Ò¤@¼Ë
+# By hash, time: O(n), space: O(26), å› å­—æ¯æœ€å¤šå°±26ç¨®
+# å°‡ç¬¬ä¸€å€‹å­—ä¸²sçš„å…§å®¹å»ºæˆhash, èµ°è¨ªtç¢ºèªæ˜¯å¦ä¸€æ¨¡ä¸€æ¨£
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        # ª`·N¥u­nªø«×¤£¦P¥²©wFalse, ¤]Á×§Kt¤ñsªø³y¦¨Trueªº±¡ªp
+        # æ³¨æ„åªè¦é•·åº¦ä¸åŒå¿…å®šFalse, ä¹Ÿé¿å…tæ¯”sé•·é€ æˆTrueçš„æƒ…æ³
         if len(s)!=len(t):
             return False
         hash = {}
@@ -83,16 +83,16 @@ class Solution:
         return True
 
 # By sort, time: O(nlogn), space: O(logn)
-# space = O(logn)­ì¦]¬O±Æ§Ç©Òªá¶OªºªÅ¶¡ 
-# ³oÃD¤]¥i¥H±N¦r¦êsort«á½T»{¬O§_¬Û¦P
+# space = O(logn)åŸå› æ˜¯æ’åºæ‰€èŠ±è²»çš„ç©ºé–“ 
+# é€™é¡Œä¹Ÿå¯ä»¥å°‡å­—ä¸²sortå¾Œç¢ºèªæ˜¯å¦ç›¸åŒ
 # class Solution:
 #     def isAnagram(self, s: str, t: str) -> bool:
 #         if len(s)!=len(t):
 #             return False
-#         # ª`·Nstr¨S¦³str.sort(), ¦Ósorted()¥i¥Hµ¹str¥Î¦ı·|¦^¶Çlist, ¥B¥Îªk¬Osorted(str)¦Ó¤À.sorted()
-#         # ÅÜ¦¨list¤§«á¥Î"".join(list)Âà¦^str
-#         # split()¬O¥H«ü©w²Å¸¹¬°¤À¹j, Àq»{¬OªÅ¥Õ, ¤£¯à¥Î¦b³oºØ³sÄò¦r¤¸¤W
-#         # ³sÄò¦r¤¸ª½±µ¥Îlist(str)Âà´«§Y¥i
+#         # æ³¨æ„stræ²’æœ‰str.sort(), è€Œsorted()å¯ä»¥çµ¦strç”¨ä½†æœƒå›å‚³list, ä¸”ç”¨æ³•æ˜¯sorted(str)è€Œåˆ†.sorted()
+#         # è®Šæˆlistä¹‹å¾Œç”¨"".join(list)è½‰å›str
+#         # split()æ˜¯ä»¥æŒ‡å®šç¬¦è™Ÿç‚ºåˆ†éš”, é»˜èªæ˜¯ç©ºç™½, ä¸èƒ½ç”¨åœ¨é€™ç¨®é€£çºŒå­—å…ƒä¸Š
+#         # é€£çºŒå­—å…ƒç›´æ¥ç”¨list(str)è½‰æ›å³å¯
 #         s = "".join(sorted(s))
 #         t = "".join(sorted(t))
 #         idx = len(s)-1

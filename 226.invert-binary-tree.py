@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=226 lang=python3
 #
@@ -6,7 +5,7 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ótree, §Æ±æ°µ¨ì¥Hroot¬°¤¤¤ß±N¥ª¥k¤l¾ğ¥æ´«
+# çµ¦ä¸€å€‹tree, å¸Œæœ›åšåˆ°ä»¥rootç‚ºä¸­å¿ƒå°‡å·¦å³å­æ¨¹äº¤æ›
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -15,69 +14,26 @@
 #         self.left = left
 #         self.right = right
 
-# By recursive, time: O(n), space: O(n), space¨Ó¦Ûrecursive¤§stack®ø¯Ó
-# ¦]tree¥i¯àskewed¤]´N¬O¥u¦³¥ªchild©Î¥u¦³¥kchild, ©Ò¥H³ÌÃa±¡ªp°ª«×n, ¥NªíµÛrecursive n¦¸, ©Ò¥Hspace = O(n)
+# By recursive, time: O(n), space: O(n), spaceä¾†è‡ªrecursiveä¹‹stackæ¶ˆè€—
+# å› treeå¯èƒ½skewedä¹Ÿå°±æ˜¯åªæœ‰å·¦childæˆ–åªæœ‰å³child, æ‰€ä»¥æœ€å£æƒ…æ³é«˜åº¦n, ä»£è¡¨è‘—recursive næ¬¡, æ‰€ä»¥space = O(n)
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:
-        #input¬O¥H¤@­ÓarrayÀx¦s¤§treeªºroot
-        #©Ò¥Hª`·Ninput¤£¬O¤@­Óarray, ¦Ó¬O¤@­Óroot node
-        #©Ò¥H¹ê»Ú¤WµL½×array¤ºªº±Æ§Ç, ÃD¥Ø¤w¸g§ânode¤§¶¡ªºÃö«Y³]©w¦n¤F, ª½±µ¨Ï¥Î§Y¥i
-        #¦]¬°¬O»¼°j, ©Ò¥H»İ­n²×¤î±ø¥ó, ·í¨«¨ì«Dnode®É°±¤î
+        #inputæ˜¯ä»¥ä¸€å€‹arrayå„²å­˜ä¹‹treeçš„root
+        #æ‰€ä»¥æ³¨æ„inputä¸æ˜¯ä¸€å€‹array, è€Œæ˜¯ä¸€å€‹root node
+        #æ‰€ä»¥å¯¦éš›ä¸Šç„¡è«–arrayå…§çš„æ’åº, é¡Œç›®å·²ç¶“æŠŠnodeä¹‹é–“çš„é—œä¿‚è¨­å®šå¥½äº†, ç›´æ¥ä½¿ç”¨å³å¯
+        #å› ç‚ºæ˜¯éè¿´, æ‰€ä»¥éœ€è¦çµ‚æ­¢æ¢ä»¶, ç•¶èµ°åˆ°énodeæ™‚åœæ­¢
         if not root:
             return root    
-        #±Ninputªº©Ò¦³node»¼°j¤U¥h
-        #¤]´N¬O¨C¨ì¤@­Ó¸`ÂI´N·í§@root,±N¨ä¥ª¤lÂI©M¥k¤lÂI¬°rootªº¤l¾ğÂ½Âà
-        #Åª¨ì¥ª¤lÂI
+        #å°‡inputçš„æ‰€æœ‰nodeéè¿´ä¸‹å»
+        #ä¹Ÿå°±æ˜¯æ¯åˆ°ä¸€å€‹ç¯€é»å°±ç•¶ä½œroot,å°‡å…¶å·¦å­é»å’Œå³å­é»ç‚ºrootçš„å­æ¨¹ç¿»è½‰
+        #è®€åˆ°å·¦å­é»
         left = self.invertTree(root.left)
-        #Åª¨ì¥k¤lÂI
+        #è®€åˆ°å³å­é»
         right = self.invertTree(root.right)
-        #±N·sªº¥ª¤lÂI¥t¬°­ì¥»ªº¥k¤lÂI, ±N·sªº¥k¤lÂI¥t¬°­ì¥»ªº¥ª¤lÂI
+        #å°‡æ–°çš„å·¦å­é»å¦ç‚ºåŸæœ¬çš„å³å­é», å°‡æ–°çš„å³å­é»å¦ç‚ºåŸæœ¬çš„å·¦å­é»
         root.left, root.right = right, left
-        #retrun®É¦^¶Ç¤F¤@­Ó¤w¸g°µ§¹¥æ´«ªºnode
-        #¤]´N¬O»¡±q³Ì«á¤@¼hnode¶}©l, ±N¥æ´«§¹ªºnode¦^¶Çµ¹¨äparent, ª½¨ì¦^¶Ç¯u¥¿ªºroot®Éµ²§ô
+        #retrunæ™‚å›å‚³äº†ä¸€å€‹å·²ç¶“åšå®Œäº¤æ›çš„node
+        #ä¹Ÿå°±æ˜¯èªªå¾æœ€å¾Œä¸€å±¤nodeé–‹å§‹, å°‡äº¤æ›å®Œçš„nodeå›å‚³çµ¦å…¶parent, ç›´åˆ°å›å‚³çœŸæ­£çš„rootæ™‚çµæŸ
         return root
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=226 lang=python3
-#
-# [226] Invert Binary Tree
-#
-
-# @lc code=start
-# µ¹¤@­Ótree, §Æ±æ°µ¨ì¥Hroot¬°¤¤¤ß±N¥ª¥k¤l¾ğ¥æ´«
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By recursive, time: O(n), space: O(n), space¨Ó¦Ûrecursive¤§stack®ø¯Ó
-# ¦]tree¥i¯àskewed¤]´N¬O¥u¦³¥ªchild©Î¥u¦³¥kchild, ©Ò¥H³ÌÃa±¡ªp°ª«×n, ¥NªíµÛrecursive n¦¸, ©Ò¥Hspace = O(n)
-class Solution:
-    def invertTree(self, root: TreeNode) -> TreeNode:
-        #input¬O¥H¤@­ÓarrayÀx¦s¤§treeªºroot
-        #©Ò¥Hª`·Ninput¤£¬O¤@­Óarray, ¦Ó¬O¤@­Óroot node
-        #©Ò¥H¹ê»Ú¤WµL½×array¤ºªº±Æ§Ç, ÃD¥Ø¤w¸g§ânode¤§¶¡ªºÃö«Y³]©w¦n¤F, ª½±µ¨Ï¥Î§Y¥i
-        #¦]¬°¬O»¼°j, ©Ò¥H»İ­n²×¤î±ø¥ó, ·í¨«¨ì«Dnode®É°±¤î
-        if not root:
-            return root    
-        #±Ninputªº©Ò¦³node»¼°j¤U¥h
-        #¤]´N¬O¨C¨ì¤@­Ó¸`ÂI´N·í§@root,±N¨ä¥ª¤lÂI©M¥k¤lÂI¬°rootªº¤l¾ğÂ½Âà
-        #Åª¨ì¥ª¤lÂI
-        left = self.invertTree(root.left)
-        #Åª¨ì¥k¤lÂI
-        right = self.invertTree(root.right)
-        #±N·sªº¥ª¤lÂI¥t¬°­ì¥»ªº¥k¤lÂI, ±N·sªº¥k¤lÂI¥t¬°­ì¥»ªº¥ª¤lÂI
-        root.left, root.right = right, left
-        #retrun®É¦^¶Ç¤F¤@­Ó¤w¸g°µ§¹¥æ´«ªºnode
-        #¤]´N¬O»¡±q³Ì«á¤@¼hnode¶}©l, ±N¥æ´«§¹ªºnode¦^¶Çµ¹¨äparent, ª½¨ì¦^¶Ç¯u¥¿ªºroot®Éµ²§ô
-        return root
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

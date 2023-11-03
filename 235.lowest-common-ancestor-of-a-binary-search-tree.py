@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=235 lang=python3
 #
@@ -6,8 +5,8 @@
 #
 
 # @lc code=start
-# µ¹¤@binary search tree©M¨ânode p¡Bq, return¥L­Ìªº³Ì§C¦@¦P¯ª¥ı
-# ³Ì§C¦@¦P¯ª¥ı´N¬O°ª«×³Ì±µªñ¨âÂIªº¦@¦P¯ª¥ı, °O±o­n¦^¶Çnode¦Ó«Dint
+# çµ¦ä¸€binary search treeå’Œå…©node pã€q, returnä»–å€‘çš„æœ€ä½å…±åŒç¥–å…ˆ
+# æœ€ä½å…±åŒç¥–å…ˆå°±æ˜¯é«˜åº¦æœ€æ¥è¿‘å…©é»çš„å…±åŒç¥–å…ˆ, è¨˜å¾—è¦å›å‚³nodeè€Œéint
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -17,141 +16,61 @@
 #         self.right = None
 
 # By iterative, time: O(n), space: O(1)
-# ®Ú¾Ú«e­±Æ[¹î¨ì¦@¦P¯ª¥ıªº©Ê½è´N¬O¦@¦P¸ô®|ªº³Ì«á¤@­Ó¬Û¦Pnode«á, ´N¤F¸Ñ¨ä¹ê¥i¥H¦P®É¨«³Xp©Mq
+# æ ¹æ“šå‰é¢è§€å¯Ÿåˆ°å…±åŒç¥–å…ˆçš„æ€§è³ªå°±æ˜¯å…±åŒè·¯å¾‘çš„æœ€å¾Œä¸€å€‹ç›¸åŒnodeå¾Œ, å°±äº†è§£å…¶å¯¦å¯ä»¥åŒæ™‚èµ°è¨ªpå’Œq
 # Ex: p = 4: [6, 2, 4], q = 2: [6, 2]
-# ©Ò¥H¨Ï¥Îwhile°j°é, ·íp©Mq¤ñ·í¤Uªºnode¤p®É©¹¥ª¨«, ¤j®É©¹¥k¨«
-# °£¦¹¤§¥~´N¥Nªí¤w¸g¨S¦³¦@¦P¸ô®|¥i¥H©¹¤U¨«, break
+# æ‰€ä»¥ä½¿ç”¨whileè¿´åœˆ, ç•¶på’Œqæ¯”ç•¶ä¸‹çš„nodeå°æ™‚å¾€å·¦èµ°, å¤§æ™‚å¾€å³èµ°
+# é™¤æ­¤ä¹‹å¤–å°±ä»£è¡¨å·²ç¶“æ²’æœ‰å…±åŒè·¯å¾‘å¯ä»¥å¾€ä¸‹èµ°, break
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        # ªì©l¤Æres¬°root
+        # åˆå§‹åŒ–resç‚ºroot
         res = root
         while True:
-            # ¥u­n¯àÄ~Äò¨«³X¥NªíÄ~Äò¦³¦@¦P¸ô®|, ¨ºµª®×´N§ó·s¦¨·s¨«³Xªºnode
+            # åªè¦èƒ½ç¹¼çºŒèµ°è¨ªä»£è¡¨ç¹¼çºŒæœ‰å…±åŒè·¯å¾‘, é‚£ç­”æ¡ˆå°±æ›´æ–°æˆæ–°èµ°è¨ªçš„node
             if p.val<res.val and q.val<res.val:
                 res = res.left
             elif p.val>res.val and q.val>res.val:
                 res = res.right
-            # ¨S¦³¦@¦P¸ô®|¯à¨«¤U¥h¤F´Nbreak
+            # æ²’æœ‰å…±åŒè·¯å¾‘èƒ½èµ°ä¸‹å»äº†å°±break
             else:
                 break
         return res
 
 # By recursive, time: O(n), space: O(n)
-# ¥i¥Hµo²{¬Æ»ò¥s°µ¦@¦P¯ª¥ı?´N¬O¥Î¦P¼Ëªº¤è¦¡¨«³X¥h¬d§ä¨â­Ónode®É, ¸ô®|¸Ì³Ì«á¤@­Ó¬Û¦Pªºnode
-# Ex: §ä2¸ô®|:[6, 4, 2], §ä4¸ô®|: [6, 4], ¨º4´N¬O4©M2ªº¦@¦P¯ª¥ı
-# ¦]¦¹¤À§O¬d§ä¨ânode±o¨ì¸ô®|«á, ¨«³X¸ô®|§ä³Ì«á¤@­Ó¬Û¦Pnode§Y¥i
+# å¯ä»¥ç™¼ç¾ç”šéº¼å«åšå…±åŒç¥–å…ˆ?å°±æ˜¯ç”¨åŒæ¨£çš„æ–¹å¼èµ°è¨ªå»æŸ¥æ‰¾å…©å€‹nodeæ™‚, è·¯å¾‘è£¡æœ€å¾Œä¸€å€‹ç›¸åŒçš„node
+# Ex: æ‰¾2è·¯å¾‘:[6, 4, 2], æ‰¾4è·¯å¾‘: [6, 4], é‚£4å°±æ˜¯4å’Œ2çš„å…±åŒç¥–å…ˆ
+# å› æ­¤åˆ†åˆ¥æŸ¥æ‰¾å…©nodeå¾—åˆ°è·¯å¾‘å¾Œ, èµ°è¨ªè·¯å¾‘æ‰¾æœ€å¾Œä¸€å€‹ç›¸åŒnodeå³å¯
 # class Solution:
 #     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
 #         def DFS(node, target):
-#             # ·|§ó·s¦b¤W¼h¨ç¦¡©w¸qªºpath©Ò¥H¥Înonlocal
+#             # æœƒæ›´æ–°åœ¨ä¸Šå±¤å‡½å¼å®šç¾©çš„pathæ‰€ä»¥ç”¨nonlocal
 #             nonlocal path
 #             if node is None:
 #                 return
-#             # ³oÃD­nreturn node, ©Ò¥H¸ô®|¸Ì¬O©ñnode
+#             # é€™é¡Œè¦return node, æ‰€ä»¥è·¯å¾‘è£¡æ˜¯æ”¾node
 #             path.append(node)
-#             # ·í§ä¨ì¥Ø¼Ğnode¤F´N¤£Ä~Äò¨«³X
+#             # ç•¶æ‰¾åˆ°ç›®æ¨™nodeäº†å°±ä¸ç¹¼çºŒèµ°è¨ª
 #             if node.val==target.val:
 #                 return
-#             # ¥Ø¼Ğ¤ñ¥Ø«enode¤p¨º´N©¹¥ª¨«³X
+#             # ç›®æ¨™æ¯”ç›®å‰nodeå°é‚£å°±å¾€å·¦èµ°è¨ª
 #             if node.val>target.val:
 #                 DFS(node.left, target)
-#             # ¥Ø¼Ğ¤ñ¥Ø«enode¤j¨º´N©¹¥k¨«³X
+#             # ç›®æ¨™æ¯”ç›®å‰nodeå¤§é‚£å°±å¾€å³èµ°è¨ª
 #             elif node.val<target.val:
 #                 DFS(node.right, target)
 #         path = []
-#         # p©Mq³£¬Onode
+#         # på’Œqéƒ½æ˜¯node
 #         DFS(root, p)
 #         p_path = path
 #         path = []
 #         DFS(root, q)
 #         q_path = path
-#         # ¥Îzip¦P®É¨«³X¨â­Ó¸ô®|
+#         # ç”¨zipåŒæ™‚èµ°è¨ªå…©å€‹è·¯å¾‘
 #         for i, j in zip(p_path, q_path):
 #             if i.val==j.val:
 #                 res = i
-#             # ¤@¹J¨ì¤£¬Û¦Pªºnode´Nbreak
+#             # ä¸€é‡åˆ°ä¸ç›¸åŒçš„nodeå°±break
 #             else:
 #                 break
 #         return res
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=235 lang=python3
-#
-# [235] Lowest Common Ancestor of a Binary Search Tree
-#
-
-# @lc code=start
-# µ¹¤@binary search tree©M¨ânode p¡Bq, return¥L­Ìªº³Ì§C¦@¦P¯ª¥ı
-# ³Ì§C¦@¦P¯ª¥ı´N¬O°ª«×³Ì±µªñ¨âÂIªº¦@¦P¯ª¥ı, °O±o­n¦^¶Çnode¦Ó«Dint
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-
-# By iterative, time: O(n), space: O(1)
-# ®Ú¾Ú«e­±Æ[¹î¨ì¦@¦P¯ª¥ıªº©Ê½è´N¬O¦@¦P¸ô®|ªº³Ì«á¤@­Ó¬Û¦Pnode«á, ´N¤F¸Ñ¨ä¹ê¥i¥H¦P®É¨«³Xp©Mq
-# Ex: p = 4: [6, 2, 4], q = 2: [6, 2]
-# ©Ò¥H¨Ï¥Îwhile°j°é, ·íp©Mq¤ñ·í¤Uªºnode¤p®É©¹¥ª¨«, ¤j®É©¹¥k¨«
-# °£¦¹¤§¥~´N¥Nªí¤w¸g¨S¦³¦@¦P¸ô®|¥i¥H©¹¤U¨«, break
-class Solution:
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        # ªì©l¤Æres¬°root
-        res = root
-        while True:
-            # ¥u­n¯àÄ~Äò¨«³X¥NªíÄ~Äò¦³¦@¦P¸ô®|, ¨ºµª®×´N§ó·s¦¨·s¨«³Xªºnode
-            if p.val<res.val and q.val<res.val:
-                res = res.left
-            elif p.val>res.val and q.val>res.val:
-                res = res.right
-            # ¨S¦³¦@¦P¸ô®|¯à¨«¤U¥h¤F´Nbreak
-            else:
-                break
-        return res
-
-# By recursive, time: O(n), space: O(n)
-# ¥i¥Hµo²{¬Æ»ò¥s°µ¦@¦P¯ª¥ı?´N¬O¥Î¦P¼Ëªº¤è¦¡¨«³X¥h¬d§ä¨â­Ónode®É, ¸ô®|¸Ì³Ì«á¤@­Ó¬Û¦Pªºnode
-# Ex: §ä2¸ô®|:[6, 4, 2], §ä4¸ô®|: [6, 4], ¨º4´N¬O4©M2ªº¦@¦P¯ª¥ı
-# ¦]¦¹¤À§O¬d§ä¨ânode±o¨ì¸ô®|«á, ¨«³X¸ô®|§ä³Ì«á¤@­Ó¬Û¦Pnode§Y¥i
-# class Solution:
-#     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-#         def DFS(node, target):
-#             # ·|§ó·s¦b¤W¼h¨ç¦¡©w¸qªºpath©Ò¥H¥Înonlocal
-#             nonlocal path
-#             if node is None:
-#                 return
-#             # ³oÃD­nreturn node, ©Ò¥H¸ô®|¸Ì¬O©ñnode
-#             path.append(node)
-#             # ·í§ä¨ì¥Ø¼Ğnode¤F´N¤£Ä~Äò¨«³X
-#             if node.val==target.val:
-#                 return
-#             # ¥Ø¼Ğ¤ñ¥Ø«enode¤p¨º´N©¹¥ª¨«³X
-#             if node.val>target.val:
-#                 DFS(node.left, target)
-#             # ¥Ø¼Ğ¤ñ¥Ø«enode¤j¨º´N©¹¥k¨«³X
-#             elif node.val<target.val:
-#                 DFS(node.right, target)
-#         path = []
-#         # p©Mq³£¬Onode
-#         DFS(root, p)
-#         p_path = path
-#         path = []
-#         DFS(root, q)
-#         q_path = path
-#         # ¥Îzip¦P®É¨«³X¨â­Ó¸ô®|
-#         for i, j in zip(p_path, q_path):
-#             if i.val==j.val:
-#                 res = i
-#             # ¤@¹J¨ì¤£¬Û¦Pªºnode´Nbreak
-#             else:
-#                 break
-#         return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
