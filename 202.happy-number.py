@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=202 lang=python3
 #
@@ -9,7 +8,7 @@
 
 #By hashtable
 class Solution:
-    #§ä¾ã¼Æ¤§¦U­Ó¦ì¼Æ¥­¤è©M
+    #æ‰¾æ•´æ•¸ä¹‹å„å€‹ä½æ•¸å¹³æ–¹å’Œ
     def getNext(self, num):
         happy_sum = 0
         while num:
@@ -17,7 +16,7 @@ class Solution:
             num = num // 10
         return happy_sum
 
-    #¨Ï¥ÎÂø´êªí½T»{¬O§_¦b´`Àô
+    #ä½¿ç”¨é›œæ¹Šè¡¨ç¢ºèªæ˜¯å¦åœ¨å¾ªç’°
     def isHappy(self, n: int) -> bool:
         hashTable = dict()
         while True:
@@ -30,38 +29,3 @@ class Solution:
                 hashTable[n] = 1
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=202 lang=python3
-#
-# [202] Happy Number
-#
-
-# @lc code=start
-
-#By hashtable
-class Solution:
-    #§ä¾ã¼Æ¤§¦U­Ó¦ì¼Æ¥­¤è©M
-    def getNext(self, num):
-        happy_sum = 0
-        while num:
-            happy_sum += (num % 10) ** 2
-            num = num // 10
-        return happy_sum
-
-    #¨Ï¥ÎÂø´êªí½T»{¬O§_¦b´`Àô
-    def isHappy(self, n: int) -> bool:
-        hashTable = dict()
-        while True:
-            n = self.getNext(n)
-            if n == 1:
-                return True
-            if n in hashTable:
-                return False
-            else:
-                hashTable[n] = 1
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=205 lang=python3
 #
@@ -12,7 +11,7 @@
 #     def isIsomorphic(self, s: str, t: str) -> bool:
 #         return all(s.index(s[i]) == t.index(t[i])  for i in range(len(s)))
 
-#³oÃD¥Ø¼Ğ¥u¦³s¤£­n¦h¹ï¤@
+#é€™é¡Œç›®æ¨™åªæœ‰sä¸è¦å¤šå°ä¸€
 #By hashtable
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
@@ -21,7 +20,7 @@ class Solution:
         if lens!=lent:
             return False
         hashtable1 = dict()
-        #¦pªG­n¥Îhashtable¦^ÀY§ä®É«Øªº
+        #å¦‚æœè¦ç”¨hashtableå›é ­æ‰¾æ™‚å»ºçš„
         # hashtable2 = dict()
         for i in range(lens):
             if s[i] in hashtable1:
@@ -29,14 +28,14 @@ class Solution:
                     return False
             else:
                 hashtable1[s[i]] = t[i]
-                #¨C¦¸¦³·sªºs[i]­n¥[¤J®É
-                #¦^ÀY¬İ¦³¨S¦³i¥H«eªºs¹ïÀ³¨ì¦P¼Ëªºt
-                #¥i¥H¥Îfor°j°é¦^ÀY§ä©Î«Ø¥t¤@­Óhashtable§ä
-                #¨C¦¸¥Îfor§ä,¤ñ¸û§Ö?
+                #æ¯æ¬¡æœ‰æ–°çš„s[i]è¦åŠ å…¥æ™‚
+                #å›é ­çœ‹æœ‰æ²’æœ‰iä»¥å‰çš„så°æ‡‰åˆ°åŒæ¨£çš„t
+                #å¯ä»¥ç”¨forè¿´åœˆå›é ­æ‰¾æˆ–å»ºå¦ä¸€å€‹hashtableæ‰¾
+                #æ¯æ¬¡ç”¨foræ‰¾,æ¯”è¼ƒå¿«?
                 for j in range(i):
                     if hashtable1[s[j]]==t[i]:
                         return False            
-                #¥Îhash table§ä
+                #ç”¨hash tableæ‰¾
                 # if t[i] in hashtable2:
                 #     if hashtable2[t[i]]!=s[i]:
                 #         return False
@@ -44,52 +43,3 @@ class Solution:
         return True
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=205 lang=python3
-#
-# [205] Isomorphic Strings
-#
-
-# @lc code=start
-
-#By str process
-# class Solution:
-#     def isIsomorphic(self, s: str, t: str) -> bool:
-#         return all(s.index(s[i]) == t.index(t[i])  for i in range(len(s)))
-
-#³oÃD¥Ø¼Ğ¥u¦³s¤£­n¦h¹ï¤@
-#By hashtable
-class Solution:
-    def isIsomorphic(self, s: str, t: str) -> bool:
-        lens = len(s)
-        lent = len(t)
-        if lens!=lent:
-            return False
-        hashtable1 = dict()
-        #¦pªG­n¥Îhashtable¦^ÀY§ä®É«Øªº
-        # hashtable2 = dict()
-        for i in range(lens):
-            if s[i] in hashtable1:
-                if hashtable1[s[i]]!=t[i]:
-                    return False
-            else:
-                hashtable1[s[i]] = t[i]
-                #¨C¦¸¦³·sªºs[i]­n¥[¤J®É
-                #¦^ÀY¬İ¦³¨S¦³i¥H«eªºs¹ïÀ³¨ì¦P¼Ëªºt
-                #¥i¥H¥Îfor°j°é¦^ÀY§ä©Î«Ø¥t¤@­Óhashtable§ä
-                #¨C¦¸¥Îfor§ä,¤ñ¸û§Ö?
-                for j in range(i):
-                    if hashtable1[s[j]]==t[i]:
-                        return False            
-                #¥Îhash table§ä
-                # if t[i] in hashtable2:
-                #     if hashtable2[t[i]]!=s[i]:
-                #         return False
-                # hashtable2[t[i]] = s[i]
-        return True
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=169 lang=python3
 #
@@ -6,56 +5,24 @@
 #
 
 # @lc code=start
-# µ¹¤@°}¦Cnums, return¦b°}¦C¤¤¦û¶W¹L¤@¥b¼Æ¶qªº¤¸¯À
-# ³o¼Ëªº¤¸¯À¤S³QºÙ¬°²³¼Æ(mode)
-# "¶W¹L¤@¥b"¥Nªí­Y¦³n­Ó¤¸¯À, ¨º¥X²{¦¸¼Æ¦Ü¤Ö>n/2
-# ÃD¥Ø°²³]¥²©w¦s¦b³o¼Ëªº¤¸¯À©ó°}¦C¤¤
+# çµ¦ä¸€é™£åˆ—nums, returnåœ¨é™£åˆ—ä¸­ä½”è¶…éä¸€åŠæ•¸é‡çš„å…ƒç´ 
+# é€™æ¨£çš„å…ƒç´ åˆè¢«ç¨±ç‚ºçœ¾æ•¸(mode)
+# "è¶…éä¸€åŠ"ä»£è¡¨è‹¥æœ‰nå€‹å…ƒç´ , é‚£å‡ºç¾æ¬¡æ•¸è‡³å°‘>n/2
+# é¡Œç›®å‡è¨­å¿…å®šå­˜åœ¨é€™æ¨£çš„å…ƒç´ æ–¼é™£åˆ—ä¸­
 
 # By sort, time: O(nlogn), space: O(logn)
-# ¦]¥²©w¦s¦b³o¼Ëªº¤¸¯À, ¥i¥HÆ[¹î¨ì¶W¹L¤@¥bªº¤¸¯À¦b±Æ§Ç«á¥²©w·|¦b¤¤¶¡
-# ©Ò¥H±Æ§Ç«áreturn§Y¥i
-# ³oÃD¤]¥i¥H¥Îhash©Mdivide and conquer°µ
-# Boyer-Mooreºâªk¥i¥H°µ¨ìtime: O(n), space: O(1), ¥H«á¬ã¨s
+# å› å¿…å®šå­˜åœ¨é€™æ¨£çš„å…ƒç´ , å¯ä»¥è§€å¯Ÿåˆ°è¶…éä¸€åŠçš„å…ƒç´ åœ¨æ’åºå¾Œå¿…å®šæœƒåœ¨ä¸­é–“
+# æ‰€ä»¥æ’åºå¾Œreturnå³å¯
+# é€™é¡Œä¹Ÿå¯ä»¥ç”¨hashå’Œdivide and conqueråš
+# Boyer-Mooreç®—æ³•å¯ä»¥åšåˆ°time: O(n), space: O(1), ä»¥å¾Œç ”ç©¶
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        # ¤º«Øªºsort()³t«×«Ü§Ö
+        # å…§å»ºçš„sort()é€Ÿåº¦å¾ˆå¿«
         nums.sort()
-        # ª`·N¬O"¶W¹L¤@¥b", ©Ò¥H¬O­n©¹¤W¨ú¾ã
-        # Ex: [1, 1, 1, 2], 4­Ó¤¸¯À¦Ü¤Ö¦û3­Ó¤~ºâ¶W¹L¤@¥b
-        # ­Y(len(nums)-1)//2·|¦b°¸¼Æ­Ó¤¸¯À®É©¹¤U¨ú¾ã
-        # ©¹¤W¨ú¾ã´N¬O(len(nums)-1+2-1)//2 = len(nums)//2
+        # æ³¨æ„æ˜¯"è¶…éä¸€åŠ", æ‰€ä»¥æ˜¯è¦å¾€ä¸Šå–æ•´
+        # Ex: [1, 1, 1, 2], 4å€‹å…ƒç´ è‡³å°‘ä½”3å€‹æ‰ç®—è¶…éä¸€åŠ
+        # è‹¥(len(nums)-1)//2æœƒåœ¨å¶æ•¸å€‹å…ƒç´ æ™‚å¾€ä¸‹å–æ•´
+        # å¾€ä¸Šå–æ•´å°±æ˜¯(len(nums)-1+2-1)//2 = len(nums)//2
         return nums[len(nums)//2]
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=169 lang=python3
-#
-# [169] Majority Element
-#
-
-# @lc code=start
-# µ¹¤@°}¦Cnums, return¦b°}¦C¤¤¦û¶W¹L¤@¥b¼Æ¶qªº¤¸¯À
-# ³o¼Ëªº¤¸¯À¤S³QºÙ¬°²³¼Æ(mode)
-# "¶W¹L¤@¥b"¥Nªí­Y¦³n­Ó¤¸¯À, ¨º¥X²{¦¸¼Æ¦Ü¤Ö>n/2
-# ÃD¥Ø°²³]¥²©w¦s¦b³o¼Ëªº¤¸¯À©ó°}¦C¤¤
-
-# By sort, time: O(nlogn), space: O(logn)
-# ¦]¥²©w¦s¦b³o¼Ëªº¤¸¯À, ¥i¥HÆ[¹î¨ì¶W¹L¤@¥bªº¤¸¯À¦b±Æ§Ç«á¥²©w·|¦b¤¤¶¡
-# ©Ò¥H±Æ§Ç«áreturn§Y¥i
-# ³oÃD¤]¥i¥H¥Îhash©Mdivide and conquer°µ
-# Boyer-Mooreºâªk¥i¥H°µ¨ìtime: O(n), space: O(1), ¥H«á¬ã¨s
-class Solution:
-    def majorityElement(self, nums: List[int]) -> int:
-        # ¤º«Øªºsort()³t«×«Ü§Ö
-        nums.sort()
-        # ª`·N¬O"¶W¹L¤@¥b", ©Ò¥H¬O­n©¹¤W¨ú¾ã
-        # Ex: [1, 1, 1, 2], 4­Ó¤¸¯À¦Ü¤Ö¦û3­Ó¤~ºâ¶W¹L¤@¥b
-        # ­Y(len(nums)-1)//2·|¦b°¸¼Æ­Ó¤¸¯À®É©¹¤U¨ú¾ã
-        # ©¹¤W¨ú¾ã´N¬O(len(nums)-1+2-1)//2 = len(nums)//2
-        return nums[len(nums)//2]
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

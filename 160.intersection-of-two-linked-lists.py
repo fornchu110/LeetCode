@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=160 lang=python3
 #
@@ -14,11 +13,11 @@
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
-        # A¦³a­ÓÂI, B¦³b­ÓÂI, °²³]¦@³q¸`ÂI¦³c­Ó
+        # Aæœ‰aå€‹é», Bæœ‰bå€‹é», å‡è¨­å…±é€šç¯€é»æœ‰cå€‹
         A, B = headA, headB
-        # ®Ö¤ß·Qªk¬O:
-        # a¤ñ¸ûªø·|¨«a+(b-c)¨ì¦@³q, b¤ñ¸ûªø·|¨«b+(a-c)¨ì¦@³q
-        # ¨«¨ì¦@³q®Éªğ¦^node­È 
+        # æ ¸å¿ƒæƒ³æ³•æ˜¯:
+        # aæ¯”è¼ƒé•·æœƒèµ°a+(b-c)åˆ°å…±é€š, bæ¯”è¼ƒé•·æœƒèµ°b+(a-c)åˆ°å…±é€š
+        # èµ°åˆ°å…±é€šæ™‚è¿”å›nodeå€¼ 
         while A!=B:
             if(A):
                 A = A.next
@@ -33,41 +32,3 @@ class Solution:
             
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=160 lang=python3
-#
-# [160] Intersection of Two Linked Lists
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
-class Solution:
-    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
-        # A¦³a­ÓÂI, B¦³b­ÓÂI, °²³]¦@³q¸`ÂI¦³c­Ó
-        A, B = headA, headB
-        # ®Ö¤ß·Qªk¬O:
-        # a¤ñ¸ûªø·|¨«a+(b-c)¨ì¦@³q, b¤ñ¸ûªø·|¨«b+(a-c)¨ì¦@³q
-        # ¨«¨ì¦@³q®Éªğ¦^node­È 
-        while A!=B:
-            if(A):
-                A = A.next
-            else:
-                A = headB
-            if(B):
-                B = B.next
-            else:
-                B = headA
-        return A
-
-            
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

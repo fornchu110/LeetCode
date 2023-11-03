@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=198 lang=python3
 #
@@ -6,14 +5,14 @@
 #
 
 # @lc code=start
-# µ¹¤@°}¦Cnums, ¦b¤£¨únums¤º¬Û¾F¤¸¯À¤U, ±o¨ì¨úªº³Ì¤j­È
+# çµ¦ä¸€é™£åˆ—nums, åœ¨ä¸å–numså…§ç›¸é„°å…ƒç´ ä¸‹, å¾—åˆ°å–çš„æœ€å¤§å€¼
 
 # By DP, time: O(n), space: O(1)
-# ¨ä¹êdp[i]¤£¥Î·Q¦¨¥²®³, ·Q¦¨¦³i­Ó¤¸¯À¤Uªº³Ì¨Î¸Ñ§Y¥i
-# ³o¼Ëdp[1]´N¥i¯à¬O®³nums[0]©Înums[1], ¦Ódp[3]¤£¥Î±qdp[0]+nums[3]¥H¤Îdp[1]+nums[3]¿ï, ¦]¬°dp[1]®É´N¸Ó¦Ò¼{¨ì¤F
-# ¦]¦¹¥i¥Hª`·N¨ì¤@­Ó§óª½±µªºÂà²¾¤èµ{, ¥u¦³³W©w¤£¯à¨ú¬Û¾Fªº, ¨º¹ê»Ú¤Wdp[i]´N¬Omax(dp[i-2]+nums[i], dp[i-1])
-# ¥B³Ì¨Î¸Ñ¥u¸ò«e¨â­Ó¸Ñ¦³Ãö, ©Ò¥H¥u»İ­n¥Î¨â©Î¤T­ÓÅÜ¼Æ°µ­¡±a§Y¥i¬Ù¤UªÅ¶¡
-# ³Ì«áreturn dp[len(nums)-1]¤]´N¬O³Ì·sªºsecond
+# å…¶å¯¦dp[i]ä¸ç”¨æƒ³æˆå¿…æ‹¿, æƒ³æˆæœ‰iå€‹å…ƒç´ ä¸‹çš„æœ€ä½³è§£å³å¯
+# é€™æ¨£dp[1]å°±å¯èƒ½æ˜¯æ‹¿nums[0]æˆ–nums[1], è€Œdp[3]ä¸ç”¨å¾dp[0]+nums[3]ä»¥åŠdp[1]+nums[3]é¸, å› ç‚ºdp[1]æ™‚å°±è©²è€ƒæ…®åˆ°äº†
+# å› æ­¤å¯ä»¥æ³¨æ„åˆ°ä¸€å€‹æ›´ç›´æ¥çš„è½‰ç§»æ–¹ç¨‹, åªæœ‰è¦å®šä¸èƒ½å–ç›¸é„°çš„, é‚£å¯¦éš›ä¸Šdp[i]å°±æ˜¯max(dp[i-2]+nums[i], dp[i-1])
+# ä¸”æœ€ä½³è§£åªè·Ÿå‰å…©å€‹è§£æœ‰é—œ, æ‰€ä»¥åªéœ€è¦ç”¨å…©æˆ–ä¸‰å€‹è®Šæ•¸åšè¿­å¸¶å³å¯çœä¸‹ç©ºé–“
+# æœ€å¾Œreturn dp[len(nums)-1]ä¹Ÿå°±æ˜¯æœ€æ–°çš„second
 class Solution:
     def rob(self, nums: List[int]) -> int:
         if not nums:
@@ -27,18 +26,18 @@ class Solution:
             tmp  = second
             second = max(first+nums[i], second)
             first = tmp
-            # ¨âÅÜ¼Æ¼gªk, ¦ıc¤£¯à³o¼Ë¦P®É°µ¹Bºâ
+            # å…©è®Šæ•¸å¯«æ³•, ä½†cä¸èƒ½é€™æ¨£åŒæ™‚åšé‹ç®—
             # first, second = second, max(first + nums[i], second)
         return second
 
 # By DP, time: O(n), space: O(n)
-# ¦Û¤v¼gªº§@ªk
-# ³oÃD­nª`·Nªº´N¬O¦p¦ó§¹¦¨DPÂà²¾¤èµ{, ­ì¥»¥H¬°¥u­n¤ñ¸û©_¼Æindex¤¸¯À©M¥H¤Î°¸¼Æindex¤¸¯À©M
-# ¦ı¹ê»Ú¤W¦³³oºØcase, nums = [2, 0, 0, 2], ¥i¥Hµo²{¨únums[0]+nums[3] = 4¤~¬O³Ì¨Î¸Ñ
-# Æ[¹î¥XµL½×«ç»ò¨ú, ³Ì«á¨â­Ó¤¸¯À¥²©w·|¦³¤@­Ó³Q¿ï¨«, ¤£¥i¯à¦b³£¤£¿ïªº±¡ªp¦³³Ì¨Î¸Ñ(nums[i]¥²>0)
-# ¦]¦¹ª`·N¨ì, °²³]§âdp[i]·í§@¥²¨únums[i]®Éªº³Ì¨Î¸Ñ, ¨ºdp[i] = max(dp[i-3]+nums[i], dp[i-2]+nums[i])
-# ³Ì«ámax(dp[len-1], dp[len-2])´N¬Oµª®×
-# ³o­Ó·Qªk¥i¦æ, ¦ı³t«×¤ñ¸ûºCªÅ¶¡¤]ªá¤ñ¸û¦h
+# è‡ªå·±å¯«çš„ä½œæ³•
+# é€™é¡Œè¦æ³¨æ„çš„å°±æ˜¯å¦‚ä½•å®ŒæˆDPè½‰ç§»æ–¹ç¨‹, åŸæœ¬ä»¥ç‚ºåªè¦æ¯”è¼ƒå¥‡æ•¸indexå…ƒç´ å’Œä»¥åŠå¶æ•¸indexå…ƒç´ å’Œ
+# ä½†å¯¦éš›ä¸Šæœ‰é€™ç¨®case, nums = [2, 0, 0, 2], å¯ä»¥ç™¼ç¾å–nums[0]+nums[3] = 4æ‰æ˜¯æœ€ä½³è§£
+# è§€å¯Ÿå‡ºç„¡è«–æ€éº¼å–, æœ€å¾Œå…©å€‹å…ƒç´ å¿…å®šæœƒæœ‰ä¸€å€‹è¢«é¸èµ°, ä¸å¯èƒ½åœ¨éƒ½ä¸é¸çš„æƒ…æ³æœ‰æœ€ä½³è§£(nums[i]å¿…>0)
+# å› æ­¤æ³¨æ„åˆ°, å‡è¨­æŠŠdp[i]ç•¶ä½œå¿…å–nums[i]æ™‚çš„æœ€ä½³è§£, é‚£dp[i] = max(dp[i-3]+nums[i], dp[i-2]+nums[i])
+# æœ€å¾Œmax(dp[len-1], dp[len-2])å°±æ˜¯ç­”æ¡ˆ
+# é€™å€‹æƒ³æ³•å¯è¡Œ, ä½†é€Ÿåº¦æ¯”è¼ƒæ…¢ç©ºé–“ä¹ŸèŠ±æ¯”è¼ƒå¤š
 # class Solution:
 #     def rob(self, nums: List[int]) -> int:
 #         if len(nums)==1:
@@ -56,64 +55,3 @@ class Solution:
 #         return max(dp[len(nums)-2], dp[len(nums)-1])
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=198 lang=python3
-#
-# [198] House Robber
-#
-
-# @lc code=start
-# µ¹¤@°}¦Cnums, ¦b¤£¨únums¤º¬Û¾F¤¸¯À¤U, ±o¨ì¨úªº³Ì¤j­È
-
-# By DP, time: O(n), space: O(1)
-# ¨ä¹êdp[i]¤£¥Î·Q¦¨¥²®³, ·Q¦¨¦³i­Ó¤¸¯À¤Uªº³Ì¨Î¸Ñ§Y¥i
-# ³o¼Ëdp[1]´N¥i¯à¬O®³nums[0]©Înums[1], ¦Ódp[3]¤£¥Î±qdp[0]+nums[3]¥H¤Îdp[1]+nums[3]¿ï, ¦]¬°dp[1]®É´N¸Ó¦Ò¼{¨ì¤F
-# ¦]¦¹¥i¥Hª`·N¨ì¤@­Ó§óª½±µªºÂà²¾¤èµ{, ¥u¦³³W©w¤£¯à¨ú¬Û¾Fªº, ¨º¹ê»Ú¤Wdp[i]´N¬Omax(dp[i-2]+nums[i], dp[i-1])
-# ¥B³Ì¨Î¸Ñ¥u¸ò«e¨â­Ó¸Ñ¦³Ãö, ©Ò¥H¥u»İ­n¥Î¨â©Î¤T­ÓÅÜ¼Æ°µ­¡±a§Y¥i¬Ù¤UªÅ¶¡
-# ³Ì«áreturn dp[len(nums)-1]¤]´N¬O³Ì·sªºsecond
-class Solution:
-    def rob(self, nums: List[int]) -> int:
-        if not nums:
-            return 0
-        size = len(nums)
-        if size == 1:
-            return nums[0]
-        first = nums[0]
-        second = max(nums[0], nums[1])
-        for i in range(2, size):
-            tmp  = second
-            second = max(first+nums[i], second)
-            first = tmp
-            # ¨âÅÜ¼Æ¼gªk, ¦ıc¤£¯à³o¼Ë¦P®É°µ¹Bºâ
-            # first, second = second, max(first + nums[i], second)
-        return second
-
-# By DP, time: O(n), space: O(n)
-# ¦Û¤v¼gªº§@ªk
-# ³oÃD­nª`·Nªº´N¬O¦p¦ó§¹¦¨DPÂà²¾¤èµ{, ­ì¥»¥H¬°¥u­n¤ñ¸û©_¼Æindex¤¸¯À©M¥H¤Î°¸¼Æindex¤¸¯À©M
-# ¦ı¹ê»Ú¤W¦³³oºØcase, nums = [2, 0, 0, 2], ¥i¥Hµo²{¨únums[0]+nums[3] = 4¤~¬O³Ì¨Î¸Ñ
-# Æ[¹î¥XµL½×«ç»ò¨ú, ³Ì«á¨â­Ó¤¸¯À¥²©w·|¦³¤@­Ó³Q¿ï¨«, ¤£¥i¯à¦b³£¤£¿ïªº±¡ªp¦³³Ì¨Î¸Ñ(nums[i]¥²>0)
-# ¦]¦¹ª`·N¨ì, °²³]§âdp[i]·í§@¥²¨únums[i]®Éªº³Ì¨Î¸Ñ, ¨ºdp[i] = max(dp[i-3]+nums[i], dp[i-2]+nums[i])
-# ³Ì«ámax(dp[len-1], dp[len-2])´N¬Oµª®×
-# ³o­Ó·Qªk¥i¦æ, ¦ı³t«×¤ñ¸ûºCªÅ¶¡¤]ªá¤ñ¸û¦h
-# class Solution:
-#     def rob(self, nums: List[int]) -> int:
-#         if len(nums)==1:
-#             return nums[0]
-#         elif len(nums)==2:
-#             return max(nums[0], nums[1])
-#         elif len(nums)==3:
-#             return max((nums[0]+nums[2]), nums[1])
-#         dp = [0]*len(nums)
-#         dp[0] = nums[0]
-#         dp[1] = nums[1]
-#         dp[2] = max(dp[0]+nums[2], dp[1])
-#         for i in range(3, len(nums)):
-#             dp[i] = max(dp[i-3]+nums[i], dp[i-2]+nums[i])
-#         return max(dp[len(nums)-2], dp[len(nums)-1])
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

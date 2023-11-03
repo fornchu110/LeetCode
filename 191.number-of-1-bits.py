@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=191 lang=python3
 #
@@ -6,10 +5,10 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ó¼Æ­n¨D±o¥X¨ä¤G¶i¦ì¤U1ªº­Ó¼Æ
+# çµ¦ä¸€å€‹æ•¸è¦æ±‚å¾—å‡ºå…¶äºŒé€²ä½ä¸‹1çš„å€‹æ•¸
 
-# By bitwise, time: O(log(n)), space: O(1), n¬°µ¹©w¼Æ¤¤1ªº¦U¼Æ
-# §Ş¥©¦b©ó§Q¥În&(n-1)·|§â³Ì§C¦ì¤¸ªº1Âà´«¦¨0ªº©Ê½è, ­n°O±o³o©Û
+# By bitwise, time: O(log(n)), space: O(1), nç‚ºçµ¦å®šæ•¸ä¸­1çš„å„æ•¸
+# æŠ€å·§åœ¨æ–¼åˆ©ç”¨n&(n-1)æœƒæŠŠæœ€ä½ä½å…ƒçš„1è½‰æ›æˆ0çš„æ€§è³ª, è¦è¨˜å¾—é€™æ‹›
 class Solution:
     def hammingWeight(self, n: int) -> int:
         res = 0
@@ -18,8 +17,8 @@ class Solution:
             res += 1
         return res
 
-# By bitwise, time: O(k), space: O(1), ¦]ÃD¥Øµ¹32¦ì¤¸¼Æ©Ò¥Hk = 32
-# ±q³Ì¥kÃä¶}©l¨C¦¸©M1°µ&, ­Y³Ì¥kÃä¨º¦ì¬O1¨ºµ²ªG´N¬O1, µM«á¥k²¾´`Àô¼Æ
+# By bitwise, time: O(k), space: O(1), å› é¡Œç›®çµ¦32ä½å…ƒæ•¸æ‰€ä»¥k = 32
+# å¾æœ€å³é‚Šé–‹å§‹æ¯æ¬¡å’Œ1åš&, è‹¥æœ€å³é‚Šé‚£ä½æ˜¯1é‚£çµæœå°±æ˜¯1, ç„¶å¾Œå³ç§»å¾ªç’°æ•¸
 # class Solution:
 #     def hammingWeight(self, n: int) -> int:
 #         res = 0
@@ -30,38 +29,3 @@ class Solution:
 #         return res
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=191 lang=python3
-#
-# [191] Number of 1 Bits
-#
-
-# @lc code=start
-# µ¹¤@­Ó¼Æ­n¨D±o¥X¨ä¤G¶i¦ì¤U1ªº­Ó¼Æ
-
-# By bitwise, time: O(log(n)), space: O(1), n¬°µ¹©w¼Æ¤¤1ªº¦U¼Æ
-# §Ş¥©¦b©ó§Q¥În&(n-1)·|§â³Ì§C¦ì¤¸ªº1Âà´«¦¨0ªº©Ê½è, ­n°O±o³o©Û
-class Solution:
-    def hammingWeight(self, n: int) -> int:
-        res = 0
-        while n:
-            n &= n-1
-            res += 1
-        return res
-
-# By bitwise, time: O(k), space: O(1), ¦]ÃD¥Øµ¹32¦ì¤¸¼Æ©Ò¥Hk = 32
-# ±q³Ì¥kÃä¶}©l¨C¦¸©M1°µ&, ­Y³Ì¥kÃä¨º¦ì¬O1¨ºµ²ªG´N¬O1, µM«á¥k²¾´`Àô¼Æ
-# class Solution:
-#     def hammingWeight(self, n: int) -> int:
-#         res = 0
-#         while n:
-#             if n&1:
-#                 res += 1
-#             n >>= 1
-#         return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

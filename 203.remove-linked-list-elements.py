@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=203 lang=python3
 #
@@ -13,20 +12,20 @@
 #         self.next = next
 
 # By iterative, time: O(n), space: O(1)
-# ³z¹Ldummy node«ü¦Vheadªº¤è¦¡Åı²¾°£head¤£¥ÎÃB¥~§PÂ_, ¤]¤£©Èhead¿ò¥¢
-# leetcode¦^¶Çhead«á¥L·|¦Û°Ê¨«³X¾ã­Ólinklist±o¨ì³Ñ¤Unode
+# é€édummy nodeæŒ‡å‘headçš„æ–¹å¼è®“ç§»é™¤headä¸ç”¨é¡å¤–åˆ¤æ–·, ä¹Ÿä¸æ€•headéºå¤±
+# leetcodeå›å‚³headå¾Œä»–æœƒè‡ªå‹•èµ°è¨ªæ•´å€‹linklistå¾—åˆ°å‰©ä¸‹node
 class Solution:
     def removeElements(self, head: ListNode, val: int) -> ListNode:
-        # µêÀÀ¸`ÂI«ü¦Vhead, Á×§Khead¿ò¥¢, ¤]¤è«K§R°£head®É¤£¥ÎÃB¥~°µ§PÂ_
+        # è™›æ“¬ç¯€é»æŒ‡å‘head, é¿å…headéºå¤±, ä¹Ÿæ–¹ä¾¿åˆªé™¤headæ™‚ä¸ç”¨é¡å¤–åšåˆ¤æ–·
         dummyNode = ListNode(next=head) 
         cur = dummyNode
-        # ³o¼Ë¦bwhile¥ı§PÂ_¤Fhead¬O§_¬°ªÅ, ­Yhead¬°ªÅª½±µ¦^¶ÇªÅhead
+        # é€™æ¨£åœ¨whileå…ˆåˆ¤æ–·äº†headæ˜¯å¦ç‚ºç©º, è‹¥headç‚ºç©ºç›´æ¥å›å‚³ç©ºhead
         while(cur.next!=None):
             if(cur.next.val == val):
-                cur.next = cur.next.next #¸õ¹L­ì¥»val==¥Ø¼Ğªºcur.next 
+                cur.next = cur.next.next #è·³éåŸæœ¬val==ç›®æ¨™çš„cur.next 
             else:
                 cur = cur.next
-        # ¹ê»Ú¤W´N¬Olinklist¤§head
+        # å¯¦éš›ä¸Šå°±æ˜¯linklistä¹‹head
         return dummyNode.next
 
 # By recursive, time: O(n), space: O(n)
@@ -41,49 +40,3 @@ class Solution:
 #             return head
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=203 lang=python3
-#
-# [203] Remove Linked List Elements
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-# By iterative, time: O(n), space: O(1)
-# ³z¹Ldummy node«ü¦Vheadªº¤è¦¡Åı²¾°£head¤£¥ÎÃB¥~§PÂ_, ¤]¤£©Èhead¿ò¥¢
-# leetcode¦^¶Çhead«á¥L·|¦Û°Ê¨«³X¾ã­Ólinklist±o¨ì³Ñ¤Unode
-class Solution:
-    def removeElements(self, head: ListNode, val: int) -> ListNode:
-        # µêÀÀ¸`ÂI«ü¦Vhead, Á×§Khead¿ò¥¢, ¤]¤è«K§R°£head®É¤£¥ÎÃB¥~°µ§PÂ_
-        dummyNode = ListNode(next=head) 
-        cur = dummyNode
-        # ³o¼Ë¦bwhile¥ı§PÂ_¤Fhead¬O§_¬°ªÅ, ­Yhead¬°ªÅª½±µ¦^¶ÇªÅhead
-        while(cur.next!=None):
-            if(cur.next.val == val):
-                cur.next = cur.next.next #¸õ¹L­ì¥»val==¥Ø¼Ğªºcur.next 
-            else:
-                cur = cur.next
-        # ¹ê»Ú¤W´N¬Olinklist¤§head
-        return dummyNode.next
-
-# By recursive, time: O(n), space: O(n)
-# class Solution:
-#     def removeElements(self, head: ListNode, val: int) -> ListNode:
-#         if(head==None):
-#             return head
-#         head.next = self.removeElements(head.next, val)
-#         if head.val==val:
-#             return head.next
-#         else:
-#             return head
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

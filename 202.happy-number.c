@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * @lc app=leetcode id=202 lang=c
  *
@@ -7,7 +6,7 @@
 
 // @lc code=start
 
-//By array·íhash table, ¦]¥u»İ­n¬İkey¤£¥Îvalue
+//By arrayç•¶hash table, å› åªéœ€è¦çœ‹keyä¸ç”¨value
 bool isHappy(int n){
     int hash[5000];
     memset(hash, 0 ,sizeof(hash));
@@ -19,13 +18,13 @@ bool isHappy(int n){
             n /= 10;
         }
         if(res == 1) return true;
-        hash[res]++;//¨C¦¸±ores´N§âhash[res]+1¥Nªíºâ¹L³o­Óres¤F
-        if(hash[res] > 1) return false;//¥u­nhash[res]¶W¹L1¥Nªí­«½Æ,¶i¤JµL½a°j°é
+        hash[res]++;//æ¯æ¬¡å¾—reså°±æŠŠhash[res]+1ä»£è¡¨ç®—éé€™å€‹resäº†
+        if(hash[res] > 1) return false;//åªè¦hash[res]è¶…é1ä»£è¡¨é‡è¤‡,é€²å…¥ç„¡çª®è¿´åœˆ
         n = res;
     }
 }
 
-//By ¥¿³Whashtable
+//By æ­£è¦hashtable
 // struct hashTable {
 //     int key;
 //     UT_hash_handle hh;
@@ -69,77 +68,3 @@ bool isHappy(int n){
 // }
 
 // @lc code=end
-
-=======
-/*
- * @lc app=leetcode id=202 lang=c
- *
- * [202] Happy Number
- */
-
-// @lc code=start
-
-//By array·íhash table, ¦]¥u»İ­n¬İkey¤£¥Îvalue
-bool isHappy(int n){
-    int hash[5000];
-    memset(hash, 0 ,sizeof(hash));
-    while(true){
-        int res = 0;
-        while(n){
-            int a = (n % 10);
-            res += a * a;
-            n /= 10;
-        }
-        if(res == 1) return true;
-        hash[res]++;//¨C¦¸±ores´N§âhash[res]+1¥Nªíºâ¹L³o­Óres¤F
-        if(hash[res] > 1) return false;//¥u­nhash[res]¶W¹L1¥Nªí­«½Æ,¶i¤JµL½a°j°é
-        n = res;
-    }
-}
-
-//By ¥¿³Whashtable
-// struct hashTable {
-//     int key;
-//     UT_hash_handle hh;
-// };
-// struct hashTable* hashtable;
-
-// struct hashTable* find(key) {
-//     struct hashTable* tmp;
-//     HASH_FIND_INT(hashtable, &key, tmp);
-//     return tmp;
-// }
-
-// void insert(key) {
-//     struct hashTable* it = find(key);
-//     if(it==NULL) {
-//         struct hashTable* tmp = (struct hashTable*)malloc(sizeof(struct hashTable));
-//         tmp->key = key;
-//         HASH_ADD_INT(hashtable, key, tmp);
-//     }
-//     else {
-//         return false;
-//     }
-// }
-
-// bool isHappy(int n){
-//     int a, res, ret = 0;
-//     while(1) {
-//         res = 0;
-//         while(n) {
-//             a = n%10;
-//             res += a*a;
-//             n/=10;
-//         }
-//         if(res==1) {
-//             return true;
-//         }
-//         insert(res);
-//         n = res;
-//     }
-//     return NULL;
-// }
-
-// @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
