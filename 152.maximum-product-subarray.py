@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=152 lang=python3
 #
@@ -6,36 +5,36 @@
 #
 
 # @lc code=start
-# ­n¨D¥X³Ì¤j¿nªº¤l¼Æ¦C
-# ª`·N¿nªº¤l¼Æ¦C¥u­n­¼¤W>1ªº¼Æ¥B­t¼Æ¬°°¸¼Æ­Ó, ¨º¤@©w¦Ü¤Ö¶V­¼¶V¤j
-# ¹J¨ì0¤~»İ­n­«¸m
+# è¦æ±‚å‡ºæœ€å¤§ç©çš„å­æ•¸åˆ—
+# æ³¨æ„ç©çš„å­æ•¸åˆ—åªè¦ä¹˜ä¸Š>1çš„æ•¸ä¸”è² æ•¸ç‚ºå¶æ•¸å€‹, é‚£ä¸€å®šè‡³å°‘è¶Šä¹˜è¶Šå¤§
+# é‡åˆ°0æ‰éœ€è¦é‡ç½®
 
 # By count negtive, time: O(n), space: O(n)
-# ·|µy·L¤ñDPÁÙ§Ö¤@¨Ç
-# °¸¼Æ­Ó­t¼Æªº¸Ü¶V­¼¶V¤j, ©_¼Æ­Ó­t¼Æªº¸Ü, ¨C­Ó­t¼Æ¥ª¥k¨âÃä¤l¼Æ¦C¤@©w¦³°¸¼Æ­Ó­t¼Æ
-# ¤ÏÂàªº¥Î·N¬O¦]¾ã­Ó¼Æ¦C¤£ºâ¤l¼Æ¦C, ¦]¦¹³Ìªø¤l¼Æ¦Cµ´¹ï¬Onums[:len(nums)]©Înums[1:len(nums)-1]©_¤@
+# æœƒç¨å¾®æ¯”DPé‚„å¿«ä¸€äº›
+# å¶æ•¸å€‹è² æ•¸çš„è©±è¶Šä¹˜è¶Šå¤§, å¥‡æ•¸å€‹è² æ•¸çš„è©±, æ¯å€‹è² æ•¸å·¦å³å…©é‚Šå­æ•¸åˆ—ä¸€å®šæœ‰å¶æ•¸å€‹è² æ•¸
+# åè½‰çš„ç”¨æ„æ˜¯å› æ•´å€‹æ•¸åˆ—ä¸ç®—å­æ•¸åˆ—, å› æ­¤æœ€é•·å­æ•¸åˆ—çµ•å°æ˜¯nums[:len(nums)]æˆ–nums[1:len(nums)-1]å¥‡ä¸€
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        # reversed(nums)¥i¥H±Nnums¤ÏÂà¨Ã¦^¶ÇÅ|¥N¾¹, ­n¥Îlist±µ¦¬
-        # °O¦í¤ÏÂàÁÙ¯à¥Înums.reverse()¤£¦^¶Ç, ¥H¤Înums[::-1]¤Á¤ù¤è¦¡
+        # reversed(nums)å¯ä»¥å°‡numsåè½‰ä¸¦å›å‚³ç–Šä»£å™¨, è¦ç”¨listæ¥æ”¶
+        # è¨˜ä½åè½‰é‚„èƒ½ç”¨nums.reverse()ä¸å›å‚³, ä»¥åŠnums[::-1]åˆ‡ç‰‡æ–¹å¼
         reverse_nums = list(reversed(nums))
-        # ±N¤ÏÂà«áªºnums¨«³Xrange(1, len(nums))µ¥¦P©ó­ì¥»nums[:len(nums)-1]
-        # ¥i¥H³o¼Ë°µ¬O¦]¬°­¼ªk¶¶§Ç¬Û¤Ï¤£·|¼vÅTµ²ªG
-        # ¤U­±¥Î¤@­Ófor°j°é¦P®É¨«³X¨â­Ólist
+        # å°‡åè½‰å¾Œçš„numsèµ°è¨ªrange(1, len(nums))ç­‰åŒæ–¼åŸæœ¬nums[:len(nums)-1]
+        # å¯ä»¥é€™æ¨£åšæ˜¯å› ç‚ºä¹˜æ³•é †åºç›¸åä¸æœƒå½±éŸ¿çµæœ
+        # ä¸‹é¢ç”¨ä¸€å€‹forè¿´åœˆåŒæ™‚èµ°è¨ªå…©å€‹list
         for i in range(1, len(nums)):
-            # orªº¥Øªº¬O¬°¤F·í¹J¨ìnums[i-1]¬°0®É, §ï­¼¤W1
-            # ½Æ²ßor¹Bºâ¦b¥ª¶µ«D0®Éª½±µ¥ª¶µ, ¥ª¶µ¬°0®É¤~¬İ¥k¶µ, and¹Bºâ¥ª¶µ¬°0®Éª½±µ¥ª¶µ, ¥ª¶µ«D0¤~¬İ¥k¶µ
-            # Á×§Knums[i-1]=0®ÉÅınums[i]¤]ÅÜ¦¨0, ­¼¤@µ¥¦P±qnums[i]­«·s¶}©l
-            # ª`·N§Ş¥©¬O¥Înums©Mreverse_nums¦s¤W¤F¨«³X¨ìi®Éªº¬Û­¼µ²ªG
-            # ©Ò¥H³Ì«á¥Îmax()µ¥¦P©ó§ä¨CºØ¬Û­¼µ²ªG¸Ì­±³Ì¤j­È, ±o¥Xµª®×
+            # orçš„ç›®çš„æ˜¯ç‚ºäº†ç•¶é‡åˆ°nums[i-1]ç‚º0æ™‚, æ”¹ä¹˜ä¸Š1
+            # è¤‡ç¿’oré‹ç®—åœ¨å·¦é …é0æ™‚ç›´æ¥å·¦é …, å·¦é …ç‚º0æ™‚æ‰çœ‹å³é …, andé‹ç®—å·¦é …ç‚º0æ™‚ç›´æ¥å·¦é …, å·¦é …é0æ‰çœ‹å³é …
+            # é¿å…nums[i-1]=0æ™‚è®“nums[i]ä¹Ÿè®Šæˆ0, ä¹˜ä¸€ç­‰åŒå¾nums[i]é‡æ–°é–‹å§‹
+            # æ³¨æ„æŠ€å·§æ˜¯ç”¨numså’Œreverse_numså­˜ä¸Šäº†èµ°è¨ªåˆ°iæ™‚çš„ç›¸ä¹˜çµæœ
+            # æ‰€ä»¥æœ€å¾Œç”¨max()ç­‰åŒæ–¼æ‰¾æ¯ç¨®ç›¸ä¹˜çµæœè£¡é¢æœ€å¤§å€¼, å¾—å‡ºç­”æ¡ˆ
             nums[i] *= nums[i-1] or 1
             reverse_nums[i] *= reverse_nums[i-1] or 1
-        # +¬O±N¨âlistªº«÷±µ¦¨¤@­Ólist, ¤£·|°µ¹ïÀ³¶µ¬Û¥[
+        # +æ˜¯å°‡å…©listçš„æ‹¼æ¥æˆä¸€å€‹list, ä¸æœƒåšå°æ‡‰é …ç›¸åŠ 
         # Ex: a = [1, 2], b = [3, 4], a+b = [1, 2, 3, 4]
         return max(nums+reverse_nums)
 
 # By DP, time: O(n), space: O(1)
-# DP¦P®É¦Ò¼{min©Mmaxªº­ì¦]¬O, ·ímin¥u­n¦A¹J¨ì¤@­Ó­t¼Æ´N¥i¯àÅÜ¦¨max
+# DPåŒæ™‚è€ƒæ…®minå’Œmaxçš„åŸå› æ˜¯, ç•¶minåªè¦å†é‡åˆ°ä¸€å€‹è² æ•¸å°±å¯èƒ½è®Šæˆmax
 # class Solution:
 #     def maxProduct(self, nums: List[int]) -> int:
 #         if not nums:
@@ -43,7 +42,7 @@ class Solution:
 #         res = nums[0]
 #         pre_max = nums[0]
 #         pre_min = nums[0]
-#         # nums[1:]ªº¼gªk¥i¥H¤£¥Îrange¤]±qindex¬°1ªº¦ì¸m¨«³X, ¥Bnum¤´¥Nªínums[index]
+#         # nums[1:]çš„å¯«æ³•å¯ä»¥ä¸ç”¨rangeä¹Ÿå¾indexç‚º1çš„ä½ç½®èµ°è¨ª, ä¸”numä»ä»£è¡¨nums[index]
 #         for num in nums[1:]:
 #             cur_max = max(pre_max*num, pre_min*num, num)
 #             cur_min = min(pre_max*num, pre_min*num, num)
@@ -53,61 +52,3 @@ class Solution:
 #         return res
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=152 lang=python3
-#
-# [152] Maximum Product Subarray
-#
-
-# @lc code=start
-# ­n¨D¥X³Ì¤j¿nªº¤l¼Æ¦C
-# ª`·N¿nªº¤l¼Æ¦C¥u­n­¼¤W>1ªº¼Æ¥B­t¼Æ¬°°¸¼Æ­Ó, ¨º¤@©w¦Ü¤Ö¶V­¼¶V¤j
-# ¹J¨ì0¤~»İ­n­«¸m
-
-# By count negtive, time: O(n), space: O(n)
-# ·|µy·L¤ñDPÁÙ§Ö¤@¨Ç
-# °¸¼Æ­Ó­t¼Æªº¸Ü¶V­¼¶V¤j, ©_¼Æ­Ó­t¼Æªº¸Ü, ¨C­Ó­t¼Æ¥ª¥k¨âÃä¤l¼Æ¦C¤@©w¦³°¸¼Æ­Ó­t¼Æ
-# ¤ÏÂàªº¥Î·N¬O¦]¾ã­Ó¼Æ¦C¤£ºâ¤l¼Æ¦C, ¦]¦¹³Ìªø¤l¼Æ¦Cµ´¹ï¬Onums[:len(nums)]©Înums[1:len(nums)-1]©_¤@
-class Solution:
-    def maxProduct(self, nums: List[int]) -> int:
-        # reversed(nums)¥i¥H±Nnums¤ÏÂà¨Ã¦^¶ÇÅ|¥N¾¹, ­n¥Îlist±µ¦¬
-        # °O¦í¤ÏÂàÁÙ¯à¥Înums.reverse()¤£¦^¶Ç, ¥H¤Înums[::-1]¤Á¤ù¤è¦¡
-        reverse_nums = list(reversed(nums))
-        # ±N¤ÏÂà«áªºnums¨«³Xrange(1, len(nums))µ¥¦P©ó­ì¥»nums[:len(nums)-1]
-        # ¥i¥H³o¼Ë°µ¬O¦]¬°­¼ªk¶¶§Ç¬Û¤Ï¤£·|¼vÅTµ²ªG
-        # ¤U­±¥Î¤@­Ófor°j°é¦P®É¨«³X¨â­Ólist
-        for i in range(1, len(nums)):
-            # orªº¥Øªº¬O¬°¤F·í¹J¨ìnums[i-1]¬°0®É, §ï­¼¤W1
-            # ½Æ²ßor¹Bºâ¦b¥ª¶µ«D0®Éª½±µ¥ª¶µ, ¥ª¶µ¬°0®É¤~¬İ¥k¶µ, and¹Bºâ¥ª¶µ¬°0®Éª½±µ¥ª¶µ, ¥ª¶µ«D0¤~¬İ¥k¶µ
-            # Á×§Knums[i-1]=0®ÉÅınums[i]¤]ÅÜ¦¨0, ­¼¤@µ¥¦P±qnums[i]­«·s¶}©l
-            # ª`·N§Ş¥©¬O¥Înums©Mreverse_nums¦s¤W¤F¨«³X¨ìi®Éªº¬Û­¼µ²ªG
-            # ©Ò¥H³Ì«á¥Îmax()µ¥¦P©ó§ä¨CºØ¬Û­¼µ²ªG¸Ì­±³Ì¤j­È, ±o¥Xµª®×
-            nums[i] *= nums[i-1] or 1
-            reverse_nums[i] *= reverse_nums[i-1] or 1
-        # +¬O±N¨âlistªº«÷±µ¦¨¤@­Ólist, ¤£·|°µ¹ïÀ³¶µ¬Û¥[
-        # Ex: a = [1, 2], b = [3, 4], a+b = [1, 2, 3, 4]
-        return max(nums+reverse_nums)
-
-# By DP, time: O(n), space: O(1)
-# DP¦P®É¦Ò¼{min©Mmaxªº­ì¦]¬O, ·ímin¥u­n¦A¹J¨ì¤@­Ó­t¼Æ´N¥i¯àÅÜ¦¨max
-# class Solution:
-#     def maxProduct(self, nums: List[int]) -> int:
-#         if not nums:
-#             return 
-#         res = nums[0]
-#         pre_max = nums[0]
-#         pre_min = nums[0]
-#         # nums[1:]ªº¼gªk¥i¥H¤£¥Îrange¤]±qindex¬°1ªº¦ì¸m¨«³X, ¥Bnum¤´¥Nªínums[index]
-#         for num in nums[1:]:
-#             cur_max = max(pre_max*num, pre_min*num, num)
-#             cur_min = min(pre_max*num, pre_min*num, num)
-#             res = max(res, cur_max)
-#             pre_max = cur_max
-#             pre_min = cur_min
-#         return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

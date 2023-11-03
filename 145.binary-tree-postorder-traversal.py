@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=145 lang=python3
 #
@@ -13,63 +12,25 @@
 #         self.left = left
 #         self.right = right
 
-#By recursive
+#By recursive, time: O(n), space: O(logn)
 class Solution:
     def postorder(self, root:TreeNode, res):
-        #»¼°j²×¤î±ø¥ó, ­Y«Dnode¤£¥Î»¼°j
+        #éè¿´çµ‚æ­¢æ¢ä»¶, è‹¥énodeä¸ç”¨éè¿´
         if not root:
             return
-        #«á§Ç:¥ª->¥k->¤¤
+        #å¾Œåº:å·¦->å³->ä¸­
         self.postorder(root.left, res)
         self.postorder(root.right, res)
         res.append(root.val)
         return
 
     def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        #ªì©l¤Æ­n¦^¶Çªº°}¦Cres
+        #åˆå§‹åŒ–è¦å›å‚³çš„é™£åˆ—res
         res = list()
-        #±qroot¶}©l¹ï©Ò¦³node°µ«á§Ç°lÂÜ
+        #å¾rooté–‹å§‹å°æ‰€æœ‰nodeåšå¾Œåºè¿½è¹¤
         self.postorder(root, res)
-        #¹ï©Ò¦³nodeªº»¼°j§¹¦¨, ¦^¶Çµ²ªG
+        #å°æ‰€æœ‰nodeçš„éè¿´å®Œæˆ, å›å‚³çµæœ
         return res
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=145 lang=python3
-#
-# [145] Binary Tree Postorder Traversal
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-#By recursive
-class Solution:
-    def postorder(self, root:TreeNode, res):
-        #»¼°j²×¤î±ø¥ó, ­Y«Dnode¤£¥Î»¼°j
-        if not root:
-            return
-        #«á§Ç:¥ª->¥k->¤¤
-        self.postorder(root.left, res)
-        self.postorder(root.right, res)
-        res.append(root.val)
-        return
-
-    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        #ªì©l¤Æ­n¦^¶Çªº°}¦Cres
-        res = list()
-        #±qroot¶}©l¹ï©Ò¦³node°µ«á§Ç°lÂÜ
-        self.postorder(root, res)
-        #¹ï©Ò¦³nodeªº»¼°j§¹¦¨, ¦^¶Çµ²ªG
-        return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

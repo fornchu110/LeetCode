@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * @lc app=leetcode id=145 lang=c
  *
@@ -20,76 +19,27 @@
 
 //By recursive
 void postorder(struct TreeNode*root, int* res, int* resSize) {
-    //²×¤î±ø¥ó, ·í«Dnode®É¤£¥Î»¼°j
+    //çµ‚æ­¢æ¢ä»¶, ç•¶énodeæ™‚ä¸ç”¨éè¿´
     if(root==NULL) {
         return;
     }
-    //«á§Ç°lÂÜ:¥ª->¥k->¤¤
+    //å¾Œåºè¿½è¹¤:å·¦->å³->ä¸­
     postorder(root->left, res, resSize);
     postorder(root->right, res, resSize);
-    //resSize¬O«ü¼Ğ, *resSize¤~¬Oindex
-    //±N¤¤ªºval©ñ¤Jres[*resSize], ¨Ã¥B±N*resSize++
+    //resSizeæ˜¯æŒ‡æ¨™, *resSizeæ‰æ˜¯index
+    //å°‡ä¸­çš„valæ”¾å…¥res[*resSize], ä¸¦ä¸”å°‡*resSize++
     res[(*resSize)++] = root->val;
     return;
 }
 
 int* postorderTraversal(struct TreeNode* root, int* returnSize){
-    //°ÊºA«Å§i¦^¶Ç«á§Ç°lÂÜµ²ªGªºres°}¦C
+    //å‹•æ…‹å®£å‘Šå›å‚³å¾Œåºè¿½è¹¤çµæœçš„resé™£åˆ—
     int* res = (int*)malloc(100*sizeof(int));
-    //returnSize¬O«ü¼Ğ, ªì©l¤Æ*resturnSize§@¬°±Nnode©ñ¤Jres¤§index
+    //returnSizeæ˜¯æŒ‡æ¨™, åˆå§‹åŒ–*resturnSizeä½œç‚ºå°‡nodeæ”¾å…¥resä¹‹index
     *returnSize = 0;
-    //±qroot¶}©l¹ï©Ò¦³node»¼°j°µ«á§Ç°lÂÜ
+    //å¾rooté–‹å§‹å°æ‰€æœ‰nodeéè¿´åšå¾Œåºè¿½è¹¤
     postorder(root, res, returnSize);
-    //§¹¦¨©Ò¦³»¼°j, ¦^¶Çµ²ªG
+    //å®Œæˆæ‰€æœ‰éè¿´, å›å‚³çµæœ
     return res;
 }
 // @lc code=end
-
-=======
-/*
- * @lc app=leetcode id=145 lang=c
- *
- * [145] Binary Tree Postorder Traversal
- */
-
-// @lc code=start
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     struct TreeNode *left;
- *     struct TreeNode *right;
- * };
- */
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-
-//By recursive
-void postorder(struct TreeNode*root, int* res, int* resSize) {
-    //²×¤î±ø¥ó, ·í«Dnode®É¤£¥Î»¼°j
-    if(root==NULL) {
-        return;
-    }
-    //«á§Ç°lÂÜ:¥ª->¥k->¤¤
-    postorder(root->left, res, resSize);
-    postorder(root->right, res, resSize);
-    //resSize¬O«ü¼Ğ, *resSize¤~¬Oindex
-    //±N¤¤ªºval©ñ¤Jres[*resSize], ¨Ã¥B±N*resSize++
-    res[(*resSize)++] = root->val;
-    return;
-}
-
-int* postorderTraversal(struct TreeNode* root, int* returnSize){
-    //°ÊºA«Å§i¦^¶Ç«á§Ç°lÂÜµ²ªGªºres°}¦C
-    int* res = (int*)malloc(100*sizeof(int));
-    //returnSize¬O«ü¼Ğ, ªì©l¤Æ*resturnSize§@¬°±Nnode©ñ¤Jres¤§index
-    *returnSize = 0;
-    //±qroot¶}©l¹ï©Ò¦³node»¼°j°µ«á§Ç°lÂÜ
-    postorder(root, res, returnSize);
-    //§¹¦¨©Ò¦³»¼°j, ¦^¶Çµ²ªG
-    return res;
-}
-// @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
