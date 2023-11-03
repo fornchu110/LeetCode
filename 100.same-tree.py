@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=100 lang=python3
 #
@@ -6,7 +5,7 @@
 #
 
 # @lc code=start
-# µ¹¨âtree p©Mq, return ¦¹¨â¾ğ¬O§_¬Û¦P
+# çµ¦å…©tree på’Œq, return æ­¤å…©æ¨¹æ˜¯å¦ç›¸åŒ
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -15,38 +14,38 @@
 #         self.left = left
 #         self.right = right
 
-# By BFS(recursive), time: O(min(P, Q)), time: O(min(P, Q)), P¡BQ¤À§O¥Nªíp¡Bq¤§node¼Æ
-# minªº­ì¦]¬O¥u­n¦³¤@ªÌ´£«e¬O§PÂ_§¹¨º´N¥Nªífalse
-# ½ÆÂø«×¤@¼Ë¦ı¹ê»Ú¤ñ¸û§Ö
-# ¦P®É¹ï¨â­Ótree°µBFS
+# By BFS(recursive), time: O(min(P, Q)), time: O(min(P, Q)), Pã€Qåˆ†åˆ¥ä»£è¡¨pã€qä¹‹nodeæ•¸
+# minçš„åŸå› æ˜¯åªè¦æœ‰ä¸€è€…æå‰æ˜¯åˆ¤æ–·å®Œé‚£å°±ä»£è¡¨false
+# è¤‡é›œåº¦ä¸€æ¨£ä½†å¯¦éš›æ¯”è¼ƒå¿«
+# åŒæ™‚å°å…©å€‹treeåšBFS
 class Solution:
     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
         if p is None and q is None:
             return True
         if p is None or q is None:
             return False
-        # collections¤º¹ê§@¤F¦hºØ®e¾¹, .deque¬OÂùÃäqueue, [p]¥Nªí±qp¤§head¶}©l±Np¤@­Ó­Ó©ñ¤Jdeque
-        # ¤]¥i¥H¥Îdeque([p, 3])¥Nªí©ñ¤Jp¤¤³Ì¦­¨«³X¨ìªº3­Ónode
+        # collectionså…§å¯¦ä½œäº†å¤šç¨®å®¹å™¨, .dequeæ˜¯é›™é‚Šqueue, [p]ä»£è¡¨å¾pä¹‹headé–‹å§‹å°‡pä¸€å€‹å€‹æ”¾å…¥deque
+        # ä¹Ÿå¯ä»¥ç”¨deque([p, 3])ä»£è¡¨æ”¾å…¥pä¸­æœ€æ—©èµ°è¨ªåˆ°çš„3å€‹node
         queue1 = collections.deque([p])
         queue2 = collections.deque([q])
 
         while queue1 and queue2:
-            # popleftµ¥¦P¥Îlist¹ê§@®Éªºpop[0]
+            # popleftç­‰åŒç”¨listå¯¦ä½œæ™‚çš„pop[0]
             node1 = queue1.popleft()
             node2 = queue2.popleft()
             if node1.val!=node2.val:
                 return False
             left1, right1 = node1.left, node1.right
             left2, right2 = node2.left, node2.right
-            # Ãä¬É±ø¥ó, §Q¥ÎXOR¨âªÌ¬Û¦P¬°1, ¨âªÌ¤£¦P¬°0ªº©Ê½è
-            # tree node¦]¬°¬O¤@­Ó¤@­Ó±µªºlinklist, ¤£¥i¥Î^§PÂ_, ¦ÓNone®É¤S¤£¯à§PÂ_val
-            # ©Ò¥H§Q¥Înot, ¨âªÌ¬°ªÅ®É¨âªÌ­Ónot³£·|¬OTrue, ¦Ó¨âªÌ«DªÅ®É¨âªÌªºnot³£·|¬OFalse, ¤]´N¬O»¡¤£¦P®É±ø¥ó¤~¦¨¥ß
-            # ³oºØ¼gªk¤]¥i¥H¥Î¦b¶}ÀY§PÂ_return False®É
+            # é‚Šç•Œæ¢ä»¶, åˆ©ç”¨XORå…©è€…ç›¸åŒç‚º1, å…©è€…ä¸åŒç‚º0çš„æ€§è³ª
+            # tree nodeå› ç‚ºæ˜¯ä¸€å€‹ä¸€å€‹æ¥çš„linklist, ä¸å¯ç”¨^åˆ¤æ–·, è€ŒNoneæ™‚åˆä¸èƒ½åˆ¤æ–·val
+            # æ‰€ä»¥åˆ©ç”¨not, å…©è€…ç‚ºç©ºæ™‚å…©è€…å€‹notéƒ½æœƒæ˜¯True, è€Œå…©è€…éç©ºæ™‚å…©è€…çš„notéƒ½æœƒæ˜¯False, ä¹Ÿå°±æ˜¯èªªä¸åŒæ™‚æ¢ä»¶æ‰æˆç«‹
+            # é€™ç¨®å¯«æ³•ä¹Ÿå¯ä»¥ç”¨åœ¨é–‹é ­åˆ¤æ–·return Falseæ™‚
             if (not left1)^(not left2):
                 return False
             if (not right1)^(not right2):
                 return False
-            # ¦³¤lnode´N¤À§O¥[¤Jqueue¤º, ª`·N¤£¯à±NNone¥[¤J©Ò¥H­n§PÂ_
+            # æœ‰å­nodeå°±åˆ†åˆ¥åŠ å…¥queueå…§, æ³¨æ„ä¸èƒ½å°‡NoneåŠ å…¥æ‰€ä»¥è¦åˆ¤æ–·
             if left1:
                 queue1.append(left1)
             if right1:
@@ -55,121 +54,33 @@ class Solution:
                 queue2.append(left2)
             if right2:
                 queue2.append(right2)
-        # ¨«¨ì³oÃä¤£¥i¯à¨âÃä³£ÁÙ¦³node, ¨âÃä³£¬°ªÅ®É§Æ±æreturn True
-        # ©Ò¥H¤~¥Înot¦Ó¥B¤£»İ­nXOR
+        # èµ°åˆ°é€™é‚Šä¸å¯èƒ½å…©é‚Šéƒ½é‚„æœ‰node, å…©é‚Šéƒ½ç‚ºç©ºæ™‚å¸Œæœ›return True
+        # æ‰€ä»¥æ‰ç”¨notè€Œä¸”ä¸éœ€è¦XOR
         return not queue1 and not queue2
 
-# By DFS(recursive), time: O(min(P, Q)), time: O(min(P, Q)), P¡BQ¤À§O¥Nªíp¡Bq¤§node¼Æ
-# minªº­ì¦]¬O¥u­n¦³¤@ªÌ´£«e¬O§PÂ_§¹¨º´N¥Nªífalse
-# ¨âÃä¦P®É°µDPS¤ñ¸û
+# By DFS(recursive), time: O(min(P, Q)), time: O(min(P, Q)), Pã€Qåˆ†åˆ¥ä»£è¡¨pã€qä¹‹nodeæ•¸
+# minçš„åŸå› æ˜¯åªè¦æœ‰ä¸€è€…æå‰æ˜¯åˆ¤æ–·å®Œé‚£å°±ä»£è¡¨false
+# å…©é‚ŠåŒæ™‚åšDPSæ¯”è¼ƒ
 # class Solution:
 #     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-#         # ¦P®É¤ñ¸û¨â­Ótree­nª`·NÃä¬É±ø¥ó, ¦]¬°None, ¤]´N¬O·í¤@Ãä¬°ªÅ®É, µLªk¤ñ¸ûval
-#         # ·í¨âÃä³£¬ONone, ¨º¨S¦³°İÃD³£¤@¼Ë, ¬°True
+#         # åŒæ™‚æ¯”è¼ƒå…©å€‹treeè¦æ³¨æ„é‚Šç•Œæ¢ä»¶, å› ç‚ºNone, ä¹Ÿå°±æ˜¯ç•¶ä¸€é‚Šç‚ºç©ºæ™‚, ç„¡æ³•æ¯”è¼ƒval
+#         # ç•¶å…©é‚Šéƒ½æ˜¯None, é‚£æ²’æœ‰å•é¡Œéƒ½ä¸€æ¨£, ç‚ºTrue
 #         if p is None and q is None:
 #             return True
-#         # §Q¥Îelif¦b³o¸Ì±Æ°£¤F¨âÃä³£¬OªÅªºª¬ªp
-#         # ·í¨âÃä¦³¨ä¤@¬°ªÅ¥t¤@Ãä¤£¬°ªÅ®É, ¥Nªí¤£¤@¼Ë, ¬°False
+#         # åˆ©ç”¨elifåœ¨é€™è£¡æ’é™¤äº†å…©é‚Šéƒ½æ˜¯ç©ºçš„ç‹€æ³
+#         # ç•¶å…©é‚Šæœ‰å…¶ä¸€ç‚ºç©ºå¦ä¸€é‚Šä¸ç‚ºç©ºæ™‚, ä»£è¡¨ä¸ä¸€æ¨£, ç‚ºFalse
 #         elif p is None or q is None:
 #             return False
-#         # ¨«¨ì³oÃä¥Nªí¨âÃä³£«DªÅ, ¥i¥H¤ñ¸ûval, ·íval¤£¦P¥Nªí¤£¤@¼Ë
+#         # èµ°åˆ°é€™é‚Šä»£è¡¨å…©é‚Šéƒ½éç©º, å¯ä»¥æ¯”è¼ƒval, ç•¶valä¸åŒä»£è¡¨ä¸ä¸€æ¨£
 #         elif p.val!=q.val:
 #             return False
-#         # ³oÃä¥Nªí¨âÃä³£«DªÅ¥Bval¬Û¦P, ¨º´N¤ñ¸û¨âÃäªº¥ª¤l©M¥k¤l
+#         # é€™é‚Šä»£è¡¨å…©é‚Šéƒ½éç©ºä¸”valç›¸åŒ, é‚£å°±æ¯”è¼ƒå…©é‚Šçš„å·¦å­å’Œå³å­
 #         else:
 #             lsub = self.isSameTree(p.left, q.left)
 #             rsub = self.isSameTree(p.right, q.right)
-#             # True©Îfalse, ª½±µ¦breturn§PÂ_§Y¥i
-#             # ¤£¥Î½á¤©¦¨lsub©Mrsub¨âÅÜ¼Æ¤]¯à°µ§PÂ_
+#             # Trueæˆ–false, ç›´æ¥åœ¨returnåˆ¤æ–·å³å¯
+#             # ä¸ç”¨è³¦äºˆæˆlsubå’Œrsubå…©è®Šæ•¸ä¹Ÿèƒ½åšåˆ¤æ–·
 #             return lsub and rsub
     
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=100 lang=python3
-#
-# [100] Same Tree
-#
-
-# @lc code=start
-# µ¹¨âtree p©Mq, return ¦¹¨â¾ğ¬O§_¬Û¦P
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By BFS(recursive), time: O(min(P, Q)), time: O(min(P, Q)), P¡BQ¤À§O¥Nªíp¡Bq¤§node¼Æ
-# minªº­ì¦]¬O¥u­n¦³¤@ªÌ´£«e¬O§PÂ_§¹¨º´N¥Nªífalse
-# ½ÆÂø«×¤@¼Ë¦ı¹ê»Ú¤ñ¸û§Ö
-# ¦P®É¹ï¨â­Ótree°µBFS
-class Solution:
-    def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
-        if p is None and q is None:
-            return True
-        if p is None or q is None:
-            return False
-        # collections¤º¹ê§@¤F¦hºØ®e¾¹, .deque¬OÂùÃäqueue, [p]¥Nªí±qp¤§head¶}©l±Np¤@­Ó­Ó©ñ¤Jdeque
-        # ¤]¥i¥H¥Îdeque([p, 3])¥Nªí©ñ¤Jp¤¤³Ì¦­¨«³X¨ìªº3­Ónode
-        queue1 = collections.deque([p])
-        queue2 = collections.deque([q])
-
-        while queue1 and queue2:
-            # popleftµ¥¦P¥Îlist¹ê§@®Éªºpop[0]
-            node1 = queue1.popleft()
-            node2 = queue2.popleft()
-            if node1.val!=node2.val:
-                return False
-            left1, right1 = node1.left, node1.right
-            left2, right2 = node2.left, node2.right
-            # Ãä¬É±ø¥ó, §Q¥ÎXOR¨âªÌ¬Û¦P¬°1, ¨âªÌ¤£¦P¬°0ªº©Ê½è
-            # tree node¦]¬°¬O¤@­Ó¤@­Ó±µªºlinklist, ¤£¥i¥Î^§PÂ_, ¦ÓNone®É¤S¤£¯à§PÂ_val
-            # ©Ò¥H§Q¥Înot, ¨âªÌ¬°ªÅ®É¨âªÌ­Ónot³£·|¬OTrue, ¦Ó¨âªÌ«DªÅ®É¨âªÌªºnot³£·|¬OFalse, ¤]´N¬O»¡¤£¦P®É±ø¥ó¤~¦¨¥ß
-            # ³oºØ¼gªk¤]¥i¥H¥Î¦b¶}ÀY§PÂ_return False®É
-            if (not left1)^(not left2):
-                return False
-            if (not right1)^(not right2):
-                return False
-            # ¦³¤lnode´N¤À§O¥[¤Jqueue¤º, ª`·N¤£¯à±NNone¥[¤J©Ò¥H­n§PÂ_
-            if left1:
-                queue1.append(left1)
-            if right1:
-                queue1.append(right1)
-            if left2:
-                queue2.append(left2)
-            if right2:
-                queue2.append(right2)
-        # ¨«¨ì³oÃä¤£¥i¯à¨âÃä³£ÁÙ¦³node, ¨âÃä³£¬°ªÅ®É§Æ±æreturn True
-        # ©Ò¥H¤~¥Înot¦Ó¥B¤£»İ­nXOR
-        return not queue1 and not queue2
-
-# By DFS(recursive), time: O(min(P, Q)), time: O(min(P, Q)), P¡BQ¤À§O¥Nªíp¡Bq¤§node¼Æ
-# minªº­ì¦]¬O¥u­n¦³¤@ªÌ´£«e¬O§PÂ_§¹¨º´N¥Nªífalse
-# ¨âÃä¦P®É°µDPS¤ñ¸û
-# class Solution:
-#     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-#         # ¦P®É¤ñ¸û¨â­Ótree­nª`·NÃä¬É±ø¥ó, ¦]¬°None, ¤]´N¬O·í¤@Ãä¬°ªÅ®É, µLªk¤ñ¸ûval
-#         # ·í¨âÃä³£¬ONone, ¨º¨S¦³°İÃD³£¤@¼Ë, ¬°True
-#         if p is None and q is None:
-#             return True
-#         # §Q¥Îelif¦b³o¸Ì±Æ°£¤F¨âÃä³£¬OªÅªºª¬ªp
-#         # ·í¨âÃä¦³¨ä¤@¬°ªÅ¥t¤@Ãä¤£¬°ªÅ®É, ¥Nªí¤£¤@¼Ë, ¬°False
-#         elif p is None or q is None:
-#             return False
-#         # ¨«¨ì³oÃä¥Nªí¨âÃä³£«DªÅ, ¥i¥H¤ñ¸ûval, ·íval¤£¦P¥Nªí¤£¤@¼Ë
-#         elif p.val!=q.val:
-#             return False
-#         # ³oÃä¥Nªí¨âÃä³£«DªÅ¥Bval¬Û¦P, ¨º´N¤ñ¸û¨âÃäªº¥ª¤l©M¥k¤l
-#         else:
-#             lsub = self.isSameTree(p.left, q.left)
-#             rsub = self.isSameTree(p.right, q.right)
-#             # True©Îfalse, ª½±µ¦breturn§PÂ_§Y¥i
-#             # ¤£¥Î½á¤©¦¨lsub©Mrsub¨âÅÜ¼Æ¤]¯à°µ§PÂ_
-#             return lsub and rsub
-    
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

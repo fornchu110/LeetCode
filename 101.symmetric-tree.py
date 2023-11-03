@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=101 lang=python3
 #
@@ -6,7 +5,7 @@
 #
 
 # @lc code=start
-# µ¹¤@tree, return¦¹tree¬O§_Ãè¹³¹ïºÙ
+# çµ¦ä¸€tree, returnæ­¤treeæ˜¯å¦é¡åƒå°ç¨±
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -15,12 +14,12 @@
 #         self.left = left
 #         self.right = right
 
-# By recursive, time: O(n), space: O(n), recursive»İ­nªá¶OstackªÅ¶¡
-# space = O(n)­ì¦]¬Orecursiveªá¶OªºstackªÅ¶¡´N¬Orecursiveªº²`«×, ¦b³oÃä´N¬O«ü³Ì°ª¾ğ°ª, ¦Ó·í©Ò¦³node³£¥u¦³¤@­Óchild®É´N·|°ªn
-# §Q¥Î¸òÀË´ú¨âtree¬O§_¬Û¦PÃş¦üªº·Qªk, ®³rootªºleft©Mright¥X¨ÓÀË´ú¨âtree¬O§_Ãè¹³
-# ³oÃDµ¹¦Ü¤Ö¤@­Ónode, ©Ò¥H¤£¥Î§PÂ_root¬°None
+# By recursive, time: O(n), space: O(n), recursiveéœ€è¦èŠ±è²»stackç©ºé–“
+# space = O(n)åŸå› æ˜¯recursiveèŠ±è²»çš„stackç©ºé–“å°±æ˜¯recursiveçš„æ·±åº¦, åœ¨é€™é‚Šå°±æ˜¯æŒ‡æœ€é«˜æ¨¹é«˜, è€Œç•¶æ‰€æœ‰nodeéƒ½åªæœ‰ä¸€å€‹childæ™‚å°±æœƒé«˜n
+# åˆ©ç”¨è·Ÿæª¢æ¸¬å…©treeæ˜¯å¦ç›¸åŒé¡ä¼¼çš„æƒ³æ³•, æ‹¿rootçš„leftå’Œrightå‡ºä¾†æª¢æ¸¬å…©treeæ˜¯å¦é¡åƒ
+# é€™é¡Œçµ¦è‡³å°‘ä¸€å€‹node, æ‰€ä»¥ä¸ç”¨åˆ¤æ–·rootç‚ºNone
 class Solution:
-    # same¼g¦b¥~­±, ¤£ª¾­ş­Ó§Ö
+    # sameå¯«åœ¨å¤–é¢, ä¸çŸ¥å“ªå€‹å¿«
     # def same(self, p, q):
     #     if p is None and q is None:
     #         return True
@@ -33,7 +32,7 @@ class Solution:
     #         rsub = self.same(p.right, q.left)
     #         return lsub and rsub
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-        # same¼g¦b¸Ì­±
+        # sameå¯«åœ¨è£¡é¢
         def same(p, q):
             if p is None and q is None:
                 return True
@@ -42,34 +41,34 @@ class Solution:
             elif p.val!=q.val:
                 return False
             else:
-                # Ãè¹³, ¤]´N¬O¥ª¤l­n=¥k¤l¥B¥k¤l=¥ª¤l
+                # é¡åƒ, ä¹Ÿå°±æ˜¯å·¦å­è¦=å³å­ä¸”å³å­=å·¦å­
                 lsub = same(p.left, q.right)
                 rsub = same(p.right, q.left)
                 return lsub and rsub
-        # §ä¥Xrootªº¥ª¥kchild, recursive¤U¥h§PÂ_¬O§_Ãè¹³
+        # æ‰¾å‡ºrootçš„å·¦å³child, recursiveä¸‹å»åˆ¤æ–·æ˜¯å¦é¡åƒ
         ltree = root.left
         rtree = root.right
         return same(ltree, rtree)
 
 # By BFS(iterative), time: O(n), space: O(n)
-# ÁöµM­n¦P®É§PÂ_¨â­Ótree, ¦ı¥i¥H¥u¥Î¤@­Óqueue°µ¨ì
+# é›–ç„¶è¦åŒæ™‚åˆ¤æ–·å…©å€‹tree, ä½†å¯ä»¥åªç”¨ä¸€å€‹queueåšåˆ°
 # class Solution:
 #     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
 #         rtree = root.right
 #         ltree = root.left    
-#         # «Ø¥ßqueue
+#         # å»ºç«‹queue
 #         queue = collections.deque()
-#         # ¦]­n¤@¦¸¬İ¨â­Ótree, ©Ò¥H±N¨âtree node¥]¦¨¤@­Ó¤¸¯Àappend¶i¥h, append¤@¦¸¥u¯à¤@­Ó¤¸¯À
-#         # append¶i¥hªº(rtree, ltree)´N¬O·í¤U­n¤ñ¸ûªº¨â­Ó¤¸¯À
+#         # å› è¦ä¸€æ¬¡çœ‹å…©å€‹tree, æ‰€ä»¥å°‡å…©tree nodeåŒ…æˆä¸€å€‹å…ƒç´ appendé€²å», appendä¸€æ¬¡åªèƒ½ä¸€å€‹å…ƒç´ 
+#         # appendé€²å»çš„(rtree, ltree)å°±æ˜¯ç•¶ä¸‹è¦æ¯”è¼ƒçš„å…©å€‹å…ƒç´ 
 #         queue.append((rtree, ltree))
 #         while queue:
 #             # twonode = queue.popleft()
 #             # rtree = twonode[0]
 #             # ltree = twonode[1]
-#             # pop¥X¨Ó¤@¦¸¬O(r, l)³o¼Ëªº®æ¦¡, ¸ò¤W­±¦P¼Ë·N«ä, ª`·N¤£­npop¨â¦¸
-#             # rtree, ltreeµ¥¦P©ó(rtree, ltree)
+#             # popå‡ºä¾†ä¸€æ¬¡æ˜¯(r, l)é€™æ¨£çš„æ ¼å¼, è·Ÿä¸Šé¢åŒæ¨£æ„æ€, æ³¨æ„ä¸è¦popå…©æ¬¡
+#             # rtree, ltreeç­‰åŒæ–¼(rtree, ltree)
 #             rtree, ltree = queue.popleft
-#             # ¨âªÌ³£¬ONone¥Nªí¤£·|¦³child, ª½±µcontinnue
+#             # å…©è€…éƒ½æ˜¯Noneä»£è¡¨ä¸æœƒæœ‰child, ç›´æ¥continnue
 #             if rtree is None and ltree is None:
 #                 continue
 #             elif rtree is None or ltree is None:
@@ -77,101 +76,11 @@ class Solution:
 #             elif rtree.val!=ltree.val:
 #                 return False
 #             else:
-#                 # ¤U¦¸¤ñ¸ûrtreeªº¥k¤l©Mltreeªº¥ª¤l
+#                 # ä¸‹æ¬¡æ¯”è¼ƒrtreeçš„å³å­å’Œltreeçš„å·¦å­
 #                 queue.append((rtree.right, ltree.left))
-#                 # ¥H¤Î¤ñ¸ûrtreeªº¥ª¤l©Mltreeªº¥k¤l
+#                 # ä»¥åŠæ¯”è¼ƒrtreeçš„å·¦å­å’Œltreeçš„å³å­
 #                 queue.append((rtree.left, ltree.right))
-#         # ¸õ¥Xwhile¥Nªíqueue¨S¦³¥ô¦ó¤¸¯À, ¤]´N¬O¤w¸g¨«³X§¹¨â­Ótree, ¥²©w¬OTrue    
+#         # è·³å‡ºwhileä»£è¡¨queueæ²’æœ‰ä»»ä½•å…ƒç´ , ä¹Ÿå°±æ˜¯å·²ç¶“èµ°è¨ªå®Œå…©å€‹tree, å¿…å®šæ˜¯True    
 #         return True
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=101 lang=python3
-#
-# [101] Symmetric Tree
-#
-
-# @lc code=start
-# µ¹¤@tree, return¦¹tree¬O§_Ãè¹³¹ïºÙ
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By recursive, time: O(n), space: O(n), recursive»İ­nªá¶OstackªÅ¶¡
-# space = O(n)­ì¦]¬Orecursiveªá¶OªºstackªÅ¶¡´N¬Orecursiveªº²`«×, ¦b³oÃä´N¬O«ü³Ì°ª¾ğ°ª, ¦Ó·í©Ò¦³node³£¥u¦³¤@­Óchild®É´N·|°ªn
-# §Q¥Î¸òÀË´ú¨âtree¬O§_¬Û¦PÃş¦üªº·Qªk, ®³rootªºleft©Mright¥X¨ÓÀË´ú¨âtree¬O§_Ãè¹³
-# ³oÃDµ¹¦Ü¤Ö¤@­Ónode, ©Ò¥H¤£¥Î§PÂ_root¬°None
-class Solution:
-    # same¼g¦b¥~­±, ¤£ª¾­ş­Ó§Ö
-    # def same(self, p, q):
-    #     if p is None and q is None:
-    #         return True
-    #     elif p is None or q is None:
-    #         return False
-    #     elif p.val!=q.val:
-    #         return False
-    #     else:
-    #         lsub = self.same(p.left, q.right)
-    #         rsub = self.same(p.right, q.left)
-    #         return lsub and rsub
-    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-        # same¼g¦b¸Ì­±
-        def same(p, q):
-            if p is None and q is None:
-                return True
-            elif p is None or q is None:
-                return False
-            elif p.val!=q.val:
-                return False
-            else:
-                # Ãè¹³, ¤]´N¬O¥ª¤l­n=¥k¤l¥B¥k¤l=¥ª¤l
-                lsub = same(p.left, q.right)
-                rsub = same(p.right, q.left)
-                return lsub and rsub
-        # §ä¥Xrootªº¥ª¥kchild, recursive¤U¥h§PÂ_¬O§_Ãè¹³
-        ltree = root.left
-        rtree = root.right
-        return same(ltree, rtree)
-
-# By BFS(iterative), time: O(n), space: O(n)
-# ÁöµM­n¦P®É§PÂ_¨â­Ótree, ¦ı¥i¥H¥u¥Î¤@­Óqueue°µ¨ì
-# class Solution:
-#     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
-#         rtree = root.right
-#         ltree = root.left    
-#         # «Ø¥ßqueue
-#         queue = collections.deque()
-#         # ¦]­n¤@¦¸¬İ¨â­Ótree, ©Ò¥H±N¨âtree node¥]¦¨¤@­Ó¤¸¯Àappend¶i¥h, append¤@¦¸¥u¯à¤@­Ó¤¸¯À
-#         # append¶i¥hªº(rtree, ltree)´N¬O·í¤U­n¤ñ¸ûªº¨â­Ó¤¸¯À
-#         queue.append((rtree, ltree))
-#         while queue:
-#             # twonode = queue.popleft()
-#             # rtree = twonode[0]
-#             # ltree = twonode[1]
-#             # pop¥X¨Ó¤@¦¸¬O(r, l)³o¼Ëªº®æ¦¡, ¸ò¤W­±¦P¼Ë·N«ä, ª`·N¤£­npop¨â¦¸
-#             # rtree, ltreeµ¥¦P©ó(rtree, ltree)
-#             rtree, ltree = queue.popleft
-#             # ¨âªÌ³£¬ONone¥Nªí¤£·|¦³child, ª½±µcontinnue
-#             if rtree is None and ltree is None:
-#                 continue
-#             elif rtree is None or ltree is None:
-#                 return False
-#             elif rtree.val!=ltree.val:
-#                 return False
-#             else:
-#                 # ¤U¦¸¤ñ¸ûrtreeªº¥k¤l©Mltreeªº¥ª¤l
-#                 queue.append((rtree.right, ltree.left))
-#                 # ¥H¤Î¤ñ¸ûrtreeªº¥ª¤l©Mltreeªº¥k¤l
-#                 queue.append((rtree.left, ltree.right))
-#         # ¸õ¥Xwhile¥Nªíqueue¨S¦³¥ô¦ó¤¸¯À, ¤]´N¬O¤w¸g¨«³X§¹¨â­Ótree, ¥²©w¬OTrue    
-#         return True
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
