@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=207 lang=python3
 #
@@ -6,13 +5,13 @@
 #
 
 # @lc code=start
-# µ¹¤@°}¦Cpreerqiosities, ¦¹°}¦C¤º¨C­Ó¤¸¯Àªº²Ä0­Ó¤¸¯À¬O¥Ø¼Ğ, ²Ä1­Ó¤¸¯À¬O¥Ø¼Ğ«eªº¥ı­×, return·Ó¦¹°}¦CÃö«Y¯à¤£¯à¦b¤£¥d¥ı­×ªºª¬ªp§¹¦¨©Ò¦³¥Ø¼Ğ
-# ¨ä¹ê´N²z¸Ñ¬°¦³¦V¹Ï¤º¬O§_¦³cycle, ·Q¦¨¨C¤@­Ó¥ı­×Ãö«Y´N¬O¤@­Óedge, ¸Ì­±ªº¤¸¯À¥NªíµÛ¤£¦PÂI
-# ¦Ó¤@­Ó¦³¦VµLÀô¹Ï´N¥s°µDAG, ¥Î©İ¾ë±Æ§Çªk¯à§PÂ_, ¯à¥ÎBFS©MDFS§¹¦¨
-# ©İ¾ë±Æ§Çªk´N¬O¹ï³»ÂI°µ±Æ§Ç, ¨Ï±o¨C±øedge(u, v)ªºv§@¬°¥ı­×¥X²{«e, ©Ò¦³§@¬°v¥ı­×ªºu³£¤w¸g¥ı¥X²{
+# çµ¦ä¸€é™£åˆ—preerqiosities, æ­¤é™£åˆ—å…§æ¯å€‹å…ƒç´ çš„ç¬¬0å€‹å…ƒç´ æ˜¯ç›®æ¨™, ç¬¬1å€‹å…ƒç´ æ˜¯ç›®æ¨™å‰çš„å…ˆä¿®, returnç…§æ­¤é™£åˆ—é—œä¿‚èƒ½ä¸èƒ½åœ¨ä¸å¡å…ˆä¿®çš„ç‹€æ³å®Œæˆæ‰€æœ‰ç›®æ¨™
+# å…¶å¯¦å°±ç†è§£ç‚ºæœ‰å‘åœ–å…§æ˜¯å¦æœ‰cycle, æƒ³æˆæ¯ä¸€å€‹å…ˆä¿®é—œä¿‚å°±æ˜¯ä¸€å€‹edge, è£¡é¢çš„å…ƒç´ ä»£è¡¨è‘—ä¸åŒé»
+# è€Œä¸€å€‹æœ‰å‘ç„¡ç’°åœ–å°±å«åšDAG, ç”¨æ‹“æ¨¸æ’åºæ³•èƒ½åˆ¤æ–·, èƒ½ç”¨BFSå’ŒDFSå®Œæˆ
+# æ‹“æ¨¸æ’åºæ³•å°±æ˜¯å°é ‚é»åšæ’åº, ä½¿å¾—æ¯æ¢edge(u, v)çš„vä½œç‚ºå…ˆä¿®å‡ºç¾å‰, æ‰€æœ‰ä½œç‚ºvå…ˆä¿®çš„uéƒ½å·²ç¶“å…ˆå‡ºç¾
 
 from collections import deque
-# By BFS, time: O(N+M), space: O(N+M), N¬Onode¼Æ¶q¡BM¬Oedge¼Æ¶q
+# By BFS, time: O(N+M), space: O(N+M), Næ˜¯nodeæ•¸é‡ã€Mæ˜¯edgeæ•¸é‡
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
         indegrees = [0 for _ in range(numCourses)]
@@ -34,7 +33,7 @@ class Solution:
                 if not indegrees[cur]: queue.append(cur)
         return not numCourses
 
-# By DFS, time: O(N+M), space: O(N+M), N¬Onode¼Æ¶q¡BM¬Oedge¼Æ¶q
+# By DFS, time: O(N+M), space: O(N+M), Næ˜¯nodeæ•¸é‡ã€Mæ˜¯edgeæ•¸é‡
 # class Solution:
 #     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
 #         def dfs(i, adjacency, flags):
@@ -56,64 +55,3 @@ class Solution:
 
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=207 lang=python3
-#
-# [207] Course Schedule
-#
-
-# @lc code=start
-# µ¹¤@°}¦Cpreerqiosities, ¦¹°}¦C¤º¨C­Ó¤¸¯Àªº²Ä0­Ó¤¸¯À¬O¥Ø¼Ğ, ²Ä1­Ó¤¸¯À¬O¥Ø¼Ğ«eªº¥ı­×, return·Ó¦¹°}¦CÃö«Y¯à¤£¯à¦b¤£¥d¥ı­×ªºª¬ªp§¹¦¨©Ò¦³¥Ø¼Ğ
-# ¨ä¹ê´N²z¸Ñ¬°¦³¦V¹Ï¤º¬O§_¦³cycle, ·Q¦¨¨C¤@­Ó¥ı­×Ãö«Y´N¬O¤@­Óedge, ¸Ì­±ªº¤¸¯À¥NªíµÛ¤£¦PÂI
-# ¦Ó¤@­Ó¦³¦VµLÀô¹Ï´N¥s°µDAG, ¥Î©İ¾ë±Æ§Çªk¯à§PÂ_, ¯à¥ÎBFS©MDFS§¹¦¨
-# ©İ¾ë±Æ§Çªk´N¬O¹ï³»ÂI°µ±Æ§Ç, ¨Ï±o¨C±øedge(u, v)ªºv§@¬°¥ı­×¥X²{«e, ©Ò¦³§@¬°v¥ı­×ªºu³£¤w¸g¥ı¥X²{
-
-from collections import deque
-# By BFS, time: O(N+M), space: O(N+M), N¬Onode¼Æ¶q¡BM¬Oedge¼Æ¶q
-class Solution:
-    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-        indegrees = [0 for _ in range(numCourses)]
-        adjacency = [[] for _ in range(numCourses)]
-        queue = deque()
-        # Get the indegree and adjacency of every course.
-        for cur, pre in prerequisites:
-            indegrees[cur] += 1
-            adjacency[pre].append(cur)
-        # Get all the courses with the indegree of 0.
-        for i in range(len(indegrees)):
-            if not indegrees[i]: queue.append(i)
-        # BFS TopSort.
-        while queue:
-            pre = queue.popleft()
-            numCourses -= 1
-            for cur in adjacency[pre]:
-                indegrees[cur] -= 1
-                if not indegrees[cur]: queue.append(cur)
-        return not numCourses
-
-# By DFS, time: O(N+M), space: O(N+M), N¬Onode¼Æ¶q¡BM¬Oedge¼Æ¶q
-# class Solution:
-#     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
-#         def dfs(i, adjacency, flags):
-#             if flags[i] == -1: return True
-#             if flags[i] == 1: return False
-#             flags[i] = 1
-#             for j in adjacency[i]:
-#                 if not dfs(j, adjacency, flags): return False
-#             flags[i] = -1
-#             return True
-
-#         adjacency = [[] for _ in range(numCourses)]
-#         flags = [0 for _ in range(numCourses)]
-#         for cur, pre in prerequisites:
-#             adjacency[pre].append(cur)
-#         for i in range(numCourses):
-#             if not dfs(i, adjacency, flags): return False
-#         return True
-
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

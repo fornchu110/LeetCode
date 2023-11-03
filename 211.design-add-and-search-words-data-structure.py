@@ -1,52 +1,53 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=211 lang=python3
 #
 # [211] Design Add and Search Words Data Structure
 #
 
-# @lc code=start
-class WordDictionary:
+# @lc code=startclass TrieNode:
 
+class TrieNode:
     def __init__(self):
-        
+        self.children = [None] * 26
+        self.isEnd = False
+
+    def insert(self, word: str) -> None:
+        node = self
+        for ch in word:
+            ch = ord(ch) - ord('a')
+            if not node.children[ch]:
+                node.children[ch] = TrieNode()
+            node = node.children[ch]
+        node.isEnd = True
+
+
+class WordDictionary:
+    def __init__(self):
+        self.trieRoot = TrieNode()
 
     def addWord(self, word: str) -> None:
-        
+        self.trieRoot.insert(word)
 
     def search(self, word: str) -> bool:
-        
+        def dfs(index: int, node: TrieNode) -> bool:
+            if index == len(word):
+                return node.isEnd
+            ch = word[index]
+            if ch != '.':
+                child = node.children[ord(ch) - ord('a')]
+                if child is not None and dfs(index + 1, child):
+                    return True
+            else:
+                for child in node.children:
+                    if child is not None and dfs(index + 1, child):
+                        return True
+            return False
 
+        return dfs(0, self.trieRoot)
 
 # Your WordDictionary object will be instantiated and called as such:
 # obj = WordDictionary()
 # obj.addWord(word)
 # param_2 = obj.search(word)
 # @lc code=end
-=======
-#
-# @lc app=leetcode id=211 lang=python3
-#
-# [211] Design Add and Search Words Data Structure
-#
-
-# @lc code=start
-class WordDictionary:
-
-    def __init__(self):
-        
-
-    def addWord(self, word: str) -> None:
-        
-
-    def search(self, word: str) -> bool:
-        
-
-
-# Your WordDictionary object will be instantiated and called as such:
-# obj = WordDictionary()
-# obj.addWord(word)
-# param_2 = obj.search(word)
-# @lc code=end
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
 

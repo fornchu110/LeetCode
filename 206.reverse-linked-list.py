@@ -1,9 +1,9 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=206 lang=python3
 #
 # [206] Reverse Linked List
 #
+
 
 # @lc code=start
 # Definition for singly-linked list.
@@ -15,91 +15,37 @@
 # By iterative, time: O(n), space: O(1)
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
-        # prev¥Øªº¬OÅınodeª¾¹D¤ÏÂà«á­n«ü¦V½Ö, ­ì¥»«ü¦V«á¤@­Ónodeªº·|«ü¦V«e¤@­Ónode
-        # cur¥Øªº¬Oª¾¹D¥Ø«e³B²zªºnode¬O­ş­Ó
+        # prevç›®çš„æ˜¯è®“nodeçŸ¥é“åè½‰å¾Œè¦æŒ‡å‘èª°, åŸæœ¬æŒ‡å‘å¾Œä¸€å€‹nodeçš„æœƒæŒ‡å‘å‰ä¸€å€‹node
+        # curç›®çš„æ˜¯çŸ¥é“ç›®å‰è™•ç†çš„nodeæ˜¯å“ªå€‹
         prev, cur = None, head
-        # ·í¥Ø«eªº½T¦³nod3¦b³B²z®É
+        # ç•¶ç›®å‰çš„ç¢ºæœ‰nod3åœ¨è™•ç†æ™‚
         while cur is not None:
-            # next¥Øªº¬O¬ö¿ı«á¤@­Ónode¬O­ş­Ó
-            # Á×§K¤ÏÂà«á¥¢¥h¤U¤@­Ó­n³B²znodeªº¦ì¸m
+            # nextç›®çš„æ˜¯ç´€éŒ„å¾Œä¸€å€‹nodeæ˜¯å“ªå€‹
+            # é¿å…åè½‰å¾Œå¤±å»ä¸‹ä¸€å€‹è¦è™•ç†nodeçš„ä½ç½®
             next = cur.next
-            # §â¥Ø«eªºnode±q«ü¦V«á¤@­Ónode§ï¬°«ü¦V«e¤@­Ónode(¤ÏÁÈ)
+            # æŠŠç›®å‰çš„nodeå¾æŒ‡å‘å¾Œä¸€å€‹nodeæ”¹ç‚ºæŒ‡å‘å‰ä¸€å€‹node(åè³º)
             cur.next = prev
-            # ¹ï¤U­Ónode¦Ó¨¥´N¬O­n§ï¬°«ü¦V¥Ø«eªºnode, °O¿ı¤U¨Ó
+            # å°ä¸‹å€‹nodeè€Œè¨€å°±æ˜¯è¦æ”¹ç‚ºæŒ‡å‘ç›®å‰çš„node, è¨˜éŒ„ä¸‹ä¾†
             prev = cur
-            # §ï¬°³B²z¤U¤@­Ónode
+            # æ”¹ç‚ºè™•ç†ä¸‹ä¸€å€‹node
             cur = next
-        # ³Ì«áprev´N¬O¤ÏÂà«áªºhead
+        # æœ€å¾Œprevå°±æ˜¯åè½‰å¾Œçš„head
         return prev
 
 # By recursive, time: O(n), space: O(n)
-# ­nª`·N¤£­n±Nnode¤¬¬Û«ü¦V§Î¦¨cycle
-# ³oÃänewHeadÁöµM¤@ª½¦^¶Ç¦ı¨ä¹ê¨Ã¨S¥Î©ó¦brecursive¤ºªº§PÂ_, ¥u¬O¬°¤Freturn
-# ¥u¦³¦b¤ÏÂà§¹²¦®Éreturnªº¨º¦¸newHead¤~¥Nªí¤wµ²§ô¤ÏÂàªºlinklist
+# è¦æ³¨æ„ä¸è¦å°‡nodeäº’ç›¸æŒ‡å‘å½¢æˆcycle
+# é€™é‚ŠnewHeadé›–ç„¶ä¸€ç›´å›å‚³ä½†å…¶å¯¦ä¸¦æ²’ç”¨æ–¼åœ¨recursiveå…§çš„åˆ¤æ–·, åªæ˜¯ç‚ºäº†return
+# åªæœ‰åœ¨åè½‰å®Œç•¢æ™‚returnçš„é‚£æ¬¡newHeadæ‰ä»£è¡¨å·²çµæŸåè½‰çš„linklist
 # class Solution:
 #     def reverseList(self, head: ListNode) -> ListNode:
 #         if head==None or head.next==None:
 #             return head
 #         newHead = self.reverseList(head.next)
-#         # ±N­ì¥»ªº¤U­Ónode«ü¦V¦Û¤v(«e¤@­Ó), ¤]´N¬O¤ÏÂà
+#         # å°‡åŸæœ¬çš„ä¸‹å€‹nodeæŒ‡å‘è‡ªå·±(å‰ä¸€å€‹), ä¹Ÿå°±æ˜¯åè½‰
 #         head.next.next = head
-#         # ª`·N±N¦Û¤v«ü¦VNULL, Á×§Khead©Mhead.next¤¬¬Û«ü¦V³y¦¨cycle
+#         # æ³¨æ„å°‡è‡ªå·±æŒ‡å‘NULL, é¿å…headå’Œhead.nextäº’ç›¸æŒ‡å‘é€ æˆcycle
 #         head.next = None
-#         # newHead¤@ª½³£¬O­ì¥»linklist³Ì«á¤@­Ónode
+#         # newHeadä¸€ç›´éƒ½æ˜¯åŸæœ¬linklistæœ€å¾Œä¸€å€‹node
 #         return newHead
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=206 lang=python3
-#
-# [206] Reverse Linked List
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-# By iterative, time: O(n), space: O(1)
-class Solution:
-    def reverseList(self, head: ListNode) -> ListNode:
-        # prev¥Øªº¬OÅınodeª¾¹D¤ÏÂà«á­n«ü¦V½Ö, ­ì¥»«ü¦V«á¤@­Ónodeªº·|«ü¦V«e¤@­Ónode
-        # cur¥Øªº¬Oª¾¹D¥Ø«e³B²zªºnode¬O­ş­Ó
-        prev, cur = None, head
-        # ·í¥Ø«eªº½T¦³nod3¦b³B²z®É
-        while cur is not None:
-            # next¥Øªº¬O¬ö¿ı«á¤@­Ónode¬O­ş­Ó
-            # Á×§K¤ÏÂà«á¥¢¥h¤U¤@­Ó­n³B²znodeªº¦ì¸m
-            next = cur.next
-            # §â¥Ø«eªºnode±q«ü¦V«á¤@­Ónode§ï¬°«ü¦V«e¤@­Ónode(¤ÏÁÈ)
-            cur.next = prev
-            # ¹ï¤U­Ónode¦Ó¨¥´N¬O­n§ï¬°«ü¦V¥Ø«eªºnode, °O¿ı¤U¨Ó
-            prev = cur
-            # §ï¬°³B²z¤U¤@­Ónode
-            cur = next
-        # ³Ì«áprev´N¬O¤ÏÂà«áªºhead
-        return prev
-
-# By recursive, time: O(n), space: O(n)
-# ­nª`·N¤£­n±Nnode¤¬¬Û«ü¦V§Î¦¨cycle
-# ³oÃänewHeadÁöµM¤@ª½¦^¶Ç¦ı¨ä¹ê¨Ã¨S¥Î©ó¦brecursive¤ºªº§PÂ_, ¥u¬O¬°¤Freturn
-# ¥u¦³¦b¤ÏÂà§¹²¦®Éreturnªº¨º¦¸newHead¤~¥Nªí¤wµ²§ô¤ÏÂàªºlinklist
-# class Solution:
-#     def reverseList(self, head: ListNode) -> ListNode:
-#         if head==None or head.next==None:
-#             return head
-#         newHead = self.reverseList(head.next)
-#         # ±N­ì¥»ªº¤U­Ónode«ü¦V¦Û¤v(«e¤@­Ó), ¤]´N¬O¤ÏÂà
-#         head.next.next = head
-#         # ª`·N±N¦Û¤v«ü¦VNULL, Á×§Khead©Mhead.next¤¬¬Û«ü¦V³y¦¨cycle
-#         head.next = None
-#         # newHead¤@ª½³£¬O­ì¥»linklist³Ì«á¤@­Ónode
-#         return newHead
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

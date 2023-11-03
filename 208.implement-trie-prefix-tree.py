@@ -1,25 +1,37 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=208 lang=python3
 #
 # [208] Implement Trie (Prefix Tree)
 #
 
-# @lc code=start
+# @lc code=startclass Trie:
 class Trie:
-
     def __init__(self):
+        self.root={}
         
-
     def insert(self, word: str) -> None:
-        
+        cur=self.root
+        for letter in word:
+            if letter not in cur:
+                cur[letter] = {}
+            cur=cur[letter]
+        cur['*']=''
 
     def search(self, word: str) -> bool:
+        cur=self.root
+        for letter in word:
+            if letter not in cur:
+                return False
+            cur=cur[letter]
+        return '*' in cur
         
-
     def startsWith(self, prefix: str) -> bool:
-        
-
+        cur=self.root
+        for letter in prefix:
+            if letter not in cur:
+                return False
+            cur=cur[letter]
+        return True
 
 # Your Trie object will be instantiated and called as such:
 # obj = Trie()
@@ -27,34 +39,4 @@ class Trie:
 # param_2 = obj.search(word)
 # param_3 = obj.startsWith(prefix)
 # @lc code=end
-=======
-#
-# @lc app=leetcode id=208 lang=python3
-#
-# [208] Implement Trie (Prefix Tree)
-#
-
-# @lc code=start
-class Trie:
-
-    def __init__(self):
-        
-
-    def insert(self, word: str) -> None:
-        
-
-    def search(self, word: str) -> bool:
-        
-
-    def startsWith(self, prefix: str) -> bool:
-        
-
-
-# Your Trie object will be instantiated and called as such:
-# obj = Trie()
-# obj.insert(word)
-# param_2 = obj.search(word)
-# param_3 = obj.startsWith(prefix)
-# @lc code=end
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
 

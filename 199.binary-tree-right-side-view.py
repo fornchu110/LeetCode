@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=199 lang=python3
 #
@@ -6,7 +5,7 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ótree, ­n¨Dreturn tree¨C¤@level³Ì¥kÃäªº¤¸¯À
+# çµ¦ä¸€å€‹tree, è¦æ±‚return treeæ¯ä¸€levelæœ€å³é‚Šçš„å…ƒç´ 
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -16,82 +15,34 @@
 #         self.right = right
 
 # By BFS, time: O(n), space: O(n)
-# ¥ÎBFS¨«³X, ¨C¦¸µ²§ô¤@­Ólevel±N³Ì§Àºİ¤¸¯À¥[¤Jres§Y¥i
+# ç”¨BFSèµ°è¨ª, æ¯æ¬¡çµæŸä¸€å€‹levelå°‡æœ€å°¾ç«¯å…ƒç´ åŠ å…¥reså³å¯
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         if root is None:
             return None
         res = []
         queue = collections.deque([root])
-        # ¨C³B²z¤@­Ólevel·|§PÂ_¤@¦¸while
+        # æ¯è™•ç†ä¸€å€‹levelæœƒåˆ¤æ–·ä¸€æ¬¡while
         while queue:
-            # ¥ÎtmpÀx¦s¨C¤@level¤§node.val
+            # ç”¨tmpå„²å­˜æ¯ä¸€levelä¹‹node.val
             tmp = []
-            # n´N¬O¸Ólevel©Ò¦³ªºnode¼Æ¶q
+            # nå°±æ˜¯è©²levelæ‰€æœ‰çš„nodeæ•¸é‡
             n = len(queue)
-            # Á×§K³B²z¨ì¤£¦Plevelªºnode
+            # é¿å…è™•ç†åˆ°ä¸åŒlevelçš„node
             for i in range(n):
                 node = queue.popleft()
-                # °O±o­nappendªº¬Onode.val¤£¬Onode
+                # è¨˜å¾—è¦appendçš„æ˜¯node.valä¸æ˜¯node
                 tmp.append(node.val)
-                # ¤£¬ONone¤~­n¥[¤Jqueue, ¦]¬°³o¼Ë¤~¦³value©Mchild
+                # ä¸æ˜¯Noneæ‰è¦åŠ å…¥queue, å› ç‚ºé€™æ¨£æ‰æœ‰valueå’Œchild
                 if node.left:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
-            # queue¦³¤¸¯À¤~·|°õ¦æ°j°é, ©Ò¥H¤£¥Î¾á¤ßtmp¤¸¯À¬°ªÅ³y¦¨ªºout of range
-            # ¥Îtmp.pop()·|§óºC
+            # queueæœ‰å…ƒç´ æ‰æœƒåŸ·è¡Œè¿´åœˆ, æ‰€ä»¥ä¸ç”¨æ“”å¿ƒtmpå…ƒç´ ç‚ºç©ºé€ æˆçš„out of range
+            # ç”¨tmp.pop()æœƒæ›´æ…¢
             res.append(tmp[n-1])
         return res
 
-# @lc code=end
-
-=======
-#
-# @lc app=leetcode id=199 lang=python3
-#
-# [199] Binary Tree Right Side View
-#
-
-# @lc code=start
-# µ¹¤@­Ótree, ­n¨Dreturn tree¨C¤@level³Ì¥kÃäªº¤¸¯À
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By BFS, time: O(n), space: O(n)
-# ¥ÎBFS¨«³X, ¨C¦¸µ²§ô¤@­Ólevel±N³Ì§Àºİ¤¸¯À¥[¤Jres§Y¥i
-class Solution:
-    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
-        if root is None:
-            return None
-        res = []
-        queue = collections.deque([root])
-        # ¨C³B²z¤@­Ólevel·|§PÂ_¤@¦¸while
-        while queue:
-            # ¥ÎtmpÀx¦s¨C¤@level¤§node.val
-            tmp = []
-            # n´N¬O¸Ólevel©Ò¦³ªºnode¼Æ¶q
-            n = len(queue)
-            # Á×§K³B²z¨ì¤£¦Plevelªºnode
-            for i in range(n):
-                node = queue.popleft()
-                # °O±o­nappendªº¬Onode.val¤£¬Onode
-                tmp.append(node.val)
-                # ¤£¬ONone¤~­n¥[¤Jqueue, ¦]¬°³o¼Ë¤~¦³value©Mchild
-                if node.left:
-                    queue.append(node.left)
-                if node.right:
-                    queue.append(node.right)
-            # queue¦³¤¸¯À¤~·|°õ¦æ°j°é, ©Ò¥H¤£¥Î¾á¤ßtmp¤¸¯À¬°ªÅ³y¦¨ªºout of range
-            # ¥Îtmp.pop()·|§óºC
-            res.append(tmp[n-1])
-        return res
 
 # @lc code=end
 
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
