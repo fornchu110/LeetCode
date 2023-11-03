@@ -1,16 +1,16 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=91 lang=python3
 #
 # [91] Decode Ways
 #
 
+
 # @lc code=start
-# µ¹¤@¦r¦ês, return s¤ºªº¼Æ¦r¥i¥H²Õ¦X¦¨¦h¤ÖºØ¦r¥À±Æ¦C, 1~26¤À§O¥Nªía~z, ª`·N01¨Ã¤£µ¥©ó1
+# çµ¦ä¸€å­—ä¸²s, return så…§çš„æ•¸å­—å¯ä»¥çµ„åˆæˆå¤šå°‘ç¨®å­—æ¯æ’åˆ—, 1~26åˆ†åˆ¥ä»£è¡¨a~z, æ³¨æ„01ä¸¦ä¸ç­‰æ–¼1
 
 
 # By DP, time: O(n), space: O(n)
-# ¦]dp[n]¥u·|¥Î¨ìdp[n-1]©Mdp[n-2], ¥i¥HÀu¤Æ¬°¤TÅÜ¼ÆªÅ¶¡, ¤]´N¬Ospace = O(1)
+# å› dp[n]åªæœƒç”¨åˆ°dp[n-1]å’Œdp[n-2], å¯ä»¥å„ªåŒ–ç‚ºä¸‰è®Šæ•¸ç©ºé–“, ä¹Ÿå°±æ˜¯space = O(1)
 class Solution:
     def numDecodings(self, s: str) -> int:
         n = len(s)
@@ -22,7 +22,7 @@ class Solution:
                 dp[i] += dp[i-2]
         return dp[n]
 
-# ¤TÅÜ¼Æ§@ªk, space: O(1)
+# ä¸‰è®Šæ•¸ä½œæ³•, space: O(1)
 # class Solution:
 #     def numDecodings(self, s: str) -> int:
 #         n = len(s)
@@ -38,46 +38,5 @@ class Solution:
 #         return c
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=91 lang=python3
-#
-# [91] Decode Ways
-#
-
-# @lc code=start
-# µ¹¤@¦r¦ês, return s¤ºªº¼Æ¦r¥i¥H²Õ¦X¦¨¦h¤ÖºØ¦r¥À±Æ¦C, 1~26¤À§O¥Nªía~z, ª`·N01¨Ã¤£µ¥©ó1
-
-
-# By DP, time: O(n), space: O(n)
-# ¦]dp[n]¥u·|¥Î¨ìdp[n-1]©Mdp[n-2], ¥i¥HÀu¤Æ¬°¤TÅÜ¼ÆªÅ¶¡, ¤]´N¬Ospace = O(1)
-class Solution:
-    def numDecodings(self, s: str) -> int:
-        n = len(s)
-        dp = [1]+[0]*n
-        for i in range(1, n+1):
-            if s[i-1]!='0':
-                dp[i] += dp[i-1]
-            if i>1 and s[i-2]!='0' and int(s[i-2:i])<=26:
-                dp[i] += dp[i-2]
-        return dp[n]
-
-# ¤TÅÜ¼Æ§@ªk, space: O(1)
-# class Solution:
-#     def numDecodings(self, s: str) -> int:
-#         n = len(s)
-#         # a = f[i-2], b = f[i-1], c = f[i]
-#         a, b, c = 0, 1, 0
-#         for i in range(1, n + 1):
-#             c = 0
-#             if s[i - 1] != '0':
-#                 c += b
-#             if i>1 and s[i-2] != '0' and int(s[i-2:i]) <= 26:
-#                 c += a
-#             a, b = b, c
-#         return c
-        
 # @lc code=end
 
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
