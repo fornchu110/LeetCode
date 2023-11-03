@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2325 lang=python3
 #
@@ -6,72 +5,33 @@
 #
 
 # @lc code=start
-# By hash and ord() and chr(), time: O(m+n), space: O(26), m¬°keyªø«×, n¬°messageªø«×
-# space: O(26)¬O¦]¬°hash¥Î¨ÓÀx¦s26­Ó­^¤å¦r¥À
-# µ¹key±qÀY¨ì§À¤À§O¹ïÀ³a~z, ±Nmessage®Ú¾Ú³o­ÓkeyÅÜ´«¥X¨Ó
-# ¼Ğ·Ç«Øhashªí, ³oÃD¤]¥i¥H¥Îindex array°µªí
+# By hash and ord() and chr(), time: O(m+n), space: O(26), mç‚ºkeyé•·åº¦, nç‚ºmessageé•·åº¦
+# space: O(26)æ˜¯å› ç‚ºhashç”¨ä¾†å„²å­˜26å€‹è‹±æ–‡å­—æ¯
+# çµ¦keyå¾é ­åˆ°å°¾åˆ†åˆ¥å°æ‡‰a~z, å°‡messageæ ¹æ“šé€™å€‹keyè®Šæ›å‡ºä¾†
+# æ¨™æº–å»ºhashè¡¨, é€™é¡Œä¹Ÿå¯ä»¥ç”¨index arrayåšè¡¨
 class Solution:
     def decodeMessage(self, key: str, message: str) -> str:
         res = list()
-        # ¥Îord()¨Ó±o¨ìascii code, ªì©l¤Æ¬°a
+        # ç”¨ord()ä¾†å¾—åˆ°ascii code, åˆå§‹åŒ–ç‚ºa
         ascii = ord('a')
-        # «Ø¹ïÀ³ªºhash
+        # å»ºå°æ‡‰çš„hash
         hash = dict()
         for i in key:
-            # key¤º®e¦³¥i¥H­«½Æ, ©Ò¥H­n§PÂ_¤£¦bhash
-            # °£¤F¤p¼g­^¤å¥u·|¦³' '(ªÅ®æ)
+            # keyå…§å®¹æœ‰å¯ä»¥é‡è¤‡, æ‰€ä»¥è¦åˆ¤æ–·ä¸åœ¨hash
+            # é™¤äº†å°å¯«è‹±æ–‡åªæœƒæœ‰' '(ç©ºæ ¼)
             if i!=' ' and i not in hash:
                 hash[i] = ascii
-                # «ö·Ó²Ä¤@¦¸¥X²{¶¶§Ç¹ïÀ³ascii
-                # python¨S¿ìªkª½±µ¹ï¦r²Å°µ¹Bºâ
+                # æŒ‰ç…§ç¬¬ä¸€æ¬¡å‡ºç¾é †åºå°æ‡‰ascii
+                # pythonæ²’è¾¦æ³•ç›´æ¥å°å­—ç¬¦åšé‹ç®—
                 ascii += 1
-        # ³B²zmessage
+        # è™•ç†message
         for i in message:
             if i in hash:
                 res.append(chr(hash[i]))
             else:
                 res.append(' ')
-        # ¥Î''.join()±NlistÂà´«¦¨¦r¦ê
+        # ç”¨''.join()å°‡listè½‰æ›æˆå­—ä¸²
         return ''.join(res)
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2325 lang=python3
-#
-# [2325] Decode the Message
-#
-
-# @lc code=start
-# By hash and ord() and chr(), time: O(m+n), space: O(26), m¬°keyªø«×, n¬°messageªø«×
-# space: O(26)¬O¦]¬°hash¥Î¨ÓÀx¦s26­Ó­^¤å¦r¥À
-# µ¹key±qÀY¨ì§À¤À§O¹ïÀ³a~z, ±Nmessage®Ú¾Ú³o­ÓkeyÅÜ´«¥X¨Ó
-# ¼Ğ·Ç«Øhashªí, ³oÃD¤]¥i¥H¥Îindex array°µªí
-class Solution:
-    def decodeMessage(self, key: str, message: str) -> str:
-        res = list()
-        # ¥Îord()¨Ó±o¨ìascii code, ªì©l¤Æ¬°a
-        ascii = ord('a')
-        # «Ø¹ïÀ³ªºhash
-        hash = dict()
-        for i in key:
-            # key¤º®e¦³¥i¥H­«½Æ, ©Ò¥H­n§PÂ_¤£¦bhash
-            # °£¤F¤p¼g­^¤å¥u·|¦³' '(ªÅ®æ)
-            if i!=' ' and i not in hash:
-                hash[i] = ascii
-                # «ö·Ó²Ä¤@¦¸¥X²{¶¶§Ç¹ïÀ³ascii
-                # python¨S¿ìªkª½±µ¹ï¦r²Å°µ¹Bºâ
-                ascii += 1
-        # ³B²zmessage
-        for i in message:
-            if i in hash:
-                res.append(chr(hash[i]))
-            else:
-                res.append(' ')
-        # ¥Î''.join()±NlistÂà´«¦¨¦r¦ê
-        return ''.join(res)
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

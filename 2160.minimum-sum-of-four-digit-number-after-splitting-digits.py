@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2160 lang=python3
 #
@@ -6,48 +5,21 @@
 #
 
 # @lc code=start
-# By greedy, time: O(1), space: O(1), ¤£ª¾¬°¦ósort()¤£¶·¼W¥[®É¶¡½ÆÂø«×
-# ­n±Nµ¹©wnum¨C¦ì¼Æ©î¤À¦¨¨â¼Æ, ¨Ã§ä¥X©Ò¦³©î¤À²Õ¦X¤º¨â¼Æ©M³Ì¤pªº¨º­Ó©M
-# ª`·Ninput¬O1000~9999, ©Ò¥H¥u·|¦³¥|¦ì¼Æ, ¥|¦ì¼Æ©î¦¨¨â­Ó¨â¦ì¼Æ³Ì¦n(Á`©M³Ì¤p)
-# §â¸û¤pªº¨â­Ó¦ì¼Æ©ñ¨ì¨â¼Æªº¢Ì¦ì¼Æ, ¸û¤jªº¨â¦ì¼Æ©ñ¨ì¨â¼Æªº­Ó¦ì¼Æ 
+# By greedy, time: O(1), space: O(1), ä¸çŸ¥ç‚ºä½•sort()ä¸é ˆå¢åŠ æ™‚é–“è¤‡é›œåº¦
+# è¦å°‡çµ¦å®šnumæ¯ä½æ•¸æ‹†åˆ†æˆå…©æ•¸, ä¸¦æ‰¾å‡ºæ‰€æœ‰æ‹†åˆ†çµ„åˆå…§å…©æ•¸å’Œæœ€å°çš„é‚£å€‹å’Œ
+# æ³¨æ„inputæ˜¯1000~9999, æ‰€ä»¥åªæœƒæœ‰å››ä½æ•¸, å››ä½æ•¸æ‹†æˆå…©å€‹å…©ä½æ•¸æœ€å¥½(ç¸½å’Œæœ€å°)
+# æŠŠè¼ƒå°çš„å…©å€‹ä½æ•¸æ”¾åˆ°å…©æ•¸çš„åä½æ•¸, è¼ƒå¤§çš„å…©ä½æ•¸æ”¾åˆ°å…©æ•¸çš„å€‹ä½æ•¸ 
 class Solution:
     def minimumSum(self, num: int) -> int:
-        # ¦s©ñ¦ì¼Æ
+        # å­˜æ”¾ä½æ•¸
         digits = list()
-        # ±Ninputªº¨C­Ó¦ì¼Æ©ñ¶ilist
+        # å°‡inputçš„æ¯å€‹ä½æ•¸æ”¾é€²list
         while num:
             digits.append(num%10)
             num //= 10
-        # ¸g¹Lsort«K±oª¾¸û¤p©M¸û¤jªº¦ì¼Æ¬O­ş¨Ç, sort()¥Ñ¤p¨ì¤j
+        # ç¶“ésortä¾¿å¾—çŸ¥è¼ƒå°å’Œè¼ƒå¤§çš„ä½æ•¸æ˜¯å“ªäº›, sort()ç”±å°åˆ°å¤§
         digits.sort()
         return 10*(digits[0]+digits[1])+digits[2]+digits[3]
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2160 lang=python3
-#
-# [2160] Minimum Sum of Four Digit Number After Splitting Digits
-#
-
-# @lc code=start
-# By greedy, time: O(1), space: O(1), ¤£ª¾¬°¦ósort()¤£¶·¼W¥[®É¶¡½ÆÂø«×
-# ­n±Nµ¹©wnum¨C¦ì¼Æ©î¤À¦¨¨â¼Æ, ¨Ã§ä¥X©Ò¦³©î¤À²Õ¦X¤º¨â¼Æ©M³Ì¤pªº¨º­Ó©M
-# ª`·Ninput¬O1000~9999, ©Ò¥H¥u·|¦³¥|¦ì¼Æ, ¥|¦ì¼Æ©î¦¨¨â­Ó¨â¦ì¼Æ³Ì¦n(Á`©M³Ì¤p)
-# §â¸û¤pªº¨â­Ó¦ì¼Æ©ñ¨ì¨â¼Æªº¢Ì¦ì¼Æ, ¸û¤jªº¨â¦ì¼Æ©ñ¨ì¨â¼Æªº­Ó¦ì¼Æ 
-class Solution:
-    def minimumSum(self, num: int) -> int:
-        # ¦s©ñ¦ì¼Æ
-        digits = list()
-        # ±Ninputªº¨C­Ó¦ì¼Æ©ñ¶ilist
-        while num:
-            digits.append(num%10)
-            num //= 10
-        # ¸g¹Lsort«K±oª¾¸û¤p©M¸û¤jªº¦ì¼Æ¬O­ş¨Ç, sort()¥Ñ¤p¨ì¤j
-        digits.sort()
-        return 10*(digits[0]+digits[1])+digits[2]+digits[3]
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

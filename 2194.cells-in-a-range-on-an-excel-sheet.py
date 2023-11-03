@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2194 lang=python3
 #
@@ -6,50 +5,22 @@
 #
 
 # @lc code=start
-# By ord() and chr(), time: O(m*n), space: O(1), m¬°row¼Æ, n¬°column¼Æ
-# µ¹°_ÂI©M²×ÂI, ¨Ì§Ç¦L¥X[°_ÂI, ²×ÂI]¤¤©Ò¦³¤¸¯À
-# ¤@­Ócol¨«³X§¹¦A¨«³X¤U¤@®æ
+# By ord() and chr(), time: O(m*n), space: O(1), mç‚ºrowæ•¸, nç‚ºcolumnæ•¸
+# çµ¦èµ·é»å’Œçµ‚é», ä¾åºå°å‡º[èµ·é», çµ‚é»]ä¸­æ‰€æœ‰å…ƒç´ 
+# ä¸€å€‹colèµ°è¨ªå®Œå†èµ°è¨ªä¸‹ä¸€æ ¼
 class Solution:
     def cellsInRange(self, s: str) -> List[str]:
         res = []
-        # ord()¥Î¨ÓÀò±o¦r²Åªºascii½X
-        # ¹ï°_©lascii©M²×ÂIascii°µfor°j°é, §Y¥i¨Ì§Ç¥[¤J¦r²Å
-        # ±q°_©lcol¶}©l
+        # ord()ç”¨ä¾†ç²å¾—å­—ç¬¦çš„asciiç¢¼
+        # å°èµ·å§‹asciiå’Œçµ‚é»asciiåšforè¿´åœˆ, å³å¯ä¾åºåŠ å…¥å­—ç¬¦
+        # å¾èµ·å§‹colé–‹å§‹
         for i in range(ord(s[0]), ord(s[3]) + 1):
-            # ¦Pcol¤U±q°_©lrow¨«³X¨ì²×ÂIrow
+            # åŒcolä¸‹å¾èµ·å§‹rowèµ°è¨ªåˆ°çµ‚é»row
             for j in range(ord(s[1]), ord(s[4]) + 1):
-                # ¥Î+±N¦r²Å³sµ²°_¨Ó
-                # chr§âasciiÂà¦r²Å
+                # ç”¨+å°‡å­—ç¬¦é€£çµèµ·ä¾†
+                # chræŠŠasciiè½‰å­—ç¬¦
                 res.append(chr(i) + chr(j))
         return res
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2194 lang=python3
-#
-# [2194] Cells in a Range on an Excel Sheet
-#
-
-# @lc code=start
-# By ord() and chr(), time: O(m*n), space: O(1), m¬°row¼Æ, n¬°column¼Æ
-# µ¹°_ÂI©M²×ÂI, ¨Ì§Ç¦L¥X[°_ÂI, ²×ÂI]¤¤©Ò¦³¤¸¯À
-# ¤@­Ócol¨«³X§¹¦A¨«³X¤U¤@®æ
-class Solution:
-    def cellsInRange(self, s: str) -> List[str]:
-        res = []
-        # ord()¥Î¨ÓÀò±o¦r²Åªºascii½X
-        # ¹ï°_©lascii©M²×ÂIascii°µfor°j°é, §Y¥i¨Ì§Ç¥[¤J¦r²Å
-        # ±q°_©lcol¶}©l
-        for i in range(ord(s[0]), ord(s[3]) + 1):
-            # ¦Pcol¤U±q°_©lrow¨«³X¨ì²×ÂIrow
-            for j in range(ord(s[1]), ord(s[4]) + 1):
-                # ¥Î+±N¦r²Å³sµ²°_¨Ó
-                # chr§âasciiÂà¦r²Å
-                res.append(chr(i) + chr(j))
-        return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

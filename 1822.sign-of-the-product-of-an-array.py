@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1822 lang=python3
 #
@@ -6,14 +5,14 @@
 #
 
 # @lc code=start
-# µ¹¤@°}¦Cnums, ­Ynums¤º©Ò¦³¤¸¯À¬Û­¼=0 return 0, ¬Û­¼¬°­t return -1, ¬Û­¼¬°¥¿ return 1
+# çµ¦ä¸€é™£åˆ—nums, è‹¥numså…§æ‰€æœ‰å…ƒç´ ç›¸ä¹˜=0 return 0, ç›¸ä¹˜ç‚ºè²  return -1, ç›¸ä¹˜ç‚ºæ­£ return 1
 
 # By for loop, time: O(n), space: O(1)
-# ª½±µ¨«³X, ¹J¨ì¤¸¯À¬O0ªº´Nreturn 0, ­Y­t¼Æ¦³©_¼Æ­Ó¥Nªí¬°­t, ¦³°¸¼Æ­Ó¥Nªí¬°¥¿
-# ¤£¥Î­p¼Æªº¸Ü, °µªk¬O­psign¬°1, ¸I¨ì<0ªº´NÅÜ-sign, ³Ì«áreturn sign§Y¬Oµª®×
+# ç›´æŽ¥èµ°è¨ª, é‡åˆ°å…ƒç´ æ˜¯0çš„å°±return 0, è‹¥è² æ•¸æœ‰å¥‡æ•¸å€‹ä»£è¡¨ç‚ºè² , æœ‰å¶æ•¸å€‹ä»£è¡¨ç‚ºæ­£
+# ä¸ç”¨è¨ˆæ•¸çš„è©±, åšæ³•æ˜¯è¨ˆsignç‚º1, ç¢°åˆ°<0çš„å°±è®Š-sign, æœ€å¾Œreturn signå³æ˜¯ç­”æ¡ˆ
 class Solution:
     def arraySign(self, nums: List[int]) -> int:
-        # ¬ö¿ý¦³´X­Ó­t¼Æ
+        # ç´€éŒ„æœ‰å¹¾å€‹è² æ•¸
         cnt = 0
         for i in nums:
             if i<0:
@@ -28,34 +27,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1822 lang=python3
-#
-# [1822] Sign of the Product of an Array
-#
-
-# @lc code=start
-# µ¹¤@°}¦Cnums, ­Ynums¤º©Ò¦³¤¸¯À¬Û­¼=0 return 0, ¬Û­¼¬°­t return -1, ¬Û­¼¬°¥¿ return 1
-
-# By for loop, time: O(n), space: O(1)
-# ª½±µ¨«³X, ¹J¨ì¤¸¯À¬O0ªº´Nreturn 0, ­Y­t¼Æ¦³©_¼Æ­Ó¥Nªí¬°­t, ¦³°¸¼Æ­Ó¥Nªí¬°¥¿
-# ¤£¥Î­p¼Æªº¸Ü, °µªk¬O­psign¬°1, ¸I¨ì<0ªº´NÅÜ-sign, ³Ì«áreturn sign§Y¬Oµª®×
-class Solution:
-    def arraySign(self, nums: List[int]) -> int:
-        # ¬ö¿ý¦³´X­Ó­t¼Æ
-        cnt = 0
-        for i in nums:
-            if i<0:
-                cnt += 1
-            elif i==0:
-                return 0
-        if cnt&1:
-            return -1
-        else:
-            return 1
-            
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

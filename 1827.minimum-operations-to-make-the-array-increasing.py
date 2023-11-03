@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1827 lang=python3
 #
@@ -6,50 +5,22 @@
 #
 
 # @lc code=start
-# µ¹¤@°}¦Cnums, §ä¥X³Ì¤Ö¦¸¹ï¤¸¯À+1¨Ï±o¸Ì­±¤¸¯À¬OÄY®æ»¼¼W(strictly increasing)ªº
+# çµ¦ä¸€é™£åˆ—nums, æ‰¾å‡ºæœ€å°‘æ¬¡å°å…ƒç´ +1ä½¿å¾—è£¡é¢å…ƒç´ æ˜¯åš´æ ¼éå¢(strictly increasing)çš„
 
 # By simulation, time: O(n), space: O(1)
-# ­nÄY®æ»¼¼W, ©Ò¥H¥u­n«á­±ªº<=«e­±ªº, ´N­n¸É¤W®t­È+1, ¤]´N¬O¦A°µ®t­È+1¦¸
+# è¦åš´æ ¼éå¢, æ‰€ä»¥åªè¦å¾Œé¢çš„<=å‰é¢çš„, å°±è¦è£œä¸Šå·®å€¼+1, ä¹Ÿå°±æ˜¯å†åšå·®å€¼+1æ¬¡
 class Solution:
     def minOperations(self, nums: List[int]) -> int:
-        # ¤£¯à°µ±Æ§Ç
+        # ä¸èƒ½åšæ’åº
         res = 0
-        # ¤£»İ­n°µwhile°j°é, ·|¶W®É
+        # ä¸éœ€è¦åšwhileè¿´åœˆ, æœƒè¶…æ™‚
         for i in range(1, len(nums)):
             if nums[i]<=nums[i-1]:
-                # ª`·N­n¥ı§ó·sµ²ªG¦A§ó·snums¤¸¯À, ¤£µM´N¬O¦s°_¨Ó
-                # §_«hµ²ªG·|¥Î¨ì§ó·s¹Lªºnums¤¸¯À
+                # æ³¨æ„è¦å…ˆæ›´æ–°çµæœå†æ›´æ–°numså…ƒç´ , ä¸ç„¶å°±æ˜¯å­˜èµ·ä¾†
+                # å¦å‰‡çµæœæœƒç”¨åˆ°æ›´æ–°éçš„numså…ƒç´ 
                 res += nums[i-1]-nums[i]+1
                 nums[i] += nums[i-1]-nums[i]+1
         return res
     
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1827 lang=python3
-#
-# [1827] Minimum Operations to Make the Array Increasing
-#
-
-# @lc code=start
-# µ¹¤@°}¦Cnums, §ä¥X³Ì¤Ö¦¸¹ï¤¸¯À+1¨Ï±o¸Ì­±¤¸¯À¬OÄY®æ»¼¼W(strictly increasing)ªº
-
-# By simulation, time: O(n), space: O(1)
-# ­nÄY®æ»¼¼W, ©Ò¥H¥u­n«á­±ªº<=«e­±ªº, ´N­n¸É¤W®t­È+1, ¤]´N¬O¦A°µ®t­È+1¦¸
-class Solution:
-    def minOperations(self, nums: List[int]) -> int:
-        # ¤£¯à°µ±Æ§Ç
-        res = 0
-        # ¤£»İ­n°µwhile°j°é, ·|¶W®É
-        for i in range(1, len(nums)):
-            if nums[i]<=nums[i-1]:
-                # ª`·N­n¥ı§ó·sµ²ªG¦A§ó·snums¤¸¯À, ¤£µM´N¬O¦s°_¨Ó
-                # §_«hµ²ªG·|¥Î¨ì§ó·s¹Lªºnums¤¸¯À
-                res += nums[i-1]-nums[i]+1
-                nums[i] += nums[i-1]-nums[i]+1
-        return res
-    
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

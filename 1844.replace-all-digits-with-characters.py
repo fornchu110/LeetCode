@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1844 lang=python3
 #
@@ -6,46 +5,20 @@
 #
 
 # @lc code=start
-# µ¹¤@¦ê¦r¦ê, a1ªº¸Ü¦^¶Çab, ¤]´N¬Oa©Ma«á­±¤@­Ó¦r¥Àb, x0¦^¶Çxx, ¥H¦¹Ãş±À
-# Ex: "a1b2c3d4e"Âà´«¦¨"abbdcfdhe"
+# çµ¦ä¸€ä¸²å­—ä¸², a1çš„è©±å›å‚³ab, ä¹Ÿå°±æ˜¯aå’Œaå¾Œé¢ä¸€å€‹å­—æ¯b, x0å›å‚³xx, ä»¥æ­¤é¡æ¨
+# Ex: "a1b2c3d4e"è½‰æ›æˆ"abbdcfdhe"
 
 # By string proccessing, time: O(n), space: O(n)
-# space: O(n)¬O¦]python¤£¯àª½±µ¨Ì§Ç­×§ï¦r¦ê, ¤£¦n³B²z©Ò¥H¥Î¤@­Óarr list¦A°µÂà´«¦hªáªÅ¶¡
-# ­Y¥Îc©Îc++ª½±µ³B²z´N¬OO(1)
+# space: O(n)æ˜¯å› pythonä¸èƒ½ç›´æ¥ä¾åºä¿®æ”¹å­—ä¸², ä¸å¥½è™•ç†æ‰€ä»¥ç”¨ä¸€å€‹arr listå†åšè½‰æ›å¤šèŠ±ç©ºé–“
+# è‹¥ç”¨cæˆ–c++ç›´æ¥è™•ç†å°±æ˜¯O(1)
 class Solution:
     def replaceDigits(self, s: str) -> str:
         n = len(s)
         arr = list(s)
-        # °¸¼Æ¦ì¸mªº¦r¤¸¥²©w¬O­«½Æªº, ¬İ©_¼Æ¦ì¸mªº¦r¤¸ª¾¹D©M°¸¼Æ¦ì¸m¦r¤¸¤§¬Û¹ï¦ì¸m§Y¥i
+        # å¶æ•¸ä½ç½®çš„å­—å…ƒå¿…å®šæ˜¯é‡è¤‡çš„, çœ‹å¥‡æ•¸ä½ç½®çš„å­—å…ƒçŸ¥é“å’Œå¶æ•¸ä½ç½®å­—å…ƒä¹‹ç›¸å°ä½ç½®å³å¯
         for i in range(1, n, 2):
             arr[i] = chr(ord(arr[i-1])+int(arr[i]))
         return "".join(arr)
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1844 lang=python3
-#
-# [1844] Replace All Digits with Characters
-#
-
-# @lc code=start
-# µ¹¤@¦ê¦r¦ê, a1ªº¸Ü¦^¶Çab, ¤]´N¬Oa©Ma«á­±¤@­Ó¦r¥Àb, x0¦^¶Çxx, ¥H¦¹Ãş±À
-# Ex: "a1b2c3d4e"Âà´«¦¨"abbdcfdhe"
-
-# By string proccessing, time: O(n), space: O(n)
-# space: O(n)¬O¦]python¤£¯àª½±µ¨Ì§Ç­×§ï¦r¦ê, ¤£¦n³B²z©Ò¥H¥Î¤@­Óarr list¦A°µÂà´«¦hªáªÅ¶¡
-# ­Y¥Îc©Îc++ª½±µ³B²z´N¬OO(1)
-class Solution:
-    def replaceDigits(self, s: str) -> str:
-        n = len(s)
-        arr = list(s)
-        # °¸¼Æ¦ì¸mªº¦r¤¸¥²©w¬O­«½Æªº, ¬İ©_¼Æ¦ì¸mªº¦r¤¸ª¾¹D©M°¸¼Æ¦ì¸m¦r¤¸¤§¬Û¹ï¦ì¸m§Y¥i
-        for i in range(1, n, 2):
-            arr[i] = chr(ord(arr[i-1])+int(arr[i]))
-        return "".join(arr)
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1828 lang=python3
 #
@@ -6,24 +5,24 @@
 #
 
 # @lc code=start
-# By enumerate, time: O(m*n), space: O(1), m¬O¶ê¤ß¼Æ¶q, n¬OÂI¼Æ¶q
-# ³oÃDµ¹¶ê¤ß©M¶ê¥b®|, ¨Dµ¹©wnªºpoints¦ì©ó¤£¦P¶ê¤ºªº¼Æ¶q
+# By enumerate, time: O(m*n), space: O(1), mæ˜¯åœ“å¿ƒæ•¸é‡, næ˜¯é»æ•¸é‡
+# é€™é¡Œçµ¦åœ“å¿ƒå’Œåœ“åŠå¾‘, æ±‚çµ¦å®šnçš„pointsä½æ–¼ä¸åŒåœ“å…§çš„æ•¸é‡
 class Solution:
     def countPoints(self, points: List[List[int]], queries: List[List[int]]) -> List[int]:
         res = list()
-        # python¥i¥Hª½±µ¥Î¬Û¹ïÀ³ªº®æ¦¡Àò±o¼Æ¾Ú, §óª½Æ[
+        # pythonå¯ä»¥ç›´æ¥ç”¨ç›¸å°æ‡‰çš„æ ¼å¼ç²å¾—æ•¸æ“š, æ›´ç›´è§€
         for (cx, cy, cr) in queries:
             tmp = 0
             for (px, py) in points:
                 if(cx-px)**2+(cy-py)**2<=cr**2:
                     tmp += 1
             res.append(tmp)
-        # ¦AÀu¤Æ¥i¥H§âres = [0]*len(queries)
-        # µM«á´N¯à¬Ù¤UtmpªÅ¶¡, ª½±µfor i, (cx, cy, cr) in enumerate(queries):
-        # ¦P®ÉÀò±oindex i©M­¡¥N(cx, cy, cr), ³o¼Ë¦bif¦¨¥ß®Éres[i] += 1§Y¥i
+        # å†å„ªåŒ–å¯ä»¥æŠŠres = [0]*len(queries)
+        # ç„¶å¾Œå°±èƒ½çœä¸‹tmpç©ºé–“, ç›´æ¥for i, (cx, cy, cr) in enumerate(queries):
+        # åŒæ™‚ç²å¾—index iå’Œè¿­ä»£(cx, cy, cr), é€™æ¨£åœ¨ifæˆç«‹æ™‚res[i] += 1å³å¯
 
-        # ¤@¶}©lªº°µªk, ¥Îi¥h­¡¥N¶ê¤ß, ¥Îj­¡¥NÂI, index¨Ó¦s¨ú¤º®e
-        # §ó¹³c»y¨¥¼gªk
+        # ä¸€é–‹å§‹çš„åšæ³•, ç”¨iå»è¿­ä»£åœ“å¿ƒ, ç”¨jè¿­ä»£é», indexä¾†å­˜å–å…§å®¹
+        # æ›´åƒcèªè¨€å¯«æ³•
         # for i in queries:
         #     tmp = 0
         #     for j in points:
@@ -34,40 +33,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1828 lang=python3
-#
-# [1828] Queries on Number of Points Inside a Circle
-#
-
-# @lc code=start
-# By enumerate, time: O(m*n), space: O(1), m¬O¶ê¤ß¼Æ¶q, n¬OÂI¼Æ¶q
-# ³oÃDµ¹¶ê¤ß©M¶ê¥b®|, ¨Dµ¹©wnªºpoints¦ì©ó¤£¦P¶ê¤ºªº¼Æ¶q
-class Solution:
-    def countPoints(self, points: List[List[int]], queries: List[List[int]]) -> List[int]:
-        res = list()
-        # python¥i¥Hª½±µ¥Î¬Û¹ïÀ³ªº®æ¦¡Àò±o¼Æ¾Ú, §óª½Æ[
-        for (cx, cy, cr) in queries:
-            tmp = 0
-            for (px, py) in points:
-                if(cx-px)**2+(cy-py)**2<=cr**2:
-                    tmp += 1
-            res.append(tmp)
-        # ¦AÀu¤Æ¥i¥H§âres = [0]*len(queries)
-        # µM«á´N¯à¬Ù¤UtmpªÅ¶¡, ª½±µfor i, (cx, cy, cr) in enumerate(queries):
-        # ¦P®ÉÀò±oindex i©M­¡¥N(cx, cy, cr), ³o¼Ë¦bif¦¨¥ß®Éres[i] += 1§Y¥i
-
-        # ¤@¶}©lªº°µªk, ¥Îi¥h­¡¥N¶ê¤ß, ¥Îj­¡¥NÂI, index¨Ó¦s¨ú¤º®e
-        # §ó¹³c»y¨¥¼gªk
-        # for i in queries:
-        #     tmp = 0
-        #     for j in points:
-        #         if (i[0]-j[0])**2+(i[1]-j[1])**2<=i[2]**2:
-        #             tmp += 1
-        #     res.append(tmp)
-        return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

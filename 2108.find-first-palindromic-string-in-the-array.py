@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2108 lang=python3
 #
@@ -6,90 +5,42 @@
 #
 
 # @lc code=start
-# §ä¥Xµ¹©wwords²Ä¤@­Ó°j¤åªº¦r¦ê
+# æ‰¾å‡ºçµ¦å®šwordsç¬¬ä¸€å€‹è¿´æ–‡çš„å­—ä¸²
 
-# By string proccessing, time: O(n), space: O(1), n = words¤¤¤§¦r¤¸¼Æ
+# By string proccessing, time: O(n), space: O(1), n = wordsä¸­ä¹‹å­—å…ƒæ•¸
 class Solution:
     def firstPalindrome(self, words: List[str]) -> str:
         for i in words:
-            # ª`·Nreversed()ªğ¦^ªº¬O­¡¥N¾¹, ­n¥Îlist()±µ¦¬¦¨list©Î¥Î"".join()±µ¦¬¦¨¦r¦ê
+            # æ³¨æ„reversed()è¿”å›çš„æ˜¯è¿­ä»£å™¨, è¦ç”¨list()æ¥æ”¶æˆlistæˆ–ç”¨"".join()æ¥æ”¶æˆå­—ä¸²
             tmp = "".join(reversed(i))
             if tmp==i:
                 return i
         return ""
 
 # By double pointerm time: O(n), space: O(1)
-# ¤£¨Ï¥Îreversed()ªº§@ªk, c»y¨¥¤]¬O³o¼Ë¼g
+# ä¸ä½¿ç”¨reversed()çš„ä½œæ³•, cèªè¨€ä¹Ÿæ˜¯é€™æ¨£å¯«
 # class Solution:
 #     def firstPalindrome(self, words: List[str]) -> str:
-#         # ¥Î¤@­Ó¨ç¦¡§PÂ_·í¤U¦r¦ê¬O§_°j¤å
+#         # ç”¨ä¸€å€‹å‡½å¼åˆ¤æ–·ç•¶ä¸‹å­—ä¸²æ˜¯å¦è¿´æ–‡
 #         def isPalindrome(word: str) -> bool:
 #             n = len(word)
-#             # ±q¦r¦êÀY§À©ñ¸m¤@­Ópointer, ½T»{ÀY§À¬O§_¬Û¦P
+#             # å¾å­—ä¸²é ­å°¾æ”¾ç½®ä¸€å€‹pointer, ç¢ºèªé ­å°¾æ˜¯å¦ç›¸åŒ
 #             l, r = 0, n - 1
 #             while l < r:
-#                 # ¤¤³~¦r¤¸¤£¬Û¦P¥Nªí¨S°j¤å
+#                 # ä¸­é€”å­—å…ƒä¸ç›¸åŒä»£è¡¨æ²’è¿´æ–‡
 #                 if word[l]!=word[r]:
 #                     return False
 #                 l += 1
 #                 r -= 1
-#             # ¶]§¹¦r¦ê¤´¨Sreturn false¥Nªí°j¤å
+#             # è·‘å®Œå­—ä¸²ä»æ²’return falseä»£è¡¨è¿´æ–‡
 #             return True
         
-#         # ?§Ç¹M?¦r²Å¦ê??¡A¦pªG¹J¨ì¦^¤å¦r²Å¦ê?ªğ¦^¡A¥¼¹J¨ì?ªğ¦^ªÅ¦r²Å¦ê
+#         # ?åºé?å­—ç¬¦ä¸²??ï¼Œå¦‚æœé‡åˆ°å›æ–‡å­—ç¬¦ä¸²?è¿”å›ï¼Œæœªé‡åˆ°?è¿”å›ç©ºå­—ç¬¦ä¸²
 #         for i in words:
 #             if isPalindrome(i):
 #                 return i
-#         # ¨«³X§¹¥Nªí¨S§ä¨ì°j¤å¦r¦ê
+#         # èµ°è¨ªå®Œä»£è¡¨æ²’æ‰¾åˆ°è¿´æ–‡å­—ä¸²
 #         return ""
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2108 lang=python3
-#
-# [2108] Find First Palindromic String in the Array
-#
-
-# @lc code=start
-# §ä¥Xµ¹©wwords²Ä¤@­Ó°j¤åªº¦r¦ê
-
-# By string proccessing, time: O(n), space: O(1), n = words¤¤¤§¦r¤¸¼Æ
-class Solution:
-    def firstPalindrome(self, words: List[str]) -> str:
-        for i in words:
-            # ª`·Nreversed()ªğ¦^ªº¬O­¡¥N¾¹, ­n¥Îlist()±µ¦¬¦¨list©Î¥Î"".join()±µ¦¬¦¨¦r¦ê
-            tmp = "".join(reversed(i))
-            if tmp==i:
-                return i
-        return ""
-
-# By double pointerm time: O(n), space: O(1)
-# ¤£¨Ï¥Îreversed()ªº§@ªk, c»y¨¥¤]¬O³o¼Ë¼g
-# class Solution:
-#     def firstPalindrome(self, words: List[str]) -> str:
-#         # ¥Î¤@­Ó¨ç¦¡§PÂ_·í¤U¦r¦ê¬O§_°j¤å
-#         def isPalindrome(word: str) -> bool:
-#             n = len(word)
-#             # ±q¦r¦êÀY§À©ñ¸m¤@­Ópointer, ½T»{ÀY§À¬O§_¬Û¦P
-#             l, r = 0, n - 1
-#             while l < r:
-#                 # ¤¤³~¦r¤¸¤£¬Û¦P¥Nªí¨S°j¤å
-#                 if word[l]!=word[r]:
-#                     return False
-#                 l += 1
-#                 r -= 1
-#             # ¶]§¹¦r¦ê¤´¨Sreturn false¥Nªí°j¤å
-#             return True
-        
-#         # ?§Ç¹M?¦r²Å¦ê??¡A¦pªG¹J¨ì¦^¤å¦r²Å¦ê?ªğ¦^¡A¥¼¹J¨ì?ªğ¦^ªÅ¦r²Å¦ê
-#         for i in words:
-#             if isPalindrome(i):
-#                 return i
-#         # ¨«³X§¹¥Nªí¨S§ä¨ì°j¤å¦r¦ê
-#         return ""
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

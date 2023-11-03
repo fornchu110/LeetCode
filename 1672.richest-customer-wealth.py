@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1672 lang=python3
 #
@@ -7,49 +6,21 @@
 
 # @lc code=start
 # By for loop, time: O(m*n), space: O(1)
-# ­n¥X§ä¤@ºû°}¦C¤º¤¸¯À©M³Ì¤jªº, ¦³m­Ó¤@ºû°}¦C, ¨C­Ó¤@ºû°}¦Cn­Ó¤¸¯À
+# è¦å‡ºæ‰¾ä¸€ç¶­é™£åˆ—å…§å…ƒç´ å’Œæœ€å¤§çš„, æœ‰må€‹ä¸€ç¶­é™£åˆ—, æ¯å€‹ä¸€ç¶­é™£åˆ—nå€‹å…ƒç´ 
 class Solution:
     def maximumWealth(self, accounts: List[List[int]]) -> int:
         max = 0
-        # len(accounts)´Nµ¥¦P¤@ºû°}¦C¼Æ¶q
+        # len(accounts)å°±ç­‰åŒä¸€ç¶­é™£åˆ—æ•¸é‡
         for i in range(len(accounts)):
             tmp = 0
-            # len(accounts[i])´Nµ¥¦P²Äi­Ó¤@ºû°}¦C¤ºªº¤¸¯À¼Æ¶q
+            # len(accounts[i])å°±ç­‰åŒç¬¬iå€‹ä¸€ç¶­é™£åˆ—å…§çš„å…ƒç´ æ•¸é‡
             for j in range(len(accounts[i])):
                 tmp += accounts[i][j]
             if tmp>max:
                 max = tmp
-        # µ{¦¡¥i¥H¥u¦³¤U­±³orow
+        # ç¨‹å¼å¯ä»¥åªæœ‰ä¸‹é¢é€™row
         #return max(map(sum, accounts))
         return max
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1672 lang=python3
-#
-# [1672] Richest Customer Wealth
-#
-
-# @lc code=start
-# By for loop, time: O(m*n), space: O(1)
-# ­n¥X§ä¤@ºû°}¦C¤º¤¸¯À©M³Ì¤jªº, ¦³m­Ó¤@ºû°}¦C, ¨C­Ó¤@ºû°}¦Cn­Ó¤¸¯À
-class Solution:
-    def maximumWealth(self, accounts: List[List[int]]) -> int:
-        max = 0
-        # len(accounts)´Nµ¥¦P¤@ºû°}¦C¼Æ¶q
-        for i in range(len(accounts)):
-            tmp = 0
-            # len(accounts[i])´Nµ¥¦P²Äi­Ó¤@ºû°}¦C¤ºªº¤¸¯À¼Æ¶q
-            for j in range(len(accounts[i])):
-                tmp += accounts[i][j]
-            if tmp>max:
-                max = tmp
-        # µ{¦¡¥i¥H¥u¦³¤U­±³orow
-        #return max(map(sum, accounts))
-        return max
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

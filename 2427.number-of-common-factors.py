@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2427 lang=python3
 #
@@ -6,11 +5,11 @@
 #
 
 # @lc code=start
-# µ¹a, b¨â¼Æ, return a, bªº¤½¦]¼Æ¼Æ¶q
+# çµ¦a, bå…©æ•¸, return a, bçš„å…¬å› æ•¸æ•¸é‡
 
 # By simulation, time: O(min(a, b)), space: O(1)
-# Àu¤Æ1: ¤¶©óa, b¤§¶¡ªº¤£¥i¯à¬O¤½¦]¼Æ, ¦]¦¹¥u­n­¡¥N¦Ümin(a, b)¥H¤Uªº¼Æ
-# ±q1¨ìmin(a, b)´ú¸Õa©Mb¬O§_³£¾ã°£, ¤]´N¬O%0, ·í¦¨¥ß®Éres+1
+# å„ªåŒ–1: ä»‹æ–¼a, bä¹‹é–“çš„ä¸å¯èƒ½æ˜¯å…¬å› æ•¸, å› æ­¤åªè¦è¿­ä»£è‡³min(a, b)ä»¥ä¸‹çš„æ•¸
+# å¾1åˆ°min(a, b)æ¸¬è©¦aå’Œbæ˜¯å¦éƒ½æ•´é™¤, ä¹Ÿå°±æ˜¯%0, ç•¶æˆç«‹æ™‚res+1
 class Solution:
     def commonFactors(self, a: int, b: int) -> int:
         res = 0
@@ -25,31 +24,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2427 lang=python3
-#
-# [2427] Number of Common Factors
-#
-
-# @lc code=start
-# µ¹a, b¨â¼Æ, return a, bªº¤½¦]¼Æ¼Æ¶q
-
-# By simulation, time: O(min(a, b)), space: O(1)
-# Àu¤Æ1: ¤¶©óa, b¤§¶¡ªº¤£¥i¯à¬O¤½¦]¼Æ, ¦]¦¹¥u­n­¡¥N¦Ümin(a, b)¥H¤Uªº¼Æ
-# ±q1¨ìmin(a, b)´ú¸Õa©Mb¬O§_³£¾ã°£, ¤]´N¬O%0, ·í¦¨¥ß®Éres+1
-class Solution:
-    def commonFactors(self, a: int, b: int) -> int:
-        res = 0
-        if a>b:
-            tar = b
-        else:
-            tar = a
-        for i in range(1, tar+1):
-            if a%i==0 and b%i==0:
-                res += 1
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

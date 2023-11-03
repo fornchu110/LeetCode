@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1688 lang=python3
 #
@@ -7,16 +6,16 @@
 
 # @lc code=start
 # By simulation, time: O(log(n)), space: O(1)
-# ºâ¥X³Q²^¨Oªº¶¤¥î¼Æ, ·ÓµÛÃD¥Øµ¹ªº°µ°j°é
+# ç®—å‡ºè¢«æ·˜æ±°çš„éšŠä¼æ•¸, ç…§è‘—é¡Œç›®çµ¦çš„åšè¿´åœˆ
 class Solution:
     def numberOfMatches(self, n: int) -> int:
         res = 0
         while(n!=1):
-            # ¥În&1§PÂ_n¬O§_¬°©_¼Æ
+            # ç”¨n&1åˆ¤æ–·næ˜¯å¦ç‚ºå¥‡æ•¸
             if n&1:
-                # ¥Î>>1¥Nªí//2
+                # ç”¨>>1ä»£è¡¨//2
                 res += (n-1)>>1
-                # ª`·N>>¹BºâªºÀu¥ıÅv¤ñ+=*/§C©Ò¥H­n¬A¸¹
+                # æ³¨æ„>>é‹ç®—çš„å„ªå…ˆæ¬Šæ¯”+=*/ä½æ‰€ä»¥è¦æ‹¬è™Ÿ
                 n = n-((n-1)>>1)
             else:
                 res += n>>1
@@ -24,44 +23,10 @@ class Solution:
         return res
 
 # By math, time: O(1), space: O(1)
-# ¹ê»Ú¤W¥u·|¦³¤@¤HÀò³Ó, ©Ò¥Hn¤H°ÑÁÉ´N¦³n-1¤H³Q²^¨O
+# å¯¦éš›ä¸Šåªæœƒæœ‰ä¸€äººç²å‹, æ‰€ä»¥näººåƒè³½å°±æœ‰n-1äººè¢«æ·˜æ±°
 # class Solution:
 #     def numberOfMatches(self, n: int) -> int:
 #         return n-1
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1688 lang=python3
-#
-# [1688] Count of Matches in Tournament
-#
-
-# @lc code=start
-# By simulation, time: O(log(n)), space: O(1)
-# ºâ¥X³Q²^¨Oªº¶¤¥î¼Æ, ·ÓµÛÃD¥Øµ¹ªº°µ°j°é
-class Solution:
-    def numberOfMatches(self, n: int) -> int:
-        res = 0
-        while(n!=1):
-            # ¥În&1§PÂ_n¬O§_¬°©_¼Æ
-            if n&1:
-                # ¥Î>>1¥Nªí//2
-                res += (n-1)>>1
-                # ª`·N>>¹BºâªºÀu¥ıÅv¤ñ+=*/§C©Ò¥H­n¬A¸¹
-                n = n-((n-1)>>1)
-            else:
-                res += n>>1
-                n = n-(n>>1)
-        return res
-
-# By math, time: O(1), space: O(1)
-# ¹ê»Ú¤W¥u·|¦³¤@¤HÀò³Ó, ©Ò¥Hn¤H°ÑÁÉ´N¦³n-1¤H³Q²^¨O
-# class Solution:
-#     def numberOfMatches(self, n: int) -> int:
-#         return n-1
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

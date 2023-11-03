@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1614 lang=python3
 #
@@ -6,11 +5,11 @@
 #
 
 # @lc code=start
-# µ¹¦r¦ês, §ä¥X¬A¸¹ªº³Ì¤j¼h¼Æ, ÃD¥Ø«OÃÒ¬A¸¹¤@©w¦¨¹ï, ¤£·|¥X²{"(()"
+# çµ¦å­—ä¸²s, æ‰¾å‡ºæ‹¬è™Ÿçš„æœ€å¤§å±¤æ•¸, é¡Œç›®ä¿è­‰æ‹¬è™Ÿä¸€å®šæˆå°, ä¸æœƒå‡ºç¾"(()"
 
 # By stack, time: O(n), space: O(1)
-# ¨C¹J¨ì¤@­Ó'('¦h¤@¼h, ¹J¨ì¤@­Ó')'¤Ö¤@¼h
-# ©Ò¥H·í¹J¨ì'('¤ñ¸û»P¾ú¥v¼h¼Æ­ş­Ó¸û¦h, §ó¤jªº¬Oµª®×
+# æ¯é‡åˆ°ä¸€å€‹'('å¤šä¸€å±¤, é‡åˆ°ä¸€å€‹')'å°‘ä¸€å±¤
+# æ‰€ä»¥ç•¶é‡åˆ°'('æ¯”è¼ƒèˆ‡æ­·å²å±¤æ•¸å“ªå€‹è¼ƒå¤š, æ›´å¤§çš„æ˜¯ç­”æ¡ˆ
 class Solution:
     def maxDepth(self, s: str) -> int:
         res = 0
@@ -25,31 +24,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1614 lang=python3
-#
-# [1614] Maximum Nesting Depth of the Parentheses
-#
-
-# @lc code=start
-# µ¹¦r¦ês, §ä¥X¬A¸¹ªº³Ì¤j¼h¼Æ, ÃD¥Ø«OÃÒ¬A¸¹¤@©w¦¨¹ï, ¤£·|¥X²{"(()"
-
-# By stack, time: O(n), space: O(1)
-# ¨C¹J¨ì¤@­Ó'('¦h¤@¼h, ¹J¨ì¤@­Ó')'¤Ö¤@¼h
-# ©Ò¥H·í¹J¨ì'('¤ñ¸û»P¾ú¥v¼h¼Æ­ş­Ó¸û¦h, §ó¤jªº¬Oµª®×
-class Solution:
-    def maxDepth(self, s: str) -> int:
-        res = 0
-        cnt = 0
-        for i in s:
-            if i=='(':
-                cnt += 1
-                res = max(res, cnt)
-            elif i==')':
-                cnt -= 1
-        return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

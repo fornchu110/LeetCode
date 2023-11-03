@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1512 lang=python3
 #
@@ -8,92 +7,42 @@
 # @lc code=start
 
 # By hash table, time: O(n), space: O(1)
-# ¥ı¥Îhash±Nnums¤§¤¸¯Àªº¥X²{¦¸¼Æ°O¿ı¤U¨Ó
-# Æ[¹î¨ì°²¦p¥X²{3¦¸, ¦¹¤¸¯À¤§goodpair¼Æ¬°1+2 = 3 = (3*2)/2
-# ¥X²{4¦¸, goodpair: 1+2+3 = 6 = (4*3)/2, ¬Oµ¥®t¼Æ¦C
-# µ¥®t¼Æ¦C¤½¦¡: n*(n+1)/2
+# å…ˆç”¨hashå°‡numsä¹‹å…ƒç´ çš„å‡ºç¾æ¬¡æ•¸è¨˜éŒ„ä¸‹ä¾†
+# è§€å¯Ÿåˆ°å‡å¦‚å‡ºç¾3æ¬¡, æ­¤å…ƒç´ ä¹‹goodpairæ•¸ç‚º1+2 = 3 = (3*2)/2
+# å‡ºç¾4æ¬¡, goodpair: 1+2+3 = 6 = (4*3)/2, æ˜¯ç­‰å·®æ•¸åˆ—
+# ç­‰å·®æ•¸åˆ—å…¬å¼: n*(n+1)/2
 class Solution:
-    # ­t³dµ¥®t¼Æ¦C, ­pºâ¸Ó¤¸¯Àªºgoodpair¼Æ
+    # è² è²¬ç­‰å·®æ•¸åˆ—, è¨ˆç®—è©²å…ƒç´ çš„goodpairæ•¸
     def arithmeticSequence(self, n):
         return (n*(n-1))//2
 
     def numIdenticalPairs(self, nums: List[int]) -> int:
         res = 0
         hash = dict()
-        # ±N¤¸¯À¥X²{¦¸¼Æ°O¿ı¦bhash¤¤
+        # å°‡å…ƒç´ å‡ºç¾æ¬¡æ•¸è¨˜éŒ„åœ¨hashä¸­
         for i in nums:
             if i not in hash:
                 hash[i] = 1
             else:
                 hash[i] += 1
-        # ¨«³Xhash§Q¥Îµ¥®t¼Æ¦Cºâ¥Xgoodpair¦¸¼Æ
+        # èµ°è¨ªhashåˆ©ç”¨ç­‰å·®æ•¸åˆ—ç®—å‡ºgoodpairæ¬¡æ•¸
         for i in hash:
             res += self.arithmeticSequence(hash[i])
         return res
 
 # By for loop, time: O(n^2), space: O(1)
-# ¼É¤O°j°é¸Ñ, ¹ï¨C­Ó¤¸¯À³£©¹«á§ä¹M°}¦C¬İgoodpair¦¸¼Æ
+# æš´åŠ›è¿´åœˆè§£, å°æ¯å€‹å…ƒç´ éƒ½å¾€å¾Œæ‰¾éé™£åˆ—çœ‹goodpairæ¬¡æ•¸
 # class Solution:
 #     def numIdenticalPairs(self, nums: List[int]) -> int:
 #         res = 0
-#         # ¦]¬°³£¥u·|©¹«á§ä, ©Ò¥H¥Îrange
+#         # å› ç‚ºéƒ½åªæœƒå¾€å¾Œæ‰¾, æ‰€ä»¥ç”¨range
 #         for i in range(len(nums)):
 #             for j in range(i+1, len(nums)):
-#                 # ª`·N¥Îrange«ái©Mj¥u¬Oindex¤£¬Onums¤§¤¸¯À
-#                 # ¥Înums[i]©Mnums[j]¨Ó½T»{¤¸¯À¬O§_¬Ûµ¥
+#                 # æ³¨æ„ç”¨rangeå¾Œiå’Œjåªæ˜¯indexä¸æ˜¯numsä¹‹å…ƒç´ 
+#                 # ç”¨nums[i]å’Œnums[j]ä¾†ç¢ºèªå…ƒç´ æ˜¯å¦ç›¸ç­‰
 #                 if nums[i]==nums[j]:
 #                     res += 1
 #         return res
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1512 lang=python3
-#
-# [1512] Number of Good Pairs
-#
-
-# @lc code=start
-
-# By hash table, time: O(n), space: O(1)
-# ¥ı¥Îhash±Nnums¤§¤¸¯Àªº¥X²{¦¸¼Æ°O¿ı¤U¨Ó
-# Æ[¹î¨ì°²¦p¥X²{3¦¸, ¦¹¤¸¯À¤§goodpair¼Æ¬°1+2 = 3 = (3*2)/2
-# ¥X²{4¦¸, goodpair: 1+2+3 = 6 = (4*3)/2, ¬Oµ¥®t¼Æ¦C
-# µ¥®t¼Æ¦C¤½¦¡: n*(n+1)/2
-class Solution:
-    # ­t³dµ¥®t¼Æ¦C, ­pºâ¸Ó¤¸¯Àªºgoodpair¼Æ
-    def arithmeticSequence(self, n):
-        return (n*(n-1))//2
-
-    def numIdenticalPairs(self, nums: List[int]) -> int:
-        res = 0
-        hash = dict()
-        # ±N¤¸¯À¥X²{¦¸¼Æ°O¿ı¦bhash¤¤
-        for i in nums:
-            if i not in hash:
-                hash[i] = 1
-            else:
-                hash[i] += 1
-        # ¨«³Xhash§Q¥Îµ¥®t¼Æ¦Cºâ¥Xgoodpair¦¸¼Æ
-        for i in hash:
-            res += self.arithmeticSequence(hash[i])
-        return res
-
-# By for loop, time: O(n^2), space: O(1)
-# ¼É¤O°j°é¸Ñ, ¹ï¨C­Ó¤¸¯À³£©¹«á§ä¹M°}¦C¬İgoodpair¦¸¼Æ
-# class Solution:
-#     def numIdenticalPairs(self, nums: List[int]) -> int:
-#         res = 0
-#         # ¦]¬°³£¥u·|©¹«á§ä, ©Ò¥H¥Îrange
-#         for i in range(len(nums)):
-#             for j in range(i+1, len(nums)):
-#                 # ª`·N¥Îrange«ái©Mj¥u¬Oindex¤£¬Onums¤§¤¸¯À
-#                 # ¥Înums[i]©Mnums[j]¨Ó½T»{¤¸¯À¬O§_¬Ûµ¥
-#                 if nums[i]==nums[j]:
-#                     res += 1
-#         return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

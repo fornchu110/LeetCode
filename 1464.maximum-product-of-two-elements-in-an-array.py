@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1464 lang=python3
 #
@@ -6,10 +5,10 @@
 #
 
 # @lc code=start
-# ­n¨D§ä¥Xnums¤º³Ì¤j¨â¼Æ-1«á¬Û­¼ªº¿n
+# è¦æ±‚æ‰¾å‡ºnumså…§æœ€å¤§å…©æ•¸-1å¾Œç›¸ä¹˜çš„ç©
 
 # By for and if-elif, time: O(n), space: O(1)
-# §Q¥Îif©Melif¦P®É¥u·|¦¨¥ß¤@­Óªº¤è¦¡°µ¬ÛÀ³
+# åˆ©ç”¨ifå’ŒelifåŒæ™‚åªæœƒæˆç«‹ä¸€å€‹çš„æ–¹å¼åšç›¸æ‡‰
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
         a = 0
@@ -24,30 +23,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1464 lang=python3
-#
-# [1464] Maximum Product of Two Elements in an Array
-#
-
-# @lc code=start
-# ­n¨D§ä¥Xnums¤º³Ì¤j¨â¼Æ-1«á¬Û­¼ªº¿n
-
-# By for and if-elif, time: O(n), space: O(1)
-# §Q¥Îif©Melif¦P®É¥u·|¦¨¥ß¤@­Óªº¤è¦¡°µ¬ÛÀ³
-class Solution:
-    def maxProduct(self, nums: List[int]) -> int:
-        a = 0
-        b = 0
-        for i in nums:
-            if i>=a:
-                b = a
-                a = i
-            elif i>=b:
-                b = i
-        return (a-1)*(b-1)
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

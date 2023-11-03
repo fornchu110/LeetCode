@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2405 lang=python3
 #
@@ -6,108 +5,51 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ó¦r¦ês, ­n¨D±N¨ä·Ó¶¶§Ç¤À³Î¬°¤£¦P¤l¦r¦ê, ¤l¦r¦ê¤º¤£¯à¦³­«½Æªº¦r²Å
+# çµ¦ä¸€å€‹å­—ä¸²s, è¦æ±‚å°‡å…¶ç…§é †åºåˆ†å‰²ç‚ºä¸åŒå­å­—ä¸², å­å­—ä¸²å…§ä¸èƒ½æœ‰é‡è¤‡çš„å­—ç¬¦
 
 # By hash, time: O(n), space: O(n)
-# «Ø¥ßhash, ·í¦¹¦¸¤l¦r¦ê¹J¨ì¤£¦s¦bªº¦r¥À´N°O¿ı¨ÃÄ~Äò, ¹J¨ì¤w¦s¦bªº´N¥Nªíµ²§ô¤W¤@­Ó, «Ø¥ß·sªºhash
-# ¤]¥i¥H¥Îset»s§@hash, set.clear(), set.add()¥i¥H¥[¤J
+# å»ºç«‹hash, ç•¶æ­¤æ¬¡å­å­—ä¸²é‡åˆ°ä¸å­˜åœ¨çš„å­—æ¯å°±è¨˜éŒ„ä¸¦ç¹¼çºŒ, é‡åˆ°å·²å­˜åœ¨çš„å°±ä»£è¡¨çµæŸä¸Šä¸€å€‹, å»ºç«‹æ–°çš„hash
+# ä¹Ÿå¯ä»¥ç”¨setè£½ä½œhash, set.clear(), set.add()å¯ä»¥åŠ å…¥
 class Solution:
     def partitionString(self, s: str) -> int:
         hash = {}
-        # Àq»{¬°¦ó¬O1?¦]µ¹sªø«×¦Ü¤Ö¬O1, ¥Nªí¦Ü¤Ö·|¦³¤@­Ó¦r¤¸¦r¦ê
+        # é»˜èªç‚ºä½•æ˜¯1?å› çµ¦sé•·åº¦è‡³å°‘æ˜¯1, ä»£è¡¨è‡³å°‘æœƒæœ‰ä¸€å€‹å­—å…ƒå­—ä¸²
         res = 1
         for i in s:
-            # ¹J¨ì­«½Æªº´N¥Nªí­n«Ø¤@­Ó·sªº¤l¦r¦ê, ¨Ã¥B²M½Ä
+            # é‡åˆ°é‡è¤‡çš„å°±ä»£è¡¨è¦å»ºä¸€å€‹æ–°çš„å­å­—ä¸², ä¸¦ä¸”æ¸…è¡
             if i in hash:
                 res += 1
                 hash = {}
-            # µL½×¬O§_­«½Æ, ³£­n±Ni°O¿ı¶ihash
-            # ¨S­«½Æ®É°O¿ı¤U¨Ó¤~¯àÀË¬d
-            # ­«½Æ®É¦]¸I¨ì¦¹®É²MªÅ¤Fhash, ¤´­n±N³o¦¸¸I¨ìªº¦r¤¸°O¿ı¶ihashÁ×§K¿ò¥¢
+            # ç„¡è«–æ˜¯å¦é‡è¤‡, éƒ½è¦å°‡iè¨˜éŒ„é€²hash
+            # æ²’é‡è¤‡æ™‚è¨˜éŒ„ä¸‹ä¾†æ‰èƒ½æª¢æŸ¥
+            # é‡è¤‡æ™‚å› ç¢°åˆ°æ­¤æ™‚æ¸…ç©ºäº†hash, ä»è¦å°‡é€™æ¬¡ç¢°åˆ°çš„å­—å…ƒè¨˜éŒ„é€²hashé¿å…éºå¤±
             hash[i] = 1
         return res
 
 # By bitwise, time: O(n), space: O(1)
-# §Q¥Î32­Óbit°O¿ıÀË¬d26­Ó¦r¥À¬O§_¦s¦b
-# a©ñ¦b²Ä0­Ó¦ì¤¸, z©ñ¦b²Ä25­Ó¦ì¤¸¥H¦¹Ãş±À, ¥Î¥ª²¾1°µ°O¿ı©MÀË¬d
-# ¤£ª¾¬°¦ó®É¶¡ªÅ¶¡³£¤ñhash®t
+# åˆ©ç”¨32å€‹bitè¨˜éŒ„æª¢æŸ¥26å€‹å­—æ¯æ˜¯å¦å­˜åœ¨
+# aæ”¾åœ¨ç¬¬0å€‹ä½å…ƒ, zæ”¾åœ¨ç¬¬25å€‹ä½å…ƒä»¥æ­¤é¡æ¨, ç”¨å·¦ç§»1åšè¨˜éŒ„å’Œæª¢æŸ¥
+# ä¸çŸ¥ç‚ºä½•æ™‚é–“ç©ºé–“éƒ½æ¯”hashå·®
 # class Solution:
 #     def partitionString(self, s: str) -> int:
 #         res = 1
 #         tmp = 0
 #         for i in s:
-#             # ©M'a'ªºASCII code¤ñ¸û¬Û¹ï¦ì¸m
+#             # å’Œ'a'çš„ASCII codeæ¯”è¼ƒç›¸å°ä½ç½®
 #             index = ord(i)-ord('a')
-#             # mask´N¬O³o¦¸ªº¦r¤¸¹ïÀ³ªº¦ì¸m
+#             # maskå°±æ˜¯é€™æ¬¡çš„å­—å…ƒå°æ‡‰çš„ä½ç½®
 #             mask = 1<<index
-#             # ¥X²{­«½Æ¦r¥À, ¨ºres+1¨Ã¥B±Ntmp = maskµ¥¦P°O¿ı¤F³o¦¸ªº¦r¥À
+#             # å‡ºç¾é‡è¤‡å­—æ¯, é‚£res+1ä¸¦ä¸”å°‡tmp = maskç­‰åŒè¨˜éŒ„äº†é€™æ¬¡çš„å­—æ¯
 #             if tmp&mask:
 #                 res += 1
 #                 tmp = mask
 #             else:
-#                 # ¥X²{¤£­«½Æ¦r¥À, ¨º´N³æ¯Â§âmask°O¿ı¤W¥h¬°1
+#                 # å‡ºç¾ä¸é‡è¤‡å­—æ¯, é‚£å°±å–®ç´”æŠŠmaskè¨˜éŒ„ä¸Šå»ç‚º1
 #                 tmp |= mask
-#             # ¨ä¹êª½±µ¦b¥~­±³oÃä¼gtmp |= mask, if©Melse¤ºªºtmp®³±¼À³¸Ó¤]¦æ
+#             # å…¶å¯¦ç›´æ¥åœ¨å¤–é¢é€™é‚Šå¯«tmp |= mask, ifå’Œelseå…§çš„tmpæ‹¿æ‰æ‡‰è©²ä¹Ÿè¡Œ
 #         return res
 
 
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2405 lang=python3
-#
-# [2405] Optimal Partition of String
-#
-
-# @lc code=start
-# µ¹¤@­Ó¦r¦ês, ­n¨D±N¨ä·Ó¶¶§Ç¤À³Î¬°¤£¦P¤l¦r¦ê, ¤l¦r¦ê¤º¤£¯à¦³­«½Æªº¦r²Å
-
-# By hash, time: O(n), space: O(n)
-# «Ø¥ßhash, ·í¦¹¦¸¤l¦r¦ê¹J¨ì¤£¦s¦bªº¦r¥À´N°O¿ı¨ÃÄ~Äò, ¹J¨ì¤w¦s¦bªº´N¥Nªíµ²§ô¤W¤@­Ó, «Ø¥ß·sªºhash
-# ¤]¥i¥H¥Îset»s§@hash, set.clear(), set.add()¥i¥H¥[¤J
-class Solution:
-    def partitionString(self, s: str) -> int:
-        hash = {}
-        # Àq»{¬°¦ó¬O1?¦]µ¹sªø«×¦Ü¤Ö¬O1, ¥Nªí¦Ü¤Ö·|¦³¤@­Ó¦r¤¸¦r¦ê
-        res = 1
-        for i in s:
-            # ¹J¨ì­«½Æªº´N¥Nªí­n«Ø¤@­Ó·sªº¤l¦r¦ê, ¨Ã¥B²M½Ä
-            if i in hash:
-                res += 1
-                hash = {}
-            # µL½×¬O§_­«½Æ, ³£­n±Ni°O¿ı¶ihash
-            # ¨S­«½Æ®É°O¿ı¤U¨Ó¤~¯àÀË¬d
-            # ­«½Æ®É¦]¸I¨ì¦¹®É²MªÅ¤Fhash, ¤´­n±N³o¦¸¸I¨ìªº¦r¤¸°O¿ı¶ihashÁ×§K¿ò¥¢
-            hash[i] = 1
-        return res
-
-# By bitwise, time: O(n), space: O(1)
-# §Q¥Î32­Óbit°O¿ıÀË¬d26­Ó¦r¥À¬O§_¦s¦b
-# a©ñ¦b²Ä0­Ó¦ì¤¸, z©ñ¦b²Ä25­Ó¦ì¤¸¥H¦¹Ãş±À, ¥Î¥ª²¾1°µ°O¿ı©MÀË¬d
-# ¤£ª¾¬°¦ó®É¶¡ªÅ¶¡³£¤ñhash®t
-# class Solution:
-#     def partitionString(self, s: str) -> int:
-#         res = 1
-#         tmp = 0
-#         for i in s:
-#             # ©M'a'ªºASCII code¤ñ¸û¬Û¹ï¦ì¸m
-#             index = ord(i)-ord('a')
-#             # mask´N¬O³o¦¸ªº¦r¤¸¹ïÀ³ªº¦ì¸m
-#             mask = 1<<index
-#             # ¥X²{­«½Æ¦r¥À, ¨ºres+1¨Ã¥B±Ntmp = maskµ¥¦P°O¿ı¤F³o¦¸ªº¦r¥À
-#             if tmp&mask:
-#                 res += 1
-#                 tmp = mask
-#             else:
-#                 # ¥X²{¤£­«½Æ¦r¥À, ¨º´N³æ¯Â§âmask°O¿ı¤W¥h¬°1
-#                 tmp |= mask
-#             # ¨ä¹êª½±µ¦b¥~­±³oÃä¼gtmp |= mask, if©Melse¤ºªºtmp®³±¼À³¸Ó¤]¦æ
-#         return res
-
-
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

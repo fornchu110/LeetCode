@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2390 lang=python3
 #
@@ -6,56 +5,23 @@
 #
 
 # @lc code=start
-# µ¹¤@¦r¦ês, ·í¨«³X¦r¦ê®É¹J¨ì'*'­n±N¥ª¤è¤@­Ó¦r¤¸®ø¥h, return³B²z§¹ªº¦r¦ê
+# çµ¦ä¸€å­—ä¸²s, ç•¶èµ°è¨ªå­—ä¸²æ™‚é‡åˆ°'*'è¦å°‡å·¦æ–¹ä¸€å€‹å­—å…ƒæ¶ˆå», returnè™•ç†å®Œçš„å­—ä¸²
 
 # By stack, time: O(n), space: O(n)
-
-
 class Solution:
     def removeStars(self, s: str) -> str:
-        # §Q¥Îlist¼ÒÀÀstack     
+        # åˆ©ç”¨listæ¨¡æ“¬stack     
         res = []
-        # ¨Ì§Ç±N¦r¤¸push¶i
+        # ä¾åºå°‡å­—å…ƒpushé€²
         for i in s:
             if ord('a')<=ord(i)<=ord('z'):
                 res.append(i)
-            # ¹J¨ì'*'´N±N§Àºİªº¦r¤¸pop¥X¨Ó
+            # é‡åˆ°'*'å°±å°‡å°¾ç«¯çš„å­—å…ƒpopå‡ºä¾†
             elif i=='*':
                 res.pop()
-        # ³Ì«á¥Î"".join(res)Âà´«¦^¦r¦ê
+        # æœ€å¾Œç”¨"".join(res)è½‰æ›å›å­—ä¸²
         res = "".join(res)
         return res
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2390 lang=python3
-#
-# [2390] Removing Stars From a String
-#
-
-# @lc code=start
-# µ¹¤@¦r¦ês, ·í¨«³X¦r¦ê®É¹J¨ì'*'­n±N¥ª¤è¤@­Ó¦r¤¸®ø¥h, return³B²z§¹ªº¦r¦ê
-
-# By stack, time: O(n), space: O(n)
-
-
-class Solution:
-    def removeStars(self, s: str) -> str:
-        # §Q¥Îlist¼ÒÀÀstack     
-        res = []
-        # ¨Ì§Ç±N¦r¤¸push¶i
-        for i in s:
-            if ord('a')<=ord(i)<=ord('z'):
-                res.append(i)
-            # ¹J¨ì'*'´N±N§Àºİªº¦r¤¸pop¥X¨Ó
-            elif i=='*':
-                res.pop()
-        # ³Ì«á¥Î"".join(res)Âà´«¦^¦r¦ê
-        res = "".join(res)
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

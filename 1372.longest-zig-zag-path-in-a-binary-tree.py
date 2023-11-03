@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1372 lang=python3
 #
@@ -6,7 +5,7 @@
 #
 
 # @lc code=start
-# µ¹¤@binary tree, return¦¹tree¤¤³Ìªøªº¥æ¿ùpath
+# çµ¦ä¸€binary tree, returnæ­¤treeä¸­æœ€é•·çš„äº¤éŒ¯path
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -16,86 +15,35 @@
 #         self.right = right
 
 # By DFS, time: O(n), space: O(1)
-# §Q¥ÎDFS»¼°j, ±q©³³¡¤£Â_§ó·sµª®×¦Üroot
-# ³oÃDÁÙ¥i¥H¥ÎDP
+# åˆ©ç”¨DFSéè¿´, å¾åº•éƒ¨ä¸æ–·æ›´æ–°ç­”æ¡ˆè‡³root
+# é€™é¡Œé‚„å¯ä»¥ç”¨DP
 class Solution:
     def longestZigZag(self, root: TreeNode) -> int:
-        # p_left¥NªíµÛ­è­èparent¸`ÂI«ç»ò¨«¤U¨Ó, True¥Nªí¬O©¹¥ª¨«¤U¨Ó, False¥Nªí¬O©¹¥k¨«¤U¨Ó
+        # p_leftä»£è¡¨è‘—å‰›å‰›parentç¯€é»æ€éº¼èµ°ä¸‹ä¾†, Trueä»£è¡¨æ˜¯å¾€å·¦èµ°ä¸‹ä¾†, Falseä»£è¡¨æ˜¯å¾€å³èµ°ä¸‹ä¾†
         def dfs(root: TreeNode, p_left: bool, long: int):
             nonlocal res
-            # ²×¤î±ø¥ó
+            # çµ‚æ­¢æ¢ä»¶
             if not root:
-                # «Dnode¤£·|¼W¥[path²`«×, ª½±µreturn§Y¥i
+                # énodeä¸æœƒå¢åŠ pathæ·±åº¦, ç›´æ¥returnå³å¯
                 return
             res = max(res, long)
-            # ¥Nªí³o¦¸¤w¸g¨«¹L©¹¥ª, ·|¨â¤è¦V³£¨«³X
+            # ä»£è¡¨é€™æ¬¡å·²ç¶“èµ°éå¾€å·¦, æœƒå…©æ–¹å‘éƒ½èµ°è¨ª
             if p_left:
-                # ¦pªG¨«¹L©¹¥ª¤S¦A©¹¥ª, ¥Nªípath­«¸m, ¦]¬°¨S¥æ¿ù
+                # å¦‚æœèµ°éå¾€å·¦åˆå†å¾€å·¦, ä»£è¡¨pathé‡ç½®, å› ç‚ºæ²’äº¤éŒ¯
                 dfs(root.left, True, 1)
-                # ¨«¹L©¹¥ª³o¦¸¿ï¾Ü©¹¥k, ¨ºpathªø«×¦¨¥\+1
+                # èµ°éå¾€å·¦é€™æ¬¡é¸æ“‡å¾€å³, é‚£pathé•·åº¦æˆåŠŸ+1
                 dfs(root.right, False, long+1)
-            # ¥Nªí³o¦¸¤w¸g¨«¹L©¹¥k, ¤@¼Ë·|¨â¤è¦V³£¨«³X
+            # ä»£è¡¨é€™æ¬¡å·²ç¶“èµ°éå¾€å³, ä¸€æ¨£æœƒå…©æ–¹å‘éƒ½èµ°è¨ª
             else:
-                # ¨«¹L©¹¥k³o¦¸¿ï¾Ü©¹¥ª, ¨ºpathªø«×¦¨¥\+1
+                # èµ°éå¾€å³é€™æ¬¡é¸æ“‡å¾€å·¦, é‚£pathé•·åº¦æˆåŠŸ+1
                 dfs(root.left, True, long+1)
-                # ¨«¹L©¹¥k¿ï¾Ü©¹¥k, ¥Nªípath­«¸m
+                # èµ°éå¾€å³é¸æ“‡å¾€å³, ä»£è¡¨pathé‡ç½®
                 dfs(root.right, False, 1)
         res = 0
-        # ±qroot¶}©l, °²³]¤@¶}©l¨M©w­n¥ı©¹¥ª
-        # ¬°¦ó¤£¥Î©¹¥k?¨ä¹ê¦bdfs¤º¦Ò¼{¤F, ²¦³º±qµL¨ìroot¹ê»Ú¤W¨S¤è¦V, ¦Ó¥Brecursive¨â­Ó¤è¦V³£·|¨«³X
+        # å¾rooté–‹å§‹, å‡è¨­ä¸€é–‹å§‹æ±ºå®šè¦å…ˆå¾€å·¦
+        # ç‚ºä½•ä¸ç”¨å¾€å³?å…¶å¯¦åœ¨dfså…§è€ƒæ…®äº†, ç•¢ç«Ÿå¾ç„¡åˆ°rootå¯¦éš›ä¸Šæ²’æ–¹å‘, è€Œä¸”recursiveå…©å€‹æ–¹å‘éƒ½æœƒèµ°è¨ª
         dfs(root, True, 0)
         return res
     
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1372 lang=python3
-#
-# [1372] Longest ZigZag Path in a Binary Tree
-#
-
-# @lc code=start
-# µ¹¤@binary tree, return¦¹tree¤¤³Ìªøªº¥æ¿ùpath
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By DFS, time: O(n), space: O(1)
-# §Q¥ÎDFS»¼°j, ±q©³³¡¤£Â_§ó·sµª®×¦Üroot
-# ³oÃDÁÙ¥i¥H¥ÎDP
-class Solution:
-    def longestZigZag(self, root: TreeNode) -> int:
-        # p_left¥NªíµÛ­è­èparent¸`ÂI«ç»ò¨«¤U¨Ó, True¥Nªí¬O©¹¥ª¨«¤U¨Ó, False¥Nªí¬O©¹¥k¨«¤U¨Ó
-        def dfs(root: TreeNode, p_left: bool, long: int):
-            nonlocal res
-            # ²×¤î±ø¥ó
-            if not root:
-                # «Dnode¤£·|¼W¥[path²`«×, ª½±µreturn§Y¥i
-                return
-            res = max(res, long)
-            # ¥Nªí³o¦¸¤w¸g¨«¹L©¹¥ª, ·|¨â¤è¦V³£¨«³X
-            if p_left:
-                # ¦pªG¨«¹L©¹¥ª¤S¦A©¹¥ª, ¥Nªípath­«¸m, ¦]¬°¨S¥æ¿ù
-                dfs(root.left, True, 1)
-                # ¨«¹L©¹¥ª³o¦¸¿ï¾Ü©¹¥k, ¨ºpathªø«×¦¨¥\+1
-                dfs(root.right, False, long+1)
-            # ¥Nªí³o¦¸¤w¸g¨«¹L©¹¥k, ¤@¼Ë·|¨â¤è¦V³£¨«³X
-            else:
-                # ¨«¹L©¹¥k³o¦¸¿ï¾Ü©¹¥ª, ¨ºpathªø«×¦¨¥\+1
-                dfs(root.left, True, long+1)
-                # ¨«¹L©¹¥k¿ï¾Ü©¹¥k, ¥Nªípath­«¸m
-                dfs(root.right, False, 1)
-        res = 0
-        # ±qroot¶}©l, °²³]¤@¶}©l¨M©w­n¥ı©¹¥ª
-        # ¬°¦ó¤£¥Î©¹¥k?¨ä¹ê¦bdfs¤º¦Ò¼{¤F, ²¦³º±qµL¨ìroot¹ê»Ú¤W¨S¤è¦V, ¦Ó¥Brecursive¨â­Ó¤è¦V³£·|¨«³X
-        dfs(root, True, 0)
-        return res
-    
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

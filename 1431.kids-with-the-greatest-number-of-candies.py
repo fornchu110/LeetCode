@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1431 lang=python3
 #
@@ -6,18 +5,18 @@
 #
 
 # @lc code=start
-# By for loop, time: O(n), space: O(1), ¦]return¤º®e¤£ºâ¦bªÅ¶¡½ÆÂø«×
-# ­n¬İcandis¤ºªº¤¸¯À+¤Wextra cadies¯à¤£¯à¦¨¬°candies¤¤ªº³Ì¤j­È
+# By for loop, time: O(n), space: O(1), å› returnå…§å®¹ä¸ç®—åœ¨ç©ºé–“è¤‡é›œåº¦
+# è¦çœ‹candiså…§çš„å…ƒç´ +ä¸Šextra cadiesèƒ½ä¸èƒ½æˆç‚ºcandiesä¸­çš„æœ€å¤§å€¼
 class Solution:
     def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
         res = list()
         max = 0
-        # ¥i¥H¥Î¥H¤U¹F¦¨
+        # å¯ä»¥ç”¨ä»¥ä¸‹é”æˆ
         # max = max(candies)
         for i in candies:
             if i>max:
                 max = i
-        # ¥i¥H¥Î¥H¤U¹F¦¨
+        # å¯ä»¥ç”¨ä»¥ä¸‹é”æˆ
         # res = [candy + extraCandies >= max for candy in candies]
         for i in candies:
             if i+extraCandies>=max:
@@ -28,34 +27,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1431 lang=python3
-#
-# [1431] Kids With the Greatest Number of Candies
-#
-
-# @lc code=start
-# By for loop, time: O(n), space: O(1), ¦]return¤º®e¤£ºâ¦bªÅ¶¡½ÆÂø«×
-# ­n¬İcandis¤ºªº¤¸¯À+¤Wextra cadies¯à¤£¯à¦¨¬°candies¤¤ªº³Ì¤j­È
-class Solution:
-    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
-        res = list()
-        max = 0
-        # ¥i¥H¥Î¥H¤U¹F¦¨
-        # max = max(candies)
-        for i in candies:
-            if i>max:
-                max = i
-        # ¥i¥H¥Î¥H¤U¹F¦¨
-        # res = [candy + extraCandies >= max for candy in candies]
-        for i in candies:
-            if i+extraCandies>=max:
-                res.append(True)
-            else:
-                res.append(False)
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

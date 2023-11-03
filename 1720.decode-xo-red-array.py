@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1720 lang=python3
 #
@@ -7,13 +6,13 @@
 
 # @lc code=start
 # By XOR(^), time: O(n), space: O(1)
-# µ¹©w¥[±K¹Lªºlist, list¤º¨C­Ó¤¸¯À³£¬O­ì¥»arr¤º¬Û¾F¨â­Ç¤¬¬Ûxor¦Ó¦¨
-# ·|¥ıµ¹§Aarr²Ä¤@­Ó¤¸¯À, ­n¨D¥Xarrºû©M
-# §Q¥Î¤FXORªº©Ê½è1. x^0 = x, 2. x^x = 0¥H¤Î¥æ´«©Ê©Mµ²¦X©Ê
-# ¥i¥H¬İ¥Xx^y = zªº¸Ü, x^z = y¥Bz^y = x, ©Ò¥H¨Ì§Ç°µXOR§Y¥i±o¥Xµª®×
+# çµ¦å®šåŠ å¯†éçš„list, listå…§æ¯å€‹å…ƒç´ éƒ½æ˜¯åŸæœ¬arrå…§ç›¸é„°å…©å€†äº’ç›¸xorè€Œæˆ
+# æœƒå…ˆçµ¦ä½ arrç¬¬ä¸€å€‹å…ƒç´ , è¦æ±‚å‡ºarrç¶­å’Œ
+# åˆ©ç”¨äº†XORçš„æ€§è³ª1. x^0 = x, 2. x^x = 0ä»¥åŠäº¤æ›æ€§å’Œçµåˆæ€§
+# å¯ä»¥çœ‹å‡ºx^y = zçš„è©±, x^z = yä¸”z^y = x, æ‰€ä»¥ä¾åºåšXORå³å¯å¾—å‡ºç­”æ¡ˆ
 class Solution:
     def decode(self, encoded: List[int], first: int) -> List[int]:
-        # ¤@¶}©l±Nfirst©ñ¤J´N¤£¥Îappend¤F
+        # ä¸€é–‹å§‹å°‡firstæ”¾å…¥å°±ä¸ç”¨appendäº†
         res = [first]
         tmp = first
         for i in encoded:
@@ -23,29 +22,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1720 lang=python3
-#
-# [1720] Decode XORed Array
-#
-
-# @lc code=start
-# By XOR(^), time: O(n), space: O(1)
-# µ¹©w¥[±K¹Lªºlist, list¤º¨C­Ó¤¸¯À³£¬O­ì¥»arr¤º¬Û¾F¨â­Ç¤¬¬Ûxor¦Ó¦¨
-# ·|¥ıµ¹§Aarr²Ä¤@­Ó¤¸¯À, ­n¨D¥Xarrºû©M
-# §Q¥Î¤FXORªº©Ê½è1. x^0 = x, 2. x^x = 0¥H¤Î¥æ´«©Ê©Mµ²¦X©Ê
-# ¥i¥H¬İ¥Xx^y = zªº¸Ü, x^z = y¥Bz^y = x, ©Ò¥H¨Ì§Ç°µXOR§Y¥i±o¥Xµª®×
-class Solution:
-    def decode(self, encoded: List[int], first: int) -> List[int]:
-        # ¤@¶}©l±Nfirst©ñ¤J´N¤£¥Îappend¤F
-        res = [first]
-        tmp = first
-        for i in encoded:
-            tmp ^= i
-            res.append(tmp)
-        return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

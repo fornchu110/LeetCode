@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1684 lang=python3
 #
@@ -6,8 +5,8 @@
 #
 
 # @lc code=start
-# By hash: time: O(n), space: O(k), n = len(words), space k³Ì¦h¥u·|¦³26­Ó­^¤å 
-# §PÂ_µ¹©w¦r¦ê¤¤¦³´X­Ó¥u¥Ñallowed¤º®eªº¦r²Åºc¦¨
+# By hash: time: O(n), space: O(k), n = len(words), space kæœ€å¤šåªæœƒæœ‰26å€‹è‹±æ–‡ 
+# åˆ¤æ–·çµ¦å®šå­—ä¸²ä¸­æœ‰å¹¾å€‹åªç”±allowedå…§å®¹çš„å­—ç¬¦æ§‹æˆ
 class Solution:
     def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
         hash = dict()
@@ -16,48 +15,16 @@ class Solution:
             if i not in hash:
                 hash[i] = 1
         for i in words:
-            # ¥Îflag§PÂ_¬O§_¥ş¬°allowed¤º¦r²Å²Õ¦¨
+            # ç”¨flagåˆ¤æ–·æ˜¯å¦å…¨ç‚ºallowedå…§å­—ç¬¦çµ„æˆ
             flag = 1
             for j in i:
                 if j not in hash:
                     flag = 0
                     break
-            # flag = 1¥Nªí¥ş¬°allowed²Õ¦¨, §_«hflag·|¬O0
+            # flag = 1ä»£è¡¨å…¨ç‚ºallowedçµ„æˆ, å¦å‰‡flagæœƒæ˜¯0
             if flag:
                 res += 1
         return res
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1684 lang=python3
-#
-# [1684] Count the Number of Consistent Strings
-#
-
-# @lc code=start
-# By hash: time: O(n), space: O(k), n = len(words), space k³Ì¦h¥u·|¦³26­Ó­^¤å 
-# §PÂ_µ¹©w¦r¦ê¤¤¦³´X­Ó¥u¥Ñallowed¤º®eªº¦r²Åºc¦¨
-class Solution:
-    def countConsistentStrings(self, allowed: str, words: List[str]) -> int:
-        hash = dict()
-        res = 0
-        for i in allowed:
-            if i not in hash:
-                hash[i] = 1
-        for i in words:
-            # ¥Îflag§PÂ_¬O§_¥ş¬°allowed¤º¦r²Å²Õ¦¨
-            flag = 1
-            for j in i:
-                if j not in hash:
-                    flag = 0
-                    break
-            # flag = 1¥Nªí¥ş¬°allowed²Õ¦¨, §_«hflag·|¬O0
-            if flag:
-                res += 1
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

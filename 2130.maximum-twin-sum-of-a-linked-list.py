@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2130 lang=python3
 #
@@ -12,23 +11,23 @@
 #         self.val = val
 #         self.next = next
 
-# µ¹¤@­Ólink list,[0, n]¤@¹ï, [1, n-1]¤@¹ï...¥H¦¹Ãş±À
-# return¤@¹ïnode.val¬Û¥[³Ì¤j­È
+# çµ¦ä¸€å€‹link list,[0, n]ä¸€å°, [1, n-1]ä¸€å°...ä»¥æ­¤é¡æ¨
+# returnä¸€å°node.valç›¸åŠ æœ€å¤§å€¼
 
 # By list simulation, time: O(n), space: O(n)
-# ¨«³Xlink list±Nvalue©Mindex«Ø¦¨¤@­Ólist
-# ¹ê»Ú¤W§Q¥Îlist¤ñ¾Ş§@link list§ó¬Ù®É¶¡, ¤£¥Î°µ¤ÏÂàµ¥µ¥¾Ş§@
+# èµ°è¨ªlink listå°‡valueå’Œindexå»ºæˆä¸€å€‹list
+# å¯¦éš›ä¸Šåˆ©ç”¨listæ¯”æ“ä½œlink listæ›´çœæ™‚é–“, ä¸ç”¨åšåè½‰ç­‰ç­‰æ“ä½œ
 class Solution:
     def pairSum(self, head: Optional[ListNode]) -> int:
         simulation = []
         cur = head
-        # ±Nlink listªºval¨Ì§Çappend¨ìlist¤¤
+        # å°‡link listçš„valä¾åºappendåˆ°listä¸­
         while cur:
             simulation.append(cur.val)
             cur = cur.next
-        # ±q²Ä¤@­Óindex©M³Ì«á¤@­Óindex¶}©l°µ
+        # å¾ç¬¬ä¸€å€‹indexå’Œæœ€å¾Œä¸€å€‹indexé–‹å§‹åš
         i, j = 0, len(simulation)-1
-        # ªì©l¤Æ³Ì¤j­È
+        # åˆå§‹åŒ–æœ€å¤§å€¼
         res = 0
         while i<j:
             if simulation[i]+simulation[j]>res:
@@ -38,17 +37,17 @@ class Solution:
         return res
 
 # By fast-slow pointer, time: O(n), space: O(1)
-# ³oºØ¥u­n°µnode¤@¥b¦¸¼Æªº­n·Q¨ìfast-slow pointer
-# §Q¥Îfast-slow pointer¨«³X, ¥u¤ÏÂà«á¥b¬qªºlink list§Y¥i
-# ¤£¥Î½Æ»s, §ó¬Ù®É¶¡ªÅ¶¡
+# é€™ç¨®åªè¦åšnodeä¸€åŠæ¬¡æ•¸çš„è¦æƒ³åˆ°fast-slow pointer
+# åˆ©ç”¨fast-slow pointerèµ°è¨ª, åªåè½‰å¾ŒåŠæ®µçš„link listå³å¯
+# ä¸ç”¨è¤‡è£½, æ›´çœæ™‚é–“ç©ºé–“
 # class Solution:
 #     def pairSum(self, head: Optional[ListNode]) -> int:
 #         slow, fast = head, head.next
 #         while fast.next:
 #             slow = slow.next
 #             fast = fast.next.next
-#         # slow·|­è¦n«ü¦b«e¥blinklistªº³Ì«á¤@­Ónode
-#         # ¤ÏÂà«á¥blink list
+#         # slowæœƒå‰›å¥½æŒ‡åœ¨å‰åŠlinklistçš„æœ€å¾Œä¸€å€‹node
+#         # åè½‰å¾ŒåŠlink list
 #         last = slow.next
 #         while last.next:
 #             cur = last.next
@@ -56,8 +55,8 @@ class Solution:
 #             cur.next = slow.next
 #             slow.next = cur
 #         res = 0
-#         # §¹¦¨«á¥b¤ÏÂàªº¦P®É, slow.next·|­è¦n«ü¦b³Ì«á¤@­Ónode
-#         # ¦ı¦]¬°¤w¸g¤ÏÂà§¹²¦, ©Ò¥Hslow.nextªºnext·|¬O­Ë¼Æ²Ä¤G­Ónode, ¥H¦¹Ãş±À
+#         # å®Œæˆå¾ŒåŠåè½‰çš„åŒæ™‚, slow.nextæœƒå‰›å¥½æŒ‡åœ¨æœ€å¾Œä¸€å€‹node
+#         # ä½†å› ç‚ºå·²ç¶“åè½‰å®Œç•¢, æ‰€ä»¥slow.nextçš„nextæœƒæ˜¯å€’æ•¸ç¬¬äºŒå€‹node, ä»¥æ­¤é¡æ¨
 #         x, y = head, slow.next
 #         while y:
 #             res = max(res, x.val + y.val)
@@ -65,26 +64,26 @@ class Solution:
 #         return res
 
 # By reverse and copy, time: O(n), space: O(n)
-# linklist¨S¦³index©Ò¥H·Q¨ì¥Î¤ÏÂàªº, ¥ı½Æ»s¤@¥÷­ì¥»ªºlist±N¨ä¤ÏÂà
-# ±µµÛ±N¨S¤ÏÂà©M¦³¤ÏÂàªºlist¦P®É¹ïnode.val°µ¬Û¥[, §ä¥Xmax
-# ½Æ»s¤@¥÷­ì¦]¬O­Yª½±µ¤ÏÂà´N§ó§ï¤Flink, ³à¥¢­ì¥»link list
+# linklistæ²’æœ‰indexæ‰€ä»¥æƒ³åˆ°ç”¨åè½‰çš„, å…ˆè¤‡è£½ä¸€ä»½åŸæœ¬çš„listå°‡å…¶åè½‰
+# æ¥è‘—å°‡æ²’åè½‰å’Œæœ‰åè½‰çš„liståŒæ™‚å°node.valåšç›¸åŠ , æ‰¾å‡ºmax
+# è¤‡è£½ä¸€ä»½åŸå› æ˜¯è‹¥ç›´æ¥åè½‰å°±æ›´æ”¹äº†link, å–ªå¤±åŸæœ¬link list
 # class Solution:
 #     def pairSum(self, head: Optional[ListNode]) -> int:
 #         def copy(head):
 #             cur = head
-#             # ¤@¶}©ldummy.next¥i¥H¬Ohead
+#             # ä¸€é–‹å§‹dummy.nextå¯ä»¥æ˜¯head
 #             dummy = ListNode(next = head)
 #             prev = dummy
 #             while cur:
 #                 tmp = ListNode(val = cur.val, next = cur.next)
-#                 # ²Ä¤@½üªº®É­Ôprev = dummy, ©Ò¥Hprev.next¦b³oÃä­×§ï¦¨tmp«á
-#                 # ¦P®É¤]±Ndummy.next§ï¬°tmp
+#                 # ç¬¬ä¸€è¼ªçš„æ™‚å€™prev = dummy, æ‰€ä»¥prev.nextåœ¨é€™é‚Šä¿®æ”¹æˆtmpå¾Œ
+#                 # åŒæ™‚ä¹Ÿå°‡dummy.nextæ”¹ç‚ºtmp
 #                 prev.next = tmp
 #                 prev = tmp
 #                 cur = cur.next
 #             return dummy.next
 #         def reverse(head):
-#             # ¤ÏÂàªº¦P®É¥Îcnt¬ö¿ılink listªø«×
+#             # åè½‰çš„åŒæ™‚ç”¨cntç´€éŒ„link listé•·åº¦
 #             cnt = 0
 #             prev = None
 #             cur = head    
@@ -95,10 +94,10 @@ class Solution:
 #                 prev = cur
 #                 cur = next
 #             return prev, cnt
-#         # list1¬O­ì¥»link listªºhead, list2¬O¤ÏÂà«álink listªºhead
+#         # list1æ˜¯åŸæœ¬link listçš„head, list2æ˜¯åè½‰å¾Œlink listçš„head
 #         list1 = copy(head)
 #         list2, cnt = reverse(head)
-#         # ¦]¨â¨â¤@¹ï¬İ, ³Ì«á¥u»İ­n°µcnt//2¦¸
+#         # å› å…©å…©ä¸€å°çœ‹, æœ€å¾Œåªéœ€è¦åšcnt//2æ¬¡
 #         n = cnt//2
 #         cur1 = list1
 #         cur2 = list2
@@ -113,119 +112,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2130 lang=python3
-#
-# [2130] Maximum Twin Sum of a Linked List
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-# µ¹¤@­Ólink list,[0, n]¤@¹ï, [1, n-1]¤@¹ï...¥H¦¹Ãş±À
-# return¤@¹ïnode.val¬Û¥[³Ì¤j­È
-
-# By list simulation, time: O(n), space: O(n)
-# ¨«³Xlink list±Nvalue©Mindex«Ø¦¨¤@­Ólist
-# ¹ê»Ú¤W§Q¥Îlist¤ñ¾Ş§@link list§ó¬Ù®É¶¡, ¤£¥Î°µ¤ÏÂàµ¥µ¥¾Ş§@
-class Solution:
-    def pairSum(self, head: Optional[ListNode]) -> int:
-        simulation = []
-        cur = head
-        # ±Nlink listªºval¨Ì§Çappend¨ìlist¤¤
-        while cur:
-            simulation.append(cur.val)
-            cur = cur.next
-        # ±q²Ä¤@­Óindex©M³Ì«á¤@­Óindex¶}©l°µ
-        i, j = 0, len(simulation)-1
-        # ªì©l¤Æ³Ì¤j­È
-        res = 0
-        while i<j:
-            if simulation[i]+simulation[j]>res:
-                res = simulation[i]+simulation[j]
-            i += 1
-            j -= 1
-        return res
-
-# By fast-slow pointer, time: O(n), space: O(1)
-# ³oºØ¥u­n°µnode¤@¥b¦¸¼Æªº­n·Q¨ìfast-slow pointer
-# §Q¥Îfast-slow pointer¨«³X, ¥u¤ÏÂà«á¥b¬qªºlink list§Y¥i
-# ¤£¥Î½Æ»s, §ó¬Ù®É¶¡ªÅ¶¡
-# class Solution:
-#     def pairSum(self, head: Optional[ListNode]) -> int:
-#         slow, fast = head, head.next
-#         while fast.next:
-#             slow = slow.next
-#             fast = fast.next.next
-#         # slow·|­è¦n«ü¦b«e¥blinklistªº³Ì«á¤@­Ónode
-#         # ¤ÏÂà«á¥blink list
-#         last = slow.next
-#         while last.next:
-#             cur = last.next
-#             last.next = cur.next
-#             cur.next = slow.next
-#             slow.next = cur
-#         res = 0
-#         # §¹¦¨«á¥b¤ÏÂàªº¦P®É, slow.next·|­è¦n«ü¦b³Ì«á¤@­Ónode
-#         # ¦ı¦]¬°¤w¸g¤ÏÂà§¹²¦, ©Ò¥Hslow.nextªºnext·|¬O­Ë¼Æ²Ä¤G­Ónode, ¥H¦¹Ãş±À
-#         x, y = head, slow.next
-#         while y:
-#             res = max(res, x.val + y.val)
-#             x, y = x.next, y.next
-#         return res
-
-# By reverse and copy, time: O(n), space: O(n)
-# linklist¨S¦³index©Ò¥H·Q¨ì¥Î¤ÏÂàªº, ¥ı½Æ»s¤@¥÷­ì¥»ªºlist±N¨ä¤ÏÂà
-# ±µµÛ±N¨S¤ÏÂà©M¦³¤ÏÂàªºlist¦P®É¹ïnode.val°µ¬Û¥[, §ä¥Xmax
-# ½Æ»s¤@¥÷­ì¦]¬O­Yª½±µ¤ÏÂà´N§ó§ï¤Flink, ³à¥¢­ì¥»link list
-# class Solution:
-#     def pairSum(self, head: Optional[ListNode]) -> int:
-#         def copy(head):
-#             cur = head
-#             # ¤@¶}©ldummy.next¥i¥H¬Ohead
-#             dummy = ListNode(next = head)
-#             prev = dummy
-#             while cur:
-#                 tmp = ListNode(val = cur.val, next = cur.next)
-#                 # ²Ä¤@½üªº®É­Ôprev = dummy, ©Ò¥Hprev.next¦b³oÃä­×§ï¦¨tmp«á
-#                 # ¦P®É¤]±Ndummy.next§ï¬°tmp
-#                 prev.next = tmp
-#                 prev = tmp
-#                 cur = cur.next
-#             return dummy.next
-#         def reverse(head):
-#             # ¤ÏÂàªº¦P®É¥Îcnt¬ö¿ılink listªø«×
-#             cnt = 0
-#             prev = None
-#             cur = head    
-#             while cur:
-#                 cnt += 1
-#                 next = cur.next
-#                 cur.next = prev
-#                 prev = cur
-#                 cur = next
-#             return prev, cnt
-#         # list1¬O­ì¥»link listªºhead, list2¬O¤ÏÂà«álink listªºhead
-#         list1 = copy(head)
-#         list2, cnt = reverse(head)
-#         # ¦]¨â¨â¤@¹ï¬İ, ³Ì«á¥u»İ­n°µcnt//2¦¸
-#         n = cnt//2
-#         cur1 = list1
-#         cur2 = list2
-#         res = 0
-#         while n:
-#             if cur1.val+cur2.val>max:
-#                 res = cur1.val+cur2.val
-#             cur1 = cur1.next
-#             cur2 = cur2.next
-#             n -= 1
-#         return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

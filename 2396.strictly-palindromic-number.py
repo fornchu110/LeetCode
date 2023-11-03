@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2396 lang=python3
 #
@@ -7,10 +6,10 @@
 
 # @lc code=start
 # By math, time: O(1), space: O(1)
-# ­n§PÂ_µ¹©winput n±q2~n-2¶i¨î¬O§_¥ş¬O°j¤å
-# ¸£µ¬«æÂàÅs, ª`·Ninput±q4~10^5
-# ·ín>=5®É, (n-2)¶i¨î³£·|¬O12, Ex: 5ªº3¶i¨î=12, 6ªº4¶i¨î=12
-# ¦Ón=4®É, ¤G¶i¨î¬°100¤]«D°j¤å, ¦]¦¹ª½±µreturn False§Y¬°µª®×
+# è¦åˆ¤æ–·çµ¦å®šinput nå¾2~n-2é€²åˆ¶æ˜¯å¦å…¨æ˜¯è¿´æ–‡
+# è…¦ç­‹æ€¥è½‰å½, æ³¨æ„inputå¾4~10^5
+# ç•¶n>=5æ™‚, (n-2)é€²åˆ¶éƒ½æœƒæ˜¯12, Ex: 5çš„3é€²åˆ¶=12, 6çš„4é€²åˆ¶=12
+# è€Œn=4æ™‚, äºŒé€²åˆ¶ç‚º100ä¹Ÿéè¿´æ–‡, å› æ­¤ç›´æ¥return Falseå³ç‚ºç­”æ¡ˆ
 # n = 1*(n-2)^1+2*(n-2)^0 = n-2+2
 class Solution:
     def isStrictlyPalindromic(self, n: int) -> bool:
@@ -18,24 +17,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2396 lang=python3
-#
-# [2396] Strictly Palindromic Number
-#
-
-# @lc code=start
-# By math, time: O(1), space: O(1)
-# ­n§PÂ_µ¹©winput n±q2~n-2¶i¨î¬O§_¥ş¬O°j¤å
-# ¸£µ¬«æÂàÅs, ª`·Ninput±q4~10^5
-# ·ín>=5®É, (n-2)¶i¨î³£·|¬O12, Ex: 5ªº3¶i¨î=12, 6ªº4¶i¨î=12
-# ¦Ón=4®É, ¤G¶i¨î¬°100¤]«D°j¤å, ¦]¦¹ª½±µreturn False§Y¬°µª®×
-# n = 1*(n-2)^1+2*(n-2)^0 = n-2+2
-class Solution:
-    def isStrictlyPalindromic(self, n: int) -> bool:
-        return False
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

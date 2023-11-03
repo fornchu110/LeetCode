@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1859 lang=python3
 #
@@ -6,64 +5,29 @@
 #
 
 # @lc code=start
-# By split, time: O(n), space: O(n), n¬O¦r¦êsªºªø«×
-# ­n±N¥y¤l¨Ì·Ó¸Ì­±¦r¦ê´£¨Ñªºidx°µ±Æ§Ç
+# By split, time: O(n), space: O(n), næ˜¯å­—ä¸²sçš„é•·åº¦
+# è¦å°‡å¥å­ä¾ç…§è£¡é¢å­—ä¸²æä¾›çš„idxåšæ’åº
 class Solution:
     def sortSentence(self, s: str) -> str:
-        # split()±N¦r¦êÂà´«¦¨list¨Ã¥HªÅ¥Õ¤À¹jlistªº¤¸¯À
+        # split()å°‡å­—ä¸²è½‰æ›æˆlistä¸¦ä»¥ç©ºç™½åˆ†éš”listçš„å…ƒç´ 
         s = s.split()
-        # ¥y¤l¤º¦r¦êªº¼Æ¶q
+        # å¥å­å…§å­—ä¸²çš„æ•¸é‡
         n = len(s)  
-        # ªì©l¤Æres, ¦]¬°­n¹³¬Oindex array§Q¥Î»İ­n¥ı«Ø¤j¤p¬°nªºlist
-        # res = [0]*n¤]¦³¤@¼Ë®ÄªG, ¤£¼vÅT
+        # åˆå§‹åŒ–res, å› ç‚ºè¦åƒæ˜¯index arrayåˆ©ç”¨éœ€è¦å…ˆå»ºå¤§å°ç‚ºnçš„list
+        # res = [0]*nä¹Ÿæœ‰ä¸€æ¨£æ•ˆæœ, ä¸å½±éŸ¿
         res = ["" for i in range(n)] 
-        # ±qÀY¨«³X, ÀË¬d¨C­Ó¦r¦ê´£¨Ñªº¼Æ¦r°µ¬°¦s¤Jresªºindex, ¦]¬O1¶}©l©Ò¥H­n-1
-        # Ex: This1©ñ¤Jres[0]
+        # å¾é ­èµ°è¨ª, æª¢æŸ¥æ¯å€‹å­—ä¸²æä¾›çš„æ•¸å­—åšç‚ºå­˜å…¥resçš„index, å› æ˜¯1é–‹å§‹æ‰€ä»¥è¦-1
+        # Ex: This1æ”¾å…¥res[0]
         for i in s:
-            # i[:-1]¬Opythonªº¤Á¤ù, «e­±¬O¨ú³¬°Ï¶¡, «á­±¬O¨ú¶}°Ï¶¡
-            # ©Ò¥H-1­ì¥H¬°¬O­Ë¼Æ²Ä¤@­Ó¤¸¯À¹ê»Ú¤W¬O¨ú­Ë¼Æ²Ä¤G­Ó
+            # i[:-1]æ˜¯pythonçš„åˆ‡ç‰‡, å‰é¢æ˜¯å–é–‰å€é–“, å¾Œé¢æ˜¯å–é–‹å€é–“
+            # æ‰€ä»¥-1åŸä»¥ç‚ºæ˜¯å€’æ•¸ç¬¬ä¸€å€‹å…ƒç´ å¯¦éš›ä¸Šæ˜¯å–å€’æ•¸ç¬¬äºŒå€‹
             # Ex: i = This1, i[:-1] = This
-            # ¦Óiªºindex¹ê»Ú¤W¾li[-1]¤]´N¬O­Ë¼Æ²Ä¤@­Óªº¦ì¸m´£¨Ñ
-            # i[1]-1´N¬O¦]¤W­±»¡ªº, ´£¨Ñªºindex±q1¶}©l¦Óres±q0¶}©l
+            # è€Œiçš„indexå¯¦éš›ä¸Šé¤˜i[-1]ä¹Ÿå°±æ˜¯å€’æ•¸ç¬¬ä¸€å€‹çš„ä½ç½®æä¾›
+            # i[1]-1å°±æ˜¯å› ä¸Šé¢èªªçš„, æä¾›çš„indexå¾1é–‹å§‹è€Œreså¾0é–‹å§‹
             res[int(i[-1])-1] = i[:-1]
-        # ¥Î" ".join±Nres±qlistÂà´«¦¨str¨Ãreturn
-        # ¦]¥y¤l¤¤ªº¦r¦ê·|¥HªÅ¥Õ¶¡¹j, ©Ò¥H¬O" "
+        # ç”¨" ".joinå°‡reså¾listè½‰æ›æˆsträ¸¦return
+        # å› å¥å­ä¸­çš„å­—ä¸²æœƒä»¥ç©ºç™½é–“éš”, æ‰€ä»¥æ˜¯" "
         return " ".join(res)
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1859 lang=python3
-#
-# [1859] Sorting the Sentence
-#
-
-# @lc code=start
-# By split, time: O(n), space: O(n), n¬O¦r¦êsªºªø«×
-# ­n±N¥y¤l¨Ì·Ó¸Ì­±¦r¦ê´£¨Ñªºidx°µ±Æ§Ç
-class Solution:
-    def sortSentence(self, s: str) -> str:
-        # split()±N¦r¦êÂà´«¦¨list¨Ã¥HªÅ¥Õ¤À¹jlistªº¤¸¯À
-        s = s.split()
-        # ¥y¤l¤º¦r¦êªº¼Æ¶q
-        n = len(s)  
-        # ªì©l¤Æres, ¦]¬°­n¹³¬Oindex array§Q¥Î»İ­n¥ı«Ø¤j¤p¬°nªºlist
-        # res = [0]*n¤]¦³¤@¼Ë®ÄªG, ¤£¼vÅT
-        res = ["" for i in range(n)] 
-        # ±qÀY¨«³X, ÀË¬d¨C­Ó¦r¦ê´£¨Ñªº¼Æ¦r°µ¬°¦s¤Jresªºindex, ¦]¬O1¶}©l©Ò¥H­n-1
-        # Ex: This1©ñ¤Jres[0]
-        for i in s:
-            # i[:-1]¬Opythonªº¤Á¤ù, «e­±¬O¨ú³¬°Ï¶¡, «á­±¬O¨ú¶}°Ï¶¡
-            # ©Ò¥H-1­ì¥H¬°¬O­Ë¼Æ²Ä¤@­Ó¤¸¯À¹ê»Ú¤W¬O¨ú­Ë¼Æ²Ä¤G­Ó
-            # Ex: i = This1, i[:-1] = This
-            # ¦Óiªºindex¹ê»Ú¤W¾li[-1]¤]´N¬O­Ë¼Æ²Ä¤@­Óªº¦ì¸m´£¨Ñ
-            # i[1]-1´N¬O¦]¤W­±»¡ªº, ´£¨Ñªºindex±q1¶}©l¦Óres±q0¶}©l
-            res[int(i[-1])-1] = i[:-1]
-        # ¥Î" ".join±Nres±qlistÂà´«¦¨str¨Ãreturn
-        # ¦]¥y¤l¤¤ªº¦r¦ê·|¥HªÅ¥Õ¶¡¹j, ©Ò¥H¬O" "
-        return " ".join(res)
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

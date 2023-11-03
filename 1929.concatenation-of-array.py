@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1929 lang=python3
 #
@@ -7,31 +6,12 @@
 
 # @lc code=start
 # By extend, time: O(n), space: O(1)
-# ­nª½±µ§ânums¦h¤@¥÷©ñ¶inums
+# è¦ç›´æ¥æŠŠnumså¤šä¸€ä»½æ”¾é€²nums
 class Solution:
     def getConcatenation(self, nums: List[int]) -> List[int]:
-        # ¥Îfor°j°éappend·|¶W®É, python¯à¨Ï¥Îextendª½±µ¼W¥[¤@­Ólist
+        # ç”¨forè¿´åœˆappendæœƒè¶…æ™‚, pythonèƒ½ä½¿ç”¨extendç›´æ¥å¢åŠ ä¸€å€‹list
         nums.extend(nums)
         return nums
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1929 lang=python3
-#
-# [1929] Concatenation of Array
-#
-
-# @lc code=start
-# By extend, time: O(n), space: O(1)
-# ­nª½±µ§ânums¦h¤@¥÷©ñ¶inums
-class Solution:
-    def getConcatenation(self, nums: List[int]) -> List[int]:
-        # ¥Îfor°j°éappend·|¶W®É, python¯à¨Ï¥Îextendª½±µ¼W¥[¤@­Ólist
-        nums.extend(nums)
-        return nums
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

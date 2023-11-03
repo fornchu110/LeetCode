@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1863 lang=python3
 #
@@ -6,24 +5,25 @@
 #
 
 # @lc code=start
-# §ä¥Xnums¤º©Ò¦³¥i¯àªºsubset, ¦A±N¨ä¤À§O¹ï¤º³¡¤¸¯À°µXOR, ¨S¤¸¯À´N0, ¥u¦³¤@­Ó¤¸¯À´N¸Ó¤¸¯À­È
+# æ‰¾å‡ºnumså…§æ‰€æœ‰å¯èƒ½çš„subset, å†å°‡å…¶åˆ†åˆ¥å°å…§éƒ¨å…ƒç´ åšXOR, æ²’å…ƒç´ å°±0, åªæœ‰ä¸€å€‹å…ƒç´ å°±è©²å…ƒç´ å€¼
+
+# By DFS, time: O(2^n), space: o(n)
+# ç”¨dfsä¾†çª®èˆ‰subset
 class Solution:
     def subsetXORSum(self, nums: List[int]) -> int:
-        
+        res = 0
+        n = len(nums)
+        def dfs(val, idx):
+            nonlocal res
+            # çµ‚æ­¢æ¢ä»¶
+            if idx==n:
+                res += val
+                return
+            dfs(val^nums[idx], idx+1)
+            dfs(val, idx + 1)  
+        dfs(0, 0)
+        return res
+
+
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1863 lang=python3
-#
-# [1863] Sum of All Subset XOR Totals
-#
-
-# @lc code=start
-# §ä¥Xnums¤º©Ò¦³¥i¯àªºsubset, ¦A±N¨ä¤À§O¹ï¤º³¡¤¸¯À°µXOR, ¨S¤¸¯À´N0, ¥u¦³¤@­Ó¤¸¯À´N¸Ó¤¸¯À­È
-class Solution:
-    def subsetXORSum(self, nums: List[int]) -> int:
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

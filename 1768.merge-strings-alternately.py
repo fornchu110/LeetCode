@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1768 lang=python3
 #
@@ -6,17 +5,17 @@
 #
 
 # @lc code=start
-# µ¹¨â¦r¦êword1©Mword2, ¥Hword1¶}©lreturn±N¨â¦r¦ê¦r¤¸¤@¤@¥æ¿ù«áªº¦r¦ê
+# çµ¦å…©å­—ä¸²word1å’Œword2, ä»¥word1é–‹å§‹returnå°‡å…©å­—ä¸²å­—å…ƒä¸€ä¸€äº¤éŒ¯å¾Œçš„å­—ä¸²
 
 # By double pointer and string processing, time: O(m+n), space: O(1), m = len(word1), n = len(word2)
-# time = O(m+n)¬O¦]¤´¬O¨«³X¨â­Ó¤£¦P¦r¦ê
-# ¥Îwhile°j°é±qindex 0¶}©l¥ý¥[¤Jword1[idx]¦A¥[¤Jword2[idx]
-# ¦b¦r¦êÁÙ¦³¤º®e®É¤~¥[¤J, ªø«×¬°2ªº¦r¦êidx¥u¯à¨ì1, Á×§Kindex out of range
-# python¥Î¤Á¤ù¤]¯à°µ¨ì, ¤£»Ý­nlist
+# time = O(m+n)æ˜¯å› ä»æ˜¯èµ°è¨ªå…©å€‹ä¸åŒå­—ä¸²
+# ç”¨whileè¿´åœˆå¾žindex 0é–‹å§‹å…ˆåŠ å…¥word1[idx]å†åŠ å…¥word2[idx]
+# åœ¨å­—ä¸²é‚„æœ‰å…§å®¹æ™‚æ‰åŠ å…¥, é•·åº¦ç‚º2çš„å­—ä¸²idxåªèƒ½åˆ°1, é¿å…index out of range
+# pythonç”¨åˆ‡ç‰‡ä¹Ÿèƒ½åšåˆ°, ä¸éœ€è¦list
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
         idx = 0
-        # while·|°µ¸ò§óªøªº¦r¦êªø«×¬Û¦Pªº¦¸¼Æ
+        # whileæœƒåšè·Ÿæ›´é•·çš„å­—ä¸²é•·åº¦ç›¸åŒçš„æ¬¡æ•¸
         n = max(len(word1), len(word2))
         res = []
         while(n>0):
@@ -26,40 +25,7 @@ class Solution:
                 res.append(word2[idx])
             idx += 1
             n -= 1
-        # listÂà¦r¦ê
+        # listè½‰å­—ä¸²
         return "".join(res)
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1768 lang=python3
-#
-# [1768] Merge Strings Alternately
-#
-
-# @lc code=start
-# µ¹¨â¦r¦êword1©Mword2, ¥Hword1¶}©lreturn±N¨â¦r¦ê¦r¤¸¤@¤@¥æ¿ù«áªº¦r¦ê
-
-# By double pointer and string processing, time: O(m+n), space: O(1), m = len(word1), n = len(word2)
-# time = O(m+n)¬O¦]¤´¬O¨«³X¨â­Ó¤£¦P¦r¦ê
-# ¥Îwhile°j°é±qindex 0¶}©l¥ý¥[¤Jword1[idx]¦A¥[¤Jword2[idx]
-# ¦b¦r¦êÁÙ¦³¤º®e®É¤~¥[¤J, ªø«×¬°2ªº¦r¦êidx¥u¯à¨ì1, Á×§Kindex out of range
-# python¥Î¤Á¤ù¤]¯à°µ¨ì, ¤£»Ý­nlist
-class Solution:
-    def mergeAlternately(self, word1: str, word2: str) -> str:
-        idx = 0
-        # while·|°µ¸ò§óªøªº¦r¦êªø«×¬Û¦Pªº¦¸¼Æ
-        n = max(len(word1), len(word2))
-        res = []
-        while(n>0):
-            if idx<len(word1):
-                res.append(word1[idx])
-            if idx<len(word2):
-                res.append(word2[idx])
-            idx += 1
-            n -= 1
-        # listÂà¦r¦ê
-        return "".join(res)
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

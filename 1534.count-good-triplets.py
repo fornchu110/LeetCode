@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1534 lang=python3
 #
@@ -6,21 +5,21 @@
 #
 
 # @lc code=start
-# µ¹¤@°}¦Carr©M¤T¾ã¼Æa¡Bb¡Bc, §ä¥Xarr¤¤¤T­Óº¥¶iªºindex i¡Bj¡Bk
-# ¨Ï±o|arr[i]-arr[j]|<=a¡B|arr[j]-arr[k]|<=b¡B|arr[i]-arr[k]]<=c
-# return²Å¦X±ø¥óªº¤Tindex²Õ¼Æ¶q
+# çµ¦ä¸€é™£åˆ—arrå’Œä¸‰æ•´æ•¸aã€bã€c, æ‰¾å‡ºarrä¸­ä¸‰å€‹æ¼¸é€²çš„index iã€jã€k
+# ä½¿å¾—|arr[i]-arr[j]|<=aã€|arr[j]-arr[k]|<=bã€|arr[i]-arr[k]]<=c
+# returnç¬¦åˆæ¢ä»¶çš„ä¸‰indexçµ„æ•¸é‡
 
 # By triple for loop(simulation), time: O(n^3), space: O(1)
-# ¥Ñ¤p¦Ü¤jªºindex¤@­Ó­ÓÀË¬d§ä¥X²Å¦X±ø¥óªº
+# ç”±å°è‡³å¤§çš„indexä¸€å€‹å€‹æª¢æŸ¥æ‰¾å‡ºç¬¦åˆæ¢ä»¶çš„
 class Solution:
     def countGoodTriplets(self, arr: List[int], a: int, b: int, c: int) -> int:
         res = 0
-        # index¤£·|­«½Æ, i«á­±¦Ü¤ÖÁÙ¦³j©Mk©Ò¥H°µ¨ì­Ë¼Æ²Ä¤T­Ó´N¥i
+        # indexä¸æœƒé‡è¤‡, iå¾Œé¢è‡³å°‘é‚„æœ‰jå’Œkæ‰€ä»¥åšåˆ°å€’æ•¸ç¬¬ä¸‰å€‹å°±å¯
         for i in range(len(arr)-2):
             for j in range(i+1, len(arr)-1):
-                # Àu¤ÆÁ×§K°µ§¹¥ş³¡¤T°j°éªº¤è¦¡
-                # ¤w¸g¦³index i¡Bj, ¦]¬°±ø¥ó­n¥ş²Å¦X
-                # ©Ò¥H¥ı§PÂ_¸òi¡Bj¦³Ãöªº±ø¥ó¬O§_²Å¦X, ¤£²Å¦X´N¤£¥Î¬İ¸òk¦³Ãöªº±ø¥ó¤F, ¦³²Å¦X¦A°µfor°j°é
+                # å„ªåŒ–é¿å…åšå®Œå…¨éƒ¨ä¸‰è¿´åœˆçš„æ–¹å¼
+                # å·²ç¶“æœ‰index iã€j, å› ç‚ºæ¢ä»¶è¦å…¨ç¬¦åˆ
+                # æ‰€ä»¥å…ˆåˆ¤æ–·è·Ÿiã€jæœ‰é—œçš„æ¢ä»¶æ˜¯å¦ç¬¦åˆ, ä¸ç¬¦åˆå°±ä¸ç”¨çœ‹è·Ÿkæœ‰é—œçš„æ¢ä»¶äº†, æœ‰ç¬¦åˆå†åšforè¿´åœˆ
                 if abs(arr[i]-arr[j])<=a:
                     for k in range(j+1, len(arr)):
                         if abs(arr[j]-arr[k])<=b and abs(arr[i]-arr[k])<=c:
@@ -29,35 +28,3 @@ class Solution:
                                                     
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1534 lang=python3
-#
-# [1534] Count Good Triplets
-#
-
-# @lc code=start
-# µ¹¤@°}¦Carr©M¤T¾ã¼Æa¡Bb¡Bc, §ä¥Xarr¤¤¤T­Óº¥¶iªºindex i¡Bj¡Bk
-# ¨Ï±o|arr[i]-arr[j]|<=a¡B|arr[j]-arr[k]|<=b¡B|arr[i]-arr[k]]<=c
-# return²Å¦X±ø¥óªº¤Tindex²Õ¼Æ¶q
-
-# By triple for loop(simulation), time: O(n^3), space: O(1)
-# ¥Ñ¤p¦Ü¤jªºindex¤@­Ó­ÓÀË¬d§ä¥X²Å¦X±ø¥óªº
-class Solution:
-    def countGoodTriplets(self, arr: List[int], a: int, b: int, c: int) -> int:
-        res = 0
-        # index¤£·|­«½Æ, i«á­±¦Ü¤ÖÁÙ¦³j©Mk©Ò¥H°µ¨ì­Ë¼Æ²Ä¤T­Ó´N¥i
-        for i in range(len(arr)-2):
-            for j in range(i+1, len(arr)-1):
-                # Àu¤ÆÁ×§K°µ§¹¥ş³¡¤T°j°éªº¤è¦¡
-                # ¤w¸g¦³index i¡Bj, ¦]¬°±ø¥ó­n¥ş²Å¦X
-                # ©Ò¥H¥ı§PÂ_¸òi¡Bj¦³Ãöªº±ø¥ó¬O§_²Å¦X, ¤£²Å¦X´N¤£¥Î¬İ¸òk¦³Ãöªº±ø¥ó¤F, ¦³²Å¦X¦A°µfor°j°é
-                if abs(arr[i]-arr[j])<=a:
-                    for k in range(j+1, len(arr)):
-                        if abs(arr[j]-arr[k])<=b and abs(arr[i]-arr[k])<=c:
-                            res += 1
-        return res
-                                                    
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

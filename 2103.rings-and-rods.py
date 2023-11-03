@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2103 lang=python3
 #
@@ -6,22 +5,22 @@
 #
 
 # @lc code=start
-# µ¹¤@¦êrings¤W­±¨C¨â­Ó¼g©ñ¤°»òÃC¦âªºring¦b´X¸¹rod
-# ³Ì«áreturn¦³´X­Órod¤W­±¦³R¡BG¡BB¤TºØring
+# çµ¦ä¸€ä¸²ringsä¸Šé¢æ¯å…©å€‹å¯«æ”¾ä»€éº¼é¡è‰²çš„ringåœ¨å¹¾è™Ÿrod
+# æœ€å¾Œreturnæœ‰å¹¾å€‹rodä¸Šé¢æœ‰Rã€Gã€Bä¸‰ç¨®ring
 
 # By bitwise, time: O(n+k), space: O(k)
-# ¤´µM¬Oindex array, ¦ı¤£»İ­n¤T­Óarray, ¤@­Óarray¹ï¤º®e¤¸¯À°µbitwise¾Ş§@§Y¥i
-# Ex: ¤G¶i¦ì111¥NªíR¡BG¡BB³£¦³, 101¥Nªí¨S¦³G, 001¥Nªí¥u¦³R
+# ä»ç„¶æ˜¯index array, ä½†ä¸éœ€è¦ä¸‰å€‹array, ä¸€å€‹arrayå°å…§å®¹å…ƒç´ åšbitwiseæ“ä½œå³å¯
+# Ex: äºŒé€²ä½111ä»£è¡¨Rã€Gã€Béƒ½æœ‰, 101ä»£è¡¨æ²’æœ‰G, 001ä»£è¡¨åªæœ‰R
 class Solution:
     def countPoints(self, rings: str) -> int:
         n = len(rings)
-        # ¬ö¿ı¦U­Órod¦³­ş¨ÇÃC¦âringªºindex array
+        # ç´€éŒ„å„å€‹rodæœ‰å“ªäº›é¡è‰²ringçš„index array
         status = [0] * 10   
         for i in range(0, n, 2):
-            # pythonªºint()·|¦Û°Ê§â¦r¤¸Âà¦¨int¦Ó«Dascii, ©Ò¥H¤]¤£¯àª½±µ¹ï¦r¤¸°µ¹Bºâ
+            # pythonçš„int()æœƒè‡ªå‹•æŠŠå­—å…ƒè½‰æˆintè€Œéascii, æ‰€ä»¥ä¹Ÿä¸èƒ½ç›´æ¥å°å­—å…ƒåšé‹ç®—
             idx = int(rings[i+1])
-            # ¤£¥Î3¤T­Óarrayªº­ì¦], ¥Î2¶i¦ìªº­Ó¦ì¼Æ¬ö¿ı
-            # R¦b²Ä0¦ì, G¦b²Ä1¦ì, B¦b²Ä2¦ì
+            # ä¸ç”¨3ä¸‰å€‹arrayçš„åŸå› , ç”¨2é€²ä½çš„å€‹ä½æ•¸ç´€éŒ„
+            # Råœ¨ç¬¬0ä½, Gåœ¨ç¬¬1ä½, Båœ¨ç¬¬2ä½
             if rings[i] == 'R':
                 status[idx] |= 1
             elif rings[i] == 'G':
@@ -30,13 +29,13 @@ class Solution:
                 status[idx] |= 4
         res = 0
         for i in status:
-            # ¤G¶i¦ì111µ¥¦P©ó¢Ì¶i¦ì7
+            # äºŒé€²ä½111ç­‰åŒæ–¼åé€²ä½7
             if i == 7:
                 res += 1
         return res
 
-# By index array and ord(), time: O(n+k), space: O(3*k), n = len(rings), k = rod¼Æ¶q   
-# ¥Îindex arrayªº¤è¦¡°O¿ı¦UÃC¦âring©ñ¦b­ş­Órod, ³Ì«á¬İ¨º¨Çindex¦P®É¦b¤Tarray¤W¬°1
+# By index array and ord(), time: O(n+k), space: O(3*k), n = len(rings), k = rodæ•¸é‡   
+# ç”¨index arrayçš„æ–¹å¼è¨˜éŒ„å„é¡è‰²ringæ”¾åœ¨å“ªå€‹rod, æœ€å¾Œçœ‹é‚£äº›indexåŒæ™‚åœ¨ä¸‰arrayä¸Šç‚º1
 # class Solution:
 #     def countPoints(self, rings: str) -> int:
 #         res = 0
@@ -58,64 +57,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2103 lang=python3
-#
-# [2103] Rings and Rods
-#
-
-# @lc code=start
-# µ¹¤@¦êrings¤W­±¨C¨â­Ó¼g©ñ¤°»òÃC¦âªºring¦b´X¸¹rod
-# ³Ì«áreturn¦³´X­Órod¤W­±¦³R¡BG¡BB¤TºØring
-
-# By bitwise, time: O(n+k), space: O(k)
-# ¤´µM¬Oindex array, ¦ı¤£»İ­n¤T­Óarray, ¤@­Óarray¹ï¤º®e¤¸¯À°µbitwise¾Ş§@§Y¥i
-# Ex: ¤G¶i¦ì111¥NªíR¡BG¡BB³£¦³, 101¥Nªí¨S¦³G, 001¥Nªí¥u¦³R
-class Solution:
-    def countPoints(self, rings: str) -> int:
-        n = len(rings)
-        # ¬ö¿ı¦U­Órod¦³­ş¨ÇÃC¦âringªºindex array
-        status = [0] * 10   
-        for i in range(0, n, 2):
-            # pythonªºint()·|¦Û°Ê§â¦r¤¸Âà¦¨int¦Ó«Dascii, ©Ò¥H¤]¤£¯àª½±µ¹ï¦r¤¸°µ¹Bºâ
-            idx = int(rings[i+1])
-            # ¤£¥Î3¤T­Óarrayªº­ì¦], ¥Î2¶i¦ìªº­Ó¦ì¼Æ¬ö¿ı
-            # R¦b²Ä0¦ì, G¦b²Ä1¦ì, B¦b²Ä2¦ì
-            if rings[i] == 'R':
-                status[idx] |= 1
-            elif rings[i] == 'G':
-                status[idx] |= 2
-            else:
-                status[idx] |= 4
-        res = 0
-        for i in status:
-            # ¤G¶i¦ì111µ¥¦P©ó¢Ì¶i¦ì7
-            if i == 7:
-                res += 1
-        return res
-
-# By index array and ord(), time: O(n+k), space: O(3*k), n = len(rings), k = rod¼Æ¶q   
-# ¥Îindex arrayªº¤è¦¡°O¿ı¦UÃC¦âring©ñ¦b­ş­Órod, ³Ì«á¬İ¨º¨Çindex¦P®É¦b¤Tarray¤W¬°1
-# class Solution:
-#     def countPoints(self, rings: str) -> int:
-#         res = 0
-#         r = [0]*10
-#         g = [0]*10
-#         b = [0]*10
-#         n = len(rings)
-#         for i in range(1, n, 2):
-#             if rings[i-1]=='R':
-#                 r[ord(rings[i])-ord('0')] += 1
-#             if rings[i-1]=='G':
-#                 g[ord(rings[i])-ord('0')] += 1
-#             if rings[i-1]=='B':
-#                 b[ord(rings[i])-ord('0')] += 1
-#         for i, j , k in zip(r, g ,b):
-#             if i!=0 and j!=0 and k!=0:
-#                 res += 1
-#         return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

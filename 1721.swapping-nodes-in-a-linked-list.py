@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1721 lang=python3
 #
 # [1721] Swapping Nodes in a Linked List
 #
 
-# µ¹¤@­Ólink list©Mk, ±Nlink list¤¤²Äk­Ó¤¸¯À¸ò¨ì¼Æ²Äk­Ó¤¸¯À¤º®e¥æ´«
+# çµ¦ä¸€å€‹link listå’Œk, å°‡link listä¸­ç¬¬kå€‹å…ƒç´ è·Ÿåˆ°æ•¸ç¬¬kå€‹å…ƒç´ å…§å®¹äº¤æ›
 
 
 # @lc code=start
@@ -17,73 +16,28 @@
 
 
 # By math and while, time: O(n), space: O(1)
-# ¥ı°O¿ı¦n²Ä¤@­Ónode©M²Äk­Ónode, §Q¥Î¬Û®tk-1ªº©Ê½è
-# ±N¨â­Ópointer¦P®É¥k²¾ª½¨ì­ì¥»«ü¦V²Äk­Ó«ü¼Ğªºpointer«ü¦V³Ì«á¤@­Ó
-# ¦¹®É­ì¥»«ü¦V²Ä¤@­Ónodeªºpointer«K¦ÛµM«ü¦V­Ë¼Æ²Äk­Ónode, ¦A±N¨âªÌval¥æ´«§Y¥i
+# å…ˆè¨˜éŒ„å¥½ç¬¬ä¸€å€‹nodeå’Œç¬¬kå€‹node, åˆ©ç”¨ç›¸å·®k-1çš„æ€§è³ª
+# å°‡å…©å€‹pointeråŒæ™‚å³ç§»ç›´åˆ°åŸæœ¬æŒ‡å‘ç¬¬kå€‹æŒ‡æ¨™çš„pointeræŒ‡å‘æœ€å¾Œä¸€å€‹
+# æ­¤æ™‚åŸæœ¬æŒ‡å‘ç¬¬ä¸€å€‹nodeçš„pointerä¾¿è‡ªç„¶æŒ‡å‘å€’æ•¸ç¬¬kå€‹node, å†å°‡å…©è€…valäº¤æ›å³å¯
 class Solution:
     def swapNodes(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        # ¥Îleft©Mright¨â­Ó«ü¼Ğªì©l¤Æ«ü¦Vhead
+        # ç”¨leftå’Œrightå…©å€‹æŒ‡æ¨™åˆå§‹åŒ–æŒ‡å‘head
         left = right = head
-        # ±Nright²¾°Ê¨ìlink list¤¤²Äk­Ónode©Ò¦b¦ì¸m, °²¦pk=5­n²¾°Ê¨ì¦¹»İ­n²¾°Ê4¦¸
+        # å°‡rightç§»å‹•åˆ°link listä¸­ç¬¬kå€‹nodeæ‰€åœ¨ä½ç½®, å‡å¦‚k=5è¦ç§»å‹•åˆ°æ­¤éœ€è¦ç§»å‹•4æ¬¡
         for i in range(k-1):
             right = right.next
-        # ±N²Äk­Ónodeªº¦ì¸m°O¿ı°_¨Ó
+        # å°‡ç¬¬kå€‹nodeçš„ä½ç½®è¨˜éŒ„èµ·ä¾†
         forward = right
-        # right©Mleft¦P®É¥k²¾¨ì§Àºİ, ³o¼Ë³Ì«áright¨ì§Àºİ®É, left©Ò¦b´N¬O­Ë¼Æ²Äk­Ónode
-        # ¦]¨âªÌ³£¬Û®tk-1ªº¶ZÂ÷
+        # rightå’ŒleftåŒæ™‚å³ç§»åˆ°å°¾ç«¯, é€™æ¨£æœ€å¾Œrightåˆ°å°¾ç«¯æ™‚, leftæ‰€åœ¨å°±æ˜¯å€’æ•¸ç¬¬kå€‹node
+        # å› å…©è€…éƒ½ç›¸å·®k-1çš„è·é›¢
         while right.next:
             left = left.next
             right = right.next
-        # ­Ë¼Æ²Äk­Ónodeªº¦ì¸m°O¿ı°_¨Ó
+        # å€’æ•¸ç¬¬kå€‹nodeçš„ä½ç½®è¨˜éŒ„èµ·ä¾†
         reverse = left
-        # ¥æ´«¨âªÌªºvalue
+        # äº¤æ›å…©è€…çš„value
         forward.val,reverse.val = reverse.val,forward.val
         return head
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1721 lang=python3
-#
-# [1721] Swapping Nodes in a Linked List
-#
-
-# µ¹¤@­Ólink list©Mk, ±Nlink list¤¤²Äk­Ó¤¸¯À¸ò¨ì¼Æ²Äk­Ó¤¸¯À¤º®e¥æ´«
-
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-
-# By math and while, time: O(n), space: O(1)
-# ¥ı°O¿ı¦n²Ä¤@­Ónode©M²Äk­Ónode, §Q¥Î¬Û®tk-1ªº©Ê½è
-# ±N¨â­Ópointer¦P®É¥k²¾ª½¨ì­ì¥»«ü¦V²Äk­Ó«ü¼Ğªºpointer«ü¦V³Ì«á¤@­Ó
-# ¦¹®É­ì¥»«ü¦V²Ä¤@­Ónodeªºpointer«K¦ÛµM«ü¦V­Ë¼Æ²Äk­Ónode, ¦A±N¨âªÌval¥æ´«§Y¥i
-class Solution:
-    def swapNodes(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        # ¥Îleft©Mright¨â­Ó«ü¼Ğªì©l¤Æ«ü¦Vhead
-        left = right = head
-        # ±Nright²¾°Ê¨ìlink list¤¤²Äk­Ónode©Ò¦b¦ì¸m, °²¦pk=5­n²¾°Ê¨ì¦¹»İ­n²¾°Ê4¦¸
-        for i in range(k-1):
-            right = right.next
-        # ±N²Äk­Ónodeªº¦ì¸m°O¿ı°_¨Ó
-        forward = right
-        # right©Mleft¦P®É¥k²¾¨ì§Àºİ, ³o¼Ë³Ì«áright¨ì§Àºİ®É, left©Ò¦b´N¬O­Ë¼Æ²Äk­Ónode
-        # ¦]¨âªÌ³£¬Û®tk-1ªº¶ZÂ÷
-        while right.next:
-            left = left.next
-            right = right.next
-        # ­Ë¼Æ²Äk­Ónodeªº¦ì¸m°O¿ı°_¨Ó
-        reverse = left
-        # ¥æ´«¨âªÌªºvalue
-        forward.val,reverse.val = reverse.val,forward.val
-        return head
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

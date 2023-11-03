@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2315 lang=python3
 #
@@ -6,31 +5,31 @@
 #
 
 # @lc code=start
-# µ¹¦r¦ês, return¨â±ø¦¨¹ï'|'¥H¥~ªº'*'¼Æ¶q
+# çµ¦å­—ä¸²s, returnå…©æ¢æˆå°'|'ä»¥å¤–çš„'*'æ•¸é‡
 
 # By simulation, time: O(n), space: O(1)
-# §ï¨}ª©, ¤@¼Ë±qÀY¨«³X¦ı¥u­n²Å¦X±ø¥ó®É¹J¨ì'*'­p¼Æ´N¦n, ¤£¥ÎÃB¥~±N¨ä¥L¦r¤¸©ñ¤Jtmp
+# æ”¹è‰¯ç‰ˆ, ä¸€æ¨£å¾é ­èµ°è¨ªä½†åªè¦ç¬¦åˆæ¢ä»¶æ™‚é‡åˆ°'*'è¨ˆæ•¸å°±å¥½, ä¸ç”¨é¡å¤–å°‡å…¶ä»–å­—å…ƒæ”¾å…¥tmp
 class Solution:
     def countAsterisks(self, s: str) -> int:
         res = 0
         flag = 1
         for ch in s:
-            # ¦b¹J¨ì"|"®É°µ§PÂ_, ¦]¬°flag¥u¦³0©Î1©Ò¥H¥Înot§ïÅÜ­È´N¦n
+            # åœ¨é‡åˆ°"|"æ™‚åšåˆ¤æ–·, å› ç‚ºflagåªæœ‰0æˆ–1æ‰€ä»¥ç”¨notæ”¹è®Šå€¼å°±å¥½
             if ch=='|':
-                # ¥Înot´N¤£»İ­n¥Îif flag¨Ó§PÂ_flagª¬ºA, ¤Ï¥¿¹J¨ì'|'´N­n§ó§ïflag
+                # ç”¨notå°±ä¸éœ€è¦ç”¨if flagä¾†åˆ¤æ–·flagç‹€æ…‹, åæ­£é‡åˆ°'|'å°±è¦æ›´æ”¹flag
                 flag = not flag
-            # ·íflag¬°1¥B¬O'*'®É¼W¥[­p¼Æ
+            # ç•¶flagç‚º1ä¸”æ˜¯'*'æ™‚å¢åŠ è¨ˆæ•¸
             elif flag and ch=='*':
                 res += 1
         return res    
 
 # # By simulation, time: O(n), space: O(n)
-# # ±qÀY¨«³Xs, ±N¦¨¹ï"|"¤§¶¡¥H¥~ªº¦r¤¸©ñ¤Jtmp, ¦A¨«³Xtmp¼Æ"*"¼Æ¶q
+# # å¾é ­èµ°è¨ªs, å°‡æˆå°"|"ä¹‹é–“ä»¥å¤–çš„å­—å…ƒæ”¾å…¥tmp, å†èµ°è¨ªtmpæ•¸"*"æ•¸é‡
 # class Solution:
 #     def countAsterisks(self, s: str) -> int:
 #         tmp = []
 #         res = 0
-#         # §Q¥Îflagª¾¹D¥Ø«e¬O§_¦b¦¨¹ï"|"¤¤¶¡, ¤]´N¬O¦b¹J¨ì²Ä¤@­Ó"|"®É±Nflag³]¬°0
+#         # åˆ©ç”¨flagçŸ¥é“ç›®å‰æ˜¯å¦åœ¨æˆå°"|"ä¸­é–“, ä¹Ÿå°±æ˜¯åœ¨é‡åˆ°ç¬¬ä¸€å€‹"|"æ™‚å°‡flagè¨­ç‚º0
 #         flag = 1
 #         for ch in s:
 #             if flag:
@@ -47,53 +46,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2315 lang=python3
-#
-# [2315] Count Asterisks
-#
-
-# @lc code=start
-# µ¹¦r¦ês, return¨â±ø¦¨¹ï'|'¥H¥~ªº'*'¼Æ¶q
-
-# By simulation, time: O(n), space: O(1)
-# §ï¨}ª©, ¤@¼Ë±qÀY¨«³X¦ı¥u­n²Å¦X±ø¥ó®É¹J¨ì'*'­p¼Æ´N¦n, ¤£¥ÎÃB¥~±N¨ä¥L¦r¤¸©ñ¤Jtmp
-class Solution:
-    def countAsterisks(self, s: str) -> int:
-        res = 0
-        flag = 1
-        for ch in s:
-            # ¦b¹J¨ì"|"®É°µ§PÂ_, ¦]¬°flag¥u¦³0©Î1©Ò¥H¥Înot§ïÅÜ­È´N¦n
-            if ch=='|':
-                # ¥Înot´N¤£»İ­n¥Îif flag¨Ó§PÂ_flagª¬ºA, ¤Ï¥¿¹J¨ì'|'´N­n§ó§ïflag
-                flag = not flag
-            # ·íflag¬°1¥B¬O'*'®É¼W¥[­p¼Æ
-            elif flag and ch=='*':
-                res += 1
-        return res    
-
-# # By simulation, time: O(n), space: O(n)
-# # ±qÀY¨«³Xs, ±N¦¨¹ï"|"¤§¶¡¥H¥~ªº¦r¤¸©ñ¤Jtmp, ¦A¨«³Xtmp¼Æ"*"¼Æ¶q
-# class Solution:
-#     def countAsterisks(self, s: str) -> int:
-#         tmp = []
-#         res = 0
-#         # §Q¥Îflagª¾¹D¥Ø«e¬O§_¦b¦¨¹ï"|"¤¤¶¡, ¤]´N¬O¦b¹J¨ì²Ä¤@­Ó"|"®É±Nflag³]¬°0
-#         flag = 1
-#         for ch in s:
-#             if flag:
-#                 tmp.append(ch)
-#                 if ch=="|":
-#                     flag = 0
-#             else:
-#                 if ch=="|":
-#                     flag = 1
-#         for ch in tmp:
-#             if ch=="*":
-#                 res += 1
-#         return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

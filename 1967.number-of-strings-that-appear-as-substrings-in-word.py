@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1967 lang=python3
 #
@@ -7,8 +6,8 @@
 
 # @lc code=start
 
-# By enumerate, time: O(n*m), space: O(1), n = len(word), m = patterns¦r¤¸¼Æ
-# ³o¬O¥Î¼É¤Oªk
+# By enumerate, time: O(n*m), space: O(1), n = len(word), m = patternså­—å…ƒæ•¸
+# é€™æ˜¯ç”¨æš´åŠ›æ³•
 class Solution:
     def numOfStrings(self, patterns: List[str], word: str) -> int:
         def check(pattern: str, word: str) -> bool:
@@ -18,30 +17,30 @@ class Solution:
                 flag = True
                 for j in range(m):
                     if word[i+j]!=pattern[j]:
-                        # ·íµo²{¤£¥i¯à¬Osubstring, flag¬°False¨Ã´£¦­µ²§ô¤ñ¹ï
+                        # ç•¶ç™¼ç¾ä¸å¯èƒ½æ˜¯substring, flagç‚ºFalseä¸¦ææ—©çµæŸæ¯”å°
                         flag = False
                         break
-                # flag¬°True¥Nªí¥Ø«eªºpattern¬Osubstring
+                # flagç‚ºTrueä»£è¡¨ç›®å‰çš„patternæ˜¯substring
                 if flag:
-                    # return True´Nµ¥¦Preturn 1
+                    # return Trueå°±ç­‰åŒreturn 1
                     return True
             return False
         
         res = 0
         for pattern in patterns:
-            # check¥Î¨Ó§PÂ_pattern¬O§_¬°wordªºsubstring
-            # c»y¨¥<string.h>¤º¦³strstr()¥i¥Hª½±µ§PÂ_¬O§_¬°substring
+            # checkç”¨ä¾†åˆ¤æ–·patternæ˜¯å¦ç‚ºwordçš„substring
+            # cèªè¨€<string.h>å…§æœ‰strstr()å¯ä»¥ç›´æ¥åˆ¤æ–·æ˜¯å¦ç‚ºsubstring
             res += check(pattern, word)
         return res
 
 # By KMP
-# ÁÙ¤£À´, ²Ä28ÃD¤]¬O, ¤§«á¬İ
+# é‚„ä¸æ‡‚, ç¬¬28é¡Œä¹Ÿæ˜¯, ä¹‹å¾Œçœ‹
 # class Solution:
 #     def numOfStrings(self, patterns: List[str], word: str) -> int:
 #         def check(pattern: str, word: str) -> bool:
 #             m = len(pattern)
 #             n = len(word)
-#             # ¥Í¦¨ pattern ªº«e???
+#             # ç”Ÿæˆ pattern çš„å‰???
 #             pi = [0] * m
 #             j = 0
 #             for i in range(1, m):
@@ -50,7 +49,7 @@ class Solution:
 #                 if pattern[i] == pattern[j]:
 #                     j += 1
 #                 pi[i] = j
-#             # §Q¥Î«e????¦æ¤Ç°t 
+#             # åˆ©ç”¨å‰????è¡ŒåŒ¹é… 
 #             j = 0
 #             for i in range(n):
 #                 while j and word[i] != pattern[j]:
@@ -68,74 +67,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1967 lang=python3
-#
-# [1967] Number of Strings That Appear as Substrings in Word
-#
-
-# @lc code=start
-
-# By enumerate, time: O(n*m), space: O(1), n = len(word), m = patterns¦r¤¸¼Æ
-# ³o¬O¥Î¼É¤Oªk
-class Solution:
-    def numOfStrings(self, patterns: List[str], word: str) -> int:
-        def check(pattern: str, word: str) -> bool:
-            m = len(pattern)
-            n = len(word)
-            for i in range(n-m+1):
-                flag = True
-                for j in range(m):
-                    if word[i+j]!=pattern[j]:
-                        # ·íµo²{¤£¥i¯à¬Osubstring, flag¬°False¨Ã´£¦­µ²§ô¤ñ¹ï
-                        flag = False
-                        break
-                # flag¬°True¥Nªí¥Ø«eªºpattern¬Osubstring
-                if flag:
-                    # return True´Nµ¥¦Preturn 1
-                    return True
-            return False
-        
-        res = 0
-        for pattern in patterns:
-            # check¥Î¨Ó§PÂ_pattern¬O§_¬°wordªºsubstring
-            # c»y¨¥<string.h>¤º¦³strstr()¥i¥Hª½±µ§PÂ_¬O§_¬°substring
-            res += check(pattern, word)
-        return res
-
-# By KMP
-# ÁÙ¤£À´, ²Ä28ÃD¤]¬O, ¤§«á¬İ
-# class Solution:
-#     def numOfStrings(self, patterns: List[str], word: str) -> int:
-#         def check(pattern: str, word: str) -> bool:
-#             m = len(pattern)
-#             n = len(word)
-#             # ¥Í¦¨ pattern ªº«e???
-#             pi = [0] * m
-#             j = 0
-#             for i in range(1, m):
-#                 while j and pattern[i] != pattern[j]:
-#                     j = pi[j - 1]
-#                 if pattern[i] == pattern[j]:
-#                     j += 1
-#                 pi[i] = j
-#             # §Q¥Î«e????¦æ¤Ç°t 
-#             j = 0
-#             for i in range(n):
-#                 while j and word[i] != pattern[j]:
-#                     j = pi[j - 1]
-#                 if word[i] == pattern[j]:
-#                     j += 1
-#                 if j == m:
-#                     return True
-#             return False
-        
-#         res = 0
-#         for pattern in patterns:
-#             res += check(pattern, word)
-#         return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

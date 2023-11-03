@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2331 lang=python3
 #
@@ -13,59 +12,23 @@
 #         self.left = left
 #         self.right = right
 
-# ¥Ñ¤U¦Ó¤W¹ïtree¤¤©Ò¦³node°µ¤U¦C¹Bºâ
-# node.val=1©Î0¥Nªítrue©Îfalse, 2©Î3¥Nªí¹ï¥ª¥kchild°µor©Îand
-# ³Ì«áreturn¬OtrueÁÙfalse
+# ç”±ä¸‹è€Œä¸Šå°treeä¸­æ‰€æœ‰nodeåšä¸‹åˆ—é‹ç®—
+# node.val=1æˆ–0ä»£è¡¨trueæˆ–false, 2æˆ–3ä»£è¡¨å°å·¦å³childåšoræˆ–and
+# æœ€å¾Œreturnæ˜¯trueé‚„false
 
 # By recursive, time: O(n), space: O(n)
-# »¼°j¤U¥h°µ³Ì«á¦^¶Çµ²ªG§Y¥i
+# éè¿´ä¸‹å»åšæœ€å¾Œå›å‚³çµæœå³å¯
 class Solution:
     def evaluateTree(self, root: Optional[TreeNode]) -> bool:
-        # ²×¤î±ø¥ó, ©Ò¦³node¤£¬O0´N¬O2­Óchild, ©Ò¥H¥u­nÀË´ú¨ä¤@¬O§_¦s¦b§Y¥i
-        # ³o¨ä¹ê¥i¥H¬İ°µ«e§Ç¨«³X(preorder traversal), ¦b³oÃä¤ñ¥t¥~¨âºØ¨«³X¬Ù¤U¤ñ¸û¦¸¼Æ
+        # çµ‚æ­¢æ¢ä»¶, æ‰€æœ‰nodeä¸æ˜¯0å°±æ˜¯2å€‹child, æ‰€ä»¥åªè¦æª¢æ¸¬å…¶ä¸€æ˜¯å¦å­˜åœ¨å³å¯
+        # é€™å…¶å¯¦å¯ä»¥çœ‹åšå‰åºèµ°è¨ª(preorder traversal), åœ¨é€™é‚Šæ¯”å¦å¤–å…©ç¨®èµ°è¨ªçœä¸‹æ¯”è¼ƒæ¬¡æ•¸
         if root.left is None:
             return root.val
-        # 2¥Nªí§@or
+        # 2ä»£è¡¨ä½œor
         if root.val==2:
             return self.evaluateTree(root.left) or self.evaluateTree(root.right)
-        # else¥Nªí3, °µand
+        # elseä»£è¡¨3, åšand
         return self.evaluateTree(root.left) and self.evaluateTree(root.right)
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2331 lang=python3
-#
-# [2331] Evaluate Boolean Binary Tree
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# ¥Ñ¤U¦Ó¤W¹ïtree¤¤©Ò¦³node°µ¤U¦C¹Bºâ
-# node.val=1©Î0¥Nªítrue©Îfalse, 2©Î3¥Nªí¹ï¥ª¥kchild°µor©Îand
-# ³Ì«áreturn¬OtrueÁÙfalse
-
-# By recursive, time: O(n), space: O(n)
-# »¼°j¤U¥h°µ³Ì«á¦^¶Çµ²ªG§Y¥i
-class Solution:
-    def evaluateTree(self, root: Optional[TreeNode]) -> bool:
-        # ²×¤î±ø¥ó, ©Ò¦³node¤£¬O0´N¬O2­Óchild, ©Ò¥H¥u­nÀË´ú¨ä¤@¬O§_¦s¦b§Y¥i
-        # ³o¨ä¹ê¥i¥H¬İ°µ«e§Ç¨«³X(preorder traversal), ¦b³oÃä¤ñ¥t¥~¨âºØ¨«³X¬Ù¤U¤ñ¸û¦¸¼Æ
-        if root.left is None:
-            return root.val
-        # 2¥Nªí§@or
-        if root.val==2:
-            return self.evaluateTree(root.left) or self.evaluateTree(root.right)
-        # else¥Nªí3, °µand
-        return self.evaluateTree(root.left) and self.evaluateTree(root.right)
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

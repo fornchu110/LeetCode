@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1816 lang=python3
 #
@@ -7,9 +6,9 @@
 
 # @lc code=start
 # By string processing, time: O(n), space: O(1), n=len(str)
-# ­n¨Dreturnµ¹©w¥y¤ls¤¤«ek­Ó³æ¦r
-# §Q¥Îsplit§â¥y¤l¤À´²¦¨¤£¦P³æ¦r©ñ¦blist¤º, k¥H¤º´Nappend¨ìres
-# ³Ì«á±Nres¥Î" ".join()ªº¤è¦¡±qlistÅÜ¦^¤@­Ó¥y¤l¦r¦ê
+# è¦æ±‚returnçµ¦å®šå¥å­sä¸­å‰kå€‹å–®å­—
+# åˆ©ç”¨splitæŠŠå¥å­åˆ†æ•£æˆä¸åŒå–®å­—æ”¾åœ¨listå…§, kä»¥å…§å°±appendåˆ°res
+# æœ€å¾Œå°‡resç”¨" ".join()çš„æ–¹å¼å¾listè®Šå›ä¸€å€‹å¥å­å­—ä¸²
 class Solution:
     def truncateSentence(self, s: str, k: int) -> str:
         res = []
@@ -19,8 +18,8 @@ class Solution:
         return " ".join(res)
 
 # By index, time: O(n), space: O(1)
-# ¨«³Xs¤¤ªº¦r²Å, §Q¥Î¹J¨ìªÅ®æ©Îµ²§À§PÂ_¤@­Ó³æ¦rµ²§ô¨ÃÀò±oindex
-# ³Ì«áreturn¶}ÀY¨ìindex¤ºªºs
+# èµ°è¨ªsä¸­çš„å­—ç¬¦, åˆ©ç”¨é‡åˆ°ç©ºæ ¼æˆ–çµå°¾åˆ¤æ–·ä¸€å€‹å–®å­—çµæŸä¸¦ç²å¾—index
+# æœ€å¾Œreturné–‹é ­åˆ°indexå…§çš„s
 # class Solution:
 #     def truncateSentence(self, s: str, k: int) -> str:
 #         cnt = 0
@@ -34,40 +33,3 @@ class Solution:
                     
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1816 lang=python3
-#
-# [1816] Truncate Sentence
-#
-
-# @lc code=start
-# By string processing, time: O(n), space: O(1), n=len(str)
-# ­n¨Dreturnµ¹©w¥y¤ls¤¤«ek­Ó³æ¦r
-# §Q¥Îsplit§â¥y¤l¤À´²¦¨¤£¦P³æ¦r©ñ¦blist¤º, k¥H¤º´Nappend¨ìres
-# ³Ì«á±Nres¥Î" ".join()ªº¤è¦¡±qlistÅÜ¦^¤@­Ó¥y¤l¦r¦ê
-class Solution:
-    def truncateSentence(self, s: str, k: int) -> str:
-        res = []
-        for idx, i in enumerate(s.split()):
-            if idx<k:
-                res.append(i)
-        return " ".join(res)
-
-# By index, time: O(n), space: O(1)
-# ¨«³Xs¤¤ªº¦r²Å, §Q¥Î¹J¨ìªÅ®æ©Îµ²§À§PÂ_¤@­Ó³æ¦rµ²§ô¨ÃÀò±oindex
-# ³Ì«áreturn¶}ÀY¨ìindex¤ºªºs
-# class Solution:
-#     def truncateSentence(self, s: str, k: int) -> str:
-#         cnt = 0
-#         for i in range(1, len(s)+1):
-#             if i==len(s) or s[i]==" ":
-#                 cnt += 1
-#                 if cnt==k:
-#                     end = i
-#                     break
-#         return s[:end]
-                    
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

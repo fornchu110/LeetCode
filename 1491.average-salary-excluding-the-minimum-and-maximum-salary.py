@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1491 lang=python3
 #
@@ -6,11 +5,11 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ó°}¦Csalary, ±N³Ì¤j­È©M³Ì¤p­È¥h°£«á, return³Ñ¤U³o¨Ç¤¸¯Àªº¥­§¡­È¨Ã¨ú¨ì¤p¼Æ«á5¦ì
-# ¨Ã¤£­n¨D¤p¼ÆÂI, ¥@»¡»~®t¦b10^-5¦¸¤è¤º³£ºâ¹ï
+# çµ¦ä¸€å€‹é™£åˆ—salary, å°‡æœ€å¤§å€¼å’Œæœ€å°å€¼å»é™¤å¾Œ, returnå‰©ä¸‹é€™äº›å…ƒç´ çš„å¹³å‡å€¼ä¸¦å–åˆ°å°æ•¸å¾Œ5ä½
+# ä¸¦ä¸è¦æ±‚å°æ•¸é», ä¸–èªªèª¤å·®åœ¨10^-5æ¬¡æ–¹å…§éƒ½ç®—å°
 
 # By min() and max(), time: O(n), space: O(1)
-# ª½±µ¥Îmin()©Mmax()§ä³Ì¤j³Ì¤p­È, ¥ı±Nsalary¤¸¯À¥[Á`´î±¼³o¨âªÌ§Y¥i
+# ç›´æ¥ç”¨min()å’Œmax()æ‰¾æœ€å¤§æœ€å°å€¼, å…ˆå°‡salaryå…ƒç´ åŠ ç¸½æ¸›æ‰é€™å…©è€…å³å¯
 class Solution:
     def average(self, salary: List[int]) -> float:
         maxValue = max(salary)
@@ -19,8 +18,8 @@ class Solution:
         return total/(len(salary)-2)
 
 # By sort and deque, time: O(n), space: O(n)
-# §Q¥Îcollections.deque()»s§@ÂùÃäqueue, ±Nsort«áªºsalary§Àºİ©MÀYºİ¤¸¯Àpop¥X, ¤]´N¬O³Ì¤j³Ì¤p­È
-# ¦A¹ï³Ñ¤U¤¸¯À¥[Á`¨ú¥­§¡, ¨Ã¥Îround¨ú¨ì¤p¼ÆÂI«á¤­¦ì
+# åˆ©ç”¨collections.deque()è£½ä½œé›™é‚Šqueue, å°‡sortå¾Œçš„salaryå°¾ç«¯å’Œé ­ç«¯å…ƒç´ popå‡º, ä¹Ÿå°±æ˜¯æœ€å¤§æœ€å°å€¼
+# å†å°å‰©ä¸‹å…ƒç´ åŠ ç¸½å–å¹³å‡, ä¸¦ç”¨roundå–åˆ°å°æ•¸é»å¾Œäº”ä½
 # class Solution:
 #     def average(self, salary: List[int]) -> float:
 #         salary.sort()
@@ -33,49 +32,8 @@ class Solution:
 #         for i in queue:
 #             res += i
 #         res /= len(queue)
-#         # round²Ä¤G­Ó°Ñ¼Æ¬O¤p¼ÆÂI¦ì¼Æ, ­Y­nresÅÜstr¥Îformat(res, %.5f)
+#         # roundç¬¬äºŒå€‹åƒæ•¸æ˜¯å°æ•¸é»ä½æ•¸, è‹¥è¦resè®Šstrç”¨format(res, %.5f)
 #         # res = round(res, 5)
 #         return res
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1491 lang=python3
-#
-# [1491] Average Salary Excluding the Minimum and Maximum Salary
-#
-
-# @lc code=start
-# µ¹¤@­Ó°}¦Csalary, ±N³Ì¤j­È©M³Ì¤p­È¥h°£«á, return³Ñ¤U³o¨Ç¤¸¯Àªº¥­§¡­È¨Ã¨ú¨ì¤p¼Æ«á5¦ì
-# ¨Ã¤£­n¨D¤p¼ÆÂI, ¥@»¡»~®t¦b10^-5¦¸¤è¤º³£ºâ¹ï
-
-# By min() and max(), time: O(n), space: O(1)
-# ª½±µ¥Îmin()©Mmax()§ä³Ì¤j³Ì¤p­È, ¥ı±Nsalary¤¸¯À¥[Á`´î±¼³o¨âªÌ§Y¥i
-class Solution:
-    def average(self, salary: List[int]) -> float:
-        maxValue = max(salary)
-        minValue = min(salary)
-        total = sum(salary) - maxValue-minValue
-        return total/(len(salary)-2)
-
-# By sort and deque, time: O(n), space: O(n)
-# §Q¥Îcollections.deque()»s§@ÂùÃäqueue, ±Nsort«áªºsalary§Àºİ©MÀYºİ¤¸¯Àpop¥X, ¤]´N¬O³Ì¤j³Ì¤p­È
-# ¦A¹ï³Ñ¤U¤¸¯À¥[Á`¨ú¥­§¡, ¨Ã¥Îround¨ú¨ì¤p¼ÆÂI«á¤­¦ì
-# class Solution:
-#     def average(self, salary: List[int]) -> float:
-#         salary.sort()
-#         queue = collections.deque()
-#         for i in salary:
-#             queue.append(i)
-#         queue.pop()
-#         queue.popleft()
-#         res = 0
-#         for i in queue:
-#             res += i
-#         res /= len(queue)
-#         # round²Ä¤G­Ó°Ñ¼Æ¬O¤p¼ÆÂI¦ì¼Æ, ­Y­nresÅÜstr¥Îformat(res, %.5f)
-#         # res = round(res, 5)
-#         return res
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

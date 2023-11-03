@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1551 lang=python3
 #
@@ -6,17 +5,17 @@
 #
 
 # @lc code=start
-# µ¹n, n¬°¤@µ¥®t°}¦C1, 3, 5, ...ªº¤¸¯À¼Æ¶q
-# ©w¸q¤@¦¸¾Ş§@±N¤@­Ó¤¸¯À-1¤@­Ó¤¸¯À+1
-# return ¸g¹L³Ì¤Ö¦¸¾Ş§@¯àÅı°}¦C¤º¤¸¯À³£¬Ûµ¥
+# çµ¦n, nç‚ºä¸€ç­‰å·®é™£åˆ—1, 3, 5, ...çš„å…ƒç´ æ•¸é‡
+# å®šç¾©ä¸€æ¬¡æ“ä½œå°‡ä¸€å€‹å…ƒç´ -1ä¸€å€‹å…ƒç´ +1
+# return ç¶“éæœ€å°‘æ¬¡æ“ä½œèƒ½è®“é™£åˆ—å…§å…ƒç´ éƒ½ç›¸ç­‰
 
-# By greedy, time: O(n), space: O(n), ¤£±N°}¦C¼ÒÀÀ¥X¨Óªº¸Ü¬Ospace: O(1)
-# ¨D¥X¥­§¡­È«á, ¬İ¤ñ¥­§¡­È¤pªº¼Æ»P¥­§¡­Èªº®t­ÈÁ`©M§Y¬Oµª®×
-# ¨ä¹ê¥­§¡­È´N¬O­ì¥»µ¹ªºn, ©Ò¥H§ä2*i+1»Pnªº®t­È§Y¥i, ¬İ­n¤j©óÁÙ¤p©ó
+# By greedy, time: O(n), space: O(n), ä¸å°‡é™£åˆ—æ¨¡æ“¬å‡ºä¾†çš„è©±æ˜¯space: O(1)
+# æ±‚å‡ºå¹³å‡å€¼å¾Œ, çœ‹æ¯”å¹³å‡å€¼å°çš„æ•¸èˆ‡å¹³å‡å€¼çš„å·®å€¼ç¸½å’Œå³æ˜¯ç­”æ¡ˆ
+# å…¶å¯¦å¹³å‡å€¼å°±æ˜¯åŸæœ¬çµ¦çš„n, æ‰€ä»¥æ‰¾2*i+1èˆ‡nçš„å·®å€¼å³å¯, çœ‹è¦å¤§æ–¼é‚„å°æ–¼
 class Solution:
     def minOperations(self, n: int) -> int:
         res = 0
-        # ¼ÒÀÀ¥X°}¦Cªº°µªk
+        # æ¨¡æ“¬å‡ºé™£åˆ—çš„åšæ³•
         # arr = []
         # for i in range(n):
         #     arr.append(2*i+1)
@@ -24,64 +23,20 @@ class Solution:
         # for i in range(len(arr)//2):
         #     res += average-arr[i]
         # return res
-        # ¤£¥Î¼ÒÀÀ°}¦Cªº°µªk, space: O(1)
+        # ä¸ç”¨æ¨¡æ“¬é™£åˆ—çš„åšæ³•, space: O(1)
         for i in range(n):
             if (2*i+1)<n:
                 res += n-(2*i+1)
         return res
-        # ¤@¦æª©
+        # ä¸€è¡Œç‰ˆ
         # return sum(x - n for i in range(n) if (x := 2 * i + 1) > n)
 
 # By math, time: O(1), space: O(1)
-# ¸g¹L¼Æ¾Ç±À¾É¥iª¾µª®×»PnªºÃö«Y
+# ç¶“éæ•¸å­¸æ¨å°å¯çŸ¥ç­”æ¡ˆèˆ‡nçš„é—œä¿‚
 # class Solution:
 #     def minOperations(self, n: int) -> int:
-#         # °O±o¥[´î­¼°£ªºÀu¥ıÅv¤ñ¦ì²¾°ª
+#         # è¨˜å¾—åŠ æ¸›ä¹˜é™¤çš„å„ªå…ˆæ¬Šæ¯”ä½ç§»é«˜
 #         return n*n>>2
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1551 lang=python3
-#
-# [1551] Minimum Operations to Make Array Equal
-#
-
-# @lc code=start
-# µ¹n, n¬°¤@µ¥®t°}¦C1, 3, 5, ...ªº¤¸¯À¼Æ¶q
-# ©w¸q¤@¦¸¾Ş§@±N¤@­Ó¤¸¯À-1¤@­Ó¤¸¯À+1
-# return ¸g¹L³Ì¤Ö¦¸¾Ş§@¯àÅı°}¦C¤º¤¸¯À³£¬Ûµ¥
-
-# By greedy, time: O(n), space: O(n), ¤£±N°}¦C¼ÒÀÀ¥X¨Óªº¸Ü¬Ospace: O(1)
-# ¨D¥X¥­§¡­È«á, ¬İ¤ñ¥­§¡­È¤pªº¼Æ»P¥­§¡­Èªº®t­ÈÁ`©M§Y¬Oµª®×
-# ¨ä¹ê¥­§¡­È´N¬O­ì¥»µ¹ªºn, ©Ò¥H§ä2*i+1»Pnªº®t­È§Y¥i, ¬İ­n¤j©óÁÙ¤p©ó
-class Solution:
-    def minOperations(self, n: int) -> int:
-        res = 0
-        # ¼ÒÀÀ¥X°}¦Cªº°µªk
-        # arr = []
-        # for i in range(n):
-        #     arr.append(2*i+1)
-        # average = arr[0]+arr[len(arr)-1]//2
-        # for i in range(len(arr)//2):
-        #     res += average-arr[i]
-        # return res
-        # ¤£¥Î¼ÒÀÀ°}¦Cªº°µªk, space: O(1)
-        for i in range(n):
-            if (2*i+1)<n:
-                res += n-(2*i+1)
-        return res
-        # ¤@¦æª©
-        # return sum(x - n for i in range(n) if (x := 2 * i + 1) > n)
-
-# By math, time: O(1), space: O(1)
-# ¸g¹L¼Æ¾Ç±À¾É¥iª¾µª®×»PnªºÃö«Y
-# class Solution:
-#     def minOperations(self, n: int) -> int:
-#         # °O±o¥[´î­¼°£ªºÀu¥ıÅv¤ñ¦ì²¾°ª
-#         return n*n>>2
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2391 lang=python3
 #
@@ -6,15 +5,15 @@
 #
 
 # @lc code=start
-# By string processing, time: O(n), space: O(1), n¬°garbage¤º¦r¤¸¼Æ¶q
-# §ä¥X±qÀY(index = 0)³B²zG¡BP¡BM©Òªá¶O®É¶¡, ¥u­n¦r¦ê¤º¦³¨ä¤@´Nªá1®É¶¡, ±qgarbage¤ºindex²¾°Ê¨ìindex+1ªá¶Otravel[indexªº®É¶¡]
-# ¨D¥X³B²z§¹G¡BP¡BMªá¶OÁ`®É¶¡
+# By string processing, time: O(n), space: O(1), nç‚ºgarbageå…§å­—å…ƒæ•¸é‡
+# æ‰¾å‡ºå¾é ­(index = 0)è™•ç†Gã€Pã€Mæ‰€èŠ±è²»æ™‚é–“, åªè¦å­—ä¸²å…§æœ‰å…¶ä¸€å°±èŠ±1æ™‚é–“, å¾garbageå…§indexç§»å‹•åˆ°index+1èŠ±è²»travel[indexçš„æ™‚é–“]
+# æ±‚å‡ºè™•ç†å®ŒGã€Pã€MèŠ±è²»ç¸½æ™‚é–“
 class Solution:
     def garbageCollection(self, garbage: List[str], travel: List[int]) -> int:
         res, g, m, p, idx = 0, 0, 0, 0, 0
         for idx , i in enumerate(garbage):
             res += len(i)
-            # §ä¦r¤¸¬O§_¦s¦b¦r¦ê¤º¤£­n¥Îin, ¥Î°j°é¨«³X¤ñ¸û·Ç
+            # æ‰¾å­—å…ƒæ˜¯å¦å­˜åœ¨å­—ä¸²å…§ä¸è¦ç”¨in, ç”¨è¿´åœˆèµ°è¨ªæ¯”è¼ƒæº–
             for j in i:
                 if "M"==j:
                     m = idx
@@ -32,38 +31,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2391 lang=python3
-#
-# [2391] Minimum Amount of Time to Collect Garbage
-#
-
-# @lc code=start
-# By string processing, time: O(n), space: O(1), n¬°garbage¤º¦r¤¸¼Æ¶q
-# §ä¥X±qÀY(index = 0)³B²zG¡BP¡BM©Òªá¶O®É¶¡, ¥u­n¦r¦ê¤º¦³¨ä¤@´Nªá1®É¶¡, ±qgarbage¤ºindex²¾°Ê¨ìindex+1ªá¶Otravel[indexªº®É¶¡]
-# ¨D¥X³B²z§¹G¡BP¡BMªá¶OÁ`®É¶¡
-class Solution:
-    def garbageCollection(self, garbage: List[str], travel: List[int]) -> int:
-        res, g, m, p, idx = 0, 0, 0, 0, 0
-        for idx , i in enumerate(garbage):
-            res += len(i)
-            # §ä¦r¤¸¬O§_¦s¦b¦r¦ê¤º¤£­n¥Îin, ¥Î°j°é¨«³X¤ñ¸û·Ç
-            for j in i:
-                if "M"==j:
-                    m = idx
-                elif "G"==j:
-                    g = idx
-                elif "P"==j:
-                    p = idx
-        for i in range(m):
-            res += travel[i]
-        for i in range(g):
-            res += travel[i]
-        for i in range(p):
-            res += travel[i]
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

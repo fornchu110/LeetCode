@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2348 lang=python3
 #
@@ -6,12 +5,12 @@
 #
 
 # @lc code=start
-# µ¹¤@°}¦Cnums, return¸Ì­±¦UºØ³sÄò¥ş¬°0ªº¤l°}¦C¼Æ¥Ø
+# çµ¦ä¸€é™£åˆ—nums, returnè£¡é¢å„ç¨®é€£çºŒå…¨ç‚º0çš„å­é™£åˆ—æ•¸ç›®
 
 # By DP, time: O(n), space: O(1)
-# ¤l°}¦C¼Æ¥Ø­n°O±o³o©Û
-# Ex: [0]¥u¦³1­Ó¤l°}¦C, [0, 0]¦³3­Ó¤l°}¦C, [0, 0, 0]¦³6­Ó¤l°}¦C
-# ©Ò¥H·|µo²{, 1 = 0+1, 3 = 1+2, 6 = 3+3, ¨C¦¸µo²{·sªº0´N+0ªº¼Æ¶q´N¬O·s¼W¥[ªº¤l°}¦C¼Æ¥Ø
+# å­é™£åˆ—æ•¸ç›®è¦è¨˜å¾—é€™æ‹›
+# Ex: [0]åªæœ‰1å€‹å­é™£åˆ—, [0, 0]æœ‰3å€‹å­é™£åˆ—, [0, 0, 0]æœ‰6å€‹å­é™£åˆ—
+# æ‰€ä»¥æœƒç™¼ç¾, 1 = 0+1, 3 = 1+2, 6 = 3+3, æ¯æ¬¡ç™¼ç¾æ–°çš„0å°±+0çš„æ•¸é‡å°±æ˜¯æ–°å¢åŠ çš„å­é™£åˆ—æ•¸ç›®
 class Solution:
     def zeroFilledSubarray(self, nums: List[int]) -> int:
         res = cnt = 0
@@ -25,31 +24,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2348 lang=python3
-#
-# [2348] Number of Zero-Filled Subarrays
-#
-
-# @lc code=start
-# µ¹¤@°}¦Cnums, return¸Ì­±¦UºØ³sÄò¥ş¬°0ªº¤l°}¦C¼Æ¥Ø
-
-# By DP, time: O(n), space: O(1)
-# ¤l°}¦C¼Æ¥Ø­n°O±o³o©Û
-# Ex: [0]¥u¦³1­Ó¤l°}¦C, [0, 0]¦³3­Ó¤l°}¦C, [0, 0, 0]¦³6­Ó¤l°}¦C
-# ©Ò¥H·|µo²{, 1 = 0+1, 3 = 1+2, 6 = 3+3, ¨C¦¸µo²{·sªº0´N+0ªº¼Æ¶q´N¬O·s¼W¥[ªº¤l°}¦C¼Æ¥Ø
-class Solution:
-    def zeroFilledSubarray(self, nums: List[int]) -> int:
-        res = cnt = 0
-        for i in nums:
-            if i:
-                cnt = 0
-            else:
-                cnt += 1
-                res += cnt
-        return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

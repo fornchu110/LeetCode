@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2220 lang=python3
 #
@@ -6,52 +5,23 @@
 #
 
 # @lc code=start
-# By XOR and bitwise, time: O(log(n)), space: O(1), n¬Ostart©Mgoal¸û¤j¨º­È, log(n)§Y¬O¨«³X¦ì¼Æªº½ÆÂø«×
-# ­n§âstart¸g¹L¤@¤@Â½Âà¤G¶i¦ìªºbitÂà´«¦¨goal, °İ³Ì¤ÖÂ½Âà¦¸¼Æ
-# ¤]´N¬O»¡¥u­n¬İstart©Mgoal¦b¤G¶i¦ì¤U¤£¦Pbitªº¼Æ¶q§Y¥i
-# §Q¥ÎXORªº©Ê½è, 1^1 = 0, 1^0 = 1, ±Nstrat©Mgoal°µXOR´Nª¾¹D¤£¦Pbit¼Æ¶q
-# ¦A¨Ó±q¥k¤@¤@¬İ­Ó¦ì¼Æªºbit¬O§_¬°1, ¬O1¥Nªí¤£¦Pbit, res+1
+# By XOR and bitwise, time: O(log(n)), space: O(1), næ˜¯startå’Œgoalè¼ƒå¤§é‚£å€¼, log(n)å³æ˜¯èµ°è¨ªä½æ•¸çš„è¤‡é›œåº¦
+# è¦æŠŠstartç¶“éä¸€ä¸€ç¿»è½‰äºŒé€²ä½çš„bitè½‰æ›æˆgoal, å•æœ€å°‘ç¿»è½‰æ¬¡æ•¸
+# ä¹Ÿå°±æ˜¯èªªåªè¦çœ‹startå’Œgoalåœ¨äºŒé€²ä½ä¸‹ä¸åŒbitçš„æ•¸é‡å³å¯
+# åˆ©ç”¨XORçš„æ€§è³ª, 1^1 = 0, 1^0 = 1, å°‡stratå’ŒgoalåšXORå°±çŸ¥é“ä¸åŒbitæ•¸é‡
+# å†ä¾†å¾å³ä¸€ä¸€çœ‹å€‹ä½æ•¸çš„bitæ˜¯å¦ç‚º1, æ˜¯1ä»£è¡¨ä¸åŒbit, res+1
 class Solution:
     def minBitFlips(self, start: int, goal: int) -> int:
         res = 0
         tmp = start^goal
-        # 0¬O²×¤î±ø¥óªº±¡ªp¤£¥Î¦A¼g!=0, while(0)¦ÛµM·|¸õ¥X
+        # 0æ˜¯çµ‚æ­¢æ¢ä»¶çš„æƒ…æ³ä¸ç”¨å†å¯«!=0, while(0)è‡ªç„¶æœƒè·³å‡º
         while tmp:
             # if tmp&1:
             #     res += 1
-            # ³o¼Ë¼g¤W­±¨º¬q§óÂ²¼ä
+            # é€™æ¨£å¯«ä¸Šé¢é‚£æ®µæ›´ç°¡æ½”
             res += tmp&1
             tmp >>= 1
         return res
                 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2220 lang=python3
-#
-# [2220] Minimum Bit Flips to Convert Number
-#
-
-# @lc code=start
-# By XOR and bitwise, time: O(log(n)), space: O(1), n¬Ostart©Mgoal¸û¤j¨º­È, log(n)§Y¬O¨«³X¦ì¼Æªº½ÆÂø«×
-# ­n§âstart¸g¹L¤@¤@Â½Âà¤G¶i¦ìªºbitÂà´«¦¨goal, °İ³Ì¤ÖÂ½Âà¦¸¼Æ
-# ¤]´N¬O»¡¥u­n¬İstart©Mgoal¦b¤G¶i¦ì¤U¤£¦Pbitªº¼Æ¶q§Y¥i
-# §Q¥ÎXORªº©Ê½è, 1^1 = 0, 1^0 = 1, ±Nstrat©Mgoal°µXOR´Nª¾¹D¤£¦Pbit¼Æ¶q
-# ¦A¨Ó±q¥k¤@¤@¬İ­Ó¦ì¼Æªºbit¬O§_¬°1, ¬O1¥Nªí¤£¦Pbit, res+1
-class Solution:
-    def minBitFlips(self, start: int, goal: int) -> int:
-        res = 0
-        tmp = start^goal
-        # 0¬O²×¤î±ø¥óªº±¡ªp¤£¥Î¦A¼g!=0, while(0)¦ÛµM·|¸õ¥X
-        while tmp:
-            # if tmp&1:
-            #     res += 1
-            # ³o¼Ë¼g¤W­±¨º¬q§óÂ²¼ä
-            res += tmp&1
-            tmp >>= 1
-        return res
-                
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

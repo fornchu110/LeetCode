@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1572 lang=python3
 #
@@ -6,23 +5,23 @@
 #
 
 # @lc code=start
-# µ¹¯x°}mat, ­n¨D±N¯x°}¦ì©ó¨â±ø¹ï¨¤½uªº¤¸¯À§@¥[Á`, return¥[Á`­È
+# çµ¦çŸ©é™£mat, è¦æ±‚å°‡çŸ©é™£ä½æ–¼å…©æ¢å°è§’ç·šçš„å…ƒç´ ä½œåŠ ç¸½, returnåŠ ç¸½å€¼
 
 # By math, time: O(n), space: O(1) 
-# ­n¦P®É±N¨â±ø¹ï¨¤½u¤¸¯À°µ¬Û¥[, ¥u¨«³X¦C¦Ó¤£¥Î¨«³X¯x°}©Ò¦³¤¸¯À¬Ù¤U½ÆÂø«×
+# è¦åŒæ™‚å°‡å…©æ¢å°è§’ç·šå…ƒç´ åšç›¸åŠ , åªèµ°è¨ªåˆ—è€Œä¸ç”¨èµ°è¨ªçŸ©é™£æ‰€æœ‰å…ƒç´ çœä¸‹è¤‡é›œåº¦
 class Solution:
     def diagonalSum(self, mat: List[List[int]]) -> int:
         n = len(mat)
         total = 0
         mid = n//2
         for i in range(n):
-            # ²Ä¤@¦æ[0][0]¹ïÀ³[n-1][n-1], ²Ä¤G¦æ[1][1]¹ïÀ³[n-2][n-2], n-2µ¥¦Pn-1-1  
+            # ç¬¬ä¸€è¡Œ[0][0]å°æ‡‰[n-1][n-1], ç¬¬äºŒè¡Œ[1][1]å°æ‡‰[n-2][n-2], n-2ç­‰åŒn-1-1  
             total += mat[i][i] + mat[i][n-1-i]
-        # len(mat)¬°©_¼Æ®É³Ì¤¤¶¡¨º®æ·|³Qºâ¨â¦¸, ©Ò¥H­n¦©¦^¨Ó
+        # len(mat)ç‚ºå¥‡æ•¸æ™‚æœ€ä¸­é–“é‚£æ ¼æœƒè¢«ç®—å…©æ¬¡, æ‰€ä»¥è¦æ‰£å›ä¾†
         return total-mat[mid][mid]*(n&1)
 
 # By enumerate, time: O(n^2), space: O(1)
-# ¨«³X¯x°}©Ò¦³¤¸¯À, ·í¦ì©ó¨â±ø¹ï¨¤½u¸g¹Lªº®y¼Ğ´N±N¨ä¥[Á`
+# èµ°è¨ªçŸ©é™£æ‰€æœ‰å…ƒç´ , ç•¶ä½æ–¼å…©æ¢å°è§’ç·šç¶“éçš„åº§æ¨™å°±å°‡å…¶åŠ ç¸½
 # class Solution:
 #     def diagonalSum(self, mat: List[List[int]]) -> int:
 #         n = len(mat)
@@ -31,37 +30,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1572 lang=python3
-#
-# [1572] Matrix Diagonal Sum
-#
-
-# @lc code=start
-# µ¹¯x°}mat, ­n¨D±N¯x°}¦ì©ó¨â±ø¹ï¨¤½uªº¤¸¯À§@¥[Á`, return¥[Á`­È
-
-# By math, time: O(n), space: O(1) 
-# ­n¦P®É±N¨â±ø¹ï¨¤½u¤¸¯À°µ¬Û¥[, ¥u¨«³X¦C¦Ó¤£¥Î¨«³X¯x°}©Ò¦³¤¸¯À¬Ù¤U½ÆÂø«×
-class Solution:
-    def diagonalSum(self, mat: List[List[int]]) -> int:
-        n = len(mat)
-        total = 0
-        mid = n//2
-        for i in range(n):
-            # ²Ä¤@¦æ[0][0]¹ïÀ³[n-1][n-1], ²Ä¤G¦æ[1][1]¹ïÀ³[n-2][n-2], n-2µ¥¦Pn-1-1  
-            total += mat[i][i] + mat[i][n-1-i]
-        # len(mat)¬°©_¼Æ®É³Ì¤¤¶¡¨º®æ·|³Qºâ¨â¦¸, ©Ò¥H­n¦©¦^¨Ó
-        return total-mat[mid][mid]*(n&1)
-
-# By enumerate, time: O(n^2), space: O(1)
-# ¨«³X¯x°}©Ò¦³¤¸¯À, ·í¦ì©ó¨â±ø¹ï¨¤½u¸g¹Lªº®y¼Ğ´N±N¨ä¥[Á`
-# class Solution:
-#     def diagonalSum(self, mat: List[List[int]]) -> int:
-#         n = len(mat)
-#         return sum(mat[i][j] for i in range(n) for j in range(n) \
-#                     if i==j or i+j==n-1)
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1773 lang=python3
 #
@@ -7,9 +6,9 @@
 
 # @lc code=start
 # By by index, time: O(n), space: O(1)
-# items³£¨Ì¾Ú[type, color, name]®æ¦¡¦s¸ê°T, ¨D»Pµ¹©wkey¬Û¦Pvalueªºitems¼Æ¶q
-# ¥i¥H¬İ¨ì©T©w§âtype¦s¦bindex 0, color¦s¦bindex 1, name¦s¦bindex 2, ¥H¦¹·íindex¥h§PÂ_value
-# c»y¨¥ªº¦r¦ê¬Ûµ¥´N¬O¥Îstrcmp()==0§PÂ_, ³o¬O¦Û¤v¹³c»y¨¥±o¼gªk
+# itemséƒ½ä¾æ“š[type, color, name]æ ¼å¼å­˜è³‡è¨Š, æ±‚èˆ‡çµ¦å®škeyç›¸åŒvalueçš„itemsæ•¸é‡
+# å¯ä»¥çœ‹åˆ°å›ºå®šæŠŠtypeå­˜åœ¨index 0, colorå­˜åœ¨index 1, nameå­˜åœ¨index 2, ä»¥æ­¤ç•¶indexå»åˆ¤æ–·value
+# cèªè¨€çš„å­—ä¸²ç›¸ç­‰å°±æ˜¯ç”¨strcmp()==0åˆ¤æ–·, é€™æ˜¯è‡ªå·±åƒcèªè¨€å¾—å¯«æ³•
 class Solution:
     def countMatches(self, items: List[List[str]], ruleKey: str, ruleValue: str) -> int:
         cnt = 0
@@ -26,54 +25,14 @@ class Solution:
         return cnt
 
 # By hash, time: O(n), space: O(1)
-# python¥i¥H¥Î§óÂ²¼ä§Ö³tªº°µªk
+# pythonå¯ä»¥ç”¨æ›´ç°¡æ½”å¿«é€Ÿçš„åšæ³•
 # class Solution:
 #     def countMatches(self, items: List[List[str]], ruleKey: str, ruleValue: str) -> int:
-#         # ·íruleKey¬°¤£¦P®É, µ¹¤£¦Pindex
+#         # ç•¶ruleKeyç‚ºä¸åŒæ™‚, çµ¦ä¸åŒindex
 #         index = {"type": 0, "color": 1, "name": 2}[ruleKey]
-#         # ¬İitem¤ºindex¦ì¸m¬O§_»PruleValue¤@¼Ë, ¥Îsum()¥[Á`
-#         # ¦]¬°==¬O¥¬ªL, ¥u·|ªğ¦^1(True)©Î0(False), ©Ò¥Hsum()´Nµ¥¦P==ªº¼Æ¶q
+#         # çœ‹itemå…§indexä½ç½®æ˜¯å¦èˆ‡ruleValueä¸€æ¨£, ç”¨sum()åŠ ç¸½
+#         # å› ç‚º==æ˜¯å¸ƒæ—, åªæœƒè¿”å›1(True)æˆ–0(False), æ‰€ä»¥sum()å°±ç­‰åŒ==çš„æ•¸é‡
 #         return sum(item[index] == ruleValue for item in items)
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1773 lang=python3
-#
-# [1773] Count Items Matching a Rule
-#
-
-# @lc code=start
-# By by index, time: O(n), space: O(1)
-# items³£¨Ì¾Ú[type, color, name]®æ¦¡¦s¸ê°T, ¨D»Pµ¹©wkey¬Û¦Pvalueªºitems¼Æ¶q
-# ¥i¥H¬İ¨ì©T©w§âtype¦s¦bindex 0, color¦s¦bindex 1, name¦s¦bindex 2, ¥H¦¹·íindex¥h§PÂ_value
-# c»y¨¥ªº¦r¦ê¬Ûµ¥´N¬O¥Îstrcmp()==0§PÂ_, ³o¬O¦Û¤v¹³c»y¨¥±o¼gªk
-class Solution:
-    def countMatches(self, items: List[List[str]], ruleKey: str, ruleValue: str) -> int:
-        cnt = 0
-        for i in items:
-            if ruleKey=="type":
-                if i[0]==ruleValue:
-                    cnt += 1
-            elif ruleKey=="color":
-                if i[1]==ruleValue:
-                    cnt += 1
-            else:
-                if i[2]==ruleValue:
-                    cnt += 1
-        return cnt
-
-# By hash, time: O(n), space: O(1)
-# python¥i¥H¥Î§óÂ²¼ä§Ö³tªº°µªk
-# class Solution:
-#     def countMatches(self, items: List[List[str]], ruleKey: str, ruleValue: str) -> int:
-#         # ·íruleKey¬°¤£¦P®É, µ¹¤£¦Pindex
-#         index = {"type": 0, "color": 1, "name": 2}[ruleKey]
-#         # ¬İitem¤ºindex¦ì¸m¬O§_»PruleValue¤@¼Ë, ¥Îsum()¥[Á`
-#         # ¦]¬°==¬O¥¬ªL, ¥u·|ªğ¦^1(True)©Î0(False), ©Ò¥Hsum()´Nµ¥¦P==ªº¼Æ¶q
-#         return sum(item[index] == ruleValue for item in items)
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

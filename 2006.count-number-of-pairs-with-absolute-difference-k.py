@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2006 lang=python3
 #
@@ -6,23 +5,23 @@
 #
 
 # @lc code=start
-# ¦^¶Ç°}¦Cnums¤¤¦bindex i<jªº±¡ªp¤U|nums[i]-nums[j]|==kªºpairs¼Æ¶q
+# å›žå‚³é™£åˆ—numsä¸­åœ¨index i<jçš„æƒ…æ³ä¸‹|nums[i]-nums[j]|==kçš„pairsæ•¸é‡
 
 # By hash table, time: O(n), space: O(n)
-# §Q¥Îhash±N¨«³X¨ìªº¼Æ¦r¦s¤U¨Ó, ¨Ã¥B°O¿ý¥Ø«e³o­Ó¼Æ¦r¨«³X¨ì¤F´X­Ó
-# ¨C¨«³X¨ì·s¼Æ¦r, ´N¥h¬d·s¼Æ¦r-k©M·s¼Æ¦r+k¦³¦h¤Ö¥[¤W¨Ó, ¥Nªí«e­±²Å¦X|nums[i]-nums[j]|==kªº¼Æ¥Ø
+# åˆ©ç”¨hashå°‡èµ°è¨ªåˆ°çš„æ•¸å­—å­˜ä¸‹ä¾†, ä¸¦ä¸”è¨˜éŒ„ç›®å‰é€™å€‹æ•¸å­—èµ°è¨ªåˆ°äº†å¹¾å€‹
+# æ¯èµ°è¨ªåˆ°æ–°æ•¸å­—, å°±åŽ»æŸ¥æ–°æ•¸å­—-kå’Œæ–°æ•¸å­—+kæœ‰å¤šå°‘åŠ ä¸Šä¾†, ä»£è¡¨å‰é¢ç¬¦åˆ|nums[i]-nums[j]|==kçš„æ•¸ç›®
 class Solution:
     def countKDifference(self, nums: List[int], k: int) -> int:
         hash = {}
         res = 0
-        # ¨C¦¸¨«³X¨ìªº·s¼Æ¦r¹ê»Ú¤W·í§@nums[j]¦b¬Ý, ¨«³X¹L¤w¸g¦bhash¤Wªº¬Onums[i]
+        # æ¯æ¬¡èµ°è¨ªåˆ°çš„æ–°æ•¸å­—å¯¦éš›ä¸Šç•¶ä½œnums[j]åœ¨çœ‹, èµ°è¨ªéŽå·²ç¶“åœ¨hashä¸Šçš„æ˜¯nums[i]
         for i in nums:
             if i not in hash:
                 hash[i] = 1
             else:
                 hash[i] += 1
-            # §PÂ_¬O§_²Å¦X|nums[i]-nums[j]|==kªº±ø¥ó
-            # ­nif in hash¤~¥i¥H, ²¦³º¨Sªì©l¤Æhash¥i¯à·|§ä¤£¨ìkey
+            # åˆ¤æ–·æ˜¯å¦ç¬¦åˆ|nums[i]-nums[j]|==kçš„æ¢ä»¶
+            # è¦if in hashæ‰å¯ä»¥, ç•¢ç«Ÿæ²’åˆå§‹åŒ–hashå¯èƒ½æœƒæ‰¾ä¸åˆ°key
             if i-k in hash:
                 res += hash[i-k]
             if i+k in hash:
@@ -30,7 +29,7 @@ class Solution:
         return res
         
 # By double for loop, time: O(n^2), space: O(1)
-# # ¥ÎÂù­«°j°é¨«³X
+# # ç”¨é›™é‡è¿´åœˆèµ°è¨ª
 # class Solution:
 #     def countKDifference(self, nums: List[int], k: int) -> int:
 #         res = 0
@@ -42,48 +41,3 @@ class Solution:
     
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2006 lang=python3
-#
-# [2006] Count Number of Pairs With Absolute Difference K
-#
-
-# @lc code=start
-# ¦^¶Ç°}¦Cnums¤¤¦bindex i<jªº±¡ªp¤U|nums[i]-nums[j]|==kªºpairs¼Æ¶q
-
-# By hash table, time: O(n), space: O(n)
-# §Q¥Îhash±N¨«³X¨ìªº¼Æ¦r¦s¤U¨Ó, ¨Ã¥B°O¿ý¥Ø«e³o­Ó¼Æ¦r¨«³X¨ì¤F´X­Ó
-# ¨C¨«³X¨ì·s¼Æ¦r, ´N¥h¬d·s¼Æ¦r-k©M·s¼Æ¦r+k¦³¦h¤Ö¥[¤W¨Ó, ¥Nªí«e­±²Å¦X|nums[i]-nums[j]|==kªº¼Æ¥Ø
-class Solution:
-    def countKDifference(self, nums: List[int], k: int) -> int:
-        hash = {}
-        res = 0
-        # ¨C¦¸¨«³X¨ìªº·s¼Æ¦r¹ê»Ú¤W·í§@nums[j]¦b¬Ý, ¨«³X¹L¤w¸g¦bhash¤Wªº¬Onums[i]
-        for i in nums:
-            if i not in hash:
-                hash[i] = 1
-            else:
-                hash[i] += 1
-            # §PÂ_¬O§_²Å¦X|nums[i]-nums[j]|==kªº±ø¥ó
-            # ­nif in hash¤~¥i¥H, ²¦³º¨Sªì©l¤Æhash¥i¯à·|§ä¤£¨ìkey
-            if i-k in hash:
-                res += hash[i-k]
-            if i+k in hash:
-                res += hash[i+k]
-        return res
-        
-# By double for loop, time: O(n^2), space: O(1)
-# # ¥ÎÂù­«°j°é¨«³X
-# class Solution:
-#     def countKDifference(self, nums: List[int], k: int) -> int:
-#         res = 0
-#         for i in range(len(nums)):
-#             for j in range(i+1, len(nums)):
-#                 if abs(nums[i]-nums[j])==k:
-#                     res += 1
-#         return res
-    
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

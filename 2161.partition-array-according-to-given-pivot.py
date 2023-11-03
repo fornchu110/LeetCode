@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2161 lang=python3
 #
@@ -6,15 +5,15 @@
 #
 
 # @lc code=start
-# ±N¤ñpivot¤pªº¤¸¯À©ñ¦bpivot¥ªÃä, ¤ñpivot¤jªº¤¸¯À©ñ¦bpivot¥kÃä, ¦P®É­n·Ó­Ó­ì¥»ªº¥ý«á¶¶§Ç¤£¯à²V²c(­n¨Dindex stable)
-# By double pointer, time: O(n), space: O(1), res¤£ºâÃB¥~ªÅ¶¡
-# ¤@¶}©lleft©Mright«ü¦V³Ì¥ª³Ì¥kºÝ, ¨«³Xnums®É¤p©óªº©ñleft, ¤j©óªº©ñright¨Ã§ïÅÜ§ó·sindex
-# ¤j©óªº³¡¤À¨Ã¨S·ÓµÛindex¶¶§Ç(¦]¬°¬O±q¥k¦Ó¥ª©ñªº), ©Ò¥H­n­«·sÂ½Âà
+# å°‡æ¯”pivotå°çš„å…ƒç´ æ”¾åœ¨pivotå·¦é‚Š, æ¯”pivotå¤§çš„å…ƒç´ æ”¾åœ¨pivotå³é‚Š, åŒæ™‚è¦ç…§å€‹åŽŸæœ¬çš„å…ˆå¾Œé †åºä¸èƒ½æ··æ·†(è¦æ±‚index stable)
+# By double pointer, time: O(n), space: O(1), resä¸ç®—é¡å¤–ç©ºé–“
+# ä¸€é–‹å§‹leftå’ŒrightæŒ‡å‘æœ€å·¦æœ€å³ç«¯, èµ°è¨ªnumsæ™‚å°æ–¼çš„æ”¾left, å¤§æ–¼çš„æ”¾rightä¸¦æ”¹è®Šæ›´æ–°index
+# å¤§æ–¼çš„éƒ¨åˆ†ä¸¦æ²’ç…§è‘—indexé †åº(å› ç‚ºæ˜¯å¾žå³è€Œå·¦æ”¾çš„), æ‰€ä»¥è¦é‡æ–°ç¿»è½‰
 class Solution:
     def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
         n = len(nums)
         res = [pivot] * n
-        # ¤p©óªº³¡¤À±q¥ª¦Ó¥k, ¤j©óªº³¡¤À±q¥k¦Ó¥ª
+        # å°æ–¼çš„éƒ¨åˆ†å¾žå·¦è€Œå³, å¤§æ–¼çš„éƒ¨åˆ†å¾žå³è€Œå·¦
         left, right = 0, n - 1
 
         for i in range(n):
@@ -24,7 +23,7 @@ class Solution:
             elif nums[i] > pivot:
                 res[right] = nums[i]
                 right -= 1
-        # Â½Âà¤j©óªº³¡¤À
+        # ç¿»è½‰å¤§æ–¼çš„éƒ¨åˆ†
         x, y = right+1, n-1
         while x < y:
             res[x], res[y] = res[y], res[x]
@@ -34,7 +33,7 @@ class Solution:
         return res
 
 # By partition, time: O(n), space: O(n)
-# ¤À¦¨¤T­Ó³¡¤À³Ì«á¦A¦X¦Ó¬°¤@§Y¥i, ¦ý¦hªáªÅ¶¡
+# åˆ†æˆä¸‰å€‹éƒ¨åˆ†æœ€å¾Œå†åˆè€Œç‚ºä¸€å³å¯, ä½†å¤šèŠ±ç©ºé–“
 # class Solution:
 #     def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
 #         left = []
@@ -58,64 +57,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2161 lang=python3
-#
-# [2161] Partition Array According to Given Pivot
-#
-
-# @lc code=start
-# ±N¤ñpivot¤pªº¤¸¯À©ñ¦bpivot¥ªÃä, ¤ñpivot¤jªº¤¸¯À©ñ¦bpivot¥kÃä, ¦P®É­n·Ó­Ó­ì¥»ªº¥ý«á¶¶§Ç¤£¯à²V²c(­n¨Dindex stable)
-# By double pointer, time: O(n), space: O(1), res¤£ºâÃB¥~ªÅ¶¡
-# ¤@¶}©lleft©Mright«ü¦V³Ì¥ª³Ì¥kºÝ, ¨«³Xnums®É¤p©óªº©ñleft, ¤j©óªº©ñright¨Ã§ïÅÜ§ó·sindex
-# ¤j©óªº³¡¤À¨Ã¨S·ÓµÛindex¶¶§Ç(¦]¬°¬O±q¥k¦Ó¥ª©ñªº), ©Ò¥H­n­«·sÂ½Âà
-class Solution:
-    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
-        n = len(nums)
-        res = [pivot] * n
-        # ¤p©óªº³¡¤À±q¥ª¦Ó¥k, ¤j©óªº³¡¤À±q¥k¦Ó¥ª
-        left, right = 0, n - 1
-
-        for i in range(n):
-            if nums[i] < pivot:
-                res[left] = nums[i]
-                left += 1
-            elif nums[i] > pivot:
-                res[right] = nums[i]
-                right -= 1
-        # Â½Âà¤j©óªº³¡¤À
-        x, y = right+1, n-1
-        while x < y:
-            res[x], res[y] = res[y], res[x]
-            x += 1
-            y -= 1
-        
-        return res
-
-# By partition, time: O(n), space: O(n)
-# ¤À¦¨¤T­Ó³¡¤À³Ì«á¦A¦X¦Ó¬°¤@§Y¥i, ¦ý¦hªáªÅ¶¡
-# class Solution:
-#     def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
-#         left = []
-#         mid = []
-#         right = []
-#         res = []
-#         for i in nums:
-#             if i<pivot:
-#                 left.append(i)
-#             elif i==pivot:
-#                 mid.append(i)
-#             else:
-#                 right.append(i)
-#         for i in left:
-#             res.append(i)
-#         for i in mid:
-#             res.append(i)
-#         for i in right:
-#             res.append(i)
-#         return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2181 lang=python3
 #
@@ -13,77 +12,32 @@
 #         self.next = next
 
 # By dummy node, time: O(n), space: O(1)
-# ­n±Nnode.val=0¤§¶¡ªºnode.val°µ¥[Á`«á°µ¦¨¤@­Ó·snode
-# ª`·Nreturn¤]­n¬O­Ólinklistªºhead
+# è¦å°‡node.val=0ä¹‹é–“çš„node.valåšåŠ ç¸½å¾Œåšæˆä¸€å€‹æ–°node
+# æ³¨æ„returnä¹Ÿè¦æ˜¯å€‹linklistçš„head
 class Solution:
     def mergeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
         dummy = tail = ListNode()
         tmp = 0
-        # ±qhead.next¶}©l©Ò¥H¤£¥Î³B²z²Ä¤@­Óval==0ªºnode
+        # å¾head.nexté–‹å§‹æ‰€ä»¥ä¸ç”¨è™•ç†ç¬¬ä¸€å€‹val==0çš„node
         cur = head.next
-        # ·Ó²z¨Ó»¡³oÃäcur¬O«ü¼Ğ, ©Ò¥H¥[¤£¥[is not None¨S¦³®t§O, ³£¬O¹ï«ü¼Ğ¦Ó«D­È°µ§PÂ_
+        # ç…§ç†ä¾†èªªé€™é‚Šcuræ˜¯æŒ‡æ¨™, æ‰€ä»¥åŠ ä¸åŠ is not Noneæ²’æœ‰å·®åˆ¥, éƒ½æ˜¯å°æŒ‡æ¨™è€Œéå€¼åšåˆ¤æ–·
         while cur is not None:
             if cur.val == 0:
                 node = ListNode(tmp)
-                # ²Ä¤@¦¸tail = dummy, ©Ò¥Htail.next¦P®Éµ¥©ódummy.next
-                # ­nµ½¥Î³o­Ó°µªkÅıdummy¯à±µ¤W
+                # ç¬¬ä¸€æ¬¡tail = dummy, æ‰€ä»¥tail.nextåŒæ™‚ç­‰æ–¼dummy.next
+                # è¦å–„ç”¨é€™å€‹åšæ³•è®“dummyèƒ½æ¥ä¸Š
                 tail.next = node
-                # tail´«¨ìnext¤F, ¥H«áÅÜ°Ê¥u¦³tail¦bÅÜ°Ê¤£·|²¾°Ê¨ìdummy
-                # ©Ò¥H³Ì«á¤´¥i¥Îdummy.next¨Ó¦^¶Çresultªºhead
+                # tailæ›åˆ°nextäº†, ä»¥å¾Œè®Šå‹•åªæœ‰tailåœ¨è®Šå‹•ä¸æœƒç§»å‹•åˆ°dummy
+                # æ‰€ä»¥æœ€å¾Œä»å¯ç”¨dummy.nextä¾†å›å‚³resultçš„head
                 tail = tail.next
-                # ¨C¦¸·s«Ø¤F¤@­Ónode­n°µ¤U¤@½ü¥[Á`, tmp­nªì©l¤Æ¬°0
+                # æ¯æ¬¡æ–°å»ºäº†ä¸€å€‹nodeè¦åšä¸‹ä¸€è¼ªåŠ ç¸½, tmpè¦åˆå§‹åŒ–ç‚º0
                 tmp = 0
             else:
-                # ¨S¹J¨ì0®É, §ânode­È°µ¥[Á`
+                # æ²’é‡åˆ°0æ™‚, æŠŠnodeå€¼åšåŠ ç¸½
                 tmp += cur.val
-            # ¬İ¤U­Ónode
+            # çœ‹ä¸‹å€‹node
             cur = cur.next
         return dummy.next
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2181 lang=python3
-#
-# [2181] Merge Nodes in Between Zeros
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-# By dummy node, time: O(n), space: O(1)
-# ­n±Nnode.val=0¤§¶¡ªºnode.val°µ¥[Á`«á°µ¦¨¤@­Ó·snode
-# ª`·Nreturn¤]­n¬O­Ólinklistªºhead
-class Solution:
-    def mergeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        dummy = tail = ListNode()
-        tmp = 0
-        # ±qhead.next¶}©l©Ò¥H¤£¥Î³B²z²Ä¤@­Óval==0ªºnode
-        cur = head.next
-        # ·Ó²z¨Ó»¡³oÃäcur¬O«ü¼Ğ, ©Ò¥H¥[¤£¥[is not None¨S¦³®t§O, ³£¬O¹ï«ü¼Ğ¦Ó«D­È°µ§PÂ_
-        while cur is not None:
-            if cur.val == 0:
-                node = ListNode(tmp)
-                # ²Ä¤@¦¸tail = dummy, ©Ò¥Htail.next¦P®Éµ¥©ódummy.next
-                # ­nµ½¥Î³o­Ó°µªkÅıdummy¯à±µ¤W
-                tail.next = node
-                # tail´«¨ìnext¤F, ¥H«áÅÜ°Ê¥u¦³tail¦bÅÜ°Ê¤£·|²¾°Ê¨ìdummy
-                # ©Ò¥H³Ì«á¤´¥i¥Îdummy.next¨Ó¦^¶Çresultªºhead
-                tail = tail.next
-                # ¨C¦¸·s«Ø¤F¤@­Ónode­n°µ¤U¤@½ü¥[Á`, tmp­nªì©l¤Æ¬°0
-                tmp = 0
-            else:
-                # ¨S¹J¨ì0®É, §ânode­È°µ¥[Á`
-                tmp += cur.val
-            # ¬İ¤U­Ónode
-            cur = cur.next
-        return dummy.next
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

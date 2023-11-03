@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1379 lang=python3
 #
@@ -13,69 +12,28 @@
 #         self.left = None
 #         self.right = None
 
-# By recursive, time: O(n), space: O(n), ³oÃD¤£½T©w
-# ¬İ#1302ªºnonlocal»¡©ú©M¥Îªk
+# By recursive, time: O(n), space: O(n), é€™é¡Œä¸ç¢ºå®š
+# çœ‹#1302çš„nonlocalèªªæ˜å’Œç”¨æ³•
 class Solution:
     def getTargetCopy(self, original: TreeNode, cloned: TreeNode, target: TreeNode) -> TreeNode:
-        # §âdef¼g¦b¸Ì­±¥i¥HÁ×§K¨ç¦¡¤§¶¡¦h¶Ç»¼°Ñ¼Æ©M¨Ï¥Îself.¨Ó¨Ï¥Îclass¤Uªºdef
+        # æŠŠdefå¯«åœ¨è£¡é¢å¯ä»¥é¿å…å‡½å¼ä¹‹é–“å¤šå‚³éåƒæ•¸å’Œä½¿ç”¨self.ä¾†ä½¿ç”¨classä¸‹çš„def
         res = 0
         def dfs(node):
-            # ²×¤î±ø¥ó
-            # °O¦ínode is None¤ñnot Node¼gªk§ó¦n, ¤£µM·|¦h§PÂ_ªÅªº¦r¦ê¡B¦Cªí¡B¦r¨å¶i¨Ó
+            # çµ‚æ­¢æ¢ä»¶
+            # è¨˜ä½node is Noneæ¯”not Nodeå¯«æ³•æ›´å¥½, ä¸ç„¶æœƒå¤šåˆ¤æ–·ç©ºçš„å­—ä¸²ã€åˆ—è¡¨ã€å­—å…¸é€²ä¾†
             if node is None:
                 return None
-            # §PÂ_·í¤Unode.val¬O§_¬°target
+            # åˆ¤æ–·ç•¶ä¸‹node.valæ˜¯å¦ç‚ºtarget
             nonlocal res
             if node.val==target.val:
-                # ¥Nªí¶Ç»¼ªº¬O¾ã­Ónodeªºaddress, ¦Ó«D¥u¦³node.val
+                # ä»£è¡¨å‚³éçš„æ˜¯æ•´å€‹nodeçš„address, è€Œéåªæœ‰node.val
                 res = node
-            # ·í¤U§PÂ_§¹, ©¹¥ª¤l©M¥k¤lÄ~Äò§PÂ_
+            # ç•¶ä¸‹åˆ¤æ–·å®Œ, å¾€å·¦å­å’Œå³å­ç¹¼çºŒåˆ¤æ–·
             dfs(node.left) 
             dfs(node.right)
-        # ¶}©l·j´M, ±Nclonedªºroot¶Ç»¼¶i¥h, ±q¦¹¶}©l»¼°j
+        # é–‹å§‹æœå°‹, å°‡clonedçš„rootå‚³éé€²å», å¾æ­¤é–‹å§‹éè¿´
         dfs(cloned)
         return res
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1379 lang=python3
-#
-# [1379] Find a Corresponding Node of a Binary Tree in a Clone of That Tree
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-
-# By recursive, time: O(n), space: O(n), ³oÃD¤£½T©w
-# ¬İ#1302ªºnonlocal»¡©ú©M¥Îªk
-class Solution:
-    def getTargetCopy(self, original: TreeNode, cloned: TreeNode, target: TreeNode) -> TreeNode:
-        # §âdef¼g¦b¸Ì­±¥i¥HÁ×§K¨ç¦¡¤§¶¡¦h¶Ç»¼°Ñ¼Æ©M¨Ï¥Îself.¨Ó¨Ï¥Îclass¤Uªºdef
-        res = 0
-        def dfs(node):
-            # ²×¤î±ø¥ó
-            # °O¦ínode is None¤ñnot Node¼gªk§ó¦n, ¤£µM·|¦h§PÂ_ªÅªº¦r¦ê¡B¦Cªí¡B¦r¨å¶i¨Ó
-            if node is None:
-                return None
-            # §PÂ_·í¤Unode.val¬O§_¬°target
-            nonlocal res
-            if node.val==target.val:
-                # ¥Nªí¶Ç»¼ªº¬O¾ã­Ónodeªºaddress, ¦Ó«D¥u¦³node.val
-                res = node
-            # ·í¤U§PÂ_§¹, ©¹¥ª¤l©M¥k¤lÄ~Äò§PÂ_
-            dfs(node.left) 
-            dfs(node.right)
-        # ¶}©l·j´M, ±Nclonedªºroot¶Ç»¼¶i¥h, ±q¦¹¶}©l»¼°j
-        dfs(cloned)
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1678 lang=python3
 #
@@ -6,80 +5,37 @@
 #
 
 # @lc code=start
-# By for loop, time: O(n), space: O(1), ¥u»İ­n¤@¦¸¨«³X
-# °O±o¥Î"".join(list)ªº¤è¦¡±N¦U¤¸¯À¬°¦r¦êªºlistÂà´«¦¨¤@­Óstr
+# By for loop, time: O(n), space: O(1), åªéœ€è¦ä¸€æ¬¡èµ°è¨ª
+# è¨˜å¾—ç”¨"".join(list)çš„æ–¹å¼å°‡å„å…ƒç´ ç‚ºå­—ä¸²çš„listè½‰æ›æˆä¸€å€‹str
 class Solution:
     def interpret(self, command: str) -> str:
         res = list()
-        #enumerate¥Îªk«e­±¬Oindex«á­±¬Ostr[index], ¤]´N¬Ocommand[i]
+        #enumerateç”¨æ³•å‰é¢æ˜¯indexå¾Œé¢æ˜¯str[index], ä¹Ÿå°±æ˜¯command[i]
         for i, c in enumerate(command):
             if c == 'G':
                 res.append(c)
             elif c == '(':
-                # ¤U­±¨º¬qªº¤@¦æ¼gªk
+                # ä¸‹é¢é‚£æ®µçš„ä¸€è¡Œå¯«æ³•
                 # res.append('o' if command[i + 1] == ')' else 'al')
                 if command[i+1]==")":
                     res.append("o")
                 else:
                     res.append("al")
-        # join±Nres³o­Ólist¤ºªºstr¥Î''(¤]´N¬OªÅ¥Õ)³sµ², ¦¨¬°¤@¾ã­Óstr
-        # ¤]´N¬Opython¤¤±NlistÂà´«¦¨strªº¥Îªk
+        # joinå°‡resé€™å€‹listå…§çš„strç”¨''(ä¹Ÿå°±æ˜¯ç©ºç™½)é€£çµ, æˆç‚ºä¸€æ•´å€‹str
+        # ä¹Ÿå°±æ˜¯pythonä¸­å°‡listè½‰æ›æˆstrçš„ç”¨æ³•
         return ''.join(res)
 
-# By replace, time: O(n), space: O(1), ¦]res¬Oªğ¦^­È¤£ºâ¦b½ÆÂø«×
-# §Q¥Îpythonªºreplace¥\¯à°µ¦r¦ê´À´«
+# By replace, time: O(n), space: O(1), å› resæ˜¯è¿”å›å€¼ä¸ç®—åœ¨è¤‡é›œåº¦
+# åˆ©ç”¨pythonçš„replaceåŠŸèƒ½åšå­—ä¸²æ›¿æ›
 # class Solution:
 #     def interpret(self, command: str) -> str:
-#         # str.replace("­n³Q§ó§ïªºÂÂ¦r¦ê", "³Q§ó§ï«áªº¦r¦ê")
-#         # ¥i¥H±N¤@ªø¦ê¦r¦ê¤¤ªº¤@³¡¥÷°µ­×§ï, ¦^¶Ç§ï§¹ªº·s¦r¦ê
-#         # ­Y¨S±µ¦¬¦^¶Ç­È, ÂÂ¦r¦ê¤£·|°µ­×§ï
-#         # ¤£ª¾¬°¦óres.command.replace("(al)", "al").replace("()", "o")·|¤ñ¸ûªá®É¶¡
+#         # str.replace("è¦è¢«æ›´æ”¹çš„èˆŠå­—ä¸²", "è¢«æ›´æ”¹å¾Œçš„å­—ä¸²")
+#         # å¯ä»¥å°‡ä¸€é•·ä¸²å­—ä¸²ä¸­çš„ä¸€éƒ¨ä»½åšä¿®æ”¹, å›å‚³æ”¹å®Œçš„æ–°å­—ä¸²
+#         # è‹¥æ²’æ¥æ”¶å›å‚³å€¼, èˆŠå­—ä¸²ä¸æœƒåšä¿®æ”¹
+#         # ä¸çŸ¥ç‚ºä½•res.command.replace("(al)", "al").replace("()", "o")æœƒæ¯”è¼ƒèŠ±æ™‚é–“
 #         res = command.replace("(al)", "al")
 #         res = res.replace("()", "o")
 #         return res
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1678 lang=python3
-#
-# [1678] Goal Parser Interpretation
-#
-
-# @lc code=start
-# By for loop, time: O(n), space: O(1), ¥u»İ­n¤@¦¸¨«³X
-# °O±o¥Î"".join(list)ªº¤è¦¡±N¦U¤¸¯À¬°¦r¦êªºlistÂà´«¦¨¤@­Óstr
-class Solution:
-    def interpret(self, command: str) -> str:
-        res = list()
-        #enumerate¥Îªk«e­±¬Oindex«á­±¬Ostr[index], ¤]´N¬Ocommand[i]
-        for i, c in enumerate(command):
-            if c == 'G':
-                res.append(c)
-            elif c == '(':
-                # ¤U­±¨º¬qªº¤@¦æ¼gªk
-                # res.append('o' if command[i + 1] == ')' else 'al')
-                if command[i+1]==")":
-                    res.append("o")
-                else:
-                    res.append("al")
-        # join±Nres³o­Ólist¤ºªºstr¥Î''(¤]´N¬OªÅ¥Õ)³sµ², ¦¨¬°¤@¾ã­Óstr
-        # ¤]´N¬Opython¤¤±NlistÂà´«¦¨strªº¥Îªk
-        return ''.join(res)
-
-# By replace, time: O(n), space: O(1), ¦]res¬Oªğ¦^­È¤£ºâ¦b½ÆÂø«×
-# §Q¥Îpythonªºreplace¥\¯à°µ¦r¦ê´À´«
-# class Solution:
-#     def interpret(self, command: str) -> str:
-#         # str.replace("­n³Q§ó§ïªºÂÂ¦r¦ê", "³Q§ó§ï«áªº¦r¦ê")
-#         # ¥i¥H±N¤@ªø¦ê¦r¦ê¤¤ªº¤@³¡¥÷°µ­×§ï, ¦^¶Ç§ï§¹ªº·s¦r¦ê
-#         # ­Y¨S±µ¦¬¦^¶Ç­È, ÂÂ¦r¦ê¤£·|°µ­×§ï
-#         # ¤£ª¾¬°¦óres.command.replace("(al)", "al").replace("()", "o")·|¤ñ¸ûªá®É¶¡
-#         res = command.replace("(al)", "al")
-#         res = res.replace("()", "o")
-#         return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

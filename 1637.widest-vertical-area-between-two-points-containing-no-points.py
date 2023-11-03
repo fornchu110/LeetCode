@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1637 lang=python3
 #
@@ -6,17 +5,17 @@
 #
 
 # @lc code=start
-# ¥Hy¶bµL­­·í©µ¦ù¨Ó¬İ, ¦^¶Ç¨âÂI¤§¶¡°Ï°ì¨S¥ô¦óÂIªº³Ì¼e¶ZÂ÷
-# ¨ä¹ê´N¬O¬İ¨âÂI¤§¶¡x¶b®t¶Z³Ì¦h¦h¤Ö
+# ä»¥yè»¸ç„¡é™ç•¶å»¶ä¼¸ä¾†çœ‹, å›å‚³å…©é»ä¹‹é–“å€åŸŸæ²’ä»»ä½•é»çš„æœ€å¯¬è·é›¢
+# å…¶å¯¦å°±æ˜¯çœ‹å…©é»ä¹‹é–“xè»¸å·®è·æœ€å¤šå¤šå°‘
 
-# By sort, time: O(nlogn), space: O(logn), ±Æ§Ç©Òªá¶OªºªÅ¶¡
+# By sort, time: O(nlogn), space: O(logn), æ’åºæ‰€èŠ±è²»çš„ç©ºé–“
 class Solution:
     def maxWidthOfVerticalArea(self, points: List[List[int]]) -> int:
-        # ±Npoints¸Ì­±ªºÂI®Ú¾Úx¶b¨Ó±Æ§Ç, °O¼ôlambda¥Îªk
-        # ¦n¹³Àq»{¤£µ¹°Ñ¼Æ¤]¬O·Óx[0]¨Ó±Æªº
+        # å°‡pointsè£¡é¢çš„é»æ ¹æ“šxè»¸ä¾†æ’åº, è¨˜ç†Ÿlambdaç”¨æ³•
+        # å¥½åƒé»˜èªä¸çµ¦åƒæ•¸ä¹Ÿæ˜¯ç…§x[0]ä¾†æ’çš„
         points.sort(key = lambda x: x[0])
         res = 0
-        # ¤@­Ó­Ó¬İ¨âÂI¤§¶¡x¶b®t¶Z, ³Ì¤jªº´N¬Oµª®×
+        # ä¸€å€‹å€‹çœ‹å…©é»ä¹‹é–“xè»¸å·®è·, æœ€å¤§çš„å°±æ˜¯ç­”æ¡ˆ
         for i in range(1, len(points)):
             res = max(res, points[i][0]-points[i-1][0])
         return res
@@ -24,30 +23,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1637 lang=python3
-#
-# [1637] Widest Vertical Area Between Two Points Containing No Points
-#
-
-# @lc code=start
-# ¥Hy¶bµL­­·í©µ¦ù¨Ó¬İ, ¦^¶Ç¨âÂI¤§¶¡°Ï°ì¨S¥ô¦óÂIªº³Ì¼e¶ZÂ÷
-# ¨ä¹ê´N¬O¬İ¨âÂI¤§¶¡x¶b®t¶Z³Ì¦h¦h¤Ö
-
-# By sort, time: O(nlogn), space: O(logn), ±Æ§Ç©Òªá¶OªºªÅ¶¡
-class Solution:
-    def maxWidthOfVerticalArea(self, points: List[List[int]]) -> int:
-        # ±Npoints¸Ì­±ªºÂI®Ú¾Úx¶b¨Ó±Æ§Ç, °O¼ôlambda¥Îªk
-        # ¦n¹³Àq»{¤£µ¹°Ñ¼Æ¤]¬O·Óx[0]¨Ó±Æªº
-        points.sort(key = lambda x: x[0])
-        res = 0
-        # ¤@­Ó­Ó¬İ¨âÂI¤§¶¡x¶b®t¶Z, ³Ì¤jªº´N¬Oµª®×
-        for i in range(1, len(points)):
-            res = max(res, points[i][0]-points[i-1][0])
-        return res
-            
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

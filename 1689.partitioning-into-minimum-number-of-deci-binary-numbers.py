@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1689 lang=python3
 #
@@ -7,31 +6,12 @@
 
 # @lc code=start
 # By int(max()), time: O(n), space: O(1)
-# ¨Æ¹ê¤W´N¬O§äµ¹©w¼Ænªº¨C¦ì¼Æ¤¤³Ì¤jªº¼Æ, ¦]¸û¤pªº³¡¤À¸É0§Y¥i
+# äº‹å¯¦ä¸Šå°±æ˜¯æ‰¾çµ¦å®šæ•¸nçš„æ¯ä½æ•¸ä¸­æœ€å¤§çš„æ•¸, å› è¼ƒå°çš„éƒ¨åˆ†è£œ0å³å¯
 class Solution:
     def minPartitions(self, n: str) -> int:
-        # max¦binput¦r¦ê®É, ·|§ä¦r¦ê¤¤ascii½X³Ì¤jªº¦r¤¸
-        # §ä¨ì«á¦A¥Îint()±N¦r¤¸Âà´«¦¨¾ã¼Æ
+        # maxåœ¨inputå­—ä¸²æ™‚, æœƒæ‰¾å­—ä¸²ä¸­asciiç¢¼æœ€å¤§çš„å­—å…ƒ
+        # æ‰¾åˆ°å¾Œå†ç”¨int()å°‡å­—å…ƒè½‰æ›æˆæ•´æ•¸
         return int(max(n))
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1689 lang=python3
-#
-# [1689] Partitioning Into Minimum Number Of Deci-Binary Numbers
-#
-
-# @lc code=start
-# By int(max()), time: O(n), space: O(1)
-# ¨Æ¹ê¤W´N¬O§äµ¹©w¼Ænªº¨C¦ì¼Æ¤¤³Ì¤jªº¼Æ, ¦]¸û¤pªº³¡¤À¸É0§Y¥i
-class Solution:
-    def minPartitions(self, n: str) -> int:
-        # max¦binput¦r¦ê®É, ·|§ä¦r¦ê¤¤ascii½X³Ì¤jªº¦r¤¸
-        # §ä¨ì«á¦A¥Îint()±N¦r¤¸Âà´«¦¨¾ã¼Æ
-        return int(max(n))
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

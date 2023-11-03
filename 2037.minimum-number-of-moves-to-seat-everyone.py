@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2037 lang=python3
 #
@@ -6,50 +5,22 @@
 #
 
 # @lc code=start
-# µ¹¤@°}¦Cseats©Mstudents, seats[i]©Mstudents[i]¥Nªí²Äi­Óªº¦ì¸m
-# ¤@¦¸¥u¯à²¾°Êstudent¤@­Ó¦ì¸m, °İ±N©Ò¦³student¦U¤À°t¨ì¤@­Óseatªº³Ì¤p²¾°Ê¦¸¼Æ
-# ¤@¶}©l¤]¥i¯à·|¦³¦h­Óstudent¦b¦P­Ó¦ì¸m
+# çµ¦ä¸€é™£åˆ—seatså’Œstudents, seats[i]å’Œstudents[i]ä»£è¡¨ç¬¬iå€‹çš„ä½ç½®
+# ä¸€æ¬¡åªèƒ½ç§»å‹•studentä¸€å€‹ä½ç½®, å•å°‡æ‰€æœ‰studentå„åˆ†é…åˆ°ä¸€å€‹seatçš„æœ€å°ç§»å‹•æ¬¡æ•¸
+# ä¸€é–‹å§‹ä¹Ÿå¯èƒ½æœƒæœ‰å¤šå€‹studentåœ¨åŒå€‹ä½ç½®
 
-# By sort, time: O(nlogn), space: O(logn), space = O(logn)¬O±Æ§Ç©Òªá¶OªºstackªÅ¶¡
-# ±Nseats©Mstudent³£±Æ§Ç¹L«á¤@¤@¬Û´î§Y¥i
-# ±Æ§Ç©Ò¥Nªíªº¬O±N¾Ç¥Í²¾°Ê¨ìÂ÷¦Û¤v³Ìªñªº¦ì¸m
+# By sort, time: O(nlogn), space: O(logn), space = O(logn)æ˜¯æ’åºæ‰€èŠ±è²»çš„stackç©ºé–“
+# å°‡seatså’Œstudentéƒ½æ’åºéå¾Œä¸€ä¸€ç›¸æ¸›å³å¯
+# æ’åºæ‰€ä»£è¡¨çš„æ˜¯å°‡å­¸ç”Ÿç§»å‹•åˆ°é›¢è‡ªå·±æœ€è¿‘çš„ä½ç½®
 class Solution:
     def minMovesToSeat(self, seats: List[int], students: List[int]) -> int:
         seats.sort()
         students.sort()
         res = 0
-        # ¥Îzip¦P®É¨«³X¨â­Ó¤£¦P°}¦Cªº¬Û¦Pindex¤§¤¸¯À, i¡Bj¤À§O¥Nªí·í¤Uindex¦b¸Ó°}¦Cªº¤¸¯À
+        # ç”¨zipåŒæ™‚èµ°è¨ªå…©å€‹ä¸åŒé™£åˆ—çš„ç›¸åŒindexä¹‹å…ƒç´ , iã€jåˆ†åˆ¥ä»£è¡¨ç•¶ä¸‹indexåœ¨è©²é™£åˆ—çš„å…ƒç´ 
         for i, j in zip(seats, students):
             res += abs(i-j)
         return res
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2037 lang=python3
-#
-# [2037] Minimum Number of Moves to Seat Everyone
-#
-
-# @lc code=start
-# µ¹¤@°}¦Cseats©Mstudents, seats[i]©Mstudents[i]¥Nªí²Äi­Óªº¦ì¸m
-# ¤@¦¸¥u¯à²¾°Êstudent¤@­Ó¦ì¸m, °İ±N©Ò¦³student¦U¤À°t¨ì¤@­Óseatªº³Ì¤p²¾°Ê¦¸¼Æ
-# ¤@¶}©l¤]¥i¯à·|¦³¦h­Óstudent¦b¦P­Ó¦ì¸m
-
-# By sort, time: O(nlogn), space: O(logn), space = O(logn)¬O±Æ§Ç©Òªá¶OªºstackªÅ¶¡
-# ±Nseats©Mstudent³£±Æ§Ç¹L«á¤@¤@¬Û´î§Y¥i
-# ±Æ§Ç©Ò¥Nªíªº¬O±N¾Ç¥Í²¾°Ê¨ìÂ÷¦Û¤v³Ìªñªº¦ì¸m
-class Solution:
-    def minMovesToSeat(self, seats: List[int], students: List[int]) -> int:
-        seats.sort()
-        students.sort()
-        res = 0
-        # ¥Îzip¦P®É¨«³X¨â­Ó¤£¦P°}¦Cªº¬Û¦Pindex¤§¤¸¯À, i¡Bj¤À§O¥Nªí·í¤Uindex¦b¸Ó°}¦Cªº¤¸¯À
-        for i, j in zip(seats, students):
-            res += abs(i-j)
-        return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

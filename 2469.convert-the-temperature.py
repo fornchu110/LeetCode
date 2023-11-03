@@ -5,6 +5,7 @@
 #
 
 # @lc code=start
+# By math, time: O(1), space:O(1)
 class Solution:
     def convertTemperature(self, celsius: float) -> List[float]:
         res = []

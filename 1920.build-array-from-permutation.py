@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1920 lang=python3
 #
@@ -8,23 +7,23 @@
 # @lc code=start
 
 # By list, time: O(n), space: O(1) 
-# space O(1)ªº­ì¦]¬Oreturn¤§¤º®e¤£ºâ¦bªÅ¶¡½ÆÂø«×
-# ªÅ¶¡½ÆÂø«×³q±`«üreturn¥~¥ÎªºÃB¥~ªÅ¶¡
+# space O(1)çš„åŸå› æ˜¯returnä¹‹å…§å®¹ä¸ç®—åœ¨ç©ºé–“è¤‡é›œåº¦
+# ç©ºé–“è¤‡é›œåº¦é€šå¸¸æŒ‡returnå¤–ç”¨çš„é¡å¤–ç©ºé–“
 class Solution:
     def buildArray(self, nums: List[int]) -> List[int]:
         ans = list()
-        # python¥i¥Hª½±µ¥Îi¶]list¤º®e, ·|¤ñ¥Îrange§ó¬Ù°O¾ĞÅé
-        # ³oÃäi´N¥Nªínums[i]
+        # pythonå¯ä»¥ç›´æ¥ç”¨iè·‘listå…§å®¹, æœƒæ¯”ç”¨rangeæ›´çœè¨˜æ†¶é«”
+        # é€™é‚Šiå°±ä»£è¡¨nums[i]
         for i in nums:
             ans.append(nums[i])
         return ans
 
 # By inplace replacement, time: O(n), space: O(1)
-# ®É¶¡´«ªÅ¶¡ªº§@ªk, ­ì¦a­×§ïnums¤£¥ÎÃB¥~ªÅ¶¡
+# æ™‚é–“æ›ç©ºé–“çš„ä½œæ³•, åŸåœ°ä¿®æ”¹numsä¸ç”¨é¡å¤–ç©ºé–“
 # class Solution:
 #     def buildArray(self, nums: List[int]) -> List[int]:
 #         n = len(nums)
-#         # 1000¬O¦]¬°ÃD¥Ø»¡nums¤º®eª«½d³ò¦b[0, 999]
+#         # 1000æ˜¯å› ç‚ºé¡Œç›®èªªnumså…§å®¹ç‰©ç¯„åœåœ¨[0, 999]
 #         for i in range(n):
 #             nums[i] += 1000*(nums[nums[i]]%1000) 
 #         for i in range(n):
@@ -33,39 +32,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1920 lang=python3
-#
-# [1920] Build Array from Permutation
-#
-
-# @lc code=start
-
-# By list, time: O(n), space: O(1) 
-# space O(1)ªº­ì¦]¬Oreturn¤§¤º®e¤£ºâ¦bªÅ¶¡½ÆÂø«×
-# ªÅ¶¡½ÆÂø«×³q±`«üreturn¥~¥ÎªºÃB¥~ªÅ¶¡
-class Solution:
-    def buildArray(self, nums: List[int]) -> List[int]:
-        ans = list()
-        # python¥i¥Hª½±µ¥Îi¶]list¤º®e, ·|¤ñ¥Îrange§ó¬Ù°O¾ĞÅé
-        # ³oÃäi´N¥Nªínums[i]
-        for i in nums:
-            ans.append(nums[i])
-        return ans
-
-# By inplace replacement, time: O(n), space: O(1)
-# ®É¶¡´«ªÅ¶¡ªº§@ªk, ­ì¦a­×§ïnums¤£¥ÎÃB¥~ªÅ¶¡
-# class Solution:
-#     def buildArray(self, nums: List[int]) -> List[int]:
-#         n = len(nums)
-#         # 1000¬O¦]¬°ÃD¥Ø»¡nums¤º®eª«½d³ò¦b[0, 999]
-#         for i in range(n):
-#             nums[i] += 1000*(nums[nums[i]]%1000) 
-#         for i in range(n):
-#             nums[i] //= 1000
-#         return nums
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

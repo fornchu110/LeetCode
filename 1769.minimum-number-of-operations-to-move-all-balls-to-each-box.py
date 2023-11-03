@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1769 lang=python3
 #
@@ -8,35 +7,35 @@
 # @lc code=start
 
 # By divide array and dp, time: O(n), space: O(1)
-# ¨D±Nindex¥H¥~©Ò¦³1²¾°Ê¨ìindex©Ò­nªáªº¦¸¼Æ, ¤@¦¸¥u¯à²¾°Ê1­Óindex
-# ³oºØÃD¥Ø¥i¥H·Q­n¬İ¥ª°¼©M¥k°¼, ¥ı¨D¥X¥H0¬°indexªº¥k°¼¦AÃä¨«³XÃäºâ¥X¥ª°¼
+# æ±‚å°‡indexä»¥å¤–æ‰€æœ‰1ç§»å‹•åˆ°indexæ‰€è¦èŠ±çš„æ¬¡æ•¸, ä¸€æ¬¡åªèƒ½ç§»å‹•1å€‹index
+# é€™ç¨®é¡Œç›®å¯ä»¥æƒ³è¦çœ‹å·¦å´å’Œå³å´, å…ˆæ±‚å‡ºä»¥0ç‚ºindexçš„å³å´å†é‚Šèµ°è¨ªé‚Šç®—å‡ºå·¦å´
 class Solution:
     def minOperations(self, boxes: str) -> List[int]:
-        # ·í¤Uindex¥ª°¼¦³left­Ó1, ¥k°¼¦³right­Ó1
+        # ç•¶ä¸‹indexå·¦å´æœ‰leftå€‹1, å³å´æœ‰rightå€‹1
         left, right, operations = int(boxes[0]), 0, 0
-        # ¥ı¨«³X¤@¦¸ª¾¹Dindex 0(°_©l¦ì¸m)¥kÃä¦³´X­Ó1
+        # å…ˆèµ°è¨ªä¸€æ¬¡çŸ¥é“index 0(èµ·å§‹ä½ç½®)å³é‚Šæœ‰å¹¾å€‹1
         for i in range(1, len(boxes)):
             if boxes[i] == '1':
-                # ¬İ¨ì¤@­Ó1´N+1
+                # çœ‹åˆ°ä¸€å€‹1å°±+1
                 right += 1
-                # ¹ê»Ú¤W²¾°Ê¨ì0ªº¦¸¼Æ´N¬Oindex¨B
-                # Ex: 4¨«¨ì0­nªá4¨B
+                # å¯¦éš›ä¸Šç§»å‹•åˆ°0çš„æ¬¡æ•¸å°±æ˜¯indexæ­¥
+                # Ex: 4èµ°åˆ°0è¦èŠ±4æ­¥
                 operations += i
-        # res[0]´N¬O­è­èºâ¥Xªºoperations
+        # res[0]å°±æ˜¯å‰›å‰›ç®—å‡ºçš„operations
         res = [operations]
-        # ¦A¨«³X¤@¦¸
+        # å†èµ°è¨ªä¸€æ¬¡
         for i in range(1, len(boxes)):
-            # ¨C¨«³X¤@­Óindex, ©Òªáªº¨B¼Æ´N·|-¥kÃä1ªº¼Æ¶q+¥ªÃä1ªº¼Æ¶q
+            # æ¯èµ°è¨ªä¸€å€‹index, æ‰€èŠ±çš„æ­¥æ•¸å°±æœƒ-å³é‚Š1çš„æ•¸é‡+å·¦é‚Š1çš„æ•¸é‡
             operations += left - right
             res.append(operations)
             if boxes[i] == '1':
-                # ¨C¨«¤@­Óindex¹J¨ì1, ¥Nªí¤U¤@­Óindex¥k°¼·|¤Ö¤@­Ó1, ¥ª°¼·|¦h¤@­Ó1
+                # æ¯èµ°ä¸€å€‹indexé‡åˆ°1, ä»£è¡¨ä¸‹ä¸€å€‹indexå³å´æœƒå°‘ä¸€å€‹1, å·¦å´æœƒå¤šä¸€å€‹1
                 left += 1
                 right -= 1
         return res
 
 # By for loop, time: O(n^2), space: O(1)
-# ¼É¤O¸Ñ, ¨C¨«¨ì¤@­Óindex³£±qÀYºâ
+# æš´åŠ›è§£, æ¯èµ°åˆ°ä¸€å€‹indexéƒ½å¾é ­ç®—
 # class Solution:
 #     def minOperations(self, boxes: str) -> List[int]:
 #         res = list()
@@ -46,52 +45,3 @@ class Solution:
 #         return res
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1769 lang=python3
-#
-# [1769] Minimum Number of Operations to Move All Balls to Each Box
-#
-
-# @lc code=start
-
-# By divide array and dp, time: O(n), space: O(1)
-# ¨D±Nindex¥H¥~©Ò¦³1²¾°Ê¨ìindex©Ò­nªáªº¦¸¼Æ, ¤@¦¸¥u¯à²¾°Ê1­Óindex
-# ³oºØÃD¥Ø¥i¥H·Q­n¬İ¥ª°¼©M¥k°¼, ¥ı¨D¥X¥H0¬°indexªº¥k°¼¦AÃä¨«³XÃäºâ¥X¥ª°¼
-class Solution:
-    def minOperations(self, boxes: str) -> List[int]:
-        # ·í¤Uindex¥ª°¼¦³left­Ó1, ¥k°¼¦³right­Ó1
-        left, right, operations = int(boxes[0]), 0, 0
-        # ¥ı¨«³X¤@¦¸ª¾¹Dindex 0(°_©l¦ì¸m)¥kÃä¦³´X­Ó1
-        for i in range(1, len(boxes)):
-            if boxes[i] == '1':
-                # ¬İ¨ì¤@­Ó1´N+1
-                right += 1
-                # ¹ê»Ú¤W²¾°Ê¨ì0ªº¦¸¼Æ´N¬Oindex¨B
-                # Ex: 4¨«¨ì0­nªá4¨B
-                operations += i
-        # res[0]´N¬O­è­èºâ¥Xªºoperations
-        res = [operations]
-        # ¦A¨«³X¤@¦¸
-        for i in range(1, len(boxes)):
-            # ¨C¨«³X¤@­Óindex, ©Òªáªº¨B¼Æ´N·|-¥kÃä1ªº¼Æ¶q+¥ªÃä1ªº¼Æ¶q
-            operations += left - right
-            res.append(operations)
-            if boxes[i] == '1':
-                # ¨C¨«¤@­Óindex¹J¨ì1, ¥Nªí¤U¤@­Óindex¥k°¼·|¤Ö¤@­Ó1, ¥ª°¼·|¦h¤@­Ó1
-                left += 1
-                right -= 1
-        return res
-
-# By for loop, time: O(n^2), space: O(1)
-# ¼É¤O¸Ñ, ¨C¨«¨ì¤@­Óindex³£±qÀYºâ
-# class Solution:
-#     def minOperations(self, boxes: str) -> List[int]:
-#         res = list()
-#         for i in range(len(boxes)):
-#             s = sum(abs(j - i) for j, c in enumerate(boxes) if c == '1')
-#             res.append(s)
-#         return res
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

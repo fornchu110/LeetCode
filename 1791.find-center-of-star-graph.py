@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1791 lang=python3
 #
@@ -8,20 +7,20 @@
 # @lc code=start
 
 # By math, time: O(1), space: O(1)
-# ­ì¥»·Q»¡¥X²{³Ì¦h¦¸ªº¨ºÂI, ¦ı¨ä¹ê¦]ÃD¥Ø¬Oµ¹¬P§Î¹Ï, ¥u¦³¤¤¤ß¤~·|¥X²{¨â¦¸¥H¤W, ¨ä¥LÂI³£¥u·|¥X²{¤@¦¸
-# ¦]¦¹¨ú¨â±øedge§ä¥X¦@¦PªºÂI´N¬Oµª®×
+# åŸæœ¬æƒ³èªªå‡ºç¾æœ€å¤šæ¬¡çš„é‚£é», ä½†å…¶å¯¦å› é¡Œç›®æ˜¯çµ¦æ˜Ÿå½¢åœ–, åªæœ‰ä¸­å¿ƒæ‰æœƒå‡ºç¾å…©æ¬¡ä»¥ä¸Š, å…¶ä»–é»éƒ½åªæœƒå‡ºç¾ä¸€æ¬¡
+# å› æ­¤å–å…©æ¢edgeæ‰¾å‡ºå…±åŒçš„é»å°±æ˜¯ç­”æ¡ˆ
 class Solution:
     def findCenter(self, edges: List[List[int]]) -> int:
         # if edges[0][0]==edges[1][0] or edges[0][0]==edges[1][1]:
         #     return edges[0][0]
         # else:
         #     return edges[0][1] 
-        # ¤W­±¨º¬qªº¤@¦æª©
+        # ä¸Šé¢é‚£æ®µçš„ä¸€è¡Œç‰ˆ
         return edges[0][0] if edges[0][0]==edges[1][0] or edges[0][0]==edges[1][1] else edges[0][1]
 
 
-# By hash, time: O(n), space: O(n), n¬OÂIªº¼Æ¶q
-# # µ¹¦h²ÕÃä, §ä¤¤¤ßÂI, ¨ä¹ê´N¬O§ä¥X²{³Ì¦h¦¸ªº¨º¤@ÂI
+# By hash, time: O(n), space: O(n), næ˜¯é»çš„æ•¸é‡
+# # çµ¦å¤šçµ„é‚Š, æ‰¾ä¸­å¿ƒé», å…¶å¯¦å°±æ˜¯æ‰¾å‡ºç¾æœ€å¤šæ¬¡çš„é‚£ä¸€é»
 # class Solution:
 #     def findCenter(self, edges: List[List[int]]) -> int:
 #         res = 0
@@ -33,9 +32,9 @@ class Solution:
 #                     hash[edges[i][j]] = 1
 #                 else:
 #                     hash[edges[i][j]] += 1
-#         # ¥Îhash.items()¨Ó¦P®É¨«³Xhashªºkey©Mvalue
+#         # ç”¨hash.items()ä¾†åŒæ™‚èµ°è¨ªhashçš„keyå’Œvalue
 #         for i, j in hash.items():
-#             # ·í§ä¨ìval­È³Ì¤jªº, ±N¨äkey°O¤U¨Ó
+#             # ç•¶æ‰¾åˆ°valå€¼æœ€å¤§çš„, å°‡å…¶keyè¨˜ä¸‹ä¾†
 #             if j>max:
 #                 max = j
 #                 res = i
@@ -43,49 +42,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1791 lang=python3
-#
-# [1791] Find Center of Star Graph
-#
-
-# @lc code=start
-
-# By math, time: O(1), space: O(1)
-# ­ì¥»·Q»¡¥X²{³Ì¦h¦¸ªº¨ºÂI, ¦ı¨ä¹ê¦]ÃD¥Ø¬Oµ¹¬P§Î¹Ï, ¥u¦³¤¤¤ß¤~·|¥X²{¨â¦¸¥H¤W, ¨ä¥LÂI³£¥u·|¥X²{¤@¦¸
-# ¦]¦¹¨ú¨â±øedge§ä¥X¦@¦PªºÂI´N¬Oµª®×
-class Solution:
-    def findCenter(self, edges: List[List[int]]) -> int:
-        # if edges[0][0]==edges[1][0] or edges[0][0]==edges[1][1]:
-        #     return edges[0][0]
-        # else:
-        #     return edges[0][1] 
-        # ¤W­±¨º¬qªº¤@¦æª©
-        return edges[0][0] if edges[0][0]==edges[1][0] or edges[0][0]==edges[1][1] else edges[0][1]
-
-
-# By hash, time: O(n), space: O(n), n¬OÂIªº¼Æ¶q
-# # µ¹¦h²ÕÃä, §ä¤¤¤ßÂI, ¨ä¹ê´N¬O§ä¥X²{³Ì¦h¦¸ªº¨º¤@ÂI
-# class Solution:
-#     def findCenter(self, edges: List[List[int]]) -> int:
-#         res = 0
-#         max = 0
-#         hash = dict()
-#         for i in range(len(edges)):
-#             for j in range(2):
-#                 if edges[i][j] not in hash:
-#                     hash[edges[i][j]] = 1
-#                 else:
-#                     hash[edges[i][j]] += 1
-#         # ¥Îhash.items()¨Ó¦P®É¨«³Xhashªºkey©Mvalue
-#         for i, j in hash.items():
-#             # ·í§ä¨ìval­È³Ì¤jªº, ±N¨äkey°O¤U¨Ó
-#             if j>max:
-#                 max = j
-#                 res = i
-#         return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

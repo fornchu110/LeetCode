@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1832 lang=python3
 #
@@ -6,50 +5,22 @@
 #
 
 # @lc code=start
-# By hash, time: O(n), space: O(1), n¬Olen(sentence)
-# §PÂ_sentence¤¤¦³¨S¥X²{¹L©Ò¦³­^¤å¤p¼g¦r¥À
-# ³oÃD¦]¬°½T©wkeyªº¼Æ¶q, ¤]¥i¥H¥Îascii½X¨Ï¥Îord()°t¦Xindex array°µ
+# By hash, time: O(n), space: O(1), næ˜¯len(sentence)
+# åˆ¤æ–·sentenceä¸­æœ‰æ²’å‡ºç¾éæ‰€æœ‰è‹±æ–‡å°å¯«å­—æ¯
+# é€™é¡Œå› ç‚ºç¢ºå®škeyçš„æ•¸é‡, ä¹Ÿå¯ä»¥ç”¨asciiç¢¼ä½¿ç”¨ord()é…åˆindex arrayåš
 class Solution:
     def checkIfPangram(self, sentence: str) -> bool:
-        # «Øhash
+        # å»ºhash
         hash = dict()
         cnt = 0
-        # ·í¦r²Å¬°¨S¥X²{¹Lªº¦r¥À, ©ñ¤Jhash¨Ã©ñcnt+1
-        # ¦³¥X²{¹L´N¤£ºŞ
+        # ç•¶å­—ç¬¦ç‚ºæ²’å‡ºç¾éçš„å­—æ¯, æ”¾å…¥hashä¸¦æ”¾cnt+1
+        # æœ‰å‡ºç¾éå°±ä¸ç®¡
         for i in sentence:
             if i not in hash:
                 hash[i] = 1
                 cnt += 1
-        # ³Ì«á¬İ¬O§_©ñ¤J¤F¥ş³¡26­Ó¦r¥À
+        # æœ€å¾Œçœ‹æ˜¯å¦æ”¾å…¥äº†å…¨éƒ¨26å€‹å­—æ¯
         return cnt==26
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1832 lang=python3
-#
-# [1832] Check if the Sentence Is Pangram
-#
-
-# @lc code=start
-# By hash, time: O(n), space: O(1), n¬Olen(sentence)
-# §PÂ_sentence¤¤¦³¨S¥X²{¹L©Ò¦³­^¤å¤p¼g¦r¥À
-# ³oÃD¦]¬°½T©wkeyªº¼Æ¶q, ¤]¥i¥H¥Îascii½X¨Ï¥Îord()°t¦Xindex array°µ
-class Solution:
-    def checkIfPangram(self, sentence: str) -> bool:
-        # «Øhash
-        hash = dict()
-        cnt = 0
-        # ·í¦r²Å¬°¨S¥X²{¹Lªº¦r¥À, ©ñ¤Jhash¨Ã©ñcnt+1
-        # ¦³¥X²{¹L´N¤£ºŞ
-        for i in sentence:
-            if i not in hash:
-                hash[i] = 1
-                cnt += 1
-        # ³Ì«á¬İ¬O§_©ñ¤J¤F¥ş³¡26­Ó¦r¥À
-        return cnt==26
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

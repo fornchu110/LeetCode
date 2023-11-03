@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1470 lang=python3
 #
@@ -8,9 +7,9 @@
 # @lc code=start
 
 # By double pointer, time: O(n), space: O(1)
-# ¥Hres¤£ºâªÅ¶¡½ÆÂø«×ªºÆ[ÂI¬OO(1), ¤£µMres¥»¨­¨ä¹ê¬OO(n)
-# ¨â­Ópointer, ¤@¶}©l«ü¦V0©M«ü¦Vn, ¨âpointer¥²®t¶Zn­Ó¤¸¯À
-# ³o¼Ë°µn½ü¨Ì§Ç¥[¤J§Y¥i
+# ä»¥resä¸ç®—ç©ºé–“è¤‡é›œåº¦çš„è§€é»æ˜¯O(1), ä¸ç„¶resæœ¬èº«å…¶å¯¦æ˜¯O(n)
+# å…©å€‹pointer, ä¸€é–‹å§‹æŒ‡å‘0å’ŒæŒ‡å‘n, å…©pointerå¿…å·®è·nå€‹å…ƒç´ 
+# é€™æ¨£åšnè¼ªä¾åºåŠ å…¥å³å¯
 class Solution:
     def shuffle(self, nums: List[int], n: int) -> List[int]:
         res = list()
@@ -25,7 +24,7 @@ class Solution:
         return res
 
 # By range, time: O(n), space: O(1)
-# ¬ÙÅÜ¼ÆªÅ¶¡ªº§@ªk, ¦ı¥Î¨ìrange®É¶¡¸û¤[
+# çœè®Šæ•¸ç©ºé–“çš„ä½œæ³•, ä½†ç”¨åˆ°rangeæ™‚é–“è¼ƒä¹…
 # class Solution:
 #     def shuffle(self, nums: List[int], n: int) -> List[int]:
 #         res = list()
@@ -36,42 +35,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1470 lang=python3
-#
-# [1470] Shuffle the Array
-#
-
-# @lc code=start
-
-# By double pointer, time: O(n), space: O(1)
-# ¥Hres¤£ºâªÅ¶¡½ÆÂø«×ªºÆ[ÂI¬OO(1), ¤£µMres¥»¨­¨ä¹ê¬OO(n)
-# ¨â­Ópointer, ¤@¶}©l«ü¦V0©M«ü¦Vn, ¨âpointer¥²®t¶Zn­Ó¤¸¯À
-# ³o¼Ë°µn½ü¨Ì§Ç¥[¤J§Y¥i
-class Solution:
-    def shuffle(self, nums: List[int], n: int) -> List[int]:
-        res = list()
-        odd = 0
-        even = n
-        while(n!=0):
-            res.append(nums[odd])
-            res.append(nums[even])
-            odd += 1
-            even += 1
-            n -= 1
-        return res
-
-# By range, time: O(n), space: O(1)
-# ¬ÙÅÜ¼ÆªÅ¶¡ªº§@ªk, ¦ı¥Î¨ìrange®É¶¡¸û¤[
-# class Solution:
-#     def shuffle(self, nums: List[int], n: int) -> List[int]:
-#         res = list()
-#         for i in range(n):
-#             res.append(nums[i])
-#             res.append(nums[i+n])
-#         return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

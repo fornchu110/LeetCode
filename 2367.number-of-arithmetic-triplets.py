@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2367 lang=python3
 #
@@ -7,8 +6,8 @@
 
 # @lc code=start
 # By hash, time: O(n), space: O(n)
-# µ¹diff©Mnums, §änums¤º¦³´X¹ï(i, i+diff, i+diff)¦s¦b
-# ¥Îhash§Y¥i, ³oºØ¥u­n§â©Ò¦³input©ñ¶iªí¥BµLÃö­«½Æªº¥i¥Hª½±µ¥Îset()
+# çµ¦diffå’Œnums, æ‰¾numså…§æœ‰å¹¾å°(i, i+diff, i+diff)å­˜åœ¨
+# ç”¨hashå³å¯, é€™ç¨®åªè¦æŠŠæ‰€æœ‰inputæ”¾é€²è¡¨ä¸”ç„¡é—œé‡è¤‡çš„å¯ä»¥ç›´æ¥ç”¨set()
 class Solution:
     def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
         res = 0
@@ -21,18 +20,18 @@ class Solution:
         return res 
 
 # By three pointer, time: O(n), space: O(1)
-# ¦]nums¤w¸g±Æ§Ç, ©Ò¥H¥i¥H¥Îpointer·í§@ÃD¥Øµ¹ªºi¡Bj
-# ·Qªk¬O¨«³Xnums¤º©Ò¦³¤¸¯À, ¥ı§ä¨ì¤ñx¤pdiffªº¤¸¯À©Ò¦bindex j, ¦A§ä¤ñx¤p2*diffªº¤¸¯À©Ò¦bindex i
-# ·í§ä¨ì´N¥Nªí¦³¤@¹ï­n¨Dªº²Õ¦X
+# å› numså·²ç¶“æ’åº, æ‰€ä»¥å¯ä»¥ç”¨pointerç•¶ä½œé¡Œç›®çµ¦çš„iã€j
+# æƒ³æ³•æ˜¯èµ°è¨ªnumså…§æ‰€æœ‰å…ƒç´ , å…ˆæ‰¾åˆ°æ¯”xå°diffçš„å…ƒç´ æ‰€åœ¨index j, å†æ‰¾æ¯”xå°2*diffçš„å…ƒç´ æ‰€åœ¨index i
+# ç•¶æ‰¾åˆ°å°±ä»£è¡¨æœ‰ä¸€å°è¦æ±‚çš„çµ„åˆ
 # class Solution:
 #     def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
-#         # j±qindex 1¶}©l¬O¦]¬°¤T¤¸¯Àindex¤£¯à­«½Æ, (i, j, x)¦Ü¤Ö­n¬O(0, 1, 2)
+#         # jå¾index 1é–‹å§‹æ˜¯å› ç‚ºä¸‰å…ƒç´ indexä¸èƒ½é‡è¤‡, (i, j, x)è‡³å°‘è¦æ˜¯(0, 1, 2)
 #         res, i, j = 0, 0, 1
 #         for x in nums:
-#             # ÀHµÛ¨«³Xnums, j·|¼W¥[Á×§K¤F­«½Æ²Õ¦X
+#             # éš¨è‘—èµ°è¨ªnums, jæœƒå¢åŠ é¿å…äº†é‡è¤‡çµ„åˆ
 #             while nums[j]+diff<x:
 #                 j += 1
-#             # Ãä¬É±ø¥ó³B²z, 
+#             # é‚Šç•Œæ¢ä»¶è™•ç†, 
 #             if nums[j]+diff>x:
 #                 continue
 #             while nums[i]+diff*2<x:
@@ -43,49 +42,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2367 lang=python3
-#
-# [2367] Number of Arithmetic Triplets
-#
-
-# @lc code=start
-# By hash, time: O(n), space: O(n)
-# µ¹diff©Mnums, §änums¤º¦³´X¹ï(i, i+diff, i+diff)¦s¦b
-# ¥Îhash§Y¥i, ³oºØ¥u­n§â©Ò¦³input©ñ¶iªí¥BµLÃö­«½Æªº¥i¥Hª½±µ¥Îset()
-class Solution:
-    def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
-        res = 0
-        hash = dict()
-        for i in nums:
-            if i not in hash:
-                hash[i] = i
-            if i-diff in hash and i-diff-diff in hash:
-                res += 1
-        return res 
-
-# By three pointer, time: O(n), space: O(1)
-# ¦]nums¤w¸g±Æ§Ç, ©Ò¥H¥i¥H¥Îpointer·í§@ÃD¥Øµ¹ªºi¡Bj
-# ·Qªk¬O¨«³Xnums¤º©Ò¦³¤¸¯À, ¥ı§ä¨ì¤ñx¤pdiffªº¤¸¯À©Ò¦bindex j, ¦A§ä¤ñx¤p2*diffªº¤¸¯À©Ò¦bindex i
-# ·í§ä¨ì´N¥Nªí¦³¤@¹ï­n¨Dªº²Õ¦X
-# class Solution:
-#     def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
-#         # j±qindex 1¶}©l¬O¦]¬°¤T¤¸¯Àindex¤£¯à­«½Æ, (i, j, x)¦Ü¤Ö­n¬O(0, 1, 2)
-#         res, i, j = 0, 0, 1
-#         for x in nums:
-#             # ÀHµÛ¨«³Xnums, j·|¼W¥[Á×§K¤F­«½Æ²Õ¦X
-#             while nums[j]+diff<x:
-#                 j += 1
-#             # Ãä¬É±ø¥ó³B²z, 
-#             if nums[j]+diff>x:
-#                 continue
-#             while nums[i]+diff*2<x:
-#                 i += 1
-#             if nums[i]+diff*2==x:
-#                 res += 1
-#         return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

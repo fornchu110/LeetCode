@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2114 lang=python3
 #
@@ -6,22 +5,22 @@
 #
 
 # @lc code=start
-# By for loop, time: O(m), space: O(1), m¬O«ü©Ò¦³sentences¤§¦r²ÅÁ`¼Æ
-# ·|§â©Ò¦³¦r²Å³£¬İ¤@¹M, python¥Îmax()©Mcount()¯à§ó§Ö
-# §ä¥Xµ¹©wsentences¤¤³æ¦r¼Æ³Ì¦hªº¨º­Ó¨Ã¦^¶Ç­È
-# ¨ä¹ê¥i¥H§ä¨C¨ãsentenceªºªÅ¥Õ¼Æ, ¦A+1´N¬O³æ¦r¼Æ
+# By for loop, time: O(m), space: O(1), mæ˜¯æŒ‡æ‰€æœ‰sentencesä¹‹å­—ç¬¦ç¸½æ•¸
+# æœƒæŠŠæ‰€æœ‰å­—ç¬¦éƒ½çœ‹ä¸€é, pythonç”¨max()å’Œcount()èƒ½æ›´å¿«
+# æ‰¾å‡ºçµ¦å®šsentencesä¸­å–®å­—æ•¸æœ€å¤šçš„é‚£å€‹ä¸¦å›å‚³å€¼
+# å…¶å¯¦å¯ä»¥æ‰¾æ¯å…·sentenceçš„ç©ºç™½æ•¸, å†+1å°±æ˜¯å–®å­—æ•¸
 class Solution:
     def mostWordsFound(self, sentences: List[str]) -> int:
         res = 0
         for i in sentences:
             cnt = 0
-            # python¥i¥H¥u¥Î¤U­±³o¥ycount¨Ó­pºâªÅ¥Õ¼Æ
+            # pythonå¯ä»¥åªç”¨ä¸‹é¢é€™å¥countä¾†è¨ˆç®—ç©ºç™½æ•¸
             # cnt = i.count(' ') + 1
-            # ¹ïsentence[i]¤¤¨C­Ó¦r²Åj§PÂ_¬O§_¬°ªÅ¥Õ
+            # å°sentence[i]ä¸­æ¯å€‹å­—ç¬¦jåˆ¤æ–·æ˜¯å¦ç‚ºç©ºç™½
             for j in i:
                 if j==" ":
                     cnt += 1
-            # python¥i¥Hª½±µmax(cnt, res)¨Ó¬İ­ş­Ó¤ñ¸û¤j
+            # pythonå¯ä»¥ç›´æ¥max(cnt, res)ä¾†çœ‹å“ªå€‹æ¯”è¼ƒå¤§
             if cnt>res:
                 res = cnt
         res += 1
@@ -29,35 +28,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2114 lang=python3
-#
-# [2114] Maximum Number of Words Found in Sentences
-#
-
-# @lc code=start
-# By for loop, time: O(m), space: O(1), m¬O«ü©Ò¦³sentences¤§¦r²ÅÁ`¼Æ
-# ·|§â©Ò¦³¦r²Å³£¬İ¤@¹M, python¥Îmax()©Mcount()¯à§ó§Ö
-# §ä¥Xµ¹©wsentences¤¤³æ¦r¼Æ³Ì¦hªº¨º­Ó¨Ã¦^¶Ç­È
-# ¨ä¹ê¥i¥H§ä¨C¨ãsentenceªºªÅ¥Õ¼Æ, ¦A+1´N¬O³æ¦r¼Æ
-class Solution:
-    def mostWordsFound(self, sentences: List[str]) -> int:
-        res = 0
-        for i in sentences:
-            cnt = 0
-            # python¥i¥H¥u¥Î¤U­±³o¥ycount¨Ó­pºâªÅ¥Õ¼Æ
-            # cnt = i.count(' ') + 1
-            # ¹ïsentence[i]¤¤¨C­Ó¦r²Åj§PÂ_¬O§_¬°ªÅ¥Õ
-            for j in i:
-                if j==" ":
-                    cnt += 1
-            # python¥i¥Hª½±µmax(cnt, res)¨Ó¬İ­ş­Ó¤ñ¸û¤j
-            if cnt>res:
-                res = cnt
-        res += 1
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

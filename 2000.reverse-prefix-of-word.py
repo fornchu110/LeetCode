@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2000 lang=python3
 #
@@ -6,58 +5,26 @@
 #
 
 # @lc code=start
-# µ¹¦r¦êword©M¥Ø¼Ğch, ±Nword¤¤²Ä¤@¦¸¥X²{ch¥H«eªº³¡¤À¤ÏÂà
+# çµ¦å­—ä¸²wordå’Œç›®æ¨™ch, å°‡wordä¸­ç¬¬ä¸€æ¬¡å‡ºç¾chä»¥å‰çš„éƒ¨åˆ†åè½‰
 # Ex: word: abcdefd, ch: d, return: dcbaefd
 
 # By string processing, time: O(n), space: O(1) 
-# §Q¥Îpython¤Á¤ùªº¤è¦¡³B²z
-# ­Y¬Oc»y¨¥¨Ï¥Îdouble pointer, ¥Îstrchr()§ä¨ìch«á, ¨Ï¥Î¤@­Ópointer«ü¦V¶}ÀY¤@­Ó«ü¦Vch©Ò¦b¦ì¸m
-# ¦b¶}ÀY<ch¦ì¸m¬°±ø¥ó, ¤À§O¥æ´«¦ì¸m©Ò¦s©ñªº¦r¤¸¨Ã±N¶}ÀY++, ch--, ·í¶}ÀY>=ch¦ì¸m«K¥Nªí¥æ´«§¹²¦
+# åˆ©ç”¨pythonåˆ‡ç‰‡çš„æ–¹å¼è™•ç†
+# è‹¥æ˜¯cèªè¨€ä½¿ç”¨double pointer, ç”¨strchr()æ‰¾åˆ°chå¾Œ, ä½¿ç”¨ä¸€å€‹pointeræŒ‡å‘é–‹é ­ä¸€å€‹æŒ‡å‘chæ‰€åœ¨ä½ç½®
+# åœ¨é–‹é ­<chä½ç½®ç‚ºæ¢ä»¶, åˆ†åˆ¥äº¤æ›ä½ç½®æ‰€å­˜æ”¾çš„å­—å…ƒä¸¦å°‡é–‹é ­++, ch--, ç•¶é–‹é ­>=chä½ç½®ä¾¿ä»£è¡¨äº¤æ›å®Œç•¢
 class Solution:
     def reversePrefix(self, word: str, ch: str) -> str:
-        # ­º¥ı§ä¥Xch²Ä¤@¦¸¥X²{ªº¦ì¸m, find§ä¨ìchªºindex
-        # ¦Ó¦]¤Á¤ù[a:b]¥u·|³B²z¨ìb«e¤@­Ó, ©Ò¥H­n+1, ¤Á¤ù[a:b+1]¤~·|a~b+1©Ò¦³¦r¤¸
-        # Ex: word: abcdefd, ch: d, ch¦bindex3, i = 4
+        # é¦–å…ˆæ‰¾å‡ºchç¬¬ä¸€æ¬¡å‡ºç¾çš„ä½ç½®, findæ‰¾åˆ°chçš„index
+        # è€Œå› åˆ‡ç‰‡[a:b]åªæœƒè™•ç†åˆ°bå‰ä¸€å€‹, æ‰€ä»¥è¦+1, åˆ‡ç‰‡[a:b+1]æ‰æœƒa~b+1æ‰€æœ‰å­—å…ƒ
+        # Ex: word: abcdefd, ch: d, chåœ¨index3, i = 4
         i = word.find(ch)+1
-        # §ä¨ìch©Ò¦b«á, return¤À¦¨¨â­Ó³¡¤À, ¤ÏÂàªº©M¥¼¤ÏÂàªº
-        # word[:i]¥Nªí¨úword¶}ÀY¨ìch, «á­±¦A¹ï³o­Ó¦r¦ê°µ[::-1]¤]´N¬O¤ÏÂà
-        # ¤ÏÂà³B²z§¹«á, +word[i]¤]´N¬Och¥H«áªº³¡¤À§Y¥i
-        # ©Ò¥Hª`·N¤Á¤ùªº·§©À¬O((word[:i])[::-1])
-        # ¤£¯à¥Îword[:i:-1], ³o¼ËÅÜ¦¨­ËµÛ¨«³X¨ìi¤§¤U¤@­Ó¦r¤¸°±¤î
+        # æ‰¾åˆ°chæ‰€åœ¨å¾Œ, returnåˆ†æˆå…©å€‹éƒ¨åˆ†, åè½‰çš„å’Œæœªåè½‰çš„
+        # word[:i]ä»£è¡¨å–wordé–‹é ­åˆ°ch, å¾Œé¢å†å°é€™å€‹å­—ä¸²åš[::-1]ä¹Ÿå°±æ˜¯åè½‰
+        # åè½‰è™•ç†å®Œå¾Œ, +word[i]ä¹Ÿå°±æ˜¯chä»¥å¾Œçš„éƒ¨åˆ†å³å¯
+        # æ‰€ä»¥æ³¨æ„åˆ‡ç‰‡çš„æ¦‚å¿µæ˜¯((word[:i])[::-1])
+        # ä¸èƒ½ç”¨word[:i:-1], é€™æ¨£è®Šæˆå€’è‘—èµ°è¨ªåˆ°iä¹‹ä¸‹ä¸€å€‹å­—å…ƒåœæ­¢
         # Ex: word: abcdefd, ch: d, word[:i:-1] = df
         return word[:i][::-1]+word[i:]
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2000 lang=python3
-#
-# [2000] Reverse Prefix of Word
-#
-
-# @lc code=start
-# µ¹¦r¦êword©M¥Ø¼Ğch, ±Nword¤¤²Ä¤@¦¸¥X²{ch¥H«eªº³¡¤À¤ÏÂà
-# Ex: word: abcdefd, ch: d, return: dcbaefd
-
-# By string processing, time: O(n), space: O(1) 
-# §Q¥Îpython¤Á¤ùªº¤è¦¡³B²z
-# ­Y¬Oc»y¨¥¨Ï¥Îdouble pointer, ¥Îstrchr()§ä¨ìch«á, ¨Ï¥Î¤@­Ópointer«ü¦V¶}ÀY¤@­Ó«ü¦Vch©Ò¦b¦ì¸m
-# ¦b¶}ÀY<ch¦ì¸m¬°±ø¥ó, ¤À§O¥æ´«¦ì¸m©Ò¦s©ñªº¦r¤¸¨Ã±N¶}ÀY++, ch--, ·í¶}ÀY>=ch¦ì¸m«K¥Nªí¥æ´«§¹²¦
-class Solution:
-    def reversePrefix(self, word: str, ch: str) -> str:
-        # ­º¥ı§ä¥Xch²Ä¤@¦¸¥X²{ªº¦ì¸m, find§ä¨ìchªºindex
-        # ¦Ó¦]¤Á¤ù[a:b]¥u·|³B²z¨ìb«e¤@­Ó, ©Ò¥H­n+1, ¤Á¤ù[a:b+1]¤~·|a~b+1©Ò¦³¦r¤¸
-        # Ex: word: abcdefd, ch: d, ch¦bindex3, i = 4
-        i = word.find(ch)+1
-        # §ä¨ìch©Ò¦b«á, return¤À¦¨¨â­Ó³¡¤À, ¤ÏÂàªº©M¥¼¤ÏÂàªº
-        # word[:i]¥Nªí¨úword¶}ÀY¨ìch, «á­±¦A¹ï³o­Ó¦r¦ê°µ[::-1]¤]´N¬O¤ÏÂà
-        # ¤ÏÂà³B²z§¹«á, +word[i]¤]´N¬Och¥H«áªº³¡¤À§Y¥i
-        # ©Ò¥Hª`·N¤Á¤ùªº·§©À¬O((word[:i])[::-1])
-        # ¤£¯à¥Îword[:i:-1], ³o¼ËÅÜ¦¨­ËµÛ¨«³X¨ìi¤§¤U¤@­Ó¦r¤¸°±¤î
-        # Ex: word: abcdefd, ch: d, word[:i:-1] = df
-        return word[:i][::-1]+word[i:]
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2011 lang=python3
 #
@@ -7,16 +6,16 @@
 
 # @lc code=start
 # By string compartion, time: O(n), space: O(1)
-# ¹ïlist¤¤¨C­Ó¦r¦ê°µ¤ñ¸û, ¥u¦³X++, ++X , X--, --X¥|ºØ¥i¯à
-# «e¨âªÌx += 1, «á¨âªÌx -= 1§Y¥i
-# §óºë·Çªº¤è¦¡¬O¥u§PÂ_list¤¤¦r¦ê¤¤¶¡¨º­Ó²Å¸¹, ¥²¬°+©Î-
+# å°listä¸­æ¯å€‹å­—ä¸²åšæ¯”è¼ƒ, åªæœ‰X++, ++X , X--, --Xå››ç¨®å¯èƒ½
+# å‰å…©è€…x += 1, å¾Œå…©è€…x -= 1å³å¯
+# æ›´ç²¾æº–çš„æ–¹å¼æ˜¯åªåˆ¤æ–·listä¸­å­—ä¸²ä¸­é–“é‚£å€‹ç¬¦è™Ÿ, å¿…ç‚º+æˆ–-
 class Solution:
     def finalValueAfterOperations(self, operations: List[str]) -> int:
         x = 0
         for i in operations:
-            # ª½±µ§PÂ_ªº¤è¦¡
+            # ç›´æ¥åˆ¤æ–·çš„æ–¹å¼
             # if i=="X++" or i=="++X":
-            # §óºë·Ç§PÂ_i[1]¥²¬°+©Î-
+            # æ›´ç²¾æº–åˆ¤æ–·i[1]å¿…ç‚º+æˆ–-
             if i[1]=="+":
                 x += 1
             else:
@@ -25,31 +24,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2011 lang=python3
-#
-# [2011] Final Value of Variable After Performing Operations
-#
-
-# @lc code=start
-# By string compartion, time: O(n), space: O(1)
-# ¹ïlist¤¤¨C­Ó¦r¦ê°µ¤ñ¸û, ¥u¦³X++, ++X , X--, --X¥|ºØ¥i¯à
-# «e¨âªÌx += 1, «á¨âªÌx -= 1§Y¥i
-# §óºë·Çªº¤è¦¡¬O¥u§PÂ_list¤¤¦r¦ê¤¤¶¡¨º­Ó²Å¸¹, ¥²¬°+©Î-
-class Solution:
-    def finalValueAfterOperations(self, operations: List[str]) -> int:
-        x = 0
-        for i in operations:
-            # ª½±µ§PÂ_ªº¤è¦¡
-            # if i=="X++" or i=="++X":
-            # §óºë·Ç§PÂ_i[1]¥²¬°+©Î-
-            if i[1]=="+":
-                x += 1
-            else:
-                x -= 1
-        return x 
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

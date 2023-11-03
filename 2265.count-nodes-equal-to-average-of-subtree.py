@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2265 lang=python3
 #
@@ -13,31 +12,31 @@
 #         self.left = left
 #         self.right = right
 
-# ­pºânode.val=¦Û¤v+¦Û¤v©Ò¦³childªºvalue¥­§¡¼Æ¤§node¼Æ¶q
-# ³oºØÃD¥Øªº°ò¥»¤@©w¬O¥Îrecursive°µdfs¨«³X©Ò¦³node°µ­pºâ
+# è¨ˆç®—node.val=è‡ªå·±+è‡ªå·±æ‰€æœ‰childçš„valueå¹³å‡æ•¸ä¹‹nodeæ•¸é‡
+# é€™ç¨®é¡Œç›®çš„åŸºæœ¬ä¸€å®šæ˜¯ç”¨recursiveåšdfsèµ°è¨ªæ‰€æœ‰nodeåšè¨ˆç®—
 
 # By DFS, Time: O(n), Space: O(logn)
-# space = O(logn)¬O¦]¬°Recursive¤¤stackªá¶OªºªÅ¶¡, ¦ı³oÃD¥u¬O¤G¤¸¾ğ¦³¥i¯à³Ì®tO(n), ©Ò¥HO(height), height = ¾ğ°ª¤ñ¸û·Ç½T
-# ¥ÎDFS¤U¥h¥u¬O­n¦P®É°O¿ı©M©M¥Ø«e¨«¹Lªº¼Æ¶q, ¤@¦¸¦^¶Ç¨â­Ó°Ñ¼Æ
+# space = O(logn)æ˜¯å› ç‚ºRecursiveä¸­stackèŠ±è²»çš„ç©ºé–“, ä½†é€™é¡Œåªæ˜¯äºŒå…ƒæ¨¹æœ‰å¯èƒ½æœ€å·®O(n), æ‰€ä»¥O(height), height = æ¨¹é«˜æ¯”è¼ƒæº–ç¢º
+# ç”¨DFSä¸‹å»åªæ˜¯è¦åŒæ™‚è¨˜éŒ„å’Œå’Œç›®å‰èµ°éçš„æ•¸é‡, ä¸€æ¬¡å›å‚³å…©å€‹åƒæ•¸
 class Solution:
     def averageOfSubtree(self, root: Optional[TreeNode]) -> int:
         res = 0
         def dfs(root: Optional[TreeNode]):
-            # ¦]¥Î¨ìdfs¤W¤@¼h¨ç¼ÆaverageOfSubtree©Ò©w¸qªºres
-            # ©Ò¥H¨Ï¥Înonlocal, ³o¼Ë´N¯à­×§ïres¤F
-            # ¤£·Q¥Înonlocalªº¸Ü§âres´«¦¨self.res
+            # å› ç”¨åˆ°dfsä¸Šä¸€å±¤å‡½æ•¸averageOfSubtreeæ‰€å®šç¾©çš„res
+            # æ‰€ä»¥ä½¿ç”¨nonlocal, é€™æ¨£å°±èƒ½ä¿®æ”¹resäº†
+            # ä¸æƒ³ç”¨nonlocalçš„è©±æŠŠresæ›æˆself.res
             nonlocal res 
             if not root:
                 return 0, 0
-            #¹ï¥ª¥k¤l¾ğ°µ»¼°j
+            #å°å·¦å³å­æ¨¹åšéè¿´
             lsub = dfs(root.left)
             rsub = dfs(root.right)
-            # ¨D¥X¦Û¤v+¦Û¤v©Ò¦³child¤§value©M
+            # æ±‚å‡ºè‡ªå·±+è‡ªå·±æ‰€æœ‰childä¹‹valueå’Œ
             value = lsub[0]+rsub[0]+root.val
-            # ¨D¥X¦Û¤v+¦Û¤v©Ò¦³child¤§node¼Æ¶q
+            # æ±‚å‡ºè‡ªå·±+è‡ªå·±æ‰€æœ‰childä¹‹nodeæ•¸é‡
             count = lsub[1]+rsub[1]+1
-            # ¬İ¦Û¤vªºvalue¬O§_¦Û¤v+¦Û¤v©Ò¦³childªºvalue¥­§¡¼Æ
-            # ­Y¬Ûµ¥«h+1
+            # çœ‹è‡ªå·±çš„valueæ˜¯å¦è‡ªå·±+è‡ªå·±æ‰€æœ‰childçš„valueå¹³å‡æ•¸
+            # è‹¥ç›¸ç­‰å‰‡+1
             if root.val == value // count:
                 res += 1
             return value, count    
@@ -45,7 +44,7 @@ class Solution:
         return res
     
 # By DFS, Time: O(n), Space: O(logn)
-# §ï¦¨±Ndef©Mres¼g¦bclass¤U
+# æ”¹æˆå°‡defå’Œreså¯«åœ¨classä¸‹
 # class Solution:
 #     def __init__(self):
 #         self.res = 0
@@ -68,74 +67,3 @@ class Solution:
              
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2265 lang=python3
-#
-# [2265] Count Nodes Equal to Average of Subtree
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# ­pºânode.val=¦Û¤v+¦Û¤v©Ò¦³childªºvalue¥­§¡¼Æ¤§node¼Æ¶q
-# ³oºØÃD¥Øªº°ò¥»¤@©w¬O¥Îrecursive°µdfs¨«³X©Ò¦³node°µ­pºâ
-
-# By DFS, Time: O(n), Space: O(logn)
-# space = O(logn)¬O¦]¬°Recursive¤¤stackªá¶OªºªÅ¶¡, ¦ı³oÃD¥u¬O¤G¤¸¾ğ¦³¥i¯à³Ì®tO(n), ©Ò¥HO(height), height = ¾ğ°ª¤ñ¸û·Ç½T
-# ¥ÎDFS¤U¥h¥u¬O­n¦P®É°O¿ı©M©M¥Ø«e¨«¹Lªº¼Æ¶q, ¤@¦¸¦^¶Ç¨â­Ó°Ñ¼Æ
-class Solution:
-    def averageOfSubtree(self, root: Optional[TreeNode]) -> int:
-        res = 0
-        def dfs(root: Optional[TreeNode]):
-            # ¦]¥Î¨ìdfs¤W¤@¼h¨ç¼ÆaverageOfSubtree©Ò©w¸qªºres
-            # ©Ò¥H¨Ï¥Înonlocal, ³o¼Ë´N¯à­×§ïres¤F
-            # ¤£·Q¥Înonlocalªº¸Ü§âres´«¦¨self.res
-            nonlocal res 
-            if not root:
-                return 0, 0
-            #¹ï¥ª¥k¤l¾ğ°µ»¼°j
-            lsub = dfs(root.left)
-            rsub = dfs(root.right)
-            # ¨D¥X¦Û¤v+¦Û¤v©Ò¦³child¤§value©M
-            value = lsub[0]+rsub[0]+root.val
-            # ¨D¥X¦Û¤v+¦Û¤v©Ò¦³child¤§node¼Æ¶q
-            count = lsub[1]+rsub[1]+1
-            # ¬İ¦Û¤vªºvalue¬O§_¦Û¤v+¦Û¤v©Ò¦³childªºvalue¥­§¡¼Æ
-            # ­Y¬Ûµ¥«h+1
-            if root.val == value // count:
-                res += 1
-            return value, count    
-        dfs(root)
-        return res
-    
-# By DFS, Time: O(n), Space: O(logn)
-# §ï¦¨±Ndef©Mres¼g¦bclass¤U
-# class Solution:
-#     def __init__(self):
-#         self.res = 0
-    
-#     def dfs(self, root):
-#         if not root:
-#             return 0, 0
-#         lsub = self.dfs(root.left)
-#         rsub = self.dfs(root.right)
-#         value = lsub[0]+rsub[0]+root.val
-#         count = lsub[1]+rsub[1]+1
-#         if root.val==value//count:
-#             self.res += 1
-#         return value, count
-
-#     def averageOfSubtree(self, root: Optional[TreeNode]) -> int:
-#         self.dfs(root)
-#         return self.res
-
-             
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

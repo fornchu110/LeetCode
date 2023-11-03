@@ -12,11 +12,11 @@
 #         self.next = next
 
 # By iterative, time: O(n), space: O(1)
-# ­n¨D·ícur¥k¤è¦s¦bnode.val>cur.val®É, ±Ncur§R°£
-# ­n¥ı¤ÏÂàlinklist, ¤ÏÂà«á±qÀY¶}©l¬İ
-# ³o¼ËÅÜ¦¨¥u­n¤ñcur.val>node.val´N±Nnode§R°£, ¦Ó«Dcur
+# è¦æ±‚ç•¶curå³æ–¹å­˜åœ¨node.val>cur.valæ™‚, å°‡curåˆªé™¤
+# è¦å…ˆåè½‰linklist, åè½‰å¾Œå¾é ­é–‹å§‹çœ‹
+# é€™æ¨£è®Šæˆåªè¦æ¯”cur.val>node.valå°±å°‡nodeåˆªé™¤, è€Œécur
 class Solution:
-    # ¥ı¤ÏÂàlinklist, ¦s¦nnext¦ì¸m«á, ±N¥Ø«ecur«ü¦Vprev, §ó·sprev¬°cur¨Ã©¹next nodeÄ~Äò
+    # å…ˆåè½‰linklist, å­˜å¥½nextä½ç½®å¾Œ, å°‡ç›®å‰curæŒ‡å‘prev, æ›´æ–°prevç‚ºcurä¸¦å¾€next nodeç¹¼çºŒ
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         prev, cur = None, head
         while cur:
@@ -25,37 +25,37 @@ class Solution:
             prev = cur
             cur = next
         return prev
-    # ¶}©l°µ§R°£, ¤@ª½±qcur©¹next¬İ
+    # é–‹å§‹åšåˆªé™¤, ä¸€ç›´å¾curå¾€nextçœ‹
     def removeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
         cur = head = self.reverseList(head)
         while cur.next:
-            # cur.val>node.val®É±N¨ä§R°£
-            # ª`·N§R°£node«á¤£¯àcur = cur.next, §_«h·|¸õ¹Lcur.next³Q§R°£ªº¾÷·|
+            # cur.val>node.valæ™‚å°‡å…¶åˆªé™¤
+            # æ³¨æ„åˆªé™¤nodeå¾Œä¸èƒ½cur = cur.next, å¦å‰‡æœƒè·³écur.nextè¢«åˆªé™¤çš„æ©Ÿæœƒ
             if cur.val>cur.next.val:
                 cur.next = cur.next.next
             else:
                 cur = cur.next
-        # ª`·N²{¦bhead¬O¤ÏÂà¹Lªº, ¦ı­nnode·Ó­ì¥»¶¶§Ç, ©Ò¥HÁÙ­n¦A¤ÏÂà¦^¥h
+        # æ³¨æ„ç¾åœ¨headæ˜¯åè½‰éçš„, ä½†è¦nodeç…§åŸæœ¬é †åº, æ‰€ä»¥é‚„è¦å†åè½‰å›å»
         return self.reverseList(head)
 
 # By recursive, time: O(n), space: O(n)
-# §R°£«á¨C­Ónode³£¤j©óµ¥©ó¦Û¤v¥kÃäªºnode
+# åˆªé™¤å¾Œæ¯å€‹nodeéƒ½å¤§æ–¼ç­‰æ–¼è‡ªå·±å³é‚Šçš„node
 # class Solution:
 #     def removeNodes(self, head: Optional[ListNode]) -> Optional[ListNode]:
-#         # ²×¤î±ø¥ó
+#         # çµ‚æ­¢æ¢ä»¶
 #         if head.next is None:
 #             return head
-#         # §Q¥Î¶Ç¤Jhead.next°µ¨«³X, ¨ì¤F³Ì§Àºİ¤~¶}©l°µ¤ñ¸û¨Ãreturn
-#         # ¨C¦¸returnªºµ²ªG¤@©w¬Ocur¥kÃä³Ì¤jªº
-#         # com¬Ocompare(¤ñ¸û), ¥Nªíªº¬Ocur¥kÃäval³Ì¤jªºªºnode
+#         # åˆ©ç”¨å‚³å…¥head.nextåšèµ°è¨ª, åˆ°äº†æœ€å°¾ç«¯æ‰é–‹å§‹åšæ¯”è¼ƒä¸¦return
+#         # æ¯æ¬¡returnçš„çµæœä¸€å®šæ˜¯curå³é‚Šæœ€å¤§çš„
+#         # comæ˜¯compare(æ¯”è¼ƒ), ä»£è¡¨çš„æ˜¯curå³é‚Švalæœ€å¤§çš„çš„node
 #         com = self.removeNodes(head.next)  
-#         # ®Ú¾Ú¤U­±§PÂ_¨M©wreturnµ²ªG
-#         # ·ícom(¦^¶Ç¨Óªº)¤ñhead(cur)¤j, ¦^¨ìcom
+#         # æ ¹æ“šä¸‹é¢åˆ¤æ–·æ±ºå®šreturnçµæœ
+#         # ç•¶com(å›å‚³ä¾†çš„)æ¯”head(cur)å¤§, å›åˆ°com
 #         if com.val > head.val:
 #             return com  
-#         # ·ínode¨S¤ñhead¤j, ¤£§R°£head
-#         # ±Nhead(cur)³s¤Wnode, ²¤¹L¤¶©ócur¥kÃäcom¥ªÃä¨º¨Ç¤ñcom.val¤pªºnode
-#         # ¦P®É¥Nªí¤F¤ñcom.val¤pªº¨º¨Çnode³Q§R°£¤F
+#         # ç•¶nodeæ²’æ¯”headå¤§, ä¸åˆªé™¤head
+#         # å°‡head(cur)é€£ä¸Šnode, ç•¥éä»‹æ–¼curå³é‚Šcomå·¦é‚Šé‚£äº›æ¯”com.valå°çš„node
+#         # åŒæ™‚ä»£è¡¨äº†æ¯”com.valå°çš„é‚£äº›nodeè¢«åˆªé™¤äº†
 #         head.next = com 
 #         return head
 

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * @lc app=leetcode id=1678 lang=c
  *
@@ -8,27 +7,27 @@
 // @lc code=start
 
 // By for loop and sprintf, time: O(n), space: O(1)
-// ¨«³Xcommand«á¨Ì·Ó¦r¤¸¤º®e¿é¥X¤£¦P¦r¦ê¨ìres¤W
-// §Q¥Îsprintf«Ü­«­n, ¬O¦b#include <stdio.h>¸Ì­±
-// °O±osprintfªğ¦^­È©M§Q¥Î+=ªğ¦^­È±o¨ì·sªºindex¨Ó°µ³B²z
+// èµ°è¨ªcommandå¾Œä¾ç…§å­—å…ƒå…§å®¹è¼¸å‡ºä¸åŒå­—ä¸²åˆ°resä¸Š
+// åˆ©ç”¨sprintfå¾ˆé‡è¦, æ˜¯åœ¨#include <stdio.h>è£¡é¢
+// è¨˜å¾—sprintfè¿”å›å€¼å’Œåˆ©ç”¨+=è¿”å›å€¼å¾—åˆ°æ–°çš„indexä¾†åšè™•ç†
 char* interpret(char* command) {
-    // strlen¦^¶Ç­È¤£·|¥]§t\0, ©Ò¥H¬İ°_¨Ó´X­Ó¦r¤¸´N¦hªø
+    // strlenå›å‚³å€¼ä¸æœƒåŒ…å«\0, æ‰€ä»¥çœ‹èµ·ä¾†å¹¾å€‹å­—å…ƒå°±å¤šé•·
     int len = strlen(command);
-    //ª`·Nc»y¨¥¥Î°ÊºA°O¾ĞÅé«Å§i¦r¦êsize·|+1¬O¦]¬°¯dµ¹\0
+    //æ³¨æ„cèªè¨€ç”¨å‹•æ…‹è¨˜æ†¶é«”å®£å‘Šå­—ä¸²sizeæœƒ+1æ˜¯å› ç‚ºç•™çµ¦\0
     char* res = (char*)malloc(sizeof(char)*(len+1));
     int pos = 0;
-    // ¶}©l¨«³Xcommand
+    // é–‹å§‹èµ°è¨ªcommand
     for (int i=0;i<len;i++) {
-        // Gªº¸Ü¤£·|ÅÜ°Ê, ¬İ¨ìG¿é¥XG
+        // Gçš„è©±ä¸æœƒè®Šå‹•, çœ‹åˆ°Gè¼¸å‡ºG
         if(command[i]=='G') {
-            // c»y¨¥¥Îsprintf°µ®æ¦¡¤Æ¦r¦ê¿é¥X, ±N¥Ø¼Ğ®æ¦¡©M¤º®e¿é¥X¨ìstr¤W
-            // printf¿é¥X¨ì¿Ã¹õ¤W, sprintf¿é¥X¨ì¥Ø¼Ğ¦r¦ê¤W
-            // ¦bpos³o­Óindexªº¦ì¸m(¤]´N¬Ores+pos)¿é¥X«á§ó·spos­È
-            // ¦^¶Ç­È¬O­×§ïªº¦r²Å¼Æ¶q, ©Ò¥H¥[¤W¦^¶Ç­È´N¬O¤U¦¸ªºindex
-            // Ex: ¦bindex1ªº¦a¤è¿é¥X2­Óchar, ¤U¦¸´N­n±qindex3Ä~Äò
+            // cèªè¨€ç”¨sprintfåšæ ¼å¼åŒ–å­—ä¸²è¼¸å‡º, å°‡ç›®æ¨™æ ¼å¼å’Œå…§å®¹è¼¸å‡ºåˆ°strä¸Š
+            // printfè¼¸å‡ºåˆ°è¢å¹•ä¸Š, sprintfè¼¸å‡ºåˆ°ç›®æ¨™å­—ä¸²ä¸Š
+            // åœ¨posé€™å€‹indexçš„ä½ç½®(ä¹Ÿå°±æ˜¯res+pos)è¼¸å‡ºå¾Œæ›´æ–°poså€¼
+            // å›å‚³å€¼æ˜¯ä¿®æ”¹çš„å­—ç¬¦æ•¸é‡, æ‰€ä»¥åŠ ä¸Šå›å‚³å€¼å°±æ˜¯ä¸‹æ¬¡çš„index
+            // Ex: åœ¨index1çš„åœ°æ–¹è¼¸å‡º2å€‹char, ä¸‹æ¬¡å°±è¦å¾index3ç¹¼çºŒ
             pos += sprintf(res+pos, "%s", "G");
         }
-        // ¦P²z, ¥u¬O¬İ¨ì"("·|¦³¨âºØµ²ªG, ª½±µ±µ¤W")"©Î¬O±µ¤W"al)"
+        // åŒç†, åªæ˜¯çœ‹åˆ°"("æœƒæœ‰å…©ç¨®çµæœ, ç›´æ¥æ¥ä¸Š")"æˆ–æ˜¯æ¥ä¸Š"al)"
         else if(command[i]=='(') {
             if(command[i+1]==')') {
                 pos += sprintf(res+pos, "%s", "o");
@@ -43,49 +42,3 @@ char* interpret(char* command) {
 
 // @lc code=end
 
-=======
-/*
- * @lc app=leetcode id=1678 lang=c
- *
- * [1678] Goal Parser Interpretation
- */
-
-// @lc code=start
-
-// By for loop and sprintf, time: O(n), space: O(1)
-// ¨«³Xcommand«á¨Ì·Ó¦r¤¸¤º®e¿é¥X¤£¦P¦r¦ê¨ìres¤W
-// §Q¥Îsprintf«Ü­«­n, ¬O¦b#include <stdio.h>¸Ì­±
-// °O±osprintfªğ¦^­È©M§Q¥Î+=ªğ¦^­È±o¨ì·sªºindex¨Ó°µ³B²z
-char* interpret(char* command) {
-    // strlen¦^¶Ç­È¤£·|¥]§t\0, ©Ò¥H¬İ°_¨Ó´X­Ó¦r¤¸´N¦hªø
-    int len = strlen(command);
-    //ª`·Nc»y¨¥¥Î°ÊºA°O¾ĞÅé«Å§i¦r¦êsize·|+1¬O¦]¬°¯dµ¹\0
-    char* res = (char*)malloc(sizeof(char)*(len+1));
-    int pos = 0;
-    // ¶}©l¨«³Xcommand
-    for (int i=0;i<len;i++) {
-        // Gªº¸Ü¤£·|ÅÜ°Ê, ¬İ¨ìG¿é¥XG
-        if(command[i]=='G') {
-            // c»y¨¥¥Îsprintf°µ®æ¦¡¤Æ¦r¦ê¿é¥X, ±N¥Ø¼Ğ®æ¦¡©M¤º®e¿é¥X¨ìstr¤W
-            // printf¿é¥X¨ì¿Ã¹õ¤W, sprintf¿é¥X¨ì¥Ø¼Ğ¦r¦ê¤W
-            // ¦bpos³o­Óindexªº¦ì¸m(¤]´N¬Ores+pos)¿é¥X«á§ó·spos­È
-            // ¦^¶Ç­È¬O­×§ïªº¦r²Å¼Æ¶q, ©Ò¥H¥[¤W¦^¶Ç­È´N¬O¤U¦¸ªºindex
-            // Ex: ¦bindex1ªº¦a¤è¿é¥X2­Óchar, ¤U¦¸´N­n±qindex3Ä~Äò
-            pos += sprintf(res+pos, "%s", "G");
-        }
-        // ¦P²z, ¥u¬O¬İ¨ì"("·|¦³¨âºØµ²ªG, ª½±µ±µ¤W")"©Î¬O±µ¤W"al)"
-        else if(command[i]=='(') {
-            if(command[i+1]==')') {
-                pos += sprintf(res+pos, "%s", "o");
-            }
-            else {
-                pos += sprintf(res+pos, "%s", "al");
-            }
-        }
-    }
-    return res;
-}
-
-// @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

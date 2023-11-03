@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2149 lang=python3
 #
@@ -7,34 +6,34 @@
 
 # @lc code=start
 
-# µ¹¤@°}¦Cnums, ­n¨D¨Ì·Ó¤¸¯À¥¿­t¥¿­t­«·s±Æ§Ç, ¥B¹ï¦P¸¹¼Æ¦Ó¨¥¬Û¹ï¦ì¸m¤£¯à§ïÅÜ
-# ÃD¥Ø¦³»¡¥¿¼Æ©M­t¼Æ¼Æ¶q¤@¼Ë, ©Ò¥H¥²©w°µlen(nums)/2½ü
+# çµ¦ä¸€é™£åˆ—nums, è¦æ±‚ä¾ç…§å…ƒç´ æ­£è² æ­£è² é‡æ–°æ’åº, ä¸”å°åŒè™Ÿæ•¸è€Œè¨€ç›¸å°ä½ç½®ä¸èƒ½æ”¹è®Š
+# é¡Œç›®æœ‰èªªæ­£æ•¸å’Œè² æ•¸æ•¸é‡ä¸€æ¨£, æ‰€ä»¥å¿…å®šåšlen(nums)/2è¼ª
 
 # By double pointer, time: O(n), space: O(1)
-# ¥Î¨â­Ópointer¬ö¿ı¥Ø«e¥¿¼Æ©M­t¼Æ§ä¨ì­ş­Óindex
-# ¨C½ü¥ı§ä¥¿¼Æ, ¥u­n¹J¨ì­t¼Æ´N©¹¤U­Ó§ä, §ä¨ì¦A¥[¤Jres, ¦A¨Ó°µ­t¼Æ¦P²z
+# ç”¨å…©å€‹pointerç´€éŒ„ç›®å‰æ­£æ•¸å’Œè² æ•¸æ‰¾åˆ°å“ªå€‹index
+# æ¯è¼ªå…ˆæ‰¾æ­£æ•¸, åªè¦é‡åˆ°è² æ•¸å°±å¾€ä¸‹å€‹æ‰¾, æ‰¾åˆ°å†åŠ å…¥res, å†ä¾†åšè² æ•¸åŒç†
 class Solution:
     def rearrangeArray(self, nums: List[int]) -> List[int]:
         n = len(nums)
         pos = neg = 0
         res = list()
         for i in range(n//2):
-            # ¨Ï¥Îwhile¨Ï§ä¨ì¥¿¼Æ¤~µ²§ô
+            # ä½¿ç”¨whileä½¿æ‰¾åˆ°æ­£æ•¸æ‰çµæŸ
             while nums[pos]<0:
                 pos += 1
             res.append(nums[pos])
             pos += 1
-            # ¨Ï¥Îwhile¨Ï§ä¨ì­t¼Æ¤~µ²§ô
+            # ä½¿ç”¨whileä½¿æ‰¾åˆ°è² æ•¸æ‰çµæŸ
             while nums[neg] > 0:
                 neg += 1
             res.append(nums[neg])
             neg += 1
-            # ¨C½üµ²§ô­è¦n¥[¤J¤@­Ó¥¿¼Æ¤@­Ó­t¼Æ¶ires, ¦@n/2½ü
+            # æ¯è¼ªçµæŸå‰›å¥½åŠ å…¥ä¸€å€‹æ­£æ•¸ä¸€å€‹è² æ•¸é€²res, å…±n/2è¼ª
         return res
 
 # By array, time: O(n), space: O(n)
-# ¨«³Xnums±N¨Ì§Ç±N¥¿­t¼Æ¦s¶ipos©Mneg
-# ³Ì«á¦A¨«³Xlen(nums)/2¦¸, ¨C¦¸¨Ì§Ç±Npos©Mneg¤º¬Û¦Pindexªº¤¸¯À©ñ¶ires
+# èµ°è¨ªnumså°‡ä¾åºå°‡æ­£è² æ•¸å­˜é€²poså’Œneg
+# æœ€å¾Œå†èµ°è¨ªlen(nums)/2æ¬¡, æ¯æ¬¡ä¾åºå°‡poså’Œnegå…§ç›¸åŒindexçš„å…ƒç´ æ”¾é€²res
 # class Solution:
 #     def rearrangeArray(self, nums: List[int]) -> List[int]:
 #         pos = []
@@ -52,58 +51,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2149 lang=python3
-#
-# [2149] Rearrange Array Elements by Sign
-#
-
-# @lc code=start
-
-# µ¹¤@°}¦Cnums, ­n¨D¨Ì·Ó¤¸¯À¥¿­t¥¿­t­«·s±Æ§Ç, ¥B¹ï¦P¸¹¼Æ¦Ó¨¥¬Û¹ï¦ì¸m¤£¯à§ïÅÜ
-# ÃD¥Ø¦³»¡¥¿¼Æ©M­t¼Æ¼Æ¶q¤@¼Ë, ©Ò¥H¥²©w°µlen(nums)/2½ü
-
-# By double pointer, time: O(n), space: O(1)
-# ¥Î¨â­Ópointer¬ö¿ı¥Ø«e¥¿¼Æ©M­t¼Æ§ä¨ì­ş­Óindex
-# ¨C½ü¥ı§ä¥¿¼Æ, ¥u­n¹J¨ì­t¼Æ´N©¹¤U­Ó§ä, §ä¨ì¦A¥[¤Jres, ¦A¨Ó°µ­t¼Æ¦P²z
-class Solution:
-    def rearrangeArray(self, nums: List[int]) -> List[int]:
-        n = len(nums)
-        pos = neg = 0
-        res = list()
-        for i in range(n//2):
-            # ¨Ï¥Îwhile¨Ï§ä¨ì¥¿¼Æ¤~µ²§ô
-            while nums[pos]<0:
-                pos += 1
-            res.append(nums[pos])
-            pos += 1
-            # ¨Ï¥Îwhile¨Ï§ä¨ì­t¼Æ¤~µ²§ô
-            while nums[neg] > 0:
-                neg += 1
-            res.append(nums[neg])
-            neg += 1
-            # ¨C½üµ²§ô­è¦n¥[¤J¤@­Ó¥¿¼Æ¤@­Ó­t¼Æ¶ires, ¦@n/2½ü
-        return res
-
-# By array, time: O(n), space: O(n)
-# ¨«³Xnums±N¨Ì§Ç±N¥¿­t¼Æ¦s¶ipos©Mneg
-# ³Ì«á¦A¨«³Xlen(nums)/2¦¸, ¨C¦¸¨Ì§Ç±Npos©Mneg¤º¬Û¦Pindexªº¤¸¯À©ñ¶ires
-# class Solution:
-#     def rearrangeArray(self, nums: List[int]) -> List[int]:
-#         pos = []
-#         neg = []
-#         res = []
-#         for i in nums:
-#             if i>0:
-#                 pos.append(i)
-#             else:
-#                 neg.append(i)
-#         for i in range(len(nums)//2):
-#             res.append(pos[i])
-#             res.append(neg[i])
-#         return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2413 lang=python3
 #
@@ -6,38 +5,16 @@
 #
 
 # @lc code=start
-# By mod, time: O(1), space: O(1)
-# µ¹©wn, return n©M2ªº³Ì¤p¤½­¿¼Æ
-# ¤]´N¬O»¡¥u­nn¬O°¸¼Æ´N¦^¶Ç¦Û¤v, n¬O©_¼Æ´N¦^¶Çn*2
-# ¥i¥H§Q¥Î¦ì¹Bºâ©Î¹ïn%2µ²ªG§@³B²z¥[§Öµ{¦¡½X³t«×
+# By bitwise, time: O(1), space: O(1)
+# çµ¦å®šn, return nå’Œ2çš„æœ€å°å…¬å€æ•¸
+# ä¹Ÿå°±æ˜¯èªªåªè¦næ˜¯å¶æ•¸å°±å›å‚³è‡ªå·±, næ˜¯å¥‡æ•¸å°±å›å‚³n*2
+# å¯ä»¥åˆ©ç”¨ä½é‹ç®—æˆ–å°n%2çµæœä½œè™•ç†åŠ å¿«ç¨‹å¼ç¢¼é€Ÿåº¦(n&1ç­‰åŒn%2çš„æ•ˆæœ)
 class Solution:
     def smallestEvenMultiple(self, n: int) -> int:
-        if n%2==0:
+        if n&1==0:
             return n
         else:
-            # n<<1¥Nªín¥ª²¾¤@bit, µ¥¦P­¼¥H2
+            # n<<1ä»£è¡¨nå·¦ç§»ä¸€bit, ç­‰åŒä¹˜ä»¥2
             return n<<1
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2413 lang=python3
-#
-# [2413] Smallest Even Multiple
-#
-
-# @lc code=start
-# By mod, time: O(1), space: O(1)
-# µ¹©wn, return n©M2ªº³Ì¤p¤½­¿¼Æ
-# ¤]´N¬O»¡¥u­nn¬O°¸¼Æ´N¦^¶Ç¦Û¤v, n¬O©_¼Æ´N¦^¶Çn*2
-# ¥i¥H§Q¥Î¦ì¹Bºâ©Î¹ïn%2µ²ªG§@³B²z¥[§Öµ{¦¡½X³t«×
-class Solution:
-    def smallestEvenMultiple(self, n: int) -> int:
-        if n%2==0:
-            return n
-        else:
-            # n<<1¥Nªín¥ª²¾¤@bit, µ¥¦P­¼¥H2
-            return n<<1
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1704 lang=python3
 #
@@ -6,44 +5,19 @@
 #
 
 # @lc code=start
-# µ¹¤@¦r¦ê, ±N¦r¦ê±q¤¤¤Á¤@¥b«á¬İ¨âÃäªºaeiou, AEIOU³o¨Ç¥À­µªº¼Æ¶q¬O§_¬Û¦P, ¬Û¦Preturn true, §_«hfalse
+# çµ¦ä¸€å­—ä¸², å°‡å­—ä¸²å¾ä¸­åˆ‡ä¸€åŠå¾Œçœ‹å…©é‚Šçš„aeiou, AEIOUé€™äº›æ¯éŸ³çš„æ•¸é‡æ˜¯å¦ç›¸åŒ, ç›¸åŒreturn true, å¦å‰‡false
 
-# By string proccessing, time: O(n), space: O(n)), n¬Oµ¹©w¦r¦êªø«×
+# By string proccessing, time: O(n), space: O(n)), næ˜¯çµ¦å®šå­—ä¸²é•·åº¦
 class Solution:
     def halvesAreAlike(self, s: str) -> bool:
-        # ª½±µ«Ø¥ß¤@­Ó¬d§ä¥À­µ¥Îªº¦r¦ê, §PÂ_¤Á¤@¥bªº¦r¦ê¤§¦r¤¸¬O§_¦s¦b¤º§Y¥i
-        # ¤£»İ­n¨Ï¥Îhash, ¦ıÀ³¸Ó¬O¦P²z
-        # c»y¨¥¥i¥H¥Îstrchr()¹F¨ìÃş¦ü®ÄªG, ¥ı«Ø¤@­ÓVOWELS¦r¦ê°µ¬°¬d§ä¥Îªºhash
-        # strchr(s, ch)¥Nªích¦ì©ós¤¤²Ä¤@¦¸¥X²{ªº¦ì¸m, ­Y¦³§ä¨ì·|¦^¶Ç¦ì§}¨S§ä¨ì¦^¶ÇNULL, ¦]¦¹¥i¥H¥Î¨Ó°µ§PÂ_ch¬O§_¦s¦bs¤¤
+        # ç›´æ¥å»ºç«‹ä¸€å€‹æŸ¥æ‰¾æ¯éŸ³ç”¨çš„å­—ä¸², åˆ¤æ–·åˆ‡ä¸€åŠçš„å­—ä¸²ä¹‹å­—å…ƒæ˜¯å¦å­˜åœ¨å…§å³å¯
+        # ä¸éœ€è¦ä½¿ç”¨hash, ä½†æ‡‰è©²æ˜¯åŒç†
+        # cèªè¨€å¯ä»¥ç”¨strchr()é”åˆ°é¡ä¼¼æ•ˆæœ, å…ˆå»ºä¸€å€‹VOWELSå­—ä¸²åšç‚ºæŸ¥æ‰¾ç”¨çš„hash
+        # strchr(s, ch)ä»£è¡¨chä½æ–¼sä¸­ç¬¬ä¸€æ¬¡å‡ºç¾çš„ä½ç½®, è‹¥æœ‰æ‰¾åˆ°æœƒå›å‚³ä½å€æ²’æ‰¾åˆ°å›å‚³NULL, å› æ­¤å¯ä»¥ç”¨ä¾†åšåˆ¤æ–·chæ˜¯å¦å­˜åœ¨sä¸­
         VOWELS = "aeiouAEIOU"
-        # list¤Á¤ùs[a:b], a¬O°_ÂIb¬O²×ÂI, ¨S°Ñ¼Æ´NÀq»{index 0¶}©l, §Àºİµ²§ô
+        # liståˆ‡ç‰‡s[a:b], aæ˜¯èµ·é»bæ˜¯çµ‚é», æ²’åƒæ•¸å°±é»˜èªindex 0é–‹å§‹, å°¾ç«¯çµæŸ
         a, b = s[:len(s)//2], s[len(s)//2:]
         return sum(c in VOWELS for c in a) == sum(c in VOWELS for c in b)
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1704 lang=python3
-#
-# [1704] Determine if String Halves Are Alike
-#
-
-# @lc code=start
-# µ¹¤@¦r¦ê, ±N¦r¦ê±q¤¤¤Á¤@¥b«á¬İ¨âÃäªºaeiou, AEIOU³o¨Ç¥À­µªº¼Æ¶q¬O§_¬Û¦P, ¬Û¦Preturn true, §_«hfalse
-
-# By string proccessing, time: O(n), space: O(n)), n¬Oµ¹©w¦r¦êªø«×
-class Solution:
-    def halvesAreAlike(self, s: str) -> bool:
-        # ª½±µ«Ø¥ß¤@­Ó¬d§ä¥À­µ¥Îªº¦r¦ê, §PÂ_¤Á¤@¥bªº¦r¦ê¤§¦r¤¸¬O§_¦s¦b¤º§Y¥i
-        # ¤£»İ­n¨Ï¥Îhash, ¦ıÀ³¸Ó¬O¦P²z
-        # c»y¨¥¥i¥H¥Îstrchr()¹F¨ìÃş¦ü®ÄªG, ¥ı«Ø¤@­ÓVOWELS¦r¦ê°µ¬°¬d§ä¥Îªºhash
-        # strchr(s, ch)¥Nªích¦ì©ós¤¤²Ä¤@¦¸¥X²{ªº¦ì¸m, ­Y¦³§ä¨ì·|¦^¶Ç¦ì§}¨S§ä¨ì¦^¶ÇNULL, ¦]¦¹¥i¥H¥Î¨Ó°µ§PÂ_ch¬O§_¦s¦bs¤¤
-        VOWELS = "aeiouAEIOU"
-        # list¤Á¤ùs[a:b], a¬O°_ÂIb¬O²×ÂI, ¨S°Ñ¼Æ´NÀq»{index 0¶}©l, §Àºİµ²§ô
-        a, b = s[:len(s)//2], s[len(s)//2:]
-        return sum(c in VOWELS for c in a) == sum(c in VOWELS for c in b)
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

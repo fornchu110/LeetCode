@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2373 lang=python3
 #
@@ -6,48 +5,21 @@
 #
 
 # @lc code=start
-# §ä¥Xµ¹©w¯x°}grid¤¤¨C3x3ªº¤l¯x°}¸Ì³Ì¤j­È¨Ãreturn
+# æ‰¾å‡ºçµ¦å®šçŸ©é™£gridä¸­æ¯3x3çš„å­çŸ©é™£è£¡æœ€å¤§å€¼ä¸¦return
 
 # By traversal(simulation), time: O(n^2), space: O(1)
-# µ½¥Î¦Cªí¥Í¦¨¦¡
+# å–„ç”¨åˆ—è¡¨ç”Ÿæˆå¼
 class Solution:
     def largestLocal(self, grid: List[List[int]]) -> List[List[int]]:
         n =  len(grid)
-        # ¥ı¥Í¦¨n-2­Ó0ªº¤@ºû°}¦C, ¦A±N³o­Ó°}¦C¥Í¦¨n-2¦¸
-        # [0]*(n-2)¤]¬O¥Í¦¨¤@ºû°}¦Cªº§@ªk, ¦ı¤Gºû¤@©w­n¥Îfor
+        # å…ˆç”Ÿæˆn-2å€‹0çš„ä¸€ç¶­é™£åˆ—, å†å°‡é€™å€‹é™£åˆ—ç”Ÿæˆn-2æ¬¡
+        # [0]*(n-2)ä¹Ÿæ˜¯ç”Ÿæˆä¸€ç¶­é™£åˆ—çš„ä½œæ³•, ä½†äºŒç¶­ä¸€å®šè¦ç”¨for
         res = [[0 for i in range(n-2)] for j in range(n-2)]
         for i in range(n-2):
             for j in range(n-2):
-                # §Q¥Î¦Cªí¥Í¦¨¦¡¨Ó±q®y¼Ğ[i][j]¶}©l°µ3*3ªº¨«³X¨Ã§ä¥Xmax³]©w¦¨res[i][j]
+                # åˆ©ç”¨åˆ—è¡¨ç”Ÿæˆå¼ä¾†å¾åº§æ¨™[i][j]é–‹å§‹åš3*3çš„èµ°è¨ªä¸¦æ‰¾å‡ºmaxè¨­å®šæˆres[i][j]
                 res[i][j] = max(grid[x][y] for x in range(i, i+3) for y in range(j, j+3))
         return res
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2373 lang=python3
-#
-# [2373] Largest Local Values in a Matrix
-#
-
-# @lc code=start
-# §ä¥Xµ¹©w¯x°}grid¤¤¨C3x3ªº¤l¯x°}¸Ì³Ì¤j­È¨Ãreturn
-
-# By traversal(simulation), time: O(n^2), space: O(1)
-# µ½¥Î¦Cªí¥Í¦¨¦¡
-class Solution:
-    def largestLocal(self, grid: List[List[int]]) -> List[List[int]]:
-        n =  len(grid)
-        # ¥ı¥Í¦¨n-2­Ó0ªº¤@ºû°}¦C, ¦A±N³o­Ó°}¦C¥Í¦¨n-2¦¸
-        # [0]*(n-2)¤]¬O¥Í¦¨¤@ºû°}¦Cªº§@ªk, ¦ı¤Gºû¤@©w­n¥Îfor
-        res = [[0 for i in range(n-2)] for j in range(n-2)]
-        for i in range(n-2):
-            for j in range(n-2):
-                # §Q¥Î¦Cªí¥Í¦¨¦¡¨Ó±q®y¼Ğ[i][j]¶}©l°µ3*3ªº¨«³X¨Ã§ä¥Xmax³]©w¦¨res[i][j]
-                res[i][j] = max(grid[x][y] for x in range(i, i+3) for y in range(j, j+3))
-        return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

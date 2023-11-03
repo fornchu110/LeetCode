@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1480 lang=python3
 #
@@ -8,10 +7,10 @@
 # @lc code=start
 
 # By inplace iterative, time: O(n), space: O(1)
-# ¨C¶µ­n¥[¤W«e´X¶µ¤§©M
-# ¨ä¹ê¸òDP®t¤£¦h, ±N«e´X¶µªº¦X¦s°_¨Óµ¹¤U¤@¶µ¥[¤W¥h
-# ²Ä¤G­Ó¬O¦h«Ø¤F¤@­Ólist, ¦ı¨ä¹ê¥i¥H­ì¦a­×§ï
-# ª`·N­ì¦a­×§ï¥Î¨ìrangeÀ³¸Ó·|¤ñ«D­ì¦aºC
+# æ¯é …è¦åŠ ä¸Šå‰å¹¾é …ä¹‹å’Œ
+# å…¶å¯¦è·ŸDPå·®ä¸å¤š, å°‡å‰å¹¾é …çš„åˆå­˜èµ·ä¾†çµ¦ä¸‹ä¸€é …åŠ ä¸Šå»
+# ç¬¬äºŒå€‹æ˜¯å¤šå»ºäº†ä¸€å€‹list, ä½†å…¶å¯¦å¯ä»¥åŸåœ°ä¿®æ”¹
+# æ³¨æ„åŸåœ°ä¿®æ”¹ç”¨åˆ°rangeæ‡‰è©²æœƒæ¯”éåŸåœ°æ…¢
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
         for i in range(1, len(nums)):
@@ -30,36 +29,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1480 lang=python3
-#
-# [1480] Running Sum of 1d Array
-#
-
-# @lc code=start
-
-# By inplace iterative, time: O(n), space: O(1)
-# ¨C¶µ­n¥[¤W«e´X¶µ¤§©M
-# ¨ä¹ê¸òDP®t¤£¦h, ±N«e´X¶µªº¦X¦s°_¨Óµ¹¤U¤@¶µ¥[¤W¥h
-# ²Ä¤G­Ó¬O¦h«Ø¤F¤@­Ólist, ¦ı¨ä¹ê¥i¥H­ì¦a­×§ï
-# ª`·N­ì¦a­×§ï¥Î¨ìrangeÀ³¸Ó·|¤ñ«D­ì¦aºC
-class Solution:
-    def runningSum(self, nums: List[int]) -> List[int]:
-        for i in range(1, len(nums)):
-            nums[i] += nums[i-1]
-        return nums
-
-# By iterative, time: O(n), space: O(1)
-# class Solution:
-#     def runningSum(self, nums: List[int]) -> List[int]:
-#         res = list()
-#         tmp = 0
-#         for i in nums:
-#             res.append(i+tmp)
-#             tmp = i+tmp
-#         return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

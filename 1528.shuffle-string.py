@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1528 lang=python3
 #
@@ -7,41 +6,17 @@
 
 # @lc code=start
 # By zip and join(), time: O(n), space: O(1)
-# µ¹¤@­Óstr¥H¤Îindices¥Nªístr¤¤¦U¦r²ÅÀ³¸Ó©ñ¸m¨ìªºindex
-# §Q¥Îzip(s, indices)´N¥i¦P®ÉÅª¨ì¦U­Ó¦r²Å¸Ó©ñ¦b­ş­Óindex, Àx¦s¶ires³o­Ólist
-# ¦]»İ­nreturn¦r¦ê, ©Ò¥H¥Î"".join(res)³o­Ó§Ş¥©±Nres±qlistÂà´«¦¨¦r¦ê
+# çµ¦ä¸€å€‹strä»¥åŠindicesä»£è¡¨strä¸­å„å­—ç¬¦æ‡‰è©²æ”¾ç½®åˆ°çš„index
+# åˆ©ç”¨zip(s, indices)å°±å¯åŒæ™‚è®€åˆ°å„å€‹å­—ç¬¦è©²æ”¾åœ¨å“ªå€‹index, å„²å­˜é€²resé€™å€‹list
+# å› éœ€è¦returnå­—ä¸², æ‰€ä»¥ç”¨"".join(res)é€™å€‹æŠ€å·§å°‡reså¾listè½‰æ›æˆå­—ä¸²
 class Solution:
     def restoreString(self, s: str, indices: List[int]) -> str:
         res = [0]*len(s)
-        # ¥Îzip¦P®É¨«³Xs©Mindices
+        # ç”¨zipåŒæ™‚èµ°è¨ªså’Œindices
         for i, idx in zip(s, indices):
             res[idx] = i
-        # "".join(res)¬O«ü±Nres³o­Ólist¤ºªº¤¸¯À¥Î""¤]´N¬OµL¦r²Å¨Ó³sµ²¦¨·s¦r¦ê
+        # "".join(res)æ˜¯æŒ‡å°‡resé€™å€‹listå…§çš„å…ƒç´ ç”¨""ä¹Ÿå°±æ˜¯ç„¡å­—ç¬¦ä¾†é€£çµæˆæ–°å­—ä¸²
         return "".join(res)
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1528 lang=python3
-#
-# [1528] Shuffle String
-#
-
-# @lc code=start
-# By zip and join(), time: O(n), space: O(1)
-# µ¹¤@­Óstr¥H¤Îindices¥Nªístr¤¤¦U¦r²ÅÀ³¸Ó©ñ¸m¨ìªºindex
-# §Q¥Îzip(s, indices)´N¥i¦P®ÉÅª¨ì¦U­Ó¦r²Å¸Ó©ñ¦b­ş­Óindex, Àx¦s¶ires³o­Ólist
-# ¦]»İ­nreturn¦r¦ê, ©Ò¥H¥Î"".join(res)³o­Ó§Ş¥©±Nres±qlistÂà´«¦¨¦r¦ê
-class Solution:
-    def restoreString(self, s: str, indices: List[int]) -> str:
-        res = [0]*len(s)
-        # ¥Îzip¦P®É¨«³Xs©Mindices
-        for i, idx in zip(s, indices):
-            res[idx] = i
-        # "".join(res)¬O«ü±Nres³o­Ólist¤ºªº¤¸¯À¥Î""¤]´N¬OµL¦r²Å¨Ó³sµ²¦¨·s¦r¦ê
-        return "".join(res)
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

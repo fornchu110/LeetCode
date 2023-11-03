@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=2418 lang=python3
 #
@@ -6,10 +5,10 @@
 #
 
 # @lc code=start
-# By zip and ¦Cªí¥Í¦¨¦¡, time: O(n), space: O(1)
-# ­n¨Dreturn·Ó¨­°ª¥Ñ°ª¨ì§C±Æ§Ç«áªº¹ïÀ³¤H¦W
-# ¥Îzip()±N¨­°ª©M¦W¦r¤@¤@¨«³X, ¥u¥[¤J¤H¦W
-# zip«áªºlist¤]¥i¥H±Æ§Ç
+# By zip and åˆ—è¡¨ç”Ÿæˆå¼, time: O(n), space: O(1)
+# è¦æ±‚returnç…§èº«é«˜ç”±é«˜åˆ°ä½æ’åºå¾Œçš„å°æ‡‰äººå
+# ç”¨zip()å°‡èº«é«˜å’Œåå­—ä¸€ä¸€èµ°è¨ª, åªåŠ å…¥äººå
+# zipå¾Œçš„listä¹Ÿå¯ä»¥æ’åº
 class Solution:
     def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
         tmp = sorted(zip(heights, names), reverse = True)
@@ -22,46 +21,12 @@ class Solution:
 #     def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
 #         res = []
 #         tmp = list(zip(heights, names))
-#         # ±Nzip«áªºlist±Æ§Ç, ¦]¬°sorted()¬O±q¤p¨ì¤j±Æ§Ç, reverse = True°Ñ¼ÆÅÜ±q¤j¨ì¤p±Æ§Ç
+#         # å°‡zipå¾Œçš„listæ’åº, å› ç‚ºsorted()æ˜¯å¾å°åˆ°å¤§æ’åº, reverse = Trueåƒæ•¸è®Šå¾å¤§åˆ°å°æ’åº
 #         tmp  = sorted(tmp, reverse = True)
-#         # §ä±Æ§Ç¹L«áªºname
+#         # æ‰¾æ’åºéå¾Œçš„name
 #         for height, name in tmp:
 #             res.append(name)
 #         return res
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=2418 lang=python3
-#
-# [2418] Sort the People
-#
-
-# @lc code=start
-# By zip and ¦Cªí¥Í¦¨¦¡, time: O(n), space: O(1)
-# ­n¨Dreturn·Ó¨­°ª¥Ñ°ª¨ì§C±Æ§Ç«áªº¹ïÀ³¤H¦W
-# ¥Îzip()±N¨­°ª©M¦W¦r¤@¤@¨«³X, ¥u¥[¤J¤H¦W
-# zip«áªºlist¤]¥i¥H±Æ§Ç
-class Solution:
-    def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
-        tmp = sorted(zip(heights, names), reverse = True)
-        # res = [*zip(*tmp)][1]
-        res = [name for height, name in tmp]
-        return res
-        
-# By zip , time: O(n), space: O(1)
-# class Solution:
-#     def sortPeople(self, names: List[str], heights: List[int]) -> List[str]:
-#         res = []
-#         tmp = list(zip(heights, names))
-#         # ±Nzip«áªºlist±Æ§Ç, ¦]¬°sorted()¬O±q¤p¨ì¤j±Æ§Ç, reverse = True°Ñ¼ÆÅÜ±q¤j¨ì¤p±Æ§Ç
-#         tmp  = sorted(tmp, reverse = True)
-#         # §ä±Æ§Ç¹L«áªºname
-#         for height, name in tmp:
-#             res.append(name)
-#         return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

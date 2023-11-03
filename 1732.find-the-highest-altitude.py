@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1732 lang=python3
 #
@@ -6,50 +5,22 @@
 #
 
 # @lc code=start
-# µ¹¤@list gain¥Nªí¤£¦P°ª«×, °²³]³£¥H°ª«×0¥Xµo, ±µµÛ¨Ì§Ç¨«³Xgain¤¤¤£¦P¬Û¹ï°ª«×
-# return¨«³X¹Lµ{¤¤³Ì°ªÂI©Ò¦b
-# Ex: gain = [-5, 1, 5, 0, -7], 0 -> -5 -> -4 -> 1 -> 1 -> -6, ©Ò¥H³Ì°ªÂI¦b1
+# çµ¦ä¸€list gainä»£è¡¨ä¸åŒé«˜åº¦, å‡è¨­éƒ½ä»¥é«˜åº¦0å‡ºç™¼, æ¥è‘—ä¾åºèµ°è¨ªgainä¸­ä¸åŒç›¸å°é«˜åº¦
+# returnèµ°è¨ªéç¨‹ä¸­æœ€é«˜é»æ‰€åœ¨
+# Ex: gain = [-5, 1, 5, 0, -7], 0 -> -5 -> -4 -> 1 -> 1 -> -6, æ‰€ä»¥æœ€é«˜é»åœ¨1
 
 # By for loop, time: O(n), space: O(1)
-# ¨«³Xgain¹Lµ{°µ+¹Bºâ§Y¥iª¾¹D·í¤U°ª«×, ¦b°ª©ó¥Ø«e³Ì°ª°ª«×res®É§ó·s
+# èµ°è¨ªgainéç¨‹åš+é‹ç®—å³å¯çŸ¥é“ç•¶ä¸‹é«˜åº¦, åœ¨é«˜æ–¼ç›®å‰æœ€é«˜é«˜åº¦resæ™‚æ›´æ–°
 class Solution:
     def largestAltitude(self, gain: List[int]) -> int:
         tmp = 0
         res = 0
         for i in gain:
             tmp += i
-            # ¤U­±µ¥¦Pres = max(tmp, res)
+            # ä¸‹é¢ç­‰åŒres = max(tmp, res)
             if tmp>res:
                 res = tmp
         return res
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1732 lang=python3
-#
-# [1732] Find the Highest Altitude
-#
-
-# @lc code=start
-# µ¹¤@list gain¥Nªí¤£¦P°ª«×, °²³]³£¥H°ª«×0¥Xµo, ±µµÛ¨Ì§Ç¨«³Xgain¤¤¤£¦P¬Û¹ï°ª«×
-# return¨«³X¹Lµ{¤¤³Ì°ªÂI©Ò¦b
-# Ex: gain = [-5, 1, 5, 0, -7], 0 -> -5 -> -4 -> 1 -> 1 -> -6, ©Ò¥H³Ì°ªÂI¦b1
-
-# By for loop, time: O(n), space: O(1)
-# ¨«³Xgain¹Lµ{°µ+¹Bºâ§Y¥iª¾¹D·í¤U°ª«×, ¦b°ª©ó¥Ø«e³Ì°ª°ª«×res®É§ó·s
-class Solution:
-    def largestAltitude(self, gain: List[int]) -> int:
-        tmp = 0
-        res = 0
-        for i in gain:
-            tmp += i
-            # ¤U­±µ¥¦Pres = max(tmp, res)
-            if tmp>res:
-                res = tmp
-        return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

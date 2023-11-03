@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1486 lang=python3
 #
@@ -7,37 +6,15 @@
 
 # @lc code=start
 # By XOR and <<, time: O(n), space: O(1)
-# ¥Hstart¬°°_ÂI, ¨D¨C¦¸³£»Pstart+2°µXOR°µn-1¦¸ªºµ²ªG
+# ä»¥startç‚ºèµ·é», æ±‚æ¯æ¬¡éƒ½èˆ‡start+2åšXORåšn-1æ¬¡çš„çµæœ
 class Solution:
     def xorOperation(self, n: int, start: int) -> int:
         res = start
         for i in range(1, n):
-            # i<<1¥Nªíi¥ª²¾1¦ì¤¸, µ¥¦P©ó2*i
-            # ª`·N¦ì²¾Àu¥ıÅv¦b+-*/¤U­±, >=, ==...¤W­±, ©Ò¥H­n¬A¸¹
+            # i<<1ä»£è¡¨iå·¦ç§»1ä½å…ƒ, ç­‰åŒæ–¼2*i
+            # æ³¨æ„ä½ç§»å„ªå…ˆæ¬Šåœ¨+-*/ä¸‹é¢, >=, ==...ä¸Šé¢, æ‰€ä»¥è¦æ‹¬è™Ÿ
             res ^= start+(i<<1)
         return res
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1486 lang=python3
-#
-# [1486] XOR Operation in an Array
-#
-
-# @lc code=start
-# By XOR and <<, time: O(n), space: O(1)
-# ¥Hstart¬°°_ÂI, ¨D¨C¦¸³£»Pstart+2°µXOR°µn-1¦¸ªºµ²ªG
-class Solution:
-    def xorOperation(self, n: int, start: int) -> int:
-        res = start
-        for i in range(1, n):
-            # i<<1¥Nªíi¥ª²¾1¦ì¤¸, µ¥¦P©ó2*i
-            # ª`·N¦ì²¾Àu¥ıÅv¦b+-*/¤U­±, >=, ==...¤W­±, ©Ò¥H­n¬A¸¹
-            res ^= start+(i<<1)
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
