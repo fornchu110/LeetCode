@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=125 lang=python3
 #
@@ -6,25 +5,25 @@
 #
 
 # @lc code=start
-# µ¹¤@¦r¦ê, ¥u¤ñ¸ûalphanumeric character¬O§_°j¤å, ¤]´N¬O¦r¥À©M¼Æ¦r
-# ª`·N¤@­Ó¦r¥Àªº¤j¤p¼gºâ¦P¤@ºØ
+# çµ¦ä¸€å­—ä¸², åªæ¯”è¼ƒalphanumeric characteræ˜¯å¦è¿´æ–‡, ä¹Ÿå°±æ˜¯å­—æ¯å’Œæ•¸å­—
+# æ³¨æ„ä¸€å€‹å­—æ¯çš„å¤§å°å¯«ç®—åŒä¸€ç¨®
 
 # By double pointer and isalnnum(), time: O(n), space: O(1)
-# isalnum()§PÂ_¦r¥À©M¼Æ¦r, isalpha()§PÂ_¦r¥À
+# isalnum()åˆ¤æ–·å­—æ¯å’Œæ•¸å­—, isalpha()åˆ¤æ–·å­—æ¯
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         l = 0
         r = len(s)-1
         while l<r:
-            # ¤£¨Ï¥Îif©Mcontinue´N¦bnot«e­±¥[­Ówhile l<r and 
-            # ±N«Dalphanumeric character
+            # ä¸ä½¿ç”¨ifå’Œcontinueå°±åœ¨notå‰é¢åŠ å€‹while l<r and 
+            # å°‡éžalphanumeric character
             if not s[l].isalnum():
                 l += 1
                 continue
             elif not s[r].isalnum():
                 r -= 1
                 continue
-            # ¨«¨ì³o¥Nªí¬Oalnum, ­Y¸g¹Llower«o¤£¬Ûµ¥return False
+            # èµ°åˆ°é€™ä»£è¡¨æ˜¯alnum, è‹¥ç¶“éŽlowerå»ä¸ç›¸ç­‰return False
             if s[l].lower()!=s[r].lower():
                 return False
             else:
@@ -33,24 +32,24 @@ class Solution:
         return True
 
 # By isalnum() and lower and[::-1], time: O(n), space: O(n)
-# §Q¥Îisalnum()§PÂ_¦r¤¸¬O§_¬Oalphanumeric character, ¬Oªº¸Ü¥Îlower()Âà´«¦¨¤p¼g¥[¤Jres¤º
-# ³Ì«á§PÂ_res¬O§_µ¥¦P±qres[::-1]§Y¥i
-# Àu¤Æ¦¨space = O(1)ªº¸Ü´N­n¦b­ì¦r¦ês°µ§PÂ_, ¦ý¤@¼Ë¬O¥Îisalnum()©Mlower, ¥u¬O¥²©w­n¥Îdouble pointer
+# åˆ©ç”¨isalnum()åˆ¤æ–·å­—å…ƒæ˜¯å¦æ˜¯alphanumeric character, æ˜¯çš„è©±ç”¨lower()è½‰æ›æˆå°å¯«åŠ å…¥reså…§
+# æœ€å¾Œåˆ¤æ–·resæ˜¯å¦ç­‰åŒå¾žres[::-1]å³å¯
+# å„ªåŒ–æˆspace = O(1)çš„è©±å°±è¦åœ¨åŽŸå­—ä¸²såšåˆ¤æ–·, ä½†ä¸€æ¨£æ˜¯ç”¨isalnum()å’Œlower, åªæ˜¯å¿…å®šè¦ç”¨double pointer
 # class Solution:
 #     def isPalindrome(self, s: str) -> bool:
 #         res = []
 #         for i in s:
 #             if i.isalnum():
-#                 # ¼Æ¦r©M¤p¼g¤£·|³Q.lower()Âà´«, ¥u¦³¤j¼g¤~³Q¼vÅT
-#                 # ³oÃä¥Î.upper()¤]¬O¦P²z
+#                 # æ•¸å­—å’Œå°å¯«ä¸æœƒè¢«.lower()è½‰æ›, åªæœ‰å¤§å¯«æ‰è¢«å½±éŸ¿
+#                 # é€™é‚Šç”¨.upper()ä¹Ÿæ˜¯åŒç†
 #                 res.append(i.lower())
 #         res = "".join(res)
-#         # ¤W­±ªº¤@¦æ¼gªk, ¦Cªí¥Í¦¨¦¡
+#         # ä¸Šé¢çš„ä¸€è¡Œå¯«æ³•, åˆ—è¡¨ç”Ÿæˆå¼
 #         # res = "".join(ch.lower() for ch in s if ch.isalnum())
 #         return res==res[::-1]
 
 # By double pointer and ord(), time : O(n), space: O(1)
-# ±qÀYºÝ©M§ÀºÝ¤À§O§PÂ_·í¤U«ü¦Vªºalphanumeric characters¬O§_²Å¦X°j¤å­n¨D
+# å¾žé ­ç«¯å’Œå°¾ç«¯åˆ†åˆ¥åˆ¤æ–·ç•¶ä¸‹æŒ‡å‘çš„alphanumeric charactersæ˜¯å¦ç¬¦åˆè¿´æ–‡è¦æ±‚
 # class Solution:
 #     def isPalindrome(self, s: str) -> bool:
 #         l = 0
@@ -87,95 +86,3 @@ class Solution:
 #         return True
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=125 lang=python3
-#
-# [125] Valid Palindrome
-#
-
-# @lc code=start
-# µ¹¤@¦r¦ê, ¥u¤ñ¸ûalphanumeric character¬O§_°j¤å, ¤]´N¬O¦r¥À©M¼Æ¦r
-# ª`·N¤@­Ó¦r¥Àªº¤j¤p¼gºâ¦P¤@ºØ
-
-# By double pointer and isalnnum(), time: O(n), space: O(1)
-# isalnum()§PÂ_¦r¥À©M¼Æ¦r, isalpha()§PÂ_¦r¥À
-class Solution:
-    def isPalindrome(self, s: str) -> bool:
-        l = 0
-        r = len(s)-1
-        while l<r:
-            # ¤£¨Ï¥Îif©Mcontinue´N¦bnot«e­±¥[­Ówhile l<r and 
-            # ±N«Dalphanumeric character
-            if not s[l].isalnum():
-                l += 1
-                continue
-            elif not s[r].isalnum():
-                r -= 1
-                continue
-            # ¨«¨ì³o¥Nªí¬Oalnum, ­Y¸g¹Llower«o¤£¬Ûµ¥return False
-            if s[l].lower()!=s[r].lower():
-                return False
-            else:
-                l += 1
-                r -= 1
-        return True
-
-# By isalnum() and lower and[::-1], time: O(n), space: O(n)
-# §Q¥Îisalnum()§PÂ_¦r¤¸¬O§_¬Oalphanumeric character, ¬Oªº¸Ü¥Îlower()Âà´«¦¨¤p¼g¥[¤Jres¤º
-# ³Ì«á§PÂ_res¬O§_µ¥¦P±qres[::-1]§Y¥i
-# Àu¤Æ¦¨space = O(1)ªº¸Ü´N­n¦b­ì¦r¦ês°µ§PÂ_, ¦ý¤@¼Ë¬O¥Îisalnum()©Mlower, ¥u¬O¥²©w­n¥Îdouble pointer
-# class Solution:
-#     def isPalindrome(self, s: str) -> bool:
-#         res = []
-#         for i in s:
-#             if i.isalnum():
-#                 # ¼Æ¦r©M¤p¼g¤£·|³Q.lower()Âà´«, ¥u¦³¤j¼g¤~³Q¼vÅT
-#                 # ³oÃä¥Î.upper()¤]¬O¦P²z
-#                 res.append(i.lower())
-#         res = "".join(res)
-#         # ¤W­±ªº¤@¦æ¼gªk, ¦Cªí¥Í¦¨¦¡
-#         # res = "".join(ch.lower() for ch in s if ch.isalnum())
-#         return res==res[::-1]
-
-# By double pointer and ord(), time : O(n), space: O(1)
-# ±qÀYºÝ©M§ÀºÝ¤À§O§PÂ_·í¤U«ü¦Vªºalphanumeric characters¬O§_²Å¦X°j¤å­n¨D
-# class Solution:
-#     def isPalindrome(self, s: str) -> bool:
-#         l = 0
-#         r = len(s)-1
-#         while l<r:
-#             if not (ord('a')<=ord(s[l])<=ord('z') or ord('A')<=ord(s[l])<=ord('Z') or ord('0')<=ord(s[l])<=ord('9')):
-#                 l += 1
-#                 continue
-#             elif not (ord('a')<=ord(s[r])<=ord('z') or ord('A')<=ord(s[r])<=ord('Z') or ord('0')<=ord(s[r])<=ord('9')):
-#                 r -= 1
-#                 continue
-#             if ord('a')<=ord(s[l])<=ord('z'):
-#                 print('1')
-#                 if not (ord(s[l])==ord(s[r]) or ord(s[l])==ord(s[r])+32):
-#                     print(s[l], s[r])
-#                     return False
-#                 else:
-#                     l += 1
-#                     r -= 1
-#             elif ord('A')<=ord(s[l])<=ord('Z'):
-#                 if not (ord(s[l])==ord(s[r]) or ord(s[l])==ord(s[r])-32):
-#                     print(s[l], s[r])
-#                     return False
-#                 else:
-#                     l += 1
-#                     r -= 1
-#             elif ord('0')<=ord(s[l])<=ord("9"):
-#                 if ord(s[l])!=ord(s[r]):
-#                     print(s[l], s[r])
-#                     return False
-#                 else:
-#                     l += 1
-#                     r -= 1
-#         return True
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

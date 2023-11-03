@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=106 lang=python3
 #
@@ -13,87 +12,37 @@
 #         self.left = left
 #         self.right = right
 
-# By recursive, time: O(n), space: O(n), space¬Orecursive©Òªá¶Oªºstack, ¬°tree³Ì¤j°ª«×
+# By recursive, time: O(n), space: O(n), spaceæ˜¯recursiveæ‰€èŠ±è²»çš„stack, ç‚ºtreeæœ€å¤§é«˜åº¦
 class Solution:
     def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
-        # ²×¤î±ø¥ó, ·íorder¬°ªÅ®É¥Nªí¤£¬Onode
+        # çµ‚æ­¢æ¢ä»¶, ç•¶orderç‚ºç©ºæ™‚ä»£è¡¨ä¸æ˜¯node
         if not inorder or not postorder:
             return None
-        # root¥²©w¬Opostorder³Ì«á¤@­Ó¤¸¯À
+        # rootå¿…å®šæ˜¯postorderæœ€å¾Œä¸€å€‹å…ƒç´ 
         root_val = postorder[-1]
-        # «Ø¥ßroot node
+        # å»ºç«‹root node
         root = TreeNode(root_val)
-        # §ä¥Xroot¦binorder¤ºªºindex, index¥H¥ª¬O¥ªsub tree, ¥H¥k¬O¥ksub tree
+        # æ‰¾å‡ºrootåœ¨inorderå…§çš„index, indexä»¥å·¦æ˜¯å·¦sub tree, ä»¥å³æ˜¯å³sub tree
         midIndex = inorder.index(root_val)
 
-        # §ä¥Xinorder¤Uªº¥ªsub tree©M¥ksub tree
+        # æ‰¾å‡ºinorderä¸‹çš„å·¦sub treeå’Œå³sub tree
         inorderLeft = inorder[:midIndex]
         inorderRight = inorder[midIndex+1:]
 
-        # §ä¥Xpostorder¤Uªº¥ªsub tree©M¥ksub tree, ªø«×³£·|©Minorder¬Ûµ¥
-        # postorder: ¥ª->¥k->root
+        # æ‰¾å‡ºpostorderä¸‹çš„å·¦sub treeå’Œå³sub tree, é•·åº¦éƒ½æœƒå’Œinorderç›¸ç­‰
+        # postorder: å·¦->å³->root
         postorderLeft = postorder[: len(inorderLeft)]
-        # -1¬O¦]¬°³Ì«á¥²©w¬Oroot
+        # -1æ˜¯å› ç‚ºæœ€å¾Œå¿…å®šæ˜¯root
         postorderRight = postorder[len(inorderLeft):len(inorder)-1]
-        # recursiveµ²ªG´N¬O·í¤Unode¤§¥ªchild©M¥kchild
-        # recursive ¥ªsub tree
+        # recursiveçµæœå°±æ˜¯ç•¶ä¸‹nodeä¹‹å·¦childå’Œå³child
+        # recursive å·¦sub tree
         root.left = self.buildTree(inorderLeft, postorderLeft)
-        # recursive ¥ksub tree
+        # recursive å³sub tree
         root.right = self.buildTree(inorderRight, postorderRight)
-        # ·Q¹³¤@¤Urecursive¥ı»¼«á°j, child³£½T»{¤F¤~¯à±µ¨ìparent¤W
-        # ©Ò¥H¦b³Ì«á¤@¨è¤~§ârootªºleft©Mright child±µ¤W
-        # ©Ò¥H¤´µM¬Oreturn root, root¤w¸g³z¹L¤W­±ªºrecursive©M¨ä¥Lnode¦êÁp°_¨Ó
+        # æƒ³åƒä¸€ä¸‹recursiveå…ˆéå¾Œè¿´, childéƒ½ç¢ºèªäº†æ‰èƒ½æ¥åˆ°parentä¸Š
+        # æ‰€ä»¥åœ¨æœ€å¾Œä¸€åˆ»æ‰æŠŠrootçš„leftå’Œright childæ¥ä¸Š
+        # æ‰€ä»¥ä»ç„¶æ˜¯return root, rootå·²ç¶“é€éä¸Šé¢çš„recursiveå’Œå…¶ä»–nodeä¸²è¯èµ·ä¾†
         return root
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=106 lang=python3
-#
-# [106] Construct Binary Tree from Inorder and Postorder Traversal
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By recursive, time: O(n), space: O(n), space¬Orecursive©Òªá¶Oªºstack, ¬°tree³Ì¤j°ª«×
-class Solution:
-    def buildTree(self, inorder: List[int], postorder: List[int]) -> TreeNode:
-        # ²×¤î±ø¥ó, ·íorder¬°ªÅ®É¥Nªí¤£¬Onode
-        if not inorder or not postorder:
-            return None
-        # root¥²©w¬Opostorder³Ì«á¤@­Ó¤¸¯À
-        root_val = postorder[-1]
-        # «Ø¥ßroot node
-        root = TreeNode(root_val)
-        # §ä¥Xroot¦binorder¤ºªºindex, index¥H¥ª¬O¥ªsub tree, ¥H¥k¬O¥ksub tree
-        midIndex = inorder.index(root_val)
-
-        # §ä¥Xinorder¤Uªº¥ªsub tree©M¥ksub tree
-        inorderLeft = inorder[:midIndex]
-        inorderRight = inorder[midIndex+1:]
-
-        # §ä¥Xpostorder¤Uªº¥ªsub tree©M¥ksub tree, ªø«×³£·|©Minorder¬Ûµ¥
-        # postorder: ¥ª->¥k->root
-        postorderLeft = postorder[: len(inorderLeft)]
-        # -1¬O¦]¬°³Ì«á¥²©w¬Oroot
-        postorderRight = postorder[len(inorderLeft):len(inorder)-1]
-        # recursiveµ²ªG´N¬O·í¤Unode¤§¥ªchild©M¥kchild
-        # recursive ¥ªsub tree
-        root.left = self.buildTree(inorderLeft, postorderLeft)
-        # recursive ¥ksub tree
-        root.right = self.buildTree(inorderRight, postorderRight)
-        # ·Q¹³¤@¤Urecursive¥ı»¼«á°j, child³£½T»{¤F¤~¯à±µ¨ìparent¤W
-        # ©Ò¥H¦b³Ì«á¤@¨è¤~§ârootªºleft©Mright child±µ¤W
-        # ©Ò¥H¤´µM¬Oreturn root, root¤w¸g³z¹L¤W­±ªºrecursive©M¨ä¥Lnode¦êÁp°_¨Ó
-        return root
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

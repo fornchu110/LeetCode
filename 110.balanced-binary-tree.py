@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=110 lang=python3
 #
@@ -6,7 +5,7 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ótree, return¦¹tree¬O§_¥­¿Å, ¥­¿Å¥Nªí³Ì§Cheight©M³Ì°ªheight¬Û®t¤£¶W¹L1
+# çµ¦ä¸€å€‹tree, returnæ­¤treeæ˜¯å¦å¹³è¡¡, å¹³è¡¡ä»£è¡¨æœ€ä½heightå’Œæœ€é«˜heightç›¸å·®ä¸è¶…é1
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -16,96 +15,39 @@
 #         self.right = right
 
 # By recursive(bottom up), time: O(n) , space: O(n)
-# space = O(n)¨Ó¦Ûrecursive¤§stack®ø¯Ó, tree³Ì°ª²`«×³Ì´Nn
-# ¬Û·í©ó«á§Ç¨«³X, ±o¨ìµ²ªG«á¨Ì·Óµ²ªG°µ§PÂ_¨M©w­nreturn¤°»ò
+# space = O(n)ä¾†è‡ªrecursiveä¹‹stackæ¶ˆè€—, treeæœ€é«˜æ·±åº¦æœ€å°±n
+# ç›¸ç•¶æ–¼å¾Œåºèµ°è¨ª, å¾—åˆ°çµæœå¾Œä¾ç…§çµæœåšåˆ¤æ–·æ±ºå®šè¦returnä»€éº¼
 class Solution:
     def isBalanced(self, root: TreeNode) -> bool:
-        # height¦P®Éºâ¥X²`«×©M§PÂ_¬O§_¥­¿Å, ¤£¥­¿Åªº¤l¾ğ°ª«×·|¬O-1
+        # heightåŒæ™‚ç®—å‡ºæ·±åº¦å’Œåˆ¤æ–·æ˜¯å¦å¹³è¡¡, ä¸å¹³è¡¡çš„å­æ¨¹é«˜åº¦æœƒæ˜¯-1
         def height(root: TreeNode) -> int:
             if not root:
                 return True
-            # ¥ı½T»{¥ª¥k¤l¾ğ¬O§_¥­¿Å¥H¤Î¥ª¥k¤l¾ğªº°ª«×
+            # å…ˆç¢ºèªå·¦å³å­æ¨¹æ˜¯å¦å¹³è¡¡ä»¥åŠå·¦å³å­æ¨¹çš„é«˜åº¦
             leftHeight = height(root.left)
             rightHeight = height(root.right)
-            # ¥u­n¥ª¥k¤l¾ğ°ª«×¬Û®t¶W¹L1´Nreturn -1, ¥ª¥k¨ä¤¤¬O-1¥Nªí¤w¸g¤£¥­¿Å, ©Ò¥H¤]¬Oreturn -1
+            # åªè¦å·¦å³å­æ¨¹é«˜åº¦ç›¸å·®è¶…é1å°±return -1, å·¦å³å…¶ä¸­æ˜¯-1ä»£è¡¨å·²ç¶“ä¸å¹³è¡¡, æ‰€ä»¥ä¹Ÿæ˜¯return -1
             if leftHeight==-1 or rightHeight==-1 or abs(leftHeight-rightHeight)>1:
                 return -1
-            # ¬JµM¥­¿Å¨º¦h¤Fnode³o­ÓÂI°ª«×´N·|¬O¥ª¥k¤l¾ğ¸û¤jªÌ+1
+            # æ—¢ç„¶å¹³è¡¡é‚£å¤šäº†nodeé€™å€‹é»é«˜åº¦å°±æœƒæ˜¯å·¦å³å­æ¨¹è¼ƒå¤§è€…+1
             else:
                 return max(leftHeight, rightHeight)+1
-        # -1¥Nªí¤£¥­¿Å, ©Ò¥H¥u­nreturn>=0´N¥Nªí¥­¿Å
+        # -1ä»£è¡¨ä¸å¹³è¡¡, æ‰€ä»¥åªè¦return>=0å°±ä»£è¡¨å¹³è¡¡
         return height(root)>=0
 
 # By recursive(top down), time: O(n^2) , space: O(n)
-# ¬Û·í©ó«e§Ç¨«³X, ³o­Ó¤èªk¹ï¨C­Ó¤ltree³£·|¹ï¨ä©Ò¦³node½T»{height
+# ç›¸ç•¶æ–¼å‰åºèµ°è¨ª, é€™å€‹æ–¹æ³•å°æ¯å€‹å­treeéƒ½æœƒå°å…¶æ‰€æœ‰nodeç¢ºèªheight
 # class Solution:
 #     def isBalanced(self, root: TreeNode) -> bool:
-#         # ³æ¯Â­pºâ·í¤Uroot¤§tree³Ì¤j°ª«×
+#         # å–®ç´”è¨ˆç®—ç•¶ä¸‹rootä¹‹treeæœ€å¤§é«˜åº¦
 #         def height(root: TreeNode) -> int:
 #             if not root:
 #                 return 0
-#             # ·í¤Utree¤§³Ì¤j°ª«×´N¬O¥ª¥k¤l¾ğ³Ì¤j°ª«×+1­Óroot, ¤]´N¬O+1
+#             # ç•¶ä¸‹treeä¹‹æœ€å¤§é«˜åº¦å°±æ˜¯å·¦å³å­æ¨¹æœ€å¤§é«˜åº¦+1å€‹root, ä¹Ÿå°±æ˜¯+1
 #             return max(height(root.left), height(root.right))+1
 #         if not root:
 #             return True
-#         # ¥u­n¥ª¥k¤l¾ğ¥­¿Å¥B¥ª¥k¤l¾ğ°ª«×®t¦b1¥H¤º¥Nªí¾ãÁûtree¥­¿Å
+#         # åªè¦å·¦å³å­æ¨¹å¹³è¡¡ä¸”å·¦å³å­æ¨¹é«˜åº¦å·®åœ¨1ä»¥å…§ä»£è¡¨æ•´é¡†treeå¹³è¡¡
 #         return abs(height(root.left)-height(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=110 lang=python3
-#
-# [110] Balanced Binary Tree
-#
-
-# @lc code=start
-# µ¹¤@­Ótree, return¦¹tree¬O§_¥­¿Å, ¥­¿Å¥Nªí³Ì§Cheight©M³Ì°ªheight¬Û®t¤£¶W¹L1
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By recursive(bottom up), time: O(n) , space: O(n)
-# space = O(n)¨Ó¦Ûrecursive¤§stack®ø¯Ó, tree³Ì°ª²`«×³Ì´Nn
-# ¬Û·í©ó«á§Ç¨«³X, ±o¨ìµ²ªG«á¨Ì·Óµ²ªG°µ§PÂ_¨M©w­nreturn¤°»ò
-class Solution:
-    def isBalanced(self, root: TreeNode) -> bool:
-        # height¦P®Éºâ¥X²`«×©M§PÂ_¬O§_¥­¿Å, ¤£¥­¿Åªº¤l¾ğ°ª«×·|¬O-1
-        def height(root: TreeNode) -> int:
-            if not root:
-                return True
-            # ¥ı½T»{¥ª¥k¤l¾ğ¬O§_¥­¿Å¥H¤Î¥ª¥k¤l¾ğªº°ª«×
-            leftHeight = height(root.left)
-            rightHeight = height(root.right)
-            # ¥u­n¥ª¥k¤l¾ğ°ª«×¬Û®t¶W¹L1´Nreturn -1, ¥ª¥k¨ä¤¤¬O-1¥Nªí¤w¸g¤£¥­¿Å, ©Ò¥H¤]¬Oreturn -1
-            if leftHeight==-1 or rightHeight==-1 or abs(leftHeight-rightHeight)>1:
-                return -1
-            # ¬JµM¥­¿Å¨º¦h¤Fnode³o­ÓÂI°ª«×´N·|¬O¥ª¥k¤l¾ğ¸û¤jªÌ+1
-            else:
-                return max(leftHeight, rightHeight)+1
-        # -1¥Nªí¤£¥­¿Å, ©Ò¥H¥u­nreturn>=0´N¥Nªí¥­¿Å
-        return height(root)>=0
-
-# By recursive(top down), time: O(n^2) , space: O(n)
-# ¬Û·í©ó«e§Ç¨«³X, ³o­Ó¤èªk¹ï¨C­Ó¤ltree³£·|¹ï¨ä©Ò¦³node½T»{height
-# class Solution:
-#     def isBalanced(self, root: TreeNode) -> bool:
-#         # ³æ¯Â­pºâ·í¤Uroot¤§tree³Ì¤j°ª«×
-#         def height(root: TreeNode) -> int:
-#             if not root:
-#                 return 0
-#             # ·í¤Utree¤§³Ì¤j°ª«×´N¬O¥ª¥k¤l¾ğ³Ì¤j°ª«×+1­Óroot, ¤]´N¬O+1
-#             return max(height(root.left), height(root.right))+1
-#         if not root:
-#             return True
-#         # ¥u­n¥ª¥k¤l¾ğ¥­¿Å¥B¥ª¥k¤l¾ğ°ª«×®t¦b1¥H¤º¥Nªí¾ãÁûtree¥­¿Å
-#         return abs(height(root.left)-height(root.right)) <= 1 and self.isBalanced(root.left) and self.isBalanced(root.right)
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

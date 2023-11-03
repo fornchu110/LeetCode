@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * @lc app=leetcode id=136 lang=c
  *
@@ -8,8 +7,8 @@
 // @lc code=start
 
 //By bitwise XOR(^)
-//¦]¬°ÃD¥Ø»¡nums¤ºªº¤¸¯À°£¤F°ß¤@ªº³£¥u¥X²{"2¦¸"
-//©Ò¥H§Q¥Îx XOR x = 0¥H¤Î0 XOR x = xªº©Ê½è, §â©Ò¦³¤¸¯À°µXOR§Y¬Oµª®×
+//å› ç‚ºé¡Œç›®èªªnumså…§çš„å…ƒç´ é™¤äº†å”¯ä¸€çš„éƒ½åªå‡ºç¾"2æ¬¡"
+//æ‰€ä»¥åˆ©ç”¨x XOR x = 0ä»¥åŠ0 XOR x = xçš„æ€§è³ª, æŠŠæ‰€æœ‰å…ƒç´ åšXORå³æ˜¯ç­”æ¡ˆ
 int singleNumber(int* nums, int numsSize){
     int i, ret = 0;
     for(i=0;i<numsSize;i++){
@@ -61,69 +60,3 @@ int singleNumber(int* nums, int numsSize){
 // }
 
 // @lc code=end
-
-=======
-/*
- * @lc app=leetcode id=136 lang=c
- *
- * [136] Single Number
- */
-
-// @lc code=start
-
-//By bitwise XOR(^)
-//¦]¬°ÃD¥Ø»¡nums¤ºªº¤¸¯À°£¤F°ß¤@ªº³£¥u¥X²{"2¦¸"
-//©Ò¥H§Q¥Îx XOR x = 0¥H¤Î0 XOR x = xªº©Ê½è, §â©Ò¦³¤¸¯À°µXOR§Y¬Oµª®×
-int singleNumber(int* nums, int numsSize){
-    int i, ret = 0;
-    for(i=0;i<numsSize;i++){
-        ret^=nums[i];
-    }
-    return ret;
-}
-
-//By hashtable
-// struct hashTable {
-//     int key;
-//     int val;
-//     UT_hash_handle hh;
-// };
-// struct hashTable* hashtable;
-
-// struct hashTable* find(int key) {
-//     struct hashTable* tmp;
-//     HASH_FIND_INT(hashtable, &key, tmp);
-//     return tmp;
-// }
-
-// void insert(int key, int val) {
-//     struct hashTable* it = find(key);
-//     if(it==NULL) {
-//         struct hashTable* tmp = (struct hashTable*)malloc(sizeof(struct hashTable));
-//         tmp->key = key;
-//         tmp->val = val;
-//         HASH_ADD_INT(hashtable, key, tmp);
-//     }
-//     else {
-//         it->val++;
-//     }
-// }
-
-// int singleNumber(int* nums, int numsSize){
-//     hashtable = NULL;
-//     int i, j;
-//     for(i=0;i<numsSize;i++) {
-//         insert(nums[i], 1);
-//     }
-//     for(i=0;i<numsSize;i++) {
-//         struct hashTable* tmp = find(nums[i]);
-//         if(tmp->val==1) {
-//             return tmp->key;
-//         }
-//     }
-//     return 0;
-// }
-
-// @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

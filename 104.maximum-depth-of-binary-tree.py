@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=104 lang=python3
 #
@@ -6,7 +5,7 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ó¤G¤¸¾ğ, return¦¹¾ğªº³Ì²`°ª«×, root°ª«× = 1
+# çµ¦ä¸€å€‹äºŒå…ƒæ¨¹, returnæ­¤æ¨¹çš„æœ€æ·±é«˜åº¦, rooté«˜åº¦ = 1
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -15,155 +14,69 @@
 #         self.left = left
 #         self.right = right
 
-# By DFS(recursive) , time: O(n), space: O(h), h¬°tree°ª, ¦]recursive»İ­nstack, ¦Óstack¤j¤p¨ú¨Mrecursiveªº²`«×, ³ÌÃa¨äªp´N¬OO(n)
-# ¥Îdfs¨«³Xnode, ³Ì«á±Nlev³Ì²`ªÌreturn§Y¥i
+# By DFS(recursive) , time: O(n), space: O(h), hç‚ºtreeé«˜, å› recursiveéœ€è¦stack, è€Œstackå¤§å°å–æ±ºrecursiveçš„æ·±åº¦, æœ€å£å…¶æ³å°±æ˜¯O(n)
+# ç”¨dfsèµ°è¨ªnode, æœ€å¾Œå°‡levæœ€æ·±è€…returnå³å¯
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
-        # ¦Û¤vªº¼gªk, ¨Ï¥Înonloval
-        # is¥Î¨Ó§PÂ_°O¾ĞÅé¦ì¸m, ==¥Î¨Ó§PÂ_­È
+        # è‡ªå·±çš„å¯«æ³•, ä½¿ç”¨nonloval
+        # isç”¨ä¾†åˆ¤æ–·è¨˜æ†¶é«”ä½ç½®, ==ç”¨ä¾†åˆ¤æ–·å€¼
         if root is None:
              return 0
-        # resªì©l¤Æ¬°0
+        # resåˆå§‹åŒ–ç‚º0
         res = 0
         def dfs(node, lev):
             if node==None:
                 return None
-            # ¦]dfs³o­Ó¨ç¦¡­n§ó§ï¤W¤@¼h, ¤]´N¬OmaxDepth³o­Ó©Ò©w¸qªºÅÜ¼Æres
-            # ¦]¦¹­n¥ı±Nres«Å§i¦¨nonlocal
-            # ¦pªGres¬O¦bsolution¥~¤]´N¬Oglobal, ¨º´N­n§ï¦¨«Å§iglobal res¤~¯à­×§ï
+            # å› dfsé€™å€‹å‡½å¼è¦æ›´æ”¹ä¸Šä¸€å±¤, ä¹Ÿå°±æ˜¯maxDepthé€™å€‹æ‰€å®šç¾©çš„è®Šæ•¸res
+            # å› æ­¤è¦å…ˆå°‡reså®£å‘Šæˆnonlocal
+            # å¦‚æœresæ˜¯åœ¨solutionå¤–ä¹Ÿå°±æ˜¯global, é‚£å°±è¦æ”¹æˆå®£å‘Šglobal resæ‰èƒ½ä¿®æ”¹
             nonlocal res
-            # ¨«³X¨ì¤F·sªº¤@¼hnode, ©Ò¥Hlev+1
+            # èµ°è¨ªåˆ°äº†æ–°çš„ä¸€å±¤node, æ‰€ä»¥lev+1
             lev += 1
             max(res, lev)
             dfs(node.left, lev)
             dfs(node.right, lev)
-        # ¬°¦ólev±q0¶}©l?§âlev·Q¦¨¨«³Xnode¤§«e©Ò¾Ö¦³ªº°ª«×
+        # ç‚ºä½•levå¾0é–‹å§‹?æŠŠlevæƒ³æˆèµ°è¨ªnodeä¹‹å‰æ‰€æ“æœ‰çš„é«˜åº¦
         dfs(root, 0)
         return res
 
-        #Â²¼ä¼gªk, ¤£¥Î¼gÃB¥~¨ç¦¡
+        #ç°¡æ½”å¯«æ³•, ä¸ç”¨å¯«é¡å¤–å‡½å¼
         # if root is None:
-        #     # ³o¸Ì¦P®É¾á·íªì©l¤Æ¨Sµ²ÂI=°ª«×0³o¥ó¨Æ
+        #     # é€™è£¡åŒæ™‚æ“”ç•¶åˆå§‹åŒ–æ²’çµé»=é«˜åº¦0é€™ä»¶äº‹
         #     return 0
-        # # ¤£Â_»¼°jmaxDeapth§Y¥i
+        # # ä¸æ–·éè¿´maxDeapthå³å¯
         # l_depth = self.maxDepth(root.left)
         # r_depth = self.maxDepth(root.right)
-        # # ¾ã­Ótreeªº°ª«×´N¬O¤ltree¤¤§ó°ªªÌ+1
+        # # æ•´å€‹treeçš„é«˜åº¦å°±æ˜¯å­treeä¸­æ›´é«˜è€…+1
         # return max(l_depth, r_depth)+1
 
 # By BFS(iterative), time: O(n), space: O(n)
-# space = O(n)¬O¦]¬°ºûÅ@queueªá¶OªºªÅ¶¡
+# space = O(n)æ˜¯å› ç‚ºç¶­è­·queueèŠ±è²»çš„ç©ºé–“
 # class Solution:
 #     def maxDepth(self, root: Optional[TreeNode]) -> int:
-#         # ªÅtree°ª«×´N¬O0
+#         # ç©ºtreeé«˜åº¦å°±æ˜¯0
 #         if root == None:
 #             return 0
-#         # ªì©l¤Æqueue©M°ª«×, «DªÅtree®É±qroot¶}©l¨«³X
-#         # ³o¸Ìªºqueue¹ê»Ú¤W´N¬O¥Îlist¼ÒÀÀ, ³q¹Lappend¥[¤J§Àºİ, pop(0)±NÀYºİ®³¥X
-#         # ¥Nªílist¤]¯à°÷¼ÒÀÀstack
+#         # åˆå§‹åŒ–queueå’Œé«˜åº¦, éç©ºtreeæ™‚å¾rooté–‹å§‹èµ°è¨ª
+#         # é€™è£¡çš„queueå¯¦éš›ä¸Šå°±æ˜¯ç”¨listæ¨¡æ“¬, é€šéappendåŠ å…¥å°¾ç«¯, pop(0)å°‡é ­ç«¯æ‹¿å‡º
+#         # ä»£è¡¨listä¹Ÿèƒ½å¤ æ¨¡æ“¬stack
 #         queue = [root]
 #         depth = 0
-#         # ·íqueue«DªÅ, ¤]´N¬OÁÙ¦³node¥¼¨«³X
+#         # ç•¶queueéç©º, ä¹Ÿå°±æ˜¯é‚„æœ‰nodeæœªèµ°è¨ª
 #         while queue:
-#             # ·í«elevelªºnode¼Æ
+#             # ç•¶å‰levelçš„nodeæ•¸
 #             n = len(queue)
-#             # ±N·í«elevelªºnode¤@­Ó¤@­Ó³B²z
+#             # å°‡ç•¶å‰levelçš„nodeä¸€å€‹ä¸€å€‹è™•ç†
 #             for i in range(n):
 #                 node = queue.pop(0)
-#                 # ¦pªG¦³¥ª¤l´N±N¥ª¤l©ñ¤Jqueue
+#                 # å¦‚æœæœ‰å·¦å­å°±å°‡å·¦å­æ”¾å…¥queue
 #                 if node.left:
 #                     queue.append(node.left)
-#                 # ¦pªG¦³¥k¤l´N±N¥k¤l©ñ¤Jqueue
+#                 # å¦‚æœæœ‰å³å­å°±å°‡å³å­æ”¾å…¥queue
 #                 if node.right:
 #                     queue.append(node.right)
-#             # ·í«elevelªºnode pop§¹¥Nªíµ²§ô³o¼h, ¨ì¤U¤@¼h©Ò¥H­n+1
+#             # ç•¶å‰levelçš„node popå®Œä»£è¡¨çµæŸé€™å±¤, åˆ°ä¸‹ä¸€å±¤æ‰€ä»¥è¦+1
 #             depth += 1
 #         return depth
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=104 lang=python3
-#
-# [104] Maximum Depth of Binary Tree
-#
-
-# @lc code=start
-# µ¹¤@­Ó¤G¤¸¾ğ, return¦¹¾ğªº³Ì²`°ª«×, root°ª«× = 1
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By DFS(recursive) , time: O(n), space: O(h), h¬°tree°ª, ¦]recursive»İ­nstack, ¦Óstack¤j¤p¨ú¨Mrecursiveªº²`«×, ³ÌÃa¨äªp´N¬OO(n)
-# ¥Îdfs¨«³Xnode, ³Ì«á±Nlev³Ì²`ªÌreturn§Y¥i
-class Solution:
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
-        # ¦Û¤vªº¼gªk, ¨Ï¥Înonloval
-        # is¥Î¨Ó§PÂ_°O¾ĞÅé¦ì¸m, ==¥Î¨Ó§PÂ_­È
-        if root is None:
-             return 0
-        # resªì©l¤Æ¬°0
-        res = 0
-        def dfs(node, lev):
-            if node==None:
-                return None
-            # ¦]dfs³o­Ó¨ç¦¡­n§ó§ï¤W¤@¼h, ¤]´N¬OmaxDepth³o­Ó©Ò©w¸qªºÅÜ¼Æres
-            # ¦]¦¹­n¥ı±Nres«Å§i¦¨nonlocal
-            # ¦pªGres¬O¦bsolution¥~¤]´N¬Oglobal, ¨º´N­n§ï¦¨«Å§iglobal res¤~¯à­×§ï
-            nonlocal res
-            # ¨«³X¨ì¤F·sªº¤@¼hnode, ©Ò¥Hlev+1
-            lev += 1
-            max(res, lev)
-            dfs(node.left, lev)
-            dfs(node.right, lev)
-        # ¬°¦ólev±q0¶}©l?§âlev·Q¦¨¨«³Xnode¤§«e©Ò¾Ö¦³ªº°ª«×
-        dfs(root, 0)
-        return res
-
-        #Â²¼ä¼gªk, ¤£¥Î¼gÃB¥~¨ç¦¡
-        # if root is None:
-        #     # ³o¸Ì¦P®É¾á·íªì©l¤Æ¨Sµ²ÂI=°ª«×0³o¥ó¨Æ
-        #     return 0
-        # # ¤£Â_»¼°jmaxDeapth§Y¥i
-        # l_depth = self.maxDepth(root.left)
-        # r_depth = self.maxDepth(root.right)
-        # # ¾ã­Ótreeªº°ª«×´N¬O¤ltree¤¤§ó°ªªÌ+1
-        # return max(l_depth, r_depth)+1
-
-# By BFS(iterative), time: O(n), space: O(n)
-# space = O(n)¬O¦]¬°ºûÅ@queueªá¶OªºªÅ¶¡
-# class Solution:
-#     def maxDepth(self, root: Optional[TreeNode]) -> int:
-#         # ªÅtree°ª«×´N¬O0
-#         if root == None:
-#             return 0
-#         # ªì©l¤Æqueue©M°ª«×, «DªÅtree®É±qroot¶}©l¨«³X
-#         # ³o¸Ìªºqueue¹ê»Ú¤W´N¬O¥Îlist¼ÒÀÀ, ³q¹Lappend¥[¤J§Àºİ, pop(0)±NÀYºİ®³¥X
-#         # ¥Nªílist¤]¯à°÷¼ÒÀÀstack
-#         queue = [root]
-#         depth = 0
-#         # ·íqueue«DªÅ, ¤]´N¬OÁÙ¦³node¥¼¨«³X
-#         while queue:
-#             # ·í«elevelªºnode¼Æ
-#             n = len(queue)
-#             # ±N·í«elevelªºnode¤@­Ó¤@­Ó³B²z
-#             for i in range(n):
-#                 node = queue.pop(0)
-#                 # ¦pªG¦³¥ª¤l´N±N¥ª¤l©ñ¤Jqueue
-#                 if node.left:
-#                     queue.append(node.left)
-#                 # ¦pªG¦³¥k¤l´N±N¥k¤l©ñ¤Jqueue
-#                 if node.right:
-#                     queue.append(node.right)
-#             # ·í«elevelªºnode pop§¹¥Nªíµ²§ô³o¼h, ¨ì¤U¤@¼h©Ò¥H­n+1
-#             depth += 1
-#         return depth
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

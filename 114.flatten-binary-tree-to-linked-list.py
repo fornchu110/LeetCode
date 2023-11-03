@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=114 lang=python3
 #
@@ -14,9 +13,9 @@
 #         self.right = right
 
 # By predecessor, time: O(n), space: O(1)
-# Æ[¹îpreorder¬Oroot->¥ª->¥k«á, µo²{¥ª¤l¾ğ³Ì¥kªºnode³Q¨«³X«á¤~¶}©l¨«³X¥k¤l¾ğ
-# ©Ò¥H¥ª¤l¾ğ³Ì¥knode§Y¬O¥k¤l¾ğrootªºpredecessor(«eÅX¸`ÂI)
-# §@ªk´N¬O§ä¨ìcur¥ª¤l³Ì¥knode«á±Nroot¥k¤l±µ¤W¥h
+# è§€å¯Ÿpreorderæ˜¯root->å·¦->å³å¾Œ, ç™¼ç¾å·¦å­æ¨¹æœ€å³çš„nodeè¢«èµ°è¨ªå¾Œæ‰é–‹å§‹èµ°è¨ªå³å­æ¨¹
+# æ‰€ä»¥å·¦å­æ¨¹æœ€å³nodeå³æ˜¯å³å­æ¨¹rootçš„predecessor(å‰é©…ç¯€é»)
+# ä½œæ³•å°±æ˜¯æ‰¾åˆ°curå·¦å­æœ€å³nodeå¾Œå°‡rootå³å­æ¥ä¸Šå»
 class Solution:
     def flatten(self, root: TreeNode) -> None:
         cur = root
@@ -31,83 +30,25 @@ class Solution:
             cur = cur.right
 
 # By recursive, time: O(n), space: O(n)
-# ¥ı¥Îpreorder¨«³X«á°O¿ı¤U¨Ó¶¶§Ç, ¦A±Nnode©ñ¨ì¹ïÀ³¦ì¸m¤W
+# å…ˆç”¨preorderèµ°è¨ªå¾Œè¨˜éŒ„ä¸‹ä¾†é †åº, å†å°‡nodeæ”¾åˆ°å°æ‡‰ä½ç½®ä¸Š
 # class Solution:
 #     def flatten(self, root: TreeNode) -> None:
-#         # ¬ö¿ıpreorderµ²ªG
+#         # ç´€éŒ„preorderçµæœ
 #         preorderList = list()
-#         # °µpreorder¨«³X
+#         # åšpreorderèµ°è¨ª
 #         def preorderTraversal(root: TreeNode):
 #             if root:
-#                 #preorder¶¶§Ç:root¥²¥ı->¥ª¤l¾ğ->¥k¤l¾ğ
+#                 #preorderé †åº:rootå¿…å…ˆ->å·¦å­æ¨¹->å³å­æ¨¹
 #                 preorderList.append(root)
 #                 preorderTraversal(root.left)
 #                 preorderTraversal(root.right)
         
 #         preorderTraversal(root)
 #         size = len(preorderList)
-#         # ­¡¥N¤è¦¡½Õ¾ãnode
+#         # è¿­ä»£æ–¹å¼èª¿æ•´node
 #         for i in range(1, size):
 #             prev, curr = preorderList[i - 1], preorderList[i]
 #             prev.left = None
 #             prev.right = curr
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=114 lang=python3
-#
-# [114] Flatten Binary Tree to Linked List
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By predecessor, time: O(n), space: O(1)
-# Æ[¹îpreorder¬Oroot->¥ª->¥k«á, µo²{¥ª¤l¾ğ³Ì¥kªºnode³Q¨«³X«á¤~¶}©l¨«³X¥k¤l¾ğ
-# ©Ò¥H¥ª¤l¾ğ³Ì¥knode§Y¬O¥k¤l¾ğrootªºpredecessor(«eÅX¸`ÂI)
-# §@ªk´N¬O§ä¨ìcur¥ª¤l³Ì¥knode«á±Nroot¥k¤l±µ¤W¥h
-class Solution:
-    def flatten(self, root: TreeNode) -> None:
-        cur = root
-        while cur:
-            if cur.left:
-                predecessor = nxt = cur.left
-                while predecessor.right:
-                    predecessor = predecessor.right
-                predecessor.right = cur.right
-                cur.left = None
-                cur.right = nxt
-            cur = cur.right
-
-# By recursive, time: O(n), space: O(n)
-# ¥ı¥Îpreorder¨«³X«á°O¿ı¤U¨Ó¶¶§Ç, ¦A±Nnode©ñ¨ì¹ïÀ³¦ì¸m¤W
-# class Solution:
-#     def flatten(self, root: TreeNode) -> None:
-#         # ¬ö¿ıpreorderµ²ªG
-#         preorderList = list()
-#         # °µpreorder¨«³X
-#         def preorderTraversal(root: TreeNode):
-#             if root:
-#                 #preorder¶¶§Ç:root¥²¥ı->¥ª¤l¾ğ->¥k¤l¾ğ
-#                 preorderList.append(root)
-#                 preorderTraversal(root.left)
-#                 preorderTraversal(root.right)
-        
-#         preorderTraversal(root)
-#         size = len(preorderList)
-#         # ­¡¥N¤è¦¡½Õ¾ãnode
-#         for i in range(1, size):
-#             prev, curr = preorderList[i - 1], preorderList[i]
-#             prev.left = None
-#             prev.right = curr
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

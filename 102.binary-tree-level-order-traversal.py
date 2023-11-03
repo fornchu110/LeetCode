@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=102 lang=python3
 #
@@ -6,8 +5,8 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ótree, ­n¨Dretrun¤º¦U­Ó¤¸¯À¬O¦P¤@level¤§node.val
-# Ex: 1¬Olevel1, 9¡B10¬Olevel2, return:[[1], [9, 10]]
+# çµ¦ä¸€å€‹tree, è¦æ±‚retrunå…§å„å€‹å…ƒç´ æ˜¯åŒä¸€levelä¹‹node.val
+# Ex: 1æ˜¯level1, 9ã€10æ˜¯level2, return:[[1], [9, 10]]
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -17,89 +16,35 @@
 #         self.right = right
 
 # By BFS(iterative), time: O(n), space: O(n)
-# ­n®Ú¾Úlevel´N¬O¥ÎBFS, ¥u¬O­nª`·N¦p¦ó»`¶°¦Plevel¤¸¯À©M¦ó®Éappend
+# è¦æ ¹æ“šlevelå°±æ˜¯ç”¨BFS, åªæ˜¯è¦æ³¨æ„å¦‚ä½•è’é›†åŒlevelå…ƒç´ å’Œä½•æ™‚append
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if root is None:
             return None
-        # ±Nroot·s¼W¶iqueue
+        # å°‡rootæ–°å¢é€²queue
         queue = collections.deque([root])
         res = []
-        # ·íqueueÁÙ¦³¤¸¯À¥Nªí©|¥¼¨«³X§¹
-        # ¹ê»Ú¤W¨C¨«§¹¤@­Ólevel·|¦^¨ìwhile³oÃä
+        # ç•¶queueé‚„æœ‰å…ƒç´ ä»£è¡¨å°šæœªèµ°è¨ªå®Œ
+        # å¯¦éš›ä¸Šæ¯èµ°å®Œä¸€å€‹levelæœƒå›åˆ°whileé€™é‚Š
         while queue:
-            # ¦Plevelªº¤¸¯À­n©ñ¦b¤@°_
+            # åŒlevelçš„å…ƒç´ è¦æ”¾åœ¨ä¸€èµ·
             tmp = []
-            # n¥NªíµÛ³o¤@levelªº¤¸¯À¼Æ¶q
+            # nä»£è¡¨è‘—é€™ä¸€levelçš„å…ƒç´ æ•¸é‡
             n = len(queue)
             for i in range(n):
-                # pop n¦¸, ¤]´N¬O¹ï¦Plevel©Ò¦³node°µ³B²z
+                # pop næ¬¡, ä¹Ÿå°±æ˜¯å°åŒlevelæ‰€æœ‰nodeåšè™•ç†
                 node = queue.popleft()
-                # ¥[¤Jtmp
+                # åŠ å…¥tmp
                 tmp.append(node.val)
                 ltree = node.left
                 rtree = node.right
-                # ¦pªG¦³child´N©ñ¤Jqueue
+                # å¦‚æœæœ‰childå°±æ”¾å…¥queue
                 if ltree:
                     queue.append(ltree)
                 if rtree:
                     queue.append(rtree)
-            # °µ§¹for¥NªíµÛ¤@­Ólevelµ²§ô, ±Ntmp¥[¤Jres
+            # åšå®Œforä»£è¡¨è‘—ä¸€å€‹levelçµæŸ, å°‡tmpåŠ å…¥res
             res.append(tmp)
         return res
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=102 lang=python3
-#
-# [102] Binary Tree Level Order Traversal
-#
-
-# @lc code=start
-# µ¹¤@­Ótree, ­n¨Dretrun¤º¦U­Ó¤¸¯À¬O¦P¤@level¤§node.val
-# Ex: 1¬Olevel1, 9¡B10¬Olevel2, return:[[1], [9, 10]]
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By BFS(iterative), time: O(n), space: O(n)
-# ­n®Ú¾Úlevel´N¬O¥ÎBFS, ¥u¬O­nª`·N¦p¦ó»`¶°¦Plevel¤¸¯À©M¦ó®Éappend
-class Solution:
-    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        if root is None:
-            return None
-        # ±Nroot·s¼W¶iqueue
-        queue = collections.deque([root])
-        res = []
-        # ·íqueueÁÙ¦³¤¸¯À¥Nªí©|¥¼¨«³X§¹
-        # ¹ê»Ú¤W¨C¨«§¹¤@­Ólevel·|¦^¨ìwhile³oÃä
-        while queue:
-            # ¦Plevelªº¤¸¯À­n©ñ¦b¤@°_
-            tmp = []
-            # n¥NªíµÛ³o¤@levelªº¤¸¯À¼Æ¶q
-            n = len(queue)
-            for i in range(n):
-                # pop n¦¸, ¤]´N¬O¹ï¦Plevel©Ò¦³node°µ³B²z
-                node = queue.popleft()
-                # ¥[¤Jtmp
-                tmp.append(node.val)
-                ltree = node.left
-                rtree = node.right
-                # ¦pªG¦³child´N©ñ¤Jqueue
-                if ltree:
-                    queue.append(ltree)
-                if rtree:
-                    queue.append(rtree)
-            # °µ§¹for¥NªíµÛ¤@­Ólevelµ²§ô, ±Ntmp¥[¤Jres
-            res.append(tmp)
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

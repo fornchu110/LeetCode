@@ -1,16 +1,14 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=121 lang=python3
 #
 # [121] Best Time to Buy and Sell Stock
 #
 
-# @lc code=start
 # By DP
-#°²³]¦b²Äi¤Ñ½æ¥X, ¨º¦b³oi¤Ñ¤ºªº³Ì§CÂIÁÊ¶R´N¦³³Ì¤j¦¬¯q
-#i¤Ñ¤ºªº¾ú¥v³Ì§CÂI, ¥u¦³¥i¯à¬O²Äi-1¤Ñ®Éªº³Ì§CÂI©Î²Äi¤Ñªº»ù®æ¨âºØ
-#¦]¦¹¥i¼g¦¨°ÊºA³W¹º
-#i¤Ñ¶Ri¤Ñ½æ¨S·N¸q, ©Ò¥H¾ú¥v³Ì§CÂI¬O¦bºâ§¹¦¬¯q«á¦A§ó·s
+#å‡è¨­åœ¨ç¬¬iå¤©è³£å‡º, é‚£åœ¨é€™iå¤©å…§çš„æœ€ä½é»è³¼è²·å°±æœ‰æœ€å¤§æ”¶ç›Š
+#iå¤©å…§çš„æ­·å²æœ€ä½é», åªæœ‰å¯èƒ½æ˜¯ç¬¬i-1å¤©æ™‚çš„æœ€ä½é»æˆ–ç¬¬iå¤©çš„åƒ¹æ ¼å…©ç¨®
+#å› æ­¤å¯å¯«æˆå‹•æ…‹è¦åŠƒ
+#iå¤©è²·iå¤©è³£æ²’æ„ç¾©, æ‰€ä»¥æ­·å²æœ€ä½é»æ˜¯åœ¨ç®—å®Œæ”¶ç›Šå¾Œå†æ›´æ–°
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         inf = int(1e9)
@@ -22,30 +20,3 @@ class Solution:
         return maxprofit
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=121 lang=python3
-#
-# [121] Best Time to Buy and Sell Stock
-#
-
-# @lc code=start
-# By DP
-#°²³]¦b²Äi¤Ñ½æ¥X, ¨º¦b³oi¤Ñ¤ºªº³Ì§CÂIÁÊ¶R´N¦³³Ì¤j¦¬¯q
-#i¤Ñ¤ºªº¾ú¥v³Ì§CÂI, ¥u¦³¥i¯à¬O²Äi-1¤Ñ®Éªº³Ì§CÂI©Î²Äi¤Ñªº»ù®æ¨âºØ
-#¦]¦¹¥i¼g¦¨°ÊºA³W¹º
-#i¤Ñ¶Ri¤Ñ½æ¨S·N¸q, ©Ò¥H¾ú¥v³Ì§CÂI¬O¦bºâ§¹¦¬¯q«á¦A§ó·s
-class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        inf = int(1e9)
-        minprice = inf
-        maxprofit = 0
-        for price in prices:
-            maxprofit = max(price - minprice, maxprofit)
-            minprice = min(price, minprice)
-        return maxprofit
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

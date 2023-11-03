@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=105 lang=python3
 #
@@ -6,7 +5,7 @@
 #
 
 # @lc code=start
-# µ¹preorder©Minorder¨«³Xtreeªºµ²ªG, return­ì¥»treeªº¼Ò¼Ë
+# çµ¦preorderå’Œinorderèµ°è¨ªtreeçš„çµæœ, returnåŸæœ¬treeçš„æ¨¡æ¨£
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -16,100 +15,41 @@
 #         self.right = right
 
 # By recursive, time: O(n), space: O(n)
-# ³z¹Lpreorder§äroot, ¦A¥hinorder¤¤§ärootªºindex
-# inorder¤¤root index¥H¥ª´N¬O¥ªsub tree, ¥H¥k´N¬O¥ksubtree
+# é€épreorderæ‰¾root, å†å»inorderä¸­æ‰¾rootçš„index
+# inorderä¸­root indexä»¥å·¦å°±æ˜¯å·¦sub tree, ä»¥å³å°±æ˜¯å³subtree
 class Solution:
       def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
-        # ²×¤î±ø¥ó, tree¬°ªÅ®É
+        # çµ‚æ­¢æ¢ä»¶, treeç‚ºç©ºæ™‚
         if not preorder or not inorder:
             return None
-        # preorderªº²Ä¤@­Ó¤¸¯À¤@©w·í¤Utree¤§root
+        # preorderçš„ç¬¬ä¸€å€‹å…ƒç´ ä¸€å®šç•¶ä¸‹treeä¹‹root
         rootVal = preorder[0]
-        # ³Ğ«Øroot
+        # å‰µå»ºroot
         root = TreeNode(rootVal)
   
-        # ¥hinorder¤¤§äroot©Ò¦bindex
+        # å»inorderä¸­æ‰¾rootæ‰€åœ¨index
         midIndex = inorder.index(rootVal)
 
-        # §ä¥Xinorderªº¥ª¤l©M¥k¤l
-        # index¥H¥ª¬O¥ªsub tree, index¥H¥k¬O¥ksub tree
-        # ©Ò¥H¥ª¤l°Ï¶¡¬O[0,midIndex),¥k¤l°Ï¶¡¬O[midIndex+1¡An-1]
+        # æ‰¾å‡ºinorderçš„å·¦å­å’Œå³å­
+        # indexä»¥å·¦æ˜¯å·¦sub tree, indexä»¥å³æ˜¯å³sub tree
+        # æ‰€ä»¥å·¦å­å€é–“æ˜¯[0,midIndex),å³å­å€é–“æ˜¯[midIndex+1ï¼Œn-1]
         inorderLeft = inorder[:midIndex]
         inorderRight = inorder[midIndex + 1:]
   
-        # §ä¥Xpreorderªº¥ª¤l©M¥k¤l
-        # preorder©Minorder¤§¥ªsub tree©M¥ksub treeªø«×¬Ûµ¥
-        # ¦]¦¹³z¹L«e­±ªº¨ìªºinorder¥ª¥ksubtreeªø«×±o¨ìpreorder¥ª¥ksubtree¦ì¸m
-        # preorder: root, ¥ªsub tree­Ó¤¸¯À, ¥ksubtree­Ó¤¸¯À
-        # root¬O²Ä0­Ó, ¥ªsub¬O²Ä1~1+¥ªsub
+        # æ‰¾å‡ºpreorderçš„å·¦å­å’Œå³å­
+        # preorderå’Œinorderä¹‹å·¦sub treeå’Œå³sub treeé•·åº¦ç›¸ç­‰
+        # å› æ­¤é€éå‰é¢çš„åˆ°çš„inorderå·¦å³subtreeé•·åº¦å¾—åˆ°preorderå·¦å³subtreeä½ç½®
+        # preorder: root, å·¦sub treeå€‹å…ƒç´ , å³subtreeå€‹å…ƒç´ 
+        # rootæ˜¯ç¬¬0å€‹, å·¦subæ˜¯ç¬¬1~1+å·¦sub
         preorderLeft = preorder[1:len(inorderLeft)+1]
-        # ¥ksub¬O³Ñ¤Uªº³¡¤À, µL½×preorderÁÙ¬Oin
+        # å³subæ˜¯å‰©ä¸‹çš„éƒ¨åˆ†, ç„¡è«–preorderé‚„æ˜¯in
         preorderRight = preorder[len(inorderLeft)+1:]
 
-        # ¤W­±¤w¸g§ä¨ìsubtree¤§preorder©Minorder, ´N¥i¥H°µrecursive
-        # recursive¨«³X¥ªsub tree
+        # ä¸Šé¢å·²ç¶“æ‰¾åˆ°subtreeä¹‹preorderå’Œinorder, å°±å¯ä»¥åšrecursive
+        # recursiveèµ°è¨ªå·¦sub tree
         root.left = self.buildTree(preorderLeft, inorderLeft)
-        # recursive¨«³X¥ksub tree
+        # recursiveèµ°è¨ªå³sub tree
         root.right = self.buildTree(preorderRight, inorderRight)
         return root
 
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=105 lang=python3
-#
-# [105] Construct Binary Tree from Preorder and Inorder Traversal
-#
-
-# @lc code=start
-# µ¹preorder©Minorder¨«³Xtreeªºµ²ªG, return­ì¥»treeªº¼Ò¼Ë
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By recursive, time: O(n), space: O(n)
-# ³z¹Lpreorder§äroot, ¦A¥hinorder¤¤§ärootªºindex
-# inorder¤¤root index¥H¥ª´N¬O¥ªsub tree, ¥H¥k´N¬O¥ksubtree
-class Solution:
-      def buildTree(self, preorder: List[int], inorder: List[int]) -> TreeNode:
-        # ²×¤î±ø¥ó, tree¬°ªÅ®É
-        if not preorder or not inorder:
-            return None
-        # preorderªº²Ä¤@­Ó¤¸¯À¤@©w·í¤Utree¤§root
-        rootVal = preorder[0]
-        # ³Ğ«Øroot
-        root = TreeNode(rootVal)
-  
-        # ¥hinorder¤¤§äroot©Ò¦bindex
-        midIndex = inorder.index(rootVal)
-
-        # §ä¥Xinorderªº¥ª¤l©M¥k¤l
-        # index¥H¥ª¬O¥ªsub tree, index¥H¥k¬O¥ksub tree
-        # ©Ò¥H¥ª¤l°Ï¶¡¬O[0,midIndex),¥k¤l°Ï¶¡¬O[midIndex+1¡An-1]
-        inorderLeft = inorder[:midIndex]
-        inorderRight = inorder[midIndex + 1:]
-  
-        # §ä¥Xpreorderªº¥ª¤l©M¥k¤l
-        # preorder©Minorder¤§¥ªsub tree©M¥ksub treeªø«×¬Ûµ¥
-        # ¦]¦¹³z¹L«e­±ªº¨ìªºinorder¥ª¥ksubtreeªø«×±o¨ìpreorder¥ª¥ksubtree¦ì¸m
-        # preorder: root, ¥ªsub tree­Ó¤¸¯À, ¥ksubtree­Ó¤¸¯À
-        # root¬O²Ä0­Ó, ¥ªsub¬O²Ä1~1+¥ªsub
-        preorderLeft = preorder[1:len(inorderLeft)+1]
-        # ¥ksub¬O³Ñ¤Uªº³¡¤À, µL½×preorderÁÙ¬Oin
-        preorderRight = preorder[len(inorderLeft)+1:]
-
-        # ¤W­±¤w¸g§ä¨ìsubtree¤§preorder©Minorder, ´N¥i¥H°µrecursive
-        # recursive¨«³X¥ªsub tree
-        root.left = self.buildTree(preorderLeft, inorderLeft)
-        # recursive¨«³X¥ksub tree
-        root.right = self.buildTree(preorderRight, inorderRight)
-        return root
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

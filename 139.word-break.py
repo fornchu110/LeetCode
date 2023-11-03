@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=139 lang=python3
 #
@@ -6,62 +5,27 @@
 #
 
 # @lc code=start
-# µ¹¦r¦ês©M¤@°ï¦r¦êwordDict, return¦r¦ês¯à§_¤À³Î¦¨wordDict¤º¦r¦ê
-# ¤£­n¨DwordDict¤º©Ò¦³¦r¦ê³£­n¨Ï¥Î¨ì, ¥u­n¯à­è¦n¤À³Î§Y¥i, ¥BwordDict¤ºªº¦r¦ê¥i¥H­«½Æ¨Ï¥Î
+# çµ¦å­—ä¸²så’Œä¸€å †å­—ä¸²wordDict, returnå­—ä¸²sèƒ½å¦åˆ†å‰²æˆwordDictå…§å­—ä¸²
+# ä¸è¦æ±‚wordDictå…§æ‰€æœ‰å­—ä¸²éƒ½è¦ä½¿ç”¨åˆ°, åªè¦èƒ½å‰›å¥½åˆ†å‰²å³å¯, ä¸”wordDictå…§çš„å­—ä¸²å¯ä»¥é‡è¤‡ä½¿ç”¨
 # Ex: s = "leetcode", wordDict = ["leet", "code", "abc"], return True
 # Ex: s = "penapple", wordDict = ["pen", pple], return False
 # Ex: s = "leetleet", wordDict = ["leet"], return True
 
-# By DP, time: O(n^2), space: O(n), ¨ä¤¤n = len(s)
-# ­«ÂI¦b©ówordDict¤ºªº¦r¦ê¥i¥H­«½Æ¨Ï¥Î, ©Ò¥H·Q¦¨±Ns¤À³Î¦¨¨â¬q
-# ³Ì«á¤@¬q¬OwordDict¤l¦r¦ê, «e­±¨º¬q¤S¥i¥H³Q¤À³Î, ¨º¾ã¬q´N¥i³Q¤À³Î
+# By DP, time: O(n^2), space: O(n), å…¶ä¸­n = len(s)
+# é‡é»åœ¨æ–¼wordDictå…§çš„å­—ä¸²å¯ä»¥é‡è¤‡ä½¿ç”¨, æ‰€ä»¥æƒ³æˆå°‡såˆ†å‰²æˆå…©æ®µ
+# æœ€å¾Œä¸€æ®µæ˜¯wordDictå­å­—ä¸², å‰é¢é‚£æ®µåˆå¯ä»¥è¢«åˆ†å‰², é‚£æ•´æ®µå°±å¯è¢«åˆ†å‰²
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         n = len(s)
-        # dp[i]¥Nªí«ei­Ó¦r¤¸²Õ¦¨ªº¦r¦ê¯à§_³Q¤À³Î¦¨wordDict¤º©Ò¦³¦r¦ê
+        # dp[i]ä»£è¡¨å‰iå€‹å­—å…ƒçµ„æˆçš„å­—ä¸²èƒ½å¦è¢«åˆ†å‰²æˆwordDictå…§æ‰€æœ‰å­—ä¸²
         dp = [False]*(n+1)
         dp[0] = True
-        # ¥Hi¬°¤¤¤¶ÂI¤À³Î, 
+        # ä»¥iç‚ºä¸­ä»‹é»åˆ†å‰², 
         for i in range(n):
             for j in range(i+1,n+1):
-                # j¥²©w¤ñi¤j, ­Ydp[i]¥i¥H³Q¤À³Î¦¨wordDict, ¥Bi¶}©l¨ìj¤]¦bwordDict¤º, ¨º´N¥Nªídp[j]¤]¬OTrue
+                # jå¿…å®šæ¯”iå¤§, è‹¥dp[i]å¯ä»¥è¢«åˆ†å‰²æˆwordDict, ä¸”ié–‹å§‹åˆ°jä¹Ÿåœ¨wordDictå…§, é‚£å°±ä»£è¡¨dp[j]ä¹Ÿæ˜¯True
                 if(dp[i] and (s[i:j] in wordDict)):
                     dp[j] = True
         return dp[n]
     
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=139 lang=python3
-#
-# [139] Word Break
-#
-
-# @lc code=start
-# µ¹¦r¦ês©M¤@°ï¦r¦êwordDict, return¦r¦ês¯à§_¤À³Î¦¨wordDict¤º¦r¦ê
-# ¤£­n¨DwordDict¤º©Ò¦³¦r¦ê³£­n¨Ï¥Î¨ì, ¥u­n¯à­è¦n¤À³Î§Y¥i, ¥BwordDict¤ºªº¦r¦ê¥i¥H­«½Æ¨Ï¥Î
-# Ex: s = "leetcode", wordDict = ["leet", "code", "abc"], return True
-# Ex: s = "penapple", wordDict = ["pen", pple], return False
-# Ex: s = "leetleet", wordDict = ["leet"], return True
-
-# By DP, time: O(n^2), space: O(n), ¨ä¤¤n = len(s)
-# ­«ÂI¦b©ówordDict¤ºªº¦r¦ê¥i¥H­«½Æ¨Ï¥Î, ©Ò¥H·Q¦¨±Ns¤À³Î¦¨¨â¬q
-# ³Ì«á¤@¬q¬OwordDict¤l¦r¦ê, «e­±¨º¬q¤S¥i¥H³Q¤À³Î, ¨º¾ã¬q´N¥i³Q¤À³Î
-class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
-        n = len(s)
-        # dp[i]¥Nªí«ei­Ó¦r¤¸²Õ¦¨ªº¦r¦ê¯à§_³Q¤À³Î¦¨wordDict¤º©Ò¦³¦r¦ê
-        dp = [False]*(n+1)
-        dp[0] = True
-        # ¥Hi¬°¤¤¤¶ÂI¤À³Î, 
-        for i in range(n):
-            for j in range(i+1,n+1):
-                # j¥²©w¤ñi¤j, ­Ydp[i]¥i¥H³Q¤À³Î¦¨wordDict, ¥Bi¶}©l¨ìj¤]¦bwordDict¤º, ¨º´N¥Nªídp[j]¤]¬OTrue
-                if(dp[i] and (s[i:j] in wordDict)):
-                    dp[j] = True
-        return dp[n]
-    
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
