@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1282 lang=python3
 #
@@ -7,57 +6,25 @@
 
 # @lc code=start
 # By hash table, time: O(n), space: O(n)
-# input¤º¤¸¯À¬O¦Uid¤§¤H©Ò¦bgroupªº¤H¼Æ, ­nreturn·Óinput¤À°tidªº¤À²Õ
+# inputå…§å…ƒç´ æ˜¯å„idä¹‹äººæ‰€åœ¨groupçš„äººæ•¸, è¦returnç…§inputåˆ†é…idçš„åˆ†çµ„
 class Solution:
     def groupThePeople(self, groupSizes: List[int]) -> List[List[int]]:
         res = list()
-        # res¸Ì­±©ñµÛ¦U­Ógroupsize¬°iªºgroup
-        # hash[i]´N¬O¬°¤F·í§@§ägroupsize¬°i¤§group¦bres¤¤ªº¦ì¸mªºindex
-        # ¤]´N¬O»¡res[hash[i]]§Y¬°res¤¤groupsize¬°iªºgroup
-        # ©Ò¥Hhash[i]¦bsize¬°iªºgroupº¡¤F¤~·|¼W¥[
+        # resè£¡é¢æ”¾è‘—å„å€‹groupsizeç‚ºiçš„group
+        # hash[i]å°±æ˜¯ç‚ºäº†ç•¶ä½œæ‰¾groupsizeç‚ºiä¹‹groupåœ¨resä¸­çš„ä½ç½®çš„index
+        # ä¹Ÿå°±æ˜¯èªªres[hash[i]]å³ç‚ºresä¸­groupsizeç‚ºiçš„group
+        # æ‰€ä»¥hash[i]åœ¨sizeç‚ºiçš„groupæ»¿äº†æ‰æœƒå¢åŠ 
         hash = dict()
         for id, i in enumerate(groupSizes):
-            # ·íi¤£¦bhash¤º©Î¤W¤@­Ógroupº¡®É, append·sªºid¶ires
-            # len(res[hash[i]])==i´N¬O¥Î¨Ó§PÂ_res¤ºsize¬°iªºgroupº¡¤F¨S
+            # ç•¶iä¸åœ¨hashå…§æˆ–ä¸Šä¸€å€‹groupæ»¿æ™‚, appendæ–°çš„idé€²res
+            # len(res[hash[i]])==iå°±æ˜¯ç”¨ä¾†åˆ¤æ–·reså…§sizeç‚ºiçš„groupæ»¿äº†æ²’
             if i not in hash or len(res[hash[i]])==i:
                 hash[i] = len(res)
                 res.append([id])
-            # ¦bres[hash[i]]¥¼º¡®É, Ä~Äò±Ni¤§id append¶i¥h
+            # åœ¨res[hash[i]]æœªæ»¿æ™‚, ç¹¼çºŒå°‡iä¹‹id appendé€²å»
             else:
                 res[hash[i]].append(id)
         return res
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1282 lang=python3
-#
-# [1282] Group the People Given the Group Size They Belong To
-#
-
-# @lc code=start
-# By hash table, time: O(n), space: O(n)
-# input¤º¤¸¯À¬O¦Uid¤§¤H©Ò¦bgroupªº¤H¼Æ, ­nreturn·Óinput¤À°tidªº¤À²Õ
-class Solution:
-    def groupThePeople(self, groupSizes: List[int]) -> List[List[int]]:
-        res = list()
-        # res¸Ì­±©ñµÛ¦U­Ógroupsize¬°iªºgroup
-        # hash[i]´N¬O¬°¤F·í§@§ägroupsize¬°i¤§group¦bres¤¤ªº¦ì¸mªºindex
-        # ¤]´N¬O»¡res[hash[i]]§Y¬°res¤¤groupsize¬°iªºgroup
-        # ©Ò¥Hhash[i]¦bsize¬°iªºgroupº¡¤F¤~·|¼W¥[
-        hash = dict()
-        for id, i in enumerate(groupSizes):
-            # ·íi¤£¦bhash¤º©Î¤W¤@­Ógroupº¡®É, append·sªºid¶ires
-            # len(res[hash[i]])==i´N¬O¥Î¨Ó§PÂ_res¤ºsize¬°iªºgroupº¡¤F¨S
-            if i not in hash or len(res[hash[i]])==i:
-                hash[i] = len(res)
-                res.append([id])
-            # ¦bres[hash[i]]¥¼º¡®É, Ä~Äò±Ni¤§id append¶i¥h
-            else:
-                res[hash[i]].append(id)
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

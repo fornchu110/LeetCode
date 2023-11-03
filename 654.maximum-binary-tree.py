@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=654 lang=python3
 #
@@ -13,40 +12,40 @@
 #         self.left = left
 #         self.right = right
 
-# By recursive, time: O(n^2), space: O(n), n¬Olen(nums)
-# µ¹array, ¨C¦¸¿ïarray¤¤³Ì¤j­È·ínode, ¦A¨Ó¥ª¤l¬°³Ì¤j­È©Ò¦bindex¥ª¥barr, ¥k¤l¬°³Ì¤j­È©Ò¦bindex¥k¥barr
-# ¦]¨C½ü³£­n¨«³X§ä´M³Ì¤j­È, ©Ò¥H·ínums±Æ§Ç¹L¨º´N¬O³ÌÃa±¡ªp
-# ­n¥Hindex§@¬°°Ñ¼Æ¶Ç»¼©M²×¤î±ø¥ó
+# By recursive, time: O(n^2), space: O(n), næ˜¯len(nums)
+# çµ¦array, æ¯æ¬¡é¸arrayä¸­æœ€å¤§å€¼ç•¶node, å†ä¾†å·¦å­ç‚ºæœ€å¤§å€¼æ‰€åœ¨indexå·¦åŠarr, å³å­ç‚ºæœ€å¤§å€¼æ‰€åœ¨indexå³åŠarr
+# å› æ¯è¼ªéƒ½è¦èµ°è¨ªæ‰¾å°‹æœ€å¤§å€¼, æ‰€ä»¥ç•¶numsæŽ’åºéŽé‚£å°±æ˜¯æœ€å£žæƒ…æ³
+# è¦ä»¥indexä½œç‚ºåƒæ•¸å‚³éžå’Œçµ‚æ­¢æ¢ä»¶
 class Solution:
     def constructMaximumBinaryTree(self, nums: List[int]) -> Optional[TreeNode]:
-        # left¡Bright¡Bmax¬O¦s¨únums¥Îªºindex
+        # leftã€rightã€maxæ˜¯å­˜å–numsç”¨çš„index
         def build(left, right):
-            # ²×¤î±ø¥ó
-            # index¤@©w¬O±q¤p¨ì¤j, ·íµ¹ªº°}¦C½d³òindexÅÜ¦¨¤j¨ì¤p, ´N¥Nªíµ²§ô
+            # çµ‚æ­¢æ¢ä»¶
+            # indexä¸€å®šæ˜¯å¾žå°åˆ°å¤§, ç•¶çµ¦çš„é™£åˆ—ç¯„åœindexè®Šæˆå¤§åˆ°å°, å°±ä»£è¡¨çµæŸ
             if left>right:
                 return None
-            # max¬ö¿ý¥Ø«e³o¬q³Ì¤j­È©Ò¦bªºindex
+            # maxç´€éŒ„ç›®å‰é€™æ®µæœ€å¤§å€¼æ‰€åœ¨çš„index
             max = left
             for i in range(left+1, right+1):
                 if nums[i]>nums[max]:
                     max = i
-            # ±N³Ì¤j­È«Ø¦¨node
+            # å°‡æœ€å¤§å€¼å»ºæˆnode
             node = TreeNode(val = nums[max])
-            # ¥ª¤l·|¬O¥ªÃä¨º¬q³Ì¤jªºnode
+            # å·¦å­æœƒæ˜¯å·¦é‚Šé‚£æ®µæœ€å¤§çš„node
             node.left = build(left, max-1)
-            # ¥k¤l·|¬O¥kÃä¨ººÝ³Ì¤jªºnode
+            # å³å­æœƒæ˜¯å³é‚Šé‚£ç«¯æœ€å¤§çš„node
             node.right = build(max+1, right)
             return node
-        # ¦]°Ñ¼Æ¬Oindex, arrayªºindex±q0¶}©l, len(nums)-1µ²§ô
+        # å› åƒæ•¸æ˜¯index, arrayçš„indexå¾ž0é–‹å§‹, len(nums)-1çµæŸ
         return build(0, len(nums)-1)
 
 # By stack, time: O(n), space: O(n)
-# ¥Î³æ½Õstack¨Ó«Øtree, ¤£·Ó­ì¥»­n¨Dªº¨C½ü§ä³Ì¤jvalue
-# ³æ½Õstack¬O¤@­Ó¤º³¡¸ê®Æ¥u·|»¼¼W©Î»¼´î±Æ§Çªºstack
-# ¦Ó¬O®Ú¾Ú¥Ø«e¨«³X¨ìªºval¤ñ¤W­Ó¤jÁÙ¤p§@¬Û¹ïÀ³¤£¦P°Ê§@, push©Îpop
-# tree¬ÛÃöÃD¥Ø¦n¹³³£­n·Q·Q«ç»ò¥Î³æ½Õstack°µ
-# ¦b¸ê®Æ¶q¤£¦hªº®É­Ô¦]¬°ºûÅ@½ÆÂø¸ê®Æµ²ºc¤]­nªá®É¶¡, ®ÄªG·|¤ñ¤W­±®t
-# ÁÙ¨S¬ÝÀ´
+# ç”¨å–®èª¿stackä¾†å»ºtree, ä¸ç…§åŽŸæœ¬è¦æ±‚çš„æ¯è¼ªæ‰¾æœ€å¤§value
+# å–®èª¿stackæ˜¯ä¸€å€‹å…§éƒ¨è³‡æ–™åªæœƒéžå¢žæˆ–éžæ¸›æŽ’åºçš„stack
+# è€Œæ˜¯æ ¹æ“šç›®å‰èµ°è¨ªåˆ°çš„valæ¯”ä¸Šå€‹å¤§é‚„å°ä½œç›¸å°æ‡‰ä¸åŒå‹•ä½œ, pushæˆ–pop
+# treeç›¸é—œé¡Œç›®å¥½åƒéƒ½è¦æƒ³æƒ³æ€Žéº¼ç”¨å–®èª¿stackåš
+# åœ¨è³‡æ–™é‡ä¸å¤šçš„æ™‚å€™å› ç‚ºç¶­è­·è¤‡é›œè³‡æ–™çµæ§‹ä¹Ÿè¦èŠ±æ™‚é–“, æ•ˆæžœæœƒæ¯”ä¸Šé¢å·®
+# é‚„æ²’çœ‹æ‡‚
 # class Solution:
 #     def constructMaximumBinaryTree(self, nums: List[int]) -> Optional[TreeNode]:
 #         n = len(nums)
@@ -76,82 +75,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=654 lang=python3
-#
-# [654] Maximum Binary Tree
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By recursive, time: O(n^2), space: O(n), n¬Olen(nums)
-# µ¹array, ¨C¦¸¿ïarray¤¤³Ì¤j­È·ínode, ¦A¨Ó¥ª¤l¬°³Ì¤j­È©Ò¦bindex¥ª¥barr, ¥k¤l¬°³Ì¤j­È©Ò¦bindex¥k¥barr
-# ¦]¨C½ü³£­n¨«³X§ä´M³Ì¤j­È, ©Ò¥H·ínums±Æ§Ç¹L¨º´N¬O³ÌÃa±¡ªp
-# ­n¥Hindex§@¬°°Ñ¼Æ¶Ç»¼©M²×¤î±ø¥ó
-class Solution:
-    def constructMaximumBinaryTree(self, nums: List[int]) -> Optional[TreeNode]:
-        # left¡Bright¡Bmax¬O¦s¨únums¥Îªºindex
-        def build(left, right):
-            # ²×¤î±ø¥ó
-            # index¤@©w¬O±q¤p¨ì¤j, ·íµ¹ªº°}¦C½d³òindexÅÜ¦¨¤j¨ì¤p, ´N¥Nªíµ²§ô
-            if left>right:
-                return None
-            # max¬ö¿ý¥Ø«e³o¬q³Ì¤j­È©Ò¦bªºindex
-            max = left
-            for i in range(left+1, right+1):
-                if nums[i]>nums[max]:
-                    max = i
-            # ±N³Ì¤j­È«Ø¦¨node
-            node = TreeNode(val = nums[max])
-            # ¥ª¤l·|¬O¥ªÃä¨º¬q³Ì¤jªºnode
-            node.left = build(left, max-1)
-            # ¥k¤l·|¬O¥kÃä¨ººÝ³Ì¤jªºnode
-            node.right = build(max+1, right)
-            return node
-        # ¦]°Ñ¼Æ¬Oindex, arrayªºindex±q0¶}©l, len(nums)-1µ²§ô
-        return build(0, len(nums)-1)
-
-# By stack, time: O(n), space: O(n)
-# ¥Î³æ½Õstack¨Ó«Øtree, ¤£·Ó­ì¥»­n¨Dªº¨C½ü§ä³Ì¤jvalue
-# ³æ½Õstack¬O¤@­Ó¤º³¡¸ê®Æ¥u·|»¼¼W©Î»¼´î±Æ§Çªºstack
-# ¦Ó¬O®Ú¾Ú¥Ø«e¨«³X¨ìªºval¤ñ¤W­Ó¤jÁÙ¤p§@¬Û¹ïÀ³¤£¦P°Ê§@, push©Îpop
-# tree¬ÛÃöÃD¥Ø¦n¹³³£­n·Q·Q«ç»ò¥Î³æ½Õstack°µ
-# ¦b¸ê®Æ¶q¤£¦hªº®É­Ô¦]¬°ºûÅ@½ÆÂø¸ê®Æµ²ºc¤]­nªá®É¶¡, ®ÄªG·|¤ñ¤W­±®t
-# ÁÙ¨S¬ÝÀ´
-# class Solution:
-#     def constructMaximumBinaryTree(self, nums: List[int]) -> Optional[TreeNode]:
-#         n = len(nums)
-#         stk = list()
-#         left, right = [-1]*n, [-1]*n
-#         tree = [None]*n
-
-#         for i in range(n):
-#             tree[i] = TreeNode(nums[i])
-#             while stk and nums[i] > nums[stk[-1]]:
-#                 right[stk[-1]] = i
-#                 stk.pop()
-#             if stk:
-#                 left[i] = stk[-1]
-#             stk.append(i)
-        
-#         root = None
-#         for i in range(n):
-#             if left[i] == right[i] == -1:
-#                 root = tree[i]
-#             elif right[i] == -1 or (left[i] != -1 and nums[left[i]] < nums[right[i]]):
-#                 tree[left[i]].right = tree[i]
-#             else:
-#                 tree[right[i]].left = tree[i]
-        
-#         return root
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

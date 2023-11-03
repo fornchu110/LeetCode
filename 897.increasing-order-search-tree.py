@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=897 lang=python3
 #
@@ -13,11 +12,11 @@
 #         self.left = left
 #         self.right = right
 
-# µ¹¤@­Ótree, ­n¨Dreturn·Óinorder¨«³X¶¶§Ç©Ò±Æ§Çªº·stree, ¥B·stree¥u¦³¥k¤l¨S¥ª¤l
-# ¥ıinorder¨«³Xtree¥Îlist¦s©ñnode.val,  
+# çµ¦ä¸€å€‹tree, è¦æ±‚returnç…§inorderèµ°è¨ªé †åºæ‰€æ’åºçš„æ–°tree, ä¸”æ–°treeåªæœ‰å³å­æ²’å·¦å­
+# å…ˆinorderèµ°è¨ªtreeç”¨listå­˜æ”¾node.val,  
 class Solution(object):
     def increasingBST(self, root):
-        # ¥Îself.res«O¦s¨«³X¨ìªºnode
+        # ç”¨self.resä¿å­˜èµ°è¨ªåˆ°çš„node
         self.res = []
         self.inOrder(root)
         if not self.res:
@@ -29,10 +28,10 @@ class Solution(object):
             cur.right = node
             cur = cur.right
         return dummy.right
-    # °O±o
-    # inorder¨«³X, ¥ª¤l->·í¤Unode­n°µªº¾Ş§@->¥k¤l
-    # preorder: ·í¤Unode­n°µªº¾Ş§@->¥ª¤l->¥k¤l
-    # postorder: ¥ª¤l->¥k¤l->·í¤Unode­n°µªº¾Ş§@
+    # è¨˜å¾—
+    # inorderèµ°è¨ª, å·¦å­->ç•¶ä¸‹nodeè¦åšçš„æ“ä½œ->å³å­
+    # preorder: ç•¶ä¸‹nodeè¦åšçš„æ“ä½œ->å·¦å­->å³å­
+    # postorder: å·¦å­->å³å­->ç•¶ä¸‹nodeè¦åšçš„æ“ä½œ
     def inOrder(self, root):
         if not root:
             return
@@ -42,48 +41,3 @@ class Solution(object):
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=897 lang=python3
-#
-# [897] Increasing Order Search Tree
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# µ¹¤@­Ótree, ­n¨Dreturn·Óinorder¨«³X¶¶§Ç©Ò±Æ§Çªº·stree, ¥B·stree¥u¦³¥k¤l¨S¥ª¤l
-# ¥ıinorder¨«³Xtree¥Îlist¦s©ñnode.val,  
-class Solution(object):
-    def increasingBST(self, root):
-        # ¥Îself.res«O¦s¨«³X¨ìªºnode
-        self.res = []
-        self.inOrder(root)
-        if not self.res:
-            return 
-        dummy = TreeNode(-1)
-        cur = dummy
-        for node in self.res:
-            node.left = node.right = None
-            cur.right = node
-            cur = cur.right
-        return dummy.right
-    # °O±o
-    # inorder¨«³X, ¥ª¤l->·í¤Unode­n°µªº¾Ş§@->¥k¤l
-    # preorder: ·í¤Unode­n°µªº¾Ş§@->¥ª¤l->¥k¤l
-    # postorder: ¥ª¤l->¥k¤l->·í¤Unode­n°µªº¾Ş§@
-    def inOrder(self, root):
-        if not root:
-            return
-        self.inOrder(root.left)
-        self.res.append(root)
-        self.inOrder(root.right)
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1342 lang=python3
 #
@@ -8,52 +7,22 @@
 # @lc code=start
 
 # By & and >>, time: O(log(num)), space: O(1)
-# time: O(log(num))ªº­ì¦]¬O¨C¦¸¹Bºâ³£·|±Nnum´î¥b, ¬Û·í©ó¥H2¬°©³°µlog
-# µ¹num, ºâ¥Xnum¸g¹L´X¦¸¹Bºâ«á¤~·|ÅÜ¦¨0
-# ³W«h¬O·ínum¬°°¸¼Æ®Éª½±µ°£¥H2, ¦ı­Y¬O©_¼Æ®É-1
+# time: O(log(num))çš„åŸå› æ˜¯æ¯æ¬¡é‹ç®—éƒ½æœƒå°‡numæ¸›åŠ, ç›¸ç•¶æ–¼ä»¥2ç‚ºåº•åšlog
+# çµ¦num, ç®—å‡ºnumç¶“éå¹¾æ¬¡é‹ç®—å¾Œæ‰æœƒè®Šæˆ0
+# è¦å‰‡æ˜¯ç•¶numç‚ºå¶æ•¸æ™‚ç›´æ¥é™¤ä»¥2, ä½†è‹¥æ˜¯å¥‡æ•¸æ™‚-1
 class Solution:
     def numberOfSteps(self, num: int) -> int:
         res = 0
         while(num!=0):
-            # ·ínum&1«D0, ¥Nªínum¬O©_¼Æ
+            # ç•¶num&1é0, ä»£è¡¨numæ˜¯å¥‡æ•¸
             if num&1:
                 num -= 1
-            # num¬O°¸¼Æ
+            # numæ˜¯å¶æ•¸
             else:
-                # °£2µ¥¦P©ó¥k²¾¤@¦ì¤¸, ª`·N¦pªG¥Înum/=2, num·|ÅÜfloat¦Ó«Dint
+                # é™¤2ç­‰åŒæ–¼å³ç§»ä¸€ä½å…ƒ, æ³¨æ„å¦‚æœç”¨num/=2, numæœƒè®Šfloatè€Œéint
                 num >>= 1
             res += 1
         return res
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1342 lang=python3
-#
-# [1342] Number of Steps to Reduce a Number to Zero
-#
-
-# @lc code=start
-
-# By & and >>, time: O(log(num)), space: O(1)
-# time: O(log(num))ªº­ì¦]¬O¨C¦¸¹Bºâ³£·|±Nnum´î¥b, ¬Û·í©ó¥H2¬°©³°µlog
-# µ¹num, ºâ¥Xnum¸g¹L´X¦¸¹Bºâ«á¤~·|ÅÜ¦¨0
-# ³W«h¬O·ínum¬°°¸¼Æ®Éª½±µ°£¥H2, ¦ı­Y¬O©_¼Æ®É-1
-class Solution:
-    def numberOfSteps(self, num: int) -> int:
-        res = 0
-        while(num!=0):
-            # ·ínum&1«D0, ¥Nªínum¬O©_¼Æ
-            if num&1:
-                num -= 1
-            # num¬O°¸¼Æ
-            else:
-                # °£2µ¥¦P©ó¥k²¾¤@¦ì¤¸, ª`·N¦pªG¥Înum/=2, num·|ÅÜfloat¦Ó«Dint
-                num >>= 1
-            res += 1
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

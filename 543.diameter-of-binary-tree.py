@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=543 lang=python3
 #
@@ -6,7 +5,7 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ótree, return¦¹tree¤¤¥ô¨âÂI³Ìªøªºpathªø«×
+# çµ¦ä¸€å€‹tree, returnæ­¤treeä¸­ä»»å…©é»æœ€é•·çš„pathé•·åº¦
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -16,76 +15,30 @@
 #         self.right = right
 
 # By DFS, time: O(n), space: O(height)
-# space = O(height)¬O¦]recursive©Ò»İ­nªºstackªÅ¶¡, ¤]´N¬Orecursive²`«×, ¦btree´N¬O¾ğ°ª
-# pathªø«×¬O¸g¹Lªºnode¼Æ-1
-# ³Ìªø¸ô®|·|¥Ñrootªº¥ªsubtree³Ìªø+¥ksubtree³Ìªø©Ò²Õ¦¨
+# space = O(height)æ˜¯å› recursiveæ‰€éœ€è¦çš„stackç©ºé–“, ä¹Ÿå°±æ˜¯recursiveæ·±åº¦, åœ¨treeå°±æ˜¯æ¨¹é«˜
+# pathé•·åº¦æ˜¯ç¶“éçš„nodeæ•¸-1
+# æœ€é•·è·¯å¾‘æœƒç”±rootçš„å·¦subtreeæœ€é•·+å³subtreeæœ€é•·æ‰€çµ„æˆ
 class Solution:
     def diameterOfBinaryTree(self, root: TreeNode) -> int:
         res = 1
-        # §ä¥X¥ªtree³Ìªø(¤]´N¬O³Ì²`)ªº¸ô®|©M¥ktree³Ìªø¸ô®|¤§©M
+        # æ‰¾å‡ºå·¦treeæœ€é•·(ä¹Ÿå°±æ˜¯æœ€æ·±)çš„è·¯å¾‘å’Œå³treeæœ€é•·è·¯å¾‘ä¹‹å’Œ
         def depth(node):
             nonlocal res
-            # ²×¤î±ø¥ó, ·í«Dnode®Éreturn
+            # çµ‚æ­¢æ¢ä»¶, ç•¶énodeæ™‚return
             if node is None:
                 return 0
-            # §ä¥ª¤ltree²`«×
+            # æ‰¾å·¦å­treeæ·±åº¦
             L = depth(node.left)
-            # §ä¥k¤ltree²`«×
+            # æ‰¾å³å­treeæ·±åº¦
             R = depth(node.right)
-            # ±N¨âªÌ¬Û¥[, ¨Ã+¤Wroot¥»¨­©Ò¥H+1
-            # res¬Ononlocalªº, »¼°j¹Lµ{¤£¥Îreturn res¤]¦b¤£Â_§ó·s
+            # å°‡å…©è€…ç›¸åŠ , ä¸¦+ä¸Šrootæœ¬èº«æ‰€ä»¥+1
+            # resæ˜¯nonlocalçš„, éè¿´éç¨‹ä¸ç”¨return resä¹Ÿåœ¨ä¸æ–·æ›´æ–°
             res = max(res, L+R+1)
-            # »¼°j¹Lµ{­nreturnªº¬O¸Ónode¥ª¥k¤ltree³Ì¤j²`«×
+            # éè¿´éç¨‹è¦returnçš„æ˜¯è©²nodeå·¦å³å­treeæœ€å¤§æ·±åº¦
             return max(L, R)+1
-        # ¥Hroot¬°¥XµoÂI
+        # ä»¥rootç‚ºå‡ºç™¼é»
         depth(root)
         return res-1
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=543 lang=python3
-#
-# [543] Diameter of Binary Tree
-#
-
-# @lc code=start
-# µ¹¤@­Ótree, return¦¹tree¤¤¥ô¨âÂI³Ìªøªºpathªø«×
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By DFS, time: O(n), space: O(height)
-# space = O(height)¬O¦]recursive©Ò»İ­nªºstackªÅ¶¡, ¤]´N¬Orecursive²`«×, ¦btree´N¬O¾ğ°ª
-# pathªø«×¬O¸g¹Lªºnode¼Æ-1
-# ³Ìªø¸ô®|·|¥Ñrootªº¥ªsubtree³Ìªø+¥ksubtree³Ìªø©Ò²Õ¦¨
-class Solution:
-    def diameterOfBinaryTree(self, root: TreeNode) -> int:
-        res = 1
-        # §ä¥X¥ªtree³Ìªø(¤]´N¬O³Ì²`)ªº¸ô®|©M¥ktree³Ìªø¸ô®|¤§©M
-        def depth(node):
-            nonlocal res
-            # ²×¤î±ø¥ó, ·í«Dnode®Éreturn
-            if node is None:
-                return 0
-            # §ä¥ª¤ltree²`«×
-            L = depth(node.left)
-            # §ä¥k¤ltree²`«×
-            R = depth(node.right)
-            # ±N¨âªÌ¬Û¥[, ¨Ã+¤Wroot¥»¨­©Ò¥H+1
-            # res¬Ononlocalªº, »¼°j¹Lµ{¤£¥Îreturn res¤]¦b¤£Â_§ó·s
-            res = max(res, L+R+1)
-            # »¼°j¹Lµ{­nreturnªº¬O¸Ónode¥ª¥k¤ltree³Ì¤j²`«×
-            return max(L, R)+1
-        # ¥Hroot¬°¥XµoÂI
-        depth(root)
-        return res-1
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

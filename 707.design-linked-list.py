@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=707 lang=python3
 #
@@ -12,8 +11,8 @@ class ListNode:
         self.val = val
         self.next = None
 
-# ­«ÂI¦b©óhead­n¬O¤@­Ódummy node, «ü¦V¹ê»Ú¤Wlink list²Ä¤@­Ónode
-# ¤~¥i¥HÁ×§K¬ÛÃö¿ù»~, ¹³¬OheadÀHµÛ²¾°Ê©M§PÂ_¶]±¼©Î¤Þ¥ÎNULL°ÝÃD
+# é‡é»žåœ¨æ–¼headè¦æ˜¯ä¸€å€‹dummy node, æŒ‡å‘å¯¦éš›ä¸Šlink listç¬¬ä¸€å€‹node
+# æ‰å¯ä»¥é¿å…ç›¸é—œéŒ¯èª¤, åƒæ˜¯headéš¨è‘—ç§»å‹•å’Œåˆ¤æ–·è·‘æŽ‰æˆ–å¼•ç”¨NULLå•é¡Œ
 class MyLinkedList:
     # time: O(1), space: O(1)
     def __init__(self):
@@ -68,74 +67,3 @@ class MyLinkedList:
 # obj.deleteAtIndex(index)
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=707 lang=python3
-#
-# [707] Design Linked List
-#
-
-
-# @lc code=start
-class ListNode:
-    def __init__(self, val):
-        self.val = val
-        self.next = None
-
-# ­«ÂI¦b©óhead­n¬O¤@­Ódummy node, «ü¦V¹ê»Ú¤Wlink list²Ä¤@­Ónode
-# ¤~¥i¥HÁ×§K¬ÛÃö¿ù»~, ¹³¬OheadÀHµÛ²¾°Ê©M§PÂ_¶]±¼©Î¤Þ¥ÎNULL°ÝÃD
-class MyLinkedList:
-    # time: O(1), space: O(1)
-    def __init__(self):
-        self.size = 0
-        self.head = ListNode(0)
-    
-    # time: O(index), space: O(1)
-    def get(self, index: int) -> int:
-        if index < 0 or index >= self.size:
-            return -1
-        cur = self.head
-        for _ in range(index + 1):
-            cur = cur.next
-        return cur.val
-
-    # time: O(1), space: O(1)
-    def addAtHead(self, val: int) -> None:
-        self.addAtIndex(0, val)
-
-    # time: O(n), space: O(1)
-    def addAtTail(self, val: int) -> None:
-        self.addAtIndex(self.size, val)
-
-    # time: O(index), space: O(1)
-    def addAtIndex(self, index: int, val: int) -> None:
-        if index > self.size:
-            return
-        index = max(0, index)
-        self.size += 1
-        pred = self.head
-        for _ in range(index):
-            pred = pred.next
-        to_add = ListNode(val)
-        to_add.next = pred.next
-        pred.next = to_add
-
-    def deleteAtIndex(self, index: int) -> None:
-        if index < 0 or index >= self.size:
-            return
-        self.size -= 1
-        pred = self.head
-        for _ in range(index):
-            pred = pred.next
-        pred.next = pred.next.next
-
-# Your MyLinkedList object will be instantiated and called as such:
-# obj = MyLinkedList()
-# param_1 = obj.get(index)
-# obj.addAtHead(val)
-# obj.addAtTail(val)
-# obj.addAtIndex(index,val)
-# obj.deleteAtIndex(index)
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

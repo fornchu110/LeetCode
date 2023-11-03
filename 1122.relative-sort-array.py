@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1122 lang=python3
 #
@@ -8,82 +7,37 @@
 # @lc code=start
 
 # By counting sort
-# ¼Æ¥X²{¦¸¼Æ¬ö¿ı¦barray¤¤¦A¨Ì·Ó­n¨D¶¶§Ç¥[¤Jres 
+# æ•¸å‡ºç¾æ¬¡æ•¸ç´€éŒ„åœ¨arrayä¸­å†ä¾ç…§è¦æ±‚é †åºåŠ å…¥res 
 class Solution:
     def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
-        # §ä¥Xarr1³Ì¤jªº¼Æ¦r
+        # æ‰¾å‡ºarr1æœ€å¤§çš„æ•¸å­—
         upper = max(arr1)
-        # ­n­pºâarr1¤º¨C­Ó¤¸¯À¦U¥X²{¦h¤Ö¦¸
-        # frequency[i]´N¬Oi³o­Ó¼Æ¦r¥X²{ªº¦¸¼Æ, ª½±µ¥Hi°µindex
-        # array³Ì¤Ö­n¦³³Ì¤j¼Æ¦r+1­Ó¤j¤p, ¦]¬°­n¥H³Ì¤j¼Æ¦r°µindex
-        # Ex:³Ì¤j2, array­n¦³¤T­Ó¤¸¯À¤~¯à0, 1, 2
+        # è¦è¨ˆç®—arr1å…§æ¯å€‹å…ƒç´ å„å‡ºç¾å¤šå°‘æ¬¡
+        # frequency[i]å°±æ˜¯ié€™å€‹æ•¸å­—å‡ºç¾çš„æ¬¡æ•¸, ç›´æ¥ä»¥iåšindex
+        # arrayæœ€å°‘è¦æœ‰æœ€å¤§æ•¸å­—+1å€‹å¤§å°, å› ç‚ºè¦ä»¥æœ€å¤§æ•¸å­—åšindex
+        # Ex:æœ€å¤§2, arrayè¦æœ‰ä¸‰å€‹å…ƒç´ æ‰èƒ½0, 1, 2
         frequency = [0]*(upper + 1)
-        # ¨«³Xarr1¨C­Ó¤¸¯Àx¶}©l¼ÆÀW²v
+        # èµ°è¨ªarr1æ¯å€‹å…ƒç´ xé–‹å§‹æ•¸é »ç‡
         for x in arr1:
             frequency[x] += 1
         
         res = list()
         for x in arr2:
-            # list.appen¥[¤J³æ­Ó¤¸¯À, list.extend¤@¦¸¥[¤J¦h­Ó
-            # ¥Harr2¥X²{ªº¶¶§Ç±Nfrequency[x]­Óx¥[¤Jres
+            # list.appenåŠ å…¥å–®å€‹å…ƒç´ , list.extendä¸€æ¬¡åŠ å…¥å¤šå€‹
+            # ä»¥arr2å‡ºç¾çš„é †åºå°‡frequency[x]å€‹xåŠ å…¥res
             res.extend([x]*frequency[x])
-            # frequency = 0¥Î¨Ó°O¿ıarr2¤ºªº¤¸¯À³£³Q¥[¤Jres¤F
+            # frequency = 0ç”¨ä¾†è¨˜éŒ„arr2å…§çš„å…ƒç´ éƒ½è¢«åŠ å…¥resäº†
             frequency[x] = 0
-        # ±N©Ò¦³arr1¤º¥X²{¦barr2ªº¤¸¯À³£¥[¤Jres«á    
-        # ¤£¯à­«·s¹ïarr1°µ¨«³X, ¥²¶·¹ïfrequency¨«³X
-        # ÁöµM¸Ì­±¤@©w¦³¥»¨Ó´N¬OªÅªº,·|®ö¶O®É¶¡
-        # ¦ıres­n¨D±q¤p¨ì¤j±Æ§Ç, ¦Ó«D³Ñ¤U¤¸¯À·Óarr1¤ºªº¶¶§Ç±Æ´N¥i¥H
+        # å°‡æ‰€æœ‰arr1å…§å‡ºç¾åœ¨arr2çš„å…ƒç´ éƒ½åŠ å…¥reså¾Œ    
+        # ä¸èƒ½é‡æ–°å°arr1åšèµ°è¨ª, å¿…é ˆå°frequencyèµ°è¨ª
+        # é›–ç„¶è£¡é¢ä¸€å®šæœ‰æœ¬ä¾†å°±æ˜¯ç©ºçš„,æœƒæµªè²»æ™‚é–“
+        # ä½†resè¦æ±‚å¾å°åˆ°å¤§æ’åº, è€Œéå‰©ä¸‹å…ƒç´ ç…§arr1å…§çš„é †åºæ’å°±å¯ä»¥
         for x in range(upper+1):
-            # ¥u­nfrequency¤£¬°0, ¥Nªí¬Oarr2¥H¥~ªº¤¸¯À
+            # åªè¦frequencyä¸ç‚º0, ä»£è¡¨æ˜¯arr2ä»¥å¤–çš„å…ƒç´ 
             if frequency[x] > 0:
-                # ±N¥L­Ì¥[¤Jres
+                # å°‡ä»–å€‘åŠ å…¥res
                 res.extend([x] * frequency[x])
         return res
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1122 lang=python3
-#
-# [1122] Relative Sort Array
-#
-
-# @lc code=start
-
-# By counting sort
-# ¼Æ¥X²{¦¸¼Æ¬ö¿ı¦barray¤¤¦A¨Ì·Ó­n¨D¶¶§Ç¥[¤Jres 
-class Solution:
-    def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
-        # §ä¥Xarr1³Ì¤jªº¼Æ¦r
-        upper = max(arr1)
-        # ­n­pºâarr1¤º¨C­Ó¤¸¯À¦U¥X²{¦h¤Ö¦¸
-        # frequency[i]´N¬Oi³o­Ó¼Æ¦r¥X²{ªº¦¸¼Æ, ª½±µ¥Hi°µindex
-        # array³Ì¤Ö­n¦³³Ì¤j¼Æ¦r+1­Ó¤j¤p, ¦]¬°­n¥H³Ì¤j¼Æ¦r°µindex
-        # Ex:³Ì¤j2, array­n¦³¤T­Ó¤¸¯À¤~¯à0, 1, 2
-        frequency = [0]*(upper + 1)
-        # ¨«³Xarr1¨C­Ó¤¸¯Àx¶}©l¼ÆÀW²v
-        for x in arr1:
-            frequency[x] += 1
-        
-        res = list()
-        for x in arr2:
-            # list.appen¥[¤J³æ­Ó¤¸¯À, list.extend¤@¦¸¥[¤J¦h­Ó
-            # ¥Harr2¥X²{ªº¶¶§Ç±Nfrequency[x]­Óx¥[¤Jres
-            res.extend([x]*frequency[x])
-            # frequency = 0¥Î¨Ó°O¿ıarr2¤ºªº¤¸¯À³£³Q¥[¤Jres¤F
-            frequency[x] = 0
-        # ±N©Ò¦³arr1¤º¥X²{¦barr2ªº¤¸¯À³£¥[¤Jres«á    
-        # ¤£¯à­«·s¹ïarr1°µ¨«³X, ¥²¶·¹ïfrequency¨«³X
-        # ÁöµM¸Ì­±¤@©w¦³¥»¨Ó´N¬OªÅªº,·|®ö¶O®É¶¡
-        # ¦ıres­n¨D±q¤p¨ì¤j±Æ§Ç, ¦Ó«D³Ñ¤U¤¸¯À·Óarr1¤ºªº¶¶§Ç±Æ´N¥i¥H
-        for x in range(upper+1):
-            # ¥u­nfrequency¤£¬°0, ¥Nªí¬Oarr2¥H¥~ªº¤¸¯À
-            if frequency[x] > 0:
-                # ±N¥L­Ì¥[¤Jres
-                res.extend([x] * frequency[x])
-        return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

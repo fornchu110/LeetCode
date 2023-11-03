@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1365 lang=python3
 #
@@ -7,111 +6,52 @@
 
 # @lc code=start
 
-# By counting sort, time: O(n+k), space: O(k), k¬Oinput­È°ì¤j¤p
-# °O¦ícounting sort¬O½u©Ê±Æ§Ç«Ü§Ö, ¦ı§óªáªÅ¶¡, ¦]¬°®Ú¾Ú­È°ì¨M©w
-# counting sort´N¬Oindex arrayªº·Qªk, §â­È¥»¨­·íindex
+# By counting sort, time: O(n+k), space: O(k), kæ˜¯inputå€¼åŸŸå¤§å°
+# è¨˜ä½counting sortæ˜¯ç·šæ€§æ’åºå¾ˆå¿«, ä½†æ›´èŠ±ç©ºé–“, å› ç‚ºæ ¹æ“šå€¼åŸŸæ±ºå®š
+# counting sortå°±æ˜¯index arrayçš„æƒ³æ³•, æŠŠå€¼æœ¬èº«ç•¶index
 class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        # ÃD¥Øµ¹input³Ì¦h101­Ó¤¸¯À, 101¤]´N¬O­È°ì¤j¤pk
+        # é¡Œç›®çµ¦inputæœ€å¤š101å€‹å…ƒç´ , 101ä¹Ÿå°±æ˜¯å€¼åŸŸå¤§å°k
         arr = [0]*101
         res = list()
-        # ¦barr¤º¬ö¿ı0~101¤¤©ónums¤º¥X²{ªº¦¸¼Æ
-        # ¥Ñ©óarr¤§index¬Onums¤º¤¸¯À¥»¨­, ©Ò¥H¨ä¹ê¨«³Xarr´N·|¥Ñ¤p¦Ü¤j¨«³Xnums
+        # åœ¨arrå…§ç´€éŒ„0~101ä¸­æ–¼numså…§å‡ºç¾çš„æ¬¡æ•¸
+        # ç”±æ–¼arrä¹‹indexæ˜¯numså…§å…ƒç´ æœ¬èº«, æ‰€ä»¥å…¶å¯¦èµ°è¨ªarrå°±æœƒç”±å°è‡³å¤§èµ°è¨ªnums
         for i in nums:
             arr[i] += 1 
         lessthan = list()  
-        # ´N¬Oarr¤º¦U­Ó¤¸¯À(index)·í¤Uªº­È
+        # å°±æ˜¯arrå…§å„å€‹å…ƒç´ (index)ç•¶ä¸‹çš„å€¼
         temp = 0 
-        # ¨«³Xarr¹ïtemp°µ¥[Á`¥NªíµÛ
-        # ¥Ñ¤p¦Ü¤j¬İ¤ñ·í¤U¤¸¯À§ó¤p¤§¤¸¯Àªº¥X²{¦¸¼Æ©M, ¨Ã¥[¤Jlessthan¤§¤¤
-        # ©Ò¥Hlessthanªº¤j¤p©Marr¤@¼Ë, ³£¬O[0]*101
+        # èµ°è¨ªarrå°tempåšåŠ ç¸½ä»£è¡¨è‘—
+        # ç”±å°è‡³å¤§çœ‹æ¯”ç•¶ä¸‹å…ƒç´ æ›´å°ä¹‹å…ƒç´ çš„å‡ºç¾æ¬¡æ•¸å’Œ, ä¸¦åŠ å…¥lessthanä¹‹ä¸­
+        # æ‰€ä»¥lessthançš„å¤§å°å’Œarrä¸€æ¨£, éƒ½æ˜¯[0]*101
         for i in arr:
-            # temp+=i¦bappend¤§«á, ©Ò¥H¤£·|ºâ¨ì·í¤U¤¸¯À¦Û¤vªº¥X²{¦¸¼Æ
-            # ­Y­nºâ<=¦¸¼Æ´N§âtemp+=i©ñ¨ìappend«e­±
+            # temp+=iåœ¨appendä¹‹å¾Œ, æ‰€ä»¥ä¸æœƒç®—åˆ°ç•¶ä¸‹å…ƒç´ è‡ªå·±çš„å‡ºç¾æ¬¡æ•¸
+            # è‹¥è¦ç®—<=æ¬¡æ•¸å°±æŠŠtemp+=iæ”¾åˆ°appendå‰é¢
             lessthan.append(temp)
             temp += i
-        # ¥Hnums¤º¤§¤¸¯À§@¬°index¬d¸ßlessthan§Y¥iª¾¹D¤p©ó¦Û¤vªº¤¸¯À¼Æ¶q
+        # ä»¥numså…§ä¹‹å…ƒç´ ä½œç‚ºindexæŸ¥è©¢lessthanå³å¯çŸ¥é“å°æ–¼è‡ªå·±çš„å…ƒç´ æ•¸é‡
         for i in nums:  
             res.append(lessthan[i])
         return res
 
 # By sort and hash, time: O(n*log(n)), space: O(n)
-# ­«ÂI¦b©ó±Æ§Ç¹L«áªºnums¤º, ¨C­Ó¤¸¯À²Ä¤@¦¸¥X²{ªºindex§Y¬O¤p©ó¥Lªº¤¸¯À¼Æ¶q
+# é‡é»åœ¨æ–¼æ’åºéå¾Œçš„numså…§, æ¯å€‹å…ƒç´ ç¬¬ä¸€æ¬¡å‡ºç¾çš„indexå³æ˜¯å°æ–¼ä»–çš„å…ƒç´ æ•¸é‡
 # class Solution:
 #     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
 #         res = list()
 #         hash = dict()
-#         # nums.sort()ª½±µ±Nnums°µ±Æ§Ç, sorted(nums)«h¦^¶Ç¤@­Ó·sªºlist
-#         # ¦b³oÃä¥Ñ©ó»İ­n·Ó¶¶§Çreturn, ©Ò¥H»İ­n¥Î¤@­Ósort¹Lªº·slist
+#         # nums.sort()ç›´æ¥å°‡numsåšæ’åº, sorted(nums)å‰‡å›å‚³ä¸€å€‹æ–°çš„list
+#         # åœ¨é€™é‚Šç”±æ–¼éœ€è¦ç…§é †åºreturn, æ‰€ä»¥éœ€è¦ç”¨ä¸€å€‹sortéçš„æ–°list
 #         arr = sorted(nums)
-#         # ¨Ì§Ç¨«³X±Æ§Ç¹Lªºarr
-#         # ¨ä¹ê¨C¤¸¯À²Ä¤@¦¸¥X²{®Éªºindex´N¬O¤p©ó¸Ó¤¸¯Àªº¤¸¯À¼Æ¶q
+#         # ä¾åºèµ°è¨ªæ’åºéçš„arr
+#         # å…¶å¯¦æ¯å…ƒç´ ç¬¬ä¸€æ¬¡å‡ºç¾æ™‚çš„indexå°±æ˜¯å°æ–¼è©²å…ƒç´ çš„å…ƒç´ æ•¸é‡
 #         for i in range(len(arr)):
 #             if arr[i] not in hash:
 #                 hash[arr[i]] = i
-#         # ¤w¸g¥Îhash¬ö¿ı¤p©ó¦U¤¸¯Àªº¼Æ¶q, ·Ónumsªº¶¶§Ç¨«³X¤@¹M¥[¤Jres
+#         # å·²ç¶“ç”¨hashç´€éŒ„å°æ–¼å„å…ƒç´ çš„æ•¸é‡, ç…§numsçš„é †åºèµ°è¨ªä¸€éåŠ å…¥res
 #         for i in nums:
 #             res.append(hash[i])
 #         return res
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1365 lang=python3
-#
-# [1365] How Many Numbers Are Smaller Than the Current Number
-#
-
-# @lc code=start
-
-# By counting sort, time: O(n+k), space: O(k), k¬Oinput­È°ì¤j¤p
-# °O¦ícounting sort¬O½u©Ê±Æ§Ç«Ü§Ö, ¦ı§óªáªÅ¶¡, ¦]¬°®Ú¾Ú­È°ì¨M©w
-# counting sort´N¬Oindex arrayªº·Qªk, §â­È¥»¨­·íindex
-class Solution:
-    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        # ÃD¥Øµ¹input³Ì¦h101­Ó¤¸¯À, 101¤]´N¬O­È°ì¤j¤pk
-        arr = [0]*101
-        res = list()
-        # ¦barr¤º¬ö¿ı0~101¤¤©ónums¤º¥X²{ªº¦¸¼Æ
-        # ¥Ñ©óarr¤§index¬Onums¤º¤¸¯À¥»¨­, ©Ò¥H¨ä¹ê¨«³Xarr´N·|¥Ñ¤p¦Ü¤j¨«³Xnums
-        for i in nums:
-            arr[i] += 1 
-        lessthan = list()  
-        # ´N¬Oarr¤º¦U­Ó¤¸¯À(index)·í¤Uªº­È
-        temp = 0 
-        # ¨«³Xarr¹ïtemp°µ¥[Á`¥NªíµÛ
-        # ¥Ñ¤p¦Ü¤j¬İ¤ñ·í¤U¤¸¯À§ó¤p¤§¤¸¯Àªº¥X²{¦¸¼Æ©M, ¨Ã¥[¤Jlessthan¤§¤¤
-        # ©Ò¥Hlessthanªº¤j¤p©Marr¤@¼Ë, ³£¬O[0]*101
-        for i in arr:
-            # temp+=i¦bappend¤§«á, ©Ò¥H¤£·|ºâ¨ì·í¤U¤¸¯À¦Û¤vªº¥X²{¦¸¼Æ
-            # ­Y­nºâ<=¦¸¼Æ´N§âtemp+=i©ñ¨ìappend«e­±
-            lessthan.append(temp)
-            temp += i
-        # ¥Hnums¤º¤§¤¸¯À§@¬°index¬d¸ßlessthan§Y¥iª¾¹D¤p©ó¦Û¤vªº¤¸¯À¼Æ¶q
-        for i in nums:  
-            res.append(lessthan[i])
-        return res
-
-# By sort and hash, time: O(n*log(n)), space: O(n)
-# ­«ÂI¦b©ó±Æ§Ç¹L«áªºnums¤º, ¨C­Ó¤¸¯À²Ä¤@¦¸¥X²{ªºindex§Y¬O¤p©ó¥Lªº¤¸¯À¼Æ¶q
-# class Solution:
-#     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-#         res = list()
-#         hash = dict()
-#         # nums.sort()ª½±µ±Nnums°µ±Æ§Ç, sorted(nums)«h¦^¶Ç¤@­Ó·sªºlist
-#         # ¦b³oÃä¥Ñ©ó»İ­n·Ó¶¶§Çreturn, ©Ò¥H»İ­n¥Î¤@­Ósort¹Lªº·slist
-#         arr = sorted(nums)
-#         # ¨Ì§Ç¨«³X±Æ§Ç¹Lªºarr
-#         # ¨ä¹ê¨C¤¸¯À²Ä¤@¦¸¥X²{®Éªºindex´N¬O¤p©ó¸Ó¤¸¯Àªº¤¸¯À¼Æ¶q
-#         for i in range(len(arr)):
-#             if arr[i] not in hash:
-#                 hash[arr[i]] = i
-#         # ¤w¸g¥Îhash¬ö¿ı¤p©ó¦U¤¸¯Àªº¼Æ¶q, ·Ónumsªº¶¶§Ç¨«³X¤@¹M¥[¤Jres
-#         for i in nums:
-#             res.append(hash[i])
-#         return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

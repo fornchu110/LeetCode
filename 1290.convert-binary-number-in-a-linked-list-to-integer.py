@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1290 lang=python3
 #
@@ -13,53 +12,20 @@
 #         self.next = next
 
 # By simulation and bitwise, time: O(n), space: O(1)
-# ¾a¼ÒÀÀbinaryÂàdecimal¹Lµ{­pºâ, ª`·N¤£»Ý­n¥ý¨«³X¤@¦¸list§ânode³£°O¿ý¤U¨Ó
-# ·í¨«¨ì·snode, ¥Nªí«e­±ªº­È¥ª²¾¹L¥h, ¤]´N¬O*2, ¦Óµ²ªG´N¬O¦A¥[¤W·í¤Unode.val
-# ³o¼Ë°µ¤£¥Î¨«³X´N¬Ù®É¶¡, ¤]¬Ù¤U±Nnode.val°O¿ý¤U¨ÓªºªÅ¶¡
+# é æ¨¡æ“¬binaryè½‰decimaléŽç¨‹è¨ˆç®—, æ³¨æ„ä¸éœ€è¦å…ˆèµ°è¨ªä¸€æ¬¡listæŠŠnodeéƒ½è¨˜éŒ„ä¸‹ä¾†
+# ç•¶èµ°åˆ°æ–°node, ä»£è¡¨å‰é¢çš„å€¼å·¦ç§»éŽåŽ», ä¹Ÿå°±æ˜¯*2, è€Œçµæžœå°±æ˜¯å†åŠ ä¸Šç•¶ä¸‹node.val
+# é€™æ¨£åšä¸ç”¨èµ°è¨ªå°±çœæ™‚é–“, ä¹Ÿçœä¸‹å°‡node.valè¨˜éŒ„ä¸‹ä¾†çš„ç©ºé–“
 class Solution:
     def getDecimalValue(self, head: ListNode) -> int:
         cur = head
         res = 0
         while(cur!=None):
-            #res = res*2+cur.val, ³Ìª½Æ[ªº°µªk
-            #¦ýbinary¥i¥H°µ¦ì¹Bºâ, bitwise¾Þ§@§ó¥[¬Ù®É¶¡
-            #<<1¥Nªí¥ª²¾¤]´N¬O*2®ÄªG, |¨Ó¥[¤Wcur.val
+            #res = res*2+cur.val, æœ€ç›´è§€çš„åšæ³•
+            #ä½†binaryå¯ä»¥åšä½é‹ç®—, bitwiseæ“ä½œæ›´åŠ çœæ™‚é–“
+            #<<1ä»£è¡¨å·¦ç§»ä¹Ÿå°±æ˜¯*2æ•ˆæžœ, |ä¾†åŠ ä¸Šcur.val
             res = (res<<1)|cur.val 
             cur = cur.next
         return res
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1290 lang=python3
-#
-# [1290] Convert Binary Number in a Linked List to Integer
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-# By simulation and bitwise, time: O(n), space: O(1)
-# ¾a¼ÒÀÀbinaryÂàdecimal¹Lµ{­pºâ, ª`·N¤£»Ý­n¥ý¨«³X¤@¦¸list§ânode³£°O¿ý¤U¨Ó
-# ·í¨«¨ì·snode, ¥Nªí«e­±ªº­È¥ª²¾¹L¥h, ¤]´N¬O*2, ¦Óµ²ªG´N¬O¦A¥[¤W·í¤Unode.val
-# ³o¼Ë°µ¤£¥Î¨«³X´N¬Ù®É¶¡, ¤]¬Ù¤U±Nnode.val°O¿ý¤U¨ÓªºªÅ¶¡
-class Solution:
-    def getDecimalValue(self, head: ListNode) -> int:
-        cur = head
-        res = 0
-        while(cur!=None):
-            #res = res*2+cur.val, ³Ìª½Æ[ªº°µªk
-            #¦ýbinary¥i¥H°µ¦ì¹Bºâ, bitwise¾Þ§@§ó¥[¬Ù®É¶¡
-            #<<1¥Nªí¥ª²¾¤]´N¬O*2®ÄªG, |¨Ó¥[¤Wcur.val
-            res = (res<<1)|cur.val 
-            cur = cur.next
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

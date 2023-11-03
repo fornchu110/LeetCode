@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1309 lang=python3
 #
@@ -6,64 +5,29 @@
 #
 
 # @lc code=start
-# µ¹¤@¦r¦ê¥Ñ1~9, 10#~26#©Ò²Õ¦¨, ¨Ã¤À§O¹ïÀ³a~i, j~z, ±N¦r¦êÂà´«¦¨¹ïÀ³¦r¦ê
-# Ex: "10#11#12"Âà´«¦¨"jkab"
+# çµ¦ä¸€å­—ä¸²ç”±1~9, 10#~26#æ‰€çµ„æˆ, ä¸¦åˆ†åˆ¥å°æ‡‰a~i, j~z, å°‡å­—ä¸²è½‰æ›æˆå°æ‡‰å­—ä¸²
+# Ex: "10#11#12"è½‰æ›æˆ"jkab"
 
 # By string proccessing, time: O(n), space: O(1)
 class Solution:
     def freqAlphabets(self, s: str) -> str:
         def get(st):
-            # 1¹ïÀ³¨ì¤p¼ga, µ¥¦P©ó±N"1"Âà´«¦¨ascii 97ªº"a", ©Ò¥H¬O+96
+            # 1å°æ‡‰åˆ°å°å¯«a, ç­‰åŒæ–¼å°‡"1"è½‰æ›æˆascii 97çš„"a", æ‰€ä»¥æ˜¯+96
             return chr(int(st)+96)
-        # idx¥Î¨Óª¾¹D¥Ø«e³B²z¨ìªº¦r¦ê¦ì§}, ªì©l¤Æ¦r¦êres
+        # idxç”¨ä¾†çŸ¥é“ç›®å‰è™•ç†åˆ°çš„å­—ä¸²ä½å€, åˆå§‹åŒ–å­—ä¸²res
         idx, res = 0, ""
         while idx<len(s):
-            # ¨C¦¸­n¥ı¬İ«á¨â­Ó¦r¤¸¬O§_¬°#, ¨Ó§PÂ_¬Oj~zÁÙ¬Oa~i
-            # Ex: 12©M12#¹ïÀ³ªº¤£¦P, ¤À§O¬Oab©Ml
-            # ª`·Nc»y¨¥¤]¬O¥Îs[i+2], ²¦³º°O¾ĞÅé¦ì¸m
+            # æ¯æ¬¡è¦å…ˆçœ‹å¾Œå…©å€‹å­—å…ƒæ˜¯å¦ç‚º#, ä¾†åˆ¤æ–·æ˜¯j~zé‚„æ˜¯a~i
+            # Ex: 12å’Œ12#å°æ‡‰çš„ä¸åŒ, åˆ†åˆ¥æ˜¯abå’Œl
+            # æ³¨æ„cèªè¨€ä¹Ÿæ˜¯ç”¨s[i+2], ç•¢ç«Ÿè¨˜æ†¶é«”ä½ç½®
             if idx+2<len(s) and s[idx+2]=='#':
                 res += get(s[idx:idx+2])
                 idx += 2
             else:
-                # ¥Î+§â¦r¤¸³s°_¨Ó, c»y¨¥¥Îstrcat
+                # ç”¨+æŠŠå­—å…ƒé€£èµ·ä¾†, cèªè¨€ç”¨strcat
                 res += get(s[idx])
             idx += 1
         return res
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1309 lang=python3
-#
-# [1309] Decrypt String from Alphabet to Integer Mapping
-#
-
-# @lc code=start
-# µ¹¤@¦r¦ê¥Ñ1~9, 10#~26#©Ò²Õ¦¨, ¨Ã¤À§O¹ïÀ³a~i, j~z, ±N¦r¦êÂà´«¦¨¹ïÀ³¦r¦ê
-# Ex: "10#11#12"Âà´«¦¨"jkab"
-
-# By string proccessing, time: O(n), space: O(1)
-class Solution:
-    def freqAlphabets(self, s: str) -> str:
-        def get(st):
-            # 1¹ïÀ³¨ì¤p¼ga, µ¥¦P©ó±N"1"Âà´«¦¨ascii 97ªº"a", ©Ò¥H¬O+96
-            return chr(int(st)+96)
-        # idx¥Î¨Óª¾¹D¥Ø«e³B²z¨ìªº¦r¦ê¦ì§}, ªì©l¤Æ¦r¦êres
-        idx, res = 0, ""
-        while idx<len(s):
-            # ¨C¦¸­n¥ı¬İ«á¨â­Ó¦r¤¸¬O§_¬°#, ¨Ó§PÂ_¬Oj~zÁÙ¬Oa~i
-            # Ex: 12©M12#¹ïÀ³ªº¤£¦P, ¤À§O¬Oab©Ml
-            # ª`·Nc»y¨¥¤]¬O¥Îs[i+2], ²¦³º°O¾ĞÅé¦ì¸m
-            if idx+2<len(s) and s[idx+2]=='#':
-                res += get(s[idx:idx+2])
-                idx += 2
-            else:
-                # ¥Î+§â¦r¤¸³s°_¨Ó, c»y¨¥¥Îstrcat
-                res += get(s[idx])
-            idx += 1
-        return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

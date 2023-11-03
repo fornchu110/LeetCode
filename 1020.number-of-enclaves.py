@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1020 lang=python3
 #
@@ -6,13 +5,13 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ó¤Gºû°}¦Cgrid, 1¬O³°¦a0¬O®ü, return­¸¦a(enclave)¼Æ¶q
-# ­¸¦aªº©w¸q: µLªk¸g¹L¥ô·N¦¸©¹¨ä¥L³°¦a¨«¦Ó©µ¦ù¨ìÃä¬Éªº³°¦a¼Æ¶q
+# çµ¦ä¸€å€‹äºŒç¶­é™£åˆ—grid, 1æ˜¯é™¸åœ°0æ˜¯æµ·, returné£›åœ°(enclave)æ•¸é‡
+# é£›åœ°çš„å®šç¾©: ç„¡æ³•ç¶“éŽä»»æ„æ¬¡å¾€å…¶ä»–é™¸åœ°èµ°è€Œå»¶ä¼¸åˆ°é‚Šç•Œçš„é™¸åœ°æ•¸é‡
 
-# ¥H«á¦A¼g
+# ä»¥å¾Œå†å¯«
 # By DFS, time: O(mn), space: O(mn)
-# ®qÀ¬°ÝÃD³£¥i¥H¥ÎDFS©MBFS¸Ñ
-# ª`·N¥»¨Ó´N¦bÃä¬Éªº³°¦a¤@©w¤£¬O­¸¦a, ©Ò¥H¥u­n¨«³X³Ì¥~°é¥H¥~ªºgrid
+# å³¶å¶¼å•é¡Œéƒ½å¯ä»¥ç”¨DFSå’ŒBFSè§£
+# æ³¨æ„æœ¬ä¾†å°±åœ¨é‚Šç•Œçš„é™¸åœ°ä¸€å®šä¸æ˜¯é£›åœ°, æ‰€ä»¥åªè¦èµ°è¨ªæœ€å¤–åœˆä»¥å¤–çš„grid
 class Solution:
     def numEnclaves(self, grid: List[List[int]]) -> int:
         m, n = len(grid), len(grid[0])
@@ -35,41 +34,3 @@ class Solution:
     
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1020 lang=python3
-#
-# [1020] Number of Enclaves
-#
-
-# @lc code=start
-# µ¹¤@­Ó¤Gºû°}¦Cgrid, 1¬O³°¦a0¬O®ü, return­¸¦a(enclave)¼Æ¶q
-# ­¸¦aªº©w¸q: µLªk¸g¹L¥ô·N¦¸©¹¨ä¥L³°¦a¨«¦Ó©µ¦ù¨ìÃä¬Éªº³°¦a¼Æ¶q
-
-# ¥H«á¦A¼g
-# By DFS, time: O(mn), space: O(mn)
-# ®qÀ¬°ÝÃD³£¥i¥H¥ÎDFS©MBFS¸Ñ
-# ª`·N¥»¨Ó´N¦bÃä¬Éªº³°¦a¤@©w¤£¬O­¸¦a, ©Ò¥H¥u­n¨«³X³Ì¥~°é¥H¥~ªºgrid
-class Solution:
-    def numEnclaves(self, grid: List[List[int]]) -> int:
-        m, n = len(grid), len(grid[0])
-        vis = [[False] * n for _ in range(m)]
-
-        def dfs(r: int, c: int) -> None:
-            if r < 0 or r >= m or c < 0 or c >= n or grid[r][c] == 0 or vis[r][c]:
-                return
-            vis[r][c] = True
-            for x, y in ((r - 1, c), (r + 1, c), (r, c - 1), (r, c + 1)):
-                dfs(x, y)
-
-        for i in range(m):
-            dfs(i, 0)
-            dfs(i, n - 1)
-        for j in range(1, n - 1):
-            dfs(0, j)
-            dfs(m - 1, j)
-        return sum(grid[i][j] and not vis[i][j] for i in range(1, m - 1) for j in range(1, n - 1))
-    
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

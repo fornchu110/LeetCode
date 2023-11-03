@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=535 lang=python3
 #
@@ -6,8 +5,8 @@
 #
 
 # @lc code=start
-# ­n¨D±Nurl¥[±K«á¯à¥Î¸Ñ±KÁÙ­ì, ¤]´N¬O°µ¥[±K¬M®g
-# ¦Ó¤£¬M®g¤]¬O¤@ºØ¬M®g
+# è¦æ±‚å°‡urlåŠ å¯†å¾Œèƒ½ç”¨è§£å¯†é‚„åŸ, ä¹Ÿå°±æ˜¯åšåŠ å¯†æ˜ å°„
+# è€Œä¸æ˜ å°„ä¹Ÿæ˜¯ä¸€ç¨®æ˜ å°„
 class Codec:
     def encode(self, longUrl: str) -> str:
         """Encodes a URL to a shortened URL.
@@ -26,32 +25,3 @@ class Codec:
 # codec.decode(codec.encode(url))
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=535 lang=python3
-#
-# [535] Encode and Decode TinyURL
-#
-
-# @lc code=start
-# ­n¨D±Nurl¥[±K«á¯à¥Î¸Ñ±KÁÙ­ì, ¤]´N¬O°µ¥[±K¬M®g
-# ¦Ó¤£¬M®g¤]¬O¤@ºØ¬M®g
-class Codec:
-    def encode(self, longUrl: str) -> str:
-        """Encodes a URL to a shortened URL.
-        """
-        return longUrl
-        
-
-    def decode(self, shortUrl: str) -> str:
-        """Decodes a shortened URL to its original URL.
-        """
-        return shortUrl
-        
-
-# Your Codec object will be instantiated and called as such:
-# codec = Codec()
-# codec.decode(codec.encode(url))
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

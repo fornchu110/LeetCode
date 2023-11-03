@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1252 lang=python3
 #
@@ -6,25 +5,25 @@
 #
 
 # @lc code=start
-# µ¹mxnªºªì©l¤Æ¯x°}©M¤@°}¦Cindices, indices¤º¨C¤@¶µ[ri¡Bci]¥Nªí±N²Äri¦C¥H¤Î²Äci¦æ©Ò¦³¤¸¯À+1
-# ³Ì«áreturn¯x°}¤¤¦³¦h¤Öodd
-# By simulation, time: O(q*(m+n)+m*n), space: O(m*n), ¨ä¤¤q = len(indices)
-# ¼ÒÀÀÃD¥Ø°µªº¨Æ±¡, ¨«³Xindices±N«ü©wªº¦æ¦C¤@­Ó­Ó+1, ³Ì«á¦A¼Æ¯x°}¤¤ªºodd¼Æ
+# çµ¦mxnçš„åˆå§‹åŒ–çŸ©é™£å’Œä¸€é™£åˆ—indices, indiceså…§æ¯ä¸€é …[riã€ci]ä»£è¡¨å°‡ç¬¬riåˆ—ä»¥åŠç¬¬ciè¡Œæ‰€æœ‰å…ƒç´ +1
+# æœ€å¾ŒreturnçŸ©é™£ä¸­æœ‰å¤šå°‘odd
+# By simulation, time: O(q*(m+n)+m*n), space: O(m*n), å…¶ä¸­q = len(indices)
+# æ¨¡æ“¬é¡Œç›®åšçš„äº‹æƒ…, èµ°è¨ªindiceså°‡æŒ‡å®šçš„è¡Œåˆ—ä¸€å€‹å€‹+1, æœ€å¾Œå†æ•¸çŸ©é™£ä¸­çš„oddæ•¸
 class Solution:
     def oddCells(self, m: int, n: int, indices: List[List[int]]) -> int:
         res = 0
         arr = [[0 for i in range(n)] for j in range(m)]
-        # ¨«³Xindices©Ò¦³¤¸¯À
-        # q*(m+n)ªº³¡¤À, °O¦í½ÆÂø«×ªº+¬O¥Nªí¨ú¸û¤jªº¨º­Ó
+        # èµ°è¨ªindicesæ‰€æœ‰å…ƒç´ 
+        # q*(m+n)çš„éƒ¨åˆ†, è¨˜ä½è¤‡é›œåº¦çš„+æ˜¯ä»£è¡¨å–è¼ƒå¤§çš„é‚£å€‹
         for [r, c] in indices:
-            # r¥Nªí²Är¦Cªºn­Ó¤¸¯À­n+1
+            # rä»£è¡¨ç¬¬råˆ—çš„nå€‹å…ƒç´ è¦+1
             for i in range(n):
                 arr[r][i] += 1
-            # c¥Nªí²Äc¦æªºm­Ó¤¸¯À­n+1
+            # cä»£è¡¨ç¬¬cè¡Œçš„må€‹å…ƒç´ è¦+1
             for i in range(m):
                 arr[i][c] += 1
-        # ¼Æµ²ªG
-        # m*nªº³¡¤À
+        # æ•¸çµæœ
+        # m*nçš„éƒ¨åˆ†
         for i in range(m):
             for j in range(n):
                 if arr[i][j]%2:
@@ -34,40 +33,3 @@ class Solution:
         
 # @lc code=end 
 
-=======
-#
-# @lc app=leetcode id=1252 lang=python3
-#
-# [1252] Cells with Odd Values in a Matrix
-#
-
-# @lc code=start
-# µ¹mxnªºªì©l¤Æ¯x°}©M¤@°}¦Cindices, indices¤º¨C¤@¶µ[ri¡Bci]¥Nªí±N²Äri¦C¥H¤Î²Äci¦æ©Ò¦³¤¸¯À+1
-# ³Ì«áreturn¯x°}¤¤¦³¦h¤Öodd
-# By simulation, time: O(q*(m+n)+m*n), space: O(m*n), ¨ä¤¤q = len(indices)
-# ¼ÒÀÀÃD¥Ø°µªº¨Æ±¡, ¨«³Xindices±N«ü©wªº¦æ¦C¤@­Ó­Ó+1, ³Ì«á¦A¼Æ¯x°}¤¤ªºodd¼Æ
-class Solution:
-    def oddCells(self, m: int, n: int, indices: List[List[int]]) -> int:
-        res = 0
-        arr = [[0 for i in range(n)] for j in range(m)]
-        # ¨«³Xindices©Ò¦³¤¸¯À
-        # q*(m+n)ªº³¡¤À, °O¦í½ÆÂø«×ªº+¬O¥Nªí¨ú¸û¤jªº¨º­Ó
-        for [r, c] in indices:
-            # r¥Nªí²Är¦Cªºn­Ó¤¸¯À­n+1
-            for i in range(n):
-                arr[r][i] += 1
-            # c¥Nªí²Äc¦æªºm­Ó¤¸¯À­n+1
-            for i in range(m):
-                arr[i][c] += 1
-        # ¼Æµ²ªG
-        # m*nªº³¡¤À
-        for i in range(m):
-            for j in range(n):
-                if arr[i][j]%2:
-                    res += 1
-        return res
-    
-        
-# @lc code=end 
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

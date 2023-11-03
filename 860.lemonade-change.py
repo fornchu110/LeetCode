@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=860 lang=python3
 #
@@ -8,7 +7,7 @@
 # @lc code=start
 
 # By Greedy, time: O(n), space: O(1)
-# ¥u¥Î¨â­ÓÅÜ¶q¦sfive©Mtenªº°µªk, greedy¦b­n§ä15®ÉÀu¥ı¿ï¾Ü§ä10+5¦Ó«D5*3
+# åªç”¨å…©å€‹è®Šé‡å­˜fiveå’Œtençš„åšæ³•, greedyåœ¨è¦æ‰¾15æ™‚å„ªå…ˆé¸æ“‡æ‰¾10+5è€Œé5*3
 class Solution:
     def lemonadeChange(self, bills: List[int]) -> bool:
         five = ten = 0
@@ -32,8 +31,8 @@ class Solution:
         return True
 
 # By Greedy hashtable, time: O(n), space: O(1)
-# Á`¤§´N¬O¹J¨ì5¤¸ª½±µ¦¬, ¹J¨ì10¤¸¬İ¦³¨S¦³5¯à§ä, ¹J¨ì20¬İ¦³¨S¦³15¯à§ä
-# ¦ı¹ê»Ú¤W¤£¸Ó¥Îhasttable¦s5¤¸©M10¤¸¼Æ¶q, 20¤]¤£¥Î¦s, ª½±µ¨â­ÓÅÜ¶q§Y¥i
+# ç¸½ä¹‹å°±æ˜¯é‡åˆ°5å…ƒç›´æ¥æ”¶, é‡åˆ°10å…ƒçœ‹æœ‰æ²’æœ‰5èƒ½æ‰¾, é‡åˆ°20çœ‹æœ‰æ²’æœ‰15èƒ½æ‰¾
+# ä½†å¯¦éš›ä¸Šä¸è©²ç”¨hasttableå­˜5å…ƒå’Œ10å…ƒæ•¸é‡, 20ä¹Ÿä¸ç”¨å­˜, ç›´æ¥å…©å€‹è®Šé‡å³å¯
 # class Solution:
 #     def lemonadeChange(self, bills: List[int]) -> bool:
 #         change = dict([(5, 0), (10, 0), (20, 0)])
@@ -62,68 +61,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=860 lang=python3
-#
-# [860] Lemonade Change
-#
-
-# @lc code=start
-
-# By Greedy, time: O(n), space: O(1)
-# ¥u¥Î¨â­ÓÅÜ¶q¦sfive©Mtenªº°µªk, greedy¦b­n§ä15®ÉÀu¥ı¿ï¾Ü§ä10+5¦Ó«D5*3
-class Solution:
-    def lemonadeChange(self, bills: List[int]) -> bool:
-        five = ten = 0
-        for i in range(len(bills)):
-            if bills[i]==5:
-                five += 1
-            elif bills[i]==10:
-                if five>=1:
-                    five -= 1
-                    ten += 1
-                else:
-                    return False
-            elif bills[i]==20:
-                if ten>=1 and five>=1:
-                    five -= 1
-                    ten -= 1
-                elif five>=3:
-                    five -= 3
-                else:
-                    return False
-        return True
-
-# By Greedy hashtable, time: O(n), space: O(1)
-# Á`¤§´N¬O¹J¨ì5¤¸ª½±µ¦¬, ¹J¨ì10¤¸¬İ¦³¨S¦³5¯à§ä, ¹J¨ì20¬İ¦³¨S¦³15¯à§ä
-# ¦ı¹ê»Ú¤W¤£¸Ó¥Îhasttable¦s5¤¸©M10¤¸¼Æ¶q, 20¤]¤£¥Î¦s, ª½±µ¨â­ÓÅÜ¶q§Y¥i
-# class Solution:
-#     def lemonadeChange(self, bills: List[int]) -> bool:
-#         change = dict([(5, 0), (10, 0), (20, 0)])
-#         for i in range(len(bills)):
-#             if bills[i]==5:
-#                 change[5] += 1
-#             elif bills[i]==10:
-#                 if change[5]>=1:
-#                     change[5] -= 1
-#                     change[10] += 1
-#                 else:
-#                     return False
-#             elif bills[i]==20:
-#                 if change[10]>=1 and change[5]>=1:
-#                     change[5] -= 1
-#                     change[10] -= 1
-#                     change[20] += 1
-#                 elif change[5]>=3:
-#                     change[5] -= 3
-#                     change[20] += 1
-#                 else:
-#                     return False
-#         return True
-
-
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

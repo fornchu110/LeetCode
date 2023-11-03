@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1302 lang=python3
 #
@@ -14,88 +13,37 @@
 #         self.right = right
 
 # By recursive and nonlocal, time: O(n), space: O(n)
-# ­n±Nleaveªºval¥[Á`«áreturn, ¨Ï¥ÎDFSªº¤è¦¡»¼°j¨«³X¾ã­Ótree
-# ÃøÂI¦b©ó¦p¦ó¶Ç»¼¥[Á`«áªº­Ères¥H¤Î¨«³X
+# è¦å°‡leaveçš„valåŠ ç¸½å¾Œreturn, ä½¿ç”¨DFSçš„æ–¹å¼éè¿´èµ°è¨ªæ•´å€‹tree
+# é›£é»åœ¨æ–¼å¦‚ä½•å‚³éåŠ ç¸½å¾Œçš„å€¼resä»¥åŠèµ°è¨ª
 class Solution:
     def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
-        # ¨Ï¥Î¨ìmaxLeval§PÂ_leave, res¥Î¨Ó°O¿ıleaveÁ`©M
+        # ä½¿ç”¨åˆ°maxLevalåˆ¤æ–·leave, resç”¨ä¾†è¨˜éŒ„leaveç¸½å’Œ
         maxLevel, res = -1, 0
         def dfs(node: Optional[TreeNode], level: int) -> None:
-            # ²×¤î±ø¥ó
-            # °O¦ínode is None¤ñnot Node¼gªk§ó¦n, ¤£µM·|¦h§PÂ_ªÅªº¦r¦ê¡B¦Cªí¡B¦r¨å¶i¨Ó
+            # çµ‚æ­¢æ¢ä»¶
+            # è¨˜ä½node is Noneæ¯”not Nodeå¯«æ³•æ›´å¥½, ä¸ç„¶æœƒå¤šåˆ¤æ–·ç©ºçš„å­—ä¸²ã€åˆ—è¡¨ã€å­—å…¸é€²ä¾†
             if node is None:
                 return
-            # ·í¨ç¦¡¤º­×§ï¤W¤@¼h¨ç¦¡ªºlocal variable¬O¥Înonlocal
-            # ³oÃä´N¬O¦]¬°¨Ï¥Î¨ìdef deepestLeavesSum«Å§iªºmaxLevel©Mres
-            # ­Y¬Oglobal variable(³Ì¥~¼h)¤£¥i¦A¥Înonlocal, ¦h¦¹¤@Á|
-            # ¨ç¦¡¤º­×§ïglobal variable¤~¥Îglobal, Á×§K«Å§i¨Ã¨Ï¥Î¨ì¤@­Ó·sªºlocal variable
-            # global«Å§i¬OµL½×«e«áªº, nonlocal«h§_
-            # ª`·N³æ¯Â¨Ï¥ÎÀ³¸Ó¬O¤£¥ÎÃB¥~«Å§iªº
+            # ç•¶å‡½å¼å…§ä¿®æ”¹ä¸Šä¸€å±¤å‡½å¼çš„local variableæ˜¯ç”¨nonlocal
+            # é€™é‚Šå°±æ˜¯å› ç‚ºä½¿ç”¨åˆ°def deepestLeavesSumå®£å‘Šçš„maxLevelå’Œres
+            # è‹¥æ˜¯global variable(æœ€å¤–å±¤)ä¸å¯å†ç”¨nonlocal, å¤šæ­¤ä¸€èˆ‰
+            # å‡½å¼å…§ä¿®æ”¹global variableæ‰ç”¨global, é¿å…å®£å‘Šä¸¦ä½¿ç”¨åˆ°ä¸€å€‹æ–°çš„local variable
+            # globalå®£å‘Šæ˜¯ç„¡è«–å‰å¾Œçš„, nonlocalå‰‡å¦
+            # æ³¨æ„å–®ç´”ä½¿ç”¨æ‡‰è©²æ˜¯ä¸ç”¨é¡å¤–å®£å‘Šçš„
             nonlocal maxLevel, res
-            # ¦pªG·í¤Uªº¼h¼Æ¤ñ¤§«e¬ö¿ıªº§ó²`, ¥Nªí¤§«eªºnode³£¤£·|¬Oleave
-            # ­«·sassign maxLevel©Mres
+            # å¦‚æœç•¶ä¸‹çš„å±¤æ•¸æ¯”ä¹‹å‰ç´€éŒ„çš„æ›´æ·±, ä»£è¡¨ä¹‹å‰çš„nodeéƒ½ä¸æœƒæ˜¯leave
+            # é‡æ–°assign maxLevelå’Œres
             if level>maxLevel:
                 maxLevel, res = level, node.val
-            # ¼h¼Æ³Ì²`ªºnode¤@©w¬Oleave, ©Ò¥H¥ı§â³Ì²`ªº§ä¥X¨Ó¥[Á`
+            # å±¤æ•¸æœ€æ·±çš„nodeä¸€å®šæ˜¯leave, æ‰€ä»¥å…ˆæŠŠæœ€æ·±çš„æ‰¾å‡ºä¾†åŠ ç¸½
             elif level==maxLevel:
                 res += node.val
-            # ³o¼h¨«³X§¹, ©¹¤U¤@¼h
+            # é€™å±¤èµ°è¨ªå®Œ, å¾€ä¸‹ä¸€å±¤
             dfs(node.left, level+1)
             dfs(node.right, level+1)
-        # ±N¼h¼Æ·í§@°Ñ¼Æ¶Ç»¼, ¤@Ãä¨«³X¤@Ãäª¾¹D¨ì²Ä´X¼h
+        # å°‡å±¤æ•¸ç•¶ä½œåƒæ•¸å‚³é, ä¸€é‚Šèµ°è¨ªä¸€é‚ŠçŸ¥é“åˆ°ç¬¬å¹¾å±¤
         dfs(root, 0)
         return res
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1302 lang=python3
-#
-# [1302] Deepest Leaves Sum
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By recursive and nonlocal, time: O(n), space: O(n)
-# ­n±Nleaveªºval¥[Á`«áreturn, ¨Ï¥ÎDFSªº¤è¦¡»¼°j¨«³X¾ã­Ótree
-# ÃøÂI¦b©ó¦p¦ó¶Ç»¼¥[Á`«áªº­Ères¥H¤Î¨«³X
-class Solution:
-    def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
-        # ¨Ï¥Î¨ìmaxLeval§PÂ_leave, res¥Î¨Ó°O¿ıleaveÁ`©M
-        maxLevel, res = -1, 0
-        def dfs(node: Optional[TreeNode], level: int) -> None:
-            # ²×¤î±ø¥ó
-            # °O¦ínode is None¤ñnot Node¼gªk§ó¦n, ¤£µM·|¦h§PÂ_ªÅªº¦r¦ê¡B¦Cªí¡B¦r¨å¶i¨Ó
-            if node is None:
-                return
-            # ·í¨ç¦¡¤º­×§ï¤W¤@¼h¨ç¦¡ªºlocal variable¬O¥Înonlocal
-            # ³oÃä´N¬O¦]¬°¨Ï¥Î¨ìdef deepestLeavesSum«Å§iªºmaxLevel©Mres
-            # ­Y¬Oglobal variable(³Ì¥~¼h)¤£¥i¦A¥Înonlocal, ¦h¦¹¤@Á|
-            # ¨ç¦¡¤º­×§ïglobal variable¤~¥Îglobal, Á×§K«Å§i¨Ã¨Ï¥Î¨ì¤@­Ó·sªºlocal variable
-            # global«Å§i¬OµL½×«e«áªº, nonlocal«h§_
-            # ª`·N³æ¯Â¨Ï¥ÎÀ³¸Ó¬O¤£¥ÎÃB¥~«Å§iªº
-            nonlocal maxLevel, res
-            # ¦pªG·í¤Uªº¼h¼Æ¤ñ¤§«e¬ö¿ıªº§ó²`, ¥Nªí¤§«eªºnode³£¤£·|¬Oleave
-            # ­«·sassign maxLevel©Mres
-            if level>maxLevel:
-                maxLevel, res = level, node.val
-            # ¼h¼Æ³Ì²`ªºnode¤@©w¬Oleave, ©Ò¥H¥ı§â³Ì²`ªº§ä¥X¨Ó¥[Á`
-            elif level==maxLevel:
-                res += node.val
-            # ³o¼h¨«³X§¹, ©¹¤U¤@¼h
-            dfs(node.left, level+1)
-            dfs(node.right, level+1)
-        # ±N¼h¼Æ·í§@°Ñ¼Æ¶Ç»¼, ¤@Ãä¨«³X¤@Ãäª¾¹D¨ì²Ä´X¼h
-        dfs(root, 0)
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

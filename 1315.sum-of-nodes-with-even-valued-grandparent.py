@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1315 lang=python3
 #
@@ -13,28 +12,28 @@
 #         self.left = left
 #         self.right = right
 # By dfs, time: O(n), space: O(n)
-# ±N¯ª¤÷ªºval¬°°¸¼Æ¤§node.val¥[Á`return
-# ¦]¦¹­n°O¿ı¯ª¤÷©Mparentªºvalue°µ°Ñ¼Æ¶Ç»¼
+# å°‡ç¥–çˆ¶çš„valç‚ºå¶æ•¸ä¹‹node.valåŠ ç¸½return
+# å› æ­¤è¦è¨˜éŒ„ç¥–çˆ¶å’Œparentçš„valueåšåƒæ•¸å‚³é
 class Solution:
     def sumEvenGrandparent(self, root: TreeNode) -> int:
         res = 0
-        # ¯ª¤÷©Mparentªºval³£­n·í°Ñ¼Æ¶Ç»¼¤~¯à§PÂ_
+        # ç¥–çˆ¶å’Œparentçš„valéƒ½è¦ç•¶åƒæ•¸å‚³éæ‰èƒ½åˆ¤æ–·
         def dfs(gp_val, p_val, node):
             if not node:
                 return
-            # §PÂ_¯ª¤÷.val¬°°¸¼Æ®É, ±N¦Û¨­val¥[Á`
+            # åˆ¤æ–·ç¥–çˆ¶.valç‚ºå¶æ•¸æ™‚, å°‡è‡ªèº«valåŠ ç¸½
             if gp_val&1 == 0:
                 nonlocal res
                 res += node.val
-            # ©¹¤U»¼Ïw, ¦¹®É¦Û¨­ªºparentÅÜ¦¨childªº¯ª¤÷, ¦Û¨­ÅÜ¦¨childªºparent
+            # å¾€ä¸‹éæ´„, æ­¤æ™‚è‡ªèº«çš„parentè®Šæˆchildçš„ç¥–çˆ¶, è‡ªèº«è®Šæˆchildçš„parent
             dfs(p_val, node.val, node.left)
             dfs(p_val, node.val, node.right)
-        # root¨S¦³parent©M¯ª¤÷, ªì©l¤Æ¦¨-1¤£¼vÅT§PÂ_
+        # rootæ²’æœ‰parentå’Œç¥–çˆ¶, åˆå§‹åŒ–æˆ-1ä¸å½±éŸ¿åˆ¤æ–·
         dfs(-1, -1, root)
         return res
 
 # By bfs, time: O(n), space: O(n)
-# bfsªº°µªk­nºûÅ@queue¤~¯àª¾¹D¥Ø«elevel¬O§_¨«³X§¹²¦
+# bfsçš„åšæ³•è¦ç¶­è­·queueæ‰èƒ½çŸ¥é“ç›®å‰levelæ˜¯å¦èµ°è¨ªå®Œç•¢
 # class Solution:
 #     def sumEvenGrandparent(self, root: TreeNode) -> int:
 #         q = collections.deque([root])
@@ -60,66 +59,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1315 lang=python3
-#
-# [1315] Sum of Nodes with Even-Valued Grandparent
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-# By dfs, time: O(n), space: O(n)
-# ±N¯ª¤÷ªºval¬°°¸¼Æ¤§node.val¥[Á`return
-# ¦]¦¹­n°O¿ı¯ª¤÷©Mparentªºvalue°µ°Ñ¼Æ¶Ç»¼
-class Solution:
-    def sumEvenGrandparent(self, root: TreeNode) -> int:
-        res = 0
-        # ¯ª¤÷©Mparentªºval³£­n·í°Ñ¼Æ¶Ç»¼¤~¯à§PÂ_
-        def dfs(gp_val, p_val, node):
-            if not node:
-                return
-            # §PÂ_¯ª¤÷.val¬°°¸¼Æ®É, ±N¦Û¨­val¥[Á`
-            if gp_val&1 == 0:
-                nonlocal res
-                res += node.val
-            # ©¹¤U»¼Ïw, ¦¹®É¦Û¨­ªºparentÅÜ¦¨childªº¯ª¤÷, ¦Û¨­ÅÜ¦¨childªºparent
-            dfs(p_val, node.val, node.left)
-            dfs(p_val, node.val, node.right)
-        # root¨S¦³parent©M¯ª¤÷, ªì©l¤Æ¦¨-1¤£¼vÅT§PÂ_
-        dfs(-1, -1, root)
-        return res
-
-# By bfs, time: O(n), space: O(n)
-# bfsªº°µªk­nºûÅ@queue¤~¯àª¾¹D¥Ø«elevel¬O§_¨«³X§¹²¦
-# class Solution:
-#     def sumEvenGrandparent(self, root: TreeNode) -> int:
-#         q = collections.deque([root])
-#         res = 0
-#         while len(q) > 0:
-#             node = q.popleft()
-#             if node.val&1 == 0:
-#                 if node.left:
-#                     if node.left.left:
-#                         res += node.left.left.val
-#                     if node.left.right:
-#                         res += node.left.right.val
-#                 if node.right:
-#                     if node.right.left:
-#                         res += node.right.left.val
-#                     if node.right.right:
-#                         res += node.right.right.val
-#             if node.left:
-#                 q.append(node.left)
-#             if node.right:
-#                 q.append(node.right)
-#         return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

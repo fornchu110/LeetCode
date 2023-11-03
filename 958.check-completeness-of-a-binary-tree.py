@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=958 lang=python3
 #
@@ -6,7 +5,7 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ótree, ­Ytree¬Ocomplete tree return True, ¤£¬Ocomplete tree return False
+# çµ¦ä¸€å€‹tree, è‹¥treeæ˜¯complete tree return True, ä¸æ˜¯complete tree return False
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -16,86 +15,35 @@
 #         self.right = right
 
 # By BFS and node index, time: O(n), space: O(n)
-# perfect tree¥Nªí¨C­Ónode¥u­n¦³child¥²©w·|¦³¨â­Ó, ¹³¬O¤@­Ó¤T¨¤§Î
-# full tree¥Nªí°£¤Fleaf¥~©Ò¦³node³£·|¦³¨â­Óchild, ¦ı¥i¯à³Ì«á¤@¼h¤£¾a¥ª
-# complete tree«h¥Nªí³Ì«á¤@­Ólevel¤£¤@©w·|¥şº¡, «Dleaf¤]¥i¯à¥u¦³1­Óchild, ¦ı³Ì«á¤@¼h¥ş³¡¾a¥ª
+# perfect treeä»£è¡¨æ¯å€‹nodeåªè¦æœ‰childå¿…å®šæœƒæœ‰å…©å€‹, åƒæ˜¯ä¸€å€‹ä¸‰è§’å½¢
+# full treeä»£è¡¨é™¤äº†leafå¤–æ‰€æœ‰nodeéƒ½æœƒæœ‰å…©å€‹child, ä½†å¯èƒ½æœ€å¾Œä¸€å±¤ä¸é å·¦
+# complete treeå‰‡ä»£è¡¨æœ€å¾Œä¸€å€‹levelä¸ä¸€å®šæœƒå…¨æ»¿, éleafä¹Ÿå¯èƒ½åªæœ‰1å€‹child, ä½†æœ€å¾Œä¸€å±¤å…¨éƒ¨é å·¦
 # perfect = full and complete
-# §PÂ_complete tree¤è¦¡´N¬O¤@¼h¤@¼hºâindex, ·íindex¤£µ¥¦P¥Ø«etree¤¤ªºnode¼Æ®É¥Nªí«Dcomplete
+# åˆ¤æ–·complete treeæ–¹å¼å°±æ˜¯ä¸€å±¤ä¸€å±¤ç®—index, ç•¶indexä¸ç­‰åŒç›®å‰treeä¸­çš„nodeæ•¸æ™‚ä»£è¡¨écomplete
 class Solution:
     def isCompleteTree(self, root: Optional[TreeNode]) -> bool:
-        # rootªºindex¬O1
+        # rootçš„indexæ˜¯1
         idx = 1
         cnt = 0
         queue = collections.deque()
-        # ±Nroot©M¨äindex¥]¦¨¤@­Ó¤¸¯À¥[¤Jqueue
+        # å°‡rootå’Œå…¶indexåŒ…æˆä¸€å€‹å…ƒç´ åŠ å…¥queue
         queue.append((root, idx))
-        # BFS¥Hlevel¨«³X, ¥u­nÁÙ¦³node¦bqueue¥Nªí©|¥¼¨«³X§¹
+        # BFSä»¥levelèµ°è¨ª, åªè¦é‚„æœ‰nodeåœ¨queueä»£è¡¨å°šæœªèµ°è¨ªå®Œ
         while queue:
             (node, idx) = queue.popleft()
-            # pop¤@­Ónodeªº¦P®É¥Nªí¨«¨ì¤@­Ónode, cnt¼W¥[
+            # popä¸€å€‹nodeçš„åŒæ™‚ä»£è¡¨èµ°åˆ°ä¸€å€‹node, cntå¢åŠ 
             cnt += 1
-            # ·ínode¼Æ¤£µ¥¦Pindex¥Nªí«Dcomplete
+            # ç•¶nodeæ•¸ä¸ç­‰åŒindexä»£è¡¨écomplete
             if cnt!=idx:
                 return False
-            # Á×§Knode¬°None
+            # é¿å…nodeç‚ºNone
             if node.left:
-                # ¥ª¤lªºindex¬Oparent idx*2
+                # å·¦å­çš„indexæ˜¯parent idx*2
                 queue.append((node.left, 2*idx))
             if node.right:
-                # ¥k¤lªºindex¬Oparent idx*2+1
+                # å³å­çš„indexæ˜¯parent idx*2+1
                 queue.append((node.right, 2*idx+1))
         return True
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=958 lang=python3
-#
-# [958] Check Completeness of a Binary Tree
-#
-
-# @lc code=start
-# µ¹¤@­Ótree, ­Ytree¬Ocomplete tree return True, ¤£¬Ocomplete tree return False
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By BFS and node index, time: O(n), space: O(n)
-# perfect tree¥Nªí¨C­Ónode¥u­n¦³child¥²©w·|¦³¨â­Ó, ¹³¬O¤@­Ó¤T¨¤§Î
-# full tree¥Nªí°£¤Fleaf¥~©Ò¦³node³£·|¦³¨â­Óchild, ¦ı¥i¯à³Ì«á¤@¼h¤£¾a¥ª
-# complete tree«h¥Nªí³Ì«á¤@­Ólevel¤£¤@©w·|¥şº¡, «Dleaf¤]¥i¯à¥u¦³1­Óchild, ¦ı³Ì«á¤@¼h¥ş³¡¾a¥ª
-# perfect = full and complete
-# §PÂ_complete tree¤è¦¡´N¬O¤@¼h¤@¼hºâindex, ·íindex¤£µ¥¦P¥Ø«etree¤¤ªºnode¼Æ®É¥Nªí«Dcomplete
-class Solution:
-    def isCompleteTree(self, root: Optional[TreeNode]) -> bool:
-        # rootªºindex¬O1
-        idx = 1
-        cnt = 0
-        queue = collections.deque()
-        # ±Nroot©M¨äindex¥]¦¨¤@­Ó¤¸¯À¥[¤Jqueue
-        queue.append((root, idx))
-        # BFS¥Hlevel¨«³X, ¥u­nÁÙ¦³node¦bqueue¥Nªí©|¥¼¨«³X§¹
-        while queue:
-            (node, idx) = queue.popleft()
-            # pop¤@­Ónodeªº¦P®É¥Nªí¨«¨ì¤@­Ónode, cnt¼W¥[
-            cnt += 1
-            # ·ínode¼Æ¤£µ¥¦Pindex¥Nªí«Dcomplete
-            if cnt!=idx:
-                return False
-            # Á×§Knode¬°None
-            if node.left:
-                # ¥ª¤lªºindex¬Oparent idx*2
-                queue.append((node.left, 2*idx))
-            if node.right:
-                # ¥k¤lªºindex¬Oparent idx*2+1
-                queue.append((node.right, 2*idx+1))
-        return True
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

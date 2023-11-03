@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1114 lang=python3
 #
@@ -8,14 +7,14 @@
 # @lc code=start
 
 #By lock
-#¤T­ÓthreadÄvª§, §Æ±æµL½×³W©w½Ö°õ¦æ­ş­Ó³£­nfirst->second->third
-#³oÃDÄİ©órace condition, ¤j®aª§·m¶i¤J¦Û¤vªºprint(critical section)
-#Åı¤T­ÓfunctionÅÜsynchronization(¦P¨B«ü¤j®a­n·Ó¶¶§Ç¤@­Ó¤@­Ó§¹¦¨, ¦Ó«D¦P®É°µ¦Û¤vªº)
+#ä¸‰å€‹threadç«¶çˆ­, å¸Œæœ›ç„¡è«–è¦å®šèª°åŸ·è¡Œå“ªå€‹éƒ½è¦first->second->third
+#é€™é¡Œå±¬æ–¼race condition, å¤§å®¶çˆ­æ¶é€²å…¥è‡ªå·±çš„print(critical section)
+#è®“ä¸‰å€‹functionè®Šsynchronization(åŒæ­¥æŒ‡å¤§å®¶è¦ç…§é †åºä¸€å€‹ä¸€å€‹å®Œæˆ, è€ŒéåŒæ™‚åšè‡ªå·±çš„)
 from threading import Lock
 
 class Foo:
     def __init__(self):
-        #¤@¶}©l³]¤F¨â­Ólock
+        #ä¸€é–‹å§‹è¨­äº†å…©å€‹lock
         self.firstJobDone = Lock()
         self.secondJobDone = Lock()
         self.firstJobDone.acquire()
@@ -26,78 +25,26 @@ class Foo:
         printFirst()
         # Notify the thread that is waiting for the first job to be done.
         self.firstJobDone.release()
-        #¦]¹w³]firstJobDone¤WÂê, ¥u¦³first§¹¦¨ª½¦æ¨ìrelease¤~§âlock¸ÑÂê
+        #å› é è¨­firstJobDoneä¸Šé–, åªæœ‰firstå®Œæˆç›´è¡Œåˆ°releaseæ‰æŠŠlockè§£é–
 
     def second(self, printSecond: 'Callable[[], None]') -> None:
         # Wait for the first job to be done
-        #with+lock¬Opythonªºlock¨Ï¥Î¤èªk
-        #·ítry¨ìfirstJonDone¸ÑÂê¤F, ¥Nªífirst°õ¦æ§¹²¦, ¤~¯à°õ¦æsecond¤U­±ªºprint
+        #with+lockæ˜¯pythonçš„lockä½¿ç”¨æ–¹æ³•
+        #ç•¶tryåˆ°firstJonDoneè§£é–äº†, ä»£è¡¨firståŸ·è¡Œå®Œç•¢, æ‰èƒ½åŸ·è¡Œsecondä¸‹é¢çš„print
         with self.firstJobDone: 
             # printSecond() outputs "second".
             printSecond()
             # Notify the thread that is waiting for the second job to be done.
-            #second§¹¦¨, ±NsecondJobDone¸ÑÂê
+            #secondå®Œæˆ, å°‡secondJobDoneè§£é–
             self.secondJobDone.release()
 
     def third(self, printThird: 'Callable[[], None]') -> None:
 
         # Wait for the second job to be done.
-        #»Psecond¦a¤è¦P²z, second°µ§¹¤F¤~¯à°µthirdªºprint
+        #èˆ‡secondåœ°æ–¹åŒç†, secondåšå®Œäº†æ‰èƒ½åšthirdçš„print
         with self.secondJobDone:
             # printThird() outputs "third".
             printThird()
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1114 lang=python3
-#
-# [1114] Print in Order
-#
-
-# @lc code=start
-
-#By lock
-#¤T­ÓthreadÄvª§, §Æ±æµL½×³W©w½Ö°õ¦æ­ş­Ó³£­nfirst->second->third
-#³oÃDÄİ©órace condition, ¤j®aª§·m¶i¤J¦Û¤vªºprint(critical section)
-#Åı¤T­ÓfunctionÅÜsynchronization(¦P¨B«ü¤j®a­n·Ó¶¶§Ç¤@­Ó¤@­Ó§¹¦¨, ¦Ó«D¦P®É°µ¦Û¤vªº)
-from threading import Lock
-
-class Foo:
-    def __init__(self):
-        #¤@¶}©l³]¤F¨â­Ólock
-        self.firstJobDone = Lock()
-        self.secondJobDone = Lock()
-        self.firstJobDone.acquire()
-        self.secondJobDone.acquire()
-
-    def first(self, printFirst: 'Callable[[], None]') -> None:
-        # printFirst() outputs "first".
-        printFirst()
-        # Notify the thread that is waiting for the first job to be done.
-        self.firstJobDone.release()
-        #¦]¹w³]firstJobDone¤WÂê, ¥u¦³first§¹¦¨ª½¦æ¨ìrelease¤~§âlock¸ÑÂê
-
-    def second(self, printSecond: 'Callable[[], None]') -> None:
-        # Wait for the first job to be done
-        #with+lock¬Opythonªºlock¨Ï¥Î¤èªk
-        #·ítry¨ìfirstJonDone¸ÑÂê¤F, ¥Nªífirst°õ¦æ§¹²¦, ¤~¯à°õ¦æsecond¤U­±ªºprint
-        with self.firstJobDone: 
-            # printSecond() outputs "second".
-            printSecond()
-            # Notify the thread that is waiting for the second job to be done.
-            #second§¹¦¨, ±NsecondJobDone¸ÑÂê
-            self.secondJobDone.release()
-
-    def third(self, printThird: 'Callable[[], None]') -> None:
-
-        # Wait for the second job to be done.
-        #»Psecond¦a¤è¦P²z, second°µ§¹¤F¤~¯à°µthirdªºprint
-        with self.secondJobDone:
-            # printThird() outputs "third".
-            printThird()
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=905 lang=python3
 #
@@ -10,24 +9,24 @@
 # By double pointer
 class Solution:
     def sortArrayByParity(self, nums: List[int]) -> List[int]:
-        # «Ø¤@­Óresult, ¥ª¥k¦U¤@­Óindex
+        # å»ºä¸€å€‹result, å·¦å³å„ä¸€å€‹index
         idx1 = 0
         idx2 = len(nums)-1
         res = [0]*len(nums)
-        # ±Nnums±qÀY¬Ý¨ì§À
+        # å°‡numså¾žé ­çœ‹åˆ°å°¾
         for i in range(len(nums)):
-            # ¦pªG¬Ý¨ì°¸¼Æ, ±q¥ªÃä©ñ
+            # å¦‚æžœçœ‹åˆ°å¶æ•¸, å¾žå·¦é‚Šæ”¾
             if(nums[i]%2==0):
                 res[idx1] = nums[i]
                 idx1 += 1
-            # ¦pªG¬Ý¨ì©_¼Æ, ±q¥kÃä©ñ
+            # å¦‚æžœçœ‹åˆ°å¥‡æ•¸, å¾žå³é‚Šæ”¾
             else:
                 res[idx2] = nums[i]
                 idx2 -= 1
-        # ±qÀY¬Ý§¹¥Bres¤]©ñ§¹
+        # å¾žé ­çœ‹å®Œä¸”resä¹Ÿæ”¾å®Œ
         return res
 
-# ­ì¦a¥æ´«
+# åŽŸåœ°äº¤æ›
 # class Solution:
 #     def sortArrayByParity(self, nums: List[int]) -> List[int]:
 #         left, right = 0, len(nums) - 1
@@ -44,50 +43,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=905 lang=python3
-#
-# [905] Sort Array By Parity
-#
-
-# @lc code=start
-
-# By double pointer
-class Solution:
-    def sortArrayByParity(self, nums: List[int]) -> List[int]:
-        # «Ø¤@­Óresult, ¥ª¥k¦U¤@­Óindex
-        idx1 = 0
-        idx2 = len(nums)-1
-        res = [0]*len(nums)
-        # ±Nnums±qÀY¬Ý¨ì§À
-        for i in range(len(nums)):
-            # ¦pªG¬Ý¨ì°¸¼Æ, ±q¥ªÃä©ñ
-            if(nums[i]%2==0):
-                res[idx1] = nums[i]
-                idx1 += 1
-            # ¦pªG¬Ý¨ì©_¼Æ, ±q¥kÃä©ñ
-            else:
-                res[idx2] = nums[i]
-                idx2 -= 1
-        # ±qÀY¬Ý§¹¥Bres¤]©ñ§¹
-        return res
-
-# ­ì¦a¥æ´«
-# class Solution:
-#     def sortArrayByParity(self, nums: List[int]) -> List[int]:
-#         left, right = 0, len(nums) - 1
-#         while left < right:
-#             while left < right and nums[left] % 2 == 0:
-#                 left += 1
-#             while left < right and nums[right] % 2 == 1:
-#                 right -= 1
-#             if left < right:
-#                 nums[left], nums[right] = nums[right], nums[left]
-#                 left += 1
-#                 right -= 1
-#         return nums
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

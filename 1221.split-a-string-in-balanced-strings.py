@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1221 lang=python3
 #
@@ -7,13 +6,13 @@
 
 # @lc code=start
 # By pair, time: O(n), space: O(1)
-# µ¹¦r¦ês, °İ¥i¥H¤À¦¨´X­ÓR©ML¼Æ¶q¬Û¦Pªº¤l¦r¦ê
+# çµ¦å­—ä¸²s, å•å¯ä»¥åˆ†æˆå¹¾å€‹Rå’ŒLæ•¸é‡ç›¸åŒçš„å­å­—ä¸²
 class Solution:
     def balancedStringSplit(self, s: str) -> int:
         res = 0
-        # ¬ö¿ı¦³¦h¤ÖR
+        # ç´€éŒ„æœ‰å¤šå°‘R
         cnt = 0
-        # ±qÀY¬İ¨ì§À, ¦³R+1¦³L-1, ·í0®É¥NªíR©ML¼Æ¶q¬Û¦P
+        # å¾é ­çœ‹åˆ°å°¾, æœ‰R+1æœ‰L-1, ç•¶0æ™‚ä»£è¡¨Rå’ŒLæ•¸é‡ç›¸åŒ
         for i in s:
             if i=='R':
                 cnt += 1
@@ -25,31 +24,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1221 lang=python3
-#
-# [1221] Split a String in Balanced Strings
-#
-
-# @lc code=start
-# By pair, time: O(n), space: O(1)
-# µ¹¦r¦ês, °İ¥i¥H¤À¦¨´X­ÓR©ML¼Æ¶q¬Û¦Pªº¤l¦r¦ê
-class Solution:
-    def balancedStringSplit(self, s: str) -> int:
-        res = 0
-        # ¬ö¿ı¦³¦h¤ÖR
-        cnt = 0
-        # ±qÀY¬İ¨ì§À, ¦³R+1¦³L-1, ·í0®É¥NªíR©ML¼Æ¶q¬Û¦P
-        for i in s:
-            if i=='R':
-                cnt += 1
-            elif i=='L':
-                cnt -= 1
-            if cnt==0:
-                res += 1
-        return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

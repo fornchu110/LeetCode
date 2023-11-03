@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=859 lang=python3
 #
@@ -7,65 +6,29 @@
 
 # @lc code=start
 
-# By enum , time: O(n), space: O(c), ¦]¦³26­Ó­^¤å¦r¥À©Ò¥Hc = 26
-# ­nª`·N¨ì¯S¨Ò¨ÃÀu¥ı§PÂ_, ½T»{¦n¯S¨Òªº±¡ªp¦A¶}©l°µ³B²z
+# By enum , time: O(n), space: O(c), å› æœ‰26å€‹è‹±æ–‡å­—æ¯æ‰€ä»¥c = 26
+# è¦æ³¨æ„åˆ°ç‰¹ä¾‹ä¸¦å„ªå…ˆåˆ¤æ–·, ç¢ºèªå¥½ç‰¹ä¾‹çš„æƒ…æ³å†é–‹å§‹åšè™•ç†
 class Solution:
     def buddyStrings(self, s: str, goal: str) -> bool:
-        # ªø«×¤£¤@¼Ë¥²¬°false
+        # é•·åº¦ä¸ä¸€æ¨£å¿…ç‚ºfalse
         if len(s)!=len(goal):
             return False
-        # ¦pªGs©Mgoal§¹¥ş¬Û¦P, À³¸Ó¹³³o¼Ë¦b¹ê»Ú¥æ´««e´N§PÂ_, ¤£¸Ó©ñ¦b«á­±
+        # å¦‚æœså’Œgoalå®Œå…¨ç›¸åŒ, æ‡‰è©²åƒé€™æ¨£åœ¨å¯¦éš›äº¤æ›å‰å°±åˆ¤æ–·, ä¸è©²æ”¾åœ¨å¾Œé¢
         if s==goal:
-            # ¦³¬Û¦Pcharªº¸Üset¥²©w¤ñ¸û¤p, ¥i¥H¥æ´«
+            # æœ‰ç›¸åŒcharçš„è©±setå¿…å®šæ¯”è¼ƒå°, å¯ä»¥äº¤æ›
             if len(set(s))<len(goal): 
                 return True
-            # s©Mgoal¤º³¡§¹¥ş¨S¦³­«½Æchar, ¤£¥i¥æ´«
+            # så’Œgoalå…§éƒ¨å®Œå…¨æ²’æœ‰é‡è¤‡char, ä¸å¯äº¤æ›
             else:
                 return False
-        # zip¦b°µ±N¤£¦Piterable¸ê®Æµ²ºc¤¤¬Û¦P¦ì¸mªº¨â¤¸¯À©ñ¶i()¸Ì
-        # ©Ò¥Hzip(s, goal)¬O­Ólist, zip(s, goal)[0] = (s[0], goal[0]), ...
-        # ª½¨ì¸ûµuªº¸ê®Æµ²ºcµ²§ô, ±Ë±ó¸ûªø¤¤ªº³Ñ¤Uªº¤¸¯À
-        # zipªº¥Î³~¬O¦P®É³B²z¤£¦Piterable¸ê®Æµ²ºc, «Ü¾A¦X§PÂ_str¬O§_¬Û¦P©M¦@¦Psub str
+        # zipåœ¨åšå°‡ä¸åŒiterableè³‡æ–™çµæ§‹ä¸­ç›¸åŒä½ç½®çš„å…©å…ƒç´ æ”¾é€²()è£¡
+        # æ‰€ä»¥zip(s, goal)æ˜¯å€‹list, zip(s, goal)[0] = (s[0], goal[0]), ...
+        # ç›´åˆ°è¼ƒçŸ­çš„è³‡æ–™çµæ§‹çµæŸ, æ¨æ£„è¼ƒé•·ä¸­çš„å‰©ä¸‹çš„å…ƒç´ 
+        # zipçš„ç”¨é€”æ˜¯åŒæ™‚è™•ç†ä¸åŒiterableè³‡æ–™çµæ§‹, å¾ˆé©åˆåˆ¤æ–·stræ˜¯å¦ç›¸åŒå’Œå…±åŒsub str
         diff = [(a, b) for a, b in zip(s, goal) if a!=b]
         print(diff)
-        # ¬İs©Mgoal¦P¦ì¸m®É¤£¦Pcharªºª¬ªp¼Æ¶q, À³¸Ó­n==2¥B¥æ´««á´N§¹¥ş¬Ûµ¥
+        # çœ‹så’ŒgoalåŒä½ç½®æ™‚ä¸åŒcharçš„ç‹€æ³æ•¸é‡, æ‡‰è©²è¦==2ä¸”äº¤æ›å¾Œå°±å®Œå…¨ç›¸ç­‰
         return len(diff)==2 and diff[0][0]==diff[1][1] and diff[0][1]==diff[1][0]
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=859 lang=python3
-#
-# [859] Buddy Strings
-#
-
-# @lc code=start
-
-# By enum , time: O(n), space: O(c), ¦]¦³26­Ó­^¤å¦r¥À©Ò¥Hc = 26
-# ­nª`·N¨ì¯S¨Ò¨ÃÀu¥ı§PÂ_, ½T»{¦n¯S¨Òªº±¡ªp¦A¶}©l°µ³B²z
-class Solution:
-    def buddyStrings(self, s: str, goal: str) -> bool:
-        # ªø«×¤£¤@¼Ë¥²¬°false
-        if len(s)!=len(goal):
-            return False
-        # ¦pªGs©Mgoal§¹¥ş¬Û¦P, À³¸Ó¹³³o¼Ë¦b¹ê»Ú¥æ´««e´N§PÂ_, ¤£¸Ó©ñ¦b«á­±
-        if s==goal:
-            # ¦³¬Û¦Pcharªº¸Üset¥²©w¤ñ¸û¤p, ¥i¥H¥æ´«
-            if len(set(s))<len(goal): 
-                return True
-            # s©Mgoal¤º³¡§¹¥ş¨S¦³­«½Æchar, ¤£¥i¥æ´«
-            else:
-                return False
-        # zip¦b°µ±N¤£¦Piterable¸ê®Æµ²ºc¤¤¬Û¦P¦ì¸mªº¨â¤¸¯À©ñ¶i()¸Ì
-        # ©Ò¥Hzip(s, goal)¬O­Ólist, zip(s, goal)[0] = (s[0], goal[0]), ...
-        # ª½¨ì¸ûµuªº¸ê®Æµ²ºcµ²§ô, ±Ë±ó¸ûªø¤¤ªº³Ñ¤Uªº¤¸¯À
-        # zipªº¥Î³~¬O¦P®É³B²z¤£¦Piterable¸ê®Æµ²ºc, «Ü¾A¦X§PÂ_str¬O§_¬Û¦P©M¦@¦Psub str
-        diff = [(a, b) for a, b in zip(s, goal) if a!=b]
-        print(diff)
-        # ¬İs©Mgoal¦P¦ì¸m®É¤£¦Pcharªºª¬ªp¼Æ¶q, À³¸Ó­n==2¥B¥æ´««á´N§¹¥ş¬Ûµ¥
-        return len(diff)==2 and diff[0][0]==diff[1][1] and diff[0][1]==diff[1][0]
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

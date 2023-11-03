@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1367 lang=python3
 #
@@ -19,89 +18,35 @@
 #         self.right = right
 
 # By enumerate DFS, time: O(n?min(2^len+1 ,n)), space: O(height) 
-# ­n¦Ò¼{¨ì¥i¯àbinary tree¤Uªºpath¦³¦@¦P¤l¸ô®|, ¨S¦³³£½T»{¤@¹MµLªk½T©w¬O§_¤£¦s¦b¸ô®|
-# §Q¥Îdfs¨«³X¥ş³¡node½T»{¬O§_¦s¦b¸ô®|
-# ¥D­n·Qªk¬O¨«³X¨C­Ónode, §P©w¬O§_¦s¦b¥H·í«enode¬°rootªºpath
-# path¤W¨C­Ónode³£»Pµ¹©wªºlinklist¤§node­È¤@¹ïÀ³
+# è¦è€ƒæ…®åˆ°å¯èƒ½binary treeä¸‹çš„pathæœ‰å…±åŒå­è·¯å¾‘, æ²’æœ‰éƒ½ç¢ºèªä¸€éç„¡æ³•ç¢ºå®šæ˜¯å¦ä¸å­˜åœ¨è·¯å¾‘
+# åˆ©ç”¨dfsèµ°è¨ªå…¨éƒ¨nodeç¢ºèªæ˜¯å¦å­˜åœ¨è·¯å¾‘
+# ä¸»è¦æƒ³æ³•æ˜¯èµ°è¨ªæ¯å€‹node, åˆ¤å®šæ˜¯å¦å­˜åœ¨ä»¥ç•¶å‰nodeç‚ºrootçš„path
+# pathä¸Šæ¯å€‹nodeéƒ½èˆ‡çµ¦å®šçš„linklistä¹‹nodeå€¼ä¸€å°æ‡‰
 class Solution:
     def dfs(self, curHead, curRoot):
-        # ·í¦¨¥\Åª¨ìlinklistµ²§ô, ¥Nªí¤£¥Î§ä¤F, path¥i¦æ
+        # ç•¶æˆåŠŸè®€åˆ°linklistçµæŸ, ä»£è¡¨ä¸ç”¨æ‰¾äº†, pathå¯è¡Œ
         if curHead==None:
             return True
-        # ·ílinklistÁÙ¨Sµ²§ô¦ıtreeµ²§ô¤F, ¥Nªí¥Ø«epath¥u¬O¤@³¡¥÷, ¤£¥i¦æ
+        # ç•¶linklisté‚„æ²’çµæŸä½†treeçµæŸäº†, ä»£è¡¨ç›®å‰pathåªæ˜¯ä¸€éƒ¨ä»½, ä¸å¯è¡Œ
         if curRoot==None:
             return False
-        # ·í¤Utree node¤£µ¥©ó¹w´Áªºlinklist node­È®É¥Nªí³o±øpath¤£¥i¦æ
+        # ç•¶ä¸‹tree nodeä¸ç­‰æ–¼é æœŸçš„linklist nodeå€¼æ™‚ä»£è¡¨é€™æ¢pathä¸å¯è¡Œ
         if curRoot.val!=curHead.val:
             return False
-        # ¤£¬O«e¤TºØ±¡ªp, ¥Nªí¦¹path¥Ø«e¬°¤î³£¥¿½T, ­nÄ~Äò¬İ
-        # Ä~Äò¬İ¦³¨âºØ, ©¹¥ª¤l¾ğ¬İ©M©¹¥k¤l¾ğ¬İ, ¥u­n¨ä¤@path¥¿½T§Y¥i©Ò¥H¬O¥Îor
+        # ä¸æ˜¯å‰ä¸‰ç¨®æƒ…æ³, ä»£è¡¨æ­¤pathç›®å‰ç‚ºæ­¢éƒ½æ­£ç¢º, è¦ç¹¼çºŒçœ‹
+        # ç¹¼çºŒçœ‹æœ‰å…©ç¨®, å¾€å·¦å­æ¨¹çœ‹å’Œå¾€å³å­æ¨¹çœ‹, åªè¦å…¶ä¸€pathæ­£ç¢ºå³å¯æ‰€ä»¥æ˜¯ç”¨or
         return self.dfs(curHead.next, curRoot.left) or self.dfs(curHead.next, curRoot.right)
     
     def isSubPath(self, head: Optional[ListNode], root: Optional[TreeNode]) -> bool:
-        # input¦Ü¤Ö¦³¤@­Óhead¥Bpath§PÂ_¬O¥Ñdfs¤º¥h°µ, ©Ò¥H¨ä¹ê¤£¥Î¬İhead
+        # inputè‡³å°‘æœ‰ä¸€å€‹headä¸”pathåˆ¤æ–·æ˜¯ç”±dfså…§å»åš, æ‰€ä»¥å…¶å¯¦ä¸ç”¨çœ‹head
         # if head==None:
         #     return True
-        # ­Y¨S¦³node¯à·íroot¤Flinklist¤´¥¼µ²§ô, ¥Nªí¦¹path¥¢±Ñ
+        # è‹¥æ²’æœ‰nodeèƒ½ç•¶rootäº†linklistä»æœªçµæŸ, ä»£è¡¨æ­¤pathå¤±æ•—
         if root==None:
             return False
-        # °£¤F±q¹ê»Úroot¶}©l°µªºdfs¥~(self.dfs(head, root))
-        # ­Y«e­±node§@¬°rootªºpath¥¢±Ñ, ¨º¦A¬İ¥H¥¢±ÑÂI¤§¥ª¥kchild§@¬°rootªºpath¬O§_¦s¦b
+        # é™¤äº†å¾å¯¦éš›rooté–‹å§‹åšçš„dfså¤–(self.dfs(head, root))
+        # è‹¥å‰é¢nodeä½œç‚ºrootçš„pathå¤±æ•—, é‚£å†çœ‹ä»¥å¤±æ•—é»ä¹‹å·¦å³childä½œç‚ºrootçš„pathæ˜¯å¦å­˜åœ¨
         return self.dfs(head, root) or self.isSubPath(head, root.left) or self.isSubPath(head, root.right)
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1367 lang=python3
-#
-# [1367] Linked List in Binary Tree
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By enumerate DFS, time: O(n?min(2^len+1 ,n)), space: O(height) 
-# ­n¦Ò¼{¨ì¥i¯àbinary tree¤Uªºpath¦³¦@¦P¤l¸ô®|, ¨S¦³³£½T»{¤@¹MµLªk½T©w¬O§_¤£¦s¦b¸ô®|
-# §Q¥Îdfs¨«³X¥ş³¡node½T»{¬O§_¦s¦b¸ô®|
-# ¥D­n·Qªk¬O¨«³X¨C­Ónode, §P©w¬O§_¦s¦b¥H·í«enode¬°rootªºpath
-# path¤W¨C­Ónode³£»Pµ¹©wªºlinklist¤§node­È¤@¹ïÀ³
-class Solution:
-    def dfs(self, curHead, curRoot):
-        # ·í¦¨¥\Åª¨ìlinklistµ²§ô, ¥Nªí¤£¥Î§ä¤F, path¥i¦æ
-        if curHead==None:
-            return True
-        # ·ílinklistÁÙ¨Sµ²§ô¦ıtreeµ²§ô¤F, ¥Nªí¥Ø«epath¥u¬O¤@³¡¥÷, ¤£¥i¦æ
-        if curRoot==None:
-            return False
-        # ·í¤Utree node¤£µ¥©ó¹w´Áªºlinklist node­È®É¥Nªí³o±øpath¤£¥i¦æ
-        if curRoot.val!=curHead.val:
-            return False
-        # ¤£¬O«e¤TºØ±¡ªp, ¥Nªí¦¹path¥Ø«e¬°¤î³£¥¿½T, ­nÄ~Äò¬İ
-        # Ä~Äò¬İ¦³¨âºØ, ©¹¥ª¤l¾ğ¬İ©M©¹¥k¤l¾ğ¬İ, ¥u­n¨ä¤@path¥¿½T§Y¥i©Ò¥H¬O¥Îor
-        return self.dfs(curHead.next, curRoot.left) or self.dfs(curHead.next, curRoot.right)
-    
-    def isSubPath(self, head: Optional[ListNode], root: Optional[TreeNode]) -> bool:
-        # input¦Ü¤Ö¦³¤@­Óhead¥Bpath§PÂ_¬O¥Ñdfs¤º¥h°µ, ©Ò¥H¨ä¹ê¤£¥Î¬İhead
-        # if head==None:
-        #     return True
-        # ­Y¨S¦³node¯à·íroot¤Flinklist¤´¥¼µ²§ô, ¥Nªí¦¹path¥¢±Ñ
-        if root==None:
-            return False
-        # °£¤F±q¹ê»Úroot¶}©l°µªºdfs¥~(self.dfs(head, root))
-        # ­Y«e­±node§@¬°rootªºpath¥¢±Ñ, ¨º¦A¬İ¥H¥¢±ÑÂI¤§¥ª¥kchild§@¬°rootªºpath¬O§_¦s¦b
-        return self.dfs(head, root) or self.isSubPath(head, root.left) or self.isSubPath(head, root.right)
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

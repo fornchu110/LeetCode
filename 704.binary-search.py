@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=704 lang=python3
 #
@@ -6,62 +5,28 @@
 #
 
 # @lc code=start
-# µ¹°}¦Cnums©M¥Ø¼Ğtarget, ¦bnums¤º·j´M¨ìtarget return index, ·j´M¤£¨ìreturn -1
+# çµ¦é™£åˆ—numså’Œç›®æ¨™target, åœ¨numså…§æœå°‹åˆ°target return index, æœå°‹ä¸åˆ°return -1
 
 # By binary search, time: O(nlogn), space: O(1)
-# °ò¥»ªº¤G¤À·j´Mªk, ª`·N½d³ò¬O[¤U¬É, ¤W¬É)
+# åŸºæœ¬çš„äºŒåˆ†æœå°‹æ³•, æ³¨æ„ç¯„åœæ˜¯[ä¸‹ç•Œ, ä¸Šç•Œ)
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         left = 0
-        # ¦]¬O[¤U¬É, ¤W¬É), ©Ò¥Hright­n¬O¤W¬É+1, ¦Ó¤U¬É¤W¬É½d³ò´N¬Onumsªºindex
+        # å› æ˜¯[ä¸‹ç•Œ, ä¸Šç•Œ), æ‰€ä»¥rightè¦æ˜¯ä¸Šç•Œ+1, è€Œä¸‹ç•Œä¸Šç•Œç¯„åœå°±æ˜¯numsçš„index
         right = len(nums)
-        # ¤£¥i¯àleft==right, ¦]¬°left==right®É[left, right)³o°Ï¶¡¤£¦s¦b
+        # ä¸å¯èƒ½left==right, å› ç‚ºleft==rightæ™‚[left, right)é€™å€é–“ä¸å­˜åœ¨
         while left<right:
-            # python¤£·|·¸¦ì, ¦ı¥ı¦©¯àÁ×§K
+            # pythonä¸æœƒæº¢ä½, ä½†å…ˆæ‰£èƒ½é¿å…
             mid = (right-left)//2+left
-            # §ä¨ìtarget¦^¶Çindex
+            # æ‰¾åˆ°targetå›å‚³index
             if nums[mid]==target:
                 return mid
             elif nums[mid]>target:
                 right = mid
             else:
                 left = mid+1
-        # ¦pªG§ä¥ª¬Ûªñ, «hreturn left
+        # å¦‚æœæ‰¾å·¦ç›¸è¿‘, å‰‡return left
         return -1
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=704 lang=python3
-#
-# [704] Binary Search
-#
-
-# @lc code=start
-# µ¹°}¦Cnums©M¥Ø¼Ğtarget, ¦bnums¤º·j´M¨ìtarget return index, ·j´M¤£¨ìreturn -1
-
-# By binary search, time: O(nlogn), space: O(1)
-# °ò¥»ªº¤G¤À·j´Mªk, ª`·N½d³ò¬O[¤U¬É, ¤W¬É)
-class Solution:
-    def search(self, nums: List[int], target: int) -> int:
-        left = 0
-        # ¦]¬O[¤U¬É, ¤W¬É), ©Ò¥Hright­n¬O¤W¬É+1, ¦Ó¤U¬É¤W¬É½d³ò´N¬Onumsªºindex
-        right = len(nums)
-        # ¤£¥i¯àleft==right, ¦]¬°left==right®É[left, right)³o°Ï¶¡¤£¦s¦b
-        while left<right:
-            # python¤£·|·¸¦ì, ¦ı¥ı¦©¯àÁ×§K
-            mid = (right-left)//2+left
-            # §ä¨ìtarget¦^¶Çindex
-            if nums[mid]==target:
-                return mid
-            elif nums[mid]>target:
-                right = mid
-            else:
-                left = mid+1
-        # ¦pªG§ä¥ª¬Ûªñ, «hreturn left
-        return -1
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

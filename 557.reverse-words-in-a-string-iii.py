@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=557 lang=python3
 #
@@ -7,47 +6,20 @@
 
 # @lc code=start
 # By string processing, time: O(n), space = O(1), n = len(s)
-# ­n±Nµ¹©w¦h­Ó³æ¦r¶¶§Ç¤£ÅÜ¤U, ¤ÏÂà³æ¦rªº¤º®e
-# §Q¥Îreversed()±N¦r¦ê¤º®e¤ÏÂà, ª`·Nreversed()¦^¶Ç­È¬O¤@­Ólist
+# è¦å°‡çµ¦å®šå¤šå€‹å–®å­—é †åºä¸è®Šä¸‹, åè½‰å–®å­—çš„å…§å®¹
+# åˆ©ç”¨reversed()å°‡å­—ä¸²å…§å®¹åè½‰, æ³¨æ„reversed()å›å‚³å€¼æ˜¯ä¸€å€‹list
 class Solution:
     def reverseWords(self, s: str) -> str:
         res = []
-        # ¦r¦ê¤]¥i¥H¤ÏÂà, reversed()ªğ¦^­È¬Olist, .reverse()«h¥u¯à¥Î¦blist¤£¥i¥Î¦b¦r¦ê
-        # split()ªº­ì¦]¬O³oÃD¨Ã«D§¹¥ş±q§À¤ÏÂà¦ÜÀY, ¦Ó¬O³æ¦r¶¶§Ç¤£ÅÜ¥u¤ÏÂà¨C­Ó³æ¦r¤º®e
-        # ¦]¦¹split()±N³æ¦r¦¨¬°list¤¤¤£¦P¤¸¯À«á, ¦A¨Ì§Ç¹ï³o¨Ç¤¸¯À°µ¤ÏÂà
+        # å­—ä¸²ä¹Ÿå¯ä»¥åè½‰, reversed()è¿”å›å€¼æ˜¯list, .reverse()å‰‡åªèƒ½ç”¨åœ¨listä¸å¯ç”¨åœ¨å­—ä¸²
+        # split()çš„åŸå› æ˜¯é€™é¡Œä¸¦éå®Œå…¨å¾å°¾åè½‰è‡³é ­, è€Œæ˜¯å–®å­—é †åºä¸è®Šåªåè½‰æ¯å€‹å–®å­—å…§å®¹
+        # å› æ­¤split()å°‡å–®å­—æˆç‚ºlistä¸­ä¸åŒå…ƒç´ å¾Œ, å†ä¾åºå°é€™äº›å…ƒç´ åšåè½‰
         s = s.split()
         for i in s:
-            # ¼g¦¨i = "".join(i[::-1])¤]¥i¥H, [::-1]¬O¤ÏÂà¤Á¤ù
+            # å¯«æˆi = "".join(i[::-1])ä¹Ÿå¯ä»¥, [::-1]æ˜¯åè½‰åˆ‡ç‰‡
             i = "".join(reversed(i))
             res.append(i)
         return " ".join(res)
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=557 lang=python3
-#
-# [557] Reverse Words in a String III
-#
-
-# @lc code=start
-# By string processing, time: O(n), space = O(1), n = len(s)
-# ­n±Nµ¹©w¦h­Ó³æ¦r¶¶§Ç¤£ÅÜ¤U, ¤ÏÂà³æ¦rªº¤º®e
-# §Q¥Îreversed()±N¦r¦ê¤º®e¤ÏÂà, ª`·Nreversed()¦^¶Ç­È¬O¤@­Ólist
-class Solution:
-    def reverseWords(self, s: str) -> str:
-        res = []
-        # ¦r¦ê¤]¥i¥H¤ÏÂà, reversed()ªğ¦^­È¬Olist, .reverse()«h¥u¯à¥Î¦blist¤£¥i¥Î¦b¦r¦ê
-        # split()ªº­ì¦]¬O³oÃD¨Ã«D§¹¥ş±q§À¤ÏÂà¦ÜÀY, ¦Ó¬O³æ¦r¶¶§Ç¤£ÅÜ¥u¤ÏÂà¨C­Ó³æ¦r¤º®e
-        # ¦]¦¹split()±N³æ¦r¦¨¬°list¤¤¤£¦P¤¸¯À«á, ¦A¨Ì§Ç¹ï³o¨Ç¤¸¯À°µ¤ÏÂà
-        s = s.split()
-        for i in s:
-            # ¼g¦¨i = "".join(i[::-1])¤]¥i¥H, [::-1]¬O¤ÏÂà¤Á¤ù
-            i = "".join(reversed(i))
-            res.append(i)
-        return " ".join(res)
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

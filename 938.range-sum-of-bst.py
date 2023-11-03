@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=938 lang=python3
 #
@@ -14,21 +13,21 @@
 #         self.right = right
 
 # By recursive dfs, time: O(n), space: O(n ) 
-#¤@¼Ë»¼°j, ­n¬İªº¬O¨C¸`ÂIªºvalue´N¦n
-#²`«×Àu¥ı·j¯ÁDFS
-#BST¥ª¤l§ó¤p¥k¤l§ó¤j
+#ä¸€æ¨£éè¿´, è¦çœ‹çš„æ˜¯æ¯ç¯€é»çš„valueå°±å¥½
+#æ·±åº¦å„ªå…ˆæœç´¢DFS
+#BSTå·¦å­æ›´å°å³å­æ›´å¤§
 class Solution:
  def rangeSumBST(self, root: TreeNode, low: int, high: int) -> int:
-        #»¼°j²×¤î±ø¥ó
+        #éè¿´çµ‚æ­¢æ¢ä»¶
         if not root:
             return 0
-        #·ínode¤ñhighÁÙ¤j, ¥k¤l¤@©w¤]¤ñhigh¤j¤£¥Î§ä, ´N­n©¹§ó¤pªºnode§ä, ©Ò¥H§ä¥ª¤l
+        #ç•¶nodeæ¯”highé‚„å¤§, å³å­ä¸€å®šä¹Ÿæ¯”highå¤§ä¸ç”¨æ‰¾, å°±è¦å¾€æ›´å°çš„nodeæ‰¾, æ‰€ä»¥æ‰¾å·¦å­
         if root.val>high:
             return self.rangeSumBST(root.left, low, high)
-        #·ínode¤ñlowÁÙ¤p, ¥ª¤l¤@©w¤]¤ñlow¤p¤£¥Î§ä, ´N­n©¹§ó¤jªºnode§ä, ©Ò¥H§ä¥k¤l
+        #ç•¶nodeæ¯”lowé‚„å°, å·¦å­ä¸€å®šä¹Ÿæ¯”lowå°ä¸ç”¨æ‰¾, å°±è¦å¾€æ›´å¤§çš„nodeæ‰¾, æ‰€ä»¥æ‰¾å³å­
         if root.val<low:
             return self.rangeSumBST(root.right, low, high)
-        #§ä¨ì¾A¦XªºÂI, ¤]´N¬O¤¶©ó[low, high]«K±N¨ä¥[¤Jµª®×¤¤, ¥B¥Ñ©ó¬O¤§¶¡©Ò¥H¥ª¤l¥k¤l³£¥i¯à¬Oµª®×
+        #æ‰¾åˆ°é©åˆçš„é», ä¹Ÿå°±æ˜¯ä»‹æ–¼[low, high]ä¾¿å°‡å…¶åŠ å…¥ç­”æ¡ˆä¸­, ä¸”ç”±æ–¼æ˜¯ä¹‹é–“æ‰€ä»¥å·¦å­å³å­éƒ½å¯èƒ½æ˜¯ç­”æ¡ˆ
         return root.val+self.rangeSumBST(root.left, low, high) + self.rangeSumBST(root.right, low, high)
 
 # By bfs, time: O(n), space: O(n)
@@ -53,59 +52,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=938 lang=python3
-#
-# [938] Range Sum of BST
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By recursive dfs, time: O(n), space: O(n ) 
-#¤@¼Ë»¼°j, ­n¬İªº¬O¨C¸`ÂIªºvalue´N¦n
-#²`«×Àu¥ı·j¯ÁDFS
-#BST¥ª¤l§ó¤p¥k¤l§ó¤j
-class Solution:
- def rangeSumBST(self, root: TreeNode, low: int, high: int) -> int:
-        #»¼°j²×¤î±ø¥ó
-        if not root:
-            return 0
-        #·ínode¤ñhighÁÙ¤j, ¥k¤l¤@©w¤]¤ñhigh¤j¤£¥Î§ä, ´N­n©¹§ó¤pªºnode§ä, ©Ò¥H§ä¥ª¤l
-        if root.val>high:
-            return self.rangeSumBST(root.left, low, high)
-        #·ínode¤ñlowÁÙ¤p, ¥ª¤l¤@©w¤]¤ñlow¤p¤£¥Î§ä, ´N­n©¹§ó¤jªºnode§ä, ©Ò¥H§ä¥k¤l
-        if root.val<low:
-            return self.rangeSumBST(root.right, low, high)
-        #§ä¨ì¾A¦XªºÂI, ¤]´N¬O¤¶©ó[low, high]«K±N¨ä¥[¤Jµª®×¤¤, ¥B¥Ñ©ó¬O¤§¶¡©Ò¥H¥ª¤l¥k¤l³£¥i¯à¬Oµª®×
-        return root.val+self.rangeSumBST(root.left, low, high) + self.rangeSumBST(root.right, low, high)
-
-# By bfs, time: O(n), space: O(n)
-# class Solution:
-#     def rangeSumBST(self, root: TreeNode, low: int, high: int) -> int:
-#         total = 0
-#         q = collections.deque([root])
-#         while q:
-#             node = q.popleft()
-#             if not node:
-#                 continue
-#             if node.val > high:
-#                 q.append(node.left)
-#             elif node.val < low:
-#                 q.append(node.right)
-#             else:
-#                 total += node.val
-#                 q.append(node.left)
-#                 q.append(node.right)
-
-#         return total
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

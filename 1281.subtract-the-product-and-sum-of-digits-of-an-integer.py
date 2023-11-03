@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1281 lang=python3
 #
@@ -8,9 +7,9 @@
 # @lc code=start
 
 # By while loop, time: O(lon(n)), space: O(1)
-# time¬OO(log(n))ªº­ì¦], n¬Oinput¦Ónªº¦ì¼Æ·|¦³10¬°©³ªºlog(n+1)
-# ¤]´N¬O»¡O(log(n))´N¬Onªº¦ì¼Æ¼Æ¶q, ­Yn¤£¬O«üinput¦Ó¬O¦ì¼Æªº¸Ütime: O(n)
-# ­n±Ninputªºn¨C¦ì¼Æ¬Û­¼, ¦A±N¨C¦ì¼Æ¬Û¥[, ³Ì«á¿n-©M
+# timeæ˜¯O(log(n))çš„åŸå› , næ˜¯inputè€Œnçš„ä½æ•¸æœƒæœ‰10ç‚ºåº•çš„log(n+1)
+# ä¹Ÿå°±æ˜¯èªªO(log(n))å°±æ˜¯nçš„ä½æ•¸æ•¸é‡, è‹¥nä¸æ˜¯æŒ‡inputè€Œæ˜¯ä½æ•¸çš„è©±time: O(n)
+# è¦å°‡inputçš„næ¯ä½æ•¸ç›¸ä¹˜, å†å°‡æ¯ä½æ•¸ç›¸åŠ , æœ€å¾Œç©-å’Œ
 class Solution:
     def subtractProductAndSum(self, n: int) -> int:
         pro = 1
@@ -23,29 +22,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1281 lang=python3
-#
-# [1281] Subtract the Product and Sum of Digits of an Integer
-#
-
-# @lc code=start
-
-# By while loop, time: O(lon(n)), space: O(1)
-# time¬OO(log(n))ªº­ì¦], n¬Oinput¦Ónªº¦ì¼Æ·|¦³10¬°©³ªºlog(n+1)
-# ¤]´N¬O»¡O(log(n))´N¬Onªº¦ì¼Æ¼Æ¶q, ­Yn¤£¬O«üinput¦Ó¬O¦ì¼Æªº¸Ütime: O(n)
-# ­n±Ninputªºn¨C¦ì¼Æ¬Û­¼, ¦A±N¨C¦ì¼Æ¬Û¥[, ³Ì«á¿n-©M
-class Solution:
-    def subtractProductAndSum(self, n: int) -> int:
-        pro = 1
-        sum = 0
-        while(n!=0):
-            pro *= n%10
-            sum += n%10
-            n//=10
-        return pro-sum
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

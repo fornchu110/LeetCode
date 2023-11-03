@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1313 lang=python3
 #
@@ -6,60 +5,27 @@
 #
 
 # @lc code=start
-# By extend and 2 step range, time: O(n+m), space: O(1), m¬OfreqÁ`©M
-# O(n+m)¤¤+mªº­ì¦]¬O¨C¦¸­n¦A´¡¤J m­Óval
-# ¥Îextend¤ñ¥Î¥Îappend§Ö³t
-# ¤@¹ï¤@¹ï¬İ, index°¸¼Æ®É¬°freq, ¤U¤@­Ó¬Oval, ±Nval´¡¤Jfreq¦¸
+# By extend and 2 step range, time: O(n+m), space: O(1), mæ˜¯freqç¸½å’Œ
+# O(n+m)ä¸­+mçš„åŸå› æ˜¯æ¯æ¬¡è¦å†æ’å…¥ må€‹val
+# ç”¨extendæ¯”ç”¨ç”¨appendå¿«é€Ÿ
+# ä¸€å°ä¸€å°çœ‹, indexå¶æ•¸æ™‚ç‚ºfreq, ä¸‹ä¸€å€‹æ˜¯val, å°‡valæ’å…¥freqæ¬¡
 class Solution:
     def decompressRLElist(self, nums: List[int]) -> List[int]:
         res = list()
-        # ¥i¥Hª½±µ¥Îrange(0, len(nums, 2))¨Ó¥u¦bindex¬°°¸¼Æ®É°µ¨Æ
-        # ·Ó²z¨Ó»¡range(0, len(nums), 2)¥u¬İ¤@¥b­Ón, ½ÆÂø«×¨SÅÜ¦ıÀ³¸Ó¤ñ¸û§Ö
+        # å¯ä»¥ç›´æ¥ç”¨range(0, len(nums, 2))ä¾†åªåœ¨indexç‚ºå¶æ•¸æ™‚åšäº‹
+        # ç…§ç†ä¾†èªªrange(0, len(nums), 2)åªçœ‹ä¸€åŠå€‹n, è¤‡é›œåº¦æ²’è®Šä½†æ‡‰è©²æ¯”è¼ƒå¿«
         for i in range(0, len(nums), 2):
-            # ©Î¬Orange(len(nums)
-            # µM«á¥Îif i&1==0¨Ó§PÂ_i¬O°¸¼Æ®É, ¤ñi%2==0§Ö
-            # ­ì¥»ªº§@ªk, ¨Ï¥Îappend
+            # æˆ–æ˜¯range(len(nums)
+            # ç„¶å¾Œç”¨if i&1==0ä¾†åˆ¤æ–·iæ˜¯å¶æ•¸æ™‚, æ¯”i%2==0å¿«
+            # åŸæœ¬çš„ä½œæ³•, ä½¿ç”¨append
             # freq = nums[i]
             # val = nums[i+1]
             # for j in range(freq):
             #     res.append(val)
-            # ¨Ï¥Îextend¦bres«á­±ª½±µ±µ¤W·slist, ¤ñappend§Ö
-            # ¦³freq­Óval©Ò¥H¼g¬°val*freq, ³q±`³Q­¼¼Æªí¥Ü»ù­È, ­¼¼Æªí¥Ü¼Æ¶q
+            # ä½¿ç”¨extendåœ¨reså¾Œé¢ç›´æ¥æ¥ä¸Šæ–°list, æ¯”appendå¿«
+            # æœ‰freqå€‹valæ‰€ä»¥å¯«ç‚ºval*freq, é€šå¸¸è¢«ä¹˜æ•¸è¡¨ç¤ºåƒ¹å€¼, ä¹˜æ•¸è¡¨ç¤ºæ•¸é‡
             res.extend([nums[i+1]]*nums[i])
         return res
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1313 lang=python3
-#
-# [1313] Decompress Run-Length Encoded List
-#
-
-# @lc code=start
-# By extend and 2 step range, time: O(n+m), space: O(1), m¬OfreqÁ`©M
-# O(n+m)¤¤+mªº­ì¦]¬O¨C¦¸­n¦A´¡¤J m­Óval
-# ¥Îextend¤ñ¥Î¥Îappend§Ö³t
-# ¤@¹ï¤@¹ï¬İ, index°¸¼Æ®É¬°freq, ¤U¤@­Ó¬Oval, ±Nval´¡¤Jfreq¦¸
-class Solution:
-    def decompressRLElist(self, nums: List[int]) -> List[int]:
-        res = list()
-        # ¥i¥Hª½±µ¥Îrange(0, len(nums, 2))¨Ó¥u¦bindex¬°°¸¼Æ®É°µ¨Æ
-        # ·Ó²z¨Ó»¡range(0, len(nums), 2)¥u¬İ¤@¥b­Ón, ½ÆÂø«×¨SÅÜ¦ıÀ³¸Ó¤ñ¸û§Ö
-        for i in range(0, len(nums), 2):
-            # ©Î¬Orange(len(nums)
-            # µM«á¥Îif i&1==0¨Ó§PÂ_i¬O°¸¼Æ®É, ¤ñi%2==0§Ö
-            # ­ì¥»ªº§@ªk, ¨Ï¥Îappend
-            # freq = nums[i]
-            # val = nums[i+1]
-            # for j in range(freq):
-            #     res.append(val)
-            # ¨Ï¥Îextend¦bres«á­±ª½±µ±µ¤W·slist, ¤ñappend§Ö
-            # ¦³freq­Óval©Ò¥H¼g¬°val*freq, ³q±`³Q­¼¼Æªí¥Ü»ù­È, ­¼¼Æªí¥Ü¼Æ¶q
-            res.extend([nums[i+1]]*nums[i])
-        return res
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

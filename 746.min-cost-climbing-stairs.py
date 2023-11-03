@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=746 lang=python3
 #
@@ -6,10 +5,10 @@
 #
 
 # @lc code=start
-# µ¹¤@°}¦Ccost, cost[i]¥Nªí¦bindex i¦A¨«¤@¦¸ªá¶Oªº¦¨¥», ¨C¦¸¥i¨«1¨B©Î2¨B, return¨«¨ìindex n©Òªá¶Oªº³Ì¤p¦¨¥»
+# çµ¦ä¸€é™£åˆ—cost, cost[i]ä»£è¡¨åœ¨index iå†èµ°ä¸€æ¬¡èŠ±è²»çš„æˆæœ¬, æ¯æ¬¡å¯èµ°1æ­¥æˆ–2æ­¥, returnèµ°åˆ°index næ‰€èŠ±è²»çš„æœ€å°æˆæœ¬
 
 # By DP and scrolling array, time: O(n), space: O(1)
-# ´N¬O¥ÎDP¥u¬Oµo²{dp[i]¥u©Mdp[i-1]¥H¤Îdp[i-2]¦³Ãö, ©Ò¥H­¡¥N¨Ó¬ÙªÅ¶¡
+# å°±æ˜¯ç”¨DPåªæ˜¯ç™¼ç¾dp[i]åªå’Œdp[i-1]ä»¥åŠdp[i-2]æœ‰é—œ, æ‰€ä»¥è¿­ä»£ä¾†çœç©ºé–“
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
         n = len(cost)
@@ -25,53 +24,14 @@ class Solution:
 # class Solution:
 #     def minCostClimbingStairs(self, cost: List[int]) -> int:
 #         n = len(cost)
-#         # dp[i]¥Nªí¨«¨ìindex i ©Òªá¶O±o¦¨¥»
+#         # dp[i]ä»£è¡¨èµ°åˆ°index i æ‰€èŠ±è²»å¾—æˆæœ¬
 #         dp = [0]*(n+1)
 #         for i in range(2, n+1):
-#             # ª`·N¨«¨ìindex i¹ê»Ú¤W¤£»İ­ncost[i], ¦Ó¬O±qindex i-1©Îindex i-2¨«1©Î2¨B¹L¨Ó
-#             # ¬Û¹ïªº¨«¨ìindex i-1©Îindex i-2·í¤U¤]¤£»İ­ncost[i-1]©Mcost[i-2]
-#             # ¥u¬O­n±qi-1©Îi-2¨«¨ìi®É, »İ­n¦Aªá¶Ocost[i-1]©Mcost[i-2]¤~¯à¨«¹L¨Ó
+#             # æ³¨æ„èµ°åˆ°index iå¯¦éš›ä¸Šä¸éœ€è¦cost[i], è€Œæ˜¯å¾index i-1æˆ–index i-2èµ°1æˆ–2æ­¥éä¾†
+#             # ç›¸å°çš„èµ°åˆ°index i-1æˆ–index i-2ç•¶ä¸‹ä¹Ÿä¸éœ€è¦cost[i-1]å’Œcost[i-2]
+#             # åªæ˜¯è¦å¾i-1æˆ–i-2èµ°åˆ°iæ™‚, éœ€è¦å†èŠ±è²»cost[i-1]å’Œcost[i-2]æ‰èƒ½èµ°éä¾†
 #             dp[i] = min(dp[i-1]+cost[i-1], dp[i-2]+cost[i-2])
 #         return dp[n]
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=746 lang=python3
-#
-# [746] Min Cost Climbing Stairs
-#
-
-# @lc code=start
-# µ¹¤@°}¦Ccost, cost[i]¥Nªí¦bindex i¦A¨«¤@¦¸ªá¶Oªº¦¨¥», ¨C¦¸¥i¨«1¨B©Î2¨B, return¨«¨ìindex n©Òªá¶Oªº³Ì¤p¦¨¥»
-
-# By DP and scrolling array, time: O(n), space: O(1)
-# ´N¬O¥ÎDP¥u¬Oµo²{dp[i]¥u©Mdp[i-1]¥H¤Îdp[i-2]¦³Ãö, ©Ò¥H­¡¥N¨Ó¬ÙªÅ¶¡
-class Solution:
-    def minCostClimbingStairs(self, cost: List[int]) -> int:
-        n = len(cost)
-        prev = 0
-        cur = 0
-        for i in range(2, n+1):
-            tmp = cur
-            cur = min(cur+cost[i-1], prev+cost[i-2])
-            prev = tmp
-        return cur
-
-# By DP, time: O(n), space: O(n)
-# class Solution:
-#     def minCostClimbingStairs(self, cost: List[int]) -> int:
-#         n = len(cost)
-#         # dp[i]¥Nªí¨«¨ìindex i ©Òªá¶O±o¦¨¥»
-#         dp = [0]*(n+1)
-#         for i in range(2, n+1):
-#             # ª`·N¨«¨ìindex i¹ê»Ú¤W¤£»İ­ncost[i], ¦Ó¬O±qindex i-1©Îindex i-2¨«1©Î2¨B¹L¨Ó
-#             # ¬Û¹ïªº¨«¨ìindex i-1©Îindex i-2·í¤U¤]¤£»İ­ncost[i-1]©Mcost[i-2]
-#             # ¥u¬O­n±qi-1©Îi-2¨«¨ìi®É, »İ­n¦Aªá¶Ocost[i-1]©Mcost[i-2]¤~¯à¨«¹L¨Ó
-#             dp[i] = min(dp[i-1]+cost[i-1], dp[i-2]+cost[i-2])
-#         return dp[n]
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

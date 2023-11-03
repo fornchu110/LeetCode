@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=709 lang=python3
 #
@@ -7,41 +6,17 @@
 
 # @lc code=start
 # By string processing, time: O(n), space: O(1), n = len(s)
-# return¤p¼g¦r¦ê, ¥Îlower()´N¯à±N¦r¦ê¤j¼gÂà´«¦¨¤p¼g
-# ¥¿±`°µÀ³¸Ó¬O¨«³Xs¥Îord()©Mchr()°µascii½XªºÂà´«
+# returnå°å¯«å­—ä¸², ç”¨lower()å°±èƒ½å°‡å­—ä¸²å¤§å¯«è½‰æ›æˆå°å¯«
+# æ­£å¸¸åšæ‡‰è©²æ˜¯èµ°è¨ªsç”¨ord()å’Œchr()åšasciiç¢¼çš„è½‰æ›
 class Solution:
     def toLowerCase(self, s: str) -> str:
         return s.lower()
 
 # By bitwise, time: O(n), space: O(1)
-# |32¬O§Ş¥©, ¤jÂà¤p­è¦n¬Oascii+32, ¦Ó32¬O2^5¥i¥H¥Î|¨Ó¹F¦¨¤j¼gÂà¤p¼g
+# |32æ˜¯æŠ€å·§, å¤§è½‰å°å‰›å¥½æ˜¯ascii+32, è€Œ32æ˜¯2^5å¯ä»¥ç”¨|ä¾†é”æˆå¤§å¯«è½‰å°å¯«
 # class Solution:
 #     def toLowerCase(self, s: str) -> str:
 #         return "".join(chr(asc | 32) if 65 <= (asc := ord(ch)) <= 90 else ch for ch in s)
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=709 lang=python3
-#
-# [709] To Lower Case
-#
-
-# @lc code=start
-# By string processing, time: O(n), space: O(1), n = len(s)
-# return¤p¼g¦r¦ê, ¥Îlower()´N¯à±N¦r¦ê¤j¼gÂà´«¦¨¤p¼g
-# ¥¿±`°µÀ³¸Ó¬O¨«³Xs¥Îord()©Mchr()°µascii½XªºÂà´«
-class Solution:
-    def toLowerCase(self, s: str) -> str:
-        return s.lower()
-
-# By bitwise, time: O(n), space: O(1)
-# |32¬O§Ş¥©, ¤jÂà¤p­è¦n¬Oascii+32, ¦Ó32¬O2^5¥i¥H¥Î|¨Ó¹F¦¨¤j¼gÂà¤p¼g
-# class Solution:
-#     def toLowerCase(self, s: str) -> str:
-#         return "".join(chr(asc | 32) if 65 <= (asc := ord(ch)) <= 90 else ch for ch in s)
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=946 lang=python3
 #
@@ -6,54 +5,24 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ópush¶¶§Ç°}¦Cpushed©Mpop¶¶§Ç°}¦Cpopped, return stack¬O§_¥i¥H·Ó³o¨â°}¦Cªº¶¶§Ç¹B§@
+# çµ¦ä¸€å€‹pushé †åºé™£åˆ—pushedå’Œpopé †åºé™£åˆ—popped, return stackæ˜¯å¦å¯ä»¥ç…§é€™å…©é™£åˆ—çš„é †åºé‹ä½œ
 
 # By list simulation, time: O(n), space: O(n)
-# ª½±µ¥Îlist¼ÒÀÀ, ¦pªG¤£ÃB¥~«Østackª½±µ¥Îpushed©Mpoppedªº¸ÜªÅ¶¡½ÆÂø«×O(1)
+# ç›´æ¥ç”¨listæ¨¡æ“¬, å¦‚æœä¸é¡å¤–å»ºstackç›´æ¥ç”¨pushedå’Œpoppedçš„è©±ç©ºé–“è¤‡é›œåº¦O(1)
 class Solution:
     def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
         stack, popidx = [], 0
         for i in pushed:
             stack.append(i)
-            # ·ístack³»ºİ©Mpopped¥Ø«e­npopªº¤¸¯À¬Û¦P¤~¯àpop
-            # stack[-1]´N¬O³»ºİ, ¤]´N¬O³Ì«á¤@­Óappend¶iªº¤¸¯À
-            # ¬°¤°»ò­nwhile stack?¦]¬°·ístack¬°ªÅ®Éstack[-1]·|out of range
+            # ç•¶stacké ‚ç«¯å’Œpoppedç›®å‰è¦popçš„å…ƒç´ ç›¸åŒæ‰èƒ½pop
+            # stack[-1]å°±æ˜¯é ‚ç«¯, ä¹Ÿå°±æ˜¯æœ€å¾Œä¸€å€‹appendé€²çš„å…ƒç´ 
+            # ç‚ºä»€éº¼è¦while stack?å› ç‚ºç•¶stackç‚ºç©ºæ™‚stack[-1]æœƒout of range
             while stack and stack[-1]==popped[popidx]:
                 stack.pop()
-                # ·ípop¦¨¥\¨º´N­n§ä¤U­Ópopªº¹ï¶H
+                # ç•¶popæˆåŠŸé‚£å°±è¦æ‰¾ä¸‹å€‹popçš„å°è±¡
                 popidx += 1
-        # stack³Ñ¤Uªø«×¬°0¥Nªí¥ş³¡pop¦¨¥\
+        # stackå‰©ä¸‹é•·åº¦ç‚º0ä»£è¡¨å…¨éƒ¨popæˆåŠŸ
         return len(stack)==0
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=946 lang=python3
-#
-# [946] Validate Stack Sequences
-#
-
-# @lc code=start
-# µ¹¤@­Ópush¶¶§Ç°}¦Cpushed©Mpop¶¶§Ç°}¦Cpopped, return stack¬O§_¥i¥H·Ó³o¨â°}¦Cªº¶¶§Ç¹B§@
-
-# By list simulation, time: O(n), space: O(n)
-# ª½±µ¥Îlist¼ÒÀÀ, ¦pªG¤£ÃB¥~«Østackª½±µ¥Îpushed©Mpoppedªº¸ÜªÅ¶¡½ÆÂø«×O(1)
-class Solution:
-    def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
-        stack, popidx = [], 0
-        for i in pushed:
-            stack.append(i)
-            # ·ístack³»ºİ©Mpopped¥Ø«e­npopªº¤¸¯À¬Û¦P¤~¯àpop
-            # stack[-1]´N¬O³»ºİ, ¤]´N¬O³Ì«á¤@­Óappend¶iªº¤¸¯À
-            # ¬°¤°»ò­nwhile stack?¦]¬°·ístack¬°ªÅ®Éstack[-1]·|out of range
-            while stack and stack[-1]==popped[popidx]:
-                stack.pop()
-                # ·ípop¦¨¥\¨º´N­n§ä¤U­Ópopªº¹ï¶H
-                popidx += 1
-        # stack³Ñ¤Uªø«×¬°0¥Nªí¥ş³¡pop¦¨¥\
-        return len(stack)==0
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

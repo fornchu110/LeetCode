@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=733 lang=python3
 #
@@ -6,30 +5,30 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ó¤Gºû°}¦Cimage, °_©lindex: sr¡Bsc©Mcolor, ±qimage[sr][sc]¶}©l, ±N©Ò¦³¬Û¾F¼Æ­Èµ¥¦Pimage[sr][sc]ªº¤¸¯À³£´À´«¬°color
+# çµ¦ä¸€å€‹äºŒç¶­é™£åˆ—image, èµ·å§‹index: srã€scå’Œcolor, å¾image[sr][sc]é–‹å§‹, å°‡æ‰€æœ‰ç›¸é„°æ•¸å€¼ç­‰åŒimage[sr][sc]çš„å…ƒç´ éƒ½æ›¿æ›ç‚ºcolor
 
 # By BFS, time: O(nm), space: O(nm)
-# ³oºØ¨«³X¤Gºû°}¦C©Î®qÀ¬Ãş«¬ÃD¥Ø¥i¥H¥ÎDFS©MBFS¨«³X, ¯àÁ×§K­«½Æ¨Ã¦P®É°µ§PÂ_
-# ¦ıBFS¸û¬°ª½Æ[
+# é€™ç¨®èµ°è¨ªäºŒç¶­é™£åˆ—æˆ–å³¶å¶¼é¡å‹é¡Œç›®å¯ä»¥ç”¨DFSå’ŒBFSèµ°è¨ª, èƒ½é¿å…é‡è¤‡ä¸¦åŒæ™‚åšåˆ¤æ–·
+# ä½†BFSè¼ƒç‚ºç›´è§€
 class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
         currColor = image[sr][sc]
-        # ¤@¶}©l´N¬Û¦P¨ºª½±µ¤£¥Î°µ
+        # ä¸€é–‹å§‹å°±ç›¸åŒé‚£ç›´æ¥ä¸ç”¨åš
         if currColor==color:
             return image
         n, m = len(image), len(image[0])
-        # °_©lªºindex¥[¤Jdeque, ¥[¤Jdeque«á§ó§ïcolor­È
+        # èµ·å§‹çš„indexåŠ å…¥deque, åŠ å…¥dequeå¾Œæ›´æ”¹colorå€¼
         queue = collections.deque([(sr, sc)])
         image[sr][sc] = color
         while queue:
-            # popleft°µ¨ìqueue®ÄªG, ¥ı¶i¥ı¥X
+            # popleftåšåˆ°queueæ•ˆæœ, å…ˆé€²å…ˆå‡º
             (x, y) = queue.popleft()
-            # ±N¥Ø«e­n³B²zªº®y¼Ğ¤§¤W¤U¥ª¥k®y¼Ğ°µ³B²z
-            # ¤W¤U¥ª¥k¥|­Ó¤è¦V
+            # å°‡ç›®å‰è¦è™•ç†çš„åº§æ¨™ä¹‹ä¸Šä¸‹å·¦å³åº§æ¨™åšè™•ç†
+            # ä¸Šä¸‹å·¦å³å››å€‹æ–¹å‘
             for mx, my in [(x-1, y), (x+1, y), (x, y-1), (x, y+1)]:
-                # ¦Xªkªº®y¼Ğ¤~°µ³B²z, ¤£¯à¶W¹LÃä¬É¥B­n©Mªì©lcolor¬Û¦P
+                # åˆæ³•çš„åº§æ¨™æ‰åšè™•ç†, ä¸èƒ½è¶…éé‚Šç•Œä¸”è¦å’Œåˆå§‹colorç›¸åŒ
                 if 0<=mx<n and 0<=my<m and image[mx][my] == currColor:
-                    # ¦Xªkªº¥[¤Jdeque¨Ã§ó§ïcolor
+                    # åˆæ³•çš„åŠ å…¥dequeä¸¦æ›´æ”¹color
                     queue.append((mx, my))
                     image[mx][my] = color
         return image
@@ -38,80 +37,21 @@ class Solution:
 # class Solution:
 #     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
 #         n, m = len(image), len(image[0])
-#         # ªì©l¤]·|³Q§ó§ï, ©Ò¥H­n°O¿ı¤U¨Ó
+#         # åˆå§‹ä¹Ÿæœƒè¢«æ›´æ”¹, æ‰€ä»¥è¦è¨˜éŒ„ä¸‹ä¾†
 #         currColor = image[sr][sc]
-#         # ¤l¨ç¦¡DFS, ±N
+#         # å­å‡½å¼DFS, å°‡
 #         def dfs(x: int, y: int):
-#             # ¨C¦¸¨«¨ì·sªº®y¼Ğ³£­n½T»{¬O§_©Mªì©lÃC¦â¬Û¦P, ¬Û¦P´N§ó§ïcolor
+#             # æ¯æ¬¡èµ°åˆ°æ–°çš„åº§æ¨™éƒ½è¦ç¢ºèªæ˜¯å¦å’Œåˆå§‹é¡è‰²ç›¸åŒ, ç›¸åŒå°±æ›´æ”¹color
 #             if image[x][y]==currColor:
 #                 image[x][y] = color
-#                 # ¹ï¬Û¾F²Å¦XÃä¬Éªº®y¼Ğ³£°µdfsÀË¬d¨Ã§ó§ï
+#                 # å°ç›¸é„°ç¬¦åˆé‚Šç•Œçš„åº§æ¨™éƒ½åšdfsæª¢æŸ¥ä¸¦æ›´æ”¹
 #                 for mx, my in [(x-1, y), (x+1, y), (x, y-1), (x, y+1)]:
 #                     if 0<=mx<n and 0<=my<m and image[mx][my]==currColor:
 #                         dfs(mx, my)
-#         # ·íªì©l¤£µ¥¦P­n¨Dªºcolor´N¶}©l°µDFS, §_«h¤£»İ­n°µ
+#         # ç•¶åˆå§‹ä¸ç­‰åŒè¦æ±‚çš„colorå°±é–‹å§‹åšDFS, å¦å‰‡ä¸éœ€è¦åš
 #         if currColor!=color:
 #             dfs(sr, sc)
 #         return image
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=733 lang=python3
-#
-# [733] Flood Fill
-#
-
-# @lc code=start
-# µ¹¤@­Ó¤Gºû°}¦Cimage, °_©lindex: sr¡Bsc©Mcolor, ±qimage[sr][sc]¶}©l, ±N©Ò¦³¬Û¾F¼Æ­Èµ¥¦Pimage[sr][sc]ªº¤¸¯À³£´À´«¬°color
-
-# By BFS, time: O(nm), space: O(nm)
-# ³oºØ¨«³X¤Gºû°}¦C©Î®qÀ¬Ãş«¬ÃD¥Ø¥i¥H¥ÎDFS©MBFS¨«³X, ¯àÁ×§K­«½Æ¨Ã¦P®É°µ§PÂ_
-# ¦ıBFS¸û¬°ª½Æ[
-class Solution:
-    def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
-        currColor = image[sr][sc]
-        # ¤@¶}©l´N¬Û¦P¨ºª½±µ¤£¥Î°µ
-        if currColor==color:
-            return image
-        n, m = len(image), len(image[0])
-        # °_©lªºindex¥[¤Jdeque, ¥[¤Jdeque«á§ó§ïcolor­È
-        queue = collections.deque([(sr, sc)])
-        image[sr][sc] = color
-        while queue:
-            # popleft°µ¨ìqueue®ÄªG, ¥ı¶i¥ı¥X
-            (x, y) = queue.popleft()
-            # ±N¥Ø«e­n³B²zªº®y¼Ğ¤§¤W¤U¥ª¥k®y¼Ğ°µ³B²z
-            # ¤W¤U¥ª¥k¥|­Ó¤è¦V
-            for mx, my in [(x-1, y), (x+1, y), (x, y-1), (x, y+1)]:
-                # ¦Xªkªº®y¼Ğ¤~°µ³B²z, ¤£¯à¶W¹LÃä¬É¥B­n©Mªì©lcolor¬Û¦P
-                if 0<=mx<n and 0<=my<m and image[mx][my] == currColor:
-                    # ¦Xªkªº¥[¤Jdeque¨Ã§ó§ïcolor
-                    queue.append((mx, my))
-                    image[mx][my] = color
-        return image
-
-# By DFS, time: O(nm), space: O(nm)
-# class Solution:
-#     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
-#         n, m = len(image), len(image[0])
-#         # ªì©l¤]·|³Q§ó§ï, ©Ò¥H­n°O¿ı¤U¨Ó
-#         currColor = image[sr][sc]
-#         # ¤l¨ç¦¡DFS, ±N
-#         def dfs(x: int, y: int):
-#             # ¨C¦¸¨«¨ì·sªº®y¼Ğ³£­n½T»{¬O§_©Mªì©lÃC¦â¬Û¦P, ¬Û¦P´N§ó§ïcolor
-#             if image[x][y]==currColor:
-#                 image[x][y] = color
-#                 # ¹ï¬Û¾F²Å¦XÃä¬Éªº®y¼Ğ³£°µdfsÀË¬d¨Ã§ó§ï
-#                 for mx, my in [(x-1, y), (x+1, y), (x, y-1), (x, y+1)]:
-#                     if 0<=mx<n and 0<=my<m and image[mx][my]==currColor:
-#                         dfs(mx, my)
-#         # ·íªì©l¤£µ¥¦P­n¨Dªºcolor´N¶}©l°µDFS, §_«h¤£»İ­n°µ
-#         if currColor!=color:
-#             dfs(sr, sc)
-#         return image
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

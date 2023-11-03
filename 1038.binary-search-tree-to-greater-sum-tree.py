@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1038 lang=python3
 #
@@ -14,56 +13,21 @@
 #         self.right = right
 
 # By dfs, time: O(n), space: O(1)
-# ¨D¥XBST¤¤©Ò¦³node¦Û¤v¤§val+¥k¤ètree val¤§­È, ¦]¬OBST©Ò¥H¥k¤è³£¬Ovalue¤ñ¦Û¤v¤j¤§node
+# æ±‚å‡ºBSTä¸­æ‰€æœ‰nodeè‡ªå·±ä¹‹val+å³æ–¹tree valä¹‹å€¼, å› æ˜¯BSTæ‰€ä»¥å³æ–¹éƒ½æ˜¯valueæ¯”è‡ªå·±å¤§ä¹‹node
 class Solution:
     def bstToGst(self, root: TreeNode) -> TreeNode:
         tmp = 0
         def dfs(node):
             if node is not None:
-                # ¤¤¶i¨Ó, ¥kÃäªºnode³£§âvalue°µÁ`¨Ã§ó·s¹L, ¤~½ü¨ì¥ªÃäªºnode
+                # ä¸­é€²ä¾†, å³é‚Šçš„nodeéƒ½æŠŠvalueåšç¸½ä¸¦æ›´æ–°é, æ‰è¼ªåˆ°å·¦é‚Šçš„node
                 nonlocal tmp
                 dfs(node.right)
                 tmp += node.val
                 node.val = tmp
                 dfs(node.left)
-        # ±qroot¶}©l¨«³X, ¤¤->¥k->¥ª
+        # å¾rooté–‹å§‹èµ°è¨ª, ä¸­->å³->å·¦
         dfs(root)
         return root
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1038 lang=python3
-#
-# [1038] Binary Search Tree to Greater Sum Tree
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By dfs, time: O(n), space: O(1)
-# ¨D¥XBST¤¤©Ò¦³node¦Û¤v¤§val+¥k¤ètree val¤§­È, ¦]¬OBST©Ò¥H¥k¤è³£¬Ovalue¤ñ¦Û¤v¤j¤§node
-class Solution:
-    def bstToGst(self, root: TreeNode) -> TreeNode:
-        tmp = 0
-        def dfs(node):
-            if node is not None:
-                # ¤¤¶i¨Ó, ¥kÃäªºnode³£§âvalue°µÁ`¨Ã§ó·s¹L, ¤~½ü¨ì¥ªÃäªºnode
-                nonlocal tmp
-                dfs(node.right)
-                tmp += node.val
-                node.val = tmp
-                dfs(node.left)
-        # ±qroot¶}©l¨«³X, ¤¤->¥k->¥ª
-        dfs(root)
-        return root
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

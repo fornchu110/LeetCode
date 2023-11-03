@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * @lc app=leetcode id=1108 lang=c
  *
@@ -8,20 +7,20 @@
 // @lc code=start
 
 // By index and sprintf, time: O(n), space: O(1)
-// python¯àª½±µreplace, c¨S¦³
-// ­nª½±µ§â.ªºindex°O¤U¨Ó, ¦A°µ´À´«
+// pythonèƒ½ç›´æ¥replace, cæ²’æœ‰
+// è¦ç›´æ¥æŠŠ.çš„indexè¨˜ä¸‹ä¾†, å†åšæ›¿æ›
 char* defangIPaddr(char* address) {
     int len = strlen(address);
     int idx = 0;
-    // res¥Î¨Ó¦s§ïÅÜ«áªº¦r¦ê, ¦]¬°c»y¨¥µLªkinplace´À´«
-    // «Å§iªÅ¶¡len+7ªº­ì¦]¬O, ipÁ`¦@·|¦³3­Ó"."", ³o¼Ë¦h¤T¹ï[]¦@6
-    // ÁÙ­n¦h¤@­ÓªÅ¶¡©ñ\0 
+    // resç”¨ä¾†å­˜æ”¹è®Šå¾Œçš„å­—ä¸², å› ç‚ºcèªè¨€ç„¡æ³•inplaceæ›¿æ›
+    // å®£å‘Šç©ºé–“len+7çš„åŸå› æ˜¯, ipç¸½å…±æœƒæœ‰3å€‹"."", é€™æ¨£å¤šä¸‰å°[]å…±6
+    // é‚„è¦å¤šä¸€å€‹ç©ºé–“æ”¾\0 
     char* res = (char*)malloc(sizeof(char)*(len+7));
     for(int i=0;i<len;i++) {
         if(address[i]=='.') {
-            // sprintf¬O±N®æ¦¡¤Æ¦r¦êµo°e¨ì¥Ø¼Ğ¦r¦ê, ¥Ø¼Ğ¦r¦ê¦b«e, ®æ¦¡¤Æ¦r¦ê¦b«Å§i®æ¦¡ªº«á­±
-            // ©Ò¥H¤U­±³o¦æ´N¬O±N[.]µo°e¨ìres³o­Ó¦r¦ê+idxªº¦ì¸m
-            // ªğ¦^ª½¬O¦r²ÅÁ`¼Æ, ¤]´N¬O¥Ø«eresªº³Ì·s¦ì¸m
+            // sprintfæ˜¯å°‡æ ¼å¼åŒ–å­—ä¸²ç™¼é€åˆ°ç›®æ¨™å­—ä¸², ç›®æ¨™å­—ä¸²åœ¨å‰, æ ¼å¼åŒ–å­—ä¸²åœ¨å®£å‘Šæ ¼å¼çš„å¾Œé¢
+            // æ‰€ä»¥ä¸‹é¢é€™è¡Œå°±æ˜¯å°‡[.]ç™¼é€åˆ°resé€™å€‹å­—ä¸²+idxçš„ä½ç½®
+            // è¿”å›ç›´æ˜¯å­—ç¬¦ç¸½æ•¸, ä¹Ÿå°±æ˜¯ç›®å‰resçš„æœ€æ–°ä½ç½®
             idx += sprintf(res+idx, "%s", "[.]");
         } 
         else {
@@ -34,40 +33,3 @@ char* defangIPaddr(char* address) {
 
 // @lc code=end
 
-=======
-/*
- * @lc app=leetcode id=1108 lang=c
- *
- * [1108] Defanging an IP Address
- */
-
-// @lc code=start
-
-// By index and sprintf, time: O(n), space: O(1)
-// python¯àª½±µreplace, c¨S¦³
-// ­nª½±µ§â.ªºindex°O¤U¨Ó, ¦A°µ´À´«
-char* defangIPaddr(char* address) {
-    int len = strlen(address);
-    int idx = 0;
-    // res¥Î¨Ó¦s§ïÅÜ«áªº¦r¦ê, ¦]¬°c»y¨¥µLªkinplace´À´«
-    // «Å§iªÅ¶¡len+7ªº­ì¦]¬O, ipÁ`¦@·|¦³3­Ó"."", ³o¼Ë¦h¤T¹ï[]¦@6
-    // ÁÙ­n¦h¤@­ÓªÅ¶¡©ñ\0 
-    char* res = (char*)malloc(sizeof(char)*(len+7));
-    for(int i=0;i<len;i++) {
-        if(address[i]=='.') {
-            // sprintf¬O±N®æ¦¡¤Æ¦r¦êµo°e¨ì¥Ø¼Ğ¦r¦ê, ¥Ø¼Ğ¦r¦ê¦b«e, ®æ¦¡¤Æ¦r¦ê¦b«Å§i®æ¦¡ªº«á­±
-            // ©Ò¥H¤U­±³o¦æ´N¬O±N[.]µo°e¨ìres³o­Ó¦r¦ê+idxªº¦ì¸m
-            // ªğ¦^ª½¬O¦r²ÅÁ`¼Æ, ¤]´N¬O¥Ø«eresªº³Ì·s¦ì¸m
-            idx += sprintf(res+idx, "%s", "[.]");
-        } 
-        else {
-            res[idx++] = address[i];
-        }
-    }
-    res[idx] = '\0';
-    return res;
-}
-
-// @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

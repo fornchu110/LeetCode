@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1323 lang=python3
 #
@@ -7,37 +6,15 @@
 
 # @lc code=start
 # By string processing
-# ­n±Nnum°µ¤@¦¸6´«¦¨9, return³o¾Ş§@³Ì¤jªº¼Æ
-# ´N¬O­n±N³Ì°ª¦ì¼Æªº6´«¦¨9, ³oºØ±q¥ª¬İ¨ì¥k³ÌÂ²³æªº¤èªk´N¥ıÂà´«¦¨str
-# ¦]¬°string processing±q¥ª¨ì¥k¬İ, ³B²z§¹¦AÂà´«¦¨int
+# è¦å°‡numåšä¸€æ¬¡6æ›æˆ9, returné€™æ“ä½œæœ€å¤§çš„æ•¸
+# å°±æ˜¯è¦å°‡æœ€é«˜ä½æ•¸çš„6æ›æˆ9, é€™ç¨®å¾å·¦çœ‹åˆ°å³æœ€ç°¡å–®çš„æ–¹æ³•å°±å…ˆè½‰æ›æˆstr
+# å› ç‚ºstring processingå¾å·¦åˆ°å³çœ‹, è™•ç†å®Œå†è½‰æ›æˆint
 class Solution:
     def maximum69Number (self, num: int) -> int:
         num = str(num)
-        # replace()¬O¦^¶Ç­È¤~¦³§ïÅÜ¹L, 1¥Nªí¥uÂà´«1­Ó
+        # replace()æ˜¯å›å‚³å€¼æ‰æœ‰æ”¹è®Šé, 1ä»£è¡¨åªè½‰æ›1å€‹
         num = num.replace("6", "9", 1)
         return int(num)
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1323 lang=python3
-#
-# [1323] Maximum 69 Number
-#
-
-# @lc code=start
-# By string processing
-# ­n±Nnum°µ¤@¦¸6´«¦¨9, return³o¾Ş§@³Ì¤jªº¼Æ
-# ´N¬O­n±N³Ì°ª¦ì¼Æªº6´«¦¨9, ³oºØ±q¥ª¬İ¨ì¥k³ÌÂ²³æªº¤èªk´N¥ıÂà´«¦¨str
-# ¦]¬°string processing±q¥ª¨ì¥k¬İ, ³B²z§¹¦AÂà´«¦¨int
-class Solution:
-    def maximum69Number (self, num: int) -> int:
-        num = str(num)
-        # replace()¬O¦^¶Ç­È¤~¦³§ïÅÜ¹L, 1¥Nªí¥uÂà´«1­Ó
-        num = num.replace("6", "9", 1)
-        return int(num)
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

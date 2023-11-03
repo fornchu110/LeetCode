@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=724 lang=python3
 #
@@ -6,7 +5,7 @@
 #
 
 # @lc code=start
-# µ¹¤@°}¦Cnums, ­n¨D§ä¥X°}¦C¥ª¥bÃä¼ÆÁ`©Mµ¥¦P¥k¥bÃä¼ÆÁ`©M¤§index
+# çµ¦ä¸€é™£åˆ—nums, è¦æ±‚æ‰¾å‡ºé™£åˆ—å·¦åŠé‚Šæ•¸ç¸½å’Œç­‰åŒå³åŠé‚Šæ•¸ç¸½å’Œä¹‹index
 
 # By enumerate, time: O(n), space: O(1)
 
@@ -16,50 +15,17 @@ class Solution:
         r = 0
         for i in nums[1:]:
             r += i
-        # ¤]¥i¯à¥Hindex0¬°¬É, ÁöµMl¥²¬°0, ¦ır­è¦n¤]¬O0, ²¦³º¤¸¯À¦³¥¿¦³­t
+        # ä¹Ÿå¯èƒ½ä»¥index0ç‚ºç•Œ, é›–ç„¶lå¿…ç‚º0, ä½†rå‰›å¥½ä¹Ÿæ˜¯0, ç•¢ç«Ÿå…ƒç´ æœ‰æ­£æœ‰è² 
         if r==0:
             return 0
-        # ª`·N¤£½×¦p¦ó¤Á¤ù, enumerate·|±qindex0¶}©l
+        # æ³¨æ„ä¸è«–å¦‚ä½•åˆ‡ç‰‡, enumerateæœƒå¾index0é–‹å§‹
         for idx, i in enumerate(nums[1:]):
             l += nums[idx]
             r -= nums[idx+1]
             if l==r:
-                #¦]idx¬O±q0¶}©l, ¦Ó§Ú¹ê»Ú¦b¨«³Xªºidx¬O±q1¶}©l
+                #å› idxæ˜¯å¾0é–‹å§‹, è€Œæˆ‘å¯¦éš›åœ¨èµ°è¨ªçš„idxæ˜¯å¾1é–‹å§‹
                 return idx+1
         return -1
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=724 lang=python3
-#
-# [724] Find Pivot Index
-#
-
-# @lc code=start
-# µ¹¤@°}¦Cnums, ­n¨D§ä¥X°}¦C¥ª¥bÃä¼ÆÁ`©Mµ¥¦P¥k¥bÃä¼ÆÁ`©M¤§index
-
-# By enumerate, time: O(n), space: O(1)
-
-class Solution:
-    def pivotIndex(self, nums: List[int]) -> int:
-        l = 0
-        r = 0
-        for i in nums[1:]:
-            r += i
-        # ¤]¥i¯à¥Hindex0¬°¬É, ÁöµMl¥²¬°0, ¦ır­è¦n¤]¬O0, ²¦³º¤¸¯À¦³¥¿¦³­t
-        if r==0:
-            return 0
-        # ª`·N¤£½×¦p¦ó¤Á¤ù, enumerate·|±qindex0¶}©l
-        for idx, i in enumerate(nums[1:]):
-            l += nums[idx]
-            r -= nums[idx+1]
-            if l==r:
-                #¦]idx¬O±q0¶}©l, ¦Ó§Ú¹ê»Ú¦b¨«³Xªºidx¬O±q1¶}©l
-                return idx+1
-        return -1
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

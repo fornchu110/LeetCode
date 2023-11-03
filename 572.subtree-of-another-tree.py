@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=572 lang=python3
 #
@@ -13,75 +12,31 @@
 #         self.left = left
 #         self.right = right
 
-# By enumerate DFS, time: O(|root| x |subroot|), space: O(max{droot ,dsubroot}), d«üdepth
-# ¹ïroot¨ºÁûtree¨«³X¥Htree¤¤©Ò¦³node¬°root®É
-# ¬O§_¦s¦bsubroot¬°rootªº³oÁûtree§@¬°subtree
-# is¬O§PÂ_°O¾ĞÅé¦ì¸m, ==¬O§PÂ_­È, ÁöµM¦bNone®É³£¥i¥H¥Î, ¦ıis·|¤ñ¸û¦³®Ä²v
+# By enumerate DFS, time: O(|root| x |subroot|), space: O(max{droot ,dsubroot}), dæŒ‡depth
+# å°rooté‚£é¡†treeèµ°è¨ªä»¥treeä¸­æ‰€æœ‰nodeç‚ºrootæ™‚
+# æ˜¯å¦å­˜åœ¨subrootç‚ºrootçš„é€™é¡†treeä½œç‚ºsubtree
+# isæ˜¯åˆ¤æ–·è¨˜æ†¶é«”ä½ç½®, ==æ˜¯åˆ¤æ–·å€¼, é›–ç„¶åœ¨Noneæ™‚éƒ½å¯ä»¥ç”¨, ä½†isæœƒæ¯”è¼ƒæœ‰æ•ˆç‡
 class Solution:
-    # ¨âªÌ³£©¹¤U¨«³X, ³£¬ODFS
-    # check¥Î¨Ó¬İ¬Û¦P¬Û¹ï¦ì¸mªºnode.val¬O§_¬Ûµ¥, ¬Ûµ¥¦AÄ~Äò©¹¤U
+    # å…©è€…éƒ½å¾€ä¸‹èµ°è¨ª, éƒ½æ˜¯DFS
+    # checkç”¨ä¾†çœ‹ç›¸åŒç›¸å°ä½ç½®çš„node.valæ˜¯å¦ç›¸ç­‰, ç›¸ç­‰å†ç¹¼çºŒå¾€ä¸‹
     def check(self, curRoot, curSubRoot):
-        # ·í¨â­Ótree¦b¬Û¦P¬Û¹ï¦ì¸mªºnode.val³£¬°None¥Nªí¥¿½T
+        # ç•¶å…©å€‹treeåœ¨ç›¸åŒç›¸å°ä½ç½®çš„node.valéƒ½ç‚ºNoneä»£è¡¨æ­£ç¢º
         if curRoot is None and curSubRoot is None:
             return True
-        # ·í¤@­Ó¬ONone¤@­Ó¤£¬O¥Nªí¤£¥i¯à¬°subtree
+        # ç•¶ä¸€å€‹æ˜¯Noneä¸€å€‹ä¸æ˜¯ä»£è¡¨ä¸å¯èƒ½ç‚ºsubtree
         if curRoot is None or curSubRoot is None:
             return False
-        # »İ­n¤W­±¨â­Ó¤£¯àª½±µ§PÂ_curRoot.val==curSubRoot.val¬O¦]¬°None«D­È, ¤£¯à»P­È°µ==§PÂ_
-        # ·í¤U¨â­Ónode­È¬Ûµ¥¥Nªí¤´¦³¥i¯à¬OsubTree, ¦A¨Ó¬İ¥ª¤l¾ğ©M¥k¤l¾ğ, ³£­n¬Ûµ¥©Ò¥H¥Îand
+        # éœ€è¦ä¸Šé¢å…©å€‹ä¸èƒ½ç›´æ¥åˆ¤æ–·curRoot.val==curSubRoot.valæ˜¯å› ç‚ºNoneéå€¼, ä¸èƒ½èˆ‡å€¼åš==åˆ¤æ–·
+        # ç•¶ä¸‹å…©å€‹nodeå€¼ç›¸ç­‰ä»£è¡¨ä»æœ‰å¯èƒ½æ˜¯subTree, å†ä¾†çœ‹å·¦å­æ¨¹å’Œå³å­æ¨¹, éƒ½è¦ç›¸ç­‰æ‰€ä»¥ç”¨and
         return curRoot.val==curSubRoot.val and self.check(curRoot.left, curSubRoot.left) and self.check(curRoot.right, curSubRoot.right)
     
-    # ¥Î¨Ó¬İ·í¤Uroot¬O§_¦s¦bsubtree, ¤£Â_©I¥scheck©M¦Û¤v
+    # ç”¨ä¾†çœ‹ç•¶ä¸‹rootæ˜¯å¦å­˜åœ¨subtree, ä¸æ–·å‘¼å«checkå’Œè‡ªå·±
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
         if root is None:
             return False
-        # ¥H­ì¥»root¬°root¶}©l§PÂ_, ­YFalse«K¹ï­ì¥»root¤§¥ª¤l¾ğ¥H¤Î¥k¤l¾ğ°µ§PÂ_ 
-        # ¥u­n¦³¨ä¤@µo²{¬OsubTree§Y¥i©Ò¥H¥Îor, ¬Opreorder¶¶§Ç°µ§PÂ_: root->¥ª¤l->¥k¤l
+        # ä»¥åŸæœ¬rootç‚ºrooté–‹å§‹åˆ¤æ–·, è‹¥Falseä¾¿å°åŸæœ¬rootä¹‹å·¦å­æ¨¹ä»¥åŠå³å­æ¨¹åšåˆ¤æ–· 
+        # åªè¦æœ‰å…¶ä¸€ç™¼ç¾æ˜¯subTreeå³å¯æ‰€ä»¥ç”¨or, æ˜¯preorderé †åºåšåˆ¤æ–·: root->å·¦å­->å³å­
         return self.check(root, subRoot) or self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=572 lang=python3
-#
-# [572] Subtree of Another Tree
-#
-
-# @lc code=start
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By enumerate DFS, time: O(|root| x |subroot|), space: O(max{droot ,dsubroot}), d«üdepth
-# ¹ïroot¨ºÁûtree¨«³X¥Htree¤¤©Ò¦³node¬°root®É
-# ¬O§_¦s¦bsubroot¬°rootªº³oÁûtree§@¬°subtree
-# is¬O§PÂ_°O¾ĞÅé¦ì¸m, ==¬O§PÂ_­È, ÁöµM¦bNone®É³£¥i¥H¥Î, ¦ıis·|¤ñ¸û¦³®Ä²v
-class Solution:
-    # ¨âªÌ³£©¹¤U¨«³X, ³£¬ODFS
-    # check¥Î¨Ó¬İ¬Û¦P¬Û¹ï¦ì¸mªºnode.val¬O§_¬Ûµ¥, ¬Ûµ¥¦AÄ~Äò©¹¤U
-    def check(self, curRoot, curSubRoot):
-        # ·í¨â­Ótree¦b¬Û¦P¬Û¹ï¦ì¸mªºnode.val³£¬°None¥Nªí¥¿½T
-        if curRoot is None and curSubRoot is None:
-            return True
-        # ·í¤@­Ó¬ONone¤@­Ó¤£¬O¥Nªí¤£¥i¯à¬°subtree
-        if curRoot is None or curSubRoot is None:
-            return False
-        # »İ­n¤W­±¨â­Ó¤£¯àª½±µ§PÂ_curRoot.val==curSubRoot.val¬O¦]¬°None«D­È, ¤£¯à»P­È°µ==§PÂ_
-        # ·í¤U¨â­Ónode­È¬Ûµ¥¥Nªí¤´¦³¥i¯à¬OsubTree, ¦A¨Ó¬İ¥ª¤l¾ğ©M¥k¤l¾ğ, ³£­n¬Ûµ¥©Ò¥H¥Îand
-        return curRoot.val==curSubRoot.val and self.check(curRoot.left, curSubRoot.left) and self.check(curRoot.right, curSubRoot.right)
-    
-    # ¥Î¨Ó¬İ·í¤Uroot¬O§_¦s¦bsubtree, ¤£Â_©I¥scheck©M¦Û¤v
-    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
-        if root is None:
-            return False
-        # ¥H­ì¥»root¬°root¶}©l§PÂ_, ­YFalse«K¹ï­ì¥»root¤§¥ª¤l¾ğ¥H¤Î¥k¤l¾ğ°µ§PÂ_ 
-        # ¥u­n¦³¨ä¤@µo²{¬OsubTree§Y¥i©Ò¥H¥Îor, ¬Opreorder¶¶§Ç°µ§PÂ_: root->¥ª¤l->¥k¤l
-        return self.check(root, subRoot) or self.isSubtree(root.left, subRoot) or self.isSubtree(root.right, subRoot)
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

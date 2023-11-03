@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1337 lang=python3
 #
@@ -6,13 +5,13 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ó¤Gºû°}¦Cmat©M¾ã¼Æk, ¨C¤@¦C®Ú¾Ú1ªº¼Æ¶q¨M©w±j®z, ³Ì«á­nreturn«ek¤p¤§¦Cªºindex
-# ¨â¦C1¼Æ¶q¦V¦Pªº¸Ü, index¸û¤pªÌ¸û®z
-# 1Á`¬O¦b0ªº¥ªÃä
+# çµ¦ä¸€å€‹äºŒç¶­é™£åˆ—matå’Œæ•´æ•¸k, æ¯ä¸€åˆ—æ ¹æ“š1çš„æ•¸é‡æ±ºå®šå¼·å¼±, æœ€å¾Œè¦returnå‰kå°ä¹‹åˆ—çš„index
+# å…©åˆ—1æ•¸é‡å‘åŒçš„è©±, indexè¼ƒå°è€…è¼ƒå¼±
+# 1ç¸½æ˜¯åœ¨0çš„å·¦é‚Š
 
-# By binary search and heap, time: O(mlogn+klogm), space: O(m), ¨ä¤¤m¬O¦æ¼Æ¡Bn¬O¦C¼Æ, ¦Óspace¬Oheap¦b±Æ§Ç¹Lµ{¤§®ø¯Ó
-# ³oÃD¦]¬°1Á`¦b0ªº¥ªÃä, ¥i¥H¥Î¤G¤À¬d§ä¨Ó¬Ý1ªº¦ì¸m±oª¾1ªº¼Æ¶q, ¦Ó¤£¬O¨«³X¥þ³¡mat
-# ­n±Nhash±Æ§ÇªºÃD¥Ø©Î³\§ï¦¨¥´¥]tuple¥Îheap§ó¦n? ¦]¬°heap¤£°µ±Æ§Ç¦Ó¬O¦b«Ø¥ß®É¨M©w¦ì¸m
+# By binary search and heap, time: O(mlogn+klogm), space: O(m), å…¶ä¸­mæ˜¯è¡Œæ•¸ã€næ˜¯åˆ—æ•¸, è€Œspaceæ˜¯heapåœ¨æŽ’åºéŽç¨‹ä¹‹æ¶ˆè€—
+# é€™é¡Œå› ç‚º1ç¸½åœ¨0çš„å·¦é‚Š, å¯ä»¥ç”¨äºŒåˆ†æŸ¥æ‰¾ä¾†çœ‹1çš„ä½ç½®å¾—çŸ¥1çš„æ•¸é‡, è€Œä¸æ˜¯èµ°è¨ªå…¨éƒ¨mat
+# è¦å°‡hashæŽ’åºçš„é¡Œç›®æˆ–è¨±æ”¹æˆæ‰“åŒ…tupleç”¨heapæ›´å¥½? å› ç‚ºheapä¸åšæŽ’åºè€Œæ˜¯åœ¨å»ºç«‹æ™‚æ±ºå®šä½ç½®
 class Solution:
     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
         m, n = len(mat), len(mat[0])
@@ -26,25 +25,25 @@ class Solution:
             #     else:
             #         pos = mid
             #         l = mid + 1
-            # ¥Îbisect¹F¨ì¤W­±®ÄªG, bisect_left¥Nªí¹J¨ì¬Û¦P¤¸¯À®É§ä¥ªÃäªº 
-            # bisect_left()ªº°Ñ¼Æ­n¬O±Æ§Ç¦nªºlist
-            # ±Nmat¤¤¨C¤@¦C¥Î[::-1]¤ÏÂà«á¹F¨ì¥Ñ¥k¦V¥ª§ä1ªº®ÄªG
-            # ¦Ón-³o­Óindex-1¤~¬O¥¼¤ÏÂà®Éªºindex
+            # ç”¨bisecté”åˆ°ä¸Šé¢æ•ˆæžœ, bisect_leftä»£è¡¨é‡åˆ°ç›¸åŒå…ƒç´ æ™‚æ‰¾å·¦é‚Šçš„ 
+            # bisect_left()çš„åƒæ•¸è¦æ˜¯æŽ’åºå¥½çš„list
+            # å°‡matä¸­æ¯ä¸€åˆ—ç”¨[::-1]åè½‰å¾Œé”åˆ°ç”±å³å‘å·¦æ‰¾1çš„æ•ˆæžœ
+            # è€Œn-é€™å€‹index-1æ‰æ˜¯æœªåè½‰æ™‚çš„index
             pos = n-bisect_left(mat[i][::-1], 1)-1
-            # 1ªº­Ó¼Æ¬O³Ì«á¤@­Ó1©Ò¦bindex+1
-            # ±N1ªº¼Æ¶q©M¦C¤§index¥]¦¨tuple©ñ¤Jpower(list)
+            # 1çš„å€‹æ•¸æ˜¯æœ€å¾Œä¸€å€‹1æ‰€åœ¨index+1
+            # å°‡1çš„æ•¸é‡å’Œåˆ—ä¹‹indexåŒ…æˆtupleæ”¾å…¥power(list)
             power.append((pos+1, i))
-        # ±Npower³o­ÓlistÂà´«¦¨heap, ³o­Óheap¬Omin heap, ©Ò¥H1¼Æ¶q³Ì¤pªº·|³Q©ñ¦b¤W­±
-        # °O¦í³o­Ó»yªk, ¸òcollections.deque()Ãþ¦ü
+        # å°‡poweré€™å€‹listè½‰æ›æˆheap, é€™å€‹heapæ˜¯min heap, æ‰€ä»¥1æ•¸é‡æœ€å°çš„æœƒè¢«æ”¾åœ¨ä¸Šé¢
+        # è¨˜ä½é€™å€‹èªžæ³•, è·Ÿcollections.deque()é¡žä¼¼
         heapq.heapify(power)
         res = list()
         for i in range(k):
-            # ±Nk­Ó¦C¤§index pop¥X¨Ó
+            # å°‡kå€‹åˆ—ä¹‹index popå‡ºä¾†
             res.append(heapq.heappop(power)[1])
         return res
 
 # By hash and sorted, time: O(n^2), space: O(logn)
-# ¥ý¨«³X¤@¦¸mat«Ø¥ß¦n¨C¦C1¼Æ¶q¤§hash, ¦A±Nhash®Ú¾Úvalue(¤]´N¬O1ªº¼Æ¶q)°µ±Æ¦C
+# å…ˆèµ°è¨ªä¸€æ¬¡matå»ºç«‹å¥½æ¯åˆ—1æ•¸é‡ä¹‹hash, å†å°‡hashæ ¹æ“švalue(ä¹Ÿå°±æ˜¯1çš„æ•¸é‡)åšæŽ’åˆ—
 # class Solution:
 #     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
 #         hash = {}
@@ -54,90 +53,18 @@ class Solution:
 #                 if mat[i][j]==1:
 #                     tmp += 1
 #             hash[i] = tmp
-#         # ­«ÂI, dict¥u¯à¥ÎsortedªðÁÙ¦¨¤@­Ólist, ¨S¦³dict.sort
-#         # ªðÁÙ¦¨list«á´N¨S¦³dictªº¥\¯à, ¦Ó¬O±Nkey©Mvalue¥]¦¨¤@­Ótuple
-#         # ²Ä¤@­Ó°Ñ¼Æ³]©w±Nhash¤º©Ò¦³¤¸¯À§@±Æ¦C, key´N¬Ox[1]¤]´N¬Ovalue
+#         # é‡é»ž, dictåªèƒ½ç”¨sortedè¿”é‚„æˆä¸€å€‹list, æ²’æœ‰dict.sort
+#         # è¿”é‚„æˆlistå¾Œå°±æ²’æœ‰dictçš„åŠŸèƒ½, è€Œæ˜¯å°‡keyå’ŒvalueåŒ…æˆä¸€å€‹tuple
+#         # ç¬¬ä¸€å€‹åƒæ•¸è¨­å®šå°‡hashå…§æ‰€æœ‰å…ƒç´ ä½œæŽ’åˆ—, keyå°±æ˜¯x[1]ä¹Ÿå°±æ˜¯value
 #         sortedhash = sorted(hash.items(), key = lambda x:x[1])
 #         print(sortedhash)
 #         res = []
-#         # ±N«ei­Óhashªºkey¥[¤Jµª®×
+#         # å°‡å‰iå€‹hashçš„keyåŠ å…¥ç­”æ¡ˆ
 #         for i in range(k):
-#             # [0]¬Okey, [1]¬Ovalue
+#             # [0]æ˜¯key, [1]æ˜¯value
 #             res.append(sortedhash[i][0])
 #         return res
         
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1337 lang=python3
-#
-# [1337] The K Weakest Rows in a Matrix
-#
-
-# @lc code=start
-# µ¹¤@­Ó¤Gºû°}¦Cmat©M¾ã¼Æk, ¨C¤@¦C®Ú¾Ú1ªº¼Æ¶q¨M©w±j®z, ³Ì«á­nreturn«ek¤p¤§¦Cªºindex
-# ¨â¦C1¼Æ¶q¦V¦Pªº¸Ü, index¸û¤pªÌ¸û®z
-# 1Á`¬O¦b0ªº¥ªÃä
-
-# By binary search and heap, time: O(mlogn+klogm), space: O(m), ¨ä¤¤m¬O¦æ¼Æ¡Bn¬O¦C¼Æ, ¦Óspace¬Oheap¦b±Æ§Ç¹Lµ{¤§®ø¯Ó
-# ³oÃD¦]¬°1Á`¦b0ªº¥ªÃä, ¥i¥H¥Î¤G¤À¬d§ä¨Ó¬Ý1ªº¦ì¸m±oª¾1ªº¼Æ¶q, ¦Ó¤£¬O¨«³X¥þ³¡mat
-# ­n±Nhash±Æ§ÇªºÃD¥Ø©Î³\§ï¦¨¥´¥]tuple¥Îheap§ó¦n? ¦]¬°heap¤£°µ±Æ§Ç¦Ó¬O¦b«Ø¥ß®É¨M©w¦ì¸m
-class Solution:
-    def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
-        m, n = len(mat), len(mat[0])
-        power = list()
-        for i in range(m):
-            # l, r, pos = 0, n-1, -1
-            # while l <= r:
-            #     mid = (l + r) // 2
-            #     if mat[i][mid] == 0:
-            #         r = mid - 1
-            #     else:
-            #         pos = mid
-            #         l = mid + 1
-            # ¥Îbisect¹F¨ì¤W­±®ÄªG, bisect_left¥Nªí¹J¨ì¬Û¦P¤¸¯À®É§ä¥ªÃäªº 
-            # bisect_left()ªº°Ñ¼Æ­n¬O±Æ§Ç¦nªºlist
-            # ±Nmat¤¤¨C¤@¦C¥Î[::-1]¤ÏÂà«á¹F¨ì¥Ñ¥k¦V¥ª§ä1ªº®ÄªG
-            # ¦Ón-³o­Óindex-1¤~¬O¥¼¤ÏÂà®Éªºindex
-            pos = n-bisect_left(mat[i][::-1], 1)-1
-            # 1ªº­Ó¼Æ¬O³Ì«á¤@­Ó1©Ò¦bindex+1
-            # ±N1ªº¼Æ¶q©M¦C¤§index¥]¦¨tuple©ñ¤Jpower(list)
-            power.append((pos+1, i))
-        # ±Npower³o­ÓlistÂà´«¦¨heap, ³o­Óheap¬Omin heap, ©Ò¥H1¼Æ¶q³Ì¤pªº·|³Q©ñ¦b¤W­±
-        # °O¦í³o­Ó»yªk, ¸òcollections.deque()Ãþ¦ü
-        heapq.heapify(power)
-        res = list()
-        for i in range(k):
-            # ±Nk­Ó¦C¤§index pop¥X¨Ó
-            res.append(heapq.heappop(power)[1])
-        return res
-
-# By hash and sorted, time: O(n^2), space: O(logn)
-# ¥ý¨«³X¤@¦¸mat«Ø¥ß¦n¨C¦C1¼Æ¶q¤§hash, ¦A±Nhash®Ú¾Úvalue(¤]´N¬O1ªº¼Æ¶q)°µ±Æ¦C
-# class Solution:
-#     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:
-#         hash = {}
-#         for i in range(len(mat)):
-#             tmp = 0
-#             for j in range(len(mat[0])):
-#                 if mat[i][j]==1:
-#                     tmp += 1
-#             hash[i] = tmp
-#         # ­«ÂI, dict¥u¯à¥ÎsortedªðÁÙ¦¨¤@­Ólist, ¨S¦³dict.sort
-#         # ªðÁÙ¦¨list«á´N¨S¦³dictªº¥\¯à, ¦Ó¬O±Nkey©Mvalue¥]¦¨¤@­Ótuple
-#         # ²Ä¤@­Ó°Ñ¼Æ³]©w±Nhash¤º©Ò¦³¤¸¯À§@±Æ¦C, key´N¬Ox[1]¤]´N¬Ovalue
-#         sortedhash = sorted(hash.items(), key = lambda x:x[1])
-#         print(sortedhash)
-#         res = []
-#         # ±N«ei­Óhashªºkey¥[¤Jµª®×
-#         for i in range(k):
-#             # [0]¬Okey, [1]¬Ovalue
-#             res.append(sortedhash[i][0])
-#         return res
-        
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

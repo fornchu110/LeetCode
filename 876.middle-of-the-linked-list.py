@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=876 lang=python3
 #
@@ -13,8 +12,8 @@
 #         self.next = next
 
 # By one pointer, time: O(n), space: O(1)
-# ¥ı¬İ¦³¦h¤Ö­Ónode, ¦A±qhead¨«n//2¨B¨ìmid 
-# Ex: 5­Ónode, head+2¨B¨ìnode3, 6­Ónode: head+3¨B¨ì4 
+# å…ˆçœ‹æœ‰å¤šå°‘å€‹node, å†å¾headèµ°n//2æ­¥åˆ°mid 
+# Ex: 5å€‹node, head+2æ­¥åˆ°node3, 6å€‹node: head+3æ­¥åˆ°4 
 class Solution:
     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
         dummy = ListNode(next = head)
@@ -31,10 +30,10 @@ class Solution:
         return cur
 
 # By fast-slow pointer, time: O(n), space: O(1) 
-# ³oÃD¨S¥²­n¥Î³o©Û, ¦hªá¤@­ÓpointerªºªÅ¶¡ 
-# ¦ı¥i¥H¾Ç·Qªk¦Ó¥Bcode¤ñ¸ûÂ²¼ä 
-# slow¨«1¨Bfast¨«2¨B, ·ífast¨«§¹©Î¨«¨ìNULL®Éslow¥²©w¤~¨ì¤¤¶¡
-# Ex: 5­Ónode, 1 1, 2 3, 3 5, 6­Ónode: 1 1, 2 3, 3 5, 4 7
+# é€™é¡Œæ²’å¿…è¦ç”¨é€™æ‹›, å¤šèŠ±ä¸€å€‹pointerçš„ç©ºé–“ 
+# ä½†å¯ä»¥å­¸æƒ³æ³•è€Œä¸”codeæ¯”è¼ƒç°¡æ½” 
+# slowèµ°1æ­¥fastèµ°2æ­¥, ç•¶fastèµ°å®Œæˆ–èµ°åˆ°NULLæ™‚slowå¿…å®šæ‰åˆ°ä¸­é–“
+# Ex: 5å€‹node, 1 1, 2 3, 3 5, 6å€‹node: 1 1, 2 3, 3 5, 4 7
 # class Solution:
 #     def middleNode(self, head: ListNode) -> ListNode:
 #         slow = fast = head
@@ -45,51 +44,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=876 lang=python3
-#
-# [876] Middle of the Linked List
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-# By one pointer, time: O(n), space: O(1)
-# ¥ı¬İ¦³¦h¤Ö­Ónode, ¦A±qhead¨«n//2¨B¨ìmid 
-# Ex: 5­Ónode, head+2¨B¨ìnode3, 6­Ónode: head+3¨B¨ì4 
-class Solution:
-    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        dummy = ListNode(next = head)
-        cur = dummy
-        n = 0
-        while(cur.next!=None):
-            n += 1
-            cur = cur.next
-        n = n//2
-        cur = dummy.next
-        while(n!=0):
-            cur = cur.next
-            n -= 1
-        return cur
-
-# By fast-slow pointer, time: O(n), space: O(1) 
-# ³oÃD¨S¥²­n¥Î³o©Û, ¦hªá¤@­ÓpointerªºªÅ¶¡ 
-# ¦ı¥i¥H¾Ç·Qªk¦Ó¥Bcode¤ñ¸ûÂ²¼ä 
-# slow¨«1¨Bfast¨«2¨B, ·ífast¨«§¹©Î¨«¨ìNULL®Éslow¥²©w¤~¨ì¤¤¶¡
-# Ex: 5­Ónode, 1 1, 2 3, 3 5, 6­Ónode: 1 1, 2 3, 3 5, 4 7
-# class Solution:
-#     def middleNode(self, head: ListNode) -> ListNode:
-#         slow = fast = head
-#         while fast and fast.next:
-#             slow = slow.next
-#             fast = fast.next.next
-#         return slow
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1356 lang=python3
 #
@@ -7,32 +6,32 @@
 
 # @lc code=start
 
-# ±Narr¤ºªºint®Ú¾Ú¨ä2¶i¦ìªí¥Üªkªºbit 1 ªº¼Æ¶q°µ¤p¦Ó¤j±Æ§Ç
+# å°‡arrå…§çš„intæ ¹æ“šå…¶2é€²ä½è¡¨ç¤ºæ³•çš„bit 1 çš„æ•¸é‡åšå°è€Œå¤§æ’åº
 
 # By bitwise and sorted(), time: O(nlogn), space: O(logn)
-# time©Mspace³£¬O±Æ§Ç©Òªá¶Oªº
-# ¥Î¨C¦¸¨«¨ì·sint n, n&(n-1)¨Ó±N¨ä³Ì«á¤@¦ì1ÅÜ¦¨0, ¦pªG¨S¦³1¤F¨º¦ÛµMnÅÜ¦¨0°j°é¤¤¤î
+# timeå’Œspaceéƒ½æ˜¯æ’åºæ‰€èŠ±è²»çš„
+# ç”¨æ¯æ¬¡èµ°åˆ°æ–°int n, n&(n-1)ä¾†å°‡å…¶æœ€å¾Œä¸€ä½1è®Šæˆ0, å¦‚æœæ²’æœ‰1äº†é‚£è‡ªç„¶nè®Šæˆ0è¿´åœˆä¸­æ­¢
 class Solution:
     def sortByBits(self, arr: List[int]) -> List[int]:
-        # ¦s¦Uintªºbit 1¼Æ
+        # å­˜å„intçš„bit 1æ•¸
         arr_cnt = []
         for i in arr:
-            # Á×§K­×§ïarr©Ò¥H¥ÎtmpÀò¨ú·í¤Uªºint
+            # é¿å…ä¿®æ”¹arræ‰€ä»¥ç”¨tmpç²å–ç•¶ä¸‹çš„int
             tmp = i
             tmpcnt = 0
             while tmp:
                 tmpcnt += 1
-                # ±N³Ì«á¤@¦ìbit 1ÅÜ¦¨0
+                # å°‡æœ€å¾Œä¸€ä½bit 1è®Šæˆ0
                 tmp &= (tmp-1)
             arr_cnt.append(tmpcnt)
-        # ¥Îzip¦P®É¨«³X, *¸Ñ¶}list, ¦A±Nzip¦^¶Çªº«ü¼Ğ¥Îlist±µ¨ü
+        # ç”¨zipåŒæ™‚èµ°è¨ª, *è§£é–‹list, å†å°‡zipå›å‚³çš„æŒ‡æ¨™ç”¨listæ¥å—
         res = list(zip(*sorted(zip(arr_cnt, arr))))
-        # res´N¬O±Æ§Ç«áªºarr_cnt©Marr, §Ú­Ì­nªº¬Oarr
+        # reså°±æ˜¯æ’åºå¾Œçš„arr_cntå’Œarr, æˆ‘å€‘è¦çš„æ˜¯arr
         return (res[1])
     
 # By bin(), time: O(nlogn), space: O(logn)
-# time©Mspace³£¬O±Æ§Ç©Òªá¶Oªº
-# ¥Î¤º«Øªºbin(num).count('1')¨Ó¼Æ¤G¶i¦ì«áªº1¼Æ¶q«á°µ±Æ§Ç
+# timeå’Œspaceéƒ½æ˜¯æ’åºæ‰€èŠ±è²»çš„
+# ç”¨å…§å»ºçš„bin(num).count('1')ä¾†æ•¸äºŒé€²ä½å¾Œçš„1æ•¸é‡å¾Œåšæ’åº
 # class Solution:
 #     def sortByBits(self, arr: List[int]) -> List[int]:
 #         # Define a custom comparison key function for sorting
@@ -48,54 +47,3 @@ class Solution:
 #         return arr
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1356 lang=python3
-#
-# [1356] Sort Integers by The Number of 1 Bits
-#
-
-# @lc code=start
-
-# ±Narr¤ºªºint®Ú¾Ú¨ä2¶i¦ìªí¥Üªkªºbit 1 ªº¼Æ¶q°µ¤p¦Ó¤j±Æ§Ç
-
-# By bitwise and sorted(), time: O(nlogn), space: O(logn)
-# time©Mspace³£¬O±Æ§Ç©Òªá¶Oªº
-# ¥Î¨C¦¸¨«¨ì·sint n, n&(n-1)¨Ó±N¨ä³Ì«á¤@¦ì1ÅÜ¦¨0, ¦pªG¨S¦³1¤F¨º¦ÛµMnÅÜ¦¨0°j°é¤¤¤î
-class Solution:
-    def sortByBits(self, arr: List[int]) -> List[int]:
-        # ¦s¦Uintªºbit 1¼Æ
-        arr_cnt = []
-        for i in arr:
-            # Á×§K­×§ïarr©Ò¥H¥ÎtmpÀò¨ú·í¤Uªºint
-            tmp = i
-            tmpcnt = 0
-            while tmp:
-                tmpcnt += 1
-                # ±N³Ì«á¤@¦ìbit 1ÅÜ¦¨0
-                tmp &= (tmp-1)
-            arr_cnt.append(tmpcnt)
-        # ¥Îzip¦P®É¨«³X, *¸Ñ¶}list, ¦A±Nzip¦^¶Çªº«ü¼Ğ¥Îlist±µ¨ü
-        res = list(zip(*sorted(zip(arr_cnt, arr))))
-        # res´N¬O±Æ§Ç«áªºarr_cnt©Marr, §Ú­Ì­nªº¬Oarr
-        return (res[1])
-    
-# By bin(), time: O(nlogn), space: O(logn)
-# time©Mspace³£¬O±Æ§Ç©Òªá¶Oªº
-# ¥Î¤º«Øªºbin(num).count('1')¨Ó¼Æ¤G¶i¦ì«áªº1¼Æ¶q«á°µ±Æ§Ç
-# class Solution:
-#     def sortByBits(self, arr: List[int]) -> List[int]:
-#         # Define a custom comparison key function for sorting
-#         def custom_sort_key(num):
-#             # Calculate the number of set bits (1s) in the binary representation of num
-#             bit_count = bin(num).count('1')
-#             return (bit_count, num)
-
-#         # Sort the input list using the custom comparison key function
-#         arr.sort(key=custom_sort_key)
-
-#         # Return the sorted list
-#         return arr
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

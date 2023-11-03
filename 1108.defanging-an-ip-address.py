@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1108 lang=python3
 #
@@ -7,7 +6,7 @@
 
 # @lc code=start
 # By str.replace, time: O(n), space: O(1)
-# §Q¥Îstr.replace±N¥Ø¼Ğªº.´À¥N¦¨[.]
+# åˆ©ç”¨str.replaceå°‡ç›®æ¨™çš„.æ›¿ä»£æˆ[.]
 class Solution:
     def defangIPaddr(self, address: str) -> str:
         return address.replace('.', '[.]')
@@ -15,21 +14,3 @@ class Solution:
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1108 lang=python3
-#
-# [1108] Defanging an IP Address
-#
-
-# @lc code=start
-# By str.replace, time: O(n), space: O(1)
-# §Q¥Îstr.replace±N¥Ø¼Ğªº.´À¥N¦¨[.]
-class Solution:
-    def defangIPaddr(self, address: str) -> str:
-        return address.replace('.', '[.]')
-
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

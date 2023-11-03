@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=662 lang=python3
 #
@@ -6,8 +5,8 @@
 #
 
 # @lc code=start
-# µ¹¤@­Ótree, return tree¤¤³Ì¼sªº¼s«×¬O¦h¤Ö
-# °O¦í¼e«×¤£µ¥©ó¨C¼h¸`ÂI¼Æ¶q, ¦Ó¬O¸Ó¼h³Ì¥kÃä©M³Ì¥ªÃänode¤§index®t²§
+# çµ¦ä¸€å€‹tree, return treeä¸­æœ€å»£çš„å»£åº¦æ˜¯å¤šå°‘
+# è¨˜ä½å¯¬åº¦ä¸ç­‰æ–¼æ¯å±¤ç¯€é»æ•¸é‡, è€Œæ˜¯è©²å±¤æœ€å³é‚Šå’Œæœ€å·¦é‚Šnodeä¹‹indexå·®ç•°
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -17,81 +16,32 @@
 #         self.right = right
 
 # By BFS, time: O(n), space: O(n)
-# ¥Îarray¨ÓÀx¦s, ÃöÁä¦b©óbinary treeªºparent©Mchild¤§indexÃö«Y
-# §ä¥X¨C¼hªº¼e«×«á¨D³Ì¤j­È, ¼e«×¥Ñ¨C¼h³Ì¤j½s¸¹node¤§index´î¥h³Ì¤p½s¸¹node¤§index+1±o¥X
+# ç”¨arrayä¾†å„²å­˜, é—œéµåœ¨æ–¼binary treeçš„parentå’Œchildä¹‹indexé—œä¿‚
+# æ‰¾å‡ºæ¯å±¤çš„å¯¬åº¦å¾Œæ±‚æœ€å¤§å€¼, å¯¬åº¦ç”±æ¯å±¤æœ€å¤§ç·¨è™Ÿnodeä¹‹indexæ¸›å»æœ€å°ç·¨è™Ÿnodeä¹‹index+1å¾—å‡º
 class Solution:
     def widthOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        # ªì©l¤Æarray, ©ñ¤Jroot¦¹®É¬O²Ä¤@¼h, ³Ì¼e¬O1¥Broot¤§index = 1
+        # åˆå§‹åŒ–array, æ”¾å…¥rootæ­¤æ™‚æ˜¯ç¬¬ä¸€å±¤, æœ€å¯¬æ˜¯1ä¸”rootä¹‹index = 1
         res = 1
-        # ¨C¼h·|©ñ¤J¸Ó¼hªºnode
+        # æ¯å±¤æœƒæ”¾å…¥è©²å±¤çš„node
         queue = collections.deque()
-        # °O¦íappend¤@¦¸¤@­Ó¤¸¯À
+        # è¨˜ä½appendä¸€æ¬¡ä¸€å€‹å…ƒç´ 
         queue.append([root, 1])
         while queue:
-            # ¥Îtmp¦s©ñ·í¤U¼h¼Æªºnode
+            # ç”¨tmpå­˜æ”¾ç•¶ä¸‹å±¤æ•¸çš„node
             tmp = collections.deque()
             for node, index in queue:
-                # ¥ª¤lindex·|¬Oparent index*2
+                # å·¦å­indexæœƒæ˜¯parent index*2
                 if node.left:
                     tmp.append([node.left, index*2])
-                # ¥k¤lindex·|¬Oparent index*2+1
+                # å³å­indexæœƒæ˜¯parent index*2+1
                 if node.right:
                     tmp.append([node.right, index*2+1])
-            # ³Ì¤j½s¸¹index-³Ì¤p½s¸¹index, ¦pªG¤ñresÁÙ¤j´N§ó·sres
-            # ¤W¤@¼h­Ë¼Æ²Ä¤@­Ónode(³Ì¥kÃä)ªºindex-¤W¤@¼h²Ä0­Ónode(³Ì¥ªÃä)ªºindex+1
+            # æœ€å¤§ç·¨è™Ÿindex-æœ€å°ç·¨è™Ÿindex, å¦‚æœæ¯”resé‚„å¤§å°±æ›´æ–°res
+            # ä¸Šä¸€å±¤å€’æ•¸ç¬¬ä¸€å€‹node(æœ€å³é‚Š)çš„index-ä¸Šä¸€å±¤ç¬¬0å€‹node(æœ€å·¦é‚Š)çš„index+1
             res = max(res, queue[-1][1]-queue[0][1]+1)
-            # §ó·sarr©¹¤U¤@¼h¬İ, ­Ytmp¬°ªÅ¥Nªí³o¼h¨Snode, ¤]´N¬O¤w¸g¨S¦³¼h¯à¬İ¤F, ¸õ¥X°j°é
+            # æ›´æ–°arrå¾€ä¸‹ä¸€å±¤çœ‹, è‹¥tmpç‚ºç©ºä»£è¡¨é€™å±¤æ²’node, ä¹Ÿå°±æ˜¯å·²ç¶“æ²’æœ‰å±¤èƒ½çœ‹äº†, è·³å‡ºè¿´åœˆ
             queue = tmp
         return res
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=662 lang=python3
-#
-# [662] Maximum Width of Binary Tree
-#
-
-# @lc code=start
-# µ¹¤@­Ótree, return tree¤¤³Ì¼sªº¼s«×¬O¦h¤Ö
-# °O¦í¼e«×¤£µ¥©ó¨C¼h¸`ÂI¼Æ¶q, ¦Ó¬O¸Ó¼h³Ì¥kÃä©M³Ì¥ªÃänode¤§index®t²§
-
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-
-# By BFS, time: O(n), space: O(n)
-# ¥Îarray¨ÓÀx¦s, ÃöÁä¦b©óbinary treeªºparent©Mchild¤§indexÃö«Y
-# §ä¥X¨C¼hªº¼e«×«á¨D³Ì¤j­È, ¼e«×¥Ñ¨C¼h³Ì¤j½s¸¹node¤§index´î¥h³Ì¤p½s¸¹node¤§index+1±o¥X
-class Solution:
-    def widthOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        # ªì©l¤Æarray, ©ñ¤Jroot¦¹®É¬O²Ä¤@¼h, ³Ì¼e¬O1¥Broot¤§index = 1
-        res = 1
-        # ¨C¼h·|©ñ¤J¸Ó¼hªºnode
-        queue = collections.deque()
-        # °O¦íappend¤@¦¸¤@­Ó¤¸¯À
-        queue.append([root, 1])
-        while queue:
-            # ¥Îtmp¦s©ñ·í¤U¼h¼Æªºnode
-            tmp = collections.deque()
-            for node, index in queue:
-                # ¥ª¤lindex·|¬Oparent index*2
-                if node.left:
-                    tmp.append([node.left, index*2])
-                # ¥k¤lindex·|¬Oparent index*2+1
-                if node.right:
-                    tmp.append([node.right, index*2+1])
-            # ³Ì¤j½s¸¹index-³Ì¤p½s¸¹index, ¦pªG¤ñresÁÙ¤j´N§ó·sres
-            # ¤W¤@¼h­Ë¼Æ²Ä¤@­Ónode(³Ì¥kÃä)ªºindex-¤W¤@¼h²Ä0­Ónode(³Ì¥ªÃä)ªºindex+1
-            res = max(res, queue[-1][1]-queue[0][1]+1)
-            # §ó·sarr©¹¤U¤@¼h¬İ, ­Ytmp¬°ªÅ¥Nªí³o¼h¨Snode, ¤]´N¬O¤w¸g¨S¦³¼h¯à¬İ¤F, ¸õ¥X°j°é
-            queue = tmp
-        return res
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=1143 lang=python3
 #
@@ -6,82 +5,38 @@
 #
 
 # @lc code=start
-# ¤@¨â­Ó¦r¦êtext1©Mtext2, ¨D¨âªÌªº³Ìªø¤½¦@¤l¦r¦ê
-# ª`·N¤l¦r¦ê¬O³sÄòªº, ¦ı¥i¥H¤£³sÄòªº¦s¦btext1©Îtext2¤¤
-# Ex: ace©Mabcdeªº³Ìªø¤½¦@¤l¦r¦ê¬Oace
+# ä¸€å…©å€‹å­—ä¸²text1å’Œtext2, æ±‚å…©è€…çš„æœ€é•·å…¬å…±å­å­—ä¸²
+# æ³¨æ„å­å­—ä¸²æ˜¯é€£çºŒçš„, ä½†å¯ä»¥ä¸é€£çºŒçš„å­˜åœ¨text1æˆ–text2ä¸­
+# Ex: aceå’Œabcdeçš„æœ€é•·å…¬å…±å­å­—ä¸²æ˜¯ace
 
 # By DP, time: O(mn), space: O(mn), m = len(text1), n = len(text2)
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
         m = len(text1)
         n = len(text2)
-        # dp[i][j]¥Nªítext1«ei­Ó¤¸¯À³o¤@¦r¦ê©Mtext2«ej­Ó¤¸¯À³o¤@¦r¦êªº³Ìªø¤½¦@¤l¦r¦êªø«×
-        # ©Ò¥Hdp[i][j]¹ê»Ú¤W¬İ¨ì²Äi-1­Ótext1¦r¤¸©M²Äj-1­Ótext2,¦r¤¸
-        # »İ­n(n+1)*(m+1)¬O¬°¤F¤è«Kªì©l¤Ædp[0][0], ¤]´N¬O¦Ò¼{«e0­Ó¦r¤¸ªºÃä¬É±ø¥ó
-        # ¥Í¦¨¤@­Ó(m+1)*(n+1)¤j¤pªì©l¤Æ¬°0ªº¤Gºû°}¦C
-        # ª`·N¤£¯à¥Îdp = [[0]*(n+1)]*(m+1)¨Ó¥Í¦¨¤Gºû°}¦C, §_«h·|¦³m+1­Ó³sµ²¦b¤@°_ªº[0]*(n+1)
+        # dp[i][j]ä»£è¡¨text1å‰iå€‹å…ƒç´ é€™ä¸€å­—ä¸²å’Œtext2å‰jå€‹å…ƒç´ é€™ä¸€å­—ä¸²çš„æœ€é•·å…¬å…±å­å­—ä¸²é•·åº¦
+        # æ‰€ä»¥dp[i][j]å¯¦éš›ä¸Šçœ‹åˆ°ç¬¬i-1å€‹text1å­—å…ƒå’Œç¬¬j-1å€‹text2,å­—å…ƒ
+        # éœ€è¦(n+1)*(m+1)æ˜¯ç‚ºäº†æ–¹ä¾¿åˆå§‹åŒ–dp[0][0], ä¹Ÿå°±æ˜¯è€ƒæ…®å‰0å€‹å­—å…ƒçš„é‚Šç•Œæ¢ä»¶
+        # ç”Ÿæˆä¸€å€‹(m+1)*(n+1)å¤§å°åˆå§‹åŒ–ç‚º0çš„äºŒç¶­é™£åˆ—
+        # æ³¨æ„ä¸èƒ½ç”¨dp = [[0]*(n+1)]*(m+1)ä¾†ç”ŸæˆäºŒç¶­é™£åˆ—, å¦å‰‡æœƒæœ‰m+1å€‹é€£çµåœ¨ä¸€èµ·çš„[0]*(n+1)
         dp = [[0]*(n+1) for i in range(m+1)]
-        # ¦]¦¹³oÃDª¬ºAÂà²¾¦¡¦³¨âºØ, ¤]´N¬O»¡dp[i][j]¦³¨âºØ¥i¯àªºª¬ºAÂà²¾¦¡
+        # å› æ­¤é€™é¡Œç‹€æ…‹è½‰ç§»å¼æœ‰å…©ç¨®, ä¹Ÿå°±æ˜¯èªªdp[i][j]æœ‰å…©ç¨®å¯èƒ½çš„ç‹€æ…‹è½‰ç§»å¼
 
     
         for i in range(1, m+1):
             for j in range(1, n+1):
-                # ·ítext1[i-1]==text2[j-1]®É, dp[i][j]µ¥¦P©ódp[i-1][j-1]+1
-                # Ex: ac©Mbcªº³Ìªø¤½¦@´N¬Oa©Mbªº³Ìªø+1, ¤]´N¬O1+1 = 2
+                # ç•¶text1[i-1]==text2[j-1]æ™‚, dp[i][j]ç­‰åŒæ–¼dp[i-1][j-1]+1
+                # Ex: acå’Œbcçš„æœ€é•·å…¬å…±å°±æ˜¯aå’Œbçš„æœ€é•·+1, ä¹Ÿå°±æ˜¯1+1 = 2
                 if text1[i-1]==text2[j-1]:
                     dp[i][j] = dp[i-1][j-1]+1
-                # ·ítext1[i-1]!= text2[j-1]®É, dp[i][j]µ¥¦P©ódp[i-1][j]©Îdp[i][j-1]
-                # ¦¹®Édp[i][j]³Ì¤Ö¤]·|µ¥¦Pdp[i-1][j-1], ¦A¤À§O¦Ò¼{¥]§ttext[i-1]ÁÙ¬Otext[j-1]
-                # ¬°¤°»ò­n¦Ò¼{¥]§ti-1©Îj-1?¦]¬°²{¦b¬O¨Ddp[i][j]!!!
-                # Ex: ace©Mbcªº³Ìªø¤½¦@¦r¦ê¬Oac©Mbcªº³Ìªø©Îace©Mbªº³Ìªø, ¿ï¤jªÌ
+                # ç•¶text1[i-1]!= text2[j-1]æ™‚, dp[i][j]ç­‰åŒæ–¼dp[i-1][j]æˆ–dp[i][j-1]
+                # æ­¤æ™‚dp[i][j]æœ€å°‘ä¹Ÿæœƒç­‰åŒdp[i-1][j-1], å†åˆ†åˆ¥è€ƒæ…®åŒ…å«text[i-1]é‚„æ˜¯text[j-1]
+                # ç‚ºä»€éº¼è¦è€ƒæ…®åŒ…å«i-1æˆ–j-1?å› ç‚ºç¾åœ¨æ˜¯æ±‚dp[i][j]!!!
+                # Ex: aceå’Œbcçš„æœ€é•·å…¬å…±å­—ä¸²æ˜¯acå’Œbcçš„æœ€é•·æˆ–aceå’Œbçš„æœ€é•·, é¸å¤§è€…
                 else:
                     dp[i][j] = max(dp[i-1][j], dp[i][j-1])
-        # dp[m][n]´N¥Nªíµ²ªG
+        # dp[m][n]å°±ä»£è¡¨çµæœ
         return dp[m][n]
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=1143 lang=python3
-#
-# [1143] Longest Common Subsequence
-#
-
-# @lc code=start
-# ¤@¨â­Ó¦r¦êtext1©Mtext2, ¨D¨âªÌªº³Ìªø¤½¦@¤l¦r¦ê
-# ª`·N¤l¦r¦ê¬O³sÄòªº, ¦ı¥i¥H¤£³sÄòªº¦s¦btext1©Îtext2¤¤
-# Ex: ace©Mabcdeªº³Ìªø¤½¦@¤l¦r¦ê¬Oace
-
-# By DP, time: O(mn), space: O(mn), m = len(text1), n = len(text2)
-class Solution:
-    def longestCommonSubsequence(self, text1: str, text2: str) -> int:
-        m = len(text1)
-        n = len(text2)
-        # dp[i][j]¥Nªítext1«ei­Ó¤¸¯À³o¤@¦r¦ê©Mtext2«ej­Ó¤¸¯À³o¤@¦r¦êªº³Ìªø¤½¦@¤l¦r¦êªø«×
-        # ©Ò¥Hdp[i][j]¹ê»Ú¤W¬İ¨ì²Äi-1­Ótext1¦r¤¸©M²Äj-1­Ótext2,¦r¤¸
-        # »İ­n(n+1)*(m+1)¬O¬°¤F¤è«Kªì©l¤Ædp[0][0], ¤]´N¬O¦Ò¼{«e0­Ó¦r¤¸ªºÃä¬É±ø¥ó
-        # ¥Í¦¨¤@­Ó(m+1)*(n+1)¤j¤pªì©l¤Æ¬°0ªº¤Gºû°}¦C
-        # ª`·N¤£¯à¥Îdp = [[0]*(n+1)]*(m+1)¨Ó¥Í¦¨¤Gºû°}¦C, §_«h·|¦³m+1­Ó³sµ²¦b¤@°_ªº[0]*(n+1)
-        dp = [[0]*(n+1) for i in range(m+1)]
-        # ¦]¦¹³oÃDª¬ºAÂà²¾¦¡¦³¨âºØ, ¤]´N¬O»¡dp[i][j]¦³¨âºØ¥i¯àªºª¬ºAÂà²¾¦¡
-
-    
-        for i in range(1, m+1):
-            for j in range(1, n+1):
-                # ·ítext1[i-1]==text2[j-1]®É, dp[i][j]µ¥¦P©ódp[i-1][j-1]+1
-                # Ex: ac©Mbcªº³Ìªø¤½¦@´N¬Oa©Mbªº³Ìªø+1, ¤]´N¬O1+1 = 2
-                if text1[i-1]==text2[j-1]:
-                    dp[i][j] = dp[i-1][j-1]+1
-                # ·ítext1[i-1]!= text2[j-1]®É, dp[i][j]µ¥¦P©ódp[i-1][j]©Îdp[i][j-1]
-                # ¦¹®Édp[i][j]³Ì¤Ö¤]·|µ¥¦Pdp[i-1][j-1], ¦A¤À§O¦Ò¼{¥]§ttext[i-1]ÁÙ¬Otext[j-1]
-                # ¬°¤°»ò­n¦Ò¼{¥]§ti-1©Îj-1?¦]¬°²{¦b¬O¨Ddp[i][j]!!!
-                # Ex: ace©Mbcªº³Ìªø¤½¦@¦r¦ê¬Oac©Mbcªº³Ìªø©Îace©Mbªº³Ìªø, ¿ï¤jªÌ
-                else:
-                    dp[i][j] = max(dp[i-1][j], dp[i][j-1])
-        # dp[m][n]´N¥Nªíµ²ªG
-        return dp[m][n]
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
