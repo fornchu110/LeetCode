@@ -1,97 +1,45 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=153 lang=python3
 #
 # [153] Find Minimum in Rotated Sorted Array
 #
-
 # @lc code=start
-# µ¹¤@­Ó³Qrotated¹Lªº¦³§Ç¼Æ¦C, §ä¥X³Ì¤p­È
-# rotated©w¸q¬°:±N¼Æ¦C·Q¹³¬°cycle, rotate¤@¦¸´N±N©Ò¦³¤¸¯À©¹«á¤@¦¸
-# §Æ±æ¯à¥Hlog(n)§¹¦¨
+# çµ¦ä¸€å€‹è¢«rotatedéçš„æœ‰åºæ•¸åˆ—, æ‰¾å‡ºæœ€å°å€¼
+# rotatedå®šç¾©ç‚º:å°‡æ•¸åˆ—æƒ³åƒç‚ºcycle, rotateä¸€æ¬¡å°±å°‡æ‰€æœ‰å…ƒç´ å¾€å¾Œä¸€æ¬¡
+# å¸Œæœ›èƒ½ä»¥log(n)å®Œæˆ
 
 # By binary search, time: O(log(n)), space: O(1)
-# ­n¨D¥Îlog(n)­n·Q¨ì¤G¤À·j´Mªk, ¨C¦¸¥u§ä¥Ø«e½d³òªº¥bÃä©Ò¦³time¬Olog(n)
-# ±q¥Ø«e½d³ò¤¤¶¡ªº¤¸¯À©M¥ª¬É©M¥k¬É¤ñ¸û, ´N¥i¥Hª¾¹D¥Ø¼Ğ(³Ì¤p¤¸¯À)¦b¥ª¥bÃäÁÙ¬O¥k¥bÃä
+# è¦æ±‚ç”¨log(n)è¦æƒ³åˆ°äºŒåˆ†æœå°‹æ³•, æ¯æ¬¡åªæ‰¾ç›®å‰ç¯„åœçš„åŠé‚Šæ‰€æœ‰timeæ˜¯log(n)
+# å¾ç›®å‰ç¯„åœä¸­é–“çš„å…ƒç´ å’Œå·¦ç•Œå’Œå³ç•Œæ¯”è¼ƒ, å°±å¯ä»¥çŸ¥é“ç›®æ¨™(æœ€å°å…ƒç´ )åœ¨å·¦åŠé‚Šé‚„æ˜¯å³åŠé‚Š
 class Solution:
     def findMin(self, nums: List[int]) -> int:   
-        # ±N²Ä0­Ó¤¸¯À©M³Ì«á­Ó¤¸¯À§@¬°½d³òªºindex, ª`·Nr¤£¬O¥Hlen(nums)§@¬°index 
+        # å°‡ç¬¬0å€‹å…ƒç´ å’Œæœ€å¾Œå€‹å…ƒç´ ä½œç‚ºç¯„åœçš„index, æ³¨æ„rä¸æ˜¯ä»¥len(nums)ä½œç‚ºindex 
         l, r = 0, len(nums)-1
-        # ÃD¥Ø»¡¤£·|¦³­«½Æ¤¸¯À, ¥u­n¤£¬O¥u³Ñ¤@­Ó¤¸¯À¨ºl³£·|<r
-        # ³o¬O½d³ò¬°¥ª³¬¥k¶}ªº¼gªk, ¤]´N¬O¦b[l, r)·j´Mµª®×, ¤G¤À¬d§äªº°Ï¶¡¨M©w¼gªk, ¬OºëÀH
-        # l<r¥Nªí¤£¦Ò¼{l==rªº±¡ªp¤F, ²¦³ºl==r¥Nªí·j¯Áªº°Ï¶¡³Ñ¤@­Ó¤¸¯À, §Y¬Oµª®×
+        # é¡Œç›®èªªä¸æœƒæœ‰é‡è¤‡å…ƒç´ , åªè¦ä¸æ˜¯åªå‰©ä¸€å€‹å…ƒç´ é‚£léƒ½æœƒ<r
+        # é€™æ˜¯ç¯„åœç‚ºå·¦é–‰å³é–‹çš„å¯«æ³•, ä¹Ÿå°±æ˜¯åœ¨[l, r)æœå°‹ç­”æ¡ˆ, äºŒåˆ†æŸ¥æ‰¾çš„å€é–“æ±ºå®šå¯«æ³•, æ˜¯ç²¾éš¨
+        # l<rä»£è¡¨ä¸è€ƒæ…®l==rçš„æƒ…æ³äº†, ç•¢ç«Ÿl==rä»£è¡¨æœç´¢çš„å€é–“å‰©ä¸€å€‹å…ƒç´ , å³æ˜¯ç­”æ¡ˆ
         while(l<r):
-            # pivot¬O¥Ø«e½d³ò¤¤¶¡ªº¤¸¯À
-            # l+(r-l)//2µ¥¦P©ó(l+r)//2, ¬O¬°¤FÁ×§Kl+r®Éoverflow
-            # ¾ã¼Æ°£ªk·|¤ñ°_right§ó¾aªñleft
-            # Ex: 3­Ó¤¸¯À, l=0, r=2, mid = 1, array: 012
-            # Ex: 4­Ó¤¸¯À, l=0, r=3, mid = 1, array: 0123
+            # pivotæ˜¯ç›®å‰ç¯„åœä¸­é–“çš„å…ƒç´ 
+            # l+(r-l)//2ç­‰åŒæ–¼(l+r)//2, æ˜¯ç‚ºäº†é¿å…l+ræ™‚overflow
+            # æ•´æ•¸é™¤æ³•æœƒæ¯”èµ·rightæ›´é è¿‘left
+            # Ex: 3å€‹å…ƒç´ , l=0, r=2, mid = 1, array: 012
+            # Ex: 4å€‹å…ƒç´ , l=0, r=3, mid = 1, array: 0123
             pivot = l+(r-l)//2
-            # pivot¤p©ór¥Nªí³Ì¤p­È¦b¥ª¥bÃä
+            # pivotå°æ–¼rä»£è¡¨æœ€å°å€¼åœ¨å·¦åŠé‚Š
             if nums[pivot]<nums[r]:
-                # ¦]§Ú­Ì¤£§Æ±æ·j´M­«½Æªº½d³ò, ¦Ó²{¦b¬O¥ª³¬¥k¶}, ©Ò¥Hr = pivot¤U¦¸¤£·|·j´M¥Ø«eªºr
+                # å› æˆ‘å€‘ä¸å¸Œæœ›æœå°‹é‡è¤‡çš„ç¯„åœ, è€Œç¾åœ¨æ˜¯å·¦é–‰å³é–‹, æ‰€ä»¥r = pivotä¸‹æ¬¡ä¸æœƒæœå°‹ç›®å‰çš„r
                 r = pivot
-            # §_«h¥Nªí³Ì¤p­È¦b¥k¥bÃä
+            # å¦å‰‡ä»£è¡¨æœ€å°å€¼åœ¨å³åŠé‚Š
             else:
-                # ¦P¤W, ¥ª³¬¥k¶}©Ò¥Hl+1¤~¤£·|·j´M³o¦¸ªºl
+                # åŒä¸Š, å·¦é–‰å³é–‹æ‰€ä»¥l+1æ‰ä¸æœƒæœå°‹é€™æ¬¡çš„l
                 l = pivot+1
-        # ¦^¶Çl©Îr³£¤@¼Ë, ²¦³º´N¬Ol==r®Éµ²§ô°j°éªº
+        # å›å‚³læˆ–réƒ½ä¸€æ¨£, ç•¢ç«Ÿå°±æ˜¯l==ræ™‚çµæŸè¿´åœˆçš„
         return nums[l]
 
 # By min(), time: O(n), space: O(1) 
-# pythonªºmin()©Mmax´N¥u¬O¨«³X¤@¦¸, ¹ê»Ú¤W¨S¬Ù¤U®É¶¡
+# pythonçš„min()å’Œmaxå°±åªæ˜¯èµ°è¨ªä¸€æ¬¡, å¯¦éš›ä¸Šæ²’çœä¸‹æ™‚é–“
 # class Solution:
 #     def findMin(self, nums: List[int]) -> int:
 #         return min(nums)
         
 # @lc code=end
-
-=======
-#
-# @lc app=leetcode id=153 lang=python3
-#
-# [153] Find Minimum in Rotated Sorted Array
-#
-
-# @lc code=start
-# µ¹¤@­Ó³Qrotated¹Lªº¦³§Ç¼Æ¦C, §ä¥X³Ì¤p­È
-# rotated©w¸q¬°:±N¼Æ¦C·Q¹³¬°cycle, rotate¤@¦¸´N±N©Ò¦³¤¸¯À©¹«á¤@¦¸
-# §Æ±æ¯à¥Hlog(n)§¹¦¨
-
-# By binary search, time: O(log(n)), space: O(1)
-# ­n¨D¥Îlog(n)­n·Q¨ì¤G¤À·j´Mªk, ¨C¦¸¥u§ä¥Ø«e½d³òªº¥bÃä©Ò¦³time¬Olog(n)
-# ±q¥Ø«e½d³ò¤¤¶¡ªº¤¸¯À©M¥ª¬É©M¥k¬É¤ñ¸û, ´N¥i¥Hª¾¹D¥Ø¼Ğ(³Ì¤p¤¸¯À)¦b¥ª¥bÃäÁÙ¬O¥k¥bÃä
-class Solution:
-    def findMin(self, nums: List[int]) -> int:   
-        # ±N²Ä0­Ó¤¸¯À©M³Ì«á­Ó¤¸¯À§@¬°½d³òªºindex, ª`·Nr¤£¬O¥Hlen(nums)§@¬°index 
-        l, r = 0, len(nums)-1
-        # ÃD¥Ø»¡¤£·|¦³­«½Æ¤¸¯À, ¥u­n¤£¬O¥u³Ñ¤@­Ó¤¸¯À¨ºl³£·|<r
-        # ³o¬O½d³ò¬°¥ª³¬¥k¶}ªº¼gªk, ¤]´N¬O¦b[l, r)·j´Mµª®×, ¤G¤À¬d§äªº°Ï¶¡¨M©w¼gªk, ¬OºëÀH
-        # l<r¥Nªí¤£¦Ò¼{l==rªº±¡ªp¤F, ²¦³ºl==r¥Nªí·j¯Áªº°Ï¶¡³Ñ¤@­Ó¤¸¯À, §Y¬Oµª®×
-        while(l<r):
-            # pivot¬O¥Ø«e½d³ò¤¤¶¡ªº¤¸¯À
-            # l+(r-l)//2µ¥¦P©ó(l+r)//2, ¬O¬°¤FÁ×§Kl+r®Éoverflow
-            # ¾ã¼Æ°£ªk·|¤ñ°_right§ó¾aªñleft
-            # Ex: 3­Ó¤¸¯À, l=0, r=2, mid = 1, array: 012
-            # Ex: 4­Ó¤¸¯À, l=0, r=3, mid = 1, array: 0123
-            pivot = l+(r-l)//2
-            # pivot¤p©ór¥Nªí³Ì¤p­È¦b¥ª¥bÃä
-            if nums[pivot]<nums[r]:
-                # ¦]§Ú­Ì¤£§Æ±æ·j´M­«½Æªº½d³ò, ¦Ó²{¦b¬O¥ª³¬¥k¶}, ©Ò¥Hr = pivot¤U¦¸¤£·|·j´M¥Ø«eªºr
-                r = pivot
-            # §_«h¥Nªí³Ì¤p­È¦b¥k¥bÃä
-            else:
-                # ¦P¤W, ¥ª³¬¥k¶}©Ò¥Hl+1¤~¤£·|·j´M³o¦¸ªºl
-                l = pivot+1
-        # ¦^¶Çl©Îr³£¤@¼Ë, ²¦³º´N¬Ol==r®Éµ²§ô°j°éªº
-        return nums[l]
-
-# By min(), time: O(n), space: O(1) 
-# pythonªºmin()©Mmax´N¥u¬O¨«³X¤@¦¸, ¹ê»Ú¤W¨S¬Ù¤U®É¶¡
-# class Solution:
-#     def findMin(self, nums: List[int]) -> int:
-#         return min(nums)
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
