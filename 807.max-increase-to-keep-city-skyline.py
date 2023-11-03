@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=807 lang=python3
 #
@@ -6,110 +5,55 @@
 #
 
 # @lc code=start
-# By min()¡Bmax() and index array, time: O(n^2), space: O(n)
-# ¦]³oÃDµ¹¤è§Î©Ò¥HO(n^2)
-# µ¹¦h­Ó«Ø¿vª«°ª«×, ­n¦b¤£¼vÅTªF¦è«n¥_¬İ¹L¥h¤Ñ»Ú½u±¡ªp¤U¼W¥[«Ø¿vª«°ª«×
-# ¤]´N¬O»¡¹ï¨C­Ó«Ø¿vª«, §ä¥X¦Prow³Ì°ª©M¦Pcolumn³Ì°ª, ¼W¥[¦Ü¸û¤pªº¨ºÃä°ª«×§Y¥i
-# ¤£§ä¸û¤j¨º­Ó¬O¦]¬°¿ï¸û¤jªº´N·|¶W¥X¤Ñ»Ú½u, ¸û¤p¤~¤£·|§ïÅÜ
+# By min()ã€max() and index array, time: O(n^2), space: O(n)
+# å› é€™é¡Œçµ¦æ–¹å½¢æ‰€ä»¥O(n^2)
+# çµ¦å¤šå€‹å»ºç¯‰ç‰©é«˜åº¦, è¦åœ¨ä¸å½±éŸ¿æ±è¥¿å—åŒ—çœ‹éå»å¤©éš›ç·šæƒ…æ³ä¸‹å¢åŠ å»ºç¯‰ç‰©é«˜åº¦
+# ä¹Ÿå°±æ˜¯èªªå°æ¯å€‹å»ºç¯‰ç‰©, æ‰¾å‡ºåŒrowæœ€é«˜å’ŒåŒcolumnæœ€é«˜, å¢åŠ è‡³è¼ƒå°çš„é‚£é‚Šé«˜åº¦å³å¯
+# ä¸æ‰¾è¼ƒå¤§é‚£å€‹æ˜¯å› ç‚ºé¸è¼ƒå¤§çš„å°±æœƒè¶…å‡ºå¤©éš›ç·š, è¼ƒå°æ‰ä¸æœƒæ”¹è®Š
 class Solution:
     def maxIncreaseKeepingSkyline(self, grid: List[List[int]]) -> int:
-        # rowªø«×©Mcolªø«×, ¹ê»Ú¤W³oÃD¦]µ¹¤è§Î«Ø¿v¤À¥¬©Ò¥Hm=n
+        # rowé•·åº¦å’Œcolé•·åº¦, å¯¦éš›ä¸Šé€™é¡Œå› çµ¦æ–¹å½¢å»ºç¯‰åˆ†å¸ƒæ‰€ä»¥m=n
         m = len(grid)
         n = len(grid[0])
         rowmax = list()
         colmax = list()
         res = 0
-        # ¥Î¨Ó½T»{¼W¥[°ª«×«áªºgrid¥Îªº, ¹ê»Ú¤W¤£»İ­n
+        # ç”¨ä¾†ç¢ºèªå¢åŠ é«˜åº¦å¾Œçš„gridç”¨çš„, å¯¦éš›ä¸Šä¸éœ€è¦
         # gridnew=[[0]*n for i in range(m)]
-        # §ä¥X¨Crow³Ì¤j­È
+        # æ‰¾å‡ºæ¯rowæœ€å¤§å€¼
         for i in grid:
             rowmax.append(max(i))
-        # §ä¥X¨Ccol³Ì¤j­È, ª`·N¬Ocol¦b¥~¼h, ¦]¦³n­Ócol³Ì¤j­È
+        # æ‰¾å‡ºæ¯colæœ€å¤§å€¼, æ³¨æ„æ˜¯colåœ¨å¤–å±¤, å› æœ‰nå€‹colæœ€å¤§å€¼
         for j in range(n):
             tmpmax = 0
             for i in grid:
                 if i[j]>tmpmax:
                     tmpmax = i[j]
             colmax.append(tmpmax)
-        # ¹ïgrid¤º¨C­Ó«Ø¿vª«, §ä¥X¥L©Ò¦brow, col³Ì¤j­È¤¤¸û¤pªº¨º­Ó
+        # å°gridå…§æ¯å€‹å»ºç¯‰ç‰©, æ‰¾å‡ºä»–æ‰€åœ¨row, colæœ€å¤§å€¼ä¸­è¼ƒå°çš„é‚£å€‹
         for i in range(m):
             for j in range(n):
-                # ½T»{¥Î
+                # ç¢ºèªç”¨
                 # gridnew[i][j] = min(rowmax[i], colmax[j])
                 res += min(rowmax[i], colmax[j])-grid[i][j]
         return res
 
-# ©x¤è°µªk, ¤@¼Ë·N«ä¦ıÂ²¼ä«Ü¦h, ³t«×¤ñ¸û§Ö
+# å®˜æ–¹åšæ³•, ä¸€æ¨£æ„æ€ä½†ç°¡æ½”å¾ˆå¤š, é€Ÿåº¦æ¯”è¼ƒå¿«
 # By map() and zip(), time: O(n^2), space: O(n)
-# ¾Ç·|max()¬M®g©Mzip(*list)±N°}¦CÂà¸mªº§@ªk
+# å­¸æœƒmax()æ˜ å°„å’Œzip(*list)å°‡é™£åˆ—è½‰ç½®çš„ä½œæ³•
 # class Solution:
 #     def maxIncreaseKeepingSkyline(self, grid: List[List[int]]) -> int:
-#         # map()¬O±N°}¦C¤º¤¸¯À°µ«ü©w¨ç¼Æ, map(max, grid)´N¬O¹ïgrid¤º©Ò¦³¤¸¯À°µmax()
-#         # ¤£·|ªğ¦^°}¦C, ­n¥Îlist()±NÅÜ´«§¹ªº¤º®eÂà´«¦¨°}¦C
-#         # ³oÃä³o¼Ë´Nµ¥¦P§ä¥X¨Crow³Ì¤j­È
+#         # map()æ˜¯å°‡é™£åˆ—å…§å…ƒç´ åšæŒ‡å®šå‡½æ•¸, map(max, grid)å°±æ˜¯å°gridå…§æ‰€æœ‰å…ƒç´ åšmax()
+#         # ä¸æœƒè¿”å›é™£åˆ—, è¦ç”¨list()å°‡è®Šæ›å®Œçš„å…§å®¹è½‰æ›æˆé™£åˆ—
+#         # é€™é‚Šé€™æ¨£å°±ç­‰åŒæ‰¾å‡ºæ¯rowæœ€å¤§å€¼
 #         rowMax = list(map(max, grid))
-#         # zip(*grid)ªº§@ªk·Q¦¨Âà¸m¯x°}, ±N¦æ¦C¤¬´«, ³o¼Ë¦A°µmap()«K¬O§ä¨Ccol³Ì¤j­È
-#         # list(zip(grid))·|¦bgrid¥~¦A¥]¤@¼h
+#         # zip(*grid)çš„ä½œæ³•æƒ³æˆè½‰ç½®çŸ©é™£, å°‡è¡Œåˆ—äº’æ›, é€™æ¨£å†åšmap()ä¾¿æ˜¯æ‰¾æ¯colæœ€å¤§å€¼
+#         # list(zip(grid))æœƒåœ¨gridå¤–å†åŒ…ä¸€å±¤
 #         colMax = list(map(max, zip(*grid)))
 #         return sum(min(rowMax[i], colMax[j]) - h for i, row in enumerate(grid) for j, h in enumerate(row))
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=807 lang=python3
-#
-# [807] Max Increase to Keep City Skyline
-#
-
-# @lc code=start
-# By min()¡Bmax() and index array, time: O(n^2), space: O(n)
-# ¦]³oÃDµ¹¤è§Î©Ò¥HO(n^2)
-# µ¹¦h­Ó«Ø¿vª«°ª«×, ­n¦b¤£¼vÅTªF¦è«n¥_¬İ¹L¥h¤Ñ»Ú½u±¡ªp¤U¼W¥[«Ø¿vª«°ª«×
-# ¤]´N¬O»¡¹ï¨C­Ó«Ø¿vª«, §ä¥X¦Prow³Ì°ª©M¦Pcolumn³Ì°ª, ¼W¥[¦Ü¸û¤pªº¨ºÃä°ª«×§Y¥i
-# ¤£§ä¸û¤j¨º­Ó¬O¦]¬°¿ï¸û¤jªº´N·|¶W¥X¤Ñ»Ú½u, ¸û¤p¤~¤£·|§ïÅÜ
-class Solution:
-    def maxIncreaseKeepingSkyline(self, grid: List[List[int]]) -> int:
-        # rowªø«×©Mcolªø«×, ¹ê»Ú¤W³oÃD¦]µ¹¤è§Î«Ø¿v¤À¥¬©Ò¥Hm=n
-        m = len(grid)
-        n = len(grid[0])
-        rowmax = list()
-        colmax = list()
-        res = 0
-        # ¥Î¨Ó½T»{¼W¥[°ª«×«áªºgrid¥Îªº, ¹ê»Ú¤W¤£»İ­n
-        # gridnew=[[0]*n for i in range(m)]
-        # §ä¥X¨Crow³Ì¤j­È
-        for i in grid:
-            rowmax.append(max(i))
-        # §ä¥X¨Ccol³Ì¤j­È, ª`·N¬Ocol¦b¥~¼h, ¦]¦³n­Ócol³Ì¤j­È
-        for j in range(n):
-            tmpmax = 0
-            for i in grid:
-                if i[j]>tmpmax:
-                    tmpmax = i[j]
-            colmax.append(tmpmax)
-        # ¹ïgrid¤º¨C­Ó«Ø¿vª«, §ä¥X¥L©Ò¦brow, col³Ì¤j­È¤¤¸û¤pªº¨º­Ó
-        for i in range(m):
-            for j in range(n):
-                # ½T»{¥Î
-                # gridnew[i][j] = min(rowmax[i], colmax[j])
-                res += min(rowmax[i], colmax[j])-grid[i][j]
-        return res
-
-# ©x¤è°µªk, ¤@¼Ë·N«ä¦ıÂ²¼ä«Ü¦h, ³t«×¤ñ¸û§Ö
-# By map() and zip(), time: O(n^2), space: O(n)
-# ¾Ç·|max()¬M®g©Mzip(*list)±N°}¦CÂà¸mªº§@ªk
-# class Solution:
-#     def maxIncreaseKeepingSkyline(self, grid: List[List[int]]) -> int:
-#         # map()¬O±N°}¦C¤º¤¸¯À°µ«ü©w¨ç¼Æ, map(max, grid)´N¬O¹ïgrid¤º©Ò¦³¤¸¯À°µmax()
-#         # ¤£·|ªğ¦^°}¦C, ­n¥Îlist()±NÅÜ´«§¹ªº¤º®eÂà´«¦¨°}¦C
-#         # ³oÃä³o¼Ë´Nµ¥¦P§ä¥X¨Crow³Ì¤j­È
-#         rowMax = list(map(max, grid))
-#         # zip(*grid)ªº§@ªk·Q¦¨Âà¸m¯x°}, ±N¦æ¦C¤¬´«, ³o¼Ë¦A°µmap()«K¬O§ä¨Ccol³Ì¤j­È
-#         # list(zip(grid))·|¦bgrid¥~¦A¥]¤@¼h
-#         colMax = list(map(max, zip(*grid)))
-#         return sum(min(rowMax[i], colMax[j]) - h for i, row in enumerate(grid) for j, h in enumerate(row))
 
 # @lc code=end
 
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
