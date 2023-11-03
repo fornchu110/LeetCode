@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=349 lang=python3
 #
@@ -8,22 +7,22 @@
 # @lc code=start
 
 # By set
-# Âà´«¦¨set¥i¥H±N­«½Æ¤¸¯À§R±¼, ¦ı¨S¦³index
-# ¥i¥H¥Îlist()¦AÂà¦¨list¦³index, ¦ıªá®É¶¡
+# è½‰æ›æˆsetå¯ä»¥å°‡é‡è¤‡å…ƒç´ åˆªæ‰, ä½†æ²’æœ‰index
+# å¯ä»¥ç”¨list()å†è½‰æˆlistæœ‰index, ä½†èŠ±æ™‚é–“
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        # ¸Ñµª°}¦C
+        # è§£ç­”é™£åˆ—
         res = list()
         set1 = set(nums1)
         set2 = set(nums2)
-        # ¿ï¾Ü¨«³Xªø«×¤ñ¸ûµuªºset
+        # é¸æ“‡èµ°è¨ªé•·åº¦æ¯”è¼ƒçŸ­çš„set
         if(len(set1)<len(set2)):
-            # ¨C¦¸¬İset¤¤¤@­Ó¤¸¯À, ·í¤U¬İªº©w¬°i
+            # æ¯æ¬¡çœ‹setä¸­ä¸€å€‹å…ƒç´ , ç•¶ä¸‹çœ‹çš„å®šç‚ºi
             for i in set1:
-                # ¥u­nset1ªºi¤]¦bset2¸Ì­±, ¥[¤Jres
+                # åªè¦set1çš„iä¹Ÿåœ¨set2è£¡é¢, åŠ å…¥res
                 if i in set2:
                     res.append(i)
-        # ¦P²z
+        # åŒç†
         else:
             for i in set2:
                 if i in set1:
@@ -31,7 +30,7 @@ class Solution:
         return res
 
 # By double pointer
-# ¥ı±Æ§Ç¦A¤ñ¹ï, ¤@¼Ëªº¸Ü¥[¤J, ÁÙ­n½T«Oµª®×¤º¤¸¯Àªº°ß¤@©Ê
+# å…ˆæ’åºå†æ¯”å°, ä¸€æ¨£çš„è©±åŠ å…¥, é‚„è¦ç¢ºä¿ç­”æ¡ˆå…§å…ƒç´ çš„å”¯ä¸€æ€§
 # class Solution:
 #     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
 #         nums1.sort()
@@ -43,7 +42,7 @@ class Solution:
 #             num1 = nums1[index1]
 #             num2 = nums2[index2]
 #             if num1 == num2:
-#                 # »İ­n¤£­«½Æ¤~¥[¤Jintersection
+#                 # éœ€è¦ä¸é‡è¤‡æ‰åŠ å…¥intersection
 #                 if not intersection or num1 != intersection[-1]:
 #                     intersection.append(num1)
 #                 index1 += 1
@@ -59,65 +58,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=349 lang=python3
-#
-# [349] Intersection of Two Arrays
-#
-
-# @lc code=start
-
-# By set
-# Âà´«¦¨set¥i¥H±N­«½Æ¤¸¯À§R±¼, ¦ı¨S¦³index
-# ¥i¥H¥Îlist()¦AÂà¦¨list¦³index, ¦ıªá®É¶¡
-class Solution:
-    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        # ¸Ñµª°}¦C
-        res = list()
-        set1 = set(nums1)
-        set2 = set(nums2)
-        # ¿ï¾Ü¨«³Xªø«×¤ñ¸ûµuªºset
-        if(len(set1)<len(set2)):
-            # ¨C¦¸¬İset¤¤¤@­Ó¤¸¯À, ·í¤U¬İªº©w¬°i
-            for i in set1:
-                # ¥u­nset1ªºi¤]¦bset2¸Ì­±, ¥[¤Jres
-                if i in set2:
-                    res.append(i)
-        # ¦P²z
-        else:
-            for i in set2:
-                if i in set1:
-                    res.append(i)
-        return res
-
-# By double pointer
-# ¥ı±Æ§Ç¦A¤ñ¹ï, ¤@¼Ëªº¸Ü¥[¤J, ÁÙ­n½T«Oµª®×¤º¤¸¯Àªº°ß¤@©Ê
-# class Solution:
-#     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
-#         nums1.sort()
-#         nums2.sort()
-#         length1, length2 = len(nums1), len(nums2)
-#         intersection = list()
-#         index1 = index2 = 0
-#         while index1 < length1 and index2 < length2:
-#             num1 = nums1[index1]
-#             num2 = nums2[index2]
-#             if num1 == num2:
-#                 # »İ­n¤£­«½Æ¤~¥[¤Jintersection
-#                 if not intersection or num1 != intersection[-1]:
-#                     intersection.append(num1)
-#                 index1 += 1
-#                 index2 += 1
-#             elif num1 < num2:
-#                 index1 += 1
-#             else:
-#                 index2 += 1
-#         return intersection
-
-
-
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

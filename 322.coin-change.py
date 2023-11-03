@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=322 lang=python3
 #
@@ -6,78 +5,36 @@
 #
 
 # @lc code=start
-# µ¹¤£¦PºØÃşªºcoins©Mª÷ÃBamout
-# return´ê¥Xµ¥¦Pamountª÷ÃB©Ò»İ³Ì¤Ö¼Æ¶qªºcoins, ¦pªGµLªk´ê¥Xµ¥¦Pamountªºª÷ÃBreturn -1
+# çµ¦ä¸åŒç¨®é¡çš„coinså’Œé‡‘é¡amout
+# returnæ¹Šå‡ºç­‰åŒamounté‡‘é¡æ‰€éœ€æœ€å°‘æ•¸é‡çš„coins, å¦‚æœç„¡æ³•æ¹Šå‡ºç­‰åŒamountçš„é‡‘é¡return -1
 
-# By DP, time: O(A*n), space: O(A), A¬Oamount, n¬Olen(coins)¤]´N¬OcoinsºØÃş¼Æ 
-# ·Q¨ì0-1­I¥]°İÃD, ¥u¬Ocoins¬°¥i¥HµL­­®³¨úªºª««~¦Ó¤w
+# By DP, time: O(A*n), space: O(A), Aæ˜¯amount, næ˜¯len(coins)ä¹Ÿå°±æ˜¯coinsç¨®é¡æ•¸ 
+# æƒ³åˆ°0-1èƒŒåŒ…å•é¡Œ, åªæ˜¯coinsç‚ºå¯ä»¥ç„¡é™æ‹¿å–çš„ç‰©å“è€Œå·²
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
-        # ªì©l¤Ædp°}¦Cindex±q0~amount¦@amount+1­Ó¤¸¯À, ¤º®e¦s©ñµÛ¤£¦Pamount®Éªº³Ì¨Î¸Ñ
-        # ­n¨Dªº¬O³Ì¤p¤Æ¦¸¼Æ, ©Ò¥Hªì©l¤Æ¬°µL­­¤j(float("inf"))¦n¥Î¨Ó¤ñ¸û
+        # åˆå§‹åŒ–dpé™£åˆ—indexå¾0~amountå…±amount+1å€‹å…ƒç´ , å…§å®¹å­˜æ”¾è‘—ä¸åŒamountæ™‚çš„æœ€ä½³è§£
+        # è¦æ±‚çš„æ˜¯æœ€å°åŒ–æ¬¡æ•¸, æ‰€ä»¥åˆå§‹åŒ–ç‚ºç„¡é™å¤§(float("inf"))å¥½ç”¨ä¾†æ¯”è¼ƒ
         dp = [float('inf')]*(amount+1)
-        # ªì©l¤Æ¥²©w¥i¥H¥Î0­Óµw¹ô´ê¥X0, ³o¼Ë«á­±¤£»İ­n¨«³Xdp[0]
+        # åˆå§‹åŒ–å¿…å®šå¯ä»¥ç”¨0å€‹ç¡¬å¹£æ¹Šå‡º0, é€™æ¨£å¾Œé¢ä¸éœ€è¦èµ°è¨ªdp[0]
         dp[0] = 0
         
         for i in coins:
-            # ±qi¶}©l¦]¬°·í¹ô­È¬Oi®É, ®Ú¥»µLªk´ê¥Xamount<i
-            # Ex: µLªk¥Î5¤¸´ê¥X1234¤¸, ³»¦h0­Ó0¤¸´ê¥X0, ¦ı¤w¸gªì©l¤Ædp[0] = 0¤F
+            # å¾ié–‹å§‹å› ç‚ºç•¶å¹£å€¼æ˜¯iæ™‚, æ ¹æœ¬ç„¡æ³•æ¹Šå‡ºamount<i
+            # Ex: ç„¡æ³•ç”¨5å…ƒæ¹Šå‡º1234å…ƒ, é ‚å¤š0å€‹0å…ƒæ¹Šå‡º0, ä½†å·²ç¶“åˆå§‹åŒ–dp[0] = 0äº†
             for j in range(i, amount+1):
-                # ­ì¥»ªºdp[j]¥Nªíamount= j®É§ó¤p¹ô­Èªº³Ì¨Î¸Ñ
-                # dp[j-i]¤]¬O¦p¦¹, ¦ıdp[j]¥i¥H¬Odp[j-i]¦A¥[¤W1¶ô»ù­È¬°iªºµw¹ô, ©Ò¥H·|¬Odp[j-i]+1
-                # ±q§ó¤p¹ô­Èªº³Ì¨Î¸Ñ©Mdp[j-i+1]¨ú¤@­Ó¸û¤p­È, ¨º´N·|¬O·sªº³Ì¨Î¸Ñ
-                # ³q±`¥u­n¯à¨Ï¥Î§ó¤j¹ô­È¨º¤@©w·|´î¤Ö¦¸¼Æ
-                # µL¸Ñ´Nµo¥Í¦b³o¨âªÌ³£¬OµL­­¤jªº±¡ªp
+                # åŸæœ¬çš„dp[j]ä»£è¡¨amount= jæ™‚æ›´å°å¹£å€¼çš„æœ€ä½³è§£
+                # dp[j-i]ä¹Ÿæ˜¯å¦‚æ­¤, ä½†dp[j]å¯ä»¥æ˜¯dp[j-i]å†åŠ ä¸Š1å¡Šåƒ¹å€¼ç‚ºiçš„ç¡¬å¹£, æ‰€ä»¥æœƒæ˜¯dp[j-i]+1
+                # å¾æ›´å°å¹£å€¼çš„æœ€ä½³è§£å’Œdp[j-i+1]å–ä¸€å€‹è¼ƒå°å€¼, é‚£å°±æœƒæ˜¯æ–°çš„æœ€ä½³è§£
+                # é€šå¸¸åªè¦èƒ½ä½¿ç”¨æ›´å¤§å¹£å€¼é‚£ä¸€å®šæœƒæ¸›å°‘æ¬¡æ•¸
+                # ç„¡è§£å°±ç™¼ç”Ÿåœ¨é€™å…©è€…éƒ½æ˜¯ç„¡é™å¤§çš„æƒ…æ³
                 dp[j] = min(dp[j], dp[j-i]+1)
-        # dp[amonut]¥Nªí¥Ñcoins´ê¥Xamount©Ò»İªº³Ì¤Ö¼Æ¶q
-        # ªì©l¤Æ¬°µL­­¤j¦]¦¹«DµL­­¤j¤~¥Nªí¦³¸Ñ
+        # dp[amonut]ä»£è¡¨ç”±coinsæ¹Šå‡ºamountæ‰€éœ€çš„æœ€å°‘æ•¸é‡
+        # åˆå§‹åŒ–ç‚ºç„¡é™å¤§å› æ­¤éç„¡é™å¤§æ‰ä»£è¡¨æœ‰è§£
         if dp[amount]!=float('inf'):
             return dp[amount] 
-        # µL­­¤j¥NªíµL¸Ñ
+        # ç„¡é™å¤§ä»£è¡¨ç„¡è§£
         else:
             return -1 
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=322 lang=python3
-#
-# [322] Coin Change
-#
-
-# @lc code=start
-# µ¹¤£¦PºØÃşªºcoins©Mª÷ÃBamout
-# return´ê¥Xµ¥¦Pamountª÷ÃB©Ò»İ³Ì¤Ö¼Æ¶qªºcoins, ¦pªGµLªk´ê¥Xµ¥¦Pamountªºª÷ÃBreturn -1
-
-# By DP, time: O(A*n), space: O(A), A¬Oamount, n¬Olen(coins)¤]´N¬OcoinsºØÃş¼Æ 
-# ·Q¨ì0-1­I¥]°İÃD, ¥u¬Ocoins¬°¥i¥HµL­­®³¨úªºª««~¦Ó¤w
-class Solution:
-    def coinChange(self, coins: List[int], amount: int) -> int:
-        # ªì©l¤Ædp°}¦Cindex±q0~amount¦@amount+1­Ó¤¸¯À, ¤º®e¦s©ñµÛ¤£¦Pamount®Éªº³Ì¨Î¸Ñ
-        # ­n¨Dªº¬O³Ì¤p¤Æ¦¸¼Æ, ©Ò¥Hªì©l¤Æ¬°µL­­¤j(float("inf"))¦n¥Î¨Ó¤ñ¸û
-        dp = [float('inf')]*(amount+1)
-        # ªì©l¤Æ¥²©w¥i¥H¥Î0­Óµw¹ô´ê¥X0, ³o¼Ë«á­±¤£»İ­n¨«³Xdp[0]
-        dp[0] = 0
-        
-        for i in coins:
-            # ±qi¶}©l¦]¬°·í¹ô­È¬Oi®É, ®Ú¥»µLªk´ê¥Xamount<i
-            # Ex: µLªk¥Î5¤¸´ê¥X1234¤¸, ³»¦h0­Ó0¤¸´ê¥X0, ¦ı¤w¸gªì©l¤Ædp[0] = 0¤F
-            for j in range(i, amount+1):
-                # ­ì¥»ªºdp[j]¥Nªíamount= j®É§ó¤p¹ô­Èªº³Ì¨Î¸Ñ
-                # dp[j-i]¤]¬O¦p¦¹, ¦ıdp[j]¥i¥H¬Odp[j-i]¦A¥[¤W1¶ô»ù­È¬°iªºµw¹ô, ©Ò¥H·|¬Odp[j-i]+1
-                # ±q§ó¤p¹ô­Èªº³Ì¨Î¸Ñ©Mdp[j-i+1]¨ú¤@­Ó¸û¤p­È, ¨º´N·|¬O·sªº³Ì¨Î¸Ñ
-                # ³q±`¥u­n¯à¨Ï¥Î§ó¤j¹ô­È¨º¤@©w·|´î¤Ö¦¸¼Æ
-                # µL¸Ñ´Nµo¥Í¦b³o¨âªÌ³£¬OµL­­¤jªº±¡ªp
-                dp[j] = min(dp[j], dp[j-i]+1)
-        # dp[amonut]¥Nªí¥Ñcoins´ê¥Xamount©Ò»İªº³Ì¤Ö¼Æ¶q
-        # ªì©l¤Æ¬°µL­­¤j¦]¦¹«DµL­­¤j¤~¥Nªí¦³¸Ñ
-        if dp[amount]!=float('inf'):
-            return dp[amount] 
-        # µL­­¤j¥NªíµL¸Ñ
-        else:
-            return -1 
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

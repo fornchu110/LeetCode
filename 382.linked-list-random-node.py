@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=382 lang=python3
 #
@@ -13,23 +12,23 @@
 #         self.next = next
 
 # By choice, time: O(n), space: O(n)
-# choice¥i¥H±q°}¦C¤¤µ¥¾÷²vªºÀH¾÷¿ï¾Ü¤@­Ó¤¸¯À
+# choiceå¯ä»¥å¾é™£åˆ—ä¸­ç­‰æ©Ÿç‡çš„éš¨æ©Ÿé¸æ“‡ä¸€å€‹å…ƒç´ 
 class Solution:
-    # init·|®³¨ì§@¬°linklistÀY³¡nodeªºhead
-    # init¬O¨Ï¥Î§@¬°¦¹classªºobject³£·|¥²©w¦³ªº
-    # ©Ò¥H¥~­±¥ô¦ó´ú¸êµ¹©wlinklist©M¨ähead«á, ©I¥sSolution«K·|°õ¦æ¤U­±¤º®e
+    # initæœƒæ‹¿åˆ°ä½œç‚ºlinklisté ­éƒ¨nodeçš„head
+    # initæ˜¯ä½¿ç”¨ä½œç‚ºæ­¤classçš„objectéƒ½æœƒå¿…å®šæœ‰çš„
+    # æ‰€ä»¥å¤–é¢ä»»ä½•æ¸¬è³‡çµ¦å®šlinklistå’Œå…¶headå¾Œ, å‘¼å«Solutionä¾¿æœƒåŸ·è¡Œä¸‹é¢å…§å®¹
     def __init__(self, head: Optional[ListNode]):
         self.head = head
-        # ¨Ï¥Î¤@­Óself.arr¦s©ñlinklist¤º©Ò¦³node
+        # ä½¿ç”¨ä¸€å€‹self.arrå­˜æ”¾linklistå…§æ‰€æœ‰node
         self.arr = list()
-        # ¹ïlinklist¶i¦æ¨«³X, ¨Ã§ânode©ñ¨ìarr¤º
+        # å°linklisté€²è¡Œèµ°è¨ª, ä¸¦æŠŠnodeæ”¾åˆ°arrå…§
         while head:
             self.arr.append(head.val)
             head = head.next
 
     def getRandom(self) -> int:
-        # ·í¥~­±§@¬°Solution³o¤@classªºobject©I¥s.getRandom®É
-        # «K·|¨Ï¥Îchoice±q¨ä©Ò¦³node¤¤ÀH¾÷¬D¿ï¤@­Ónode return
+        # ç•¶å¤–é¢ä½œç‚ºSolutioné€™ä¸€classçš„objectå‘¼å«.getRandomæ™‚
+        # ä¾¿æœƒä½¿ç”¨choiceå¾å…¶æ‰€æœ‰nodeä¸­éš¨æ©ŸæŒ‘é¸ä¸€å€‹node return
         return choice(self.arr)
 
 # Your Solution object will be instantiated and called as such:
@@ -37,43 +36,3 @@ class Solution:
 # param_1 = obj.getRandom()
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=382 lang=python3
-#
-# [382] Linked List Random Node
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-# By choice, time: O(n), space: O(n)
-# choice¥i¥H±q°}¦C¤¤µ¥¾÷²vªºÀH¾÷¿ï¾Ü¤@­Ó¤¸¯À
-class Solution:
-    # init·|®³¨ì§@¬°linklistÀY³¡nodeªºhead
-    # init¬O¨Ï¥Î§@¬°¦¹classªºobject³£·|¥²©w¦³ªº
-    # ©Ò¥H¥~­±¥ô¦ó´ú¸êµ¹©wlinklist©M¨ähead«á, ©I¥sSolution«K·|°õ¦æ¤U­±¤º®e
-    def __init__(self, head: Optional[ListNode]):
-        self.head = head
-        # ¨Ï¥Î¤@­Óself.arr¦s©ñlinklist¤º©Ò¦³node
-        self.arr = list()
-        # ¹ïlinklist¶i¦æ¨«³X, ¨Ã§ânode©ñ¨ìarr¤º
-        while head:
-            self.arr.append(head.val)
-            head = head.next
-
-    def getRandom(self) -> int:
-        # ·í¥~­±§@¬°Solution³o¤@classªºobject©I¥s.getRandom®É
-        # «K·|¨Ï¥Îchoice±q¨ä©Ò¦³node¤¤ÀH¾÷¬D¿ï¤@­Ónode return
-        return choice(self.arr)
-
-# Your Solution object will be instantiated and called as such:
-# obj = Solution(head)
-# param_1 = obj.getRandom()
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

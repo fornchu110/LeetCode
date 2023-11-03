@@ -1,125 +1,61 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=371 lang=python3
 #
 # [371] Sum of Two Integers
-# µ¹¨â¾ã¼Æa¡Bb, ¥Î+©M-¥H¥~ªº¤è¦¡°µ¥Xa+b
-# ª½Æ[·Q¨ìbitwise¹Bºâ, Æ[¹îa+bªº©Ê½è
+# çµ¦å…©æ•´æ•¸aã€b, ç”¨+å’Œ-ä»¥å¤–çš„æ–¹å¼åšå‡ºa+b
+# ç›´è§€æƒ³åˆ°bitwiseé‹ç®—, è§€å¯Ÿa+bçš„æ€§è³ª
 
 # @lc code=start
 # By bitwise, time: O(log(max_int)), space: O(1)
-# ª`·N¨«³X¤@­Ó¼Æn©Ò¦³bitªº®É¶¡½ÆÂø«×¬°log(n)
-# ¦b¤G¶i¦ì¦P¤@¦ì¼Æ±¡ªp, a+bªºµ²ªG¨ä¹êµ¥¦PXOR, ¥u¬O¦b1+1®É­n¦h³B²z¤@­Ó¶i¦ì
+# æ³¨æ„èµ°è¨ªä¸€å€‹æ•¸næ‰€æœ‰bitçš„æ™‚é–“è¤‡é›œåº¦ç‚ºlog(n)
+# åœ¨äºŒé€²ä½åŒä¸€ä½æ•¸æƒ…æ³, a+bçš„çµæžœå…¶å¯¦ç­‰åŒXOR, åªæ˜¯åœ¨1+1æ™‚è¦å¤šè™•ç†ä¸€å€‹é€²ä½
 # Ex: 0+0=0, 0+1=1, 1+0=1, 1+1=0
-# ¨º«ç»òª¾¹D­þ¨Ç¦ì¼Æ­n¶i¦ì?Æ[¹î±oª¾¦P¦ì¼Æ¤U, AND«á¬°1¤~·|¬O­n¶i¦ìªº¼Æ
+# é‚£æ€Žéº¼çŸ¥é“å“ªäº›ä½æ•¸è¦é€²ä½?è§€å¯Ÿå¾—çŸ¥åŒä½æ•¸ä¸‹, ANDå¾Œç‚º1æ‰æœƒæ˜¯è¦é€²ä½çš„æ•¸
 # Ex: 0&0=0, 0&1=0, 1&0=0, 1&1=1
-# ©Ò¥H±Na+b©î¤À¬°µL¶i¦ìªºµ²ªG©M¦³¶i¦ìªºµ²ªG
+# æ‰€ä»¥å°‡a+bæ‹†åˆ†ç‚ºç„¡é€²ä½çš„çµæžœå’Œæœ‰é€²ä½çš„çµæžœ
 
-# ª`·Npythonªº¾ã¼ÆÃþ«¬¬OµL­­¨î, ©Ò¥H­n°µMASKªºÃB¥~³B²zÅÜ¦^32bit®Éªº¼Ë¤l
-# ÅÜ¦^32bits®Éªº¼Ë¤l¥Nªí¦³overflow´N¸Óoverflow
-# ¹ïMASK1¨úmod¥u³Ñ¤U¤£¨ì2^32ªº¼Æ, ¤]´N¬O³£³Ñ¤U§À32­Óbit
-# c»y¨¥¥Îunsigned int³B²z
-MASK1 = 4294967296  # 2^32, µ¥¦P©ó0x100000000 (1 0000 0000 0000 0000 0000 0000 0000 0000)
-MASK2 = 2147483648  # 2^31, µ¥¦P©ó0x80000000(1000 0000 0000 0000 0000 0000 0000 0000)
-MASK3 = 2147483647  # 2^31-1, µ¥¦P©ó0x7FFFFFFF(0111 1111 1111 1111 1111 1111 1111 1111)
+# æ³¨æ„pythonçš„æ•´æ•¸é¡žåž‹æ˜¯ç„¡é™åˆ¶, æ‰€ä»¥è¦åšMASKçš„é¡å¤–è™•ç†è®Šå›ž32bitæ™‚çš„æ¨£å­
+# è®Šå›ž32bitsæ™‚çš„æ¨£å­ä»£è¡¨æœ‰overflowå°±è©²overflow
+# å°MASK1å–modåªå‰©ä¸‹ä¸åˆ°2^32çš„æ•¸, ä¹Ÿå°±æ˜¯éƒ½å‰©ä¸‹å°¾32å€‹bit
+# cèªžè¨€ç”¨unsigned intè™•ç†
+MASK1 = 4294967296  # 2^32, ç­‰åŒæ–¼0x100000000 (1 0000 0000 0000 0000 0000 0000 0000 0000)
+MASK2 = 2147483648  # 2^31, ç­‰åŒæ–¼0x80000000(1000 0000 0000 0000 0000 0000 0000 0000)
+MASK3 = 2147483647  # 2^31-1, ç­‰åŒæ–¼0x7FFFFFFF(0111 1111 1111 1111 1111 1111 1111 1111)
 
 class Solution:
     def getSum(self, a: int, b: int) -> int:
         a %= MASK1
         b %= MASK1
         # Ex: a=5(0101), b=4(0100), 
-        # ª½¨ì¨S¦³¶i¦ì­n³B²z¤~¥Nªí¤W½üªºa = a^bµ¥¦P¹ê»Ú¤Wªºa+b
+        # ç›´åˆ°æ²’æœ‰é€²ä½è¦è™•ç†æ‰ä»£è¡¨ä¸Šè¼ªçš„a = a^bç­‰åŒå¯¦éš›ä¸Šçš„a+b
         while b!=0:
-            # »Ý­n¥ýÀË¬d¨º¨Ç¦ì¼Æ­n¶i¦ì
-            # a&b¥Nªí­n¶i¦ìªº¦ì, <<1«áªºcarry´N¥Nªí¶i¦ì¹L«áªºµ²ªG
-            # Ex: ²Ä¤@½üa&b=0100, a&b<<1=1000
-            # Ex: ²Ä¤G½üa&b=1000&0001=0, carry=0, ©Ò¥H¦b³o½ü´N·|µ²§ô
+            # éœ€è¦å…ˆæª¢æŸ¥é‚£äº›ä½æ•¸è¦é€²ä½
+            # a&bä»£è¡¨è¦é€²ä½çš„ä½, <<1å¾Œçš„carryå°±ä»£è¡¨é€²ä½éŽå¾Œçš„çµæžœ
+            # Ex: ç¬¬ä¸€è¼ªa&b=0100, a&b<<1=1000
+            # Ex: ç¬¬äºŒè¼ªa&b=1000&0001=0, carry=0, æ‰€ä»¥åœ¨é€™è¼ªå°±æœƒçµæŸ
             carry = ((a&b)<<1)%MASK1
-            # §âa³B²z¦¨¸g¹L¥¼¶i¦ì¥[ªk«áªº¼Ë¤l, µ¥¦P©ó°µ¥[ªk
-            # Ex: ²Ä¤@½üa^b=0001
-            # EX: ²Ä¤G½üa^b=0001^1000=1001, ¤]´N¬O9, ¥ÎaÀx¦s°_¨Ó
+            # æŠŠaè™•ç†æˆç¶“éŽæœªé€²ä½åŠ æ³•å¾Œçš„æ¨£å­, ç­‰åŒæ–¼åšåŠ æ³•
+            # Ex: ç¬¬ä¸€è¼ªa^b=0001
+            # EX: ç¬¬äºŒè¼ªa^b=0001^1000=1001, ä¹Ÿå°±æ˜¯9, ç”¨aå„²å­˜èµ·ä¾†
             a = (a^b)%MASK1
-            # bÅÜ¦¨¶i¦ì¹L«áªºµ²ªG³¡¤À
-            # Ex: ²Ä¤@½üb=1000
-            # Ex: ²Ä¤G½üb=carry=0, §Y±Nµ²§ô°j°é
+            # bè®Šæˆé€²ä½éŽå¾Œçš„çµæžœéƒ¨åˆ†
+            # Ex: ç¬¬ä¸€è¼ªb=1000
+            # Ex: ç¬¬äºŒè¼ªb=carry=0, å³å°‡çµæŸè¿´åœˆ
             b = carry
-        # ©Ò¥Hµ²§ô°j°é«á, ­Ya¬O¥¿¼Æ¨º´N¬O¹ê»Ú¤Wªºµª®×
-        # §âµ²ªG´«ºâ¦^¥hpython¾ã¼Æ, input¦³­t¼Æ©Ò¥Hµ²ªG¤]¥i¯à¬O­t¼Æ
-        # ¦³¸¹32bit int¬O-2^31~2^31-1, ¦Ó2^31¥NªíµÛ²Ä32­Óbit
-        # ©Ò¥H·í©M2^31°µ&«D0®É, ¥Nªí²Ä32­Óbit¬°1, ¤]´N¬O­t¼Æ
+        # æ‰€ä»¥çµæŸè¿´åœˆå¾Œ, è‹¥aæ˜¯æ­£æ•¸é‚£å°±æ˜¯å¯¦éš›ä¸Šçš„ç­”æ¡ˆ
+        # æŠŠçµæžœæ›ç®—å›žåŽ»pythonæ•´æ•¸, inputæœ‰è² æ•¸æ‰€ä»¥çµæžœä¹Ÿå¯èƒ½æ˜¯è² æ•¸
+        # æœ‰è™Ÿ32bit intæ˜¯-2^31~2^31-1, è€Œ2^31ä»£è¡¨è‘—ç¬¬32å€‹bit
+        # æ‰€ä»¥ç•¶å’Œ2^31åš&éž0æ™‚, ä»£è¡¨ç¬¬32å€‹bitç‚º1, ä¹Ÿå°±æ˜¯è² æ•¸
         if a&MASK2:
-            # ¥Ñ©ó«e­±¥u¨ú¤F­t¼Æªº«á32bit°µ¹Bºâ, ­nÂà´«¦^¥h
-            # Ex: °²³]8bit, µ²ªGa=-4³o®É«o·|±o¥X0000 1100, ©Ò¥H­nÂà´«¦^1111 1100
-            # a^MASK2^MASK3µ¥¦P©óa^0xFFFFFFFF, ¤]´N¬O2^32-1
-            # ~(a^0xFFFFFFFF)µ¥¦P©ó¥ý§â32¦ì¤ºÂà¦¨¸É¼Æ, ¦A§â¾ã­ÓintÂà¦¨¸É¼Æ
-            # ³Ì«á32¦ì¤º¨SÅÜ, ¦ý32¦ì¥H¥~ÅÜ¦¨11..11, ¤~·|ÅÜ¦¨¥¿½T­t¼Æ
+            # ç”±æ–¼å‰é¢åªå–äº†è² æ•¸çš„å¾Œ32bitåšé‹ç®—, è¦è½‰æ›å›žåŽ»
+            # Ex: å‡è¨­8bit, çµæžœa=-4é€™æ™‚å»æœƒå¾—å‡º0000 1100, æ‰€ä»¥è¦è½‰æ›å›ž1111 1100
+            # a^MASK2^MASK3ç­‰åŒæ–¼a^0xFFFFFFFF, ä¹Ÿå°±æ˜¯2^32-1
+            # ~(a^0xFFFFFFFF)ç­‰åŒæ–¼å…ˆæŠŠ32ä½å…§è½‰æˆè£œæ•¸, å†æŠŠæ•´å€‹intè½‰æˆè£œæ•¸
+            # æœ€å¾Œ32ä½å…§æ²’è®Š, ä½†32ä½ä»¥å¤–è®Šæˆ11..11, æ‰æœƒè®Šæˆæ­£ç¢ºè² æ•¸
             return ~(a^MASK2^MASK3)
-        # ¥¿¼Æ, ª½±µreturn a
+        # æ­£æ•¸, ç›´æŽ¥return a
         else:
             return a
         
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=371 lang=python3
-#
-# [371] Sum of Two Integers
-# µ¹¨â¾ã¼Æa¡Bb, ¥Î+©M-¥H¥~ªº¤è¦¡°µ¥Xa+b
-# ª½Æ[·Q¨ìbitwise¹Bºâ, Æ[¹îa+bªº©Ê½è
-
-# @lc code=start
-# By bitwise, time: O(log(max_int)), space: O(1)
-# ª`·N¨«³X¤@­Ó¼Æn©Ò¦³bitªº®É¶¡½ÆÂø«×¬°log(n)
-# ¦b¤G¶i¦ì¦P¤@¦ì¼Æ±¡ªp, a+bªºµ²ªG¨ä¹êµ¥¦PXOR, ¥u¬O¦b1+1®É­n¦h³B²z¤@­Ó¶i¦ì
-# Ex: 0+0=0, 0+1=1, 1+0=1, 1+1=0
-# ¨º«ç»òª¾¹D­þ¨Ç¦ì¼Æ­n¶i¦ì?Æ[¹î±oª¾¦P¦ì¼Æ¤U, AND«á¬°1¤~·|¬O­n¶i¦ìªº¼Æ
-# Ex: 0&0=0, 0&1=0, 1&0=0, 1&1=1
-# ©Ò¥H±Na+b©î¤À¬°µL¶i¦ìªºµ²ªG©M¦³¶i¦ìªºµ²ªG
-
-# ª`·Npythonªº¾ã¼ÆÃþ«¬¬OµL­­¨î, ©Ò¥H­n°µMASKªºÃB¥~³B²zÅÜ¦^32bit®Éªº¼Ë¤l
-# ÅÜ¦^32bits®Éªº¼Ë¤l¥Nªí¦³overflow´N¸Óoverflow
-# ¹ïMASK1¨úmod¥u³Ñ¤U¤£¨ì2^32ªº¼Æ, ¤]´N¬O³£³Ñ¤U§À32­Óbit
-# c»y¨¥¥Îunsigned int³B²z
-MASK1 = 4294967296  # 2^32, µ¥¦P©ó0x100000000 (1 0000 0000 0000 0000 0000 0000 0000 0000)
-MASK2 = 2147483648  # 2^31, µ¥¦P©ó0x80000000(1000 0000 0000 0000 0000 0000 0000 0000)
-MASK3 = 2147483647  # 2^31-1, µ¥¦P©ó0x7FFFFFFF(0111 1111 1111 1111 1111 1111 1111 1111)
-
-class Solution:
-    def getSum(self, a: int, b: int) -> int:
-        a %= MASK1
-        b %= MASK1
-        # Ex: a=5(0101), b=4(0100), 
-        # ª½¨ì¨S¦³¶i¦ì­n³B²z¤~¥Nªí¤W½üªºa = a^bµ¥¦P¹ê»Ú¤Wªºa+b
-        while b!=0:
-            # »Ý­n¥ýÀË¬d¨º¨Ç¦ì¼Æ­n¶i¦ì
-            # a&b¥Nªí­n¶i¦ìªº¦ì, <<1«áªºcarry´N¥Nªí¶i¦ì¹L«áªºµ²ªG
-            # Ex: ²Ä¤@½üa&b=0100, a&b<<1=1000
-            # Ex: ²Ä¤G½üa&b=1000&0001=0, carry=0, ©Ò¥H¦b³o½ü´N·|µ²§ô
-            carry = ((a&b)<<1)%MASK1
-            # §âa³B²z¦¨¸g¹L¥¼¶i¦ì¥[ªk«áªº¼Ë¤l, µ¥¦P©ó°µ¥[ªk
-            # Ex: ²Ä¤@½üa^b=0001
-            # EX: ²Ä¤G½üa^b=0001^1000=1001, ¤]´N¬O9, ¥ÎaÀx¦s°_¨Ó
-            a = (a^b)%MASK1
-            # bÅÜ¦¨¶i¦ì¹L«áªºµ²ªG³¡¤À
-            # Ex: ²Ä¤@½üb=1000
-            # Ex: ²Ä¤G½üb=carry=0, §Y±Nµ²§ô°j°é
-            b = carry
-        # ©Ò¥Hµ²§ô°j°é«á, ­Ya¬O¥¿¼Æ¨º´N¬O¹ê»Ú¤Wªºµª®×
-        # §âµ²ªG´«ºâ¦^¥hpython¾ã¼Æ, input¦³­t¼Æ©Ò¥Hµ²ªG¤]¥i¯à¬O­t¼Æ
-        # ¦³¸¹32bit int¬O-2^31~2^31-1, ¦Ó2^31¥NªíµÛ²Ä32­Óbit
-        # ©Ò¥H·í©M2^31°µ&«D0®É, ¥Nªí²Ä32­Óbit¬°1, ¤]´N¬O­t¼Æ
-        if a&MASK2:
-            # ¥Ñ©ó«e­±¥u¨ú¤F­t¼Æªº«á32bit°µ¹Bºâ, ­nÂà´«¦^¥h
-            # Ex: °²³]8bit, µ²ªGa=-4³o®É«o·|±o¥X0000 1100, ©Ò¥H­nÂà´«¦^1111 1100
-            # a^MASK2^MASK3µ¥¦P©óa^0xFFFFFFFF, ¤]´N¬O2^32-1
-            # ~(a^0xFFFFFFFF)µ¥¦P©ó¥ý§â32¦ì¤ºÂà¦¨¸É¼Æ, ¦A§â¾ã­ÓintÂà¦¨¸É¼Æ
-            # ³Ì«á32¦ì¤º¨SÅÜ, ¦ý32¦ì¥H¥~ÅÜ¦¨11..11, ¤~·|ÅÜ¦¨¥¿½T­t¼Æ
-            return ~(a^MASK2^MASK3)
-        # ¥¿¼Æ, ª½±µreturn a
-        else:
-            return a
-        
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

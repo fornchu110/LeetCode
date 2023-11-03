@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=328 lang=python3
 #
@@ -13,77 +12,32 @@
 #         self.next = next
 
 # By merge two head, time: O(n), space: O(1)
-# ±Nlinklist¤¤oddªº³¡¤À¦ê°_¨Ó, evenªº³¡¤À¦ê°_¨Ó, ³Ì«á¦boddªº§Àºİ±µ¤Weven head
+# å°‡linklistä¸­oddçš„éƒ¨åˆ†ä¸²èµ·ä¾†, evençš„éƒ¨åˆ†ä¸²èµ·ä¾†, æœ€å¾Œåœ¨oddçš„å°¾ç«¯æ¥ä¸Ševen head
 class Solution:
     def oddEvenList(self, head: ListNode) -> ListNode:
-        # ·ílinklist¬°ªÅ
+        # ç•¶linklistç‚ºç©º
         if not head:
             return head
-        # ¨S½Õ¾ãhead©Î®³head°µ§PÂ_´N¤£»İ­ndummy
-        # odd¦¹®É¬°oddªºhead
+        # æ²’èª¿æ•´headæˆ–æ‹¿headåšåˆ¤æ–·å°±ä¸éœ€è¦dummy
+        # oddæ­¤æ™‚ç‚ºoddçš„head
         odd = head
-        # evenHead§@¬°evenªºhead
+        # evenHeadä½œç‚ºevençš„head
         evenHead = odd.next
         even = evenHead
-        # oddµL½×¦p¦ó³£¥ı±µ¦n, even¦s¦b¤~­nÄ~Äò±µ
-        # even.next¦s¦beven¤~¯àÄ~Äò±µ, §_«hª½±µ«ü¦VNULL
-        # µ²§ô®Éodd«ü¦Vodd linklist³Ì§Ànode
-        # ª`·N­n¥ıeven¦A§PÂ_even.next, ¦]even­Y¬ONULL¤£¬Onode, ´N®Ú¥»µLeven(NULL).next¥i¥H§PÂ_·|¿ù»~
+        # oddç„¡è«–å¦‚ä½•éƒ½å…ˆæ¥å¥½, evenå­˜åœ¨æ‰è¦ç¹¼çºŒæ¥
+        # even.nextå­˜åœ¨evenæ‰èƒ½ç¹¼çºŒæ¥, å¦å‰‡ç›´æ¥æŒ‡å‘NULL
+        # çµæŸæ™‚oddæŒ‡å‘odd linklistæœ€å°¾node
+        # æ³¨æ„è¦å…ˆevenå†åˆ¤æ–·even.next, å› evenè‹¥æ˜¯NULLä¸æ˜¯node, å°±æ ¹æœ¬ç„¡even(NULL).nextå¯ä»¥åˆ¤æ–·æœƒéŒ¯èª¤
         while even and even.next:
-            # ¦ê¤Woddªº³¡¤À
+            # ä¸²ä¸Šoddçš„éƒ¨åˆ†
             odd.next = even.next
             odd = odd.next
-            # ¦ê¤Wevenªº³¡¤À
+            # ä¸²ä¸Ševençš„éƒ¨åˆ†
             even.next = odd.next
             even = even.next
-        # ¦¹®Écur¬Oodd³¡¤À§Àºİ, ±µ¤Weven head
+        # æ­¤æ™‚curæ˜¯oddéƒ¨åˆ†å°¾ç«¯, æ¥ä¸Ševen head
         odd.next = evenHead
         return head
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=328 lang=python3
-#
-# [328] Odd Even Linked List
-#
-
-# @lc code=start
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-
-# By merge two head, time: O(n), space: O(1)
-# ±Nlinklist¤¤oddªº³¡¤À¦ê°_¨Ó, evenªº³¡¤À¦ê°_¨Ó, ³Ì«á¦boddªº§Àºİ±µ¤Weven head
-class Solution:
-    def oddEvenList(self, head: ListNode) -> ListNode:
-        # ·ílinklist¬°ªÅ
-        if not head:
-            return head
-        # ¨S½Õ¾ãhead©Î®³head°µ§PÂ_´N¤£»İ­ndummy
-        # odd¦¹®É¬°oddªºhead
-        odd = head
-        # evenHead§@¬°evenªºhead
-        evenHead = odd.next
-        even = evenHead
-        # oddµL½×¦p¦ó³£¥ı±µ¦n, even¦s¦b¤~­nÄ~Äò±µ
-        # even.next¦s¦beven¤~¯àÄ~Äò±µ, §_«hª½±µ«ü¦VNULL
-        # µ²§ô®Éodd«ü¦Vodd linklist³Ì§Ànode
-        # ª`·N­n¥ıeven¦A§PÂ_even.next, ¦]even­Y¬ONULL¤£¬Onode, ´N®Ú¥»µLeven(NULL).next¥i¥H§PÂ_·|¿ù»~
-        while even and even.next:
-            # ¦ê¤Woddªº³¡¤À
-            odd.next = even.next
-            odd = odd.next
-            # ¦ê¤Wevenªº³¡¤À
-            even.next = odd.next
-            even = even.next
-        # ¦¹®Écur¬Oodd³¡¤À§Àºİ, ±µ¤Weven head
-        odd.next = evenHead
-        return head
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

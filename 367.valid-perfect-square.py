@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=367 lang=python3
 #
@@ -8,8 +7,8 @@
 # @lc code=start
 
 # By binary search, time: O(log(n)), space: O(1)
-# ¨Ï¥Îdouble pointer¹ê§@, ¦ý­«ÂIºë¯«¬Obinary search
-# ¥u¤Á¤@¥b¬OO(n/2)¤]´N¬OO(n), ­n¨C½ü³£¤Á¤@¥b¤~¥sO(log(n))
+# ä½¿ç”¨double pointerå¯¦ä½œ, ä½†é‡é»žç²¾ç¥žæ˜¯binary search
+# åªåˆ‡ä¸€åŠæ˜¯O(n/2)ä¹Ÿå°±æ˜¯O(n), è¦æ¯è¼ªéƒ½åˆ‡ä¸€åŠæ‰å«O(log(n))
 class Solution:
     def isPerfectSquare(self, num: int) -> bool:
         left, right = 0, num
@@ -26,32 +25,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=367 lang=python3
-#
-# [367] Valid Perfect Square
-#
-
-# @lc code=start
-
-# By binary search, time: O(log(n)), space: O(1)
-# ¨Ï¥Îdouble pointer¹ê§@, ¦ý­«ÂIºë¯«¬Obinary search
-# ¥u¤Á¤@¥b¬OO(n/2)¤]´N¬OO(n), ­n¨C½ü³£¤Á¤@¥b¤~¥sO(log(n))
-class Solution:
-    def isPerfectSquare(self, num: int) -> bool:
-        left, right = 0, num
-        while left<=right:
-            mid = (left+right)//2
-            square = mid*mid
-            if square==num:
-                return True
-            elif square<num:
-                left = mid+1
-            else:
-                right = mid-1
-        return False
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215

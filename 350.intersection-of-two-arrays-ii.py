@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #
 # @lc app=leetcode id=350 lang=python3
 #
@@ -7,27 +6,27 @@
 
 # @lc code=start
 
-# By hash table, time: O(m+n), m¬Onums1ªø«×, n¬Onums2ªø«×
+# By hash table, time: O(m+n), mæ˜¯nums1é•·åº¦, næ˜¯nums2é•·åº¦
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
         res = list()
-        # ¤£»Ý­n«Ø¨â­ÓÂø´ê, 
+        # ä¸éœ€è¦å»ºå…©å€‹é›œæ¹Š, 
         hashtable1 = dict()
         for x in nums1:
             if x in hashtable1:
                 hashtable1[x] += 1
             else:
                 hashtable1[x] = 1
-        # ±Nnums1¤ºªº¤¸¯À¥[¤Jhashtable«á
-        # ª½±µ¨«³Xnums2
-        # ¨Ã®Ú¾Úhashtable¤ºªºªF¦è§PÂ_¬O§_­n±Nnums2¤¸¯À¥[¤Jres
+        # å°‡nums1å…§çš„å…ƒç´ åŠ å…¥hashtableå¾Œ
+        # ç›´æŽ¥èµ°è¨ªnums2
+        # ä¸¦æ ¹æ“šhashtableå…§çš„æ±è¥¿åˆ¤æ–·æ˜¯å¦è¦å°‡nums2å…ƒç´ åŠ å…¥res
         for x in nums2:
             if x in hashtable1 and hashtable1[x]>0:
                 res.append(x)
                 hashtable1[x] -= 1
         return res
             
-# By set and index array, ¤ñÂø´êªí®ö¶OªÅ¶¡®É¶¡, ¦h¤F²Ä¤T¦¸°j°é
+# By set and index array, æ¯”é›œæ¹Šè¡¨æµªè²»ç©ºé–“æ™‚é–“, å¤šäº†ç¬¬ä¸‰æ¬¡è¿´åœˆ
 # class Solution:
 #     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
 #         res = list()
@@ -51,7 +50,7 @@ class Solution:
 #         return res
 
 # By double pointer
-# Âù«ü¼Ðªº°µªk­n¦binput±Æ§Ç¦nªº±¡ªp¨Ï¥Î, ©Ò¥H¥ýsort
+# é›™æŒ‡æ¨™çš„åšæ³•è¦åœ¨inputæŽ’åºå¥½çš„æƒ…æ³ä½¿ç”¨, æ‰€ä»¥å…ˆsort
 # class Solution:
 #     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
 #         nums1.sort()
@@ -74,80 +73,3 @@ class Solution:
 
 # @lc code=end
 
-=======
-#
-# @lc app=leetcode id=350 lang=python3
-#
-# [350] Intersection of Two Arrays II
-#
-
-# @lc code=start
-
-# By hash table, time: O(m+n), m¬Onums1ªø«×, n¬Onums2ªø«×
-class Solution:
-    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
-        res = list()
-        # ¤£»Ý­n«Ø¨â­ÓÂø´ê, 
-        hashtable1 = dict()
-        for x in nums1:
-            if x in hashtable1:
-                hashtable1[x] += 1
-            else:
-                hashtable1[x] = 1
-        # ±Nnums1¤ºªº¤¸¯À¥[¤Jhashtable«á
-        # ª½±µ¨«³Xnums2
-        # ¨Ã®Ú¾Úhashtable¤ºªºªF¦è§PÂ_¬O§_­n±Nnums2¤¸¯À¥[¤Jres
-        for x in nums2:
-            if x in hashtable1 and hashtable1[x]>0:
-                res.append(x)
-                hashtable1[x] -= 1
-        return res
-            
-# By set and index array, ¤ñÂø´êªí®ö¶OªÅ¶¡®É¶¡, ¦h¤F²Ä¤T¦¸°j°é
-# class Solution:
-#     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
-#         res = list()
-#         upper = max(max(nums1), max(nums2))
-#         freq1 = [0] * (upper+1)
-#         freq2 = [0] * (upper+1)
-#         for x in nums1:
-#             freq1[x] += 1
-#         for x in nums2:
-#             freq2[x] += 1
-#         set1 = set(nums1)
-#         for x in set1:
-#             if freq1[x]<freq2[x]:
-#                 while freq1[x]!=0:
-#                     res.append(x)
-#                     freq1[x] -=  1
-#             else:
-#                 while freq2[x]!=0:
-#                     res.append(x)
-#                     freq2[x] -= 1
-#         return res
-
-# By double pointer
-# Âù«ü¼Ðªº°µªk­n¦binput±Æ§Ç¦nªº±¡ªp¨Ï¥Î, ©Ò¥H¥ýsort
-# class Solution:
-#     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
-#         nums1.sort()
-#         nums2.sort()
-
-#         length1, length2 = len(nums1), len(nums2)
-#         intersection = list()
-#         index1 = index2 = 0
-#         while index1 < length1 and index2 < length2:
-#             if nums1[index1] < nums2[index2]:
-#                 index1 += 1
-#             elif nums1[index1] > nums2[index2]:
-#                 index2 += 1
-#             else:
-#                 intersection.append(nums1[index1])
-#                 index1 += 1
-#                 index2 += 1
-        
-#         return intersection
-
-# @lc code=end
-
->>>>>>> 6861f1229a47360993e49170b9b1be7c1dd4f215
