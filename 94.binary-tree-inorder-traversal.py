@@ -12,7 +12,7 @@
 #         self.left = left
 #         self.right = right
 
-# By recursive
+# By recursive, time: O(n), space: O(logn), n是節點數
 class Solution:
     def inOrder(self, root:TreeNode, res):
         #遞迴的終止條件, 當非node時不用遞迴
@@ -35,7 +35,7 @@ class Solution:
         self.inOrder(root, res)
         return res
 
-# By stack
+# By stack, time: O(n), space: O(n)
 # #能用recursive就能用stack做
 # class Solution:
 #     def inorderTraversal(self, root: TreeNode) -> List[int]:

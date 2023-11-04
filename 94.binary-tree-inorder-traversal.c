@@ -17,7 +17,7 @@
  * Note: The returned array must be malloced, assume caller calls free().
  */
 
-//By recursive
+//By recursive, time: O(n), space: O(logn), n是節點數
 // resSize是為了知道當下放入之node該放在res的哪個index
 void inorder(struct TreeNode* root, int* res, int* resSize) {
     //終止條件, 非node時沒辦法遞迴, 直接return
