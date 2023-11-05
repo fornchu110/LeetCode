@@ -3,7 +3,7 @@
 # return能走訪所有節點的node也就是冠軍, 如果不存在冠軍return -1
 # 注意不能走向所有node就不存在冠軍, 因為沒打過不能比較
 
-# By greedy, time: O(n), space: O(1)
+# By greedy, time: O(n), space: O(n)
 # 反過來思考, edges(u, v)中的v代表被走向, 也就是被打敗過的node
 # 所以只要找出沒被打敗過的node, 再確認沒被打敗過的node是否只有一個即可
 # 如果只有一個代表他是冠軍, 不只一個代表不存在冠軍
