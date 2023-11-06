@@ -41,11 +41,11 @@ class SeatManager:
 # By heap queue, Init time: O(n), reserve and unreserve time:  O(logn), space: O(n)
 # 用heap queue(priority queue)來實作, 避免每次新增刪除元素都重新排序, 得到較低的時間複雜度
 # 記住這種固定拿最大最小的題型都可以用heap queue來解, python中heapqq([])來初始化heap queue
-# python的heapq默認是min heap
+# python的heapq默認是min heap, 利用heappush()和heappop()來操作
 # class SeatManager:
     # def __init__(self, n: int):
     #     # 將編號1~n初始化為一個list
-    #     self.seat_heap_queue = [i for i in range(1, n + 1)]
+    #     self.seat_heap_queue = [i for i in range(1, n+1)]
 
     # def reserve(self):
     #     # 每次需要預約座位時就return heap queue中最小的元素
