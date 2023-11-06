@@ -10,8 +10,9 @@
 # 當obj.unreserve(seatnumber)將指定編號的座位改為可預約
 
 # By heap queue and greedy, Init time: O(n), reserve and unreserve time: O(1) or O(logn), space: O(n)
-# O(1)原因是用continuous_last這個變數記住座位編號, 這個變數在預定座位編號都連續以及取消當下已預訂座位中編號最大者預約時有用
+# 時間會O(1)原因是用continuous_last這個變數記住座位編號, 這個變數在預定座位編號都連續以及取消當下已預訂座位中編號最大者預約時有用
 # 不需要在呼叫reserve()和unreserve()使用heap queue做push pop的話, 時間複雜度就只要O(1)
+# 空間最壞情況heap queue接近被塞滿就是O(n), 最好情況預約一直連續用不到heap queue的話是O(1)
 class SeatManager:
     def __init__(self, n: int):
         self.continuous_last = 0
