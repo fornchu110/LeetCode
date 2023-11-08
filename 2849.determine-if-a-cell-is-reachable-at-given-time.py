@@ -14,10 +14,5 @@ class Solution:
             return False
         xdis = abs(fx-sx)
         ydis = abs(fy-sy)
-        if xdis<ydis:
-            return ydis<=t
-        else:
-            return xdis<=t
-        
-        
+        return max(xdis, ydis)<=t
 # @lc code=end
