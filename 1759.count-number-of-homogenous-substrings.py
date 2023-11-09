@@ -29,20 +29,16 @@ class Solution:
         return res%(10**9+7)
 
 
-# By math, time: O(n!), space: O(1), n = len(s)
+# By math, time: O(n), space: O(1), n = len(s)
 # 暴力法, 長度為3的子字串全部出現次數是1+2+3 = 6, 長度為2就是1+2
 # 所以走訪s, 每次碰到跟上個字元不同的字元代表完成一個新的子字串(元素完全相同)
-# 把這個子字串長度送去計算出現次數即可
+# # 把這個子字串長度送去計算出現次數即可
 # class Solution:
 #     def __init__(self):
 #         self.res = 0
 
 #     def count(self, n):
-#         tmp = 0
-#         while(n):
-#             tmp += n
-#             n -= 1
-#         return tmp
+#         return n*(n+1)//2
 
 #     def countHomogenous(self, s: str) -> int:
 #         n = len(s)
