@@ -26,8 +26,7 @@ class Solution:
                 # 新的字元重置r並出現1次
                 l = r
                 res += 1
-
-        return res %(10**9+7)
+        return res%(10**9+7)
 
 
 # By math, time: O(n!), space: O(1), n = len(s)
